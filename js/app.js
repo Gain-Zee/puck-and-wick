@@ -181,6 +181,9 @@ window.PuckWickStore = {
         if (existingIdx > -1) {
           const currentQty = this.state.cart[existingIdx].quantity || 1;
           this.state.cart[existingIdx].quantity = Math.min(99, currentQty + addQty);
+          if (payload.photo && !this.state.cart[existingIdx].photo) {
+            this.state.cart[existingIdx].photo = payload.photo;
+          }
         } else {
           this.state.cart.push({
             id: payload.id,
@@ -189,6 +192,7 @@ window.PuckWickStore = {
             scent: itemScent,
             price: Number(payload.price) || 36.00,
             quantity: Math.min(99, addQty),
+            photo: payload.photo || '',
             customOptions: customObj,
             customizations: customObj
           });

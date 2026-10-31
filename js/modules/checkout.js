@@ -6,6 +6,7 @@
  */
 
 import { getIcon } from '../utils/svg-assets.js';
+import { getCartItemPhotoSrc } from './cart.js';
 import { PaymentAdapterRegistry } from './payment-adapters.js';
 
 let isSubmitting = false;
@@ -25,15 +26,28 @@ export function initCheckout(store) {
 
   let showAlinaConfigModal = false;
   let orderReceipt = null;
+  let activeTriggerElement = null;
 
   const openCheckout = () => {
+    activeTriggerElement = document.activeElement;
     orderReceipt = null;
+    showAlinaConfigModal = false;
     render();
+    setTimeout(() => {
+      const initialFocus = root.querySelector('[data-testid="checkout-close-btn"]') ||
+                           root.querySelector('#customer-name');
+      if (initialFocus && typeof initialFocus.focus === 'function') {
+        initialFocus.focus();
+      }
+    }, 50);
   };
 
   const closeCheckout = () => {
     root.innerHTML = '';
     document.body.style.overflow = '';
+    if (activeTriggerElement && typeof activeTriggerElement.focus === 'function') {
+      activeTriggerElement.focus();
+    }
   };
 
   const render = () => {
@@ -180,6 +194,12 @@ export function initCheckout(store) {
           if (e.target === backdrop) closeCheckout();
         });
       }
+      setTimeout(() => {
+        const receiptFocus = root.querySelector('[data-testid="checkout-close-btn"]') || root.querySelector('#btn-receipt-continue');
+        if (receiptFocus && typeof receiptFocus.focus === 'function') {
+          receiptFocus.focus();
+        }
+      }, 50);
       return;
     }
 
@@ -356,8 +376,9 @@ export function initCheckout(store) {
 
                   <div class="checkout-line-items-preview">
                     ${cart.map(item => `
-                      <div class="preview-item-row">
-                        <span class="preview-title">${item.title} × ${item.quantity}</span>
+                      <div class="preview-item-row" style="display:flex;align-items:center;gap:0.75rem;">
+                        <img src="${getCartItemPhotoSrc(item)}" alt="${item.title}" style="width:40px;height:40px;border-radius:6px;object-fit:cover;border:1px solid rgba(197,160,89,0.4);flex-shrink:0;" />
+                        <span class="preview-title" style="flex:1;">${item.title} × ${item.quantity}</span>
                         <span class="preview-price">$${((Number(item.price) || 0) * (item.quantity || 1)).toFixed(2)}</span>
                       </div>
                     `).join('')}
@@ -468,14 +489,6 @@ export function initCheckout(store) {
       });
     }
 
-    // Escape key closes checkout modal
-    const handleKeyDown = (e) => {
-      if (e.key === 'Escape') {
-        closeCheckout();
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown, { once: true });
-
     // Fulfillment method selection
     if (pickupRadio) {
       pickupRadio.addEventListener('change', () => {
@@ -486,7 +499,7 @@ export function initCheckout(store) {
 
     if (shippingRadio) {
       shippingRadio.addEventListener('change', () => {
-        store.dispatch('SET_SHIPPING_METHOD', subtotal >= 125 ? 'free' : 'standard');
+        store.dispatch('SET_SHIPPING_METHOD', subtotal >= 75 ? 'free' : 'standard');
         render();
       });
     }
@@ -505,6 +518,12 @@ export function initCheckout(store) {
       openAlinaBtn.addEventListener('click', () => {
         showAlinaConfigModal = true;
         render();
+        setTimeout(() => {
+          const alinaFocus = root.querySelector('#btn-close-alina-modal') || root.querySelector('#alina-merchant-id');
+          if (alinaFocus && typeof alinaFocus.focus === 'function') {
+            alinaFocus.focus();
+          }
+        }, 50);
       });
     }
 
@@ -517,6 +536,12 @@ export function initCheckout(store) {
       const closeAlina = () => {
         showAlinaConfigModal = false;
         render();
+        setTimeout(() => {
+          const openAlina = root.querySelector('#btn-open-alina-config');
+          if (openAlina && typeof openAlina.focus === 'function') {
+            openAlina.focus();
+          }
+        }, 50);
       };
 
       if (closeAlinaBtn) closeAlinaBtn.addEventListener('click', closeAlina);
@@ -749,6 +774,66 @@ export function initCheckout(store) {
       });
     }
   };
+
+  // Keyboard accessibility: Escape to dismiss & Tab focus trapping within modal/receipt
+  const handleCheckoutKeyDown = (e) => {
+    const backdrop = root.querySelector('#checkout-backdrop');
+    if (!backdrop) return;
+
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      if (showAlinaConfigModal) {
+        showAlinaConfigModal = false;
+        render();
+        setTimeout(() => {
+          const openAlina = root.querySelector('#btn-open-alina-config');
+          if (openAlina && typeof openAlina.focus === 'function') {
+            openAlina.focus();
+          }
+        }, 50);
+      } else {
+        closeCheckout();
+      }
+      return;
+    }
+
+    if (e.key === 'Tab') {
+      const container = showAlinaConfigModal
+        ? (root.querySelector('#alina-pos-modal') || backdrop)
+        : (root.querySelector('.checkout-card') || backdrop);
+
+      if (!container) return;
+
+      const focusables = Array.from(
+        container.querySelectorAll(
+          'button:not([disabled]), [href], input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        )
+      ).filter(el => {
+        const r = el.getBoundingClientRect();
+        const cs = window.getComputedStyle(el);
+        return r.width > 0 && r.height > 0 && cs.display !== 'none' && cs.visibility !== 'hidden';
+      });
+
+      if (focusables.length === 0) return;
+
+      const firstEl = focusables[0];
+      const lastEl = focusables[focusables.length - 1];
+
+      if (e.shiftKey) {
+        if (document.activeElement === firstEl || !container.contains(document.activeElement)) {
+          e.preventDefault();
+          lastEl.focus();
+        }
+      } else {
+        if (document.activeElement === lastEl || !container.contains(document.activeElement)) {
+          e.preventDefault();
+          firstEl.focus();
+        }
+      }
+    }
+  };
+
+  window.addEventListener('keydown', handleCheckoutKeyDown);
 
   return {
     openCheckout

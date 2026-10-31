@@ -5,8 +5,25 @@
  */
 
 import { getIcon } from '../utils/svg-assets.js';
+import { getProductById } from '../data/products.js';
 
 let isDrawerOpen = false;
+
+export function getCartItemPhotoSrc(item) {
+  if (!item || typeof item !== 'object') return 'assets/images/candle-obsidian.jpg';
+  if (item.photo) return item.photo;
+  const idStr = String(item.id || '');
+  if (item.type === 'exclusive_box' || idStr.startsWith('box-')) {
+    const isWomen = idStr.includes('women') || item.customOptions?.boxType === 'women_luxe' || item.customizations?.boxType === 'women_luxe';
+    return isWomen ? 'assets/images/box-women-open.jpg' : 'assets/images/box-men-open.jpg';
+  }
+  const prod = getProductById(idStr);
+  if (prod) {
+    if (prod.photo) return prod.photo;
+    if (prod.vesselType === 'ivory') return 'assets/images/candle-ivory.jpg';
+  }
+  return 'assets/images/candle-obsidian.jpg';
+}
 
 export function initCart(store, openCheckoutCallback) {
   const root = document.getElementById('cart-drawer-root');
@@ -14,6 +31,15 @@ export function initCart(store, openCheckoutCallback) {
 
   let promoError = '';
   let enteredPromoCode = '';
+
+  const closeDrawer = () => {
+    isDrawerOpen = false;
+    render();
+    const cartTrigger = document.getElementById('cart-btn');
+    if (cartTrigger && typeof cartTrigger.focus === 'function') {
+      cartTrigger.focus();
+    }
+  };
 
   const render = () => {
     const cart = Array.isArray(store.state.cart)
@@ -26,8 +52,8 @@ export function initCart(store, openCheckoutCallback) {
     const count = store.getCartCount();
     const promo = store.state.promoCode;
 
-    // Free shipping progress calculation ($125+ Cart-Stretcher Threshold)
-    const freeShippingThreshold = 125.00;
+    // Free shipping progress calculation ($75 Threshold)
+    const freeShippingThreshold = 75.00;
     const progressPercent = Math.min(100, Math.max(0, (subtotal / freeShippingThreshold) * 100));
     const remaining = Math.max(0, freeShippingThreshold - subtotal);
     const isFreeShippingUnlocked = subtotal >= freeShippingThreshold || store.state.shippingMethod === 'pickup';
@@ -56,7 +82,7 @@ export function initCart(store, openCheckoutCallback) {
                     ? '🎉 Free Shipping Unlocked!' 
                     : `$${remaining.toFixed(2)} away from Free Shipping!`}
                 </span>
-                <span class="shipping-threshold-target">$125 Threshold</span>
+                <span class="shipping-threshold-target">$75 Threshold</span>
               </div>
               <div class="shipping-meter-track" role="progressbar" aria-valuenow="${progressPercent}" aria-valuemin="0" aria-valuemax="100">
                 <div class="shipping-meter-fill" data-testid="shipping-progress-bar" style="width: ${progressPercent}%; min-width: 4px;"></div>
@@ -72,18 +98,19 @@ export function initCart(store, openCheckoutCallback) {
                   if (!item || typeof item !== 'object' || !item.id) return '';
                   const unitPrice = Number(item.price) || 36.00;
                   const itemTotal = (unitPrice * (item.quantity || 1)).toFixed(2);
-                  const scentSubtitle = item.scent && item.scent !== 'Default' ? item.scent : (item.subtitle || '');
+                  const prodRef = getProductById(String(item.id || ''));
+                  const rawScentSub = item.scent && item.scent !== 'Default' ? item.scent : (item.subtitle || '');
+                  const scentSubtitle = (rawScentSub && rawScentSub !== item.title)
+                    ? rawScentSub
+                    : (prodRef ? `${prodRef.specUnitLabel || '10 oz Vessel'} • ${prodRef.waxSpecSub || '100% American Soy'}` : rawScentSub);
                   const customInfo = item.customOptions?.candleScentName ? `Scent: ${item.customOptions.candleScentName}` : (item.customizations?.candleScentName ? `Scent: ${item.customizations.candleScentName}` : '');
+
+                  const thumbSrc = getCartItemPhotoSrc(item);
 
                   return `
                     <div class="cart-item" data-testid="cart-item" data-item-id="${item.id}">
                       <div class="cart-item-thumb">
-                        ${item.type === 'exclusive_box'
-                          ? getIcon('box', 'thumb-box-icon')
-                          : `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="thumb-candle-icon">
-                              <path d="M12 2c-.5 2.5-3 5-3 8 0 3.3 2.7 6 6 6s6-2.7 6-6c0-2.5-1.5-4.5-2.5-6-.5 1.5-1.5 2.5-2.5 3-1-3-3-4-4-5Z" fill="#F59E0B" stroke="#D4AF37"/>
-                              <rect x="7" y="14" width="10" height="9" rx="1.5" fill="#1C1D24" stroke="#C5A059"/>
-                            </svg>`}
+                        <img src="${thumbSrc}" alt="${item.title}" class="cart-item-thumb-img" />
                       </div>
 
                       <div class="cart-item-details">
@@ -207,6 +234,10 @@ export function initCart(store, openCheckoutCallback) {
     const closeDrawer = () => {
       isDrawerOpen = false;
       render();
+      const cartTrigger = document.getElementById('cart-btn');
+      if (cartTrigger && typeof cartTrigger.focus === 'function') {
+        cartTrigger.focus();
+      }
     };
 
     if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
@@ -351,23 +382,69 @@ export function initCart(store, openCheckoutCallback) {
   const cartTriggerBtn = document.getElementById('cart-btn');
   if (cartTriggerBtn) {
     cartTriggerBtn.addEventListener('click', () => {
-      isDrawerOpen = true;
-      render();
+      openCartDrawer();
     });
   }
 
-  // Escape key closes drawer
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && isDrawerOpen) {
-      isDrawerOpen = false;
-      render();
+  // Keyboard accessibility: Escape to dismiss & Tab focus trapping within cart drawer
+  const handleCartKeyDown = (e) => {
+    if (!isDrawerOpen) return;
+
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      closeDrawer();
+      return;
     }
-  });
+
+    if (e.key === 'Tab') {
+      const drawer = root.querySelector('#cart-drawer');
+      if (!drawer) return;
+
+      const focusables = Array.from(
+        drawer.querySelectorAll(
+          'button:not([disabled]), [href], input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        )
+      ).filter(el => {
+        const r = el.getBoundingClientRect();
+        const cs = window.getComputedStyle(el);
+        return r.width > 0 && r.height > 0 && cs.display !== 'none' && cs.visibility !== 'hidden';
+      });
+
+      if (focusables.length === 0) return;
+
+      const firstEl = focusables[0];
+      const lastEl = focusables[focusables.length - 1];
+
+      if (e.shiftKey) {
+        if (document.activeElement === firstEl || !drawer.contains(document.activeElement)) {
+          e.preventDefault();
+          lastEl.focus();
+        }
+      } else {
+        if (document.activeElement === lastEl || !drawer.contains(document.activeElement)) {
+          e.preventDefault();
+          firstEl.focus();
+        }
+      }
+    }
+  };
+
+  window.addEventListener('keydown', handleCartKeyDown);
 
   // Expose openCartDrawer method
   const openCartDrawer = () => {
     isDrawerOpen = true;
     render();
+    setTimeout(() => {
+      const drawer = root.querySelector('#cart-drawer');
+      if (!drawer) return;
+      const initialFocus = drawer.querySelector('.cart-close-btn') ||
+                           drawer.querySelector('#btn-empty-shop') ||
+                           drawer.querySelector('button, input, [href]');
+      if (initialFocus && typeof initialFocus.focus === 'function') {
+        initialFocus.focus();
+      }
+    }, 50);
   };
 
   // Update badge count in header

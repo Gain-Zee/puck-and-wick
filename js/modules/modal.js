@@ -219,7 +219,8 @@ export function openProductModal(productId, store, openCartCallback) {
         price: product.price,
         quantity,
         scent: product.name,
-        vessel: product.vessel
+        vessel: product.vessel,
+        photo: product.photo || (product.vesselType === 'ivory' ? 'assets/images/candle-ivory.jpg' : 'assets/images/candle-obsidian.jpg')
       });
     }
 

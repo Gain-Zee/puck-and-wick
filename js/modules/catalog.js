@@ -18,33 +18,31 @@ export function initCatalog(store, openCartDrawer) {
 
     root.innerHTML = `
       <div class="catalog-container">
-        <!-- Focused Collection Filter Tabs Bar -->
-        <div class="catalog-filters-bar" role="tablist" aria-label="Filter items by collection">
+        <!-- Scent Family Filter Tabs Bar -->
+        <div class="catalog-filters-bar" role="tablist" aria-label="Filter candles by scent family">
           <button type="button" class="filter-tab filter-all ${currentCategory === 'all' ? 'active' : ''}" data-testid="filter-all" data-filter="all" role="tab" aria-selected="${currentCategory === 'all'}">
-            <span>All Items</span>
+            <span>All Pours</span>
             <span class="filter-count">(${PRODUCTS.length})</span>
           </button>
 
-          <button type="button" class="filter-tab filter-mens ${currentCategory === 'mens' ? 'active' : ''}" data-testid="filter-mens" data-filter="mens" role="tab" aria-selected="${currentCategory === 'mens'}">
-            <span class="tab-swatch swatch-mens" aria-hidden="true"></span>
-            <span>Men's Line</span>
-            <span class="filter-count">(${PRODUCTS.filter(p => p.genderLine === 'mens').length})</span>
+          <button type="button" class="filter-tab filter-signature ${currentCategory === 'signature' ? 'active' : ''}" data-testid="filter-signature" data-filter="signature" role="tab" aria-selected="${currentCategory === 'signature'}">
+            <span>Signature Line</span>
+            <span class="filter-count">(${PRODUCTS.filter(p => p.category?.includes('signature')).length})</span>
           </button>
 
-          <button type="button" class="filter-tab filter-womens ${currentCategory === 'womens' ? 'active' : ''}" data-testid="filter-womens" data-filter="womens" role="tab" aria-selected="${currentCategory === 'womens'}">
-            <span class="tab-swatch swatch-womens" aria-hidden="true"></span>
-            <span>Women's Line</span>
-            <span class="filter-count">(${PRODUCTS.filter(p => p.genderLine === 'womens').length})</span>
+          <button type="button" class="filter-tab filter-fresh-clean ${currentCategory === 'fresh_clean' ? 'active' : ''}" data-testid="filter-fresh-clean" data-filter="fresh_clean" role="tab" aria-selected="${currentCategory === 'fresh_clean'}">
+            <span>Fresh &amp; Clean</span>
+            <span class="filter-count">(${PRODUCTS.filter(p => p.category?.includes('fresh_clean')).length})</span>
           </button>
 
-          <button type="button" class="filter-tab filter-candles ${currentCategory === 'candles' ? 'active' : ''}" data-testid="filter-candles" data-filter="candles" role="tab" aria-selected="${currentCategory === 'candles'}">
-            <span>Soy Candles</span>
-            <span class="filter-count">(${PRODUCTS.filter(p => p.productType !== 'odor_care').length})</span>
+          <button type="button" class="filter-tab filter-woods-rustic ${currentCategory === 'woods_rustic' ? 'active' : ''}" data-testid="filter-woods-rustic" data-filter="woods_rustic" role="tab" aria-selected="${currentCategory === 'woods_rustic'}">
+            <span>Woods &amp; Rustic</span>
+            <span class="filter-count">(${PRODUCTS.filter(p => p.category?.includes('woods_rustic')).length})</span>
           </button>
 
-          <button type="button" class="filter-tab filter-odor-care ${currentCategory === 'odor_care' ? 'active' : ''}" data-testid="filter-odor-care" data-filter="odor_care" role="tab" aria-selected="${currentCategory === 'odor_care'}">
-            <span>Lauson-98&trade; Odor Killer &amp; Care</span>
-            <span class="filter-count">(${PRODUCTS.filter(p => p.productType === 'odor_care').length})</span>
+          <button type="button" class="filter-tab filter-seasonal ${currentCategory === 'seasonal' ? 'active' : ''}" data-testid="filter-seasonal" data-filter="seasonal" role="tab" aria-selected="${currentCategory === 'seasonal'}">
+            <span>Seasonal Releases</span>
+            <span class="filter-count">(${PRODUCTS.filter(p => p.category?.includes('seasonal')).length})</span>
           </button>
 
           <button type="button" class="filter-tab filter-exclusive-boxes filter-boxes" data-testid="filter-exclusive-boxes" data-filter="exclusive_boxes" role="tab" aria-selected="false">
@@ -243,7 +241,8 @@ export function initCatalog(store, openCartDrawer) {
             price: prod.price,
             quantity: 1,
             scent: prod.name,
-            vessel: prod.vessel
+            vessel: prod.vessel,
+            photo: prod.photo || (prod.vesselType === 'ivory' ? 'assets/images/candle-ivory.jpg' : 'assets/images/candle-obsidian.jpg')
           });
 
           if (typeof openCartDrawer === 'function') {

@@ -178,17 +178,26 @@
 }
 
 .cart-item-thumb {
-  width: 54px;
-  height: 54px;
+  width: 68px;
+  height: 68px;
   flex-shrink: 0;
-  background: rgba(197, 160, 89, 0.08);
-  border: 1px solid rgba(197, 160, 89, 0.2);
-  border-radius: var(--radius-sm, 0.35rem);
+  background: #08090C;
+  border: 1px solid rgba(197, 160, 89, 0.45);
+  border-radius: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.35rem;
+  padding: 0;
+  overflow: hidden;
   box-sizing: border-box;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.55);
+}
+
+.cart-item-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .thumb-candle-icon {
