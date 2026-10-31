@@ -268,22 +268,31 @@
 }
 
 .cart-item-stepper .qty-btn {
-  min-width: 44px;
-  min-height: 44px;
+  min-width: 52px;
+  min-height: 42px;
+  padding: 0 0.35rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
+  background: rgba(197, 160, 89, 0.08);
   border: none;
-  color: var(--color-gold-500, #C5A059);
+  color: var(--color-gold-bright, #D4AF37);
   cursor: pointer;
   font-size: 0.85rem;
-  transition: background 0.15s ease;
+  transition: all 0.15s ease;
+}
+
+.cart-item-stepper .qty-btn svg,
+.cart-item-stepper .qty-btn .qty-flame-icon {
+  width: 34px;
+  height: 20px;
+  display: block;
+  flex-shrink: 0;
 }
 
 .cart-item-stepper .qty-btn:hover {
-  background: rgba(197, 160, 89, 0.2);
-  color: #FFFFFF;
+  background: rgba(212, 175, 55, 0.24);
+  color: #FFE082;
 }
 
 .cart-item-quantity {

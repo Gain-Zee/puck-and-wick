@@ -726,8 +726,7 @@ export function getInteractive360BoxHtml(product, mode = 'card') {
               <div class="side-kicker">TWENTY YEARS ON THE ICE</div>
               <div class="side-heading">ONE STANDARD OF EXCELLENCE</div>
               <div class="side-rule"></div>
-              <p class="side-quote">“In competitive hockey, games are won in the inches. After 20 years on the ice, I brought that exact locker-room discipline to hand-pouring clean soy candles in Loudoun County, Virginia.”</p>
-              <p class="side-story">Born in Lausanne, Switzerland to proud Bulgarian roots and forged in Purcellville, VA, uniting Swiss precision &amp; Lauson-98™ odor science.</p>
+              <p class="side-story">Born in Lausanne, Switzerland to proud Bulgarian roots and forged in Purcellville, VA, Puck &amp; Wick™ unites Swiss-born Lauson-98™ precision, Bulgarian botanical heritage, and small-batch American soy craftsmanship—cured 14 days in tribute to #98.</p>
               <div class="side-badges-grid">
                 <div class="side-badge-box"><strong>20 YRS</strong><span>COMPETITIVE ICE</span></div>
                 <div class="side-badge-box"><strong>#98</strong><span>FOUNDER TRIBUTE</span></div>
@@ -760,7 +759,6 @@ export function getInteractive360BoxHtml(product, mode = 'card') {
           </div>
           </div>
         </div>
-        <div class="box360-pedestal-shadow"></div>
       </div>
 
       <div class="box360-bottom-caption">

@@ -141,6 +141,7 @@ export function initBoxBuilder(store, openCartCallback) {
   const candles = getCandleProducts();
   let feedbackMsg = '';
   let activeGalleryViewId = 'open';
+  let activeScienceTab = 'stage1';
   let lightboxOpen = false;
   let lightboxIndex = 0;
 
@@ -375,7 +376,7 @@ export function initBoxBuilder(store, openCartCallback) {
           </div>
         </div>
 
-        <!-- Feature 19: Compact Dual-Action Odor Science Breakdown -->
+        <!-- Feature 19: Interactive 4-Tab Dual-Action Odor Science Breakdown -->
         <div class="odor-science" id="odor-science" data-testid="odor-science-section">
           <div class="odor-science-header">
             <div class="section-kicker">
@@ -386,9 +387,129 @@ export function initBoxBuilder(store, openCartCallback) {
             <p class="odor-science-lead">${ODOR_SCIENCE_DATA.lead}</p>
           </div>
 
+          <!-- Interactive 4-Tab Breakdown Bar -->
+          <div class="odor-science-tabs-wrap">
+            <div class="odor-science-tabs-hint">Click any of the 4 tabs below to inspect its full-size molecule breakdown &amp; science:</div>
+            <div class="odor-science-tabs" role="tablist" aria-label="Odor Science 4-Stage Breakdown Tabs">
+              <button type="button" role="tab" aria-selected="${activeScienceTab === 'stage1'}" class="science-tab-btn ${activeScienceTab === 'stage1' ? 'active' : ''}" data-science-tab="stage1">
+                <span class="science-tab-num">TAB 01 • STAGE 1</span>
+                <span class="science-tab-label">Activated Coconut Charcoal</span>
+              </button>
+              <button type="button" role="tab" aria-selected="${activeScienceTab === 'stage2'}" class="science-tab-btn ${activeScienceTab === 'stage2' ? 'active' : ''}" data-science-tab="stage2">
+                <span class="science-tab-num">TAB 02 • STAGE 2</span>
+                <span class="science-tab-label">Lauson-98™ Molecular Lock</span>
+              </button>
+              <button type="button" role="tab" aria-selected="${activeScienceTab === 'masking'}" class="science-tab-btn ${activeScienceTab === 'masking' ? 'active' : ''}" data-science-tab="masking">
+                <span class="science-tab-num">TAB 03 • COMPARISON</span>
+                <span class="science-tab-label">Conventional Masking Sprays</span>
+              </button>
+              <button type="button" role="tab" aria-selected="${activeScienceTab === 'lauson_vs'}" class="science-tab-btn ${activeScienceTab === 'lauson_vs' ? 'active' : ''}" data-science-tab="lauson_vs">
+                <span class="science-tab-num">TAB 04 • PUCK &amp; WICK™</span>
+                <span class="science-tab-label">Lauson-98™ + Carbon Result</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Full-Width Interactive Stage Spotlight Reader (Clean, Large Molecule View) -->
+          <div class="odor-science-spotlight" id="odor-science-spotlight" role="tabpanel">
+            ${activeScienceTab === 'stage1' ? `
+              <div class="science-spotlight-grid">
+                <div class="science-spotlight-diagram">
+                  <div class="spotlight-diagram-badge">STAGE 01 MOLECULE BREAKDOWN • MICROPOROUS CARBON LATTICE</div>
+                  ${getCharcoalScienceSvg()}
+                </div>
+                <div class="science-spotlight-body">
+                  <div class="science-stage-step">${ODOR_SCIENCE_DATA.stages[0].step}</div>
+                  <h4 class="science-spotlight-heading">${ODOR_SCIENCE_DATA.stages[0].title}</h4>
+                  <div class="science-stage-metric">${ODOR_SCIENCE_DATA.stages[0].metric}</div>
+                  <p class="science-spotlight-desc">${ODOR_SCIENCE_DATA.stages[0].description}</p>
+                  <ul class="science-spotlight-bullets">
+                    <li><strong>Sub-2nm Honeycomb Pores:</strong> Steam-activated coconut shell carbon creates over 1,000 m² of internal surface area per gram.</li>
+                    <li><strong>Physical Van der Waals Trap:</strong> Draws in airborne sweat VOCs, damp moisture, and stagnant locker/closet air and locks them inside the solid carbon lattice.</li>
+                    <li><strong>6+ Months Active Capacity:</strong> Works 24/7 inside gear bags, skates, gloves, and closets without batteries, liquids, or heavy perfumes.</li>
+                  </ul>
+                  <div class="science-spotlight-nav">
+                    <span class="spotlight-page-indicator">Viewing Tab 1 of 4</span>
+                    <button type="button" class="science-next-btn" data-science-tab="stage2">Next: Stage 02 Lauson-98™ Complex &rarr;</button>
+                  </div>
+                </div>
+              </div>
+            ` : activeScienceTab === 'stage2' ? `
+              <div class="science-spotlight-grid">
+                <div class="science-spotlight-diagram">
+                  <div class="spotlight-diagram-badge">STAGE 02 MOLECULE BREAKDOWN • LAUSON-98™ RECEPTOR LOCKOUT</div>
+                  ${getLausonScienceSvg()}
+                </div>
+                <div class="science-spotlight-body">
+                  <div class="science-stage-step">${ODOR_SCIENCE_DATA.stages[1].step}</div>
+                  <h4 class="science-spotlight-heading">${ODOR_SCIENCE_DATA.stages[1].title}</h4>
+                  <div class="science-stage-metric">${ODOR_SCIENCE_DATA.stages[1].metric}</div>
+                  <p class="science-spotlight-desc">${ODOR_SCIENCE_DATA.stages[1].description}</p>
+                  <ul class="science-spotlight-bullets">
+                    <li><strong>Vapor-Phase Contact:</strong> Lauson-98™ diffuses out through precision laser-drilled vents to intercept airborne malodor molecules on contact.</li>
+                    <li><strong>Permanent Molecular Lock:</strong> Neutralizes sweat and equipment odor molecules into an inert, heavier, 100% odorless state.</li>
+                    <li><strong>Olfactory Receptor Lockout:</strong> Physically prevents neutralized molecules from binding to human scent receptors—zero masking perfume required.</li>
+                  </ul>
+                  <div class="science-spotlight-nav">
+                    <button type="button" class="science-prev-btn" data-science-tab="stage1">&larr; Prev: Stage 01 Charcoal</button>
+                    <span class="spotlight-page-indicator">Viewing Tab 2 of 4</span>
+                    <button type="button" class="science-next-btn" data-science-tab="masking">Next: Why Masking Sprays Fail &rarr;</button>
+                  </div>
+                </div>
+              </div>
+            ` : activeScienceTab === 'masking' ? `
+              <div class="science-spotlight-comparison comparison-negative">
+                <div class="comparison-card-header">
+                  <div>
+                    <div class="science-stage-step" style="color:#F87171;">TAB 03 • CONVENTIONAL MASKING SPRAYS</div>
+                    <span class="comparison-method" style="font-size:1.35rem;">${ODOR_SCIENCE_DATA.comparison[0].method}</span>
+                  </div>
+                  <span class="comparison-verdict" style="color:#F87171;">${ODOR_SCIENCE_DATA.comparison[0].verdict}</span>
+                </div>
+                <ul class="comparison-points spotlight-points">
+                  ${ODOR_SCIENCE_DATA.comparison[0].points.map((pt) => `
+                    <li>
+                      <span class="comparison-bullet">✕</span>
+                      <span>${pt}</span>
+                    </li>
+                  `).join('')}
+                </ul>
+                <div class="science-spotlight-nav" style="margin-top:1.1rem;">
+                  <button type="button" class="science-prev-btn" data-science-tab="stage2">&larr; Prev: Stage 02 Lauson-98™</button>
+                  <span class="spotlight-page-indicator">Viewing Tab 3 of 4</span>
+                  <button type="button" class="science-next-btn" data-science-tab="lauson_vs">Next: Puck &amp; Wick™ Dual-Action &rarr;</button>
+                </div>
+              </div>
+            ` : `
+              <div class="science-spotlight-comparison comparison-positive">
+                <div class="comparison-card-header">
+                  <div>
+                    <div class="science-stage-step" style="color:#34D399;">TAB 04 • PUCK &amp; WICK™ DUAL-STAGE SYSTEM</div>
+                    <span class="comparison-method" style="font-size:1.35rem;">${ODOR_SCIENCE_DATA.comparison[1].method}</span>
+                  </div>
+                  <span class="comparison-verdict" style="color:#34D399;">${ODOR_SCIENCE_DATA.comparison[1].verdict}</span>
+                </div>
+                <ul class="comparison-points spotlight-points">
+                  ${ODOR_SCIENCE_DATA.comparison[1].points.map((pt) => `
+                    <li>
+                      <span class="comparison-bullet">✓</span>
+                      <span>${pt}</span>
+                    </li>
+                  `).join('')}
+                </ul>
+                <div class="science-spotlight-nav" style="margin-top:1.1rem;">
+                  <button type="button" class="science-prev-btn" data-science-tab="masking">&larr; Prev: Masking Sprays</button>
+                  <span class="spotlight-page-indicator">Viewing Tab 4 of 4</span>
+                  <button type="button" class="science-next-btn" data-science-tab="stage1">Back to Tab 01: Stage 1 &rarr;</button>
+                </div>
+              </div>
+            `}
+          </div>
+
           <div class="odor-science-stages-grid">
             <!-- Stage 1: Activated Charcoal -->
-            <div class="science-stage-card science-charcoal" data-testid="science-charcoal">
+            <div class="science-stage-card science-charcoal ${activeScienceTab === 'stage1' ? 'active-science-card' : ''}" data-testid="science-charcoal" data-science-tab="stage1" role="button" tabindex="0" aria-label="Inspect Stage 1 Activated Coconut Charcoal">
+              <div class="science-card-click-pill">${activeScienceTab === 'stage1' ? '✓ Currently Selected in Reader Above' : 'Click to Expand Stage 01 Breakdown ↑'}</div>
               <div class="science-stage-visual">
                 ${getCharcoalScienceSvg()}
               </div>
@@ -401,7 +522,8 @@ export function initBoxBuilder(store, openCartCallback) {
             </div>
 
             <!-- Stage 2: Lauson-98™ Molecular Neutralization -->
-            <div class="science-stage-card science-lauson98" data-testid="science-lauson98">
+            <div class="science-stage-card science-lauson98 ${activeScienceTab === 'stage2' ? 'active-science-card' : ''}" data-testid="science-lauson98" data-science-tab="stage2" role="button" tabindex="0" aria-label="Inspect Stage 2 Lauson-98 Molecular Neutralization">
+              <div class="science-card-click-pill">${activeScienceTab === 'stage2' ? '✓ Currently Selected in Reader Above' : 'Click to Expand Stage 02 Breakdown ↑'}</div>
               <div class="science-stage-visual">
                 ${getLausonScienceSvg()}
               </div>
@@ -416,8 +538,12 @@ export function initBoxBuilder(store, openCartCallback) {
 
           <!-- Comparison: Conventional Masking Sprays vs Puck & Wick -->
           <div class="odor-comparison-grid">
-            ${ODOR_SCIENCE_DATA.comparison.map((col) => `
-              <div class="odor-comparison-card ${col.isPositive ? 'comparison-positive' : 'comparison-negative'}">
+            ${ODOR_SCIENCE_DATA.comparison.map((col, idx) => {
+              const tabKey = idx === 0 ? 'masking' : 'lauson_vs';
+              const isCardActive = activeScienceTab === tabKey;
+              return `
+              <div class="odor-comparison-card ${col.isPositive ? 'comparison-positive' : 'comparison-negative'} ${isCardActive ? 'active-science-card' : ''}" data-science-tab="${tabKey}" role="button" tabindex="0">
+                <div class="science-card-click-pill">${isCardActive ? '✓ Currently Selected in Reader Above' : `Click to Focus Tab 0${idx + 3} in Reader ↑`}</div>
                 <div class="comparison-card-header">
                   <span class="comparison-method">${col.method}</span>
                   <span class="comparison-verdict">${col.verdict}</span>
@@ -431,7 +557,8 @@ export function initBoxBuilder(store, openCartCallback) {
                   `).join('')}
                 </ul>
               </div>
-            `).join('')}
+            `;
+            }).join('')}
           </div>
         </div>
       </div>
@@ -445,6 +572,35 @@ export function initBoxBuilder(store, openCartCallback) {
         if (viewId && viewId !== activeGalleryViewId) {
           activeGalleryViewId = viewId;
           render();
+        }
+      });
+    });
+
+    // Bind Odor Science 4-Tab Switcher & Card Clicks
+    const scienceTabTriggers = root.querySelectorAll('[data-science-tab]');
+    scienceTabTriggers.forEach((el) => {
+      el.addEventListener('click', () => {
+        const tabId = el.getAttribute('data-science-tab');
+        if (tabId) {
+          const isCard = el.classList.contains('science-stage-card') || el.classList.contains('odor-comparison-card');
+          activeScienceTab = tabId;
+          render();
+          if (isCard) {
+            const spotlightEl = root.querySelector('#odor-science-spotlight');
+            if (spotlightEl) {
+              spotlightEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+          }
+        }
+      });
+      el.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          const tabId = el.getAttribute('data-science-tab');
+          if (tabId) {
+            activeScienceTab = tabId;
+            render();
+          }
         }
       });
     });

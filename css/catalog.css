@@ -971,6 +971,7 @@
   position: absolute;
   width: 160px;
   height: 200px;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   display: flex;
   flex-direction: column;
@@ -1145,27 +1146,27 @@
 .box360-scent-band {
   position: absolute;
   bottom: 7px;
-  height: 34px;
+  min-height: 36px;
   background: linear-gradient(90deg, #EADCC2 0%, #F5ECD8 50%, #DFCFAF 100%);
   border: 1px solid #9E7B3B;
   color: #201911;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 2px 6px;
+  padding: 3px 6px;
   box-sizing: border-box;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.22);
 }
 
 .box360-scent-band.band-front {
   right: -1px;
-  width: 132px;
+  width: 138px;
   text-align: center;
 }
 
 .box360-scent-band.band-right {
   left: -1px;
-  width: 132px;
+  width: 138px;
   text-align: center;
 }
 
@@ -1188,12 +1189,11 @@
 }
 
 .band-notes {
-  font-size: 0.31rem;
+  font-size: 0.295rem;
   font-weight: 700;
   color: #4A3B28;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.15;
+  white-space: normal;
 }
 
 .box360-side-panel {
@@ -1309,13 +1309,7 @@
 }
 
 .box360-pedestal-shadow {
-  position: absolute;
-  bottom: -14px;
-  width: 150px;
-  height: 26px;
-  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.78) 0%, rgba(212, 175, 55, 0.14) 55%, transparent 75%);
-  border-radius: 50%;
-  pointer-events: none;
+  display: none !important;
 }
 
 .box360-bottom-caption {

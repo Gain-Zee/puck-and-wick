@@ -165,9 +165,22 @@ export const SVG_ICONS = {
     <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
   </svg>`,
 
-  // Candle Flame
+  // Candle Flame (Larger, centered, full-height sculpted flame)
   flame: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-    <path d="M12 2c-.5 2.5-3 5-3 8 0 3.3 2.7 6 6 6s6-2.7 6-6c0-2.5-1.5-4.5-2.5-6-.5 1.5-1.5 2.5-2.5 3-1-3-3-4-4-5Z"/>
+    <path d="M12 1.5c-.8 3.4-5.5 6.8-5.5 11.8 0 4.4 3.4 8.2 7.5 8.2s7.5-3.8 7.5-8.2c0-3.3-1.9-6-3.3-8.1-.6 2-1.8 3.3-3.1 4-1.2-3.9-2.2-5.9-3.1-7.7Zm1.6 17.2c-1.8 0-3.2-1.4-3.2-3.3 0-1.9 1.7-3.6 2.5-5 .9 1.3 2.3 2.5 2.3 4.8 0 2-1 3.5-1.6 3.5Z"/>
+  </svg>`,
+
+  // Quantity Minus (Bold Minus on Left + Larger Flame on Right)
+  minus: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 24" class="qty-flame-icon" fill="currentColor" aria-hidden="true">
+    <rect x="2" y="10.25" width="12" height="3.5" rx="1.75" fill="#FFFFFF"/>
+    <path d="M26.5 2c-.7 3.2-5 6.4-5 11.2 0 4.1 3.1 7.6 6.8 7.6s6.8-3.5 6.8-7.6c0-3.1-1.7-5.6-3-7.6-.5 1.8-1.6 3.1-2.8 3.7-1.1-3.6-2-5.5-2.8-7.3Zm1.4 16.1c-1.6 0-2.9-1.3-2.9-3.1 0-1.8 1.5-3.3 2.3-4.6.8 1.2 2.1 2.3 2.1 4.4 0 1.9-.9 3.3-1.5 3.3Z"/>
+  </svg>`,
+
+  // Quantity Plus (Larger Flame on Left + Bold Plus on Right)
+  plus: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 24" class="qty-flame-icon" fill="currentColor" aria-hidden="true">
+    <path d="M11.5 2c-.7 3.2-5 6.4-5 11.2 0 4.1 3.1 7.6 6.8 7.6s6.8-3.5 6.8-7.6c0-3.1-1.7-5.6-3-7.6-.5 1.8-1.6 3.1-2.8 3.7-1.1-3.6-2-5.5-2.8-7.3Zm1.4 16.1c-1.6 0-2.9-1.3-2.9-3.1 0-1.8 1.5-3.3 2.3-4.6.8 1.2 2.1 2.3 2.1 4.4 0 1.9-.9 3.3-1.5 3.3Z"/>
+    <rect x="25" y="10.25" width="12" height="3.5" rx="1.75" fill="#FFFFFF"/>
+    <rect x="29.25" y="6" width="3.5" height="12" rx="1.75" fill="#FFFFFF"/>
   </svg>`,
 
   // Checkmark
@@ -392,7 +405,7 @@ export function renderJarPhotoLabelOverlay(conceptId = 1, scentName = 'TOP SHELF
  */
 export function getCharcoalScienceSvg() {
   return `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" width="100%" height="180" class="science-diagram-svg" role="img" aria-label="Microporous Activated Coconut Charcoal Adsorption Diagram">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 185" width="100%" height="185" class="science-diagram-svg" role="img" aria-label="Microporous Activated Coconut Charcoal Adsorption Diagram">
       <title>Microporous Activated Coconut Charcoal Physical Adsorption Matrix</title>
       <defs>
         <linearGradient id="charcoal-bg" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -400,42 +413,57 @@ export function getCharcoalScienceSvg() {
           <stop offset="100%" stop-color="#14161F" />
         </linearGradient>
         <radialGradient id="vdw-glow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="rgba(197, 160, 89, 0.35)" />
+          <stop offset="0%" stop-color="rgba(197, 160, 89, 0.38)" />
           <stop offset="100%" stop-color="rgba(197, 160, 89, 0)" />
         </radialGradient>
       </defs>
-      <rect x="2" y="2" width="316" height="176" rx="8" fill="url(#charcoal-bg)" stroke="#C5A059" stroke-width="1.2" opacity="0.95" />
-      <g stroke="#C5A059" stroke-width="1.3" fill="#181B24" opacity="0.9">
-        <polygon points="50,40 70,28 90,40 90,64 70,76 50,64" />
-        <polygon points="90,40 110,28 130,40 130,64 110,76 90,64" />
-        <polygon points="130,40 150,28 170,40 170,64 150,76 130,64" />
-        <polygon points="170,40 190,28 210,40 210,64 190,76 170,64" />
-        <polygon points="70,76 90,64 110,76 110,100 90,112 70,100" />
-        <polygon points="110,76 130,64 150,76 150,100 130,112 110,100" />
-        <polygon points="150,76 170,64 190,76 190,100 170,112 150,100" />
+      <rect x="2" y="2" width="316" height="181" rx="8" fill="url(#charcoal-bg)" stroke="#C5A059" stroke-width="1.2" opacity="0.95" />
+      <g stroke="#C5A059" stroke-width="1.25" fill="#181B24" opacity="0.92">
+        <polygon points="28,36 52,22 76,36 76,64 52,78 28,64" />
+        <polygon points="76,36 100,22 124,36 124,64 100,78 76,64" />
+        <polygon points="124,36 148,22 172,36 172,64 148,78 124,64" />
+        <polygon points="172,36 196,22 220,36 220,64 196,78 172,64" />
+        <polygon points="52,78 76,64 100,78 100,106 76,120 52,106" />
+        <polygon points="100,78 124,64 148,78 148,106 124,120 100,106" />
+        <polygon points="148,78 172,64 196,78 196,106 172,120 148,106" />
       </g>
-      <circle cx="110" cy="52" r="14" fill="url(#vdw-glow)" />
-      <circle cx="150" cy="52" r="14" fill="url(#vdw-glow)" />
-      <circle cx="130" cy="88" r="14" fill="url(#vdw-glow)" />
-      <circle cx="70" cy="52" r="7" fill="#EF4444" opacity="0.9" />
-      <text x="70" y="55" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" font-weight="700" fill="#FFFFFF">ODOR</text>
-      <text x="70" y="69" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" fill="#FCA5A5">Sweat VOCs</text>
-      <circle cx="110" cy="52" r="8" fill="#F59E0B" opacity="0.9" />
-      <text x="110" y="55" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" font-weight="700" fill="#0A0A0C">GEAR</text>
-      <text x="110" y="69" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" fill="#FDE68A">Rink Odor</text>
-      <circle cx="150" cy="52" r="7.5" fill="#3B82F6" opacity="0.9" />
-      <text x="150" y="55" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" font-weight="700" fill="#FFFFFF">LOCKER</text>
-      <text x="150" y="69" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" fill="#93C5FD">Stagnant Air</text>
-      <circle cx="130" cy="88" r="7" fill="#10B981" opacity="0.9" />
-      <text x="130" y="91" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" font-weight="700" fill="#FFFFFF">DAMP</text>
-      <text x="130" y="105" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" fill="#6EE7B7">Moisture</text>
-      <line x1="225" y1="35" x2="225" y2="105" stroke="#D4AF37" stroke-width="0.75" stroke-dasharray="3,2" />
-      <text x="232" y="55" font-family="'Inter', sans-serif" font-size="6.5" font-weight="600" fill="#D4AF37">PORE SIZE &lt;2nm</text>
-      <text x="232" y="66" font-family="'Inter', sans-serif" font-size="5.5" fill="#9EA3AE">Microporous Lattice</text>
-      <text x="232" y="82" font-family="'Inter', sans-serif" font-size="6.5" font-weight="600" fill="#D4AF37">DEEP CAPTURE</text>
-      <text x="232" y="93" font-family="'Inter', sans-serif" font-size="5.5" fill="#9EA3AE">Physical Adsorption</text>
-      <rect x="20" y="145" width="280" height="20" rx="4" fill="rgba(197, 160, 89, 0.12)" stroke="rgba(197, 160, 89, 0.3)" />
-      <text x="160" y="158" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7.5" font-weight="700" letter-spacing="1.2" fill="#D4AF37">&gt;1,000 m²/g SURFACE AREA • PERMANENT ODOR CAPTURE</text>
+      <circle cx="100" cy="50" r="18" fill="url(#vdw-glow)" />
+      <circle cx="148" cy="50" r="18" fill="url(#vdw-glow)" />
+      <circle cx="124" cy="92" r="18" fill="url(#vdw-glow)" />
+
+      <!-- Node 1: ODOR -->
+      <circle cx="52" cy="46" r="13.5" fill="#DC2626" stroke="#FCA5A5" stroke-width="0.9" />
+      <text x="52" y="48" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" font-weight="800" fill="#FFFFFF">ODOR</text>
+      <rect x="33" y="62" width="38" height="10" rx="3" fill="#0D0F14" stroke="rgba(252,165,165,0.4)" stroke-width="0.6" />
+      <text x="52" y="69" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.8" font-weight="600" fill="#FCA5A5">Sweat VOCs</text>
+
+      <!-- Node 2: GEAR -->
+      <circle cx="100" cy="46" r="13.5" fill="#D97706" stroke="#FDE68A" stroke-width="0.9" />
+      <text x="100" y="48" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" font-weight="800" fill="#FFFFFF">GEAR</text>
+      <rect x="82" y="62" width="36" height="10" rx="3" fill="#0D0F14" stroke="rgba(253,230,138,0.4)" stroke-width="0.6" />
+      <text x="100" y="69" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.8" font-weight="600" fill="#FDE68A">Rink Odor</text>
+
+      <!-- Node 3: LOCKER -->
+      <circle cx="148" cy="46" r="14" fill="#2563EB" stroke="#93C5FD" stroke-width="0.9" />
+      <text x="148" y="48" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.9" font-weight="800" fill="#FFFFFF">LOCKER</text>
+      <rect x="128" y="62" width="40" height="10" rx="3" fill="#0D0F14" stroke="rgba(147,197,253,0.4)" stroke-width="0.6" />
+      <text x="148" y="69" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.8" font-weight="600" fill="#93C5FD">Stagnant Air</text>
+
+      <!-- Node 4: DAMP -->
+      <circle cx="124" cy="90" r="13.5" fill="#059669" stroke="#6EE7B7" stroke-width="0.9" />
+      <text x="124" y="92" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" font-weight="800" fill="#FFFFFF">DAMP</text>
+      <rect x="107" y="106" width="34" height="10" rx="3" fill="#0D0F14" stroke="rgba(110,231,183,0.4)" stroke-width="0.6" />
+      <text x="124" y="113" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.8" font-weight="600" fill="#6EE7B7">Moisture</text>
+
+      <line x1="228" y1="30" x2="228" y2="112" stroke="#D4AF37" stroke-width="0.85" stroke-dasharray="3,2" />
+      <text x="235" y="50" font-family="'Inter', sans-serif" font-size="6.4" font-weight="700" fill="#D4AF37">PORE SIZE &lt;2nm</text>
+      <text x="235" y="61" font-family="'Inter', sans-serif" font-size="5.4" fill="#B0B5C0">Microporous Lattice</text>
+      <text x="235" y="82" font-family="'Inter', sans-serif" font-size="6.4" font-weight="700" fill="#D4AF37">DEEP CAPTURE</text>
+      <text x="235" y="93" font-family="'Inter', sans-serif" font-size="5.4" fill="#B0B5C0">Physical Adsorption</text>
+
+      <!-- Bottom Holder Box: Widen & scale text so zero letters overflow -->
+      <rect x="10" y="144" width="300" height="24" rx="5" fill="rgba(197, 160, 89, 0.14)" stroke="rgba(197, 160, 89, 0.42)" />
+      <text x="160" y="159" text-anchor="middle" font-family="'Inter', sans-serif" font-size="6.2" font-weight="700" letter-spacing="0.55" fill="#D4AF37">&gt;1,000 m²/g SURFACE AREA • PERMANENT ODOR CAPTURE</text>
     </svg>
   `;
 }
@@ -445,7 +473,7 @@ export function getCharcoalScienceSvg() {
  */
 export function getLausonScienceSvg() {
   return `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" width="100%" height="180" class="science-diagram-svg" role="img" aria-label="Lauson-98 Molecular Neutralization and Olfactory Receptor Lockout Diagram">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 185" width="100%" height="185" class="science-diagram-svg" role="img" aria-label="Lauson-98 Molecular Neutralization and Olfactory Receptor Lockout Diagram">
       <title>Lauson-98 Proprietary Molecular Counteraction and Receptor Inactivation</title>
       <defs>
         <linearGradient id="lauson-bg" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -453,31 +481,46 @@ export function getLausonScienceSvg() {
           <stop offset="100%" stop-color="#14161F" />
         </linearGradient>
       </defs>
-      <rect x="2" y="2" width="316" height="176" rx="8" fill="url(#lauson-bg)" stroke="#C5A059" stroke-width="1.2" opacity="0.95" />
-      <circle cx="55" cy="65" r="22" fill="#1C1820" stroke="#EF4444" stroke-width="1.6" />
-      <text x="55" y="60" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7.5" font-weight="700" fill="#EF4444">MALODOR</text>
-      <text x="55" y="71" text-anchor="middle" font-family="'Inter', sans-serif" font-size="6" fill="#FCA5A5">Sweat &amp; Gear</text>
-      <text x="55" y="80" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" fill="#9EA3AE">Airborne Odor</text>
-      <text x="88" y="69" text-anchor="middle" font-family="'Inter', sans-serif" font-size="14" font-weight="700" fill="#D4AF37">+</text>
-      <circle cx="125" cy="65" r="22" fill="#1A1C16" stroke="#D4AF37" stroke-width="1.6" />
-      <text x="125" y="60" text-anchor="middle" font-family="'Inter', sans-serif" font-size="6.8" font-weight="700" fill="#FAF5E8">LAUSON-98™</text>
-      <text x="125" y="70" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.2" fill="#C5A059">Proprietary Core</text>
-      <path d="M 154,65 L 176,65 M 172,60 L 177,65 L 172,70" stroke="#34D399" stroke-width="2" fill="none" stroke-linecap="round" />
-      <text x="165" y="55" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" font-weight="600" fill="#34D399">Molecular Lock</text>
-      <ellipse cx="215" cy="65" rx="28" ry="22" fill="#121820" stroke="#34D399" stroke-width="1.8" />
-      <text x="215" y="58" text-anchor="middle" font-family="'Inter', sans-serif" font-size="6.5" font-weight="700" fill="#34D399">NEUTRALIZED</text>
-      <text x="215" y="68" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.2" fill="#93C5FD">100% Odorless</text>
-      <text x="215" y="78" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" fill="#9EA3AE">Zero Perfume Mask</text>
-      <g transform="translate(260, 42)">
-        <path d="M 5,5 C 5,25 35,25 35,5" fill="none" stroke="#F87171" stroke-width="1.5" />
-        <text x="20" y="36" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" font-weight="700" fill="#F87171">SCENT RECEPTOR</text>
-        <circle cx="20" cy="14" r="8" fill="rgba(239, 68, 68, 0.15)" stroke="#EF4444" stroke-width="1.2" />
-        <line x1="15" y1="9" x2="25" y2="19" stroke="#EF4444" stroke-width="1.5" />
-        <line x1="25" y1="9" x2="15" y2="19" stroke="#EF4444" stroke-width="1.5" />
-        <text x="20" y="44" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.5" fill="#EF4444">Odor Blocked</text>
+      <rect x="2" y="2" width="316" height="181" rx="8" fill="url(#lauson-bg)" stroke="#C5A059" stroke-width="1.2" opacity="0.95" />
+
+      <!-- Sphere 1: MALODOR -->
+      <circle cx="40" cy="70" r="27" fill="#1C1820" stroke="#EF4444" stroke-width="1.6" />
+      <text x="40" y="63" text-anchor="middle" font-family="'Inter', sans-serif" font-size="6.2" font-weight="800" fill="#EF4444">MALODOR</text>
+      <text x="40" y="73" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" font-weight="600" fill="#FCA5A5">Sweat &amp; Gear</text>
+      <text x="40" y="82" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.4" fill="#9EA3AE">Airborne Odor</text>
+
+      <text x="75" y="74" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12.5" font-weight="800" fill="#D4AF37">+</text>
+
+      <!-- Sphere 2: LAUSON-98 -->
+      <circle cx="110" cy="70" r="27" fill="#1A1C16" stroke="#D4AF37" stroke-width="1.6" />
+      <text x="110" y="64" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.8" font-weight="800" fill="#FAF5E8">LAUSON-98™</text>
+      <text x="110" y="74" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.7" font-weight="600" fill="#E5C878">Proprietary Core</text>
+      <text x="110" y="83" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.3" fill="#9EA3AE">Vapor Complex</text>
+
+      <!-- Arrow: Molecular Lock -->
+      <path d="M 142,72 L 176,72 M 172,68 L 177,72 L 172,76" stroke="#34D399" stroke-width="1.8" fill="none" stroke-linecap="round" />
+      <rect x="140" y="54" width="38" height="10" rx="3" fill="#0D0F14" stroke="rgba(52,211,153,0.4)" stroke-width="0.6" />
+      <text x="159" y="61" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.3" font-weight="700" fill="#34D399">Molecular Lock</text>
+
+      <!-- Sphere 3: NEUTRALIZED -->
+      <ellipse cx="216" cy="70" rx="33" ry="27" fill="#121820" stroke="#34D399" stroke-width="1.8" />
+      <text x="216" y="63" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.7" font-weight="800" fill="#34D399">NEUTRALIZED</text>
+      <text x="216" y="73" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.8" font-weight="600" fill="#93C5FD">100% Odorless</text>
+      <text x="216" y="82" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.3" fill="#9EA3AE">Zero Perfume Mask</text>
+
+      <!-- Scent Receptor Lockout -->
+      <g transform="translate(260, 44)">
+        <path d="M 6,6 C 6,25 36,25 36,6" fill="none" stroke="#F87171" stroke-width="1.5" />
+        <circle cx="21" cy="14" r="8" fill="rgba(239, 68, 68, 0.16)" stroke="#EF4444" stroke-width="1.2" />
+        <line x1="16" y1="9" x2="26" y2="19" stroke="#EF4444" stroke-width="1.5" />
+        <line x1="26" y1="9" x2="16" y2="19" stroke="#EF4444" stroke-width="1.5" />
+        <text x="21" y="36" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.7" font-weight="700" fill="#F87171">SCENT RECEPTOR</text>
+        <text x="21" y="45" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.5" font-weight="600" fill="#EF4444">Odor Blocked</text>
       </g>
-      <rect x="20" y="145" width="280" height="20" rx="4" fill="rgba(52, 211, 153, 0.12)" stroke="rgba(52, 211, 153, 0.3)" />
-      <text x="160" y="158" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7.5" font-weight="700" letter-spacing="1.2" fill="#34D399">LAUSON-98™ MOLECULAR LOCKOUT • ZERO RECEPTOR BINDING</text>
+
+      <!-- Bottom Holder Box: Widen & scale text so zero letters overflow -->
+      <rect x="10" y="144" width="300" height="24" rx="5" fill="rgba(52, 211, 153, 0.14)" stroke="rgba(52, 211, 153, 0.42)" />
+      <text x="160" y="159" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.9" font-weight="700" letter-spacing="0.48" fill="#34D399">LAUSON-98™ MOLECULAR LOCKOUT • ZERO RECEPTOR BINDING</text>
     </svg>
   `;
 }
