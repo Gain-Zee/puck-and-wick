@@ -29,6 +29,7 @@ export function initCheckout(store) {
   let activeTriggerElement = null;
 
   const openCheckout = () => {
+    isSubmitting = false;
     activeTriggerElement = document.activeElement;
     orderReceipt = null;
     showAlinaConfigModal = false;
@@ -43,6 +44,7 @@ export function initCheckout(store) {
   };
 
   const closeCheckout = () => {
+    isSubmitting = false;
     root.innerHTML = '';
     document.body.style.overflow = '';
     if (activeTriggerElement && typeof activeTriggerElement.focus === 'function') {
@@ -51,6 +53,15 @@ export function initCheckout(store) {
   };
 
   const render = () => {
+    const existingName = root.querySelector('#customer-name')?.value;
+    const existingEmail = root.querySelector('#customer-email')?.value;
+    const existingPhone = root.querySelector('#customer-phone')?.value;
+    const existingStreet = root.querySelector('#shipping-street')?.value;
+    const existingCity = root.querySelector('#shipping-city')?.value;
+    const existingState = root.querySelector('#shipping-state')?.value;
+    const existingZip = root.querySelector('#shipping-zip')?.value;
+    const existingNotes = root.querySelector('#order-notes')?.value;
+
     const cart = (store.state.cart || []).filter(item => item && typeof item === 'object' && item.id);
     const subtotal = store.getCartSubtotal();
     const discount = store.getDiscountAmount();
@@ -230,19 +241,19 @@ export function initCheckout(store) {
                   
                   <div class="form-group">
                     <label for="customer-name" class="form-label">Full Name *</label>
-                    <input type="text" id="customer-name" name="fullName" class="form-input" data-testid="customer-name" placeholder="Alex Ovechkin" required autocomplete="name">
+                    <input type="text" id="customer-name" name="fullName" class="form-input" data-testid="customer-name" placeholder="Alex Ovechkin" value="${existingName !== undefined ? escapeHtml(existingName) : ''}" required autocomplete="name">
                     <div class="field-error" id="err-customer-name"></div>
                   </div>
 
                   <div class="form-row-2">
                     <div class="form-group">
                       <label for="customer-email" class="form-label">Email Address *</label>
-                      <input type="email" id="customer-email" name="email" class="form-input" data-testid="customer-email" placeholder="alex@puckandwick.com" required autocomplete="email">
+                      <input type="email" id="customer-email" name="email" class="form-input" data-testid="customer-email" placeholder="alex@puckandwick.com" value="${existingEmail !== undefined ? escapeHtml(existingEmail) : ''}" required autocomplete="email">
                       <div class="field-error" id="err-customer-email"></div>
                     </div>
                     <div class="form-group">
                       <label for="customer-phone" class="form-label">Phone Number *</label>
-                      <input type="tel" id="customer-phone" name="phone" class="form-input" data-testid="customer-phone" placeholder="703-555-0100" required autocomplete="tel">
+                      <input type="tel" id="customer-phone" name="phone" class="form-input" data-testid="customer-phone" placeholder="703-555-0100" value="${existingPhone !== undefined ? escapeHtml(existingPhone) : ''}" required autocomplete="tel">
                       <div class="field-error" id="err-customer-phone"></div>
                     </div>
                   </div>
@@ -273,7 +284,7 @@ export function initCheckout(store) {
                       <div class="radio-card-content">
                         <div class="radio-title-row">
                           <span class="radio-title">Standard Tracked Delivery</span>
-                          <span class="radio-price-tag">${subtotal >= 125 ? 'Free ($125+ Order)' : '$9.95'}</span>
+                          <span class="radio-price-tag">${subtotal >= 75 ? 'Free ($75+ Order)' : '$6.95'}</span>
                         </div>
                         <p class="radio-desc">
                           Hand-packed in insulated custom packaging with ice-pack protection during warm months.
@@ -286,22 +297,22 @@ export function initCheckout(store) {
                   <div class="shipping-address-container" id="shipping-address-block" style="${isPickup ? 'display:none;' : ''}">
                     <div class="form-group">
                       <label for="shipping-street" class="form-label">Street Address *</label>
-                      <input type="text" id="shipping-street" name="street" class="form-input" data-testid="shipping-street" placeholder="100 Ice Rink Way, Apt 4" ${!isPickup ? 'required' : ''} autocomplete="street-address">
+                      <input type="text" id="shipping-street" name="street" class="form-input" data-testid="shipping-street" placeholder="100 Ice Rink Way, Apt 4" value="${existingStreet !== undefined ? escapeHtml(existingStreet) : ''}" ${!isPickup ? 'required' : ''} autocomplete="street-address">
                       <div class="field-error" id="err-shipping-street"></div>
                     </div>
 
                     <div class="form-row-3">
                       <div class="form-group">
                         <label for="shipping-city" class="form-label">City</label>
-                        <input type="text" id="shipping-city" name="city" class="form-input" placeholder="Ashburn" value="Purcellville">
+                        <input type="text" id="shipping-city" name="city" class="form-input" placeholder="Ashburn" value="${existingCity !== undefined ? escapeHtml(existingCity) : 'Purcellville'}">
                       </div>
                       <div class="form-group">
                         <label for="shipping-state" class="form-label">State</label>
-                        <input type="text" id="shipping-state" name="state" class="form-input" placeholder="VA" value="VA">
+                        <input type="text" id="shipping-state" name="state" class="form-input" placeholder="VA" value="${existingState !== undefined ? escapeHtml(existingState) : 'VA'}">
                       </div>
                       <div class="form-group">
                         <label for="shipping-zip" class="form-label">ZIP Code</label>
-                        <input type="text" id="shipping-zip" name="zip" class="form-input" placeholder="20132" value="20132">
+                        <input type="text" id="shipping-zip" name="zip" class="form-input" placeholder="20132" value="${existingZip !== undefined ? escapeHtml(existingZip) : '20132'}">
                       </div>
                     </div>
                   </div>
@@ -309,7 +320,7 @@ export function initCheckout(store) {
                   <!-- Order Notes -->
                   <div class="form-group" style="margin-top:1rem;">
                     <label for="order-notes" class="form-label">Special Pour Notes or Delivery Instructions</label>
-                    <textarea id="order-notes" name="notes" class="form-textarea" data-testid="order-notes" rows="2" placeholder="Leave on porch near hockey bag, gift note, etc."></textarea>
+                    <textarea id="order-notes" name="notes" class="form-textarea" data-testid="order-notes" rows="2" placeholder="Leave on porch near hockey bag, gift note, etc.">${existingNotes !== undefined ? escapeHtml(existingNotes) : ''}</textarea>
                   </div>
                 </div>
               </div>
@@ -424,7 +435,7 @@ export function initCheckout(store) {
 
           <!-- Alina POS Configuration Submodal / Drawer -->
           ${showAlinaConfigModal ? `
-            <div class="alina-pos-modal alina-modal-backdrop" data-testid="alina-pos-modal">
+            <div id="alina-pos-modal" class="alina-pos-modal alina-modal-backdrop" data-testid="alina-pos-modal">
               <div class="alina-modal-card">
                 <button type="button" class="alina-close-btn" id="btn-close-alina-modal" aria-label="Close POS Settings">
                   ${getIcon('close')}

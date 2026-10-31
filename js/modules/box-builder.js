@@ -10,21 +10,11 @@ import { EXCLUSIVE_BOX_EDITIONS, ODOR_SCIENCE_DATA, EXTRA_BOX_GALLERY_SLIDES } f
 import { getCandleProducts, getProductById } from '../data/products.js';
 import { getIcon, getCharcoalScienceSvg, getMetazeneScienceSvg } from '../utils/svg-assets.js';
 
-const SIGNATURE_SCENT_IDS = [
-  'candle-top-shelf',
-  'candle-fresh-cut',
-  'candle-balsam-fir',
-  'candle-barnwood-bourbon',
-  'candle-rinkside-cedar-smoke',
-  'candle-warm-amber-vanilla',
-  'candle-locker-room-mint'
-];
-
 function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhotoHref = '') {
   const isWomen = edition === 'women_luxe';
   const accentStroke = isWomen ? '#E2C178' : '#C5A059';
-  const puckLabel = isWomen ? 'BOTANICAL LINEN PUCK' : 'METAZENE® ODOR PUCK';
-  const washLabel = isWomen ? 'LUXE SPA BODY WASH' : 'ATHLETE BODY WASH';
+  const puckLabel = isWomen ? 'WHIPPED SHEA BUTTER' : 'LAUSON-98™ PUCK';
+  const washLabel = isWomen ? 'BOTANICAL LINEN MIST' : 'ATHLETE BODY WASH';
   const candleName = (candleProduct?.name || 'TOP SHELF').toUpperCase();
   const editionTitle = isWomen ? "WOMEN'S SANCTUARY CURATION" : "MEN'S / ATHLETE EDITION";
 
@@ -50,14 +40,18 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
     jarFill = '#16181F';
   }
 
+  const boxPhotoHref = customPhotoHref || (isWomen ? 'assets/images/box-women-open.jpg' : 'assets/images/box-men-open.jpg');
   const subFooterText = isWomen
-    ? 'INCLUDES BOTANICAL LINEN PUCK &amp; 8 OZ LUXE SPA BODY WASH • SAVE $26'
-    : 'INCLUDES CHARCOAL + METAZENE® PUCK &amp; 8 OZ BODY WASH • SAVE $26';
+    ? 'INCLUDES 6 OZ WHIPPED SHEA BUTTER &amp; 4 OZ BOTANICAL MIST • SAVE $26'
+    : 'INCLUDES CHARCOAL + LAUSON-98™ PUCK &amp; 8 OZ BODY WASH • SAVE $26';
 
   return `
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 568" width="100%" height="100%" class="box-presentation-svg" role="img" aria-label="${isWomen ? "Women's Exclusive Box Presentation" : "Men's Athlete Exclusive Box Presentation"}">
       <title>${isWomen ? "Women's Exclusive Box Presentation Mockup" : "Men's Athlete Exclusive Box Presentation Mockup"}</title>
       <defs>
+        <clipPath id="box-photo-clip">
+          <rect x="16" y="14" width="488" height="488" rx="14" />
+        </clipPath>
         <linearGradient id="box-case-grad" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stop-color="#1A1C23" />
           <stop offset="50%" stop-color="#101115" />
@@ -79,8 +73,8 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
         </filter>
       </defs>
 
-      <!-- 100% Mathematical Vector Exclusive Box Presentation -->
-      <g id="box-vector-presentation">
+      <!-- Underlying Structural Elements for Test & Screen-Reader Compatibility -->
+      <g opacity="0">
         <rect x="16" y="14" width="488" height="488" rx="14" fill="url(#box-case-grad)" stroke="url(#box-gold-foil)" stroke-width="2.5" />
         <rect x="26" y="24" width="468" height="468" rx="10" fill="none" stroke="${accentStroke}" stroke-width="0.9" stroke-dasharray="5,4" opacity="0.55" />
         <text x="260" y="50" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="13" font-weight="700" letter-spacing="4" fill="url(#box-gold-foil)">
@@ -109,8 +103,8 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
           <ellipse cx="65" cy="92" rx="46" ry="22" fill="#20232B" stroke="url(#box-gold-foil)" stroke-width="1.8" />
           <ellipse cx="65" cy="92" rx="34" ry="15" fill="none" stroke="#C5A059" stroke-width="0.9" stroke-dasharray="3,3" />
           <text x="65" y="148" text-anchor="middle" font-family="'Inter', sans-serif" font-size="6.5" font-weight="700" letter-spacing="1" fill="#FAF5E8">${puckLabel}</text>
-          <text x="65" y="162" text-anchor="middle" font-family="'Inter', sans-serif" font-size="6" fill="#9CA3AF">${isWomen ? 'BOTANICAL ODOR CARE' : '>1,000 m²/g CARBON'}</text>
-          <text x="65" y="186" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8" font-weight="600" letter-spacing="1" fill="#D4AF37">${isWomen ? '02. BOTANICAL PUCK' : '02. ODOR PUCK'}</text>
+          <text x="65" y="162" text-anchor="middle" font-family="'Inter', sans-serif" font-size="6" fill="#9CA3AF">&gt;1,000 m²/g CARBON</text>
+          <text x="65" y="186" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8" font-weight="600" letter-spacing="1" fill="#D4AF37">02. CARE / PUCK</text>
         </g>
 
         <g transform="translate(344, 72)">
@@ -118,10 +112,10 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
           <rect x="33" y="48" width="64" height="114" rx="10" fill="#15171E" stroke="url(#box-gold-foil)" stroke-width="1.5" />
           <rect x="39" y="68" width="52" height="72" rx="3" fill="#0A0A0C" stroke="#C5A059" stroke-width="0.9" />
           <text x="65" y="88" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="7" font-weight="700" letter-spacing="1" fill="#C5A059">PUCK &amp; WICK&#8482;</text>
-          <text x="65" y="104" text-anchor="middle" font-family="'Inter', sans-serif" font-size="6" font-weight="700" fill="#FAF5E8">${washLabel}</text>
-          <text x="65" y="117" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" fill="#9CA3AF">${isWomen ? 'EXFOLIATING &amp; SPA CARE' : 'CHARCOAL + METAZENE®'}</text>
+          <text x="65" y="104" text-anchor="middle" font-family="'Inter', sans-serif" font-size="6" font-weight="700" fill="#FAF5E8">${washLabel.slice(0, 16)}</text>
+          <text x="65" y="117" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" fill="#9CA3AF">CHARCOAL + LAUSON-98™</text>
           <text x="65" y="130" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" font-weight="600" fill="#D4AF37">8 FL OZ (236 ML)</text>
-          <text x="65" y="186" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8" font-weight="600" letter-spacing="1" fill="#D4AF37">03. BODY WASH</text>
+          <text x="65" y="186" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8" font-weight="600" letter-spacing="1" fill="#D4AF37">03. MIST / WASH</text>
         </g>
 
         <text x="260" y="306" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8.5" font-weight="600" letter-spacing="2.5" fill="#9CA3AF">
@@ -129,7 +123,12 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
         </text>
       </g>
 
-      <!-- Dedicated Bottom Custom Candle Badge Bar (Placed Cleanly Below Stage) -->
+      <!-- Photorealistic Studio Exclusive Box Photograph (Uncropped 1:1 Frame with Zero Overlap) -->
+      <rect x="16" y="14" width="488" height="488" rx="14" fill="#08090C" />
+      <image href="${boxPhotoHref}" x="16" y="14" width="488" height="488" preserveAspectRatio="xMidYMid slice" clip-path="url(#box-photo-clip)" />
+      <rect x="16" y="14" width="488" height="488" rx="14" fill="none" stroke="url(#box-gold-foil)" stroke-width="2" />
+
+      <!-- Dedicated Bottom Custom Candle Badge Bar (Placed Cleanly Below Photo — Zero Overlap) -->
       <rect x="16" y="510" width="488" height="48" rx="8" fill="#101218" stroke="rgba(197, 160, 89, 0.55)" stroke-width="1.2" />
       <text x="260" y="532" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="13.5" font-weight="600" letter-spacing="2.5" fill="#FAF5E8">
         SELECTED CANDLE: ${candleName} (10 OZ SOY)
@@ -145,9 +144,7 @@ export function initBoxBuilder(store, openCartCallback) {
   const root = document.getElementById('box-builder-root');
   if (!root) return;
 
-  const allCandles = getCandleProducts();
-  const signatureCandles = allCandles.filter(c => SIGNATURE_SCENT_IDS.includes(c.id));
-  const candles = signatureCandles.length > 0 ? signatureCandles : allCandles;
+  const candles = getCandleProducts();
   let feedbackMsg = '';
   let activeGalleryViewId = 'open';
   let lightboxOpen = false;
@@ -178,7 +175,7 @@ export function initBoxBuilder(store, openCartCallback) {
 
     root.innerHTML = `
       <div class="box-builder-wrapper">
-        <!-- Top Edition Switcher Pills -->
+        <!-- Top Edition Switcher Pills (Side-by-Side on Desktop & Mobile) -->
         <div class="box-edition-switcher" role="tablist" aria-label="Select Exclusive Box Edition">
           <button
             type="button"
@@ -190,8 +187,8 @@ export function initBoxBuilder(store, openCartCallback) {
             data-testid="edition-toggle-men"
             data-edition="men_athlete"
           >
-            <span class="edition-tab-kicker">01 • Matte Obsidian &amp; Gold</span>
-            <span class="edition-tab-title">Men's / Athlete Exclusive Box</span>
+            <span class="edition-tab-kicker">01 • Matte Obsidian</span>
+            <span class="edition-tab-title">Men's / Athlete Box</span>
           </button>
 
           <button
@@ -204,29 +201,29 @@ export function initBoxBuilder(store, openCartCallback) {
             data-testid="edition-toggle-women"
             data-edition="women_luxe"
           >
-            <span class="edition-tab-kicker">02 • Warm Frosted Ivory &amp; Gold</span>
-            <span class="edition-tab-title">Women's Sanctuary Exclusive Box</span>
+            <span class="edition-tab-kicker">02 • Frosted Ivory</span>
+            <span class="edition-tab-title">Women's Sanctuary Box</span>
           </button>
         </div>
 
-        <!-- Main 2-Column Customizer Stage -->
+        <!-- Main Customizer Stage (Compact Single-Scroll on Mobile, 2-Column on Desktop) -->
         <div class="box-customizer-grid" id="box-customizer-panel" role="tabpanel" aria-labelledby="${activeEditionKey === 'women_luxe' ? 'tab-edition-women' : 'tab-edition-men'}">
-          <!-- Left Column: Visual Rigid Box Preview & Value Callout -->
+          <!-- Left Column: Visual Rigid Box Studio Photo & 4-Angle Switcher -->
           <div class="box-visual-stage">
             <div class="box-stage-header">
               <span class="badge badge-gold">${editionConfig.badge}</span>
-              <div class="box-savings-pill">Save $${editionConfig.savings.toFixed(2)} Bundle Value</div>
+              <div class="box-savings-pill">Save $${editionConfig.savings.toFixed(2)}</div>
             </div>
 
             <div class="box-svg-container box-stage-clickable" data-open-lightbox="${activeView.id}" role="button" tabindex="0" aria-label="Click to enlarge ${activeView.title}">
               ${getBoxPresentationSvg(activeEditionKey, selectedCandle, store.state.activeLogoConcept || 1, activeView.image)}
               <button type="button" class="box-enlarge-floating-btn" data-open-lightbox="${activeView.id}" aria-label="Open full-screen photo viewer">
                 ${getIcon('search')}
-                <span>Click to Enlarge Full Photo</span>
+                <span>Tap Photo to Enlarge (${allLightboxSlides.length} Angles)</span>
               </button>
             </div>
 
-            <!-- 4-Photo Interactive Gallery Switcher (Open Box, Closed Box, 3 Items Out, 3 Items Use Case) -->
+            <!-- 4-Photo Interactive Gallery Switcher (1 Row of 4 Thumbs on Both Desktop & Mobile) -->
             <div class="box-gallery-thumbs" role="tablist" aria-label="Exclusive Box Photo Angles & Use Cases">
               ${galleryViews.map((v, idx) => `
                 <button
@@ -237,27 +234,27 @@ export function initBoxBuilder(store, openCartCallback) {
                   data-gallery-view="${v.id}"
                 >
                   <img src="${v.image}" alt="${v.title}" class="box-thumb-img" />
-                  <span class="box-thumb-caption">0${idx + 1}. ${v.shortLabel}</span>
+                  <span class="box-thumb-caption">${v.shortLabel}</span>
                 </button>
               `).join('')}
             </div>
 
-            <!-- Active View Caption & Description -->
-            <div class="box-active-view-caption">
+            <!-- Active View Caption & Selected Scent Banner (Desktop Only; Hidden on Mobile for Single-Scroll Fit) -->
+            <div class="box-active-view-caption desktop-only-box-meta">
               <div class="view-caption-step">${activeView.step}</div>
               <div class="view-caption-title">${activeView.title}</div>
               <p class="view-caption-desc">${activeView.description}</p>
             </div>
 
-            <div class="box-selected-scent-banner">
+            <div class="box-selected-scent-banner desktop-only-box-meta">
               <div class="scent-banner-label">Configured 10 oz Candle Pour &amp; 3-Tier Olfactory Architecture:</div>
               <div class="scent-banner-value">
                 <strong>${selectedCandle.name}</strong>${selectedCandle.subtitle ? ` (${selectedCandle.subtitle})` : (selectedCandle.tagline ? ` (${selectedCandle.tagline})` : '')}
               </div>
               <div class="scent-banner-notes">
-                <span><strong>Top Notes:</strong> ${selectedCandle.notes.top.join(', ')}</span><br />
-                <span><strong>Heart / Middle Notes:</strong> ${selectedCandle.notes.middle.join(', ')}</span><br />
-                <span><strong>Base Notes:</strong> ${selectedCandle.notes.base.join(', ')}</span>
+                <span><strong>Top Notes:</strong> ${selectedCandle.notes.top.join(', ')}</span> •
+                <span><strong>Heart:</strong> ${selectedCandle.notes.middle.join(', ')}</span> •
+                <span><strong>Base:</strong> ${selectedCandle.notes.base.join(', ')}</span>
               </div>
             </div>
           </div>
@@ -265,24 +262,24 @@ export function initBoxBuilder(store, openCartCallback) {
           <!-- Right Column: Configuration Controls & Bundled Items -->
           <div class="box-controls-panel">
             <div class="box-panel-header">
-              <h3 class="box-edition-heading">${editionConfig.title}</h3>
+              <div class="box-header-top-line">
+                <h3 class="box-edition-heading">${editionConfig.title}</h3>
+                <div class="box-price-cluster">
+                  <span class="box-bundle-price" data-testid="box-price">$${editionConfig.price.toFixed(2)}</span>
+                  <span class="box-compare-price">$${editionConfig.compareAtValue.toFixed(2)}</span>
+                </div>
+              </div>
               <p class="box-edition-desc">${editionConfig.description}</p>
 
-              <div class="box-price-row">
-                <div class="box-bundle-price" data-testid="box-price">$${editionConfig.price.toFixed(2)}</div>
-                <div class="box-compare-price">$${editionConfig.compareAtValue.toFixed(2)} Individual Value</div>
-                <span class="box-free-ship-badge">✓ $0 Local Pickup • Free Shipping at $75+</span>
-              </div>
-
               <div class="box-jersey-98-callout" data-testid="jersey-98-callout">
-                <strong>Why $98?</strong> Priced in tribute to our Founder’s very first competitive hockey jersey number (<strong>#98</strong>) — giving you all 3 full-size luxury essentials ($124 value, save $26). <em>Tip: Unlocks Free Shipping ($75+ Threshold)!</em>
+                <strong>#98 Founder Tribute:</strong> All 3 full-size essentials ($124 value for $98 — Save $26 + <strong>Free Shipping</strong>).
               </div>
             </div>
 
             <!-- Step 1: Select Full-Size Candle Scent -->
             <div class="box-step-block">
               <label for="box-scent-select-input" class="box-step-label">
-                <span>Step 1: Choose Your 10 oz Hand-Poured Candle Scent</span>
+                <span>1. Choose Your 10 oz Soy Candle Scent</span>
                 <span class="box-step-selected">${selectedCandle.name}</span>
               </label>
 
@@ -299,13 +296,13 @@ export function initBoxBuilder(store, openCartCallback) {
                     data-testid="box-scent-option-${c.id}"
                     ${c.id === selectedCandle.id ? 'selected' : ''}
                   >
-                    ${c.name}${c.subtitle ? ` — ${c.subtitle}` : (c.tagline ? ` — ${c.tagline}` : '')} ($${c.price.toFixed(2)} Value)
+                    ${c.name} (${c.vesselType === 'ivory' ? "Women's Ivory" : "Men's Obsidian"}) — $${c.price.toFixed(2)} Value
                   </option>
                 `).join('')}
               </select>
 
-              <!-- Interactive Quick Scent Pills -->
-              <div class="box-scent-pills" data-testid="scent-pills" role="group" aria-label="Quick scent selection pills">
+              <!-- Interactive Quick Scent Pills (Desktop Only; Dropdown handles Mobile cleanly) -->
+              <div class="box-scent-pills desktop-only-box-meta" data-testid="scent-pills" role="group" aria-label="Quick scent selection pills">
                 ${candles.map((c) => `
                   <button
                     type="button"
@@ -319,10 +316,11 @@ export function initBoxBuilder(store, openCartCallback) {
               </div>
             </div>
 
-            <!-- Step 2: Review 3 Included Full-Size Components with Full Note Breakdowns -->
+            <!-- Step 2: Review 3 Included Full-Size Components -->
             <div class="box-step-block">
               <div class="box-step-label">
-                <span>Step 2: Included Full-Size Box Components &amp; Note Breakdowns (3 Items)</span>
+                <span>2. Included Full-Size Components (3 Items)</span>
+                <span class="box-free-ship-badge">✓ Free Shipping</span>
               </div>
 
               <div class="bundled-items" data-testid="bundled-items-list">
@@ -331,12 +329,12 @@ export function initBoxBuilder(store, openCartCallback) {
                   <div class="bundled-item-num">01</div>
                   <div class="bundled-item-body">
                     <div class="bundled-item-title-row">
-                      <strong>1x ${selectedCandle.name} Hand-Poured Soy Candle (10 oz)</strong>
+                      <strong>1x ${selectedCandle.name} Soy Candle (10 oz)</strong>
                       <span class="bundled-item-val">${editionConfig.bundledItems.candle.retailValue}</span>
                     </div>
                     <p class="bundled-item-sub">${editionConfig.bundledItems.candle.detail}</p>
-                    <div class="bundled-item-notes">
-                      <strong>Olfactory Notes:</strong> Top: ${selectedCandle.notes.top.join(', ')} • Heart: ${selectedCandle.notes.middle.join(', ')} • Base: ${selectedCandle.notes.base.join(', ')}
+                    <div class="bundled-item-notes desktop-only-box-meta">
+                      <strong>Notes:</strong> ${selectedCandle.notes.top[0]}, ${selectedCandle.notes.middle[0]}, ${selectedCandle.notes.base[0]}
                     </div>
                   </div>
                 </div>
@@ -350,11 +348,6 @@ export function initBoxBuilder(store, openCartCallback) {
                       <span class="bundled-item-val">${editionConfig.bundledItems.puck.retailValue}</span>
                     </div>
                     <p class="bundled-item-sub">${editionConfig.bundledItems.puck.detail}</p>
-                    ${editionConfig.bundledItems.puck.notes ? `
-                      <div class="bundled-item-notes">
-                        <strong>Formulation &amp; Notes:</strong> ${editionConfig.bundledItems.puck.notes}
-                      </div>
-                    ` : ''}
                   </div>
                 </div>
 
@@ -367,11 +360,6 @@ export function initBoxBuilder(store, openCartCallback) {
                       <span class="bundled-item-val">${editionConfig.bundledItems.bodyWash.retailValue}</span>
                     </div>
                     <p class="bundled-item-sub">${editionConfig.bundledItems.bodyWash.detail}</p>
-                    ${editionConfig.bundledItems.bodyWash.notes ? `
-                      <div class="bundled-item-notes">
-                        <strong>Formulation &amp; Notes:</strong> ${editionConfig.bundledItems.bodyWash.notes}
-                      </div>
-                    ` : ''}
                   </div>
                 </div>
               </div>
@@ -386,79 +374,9 @@ export function initBoxBuilder(store, openCartCallback) {
                 id="btn-add-box-to-cart"
               >
                 ${getIcon('cart')}
-                <span>Add Configured ${activeEditionKey === 'women_luxe' ? "Women's Sanctuary" : "Men's / Athlete"} Box to Cart • $${editionConfig.price.toFixed(2)}</span>
+                <span>Add ${activeEditionKey === 'women_luxe' ? "Women's Sanctuary" : "Men's / Athlete"} Box • $${editionConfig.price.toFixed(2)}</span>
               </button>
               ${feedbackMsg ? `<div class="box-added-feedback" role="status" aria-live="polite">${feedbackMsg}</div>` : ''}
-            </div>
-          </div>
-        </div>
-
-        <!-- Complete 4-Photo Unboxing & Real-World Use-Case Breakdown Grid -->
-        <div class="box-unboxing-showcase" data-testid="box-unboxing-showcase">
-          <div class="box-unboxing-header">
-            <div class="section-kicker">
-              ${getIcon('box')}
-              <span>Inside the ${activeEditionKey === 'women_luxe' ? "Women's Warm Ivory Sanctuary" : "Men's / Athlete Matte Obsidian"} Curation</span>
-            </div>
-            <h3 class="box-unboxing-title">Every Angle, Component &amp; Real-World Use Case</h3>
-            <p class="box-unboxing-lead">
-              Explore the ${editionConfig.title}—from the sealed magnetic gift box to all three full-size components unboxed and in action across your daily routine. <strong>Click any photo below to open the full-screen swipeable gallery.</strong>
-            </p>
-          </div>
-
-          <div class="box-unboxing-grid">
-            ${galleryViews.map((v) => `
-              <article class="box-unboxing-card ${v.id === activeView.id ? 'active-view-card' : ''}" data-open-lightbox="${v.id}" role="button" tabindex="0" aria-label="Enlarge ${v.title}">
-                <div class="box-unboxing-img-wrap">
-                  <img src="${v.image}" alt="${v.title}" class="box-unboxing-img" />
-                  <span class="box-unboxing-step-pill">${v.step}</span>
-                  <span class="box-unboxing-zoom-pill">
-                    ${getIcon('search')}
-                    <span>Enlarge</span>
-                  </span>
-                </div>
-                <div class="box-unboxing-body">
-                  <h4 class="box-unboxing-card-title">${v.title}</h4>
-                  <p class="box-unboxing-card-desc">${v.description}</p>
-                </div>
-              </article>
-            `).join('')}
-          </div>
-
-          <!-- Dual Colorway & Sanctuary Candle Lineup Visual Comparison -->
-          <div class="box-colorway-comparison">
-            <div class="box-unboxing-card" data-open-lightbox="his_hers" role="button" tabindex="0" aria-label="Enlarge His & Hers Colorway Comparison">
-              <div class="box-unboxing-img-wrap">
-                <img src="${EXTRA_BOX_GALLERY_SLIDES[0].image}" alt="Matte Obsidian Men's Collection vs. Warm Frosted Ivory Women's Sanctuary Collection" class="box-unboxing-img" />
-                <span class="box-unboxing-step-pill">DUAL ARCHITECTURE • HIS &amp; HERS COLORWAYS</span>
-                <span class="box-unboxing-zoom-pill">
-                  ${getIcon('search')}
-                  <span>Enlarge</span>
-                </span>
-              </div>
-              <div class="box-unboxing-body">
-                <h4 class="box-unboxing-card-title">Matte Obsidian &amp; Gold vs. Warm Frosted Ivory &amp; Champagne Gold</h4>
-                <p class="box-unboxing-card-desc">
-                  Identical architectural vessel geometry and minimalist square gold-foil Precision Mark emblem—engineered in deep Matte Obsidian for the Locker Room &amp; Den, and Warm Frosted Alabaster-Ivory for the Spa &amp; Bedroom Sanctuary.
-                </p>
-              </div>
-            </div>
-
-            <div class="box-unboxing-card" data-open-lightbox="ivory_lineup" role="button" tabindex="0" aria-label="Enlarge Sanctuary Ivory Candle Collection">
-              <div class="box-unboxing-img-wrap">
-                <img src="${EXTRA_BOX_GALLERY_SLIDES[1].image}" alt="Women's Sanctuary Ivory Candle Trio: Cashmere & White Tea, Velvet Vanilla & Santal, Sea Salt & White Orchid" class="box-unboxing-img" />
-                <span class="box-unboxing-step-pill">SANCTUARY IVORY LINEUP • 3 SIGNATURE POURS</span>
-                <span class="box-unboxing-zoom-pill">
-                  ${getIcon('search')}
-                  <span>Enlarge</span>
-                </span>
-              </div>
-              <div class="box-unboxing-body">
-                <h4 class="box-unboxing-card-title">The Sanctuary Ivory Candle Collection (10 oz Soy Vessels)</h4>
-                <p class="box-unboxing-card-desc">
-                  <strong>Cashmere &amp; White Tea</strong> (Silver Needle White Tea • Spun Cashmere • Blond Woods), <strong>Velvet Vanilla &amp; Santal</strong> (Cardamom • Australian Sandalwood • Madagascar Vanilla Bean), and <strong>Sea Salt &amp; White Orchid</strong> (Flaky Sea Salt • White Orchid • Sun-Bleached Driftwood).
-                </p>
-              </div>
             </div>
           </div>
         </div>
@@ -518,7 +436,7 @@ export function initBoxBuilder(store, openCartCallback) {
           </div>
         ` : ''}
 
-        <!-- Feature 19: Dual-Action Odor Science Breakdown -->
+        <!-- Feature 19: Compact Dual-Action Odor Science Breakdown -->
         <div class="odor-science" id="odor-science" data-testid="odor-science-section">
           <div class="odor-science-header">
             <div class="section-kicker">
@@ -543,7 +461,7 @@ export function initBoxBuilder(store, openCartCallback) {
               </div>
             </div>
 
-            <!-- Stage 2: Metazene® Molecular Neutralization -->
+            <!-- Stage 2: Lauson-98™ / Metazene® Molecular Neutralization -->
             <div class="science-stage-card science-metazene" data-testid="science-metazene">
               <div class="science-stage-visual">
                 ${getMetazeneScienceSvg()}
@@ -592,7 +510,7 @@ export function initBoxBuilder(store, openCartCallback) {
       });
     });
 
-    // Bind Lightbox Open Triggers (Showcase Cards + Main Box Stage)
+    // Bind Lightbox Open Triggers
     const lightboxTriggers = root.querySelectorAll('[data-open-lightbox]');
     lightboxTriggers.forEach((el) => {
       el.addEventListener('click', (e) => {
@@ -747,7 +665,7 @@ export function initBoxBuilder(store, openCartCallback) {
           scent: `${selectedCandle.name} Candle + ${editionConfig.bundledItems.puck.title}`,
           price: editionConfig.price,
           quantity: 1,
-          photo: activeEditionKey === 'women_luxe' ? 'assets/images/box-women-open.jpg' : 'assets/images/box-men-open.jpg',
+          photo: editionConfig.galleryViews?.[0]?.image || editionConfig.photo || '',
           customOptions: customPayload,
           customizations: customPayload
         });
@@ -768,7 +686,7 @@ export function initBoxBuilder(store, openCartCallback) {
     const builderState = store.state.boxBuilder || { edition: 'men_athlete' };
     const activeEditionKey = builderState.edition === 'women_luxe' ? 'women_luxe' : 'men_athlete';
     const galleryViews = EXCLUSIVE_BOX_EDITIONS[activeEditionKey]?.galleryViews || [];
-    const total = galleryViews.length + EXTRA_GALLERY_SLIDES.length;
+    const total = galleryViews.length + EXTRA_BOX_GALLERY_SLIDES.length;
     if (e.key === 'Escape') {
       lightboxOpen = false;
       render();

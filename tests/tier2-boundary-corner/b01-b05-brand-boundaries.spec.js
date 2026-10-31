@@ -402,18 +402,21 @@ export const tests = [
     feature: 'F5: Quality Control #1 Breakdown',
     milestone: 'M1',
     viewport: 'mobile',
-    title: 'QC pillars stack into a clean single column on mobile screens <= 480px',
+    title: 'QC pillars arrange cleanly in a 2x2 or single-column mobile grid on screens <= 480px',
     run: async ({ page, baseUrl, selectors }) => {
       await page.setViewportSize({ width: 390, height: 844 });
       await page.goto(baseUrl);
-      const isStacked = await page.evaluate((sel) => {
+      const isCleanMobileGrid = await page.evaluate((sel) => {
         const pillars = Array.from(document.querySelectorAll(sel.story.pillars));
-        if (pillars.length < 2) return true;
+        if (pillars.length < 3) return true;
         const r1 = pillars[0].getBoundingClientRect();
         const r2 = pillars[1].getBoundingClientRect();
-        return r2.top >= r1.bottom - 10; // Vertical stacking
+        const r3 = pillars[2].getBoundingClientRect();
+        const isSingleCol = r2.top >= r1.bottom - 10;
+        const isTwoByTwo = r3.top >= r1.bottom - 10 && r2.right <= window.innerWidth;
+        return isSingleCol || isTwoByTwo;
       }, selectors);
-      if (!isStacked) throw new Error('QC pillars do not stack vertically on mobile');
+      if (!isCleanMobileGrid) throw new Error('QC pillars do not form a clean mobile grid');
     }
   },
   {

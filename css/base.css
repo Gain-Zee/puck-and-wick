@@ -220,6 +220,9 @@ input, select, textarea {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+  box-sizing: border-box;
   gap: var(--space-3);
   padding: 0.875rem 1.75rem;
   font-family: var(--font-sans);
@@ -297,8 +300,40 @@ input, select, textarea {
 }
 
 .btn-sm {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
   padding: 0.5rem 1rem;
   font-size: var(--text-kicker);
+}
+
+/* Enforce WCAG 2.5.5 >= 44x44px for dynamic open-state controls */
+.mobile-nav-footer a.btn,
+.empty-shop-btn,
+#btn-empty-shop,
+#btn-cancel-alina,
+#btn-save-alina-config,
+.print-receipt-btn,
+.continue-shopping-btn,
+#btn-print-receipt,
+#btn-receipt-continue,
+.cart-close-btn,
+.box-enlarge-floating-btn,
+.box-scent-pill {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.footer-input {
+  min-height: 44px;
+  box-sizing: border-box;
 }
 
 .btn-lg {
@@ -400,7 +435,6 @@ input, select, textarea {
   padding: var(--space-3) var(--space-6);
   border-radius: var(--radius-sm);
   z-index: 9999;
-  transition: top var(--transition-fast);
 }
 
 .skip-link:focus {

@@ -18,7 +18,7 @@ const initialStudioEnabled = (typeof window !== 'undefined' && window.BRAND_STUD
   ? window.BRAND_STUDIO_CONFIG.enabled
   : (typeof window !== 'undefined' && window.APP_CONFIG && typeof window.APP_CONFIG.showBrandStudio === 'boolean')
     ? window.APP_CONFIG.showBrandStudio
-    : (urlParams && urlParams.get('studio') === '1');
+    : Boolean(urlParams && urlParams.get('studio') === '1');
 
 window.BRAND_STUDIO_CONFIG = Object.assign({ enabled: initialStudioEnabled }, window.BRAND_STUDIO_CONFIG || {});
 window.APP_CONFIG = Object.assign({ showBrandStudio: initialStudioEnabled }, window.APP_CONFIG || {});

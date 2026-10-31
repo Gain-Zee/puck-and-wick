@@ -1,7 +1,7 @@
 /**
  * Puck & Wick Product Catalog & Scent Filters Module
- * Renders filter tabs, responsive product grid, quick-view modal triggers,
- * and direct quick-add cart triggers.
+ * Renders filter tabs, responsive product grid (3-col Desktop, 2-col Mobile),
+ * quick-view modal triggers, and direct quick-add cart triggers.
  */
 
 import { PRODUCTS, getProductsByCategory, getCandleVesselSvg } from '../data/products.js';
@@ -18,31 +18,33 @@ export function initCatalog(store, openCartDrawer) {
 
     root.innerHTML = `
       <div class="catalog-container">
-        <!-- Scent Family Filter Tabs Bar -->
-        <div class="catalog-filters-bar" role="tablist" aria-label="Filter candles by scent family">
+        <!-- Focused Collection Filter Tabs Bar -->
+        <div class="catalog-filters-bar" role="tablist" aria-label="Filter items by collection">
           <button type="button" class="filter-tab filter-all ${currentCategory === 'all' ? 'active' : ''}" data-testid="filter-all" data-filter="all" role="tab" aria-selected="${currentCategory === 'all'}">
-            <span>All Pours</span>
+            <span>All Items</span>
             <span class="filter-count">(${PRODUCTS.length})</span>
           </button>
 
-          <button type="button" class="filter-tab filter-signature ${currentCategory === 'signature' ? 'active' : ''}" data-testid="filter-signature" data-filter="signature" role="tab" aria-selected="${currentCategory === 'signature'}">
-            <span>Signature Line</span>
-            <span class="filter-count">(${PRODUCTS.filter(p => p.category?.includes('signature')).length})</span>
+          <button type="button" class="filter-tab filter-mens ${currentCategory === 'mens' ? 'active' : ''}" data-testid="filter-mens" data-filter="mens" role="tab" aria-selected="${currentCategory === 'mens'}">
+            <span class="tab-swatch swatch-mens" aria-hidden="true"></span>
+            <span>Men's Line</span>
+            <span class="filter-count">(${PRODUCTS.filter(p => p.genderLine === 'mens').length})</span>
           </button>
 
-          <button type="button" class="filter-tab filter-fresh-clean ${currentCategory === 'fresh_clean' ? 'active' : ''}" data-testid="filter-fresh-clean" data-filter="fresh_clean" role="tab" aria-selected="${currentCategory === 'fresh_clean'}">
-            <span>Fresh &amp; Clean</span>
-            <span class="filter-count">(${PRODUCTS.filter(p => p.category?.includes('fresh_clean')).length})</span>
+          <button type="button" class="filter-tab filter-womens ${currentCategory === 'womens' ? 'active' : ''}" data-testid="filter-womens" data-filter="womens" role="tab" aria-selected="${currentCategory === 'womens'}">
+            <span class="tab-swatch swatch-womens" aria-hidden="true"></span>
+            <span>Women's Line</span>
+            <span class="filter-count">(${PRODUCTS.filter(p => p.genderLine === 'womens').length})</span>
           </button>
 
-          <button type="button" class="filter-tab filter-woods-rustic ${currentCategory === 'woods_rustic' ? 'active' : ''}" data-testid="filter-woods-rustic" data-filter="woods_rustic" role="tab" aria-selected="${currentCategory === 'woods_rustic'}">
-            <span>Woods &amp; Rustic</span>
-            <span class="filter-count">(${PRODUCTS.filter(p => p.category?.includes('woods_rustic')).length})</span>
+          <button type="button" class="filter-tab filter-candles ${currentCategory === 'candles' ? 'active' : ''}" data-testid="filter-candles" data-filter="candles" role="tab" aria-selected="${currentCategory === 'candles'}">
+            <span>Soy Candles</span>
+            <span class="filter-count">(${PRODUCTS.filter(p => p.productType !== 'odor_care').length})</span>
           </button>
 
-          <button type="button" class="filter-tab filter-seasonal ${currentCategory === 'seasonal' ? 'active' : ''}" data-testid="filter-seasonal" data-filter="seasonal" role="tab" aria-selected="${currentCategory === 'seasonal'}">
-            <span>Seasonal Releases</span>
-            <span class="filter-count">(${PRODUCTS.filter(p => p.category?.includes('seasonal')).length})</span>
+          <button type="button" class="filter-tab filter-odor-care ${currentCategory === 'odor_care' ? 'active' : ''}" data-testid="filter-odor-care" data-filter="odor_care" role="tab" aria-selected="${currentCategory === 'odor_care'}">
+            <span>Lauson-98&trade; Odor Killer &amp; Care</span>
+            <span class="filter-count">(${PRODUCTS.filter(p => p.productType === 'odor_care').length})</span>
           </button>
 
           <button type="button" class="filter-tab filter-exclusive-boxes filter-boxes" data-testid="filter-exclusive-boxes" data-filter="exclusive_boxes" role="tab" aria-selected="false">
@@ -51,7 +53,7 @@ export function initCatalog(store, openCartDrawer) {
           </button>
         </div>
 
-        <!-- Product Cards Grid -->
+        <!-- Product Cards Grid (3-Col Desktop, 2-Col Mobile) -->
         ${products.length > 0 ? `
           <div class="product-cards-grid" id="product-grid" data-testid="product-grid">
             ${products.map(p => `
@@ -64,15 +66,15 @@ export function initCatalog(store, openCartDrawer) {
                   
                   ${p.seasonal ? `
                     <div class="product-badge badge-seasonal">
-                      <span>Blue Hydrangea Collab</span>
+                      <span>Seasonal Collab</span>
                     </div>
                   ` : p.productType === 'odor_care' ? `
                     <div class="product-badge badge-flagship">
-                      <span>${p.id.includes('butter') ? 'Sanctuary Body Care' : 'Lauson-98™ Odor Killer'}</span>
+                      <span>${p.id.includes('butter') ? 'Sanctuary Care' : 'Lauson-98™'}</span>
                     </div>
                   ` : p.featured ? `
                     <div class="product-badge badge-flagship">
-                      <span>Flagship Pour</span>
+                      <span>Flagship</span>
                     </div>
                   ` : ''}
 
@@ -92,7 +94,7 @@ export function initCatalog(store, openCartDrawer) {
                 <div class="product-card-body">
                   <div class="card-meta-line">
                     <span class="card-vessel-spec">${p.specUnitLabel || '10 oz Vessel'}</span>
-                    <span class="card-burn-time">${p.productType === 'odor_care' ? p.burnTime : `${p.burnTime} Burn Time`}</span>
+                    <span class="card-burn-time">${p.productType === 'odor_care' ? p.burnTime : `${p.burnTime}`}</span>
                   </div>
 
                   <h3 class="product-title" data-testid="product-title">
@@ -101,7 +103,7 @@ export function initCatalog(store, openCartDrawer) {
 
                   <div class="product-tagline-text">${p.tagline}</div>
 
-                  <!-- Notes Teaser Pills -->
+                  <!-- Notes Teaser Pills (Shown on Desktop, Hidden on Mobile 2-Col Grid for Compactness) -->
                   <div class="product-notes-summary">
                     <span class="notes-kicker">${p.productType === 'odor_care' ? 'Active Matrix &amp; Notes:' : 'Fragrance Notes:'}</span>
                     <div class="notes-pills-row">
@@ -120,7 +122,7 @@ export function initCatalog(store, openCartDrawer) {
 
                     <div class="card-button-group">
                       <button type="button" class="btn btn-outline btn-sm quick-view-btn" data-testid="quick-view-btn" data-product-id="${p.id}" aria-label="Quick view ${p.name}">
-                        <span>Details</span>
+                        <span>Info</span>
                       </button>
                       <button type="button" class="btn btn-gold btn-sm quick-add-btn" data-testid="quick-add-btn" data-product-id="${p.id}" aria-label="Add ${p.name} to cart">
                         ${getIcon('cart')}
@@ -136,10 +138,10 @@ export function initCatalog(store, openCartDrawer) {
           <!-- Empty Filter State Fallback -->
           <div class="catalog-empty-state" data-testid="catalog-empty">
             <div class="empty-icon">${getIcon('flame')}</div>
-            <h4 class="empty-title">No Candles Found in this Category</h4>
-            <p class="empty-text">We hand-pour small-batches year-round. Select another scent family or return to the complete catalog.</p>
+            <h4 class="empty-title">No Items Found in this Category</h4>
+            <p class="empty-text">We hand-pour small-batches year-round. Select another collection or return to the complete catalog.</p>
             <button type="button" class="btn btn-gold reset-filters-btn" id="btn-reset-catalog-filter">
-              <span>View All Pours</span>
+              <span>View All Items</span>
             </button>
           </div>
         `}
@@ -149,10 +151,9 @@ export function initCatalog(store, openCartDrawer) {
     // Attach event listeners for filter buttons
     const filterButtons = root.querySelectorAll('.filter-tab');
     filterButtons.forEach(btn => {
-      btn.addEventListener('click', (e) => {
+      btn.addEventListener('click', () => {
         const targetCategory = btn.getAttribute('data-filter');
         if (targetCategory === 'exclusive_boxes') {
-          // Direct user to Exclusive Boxes customizer section
           const boxesEl = document.getElementById('exclusive-boxes');
           if (boxesEl) {
             boxesEl.scrollIntoView({ behavior: 'smooth' });
@@ -166,7 +167,7 @@ export function initCatalog(store, openCartDrawer) {
     });
 
     // Reset filter button if present
-    const resetBtn = root.getElementById?.('btn-reset-catalog-filter') || root.querySelector('#btn-reset-catalog-filter');
+    const resetBtn = root.querySelector('#btn-reset-catalog-filter');
     if (resetBtn) {
       resetBtn.addEventListener('click', () => {
         store.dispatch('SET_CATEGORY', 'all');
@@ -185,7 +186,6 @@ export function initCatalog(store, openCartDrawer) {
         }
       });
 
-      // Accessible enter / space keypress for keyboard users
       if (el.getAttribute('role') === 'button') {
         el.addEventListener('keydown', (e) => {
           if (e.key === 'Enter' || e.key === ' ') {
@@ -204,7 +204,6 @@ export function initCatalog(store, openCartDrawer) {
     productCards.forEach(card => {
       card.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
-          // Do not intercept if user was interacting with an inner interactive control (e.g. quick-add button)
           if (e.target !== card && e.target.closest('button, a')) {
             return;
           }

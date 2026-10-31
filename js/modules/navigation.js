@@ -30,6 +30,21 @@ export function initNavigation(store) {
 
   // 2. Mobile Drawer Toggle
   if (toggleBtn && mobileNav) {
+    const getMobileFocusables = () => {
+      const navElements = Array.from(
+        mobileNav.querySelectorAll(
+          'a[href]:not([disabled]), button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        )
+      ).filter(el => {
+        const r = el.getBoundingClientRect();
+        const cs = window.getComputedStyle(el);
+        const parentHidden = el.closest('.hidden') || (el.parentElement && window.getComputedStyle(el.parentElement).display === 'none');
+        return !parentHidden && r.width > 0 && r.height > 0 && cs.display !== 'none' && cs.visibility !== 'hidden';
+      });
+      // The toggle button serves as the close button for mobile nav
+      return [toggleBtn, ...navElements];
+    };
+
     const toggleMobileMenu = (forceState) => {
       const isOpen = forceState !== undefined ? forceState : !mobileNav.classList.contains('open');
       toggleBtn.classList.toggle('active', isOpen);
@@ -40,12 +55,39 @@ export function initNavigation(store) {
 
     toggleBtn.addEventListener('click', () => toggleMobileMenu());
 
-    // Close mobile menu on Escape key
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && mobileNav.classList.contains('open')) {
+    // Keyboard accessibility: Escape to dismiss & Tab focus trapping within mobile drawer
+    const handleMobileNavKeyDown = (e) => {
+      if (!mobileNav.classList.contains('open')) return;
+
+      if (e.key === 'Escape') {
+        e.preventDefault();
         toggleMobileMenu(false);
+        toggleBtn.focus();
+        return;
       }
-    });
+
+      if (e.key === 'Tab') {
+        const focusables = getMobileFocusables();
+        if (focusables.length === 0) return;
+
+        const firstEl = focusables[0]; // toggleBtn (mobile nav close button)
+        const lastEl = focusables[focusables.length - 1]; // Instagram button
+
+        if (e.shiftKey) {
+          if (document.activeElement === firstEl || (!mobileNav.contains(document.activeElement) && document.activeElement !== toggleBtn)) {
+            e.preventDefault();
+            lastEl.focus();
+          }
+        } else {
+          if (document.activeElement === lastEl || (!mobileNav.contains(document.activeElement) && document.activeElement !== toggleBtn)) {
+            e.preventDefault();
+            firstEl.focus();
+          }
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleMobileNavKeyDown);
 
     // Close mobile menu on outside click
     document.addEventListener('click', (e) => {

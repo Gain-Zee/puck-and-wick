@@ -126,21 +126,34 @@
 /* Product Cards Grid */
 .product-cards-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
 }
 
 @media (max-width: 1080px) {
   .product-cards-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.15rem;
   }
 }
 
 @media (max-width: 640px) {
+  .catalog-filters-bar,
+  .category-filter-bar {
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.35rem;
+  }
+
+  .filter-tab {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.74rem;
+    min-height: 44px;
+  }
+
   .product-cards-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.6rem;
   }
 }
 
@@ -427,6 +440,117 @@
   box-sizing: border-box;
   padding: 0.5rem 0.95rem;
   gap: 0.35rem;
+}
+
+@media (max-width: 640px) {
+  .product-card-visual {
+    aspect-ratio: 1 / 0.85;
+  }
+
+  .product-badge {
+    top: 0.45rem;
+    left: 0.45rem;
+    font-size: 0.52rem;
+    padding: 0.18rem 0.42rem;
+    letter-spacing: 0.06em;
+  }
+
+  .product-line-pill {
+    top: 0.45rem;
+    right: 0.45rem;
+    font-size: 0.52rem;
+    padding: 0.18rem 0.42rem;
+    letter-spacing: 0.06em;
+  }
+
+  .product-card-body {
+    padding: 0.55rem 0.55rem 0.6rem;
+  }
+
+  .card-meta-line {
+    font-size: 0.55rem;
+    margin-bottom: 0.2rem;
+    letter-spacing: 0.04em;
+    gap: 0.25rem;
+  }
+
+  .card-burn-time {
+    display: none;
+  }
+
+  .product-title {
+    font-size: 0.92rem;
+    margin-bottom: 0.15rem;
+    line-height: 1.15;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .product-tagline-text {
+    font-size: 0.66rem;
+    line-height: 1.3;
+    margin-bottom: 0.4rem;
+    -webkit-line-clamp: 1;
+  }
+
+  .product-notes-summary {
+    display: none;
+  }
+
+  .product-card-footer {
+    padding-top: 0.4rem;
+    gap: 0.25rem;
+  }
+
+  .product-price {
+    font-size: 1.05rem;
+    line-height: 1;
+  }
+
+  .wax-spec-sub {
+    display: none;
+  }
+
+  .card-button-group {
+    gap: 0.25rem;
+  }
+
+  .quick-view-btn {
+    padding: 0.35rem 0.45rem;
+    font-size: 0.62rem;
+    min-width: 44px;
+    min-height: 44px;
+    letter-spacing: 0.04em;
+  }
+
+  .quick-add-btn {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.62rem;
+    min-width: 44px;
+    min-height: 44px;
+    gap: 0.2rem;
+    letter-spacing: 0.04em;
+  }
+
+  .quick-add-btn svg {
+    width: 11px;
+    height: 11px;
+  }
+}
+
+@media (max-width: 360px) {
+  .product-cards-grid {
+    gap: 0.45rem;
+  }
+
+  .product-card-body {
+    padding: 0.45rem;
+  }
+
+  .quick-view-btn {
+    display: none;
+  }
 }
 
 .product-card:focus-visible {

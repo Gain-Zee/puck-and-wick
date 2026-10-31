@@ -79,6 +79,11 @@ export function initBrandStudio(store) {
   const render = () => {
     syncStudioVisibility();
 
+    if (!isStudioEnabled()) {
+      root.innerHTML = '';
+      return;
+    }
+
     const liveSiteLogoId = Number(store.state.activeLogoConcept) || 1;
     if (!previewConceptId || previewConceptId < 1 || previewConceptId > 4) {
       previewConceptId = liveSiteLogoId;

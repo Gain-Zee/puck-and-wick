@@ -100,68 +100,335 @@
 }
 
 /* ==========================================================================
-   Mobile Viewports (<= 768px)
+   Mobile Viewports (<= 768px) — High-Density, Low-Scroll Editorial Layout
    ========================================================================== */
 @media (max-width: 768px) {
   .container,
   .container-wide {
-    padding-inline: var(--space-4);
+    padding-inline: 0.75rem;
+  }
+
+  /* Compact Section Spacing & Headers */
+  .hero-section,
+  .catalog-section,
+  .boxes-section,
+  .story-section,
+  .stockist-section {
+    padding-block: 1.25rem !important;
+    min-height: auto !important;
+  }
+
+  .section-header,
+  .compact-section-header {
+    margin-bottom: 0.85rem !important;
+  }
+
+  .section-kicker {
+    font-size: 0.58rem;
+    letter-spacing: 0.14em;
+    margin-bottom: 0.2rem;
   }
 
   .section-title {
-    font-size: 1.75rem;
+    font-size: 1.35rem;
+    margin-bottom: 0.2rem;
+    line-height: 1.15;
+  }
+
+  .section-lead {
+    font-size: 0.75rem;
+    line-height: 1.38;
+  }
+
+  /* 1. Hero Section — Fits in 1 Single Mobile Screen */
+  .hero-grid {
+    gap: 0.75rem;
+    text-align: left;
+  }
+
+  .hero-content {
+    align-items: flex-start;
+  }
+
+  .hero-kicker-badge {
+    font-size: 0.56rem;
+    letter-spacing: 0.12em;
+    padding: 0.25rem 0.6rem;
+    margin-bottom: 0.45rem;
   }
 
   .hero-title {
-    font-size: 2.25rem;
+    font-size: 1.55rem;
+    line-height: 1.15;
+    margin-bottom: 0.4rem;
   }
 
   .hero-tagline {
-    font-size: 1rem;
+    font-size: 0.78rem;
+    line-height: 1.4;
+    margin-bottom: 0.65rem;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.45rem;
+    width: 100%;
+    margin-bottom: 0.65rem;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    padding: 0.55rem 0.5rem;
+    font-size: 0.66rem;
+    letter-spacing: 0.06em;
+    gap: 0.25rem;
+    min-height: 44px;
   }
 
   .hero-trust-bar {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-3);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.3rem 0.5rem;
+    padding-top: 0.5rem;
     text-align: left;
+  }
+
+  .hero-trust-item {
+    font-size: 0.58rem;
+    letter-spacing: 0.05em;
+    gap: 0.25rem;
+  }
+
+  .hero-trust-item svg {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+  }
+
+  /* Compact Horizontal Hero Candle Card on Mobile */
+  .hero-visual {
+    min-height: auto;
+    width: 100%;
+  }
+
+  .hero-visual-card {
+    max-width: 100%;
+    aspect-ratio: auto;
+    padding: 0.6rem 0.75rem;
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    grid-template-rows: auto auto;
+    gap: 0.25rem 0.75rem;
+    align-items: center;
+    text-align: left;
+  }
+
+  .hero-visual-card::before {
+    inset: 5px;
+  }
+
+  .hero-visual-card > .badge {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: start;
+    align-self: end;
+    font-size: 0.52rem;
+    padding: 0.15rem 0.45rem;
+  }
+
+  .hero-flame-container {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    width: 96px !important;
+    height: 96px !important;
+    max-width: 96px !important;
+    margin-top: 0;
+  }
+
+  .hero-candle-base {
+    grid-column: 2;
+    grid-row: 2;
+    align-items: flex-start;
+    text-align: left;
+    margin-top: 0;
+  }
+
+  .hero-candle-puck {
+    font-size: 0.52rem;
+    padding: 0.15rem 0.45rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .hero-candle-caption {
+    font-size: 0.95rem;
+    line-height: 1.15;
+  }
+
+  .hero-candle-sub {
+    font-size: 0.58rem;
+    letter-spacing: 0.05em;
   }
 
   /* Hero atmospheric ambient glows - bounded to prevent horizontal bleed */
   .hero-ambient-glow {
-    width: min(280px, 80vw);
-    height: min(280px, 80vw);
+    width: min(260px, 75vw);
+    height: min(260px, 75vw);
     right: 0;
     max-width: 100vw;
   }
 
   .hero-ambient-cold {
-    width: min(250px, 70vw);
-    height: min(250px, 70vw);
+    width: min(220px, 65vw);
+    height: min(220px, 65vw);
     left: 0;
     max-width: 100vw;
   }
 
-  /* Story & QC */
+  /* 4. Story & 4 QC Pillars — Single-Screen Mobile Fit */
+  .story-editorial-grid {
+    gap: 0.65rem;
+    margin-bottom: 0.75rem;
+  }
+
   .story-headline {
-    font-size: 1.85rem;
+    font-size: 1.35rem;
+    margin-bottom: 0.35rem;
   }
 
   .story-lead-quote {
+    font-size: 0.82rem;
+    line-height: 1.38;
+    padding-left: 0.6rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .story-prose p {
+    font-size: 0.74rem;
+    line-height: 1.4;
+    margin-bottom: 0;
+  }
+
+  .story-heritage-card {
+    padding: 0.65rem 0.75rem;
+    gap: 0.45rem;
+  }
+
+  .story-heritage-card::before {
+    display: none;
+  }
+
+  .story-heritage-header {
+    padding-bottom: 0.35rem;
+    gap: 0.5rem;
+  }
+
+  .story-heritage-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .story-heritage-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .story-heritage-title {
+    font-size: 0.95rem;
+  }
+
+  .story-heritage-sub {
+    font-size: 0.55rem;
+    letter-spacing: 0.08em;
+  }
+
+  /* All 4 Heritage Metrics in 1 Horizontal Row */
+  .story-metrics-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.35rem;
+  }
+
+  .story-metric-item {
+    padding: 0.35rem 0.2rem;
+  }
+
+  .story-metric-number {
     font-size: 1.15rem;
+    margin-bottom: 0.1rem;
+  }
+
+  .story-metric-label {
+    font-size: 0.5rem;
+    letter-spacing: 0.06em;
+  }
+
+  .story-heritage-signature {
+    padding-top: 0.35rem;
+    font-size: 0.56rem;
+  }
+
+  /* 4 QC Pillars in a Compact 2x2 Grid */
+  .qc-breakdown {
+    padding-top: 0.25rem;
   }
 
   .qc-pillars-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.45rem;
+    margin-top: 0;
   }
 
-  /* Stockist */
+  .qc-pillar-card {
+    padding: 0.6rem;
+  }
+
+  .qc-pillar-header {
+    margin-bottom: 0.25rem;
+  }
+
+  .qc-pillar-number {
+    font-size: 0.95rem;
+  }
+
+  .qc-pillar-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .qc-pillar-icon svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .qc-pillar-title {
+    font-size: 0.85rem;
+    line-height: 1.2;
+    margin-bottom: 0.2rem;
+  }
+
+  .qc-pillar-desc {
+    font-size: 0.66rem;
+    line-height: 1.32;
+    margin-bottom: 0.35rem;
+  }
+
+  .qc-pillar-spec {
+    font-size: 0.52rem;
+    padding: 0.15rem 0.38rem;
+  }
+
+  /* 5. Stockist Section — Compact Single-Screen Card */
   .stockist-showcase {
     grid-template-columns: minmax(0, 1fr);
-    padding: var(--space-6);
+    padding: 0.75rem;
+    gap: 0.65rem;
     overflow: hidden;
     width: 100%;
     box-sizing: border-box;
+  }
+
+  .stockist-showcase::after {
+    display: none;
   }
 
   .stockist-content,
@@ -172,33 +439,197 @@
     box-sizing: border-box;
   }
 
+  .stockist-header {
+    margin-bottom: 0.3rem;
+  }
+
+  .stockist-boutique-name {
+    font-size: 1.15rem;
+    margin-bottom: 0.1rem;
+  }
+
+  .stockist-location-tagline {
+    font-size: 0.62rem;
+  }
+
+  .stockist-description {
+    font-size: 0.74rem;
+    line-height: 1.38;
+    margin-bottom: 0.4rem;
+  }
+
+  .stockist-features-list {
+    gap: 0.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .stockist-feature-item {
+    font-size: 0.7rem;
+    gap: 0.35rem;
+  }
+
+  .stockist-feature-item svg {
+    width: 13px;
+    height: 13px;
+    margin-top: 2px;
+  }
+
   .stockist-actions {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     width: 100%;
-    gap: var(--space-3);
+    gap: 0.4rem;
   }
 
   .stockist-actions .btn {
     width: 100%;
+    padding: 0.5rem 0.45rem;
+    font-size: 0.64rem;
     white-space: normal;
     text-align: center;
     box-sizing: border-box;
+    min-height: 44px;
   }
 
-  /* Footer */
+  .stockist-details-card {
+    padding: 0.65rem;
+    gap: 0.45rem;
+  }
+
+  .stockist-pickup-banner {
+    padding: 0.4rem 0.55rem;
+    gap: 0.45rem;
+  }
+
+  .stockist-pickup-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .stockist-pickup-icon svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .stockist-pickup-title {
+    font-size: 0.6rem;
+  }
+
+  .stockist-pickup-sub {
+    font-size: 0.64rem;
+  }
+
+  .stockist-address-block {
+    padding-bottom: 0.35rem;
+    gap: 0.15rem;
+  }
+
+  .stockist-address-heading,
+  .stockist-hours-heading {
+    font-size: 0.58rem;
+  }
+
+  .stockist-address-text {
+    font-size: 0.72rem;
+  }
+
+  .stockist-hours-block {
+    gap: 0.2rem;
+  }
+
+  .stockist-hours-table td {
+    padding-block: 0.15rem;
+    font-size: 0.68rem;
+  }
+
+  /* 6. Footer — Compact 2-Column Mobile Directory */
+  .site-footer {
+    padding-top: 1.15rem;
+    padding-bottom: 0.85rem;
+  }
+
   .footer-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-8);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-col-brand,
+  .footer-grid > div:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .footer-brand-lockup {
+    margin-bottom: 0.3rem;
+  }
+
+  .footer-brand-lockup .brand-mark {
+    width: 34px;
+    height: 34px;
+  }
+
+  .footer-manifesto {
+    font-size: 0.72rem;
+    line-height: 1.38;
+    margin-bottom: 0.4rem;
+    max-width: 100%;
+  }
+
+  .footer-heading {
+    font-size: 0.78rem;
+    margin-bottom: 0.3rem;
+    padding-bottom: 0.15rem;
+  }
+
+  .footer-links-list {
+    gap: 0.15rem;
+  }
+
+  .footer-link {
+    font-size: 0.72rem;
+  }
+
+  .footer-stockist-details {
+    gap: 0.15rem;
+    font-size: 0.7rem;
+  }
+
+  .footer-newsletter-text {
+    font-size: 0.7rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .footer-newsletter-form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.4rem;
+    align-items: start;
+  }
+
+  .footer-newsletter-form .btn {
+    width: auto !important;
+    padding: 0.5rem 0.85rem;
+    font-size: 0.68rem;
+  }
+
+  .footer-newsletter-msg {
+    grid-column: 1 / -1;
+    min-height: 0;
   }
 
   .footer-bottom {
+    padding-top: 0.5rem;
     flex-direction: column;
     text-align: center;
-    gap: var(--space-4);
+    gap: 0.25rem;
+    font-size: 0.6rem;
   }
 
   .footer-bottom-brand {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
   }
 }
 
@@ -207,7 +638,7 @@
    ========================================================================== */
 @media (max-width: 480px) {
   .nav-container {
-    padding-inline: var(--space-4);
+    padding-inline: 0.75rem;
   }
 
   .nav-actions {
@@ -215,64 +646,11 @@
   }
 
   .brand-name {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
   }
 
   .brand-subtext {
-    font-size: 0.5625rem;
-  }
-
-  .hero-title {
-    font-size: 2rem;
-    line-height: 1.15;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    width: 100%;
-    gap: var(--space-3);
-  }
-
-  .hero-actions .btn {
-    width: 100%;
-  }
-
-  .hero-trust-bar {
-    grid-template-columns: 1fr;
-    gap: var(--space-2);
-  }
-
-  .hero-visual-card {
-    max-width: 100%;
-    padding: var(--space-6);
-  }
-
-  .hero-flame-container {
-    width: 140px;
-    height: 190px;
-  }
-
-  .story-metrics-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .stockist-showcase {
-    padding: var(--space-4);
-  }
-
-  .stockist-actions .btn {
-    padding: 0.75rem 1rem;
-    font-size: 0.8125rem;
-    white-space: normal;
-  }
-
-  .stockist-hours-table td {
-    font-size: 0.75rem;
-  }
-
-  .btn-lg {
-    padding: 0.95rem 1.5rem;
-    font-size: 0.8125rem;
+    font-size: 0.55rem;
   }
 }
 
@@ -320,31 +698,18 @@
     padding-inline: var(--space-2);
   }
 
-  .stockist-showcase {
-    padding: var(--space-3);
+  .hero-actions,
+  .stockist-actions,
+  .qc-pillars-grid {
+    grid-template-columns: 1fr;
   }
 
-  .stockist-details-card {
-    padding: var(--space-3);
+  .story-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .stockist-hours-table td {
-    font-size: 0.7rem;
-    padding-block: var(--space-1);
-  }
-
-  .stockist-boutique-name {
-    font-size: 1.35rem;
-  }
-
-  .stockist-location-tagline {
-    font-size: 0.7rem;
-  }
-
-  .stockist-actions .btn {
-    padding: 0.65rem 0.75rem;
-    font-size: 0.75rem;
-    white-space: normal;
+  .footer-newsletter-form {
+    grid-template-columns: 1fr;
   }
 }
 

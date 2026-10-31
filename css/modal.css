@@ -334,9 +334,11 @@
   padding: 0.25rem;
 }
 
-.qty-btn {
-  width: 38px;
-  height: 38px;
+.qty-btn,
+#modal-qty-minus,
+#modal-qty-plus {
+  min-width: 44px;
+  min-height: 44px;
   display: inline-flex;
   align-items: center;
   justify-content: center;

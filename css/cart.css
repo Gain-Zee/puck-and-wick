@@ -233,6 +233,8 @@
   color: var(--color-text-subtle, #757A88);
   cursor: pointer;
   padding: 0.2rem;
+  min-width: 44px;
+  min-height: 44px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -266,8 +268,8 @@
 }
 
 .cart-item-stepper .qty-btn {
-  width: 28px;
-  height: 28px;
+  min-width: 44px;
+  min-height: 44px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
