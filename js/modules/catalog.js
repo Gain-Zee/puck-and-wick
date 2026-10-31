@@ -24,6 +24,16 @@ export function initCatalog(store, openCartDrawer) {
             <span>All Pours</span>
             <span class="filter-count">(${PRODUCTS.length})</span>
           </button>
+
+          <button type="button" class="filter-tab filter-mens ${currentCategory === 'mens' ? 'active' : ''}" data-testid="filter-mens" data-filter="mens" role="tab" aria-selected="${currentCategory === 'mens'}">
+            <span>Men's Line</span>
+            <span class="filter-count">(${PRODUCTS.filter(p => p.genderLine === 'mens').length})</span>
+          </button>
+
+          <button type="button" class="filter-tab filter-womens ${currentCategory === 'womens' ? 'active' : ''}" data-testid="filter-womens" data-filter="womens" role="tab" aria-selected="${currentCategory === 'womens'}">
+            <span>Women's Line</span>
+            <span class="filter-count">(${PRODUCTS.filter(p => p.genderLine === 'womens').length})</span>
+          </button>
           
           <button type="button" class="filter-tab filter-signature ${currentCategory === 'signature' ? 'active' : ''}" data-testid="filter-signature" data-filter="signature" role="tab" aria-selected="${currentCategory === 'signature'}">
             <span>Signature Line</span>
@@ -67,6 +77,10 @@ export function initCatalog(store, openCartDrawer) {
                       <span>Flagship Pour</span>
                     </div>
                   ` : ''}
+
+                  <div class="product-line-pill ${p.vesselType === 'ivory' ? 'pill-womens' : 'pill-mens'}" data-testid="product-line-pill">
+                    <span>${p.vesselType === 'ivory' ? 'Womens' : 'Mens'}</span>
+                  </div>
 
                   <div class="visual-hover-overlay">
                     <span class="btn-hover-quick-view">

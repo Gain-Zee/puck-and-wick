@@ -177,7 +177,7 @@ window.PuckWickStore = {
             title: payload.title || 'Candle',
             type: payload.type || 'candle',
             scent: itemScent,
-            price: Number(payload.price) || 34.00,
+            price: Number(payload.price) || 36.00,
             quantity: Math.min(99, addQty),
             customOptions: customObj,
             customizations: customObj

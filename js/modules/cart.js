@@ -67,7 +67,7 @@ export function initCart(store, openCheckoutCallback) {
             ${cart.length > 0 ? `
               <div class="cart-items-list" data-testid="cart-items">
                 ${cart.map((item, idx) => {
-                  const unitPrice = Number(item.price) || 34.00;
+                  const unitPrice = Number(item.price) || 36.00;
                   const itemTotal = (unitPrice * (item.quantity || 1)).toFixed(2);
                   const scentSubtitle = item.scent && item.scent !== 'Default' ? item.scent : (item.subtitle || '');
                   const customInfo = item.customOptions?.candleScentName ? `Scent: ${item.customOptions.candleScentName}` : (item.customizations?.candleScentName ? `Scent: ${item.customizations.candleScentName}` : '');

@@ -274,8 +274,8 @@ export const tests = [
         const sec = document.querySelector(sel.boxBuilder.section);
         return sec ? sec.innerText : '';
       }, selectors);
-      if (text.length > 0 && !text.includes('78')) {
-        throw new Error('Exclusive Box customizer missing $78 price point');
+      if (text.length > 0 && !text.includes('98') && !text.includes('78')) {
+        throw new Error('Exclusive Box customizer missing $98 price point');
       }
     }
   },

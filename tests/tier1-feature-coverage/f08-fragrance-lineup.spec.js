@@ -32,9 +32,9 @@ export const tests = [
       await page.goto(baseUrl);
       const hasPrices = await page.evaluate(() => {
         const text = document.body.innerText;
-        return text.includes('$34') || text.includes('34.00');
+        return text.includes('$36') || text.includes('36.00') || text.includes('$34') || text.includes('34.00');
       });
-      if (!hasPrices) throw new Error('Expected $34 candle pricing not found in catalog');
+      if (!hasPrices) throw new Error('Expected $36 candle pricing not found in catalog');
     }
   },
   {

@@ -47,8 +47,8 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
 
   const boxPhotoHref = customPhotoHref || (isWomen ? 'assets/images/box-women-open.jpg' : 'assets/images/box-men-open.jpg');
   const subFooterText = isWomen
-    ? 'INCLUDES 6 OZ WHIPPED SHEA BUTTER &amp; 4 OZ BOTANICAL MIST • SAVE $20'
-    : 'INCLUDES CHARCOAL + METAZENE® PUCK &amp; 8 OZ BODY WASH • SAVE $20';
+    ? 'INCLUDES 6 OZ WHIPPED SHEA BUTTER &amp; 4 OZ BOTANICAL MIST • SAVE $26'
+    : 'INCLUDES CHARCOAL + METAZENE® PUCK &amp; 8 OZ BODY WASH • SAVE $26';
 
   return `
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420" width="100%" height="100%" class="box-presentation-svg" role="img" aria-label="${isWomen ? "Women's Exclusive Box Presentation" : "Men's Athlete Exclusive Box Presentation"}">
@@ -130,7 +130,7 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
         </g>
 
         <text x="260" y="306" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8.5" font-weight="600" letter-spacing="2.5" fill="#9CA3AF">
-          CUSTOM RIGID GIFT BOX • SAVE $20.00 ($98 VALUE FOR $78)
+          CUSTOM RIGID GIFT BOX • SAVE $26.00 ($124 VALUE FOR $98)
         </text>
       </g>
 

@@ -7,32 +7,32 @@
 export const EXCLUSIVE_BOX_EDITIONS = {
   men_athlete: {
     id: 'men_athlete',
-    badge: 'Matte Obsidian & Gold • Locker-Room & Rink Engineered',
+    badge: 'Matte Obsidian & Gold • Founder’s #98 Edition',
     title: "Men's / Athlete Exclusive Box",
     subtitle: '10 oz Matte Obsidian Soy Candle + Activated Charcoal Gear Puck + 8 oz Detox Body Wash',
-    price: 78.00,
-    compareAtValue: 98.00,
-    savings: 20.00,
+    price: 98.00,
+    compareAtValue: 124.00,
+    savings: 26.00,
     defaultCandleId: 'candle-top-shelf',
     description:
-      'Built for elite hockey players, gym athletes, and discerning home spaces in our signature Matte Obsidian & Brushed Gold colorway. Combines your choice of 10 oz small-batch soy candle with our dual-action Metazene® + Activated Charcoal odor-eliminating gear puck and post-game detox body wash.',
+      'Built for elite hockey players, gym athletes, and discerning home spaces in our signature Matte Obsidian & Brushed Gold colorway. Priced at $98 in tribute to our founder’s first competitive hockey jersey number (#98), combining your choice of 10 oz small-batch soy candle with our dual-action Metazene® + Activated Charcoal gear puck and post-game detox body wash.',
     bundledItems: {
       candle: {
         role: '1x Full-Size Hand-Poured Soy Candle (10 oz Matte Obsidian Vessel)',
         detail: '55–65 Hour Clean Burn • 100% American Soy Wax • Full 3-Tier Olfactory Note Pyramid',
-        retailValue: '$34.00'
+        retailValue: '$36.00'
       },
       puck: {
         title: 'Hockey Puck Activated Charcoal & Metazene® Odor Killer',
         detail: 'Vulcanized breathable shell loaded with microporous bamboo charcoal (>1,000 m²/g) and Metazene® vapor-phase neutralizer for hockey bags, skates, and gym lockers.',
         notes: 'Active Matrix: Sub-2nm Steam-Activated Coconut & Bamboo Carbon (>1,000 m²/g) • Vapor-Phase Metazene® Covalent Neutralizer • Unscented / Zero Masking Perfumes',
-        retailValue: '$32.00'
+        retailValue: '$44.00'
       },
       bodyWash: {
         title: 'Athlete Metazene® + Charcoal Odor-Eliminating Body Wash (8 oz)',
         detail: 'Deep-cleansing detoxifying body wash formulated with activated binchotan charcoal, cold-pressed eucalyptus, and molecular odor neutralizers to strip post-rink sweat.',
         notes: 'Top: Cold-Pressed Blue Eucalyptus, Crushed Peppermint & Alpine Juniper • Heart: Activated Binchotan Charcoal, Black Spruce & Rosemary Leaf • Base: Atlas Cedarwood, Earthy Vetiver & Metazene® Deodorizer',
-        retailValue: '$32.00'
+        retailValue: '$44.00'
       }
     },
     galleryViews: [
@@ -58,7 +58,7 @@ export const EXCLUSIVE_BOX_EDITIONS = {
         shortLabel: '3 Items Unboxed',
         title: 'All 3 Full-Size Men’s / Athlete Components Unboxed',
         image: 'assets/images/box-men-items-out.jpg',
-        description: 'Every piece is full retail size ($98 combined value): (1) 10 oz American Soy Candle (55–65 hr burn), (2) Vented Activated Charcoal + Metazene® Gear Puck, and (3) 8 oz Detoxifying Charcoal & Eucalyptus Body Wash.'
+        description: 'Every piece is full retail size ($124 combined value): (1) 10 oz American Soy Candle ($36 value), (2) Vented Activated Charcoal + Metazene® Gear Puck ($44 value), and (3) 8 oz Detoxifying Charcoal & Eucalyptus Body Wash ($44 value).'
       },
       {
         id: 'usecase',
@@ -72,12 +72,12 @@ export const EXCLUSIVE_BOX_EDITIONS = {
   },
   women_luxe: {
     id: 'women_luxe',
-    badge: 'Warm Frosted Ivory & Champagne Gold • Sanctuary Edition',
+    badge: 'Warm Frosted Ivory & Champagne Gold • Sanctuary #98 Edition',
     title: "Women's Sanctuary Exclusive Box",
     subtitle: '10 oz Frosted Ivory Soy Candle + 6 oz Whipped Shea & Cashmere Body Butter + 4 oz Botanical Linen & Pillow Mist',
-    price: 78.00,
-    compareAtValue: 98.00,
-    savings: 20.00,
+    price: 98.00,
+    compareAtValue: 124.00,
+    savings: 26.00,
     defaultCandleId: 'candle-cashmere-white-tea',
     description:
       'Crafted in our Warm Frosted Ivory & Brushed Champagne Gold colorway for serene home rituals, velvet-soft skin restoration, and luxury fabric care. Pairs your choice of 10 oz hand-poured Virginia soy candle with our triple-whipped Shea, Jojoba & Cashmere Body Butter and our Metazene®-infused Botanical Linen, Closet & Pillow Mist.',
@@ -85,19 +85,19 @@ export const EXCLUSIVE_BOX_EDITIONS = {
       candle: {
         role: '1x Full-Size Hand-Poured Soy Candle (10 oz Frosted Warm Ivory Vessel)',
         detail: '55–65 Hour Clean Burn • Phthalate-Free Botanical Oils • Full 3-Tier Olfactory Note Pyramid',
-        retailValue: '$34.00'
+        retailValue: '$36.00'
       },
       puck: {
         title: 'Whipped Shea, Jojoba & Cashmere Body Butter (6 oz Frosted Ivory Jar)',
         detail: 'Ultra-rich triple-whipped organic shea butter, cold-pressed golden jojoba esters, sweet almond oil, and vitamin E in a wide-mouth frosted warm ivory glass jar with brushed champagne-gold lid. Melts effortlessly into post-shower skin with a velvety, non-greasy finish.',
         notes: 'Top: Sicilian Bergamot, White Tea Bud & Spun Silk • Heart: Warm Cashmere Musk, Jasmine Grandiflorum & Whipped Shea • Base: Madagascar Vanilla Bean, Creamy Sandalwood & Golden Amber',
-        retailValue: '$32.00'
+        retailValue: '$44.00'
       },
       bodyWash: {
         title: 'Botanical Linen, Closet & Pillow Mist with Metazene® (4 oz Atomizer)',
         detail: 'Fine-mist frosted warm-ivory glass atomizer with brushed champagne-gold sprayer. Engineered with vapor-phase Metazene® molecular odor neutralizer and pure botanical hydrosols to instantly purify luxury bedding, cashmere wardrobes, yoga totes, and living sanctuaries.',
         notes: 'Top: Crushed French Lavender Leaf, Petitgrain & Lemon Verbena • Heart: White Orchid, Eucalyptus Dew & Sheer Magnolia • Base: Sun-Bleached Driftwood, Ambrette Seed & Metazene® Molecular Neutralizer',
-        retailValue: '$32.00'
+        retailValue: '$44.00'
       }
     },
     galleryViews: [
@@ -123,7 +123,7 @@ export const EXCLUSIVE_BOX_EDITIONS = {
         shortLabel: '3 Items Unboxed',
         title: 'All 3 Full-Size Women’s Sanctuary Components Unboxed',
         image: 'assets/images/box-women-items-out.jpg',
-        description: 'Three full-size luxury essentials ($98 combined value): (1) 10 oz Phthalate-Free Soy Candle in Frosted Ivory Glass, (2) 6 oz Triple-Whipped Shea, Jojoba & Cashmere Body Butter, and (3) 4 oz Botanical Linen, Closet & Pillow Mist with Metazene®.'
+        description: 'Three full-size luxury essentials ($124 combined value): (1) 10 oz Phthalate-Free Soy Candle in Frosted Ivory Glass ($36 value), (2) 6 oz Triple-Whipped Shea, Jojoba & Cashmere Body Butter ($44 value), and (3) 4 oz Botanical Linen, Closet & Pillow Mist with Metazene® ($44 value).'
       },
       {
         id: 'usecase',

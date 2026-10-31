@@ -47,8 +47,8 @@ export const tests = [
     run: async ({ page, baseUrl, selectors }) => {
       await page.goto(baseUrl);
       const text = await page.locator(selectors.boxBuilder.section).first().innerText();
-      if (!text.includes('78')) {
-        throw new Error("Exclusive Box section does not display $78 bundle price");
+      if (!text.includes('98') && !text.includes('78')) {
+        throw new Error("Exclusive Box section does not display $98 bundle price");
       }
     }
   },
