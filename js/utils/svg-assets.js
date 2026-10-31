@@ -51,12 +51,11 @@ export const SVG_LOGOS = {
   <!-- Tall Architectural Double-Hairline Frame -->
   <rect x="75" y="42" width="350" height="416" rx="3" fill="#0B0C0E" stroke="url(#c2-gold)" stroke-width="3" />
   <rect x="87" y="54" width="326" height="392" rx="2" fill="none" stroke="url(#c2-gold)" stroke-width="0.9" opacity="0.5" />
-  <!-- Crossed Hockey Sticks + Flame + Vulcanized Puck Pill -->
+  <!-- Minimalist Crossed Lines + Flame + Vulcanized Puck Pill -->
   <g transform="translate(250, 152)">
-    <path d="M -34,-28 L 32,32 C 37,36 44,37 52,34" fill="none" stroke="url(#c2-gold)" stroke-width="3" stroke-linecap="round" />
-    <path d="M 34,-28 L -32,32 C -37,36 -44,37 -52,34" fill="none" stroke="url(#c2-gold)" stroke-width="3" stroke-linecap="round" />
+    <line x1="-36" y1="-28" x2="36" y2="34" stroke="url(#c2-gold)" stroke-width="2.8" stroke-linecap="round" />
+    <line x1="36" y1="-28" x2="-36" y2="34" stroke="url(#c2-gold)" stroke-width="2.8" stroke-linecap="round" />
     <path d="M 0,-10 C -7,-19 -10,-31 -5,-42 C -2,-49 0,-55 0,-59 C 0,-55 2,-49 5,-42 C 10,-31 7,-19 0,-10 Z" fill="url(#c2-gold)" />
-    <rect x="-24" y="28" width="48" height="8" rx="4" fill="#0B0C0E" stroke="url(#c2-gold)" stroke-width="2.2" />
   </g>
   <!-- Primary Wordmark -->
   <text x="250" y="264" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="36" font-weight="600" letter-spacing="8" fill="#FAF5E8">PUCK &amp; WICK<tspan font-family="'Inter', sans-serif" font-size="12.5" font-weight="600" dy="-14" dx="1" letter-spacing="0" fill="url(#c2-gold)">&#8482;</tspan></text>
@@ -91,13 +90,12 @@ export const SVG_LOGOS = {
   <line x1="55" y1="86" x2="445" y2="86" stroke="url(#c3-gold)" stroke-width="0.8" opacity="0.5" />
   <line x1="55" y1="414" x2="445" y2="414" stroke="url(#c3-gold)" stroke-width="0.8" opacity="0.5" />
   <line x1="55" y1="422" x2="445" y2="422" stroke="url(#c3-gold)" stroke-width="2.5" />
-  <!-- Minimalist Crossed Sticks + Flame + Puck Emblem -->
+  <!-- Minimalist Crossed Lines + Flame Emblem -->
   <g transform="translate(250, 178)">
-    <path d="M -38,-30 L 34,34 C 39,38 47,39 56,36" fill="none" stroke="url(#c3-gold)" stroke-width="3" stroke-linecap="round" />
-    <path d="M 38,-30 L -34,34 C -39,38 -47,39 -56,36" fill="none" stroke="url(#c3-gold)" stroke-width="3" stroke-linecap="round" />
+    <line x1="-38" y1="-30" x2="38" y2="36" stroke="url(#c3-gold)" stroke-width="2.8" stroke-linecap="round" />
+    <line x1="38" y1="-30" x2="-38" y2="36" stroke="url(#c3-gold)" stroke-width="2.8" stroke-linecap="round" />
     <path d="M 0,-10 C -7,-19 -10,-32 -5,-43 C -2,-50 0,-56 0,-60 C 0,-56 2,-50 5,-43 C 10,-32 7,-19 0,-10 Z" fill="url(#c3-gold)" />
     <path d="M 0,-15 C -3,-21 -4,-28 -1.5,-34 C 0,-37 0.5,-37 1.5,-34 C 4,-28 3,-21 0,-15 Z" fill="#0B0C0E" opacity="0.45" />
-    <rect x="-22" y="30" width="44" height="7" rx="3.5" fill="#0B0C0E" stroke="url(#c3-gold)" stroke-width="2" />
   </g>
   <!-- Wide-Tracked Editorial Wordmark -->
   <text x="250" y="286" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="40" font-weight="600" letter-spacing="11" fill="url(#c3-gold)">PUCK &amp; WICK<tspan font-family="'Inter', sans-serif" font-size="13.5" font-weight="600" dy="-16" dx="1" letter-spacing="0">&#8482;</tspan></text>
@@ -131,12 +129,11 @@ export const SVG_LOGOS = {
   <rect x="36" y="32" width="468" height="316" rx="4" fill="#0D0E12" stroke="url(#c4-badge)" stroke-width="2.5" />
   <rect x="46" y="42" width="448" height="296" rx="2" fill="none" stroke="url(#c4-foil)" stroke-width="0.75" opacity="0.45" />
 
-  <!-- Crossed Stick Blades, Puck & Flame Centerpiece -->
+  <!-- Minimalist Crossed Lines & Flame Centerpiece -->
   <g transform="translate(270, 116)">
-    <path d="M -28,-22 L 26,26 C 30,29 36,30 42,28" fill="none" stroke="url(#c4-foil)" stroke-width="2.8" stroke-linecap="round" />
-    <path d="M 28,-22 L -26,26 C -30,29 -36,30 -42,28" fill="none" stroke="url(#c4-foil)" stroke-width="2.8" stroke-linecap="round" />
+    <line x1="-28" y1="-22" x2="28" y2="28" stroke="url(#c4-foil)" stroke-width="2.6" stroke-linecap="round" />
+    <line x1="28" y1="-22" x2="-28" y2="28" stroke="url(#c4-foil)" stroke-width="2.6" stroke-linecap="round" />
     <path d="M 0,-8 C -6,-15 -8,-25 -5,-34 C -3,-40 0,-45 0,-49 C 0,-45 3,-40 5,-34 C 8,-25 6,-15 0,-8 Z" fill="url(#c4-foil)" />
-    <rect x="-18" y="22" width="36" height="7" rx="3" fill="#0D0E12" stroke="url(#c4-foil)" stroke-width="2" />
   </g>
 
   <!-- Stamped Workshop Typography -->
@@ -228,9 +225,9 @@ export const SVG_ICONS = {
     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
   </svg>`,
 
-  // Crossed Hockey Sticks
-  hockeySticks: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-    <path d="M4 3l12 14c1 1.2 2.5 1.5 4 .5l.5-.3c.4-.3.2-.8-.2-.9-1.2-.2-2.5-.2-3.3-1.3L5 3z"/><path d="M20 3L8 17c-1 1.2-2.5 1.5-4 .5l-.5-.3c-.4-.3-.2-.8.2-.9 1.2-.2 2.5-.2 3.3-1.3L19 3z"/>
+  // Crossed Lines Emblem
+  hockeySticks: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/><path d="M12 3c-1.2 1.8-1.8 3.2-.6 4.8.6.8 1.2.8 1.2 0 1.2-1.6.6-3-.6-4.8z" fill="currentColor" stroke="none"/>
   </svg>`,
 
   // Star
@@ -304,15 +301,14 @@ export function renderJarPhotoLabelOverlay(conceptId = 1, scentName = 'TOP SHELF
   let conceptArtwork = '';
 
   if (cid === 2) {
-    // Concept 2: The Precision Reserve (Tall Vertical Double-Frame + Crossed Sticks & Puck + Diamond Rule)
+    // Concept 2: The Precision Reserve (Tall Vertical Double-Frame + Crossed Lines & Flame + Diamond Rule)
     conceptArtwork = `
       <rect x="142" y="162" width="112" height="124" rx="1.5" fill="none" stroke="url(#${goldGradId})" stroke-width="1.2" />
       <rect x="146" y="166" width="104" height="116" rx="1" fill="none" stroke="url(#${goldGradId})" stroke-width="0.5" opacity="0.55" />
       <g transform="translate(198, 193)">
-        <path d="M -11,-9 L 10,10 C 12,11.5 14,12 17,11" fill="none" stroke="url(#${goldGradId})" stroke-width="1.2" stroke-linecap="round" />
-        <path d="M 11,-9 L -10,10 C -12,11.5 -14,12 -17,11" fill="none" stroke="url(#${goldGradId})" stroke-width="1.2" stroke-linecap="round" />
+        <line x1="-11" y1="-9" x2="11" y2="11" stroke="url(#${goldGradId})" stroke-width="1.1" stroke-linecap="round" />
+        <line x1="11" y1="-9" x2="-11" y2="11" stroke="url(#${goldGradId})" stroke-width="1.1" stroke-linecap="round" />
         <path d="M 0,-3 C -2.5,-6 -3.5,-10 -1.8,-14 C -0.6,-16 0,-18 0,-19.5 C 0,-18 0.6,-16 1.8,-14 C 3.5,-10 2.5,-6 0,-3 Z" fill="url(#${goldGradId})" />
-        <rect x="-8" y="9" width="16" height="3" rx="1.5" fill="#0B0C0E" stroke="url(#${goldGradId})" stroke-width="0.9" />
       </g>
       <text x="198" y="223" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="10.5" font-weight="600" letter-spacing="2" fill="#FAF5E8">PUCK &amp; WICK<tspan font-family="'Inter', sans-serif" font-size="4.2" font-weight="600" dy="-4.5" dx="0.5" letter-spacing="0" fill="url(#${goldGradId})">&#8482;</tspan></text>
       <line x1="158" y1="231" x2="193" y2="231" stroke="url(#${goldGradId})" stroke-width="0.5" opacity="0.7" />
@@ -330,10 +326,9 @@ export function renderJarPhotoLabelOverlay(conceptId = 1, scentName = 'TOP SHELF
       <line x1="138" y1="276.5" x2="258" y2="276.5" stroke="url(#${goldGradId})" stroke-width="0.45" opacity="0.55" />
       <line x1="138" y1="280" x2="258" y2="280" stroke="url(#${goldGradId})" stroke-width="1.2" />
       <g transform="translate(198, 198)">
-        <path d="M -12,-10 L 11,11 C 13,12.5 15,13 18,12" fill="none" stroke="url(#${goldGradId})" stroke-width="1.2" stroke-linecap="round" />
-        <path d="M 12,-10 L -11,11 C -13,12.5 -15,13 -18,12" fill="none" stroke="url(#${goldGradId})" stroke-width="1.2" stroke-linecap="round" />
+        <line x1="-12" y1="-10" x2="12" y2="12" stroke="url(#${goldGradId})" stroke-width="1.1" stroke-linecap="round" />
+        <line x1="12" y1="-10" x2="-12" y2="12" stroke="url(#${goldGradId})" stroke-width="1.1" stroke-linecap="round" />
         <path d="M 0,-3.5 C -2.5,-6.5 -3.5,-10.5 -1.8,-14.5 C -0.6,-16.5 0,-18.5 0,-20 C 0,-18.5 0.6,-16.5 1.8,-14.5 C 3.5,-10.5 2.5,-6.5 0,-3.5 Z" fill="url(#${goldGradId})" />
-        <rect x="-7.5" y="9.5" width="15" height="2.8" rx="1.4" fill="#0B0C0E" stroke="url(#${goldGradId})" stroke-width="0.85" />
       </g>
       <text x="198" y="228" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="11" font-weight="600" letter-spacing="2.6" fill="url(#${goldGradId})">PUCK &amp; WICK<tspan font-family="'Inter', sans-serif" font-size="4.2" font-weight="600" dy="-4.5" dx="0.5" letter-spacing="0">&#8482;</tspan></text>
       <line x1="176" y1="236" x2="220" y2="236" stroke="url(#${goldGradId})" stroke-width="0.5" opacity="0.65" />
@@ -346,10 +341,9 @@ export function renderJarPhotoLabelOverlay(conceptId = 1, scentName = 'TOP SHELF
       <rect x="136" y="172" width="124" height="104" rx="2" fill="none" stroke="url(#${goldGradId})" stroke-width="1.2" />
       <rect x="140" y="176" width="116" height="96" rx="1" fill="none" stroke="url(#${goldGradId})" stroke-width="0.45" opacity="0.5" />
       <g transform="translate(198, 200)">
-        <path d="M -11,-9 L 10,10 C 12,11.5 14,12 17,11" fill="none" stroke="url(#${goldGradId})" stroke-width="1.2" stroke-linecap="round" />
-        <path d="M 11,-9 L -10,10 C -12,11.5 -14,12 -17,11" fill="none" stroke="url(#${goldGradId})" stroke-width="1.2" stroke-linecap="round" />
+        <line x1="-11" y1="-9" x2="11" y2="11" stroke="url(#${goldGradId})" stroke-width="1.1" stroke-linecap="round" />
+        <line x1="11" y1="-9" x2="-11" y2="11" stroke="url(#${goldGradId})" stroke-width="1.1" stroke-linecap="round" />
         <path d="M 0,-3 C -2.5,-6 -3.5,-10 -1.8,-14 C -0.6,-16 0,-18 0,-19.5 C 0,-18 0.6,-16 1.8,-14 C 3.5,-10 2.5,-6 0,-3 Z" fill="url(#${goldGradId})" />
-        <rect x="-7.5" y="9" width="15" height="2.8" rx="1.4" fill="#0B0C0E" stroke="url(#${goldGradId})" stroke-width="0.85" />
       </g>
       <text x="198" y="227" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="10.8" font-weight="700" letter-spacing="2.4" fill="#FAF5E8">PUCK &amp; WICK<tspan font-family="'Inter', sans-serif" font-size="4.2" font-weight="600" dy="-4.5" dx="0.5" letter-spacing="0" fill="url(#${goldGradId})">&#8482;</tspan></text>
       <line x1="158" y1="235" x2="238" y2="235" stroke="url(#${goldGradId})" stroke-width="0.5" opacity="0.65" />
@@ -447,12 +441,12 @@ export function getCharcoalScienceSvg() {
 }
 
 /**
- * Lauson-98™ Covalent Neutralization and Olfactory Receptor Lockout Diagram SVG.
+ * Metazene® Covalent Neutralization and Olfactory Receptor Lockout Diagram SVG.
  */
 export function getMetazeneScienceSvg() {
   return `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" width="100%" height="180" class="science-diagram-svg" role="img" aria-label="Lauson-98 Covalent Molecular Neutralization and Olfactory Receptor Lockout Diagram">
-      <title>Lauson-98™ Chemical Counteraction, Covalent Bonding and Receptor Inactivation</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" width="100%" height="180" class="science-diagram-svg" role="img" aria-label="Metazene Covalent Molecular Neutralization and Olfactory Receptor Lockout Diagram">
+      <title>Metazene Chemical Counteraction, Covalent Bonding and Receptor Inactivation</title>
       <defs>
         <linearGradient id="metazene-bg" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stop-color="#0A0B0E" />
@@ -466,8 +460,8 @@ export function getMetazeneScienceSvg() {
       <text x="55" y="80" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" fill="#9EA3AE">Active Poles δ⁻/δ⁺</text>
       <text x="88" y="69" text-anchor="middle" font-family="'Inter', sans-serif" font-size="14" font-weight="700" fill="#D4AF37">+</text>
       <circle cx="125" cy="65" r="22" fill="#1A1C16" stroke="#D4AF37" stroke-width="1.6" />
-      <text x="125" y="60" text-anchor="middle" font-family="'Inter', sans-serif" font-size="6.8" font-weight="700" fill="#FAF5E8">LAUSON-98™</text>
-      <text x="125" y="70" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" fill="#C5A059">Proprietary Complex</text>
+      <text x="125" y="60" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7" font-weight="700" fill="#FAF5E8">METAZENE®</text>
+      <text x="125" y="70" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" fill="#C5A059">Active Ester Complex</text>
       <path d="M 154,65 L 176,65 M 172,60 L 177,65 L 172,70" stroke="#34D399" stroke-width="2" fill="none" stroke-linecap="round" />
       <text x="165" y="55" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" font-weight="600" fill="#34D399">Covalent Reaction</text>
       <ellipse cx="215" cy="65" rx="28" ry="22" fill="#121820" stroke="#34D399" stroke-width="1.8" />
