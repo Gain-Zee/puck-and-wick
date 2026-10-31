@@ -26,7 +26,7 @@ export const PRODUCTS = [
     genderLabel: 'MENS',
     burnTime: '55 - 65 hours',
     weightOz: 10,
-    vessel: '10 oz Heavy-Base Matte Obsidian Glass with Brushed Gold Lid',
+    vessel: '10 oz Heavy-Base Matte Obsidian Glass with Unbranded Polished Gold Metal Lid',
     wax: '100% Pure American Soy Wax + Lauson-98™ Vapor Complex',
     wick: 'Lead-Free Braided Organic Cotton Wick',
     description: 'Inspired by top-shelf snipes and championship prestige. A radiant, hypnotic master formulation opening with crushed crimson saffron threads and bitter almond, unfolding into airy Egyptian jasmine grandiflorum and Virginia white cedar, and anchored by crystalline ambergris, fir balsam resin, and warm amberwood.',
@@ -51,7 +51,7 @@ export const PRODUCTS = [
     genderLabel: 'MENS',
     burnTime: '55 - 65 hours',
     weightOz: 10,
-    vessel: '10 oz Heavy-Base Matte Obsidian Glass with Brushed Gold Lid',
+    vessel: '10 oz Heavy-Base Matte Obsidian Glass with Unbranded Polished Gold Metal Lid',
     wax: '100% Pure American Soy Wax + Lauson-98™ Vapor Complex',
     wick: 'Lead-Free Braided Organic Cotton Wick',
     description: 'That sacred stillness when you step onto fresh sheet ice at 6:00 AM. Bright Italian bergamot and crisp grapefruit zest cut into sacred Japanese hinoki wood and frosted eucalyptus leaf, grounded by smoky earthy vetiver, warm amber, and sunlit orange blossom.',
@@ -76,7 +76,7 @@ export const PRODUCTS = [
     genderLabel: 'MENS',
     burnTime: '55 - 65 hours',
     weightOz: 10,
-    vessel: '10 oz Heavy-Base Matte Obsidian Glass with Gold Embossed Label',
+    vessel: '10 oz Heavy-Base Matte Obsidian Glass with Unbranded Polished Gold Metal Lid',
     wax: '100% Pure American Soy Wax + Lauson-98™ Vapor Complex',
     wick: 'Lead-Free Braided Organic Cotton Wick',
     description: 'Handcrafted exclusively in seasonal collaboration with The Blue Hydrangea boutique in Purcellville, VA. Captures the crisp scent of snow-laden Blue Ridge evergreens, resinous balsam fir, spiced clove bud, and smoky cedar embers.',
@@ -103,7 +103,7 @@ export const PRODUCTS = [
     genderLabel: 'MENS',
     burnTime: '55 - 65 hours',
     weightOz: 10,
-    vessel: '10 oz Heavy-Base Matte Obsidian Glass with Brushed Gold Lid',
+    vessel: '10 oz Heavy-Base Matte Obsidian Glass with Unbranded Polished Gold Metal Lid',
     wax: '100% Pure American Soy Wax + Lauson-98™ Vapor Complex',
     wick: 'Lead-Free Braided Organic Cotton Wick',
     description: 'The scent of an authentic 19th-century Virginia barn workshop where hand-hewn oak rafters have absorbed decades of sweet woodsmoke, enriched by small-batch rye bourbon, burnt brown sugar, and toasted tonka.',
@@ -128,7 +128,7 @@ export const PRODUCTS = [
     genderLabel: 'MENS',
     burnTime: '55 - 65 hours',
     weightOz: 10,
-    vessel: '10 oz Heavy-Base Matte Obsidian Glass with Brushed Gold Lid',
+    vessel: '10 oz Heavy-Base Matte Obsidian Glass with Unbranded Polished Gold Metal Lid',
     wax: '100% Pure American Soy Wax + Lauson-98™ Vapor Complex',
     wick: 'Lead-Free Braided Organic Cotton Wick',
     description: 'The aromatic nostalgia of an outdoor pond hockey game followed by an open-fire tailgate. Aromatic red cedar boards, oiled leather glove patina, and crackling birchwood smoke softened by dark resinous musk.',
@@ -153,7 +153,7 @@ export const PRODUCTS = [
     genderLabel: 'MENS',
     burnTime: '55 - 65 hours',
     weightOz: 10,
-    vessel: '10 oz Heavy-Base Matte Obsidian Glass with Brushed Gold Lid',
+    vessel: '10 oz Heavy-Base Matte Obsidian Glass with Unbranded Polished Gold Metal Lid',
     wax: '100% Pure American Soy Wax + Lauson-98™ Vapor Complex',
     wick: 'Lead-Free Braided Organic Cotton Wick',
     description: 'Rich, sensual, and universally appealing. Rich golden Baltic amber layered with cracked Madagascar vanilla pods, warm cashmere musk, and subtle benzoin resin that fills the room with comforting elegance.',
@@ -178,7 +178,7 @@ export const PRODUCTS = [
     genderLabel: 'MENS',
     burnTime: '55 - 65 hours',
     weightOz: 10,
-    vessel: '10 oz Heavy-Base Matte Obsidian Glass with Brushed Gold Lid',
+    vessel: '10 oz Heavy-Base Matte Obsidian Glass with Unbranded Polished Gold Metal Lid',
     wax: '100% Pure American Soy Wax + Lauson-98™ Vapor Complex',
     wick: 'Lead-Free Braided Organic Cotton Wick',
     description: 'Engineered to wipe away mental fatigue and stale room air. A high-voltage surge of pure Tasmanian eucalyptus globulus, crushed garden spearmint, clary sage, and crisp mountain mineral salt.',
@@ -203,7 +203,7 @@ export const PRODUCTS = [
     genderLabel: 'WOMENS',
     burnTime: '55 - 65 hours',
     weightOz: 10,
-    vessel: '10 oz Frosted Warm Ivory Glass with Brushed Champagne-Gold Lid',
+    vessel: '10 oz Frosted Warm Ivory Glass with Unbranded Polished Gold Metal Lid',
     wax: '100% Pure American Soy Wax + Lauson-98™ Vapor Complex',
     wick: 'Lead-Free Braided Organic Cotton Wick',
     description: 'Poured in our signature Frosted Warm Ivory & Champagne-Gold Sanctuary vessel. An enveloping, serene botanical infusion of steeped imperial white tea leaves and Sicilian bergamot zest, wrapped in spun cashmere accord, silver jasmine petals, and warm blond hinoki wood.',
@@ -229,7 +229,7 @@ export const PRODUCTS = [
     genderLabel: 'WOMENS',
     burnTime: '55 - 65 hours',
     weightOz: 10,
-    vessel: '10 oz Frosted Warm Ivory Glass with Brushed Champagne-Gold Lid',
+    vessel: '10 oz Frosted Warm Ivory Glass with Unbranded Polished Gold Metal Lid',
     wax: '100% Pure American Soy Wax + Lauson-98™ Vapor Complex',
     wick: 'Lead-Free Braided Organic Cotton Wick',
     description: 'Poured in our Frosted Warm Ivory & Champagne-Gold Sanctuary vessel. A sensual, intoxicating balance of crushed green cardamom and warm papyrus layered over creamy Australian sandalwood heart, cured Madagascar vanilla bean pods, and golden benzoin resin.',
@@ -255,7 +255,7 @@ export const PRODUCTS = [
     genderLabel: 'WOMENS',
     burnTime: '55 - 65 hours',
     weightOz: 10,
-    vessel: '10 oz Frosted Warm Ivory Glass with Brushed Champagne-Gold Lid',
+    vessel: '10 oz Frosted Warm Ivory Glass with Unbranded Polished Gold Metal Lid',
     wax: '100% Pure American Soy Wax + Lauson-98™ Vapor Complex',
     wick: 'Lead-Free Braided Organic Cotton Wick',
     description: 'Poured in our Frosted Warm Ivory & Champagne-Gold Sanctuary vessel. A luminous, airy coastal-botanical composition pairing crystalline sea salt and ozonated mist with velvety night-blooming white orchid, wild freesia, and sun-bleached driftwood.',
@@ -549,6 +549,15 @@ export function getProductGallerySlides(product, conceptId = 1) {
         title: `${product.name} — Interactive 360° Rotating Pristine Collector Box`,
         type: 'box360',
         thumb: `assets/images/packaging/shelf-${product.id}.jpg`
+      },
+      {
+        id: 'unboxing_video_4k',
+        shortLabel: '4K Unboxing Video',
+        title: `${product.name} — 4K UHD Manufacturer Unboxing & Assembly Specification Video`,
+        type: 'video',
+        src: 'assets/videos/manufacturer-box-unboxing-4k.mp4',
+        poster: `assets/images/packaging/shelf-${product.id}.jpg`,
+        thumb: `assets/images/packaging/shelf-${product.id}.jpg`
       }
     ];
   }
@@ -607,12 +616,21 @@ export function getProductGallerySlides(product, conceptId = 1) {
         thumb: 'assets/images/packaging/puck-men-gym-bag.jpg'
       },
       {
-        id: 'locker',
-        shortLabel: 'In Locker',
-        title: '3.0" Athlete Puck — Continuous 6+ Month Odor Elimination in Lockers & Closets',
+        id: 'puck_360_video',
+        shortLabel: '360° 1080p Video',
+        title: '3.0" Athlete Puck — Real-Life 1080p 60fps 360° CNC Hardware Turnaround Video',
+        type: 'video',
+        src: 'assets/videos/puck-men-360-1080p.mp4',
+        poster: 'assets/images/packaging/puck-men-360-angles.jpg',
+        thumb: 'assets/images/packaging/puck-men-360-angles.jpg'
+      },
+      {
+        id: 'puck_360_angles',
+        shortLabel: '4-Angle CNC Spec',
+        title: '3.0" Athlete Puck — All 4 Real-Life Angles (Top Cap, 1.0" Knurled Edge, Lauson-98™ Core & Engraved Base)',
         type: 'image',
-        src: 'assets/images/packaging/puck-men-locker.jpg',
-        thumb: 'assets/images/packaging/puck-men-locker.jpg'
+        src: 'assets/images/packaging/puck-men-360-angles.jpg',
+        thumb: 'assets/images/packaging/puck-men-360-angles.jpg'
       }
     ];
   }

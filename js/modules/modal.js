@@ -29,6 +29,17 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
     if (slide.type === 'box360') {
       return getInteractive360BoxHtml(product, isLightbox ? 'lightbox' : 'modal');
     }
+    if (slide.type === 'video') {
+      return `
+        <div class="modal-slide-photo-frame ${isLightbox ? 'lightbox-photo-frame' : ''}" style="background:#08090C;">
+          <video src="${slide.src}" poster="${slide.poster || slide.thumb}" class="modal-slide-photo-img" style="width:100%;height:100%;object-fit:contain;background:#08090C;display:block;" autoplay loop muted playsinline controls></video>
+          <div class="modal-slide-caption-bar" style="display:flex;justify-content:space-between;align-items:center;gap:12px;">
+            <span>${slide.title}</span>
+            <a href="${slide.src}" download style="color:#D4AF37;font-weight:800;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;white-space:nowrap;border:1px solid rgba(212,175,55,0.55);padding:4px 10px;border-radius:999px;background:rgba(10,11,15,0.9);">Download MP4</a>
+          </div>
+        </div>
+      `;
+    }
     return `
       <div class="modal-slide-photo-frame ${isLightbox ? 'lightbox-photo-frame' : ''}">
         <img src="${slide.src}" alt="${slide.title}" class="modal-slide-photo-img" loading="eager" />
@@ -341,8 +352,8 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
   // Clicking directly on a static photo inside the modal stage also opens the full-screen enlarge viewer
   if (galleryStage) {
     galleryStage.addEventListener('click', (e) => {
-      // Do not open lightbox if interacting with the 360° drag zone or angle buttons
-      if (e.target.closest('.box360-stage')) return;
+      // Do not open lightbox if interacting with the 360° drag zone, angle buttons, video controls, or download link
+      if (e.target.closest('.box360-stage') || e.target.closest('video') || e.target.closest('a')) return;
       openEnlargeLightbox();
     });
   }

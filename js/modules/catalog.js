@@ -73,7 +73,9 @@ export function initCatalog(store, openCartDrawer) {
                       ? getCandleVesselSvg(p, store.state.activeLogoConcept || 1)
                       : currentSlide.type === 'box360'
                         ? getInteractive360BoxHtml(p, false)
-                        : `<img src="${currentSlide.src}" alt="${currentSlide.title}" class="card-slide-img slide-${currentSlide.id}" loading="lazy" />`
+                        : currentSlide.type === 'video'
+                          ? `<video src="${currentSlide.src}" poster="${currentSlide.poster || currentSlide.thumb}" class="card-slide-img slide-${currentSlide.id}" style="width:100%;height:100%;object-fit:cover;display:block;background:#08090C;" autoplay loop muted playsinline></video>`
+                          : `<img src="${currentSlide.src}" alt="${currentSlide.title}" class="card-slide-img slide-${currentSlide.id}" loading="lazy" />`
                     }
                   </div>
                   

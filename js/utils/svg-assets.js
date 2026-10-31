@@ -314,67 +314,62 @@ export function renderJarPhotoLabelOverlay(conceptId = 1, scentName = 'TOP SHELF
   let conceptArtwork = '';
 
   if (cid === 2) {
-    // Concept 2: The Precision Reserve (Tall Vertical Double-Frame + Crossed Lines & Flame + Diamond Rule)
+    // Concept 2: The Precision Reserve (Universal Jar Sticker — No Scent Name on Vessel Face)
     conceptArtwork = `
       <rect x="142" y="162" width="112" height="124" rx="1.5" fill="none" stroke="url(#${goldGradId})" stroke-width="1.2" />
       <rect x="146" y="166" width="104" height="116" rx="1" fill="none" stroke="url(#${goldGradId})" stroke-width="0.5" opacity="0.55" />
-      <g transform="translate(198, 193)">
+      <g transform="translate(198, 198)">
         <line x1="-11" y1="-9" x2="11" y2="11" stroke="url(#${goldGradId})" stroke-width="1.1" stroke-linecap="round" />
         <line x1="11" y1="-9" x2="-11" y2="11" stroke="url(#${goldGradId})" stroke-width="1.1" stroke-linecap="round" />
         <path d="M 0,-3 C -2.5,-6 -3.5,-10 -1.8,-14 C -0.6,-16 0,-18 0,-19.5 C 0,-18 0.6,-16 1.8,-14 C 3.5,-10 2.5,-6 0,-3 Z" fill="url(#${goldGradId})" />
       </g>
-      <text x="198" y="223" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="10.5" font-weight="600" letter-spacing="2" fill="#FAF5E8">PUCK &amp; WICK<tspan font-family="'Inter', sans-serif" font-size="4.2" font-weight="600" dy="-4.5" dx="0.5" letter-spacing="0" fill="url(#${goldGradId})">&#8482;</tspan></text>
-      <line x1="158" y1="231" x2="193" y2="231" stroke="url(#${goldGradId})" stroke-width="0.5" opacity="0.7" />
-      <polygon points="198,229 200,231 198,233 196,231" fill="url(#${goldGradId})" />
-      <line x1="203" y1="231" x2="238" y2="231" stroke="url(#${goldGradId})" stroke-width="0.5" opacity="0.7" />
-      <text x="198" y="246" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="${scentFontSize}" font-weight="600" letter-spacing="${scentSpacing}" fill="#E5C878">${displayScent}</text>
-      <text x="198" y="260" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.6" font-weight="600" letter-spacing="1.4" fill="#9CA3AF">25 YEARS ON THE ICE</text>
+      <text x="198" y="232" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="10.8" font-weight="600" letter-spacing="2" fill="#FAF5E8">PUCK &amp; WICK<tspan font-family="'Inter', sans-serif" font-size="4.2" font-weight="600" dy="-4.5" dx="0.5" letter-spacing="0" fill="url(#${goldGradId})">&#8482;</tspan></text>
+      <line x1="158" y1="242" x2="193" y2="242" stroke="url(#${goldGradId})" stroke-width="0.5" opacity="0.7" />
+      <polygon points="198,240 200,242 198,244 196,242" fill="url(#${goldGradId})" />
+      <line x1="203" y1="242" x2="238" y2="242" stroke="url(#${goldGradId})" stroke-width="0.5" opacity="0.7" />
+      <text x="198" y="258" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.6" font-weight="600" letter-spacing="1.4" fill="#9CA3AF">25 YEARS ON THE ICE</text>
       <text x="198" y="272" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="5.2" font-weight="600" letter-spacing="1.6" fill="url(#${goldGradId})">RESERVE EDITION</text>
     `;
   } else if (cid === 3) {
-    // Concept 3: The Atelier Lockup (Open Architectural Top & Bottom Double Hairlines)
+    // Concept 3: The Atelier Lockup (Universal Jar Sticker — No Scent Name on Vessel Face)
     conceptArtwork = `
       <line x1="138" y1="168" x2="258" y2="168" stroke="url(#${goldGradId})" stroke-width="1.2" />
       <line x1="138" y1="171.5" x2="258" y2="171.5" stroke="url(#${goldGradId})" stroke-width="0.45" opacity="0.55" />
       <line x1="138" y1="276.5" x2="258" y2="276.5" stroke="url(#${goldGradId})" stroke-width="0.45" opacity="0.55" />
       <line x1="138" y1="280" x2="258" y2="280" stroke="url(#${goldGradId})" stroke-width="1.2" />
-      <g transform="translate(198, 198)">
+      <g transform="translate(198, 206)">
         <line x1="-12" y1="-10" x2="12" y2="12" stroke="url(#${goldGradId})" stroke-width="1.1" stroke-linecap="round" />
         <line x1="12" y1="-10" x2="-12" y2="12" stroke="url(#${goldGradId})" stroke-width="1.1" stroke-linecap="round" />
         <path d="M 0,-3.5 C -2.5,-6.5 -3.5,-10.5 -1.8,-14.5 C -0.6,-16.5 0,-18.5 0,-20 C 0,-18.5 0.6,-16.5 1.8,-14.5 C 3.5,-10.5 2.5,-6.5 0,-3.5 Z" fill="url(#${goldGradId})" />
       </g>
-      <text x="198" y="228" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="11" font-weight="600" letter-spacing="2.6" fill="url(#${goldGradId})">PUCK &amp; WICK<tspan font-family="'Inter', sans-serif" font-size="4.2" font-weight="600" dy="-4.5" dx="0.5" letter-spacing="0">&#8482;</tspan></text>
-      <line x1="176" y1="236" x2="220" y2="236" stroke="url(#${goldGradId})" stroke-width="0.5" opacity="0.65" />
-      <text x="198" y="250" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="${scentFontSize}" font-weight="600" letter-spacing="${scentSpacing}" fill="#FAF5E8">${displayScent}</text>
-      <text x="198" y="264" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.6" font-weight="500" letter-spacing="1.5" fill="#9CA3AF">ARTISAN SOY CANDLE CO.</text>
+      <text x="198" y="238" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="11.2" font-weight="600" letter-spacing="2.6" fill="url(#${goldGradId})">PUCK &amp; WICK<tspan font-family="'Inter', sans-serif" font-size="4.2" font-weight="600" dy="-4.5" dx="0.5" letter-spacing="0">&#8482;</tspan></text>
+      <line x1="176" y1="248" x2="220" y2="248" stroke="url(#${goldGradId})" stroke-width="0.5" opacity="0.65" />
+      <text x="198" y="262" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.6" font-weight="500" letter-spacing="1.5" fill="#9CA3AF">ARTISAN SOY CANDLE CO.</text>
     `;
   } else if (cid === 4) {
-    // Concept 4: The Workshop Emblem (Double-Hairline Rectangular Plaque)
+    // Concept 4: The Workshop Emblem (Universal Jar Sticker — No Scent Name on Vessel Face)
     conceptArtwork = `
       <rect x="136" y="172" width="124" height="104" rx="2" fill="none" stroke="url(#${goldGradId})" stroke-width="1.2" />
       <rect x="140" y="176" width="116" height="96" rx="1" fill="none" stroke="url(#${goldGradId})" stroke-width="0.45" opacity="0.5" />
-      <g transform="translate(198, 200)">
+      <g transform="translate(198, 206)">
         <line x1="-11" y1="-9" x2="11" y2="11" stroke="url(#${goldGradId})" stroke-width="1.1" stroke-linecap="round" />
         <line x1="11" y1="-9" x2="-11" y2="11" stroke="url(#${goldGradId})" stroke-width="1.1" stroke-linecap="round" />
         <path d="M 0,-3 C -2.5,-6 -3.5,-10 -1.8,-14 C -0.6,-16 0,-18 0,-19.5 C 0,-18 0.6,-16 1.8,-14 C 3.5,-10 2.5,-6 0,-3 Z" fill="url(#${goldGradId})" />
       </g>
-      <text x="198" y="227" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="10.8" font-weight="700" letter-spacing="2.4" fill="#FAF5E8">PUCK &amp; WICK<tspan font-family="'Inter', sans-serif" font-size="4.2" font-weight="600" dy="-4.5" dx="0.5" letter-spacing="0" fill="url(#${goldGradId})">&#8482;</tspan></text>
-      <line x1="158" y1="235" x2="238" y2="235" stroke="url(#${goldGradId})" stroke-width="0.5" opacity="0.65" />
-      <text x="198" y="248" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="${scentFontSize}" font-weight="600" letter-spacing="${scentSpacing}" fill="#E5C878">${displayScent}</text>
-      <text x="198" y="261" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.6" font-weight="600" letter-spacing="1.4" fill="#C5A059">HAND-POURED IN VIRGINIA</text>
+      <text x="198" y="236" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="11" font-weight="700" letter-spacing="2.4" fill="#FAF5E8">PUCK &amp; WICK<tspan font-family="'Inter', sans-serif" font-size="4.2" font-weight="600" dy="-4.5" dx="0.5" letter-spacing="0" fill="url(#${goldGradId})">&#8482;</tspan></text>
+      <line x1="158" y1="246" x2="238" y2="246" stroke="url(#${goldGradId})" stroke-width="0.5" opacity="0.65" />
+      <text x="198" y="260" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.6" font-weight="600" letter-spacing="1.4" fill="#C5A059">HAND-POURED IN VIRGINIA</text>
     `;
   } else {
-    // Concept 1 (Default): The Precision Mark (Square Hairline Frame)
+    // Concept 1 (Default): The Precision Mark (100% Universal Square Hairline Frame — Crossed Sticks & Flame + PUCK & WICK Only)
     conceptArtwork = `
       <rect x="140" y="166" width="116" height="116" fill="none" stroke="url(#${goldGradId})" stroke-width="1.2" />
-      <g transform="translate(198, 204)">
-        <line x1="-12" y1="-11" x2="12" y2="12" stroke="url(#${goldGradId})" stroke-width="0.95" stroke-linecap="round" />
-        <line x1="12" y1="-11" x2="-12" y2="12" stroke="url(#${goldGradId})" stroke-width="0.95" stroke-linecap="round" />
-        <path d="M 0,-3.5 C -2.2,-6.5 -3.2,-10.5 -1.4,-14 C -0.4,-15.8 0,-17 0,-18 C 0,-17 0.4,-15.8 1.4,-14 C 3.2,-10.5 2.2,-6.5 0,-3.5 Z" fill="url(#${goldGradId})" />
+      <g transform="translate(198, 212)">
+        <line x1="-13" y1="-12" x2="13" y2="13" stroke="url(#${goldGradId})" stroke-width="1.05" stroke-linecap="round" />
+        <line x1="13" y1="-12" x2="-13" y2="13" stroke="url(#${goldGradId})" stroke-width="1.05" stroke-linecap="round" />
+        <path d="M 0,-4 C -2.4,-7 -3.4,-11 -1.5,-15 C -0.4,-17 0,-18.5 0,-19.5 C 0,-18.5 0.4,-17 1.5,-15 C 3.4,-11 2.4,-7 0,-4 Z" fill="url(#${goldGradId})" />
       </g>
-      <text x="198" y="235" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="12" font-weight="600" letter-spacing="1.5" fill="url(#${goldGradId})">PUCK &amp; WICK<tspan font-family="'Inter', sans-serif" font-size="4.5" font-weight="600" dy="-5" dx="0.5" letter-spacing="0">&#8482;</tspan></text>
-      <text x="198" y="256" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="${scentFontSize}" font-weight="600" letter-spacing="${scentSpacing}" fill="#FAF5E8">${displayScent}</text>
-      <text x="198" y="270" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.5" font-weight="500" letter-spacing="1.4" fill="#9CA3AF">10 OZ • 100% SOY WAX</text>
+      <text x="198" y="248" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="12.2" font-weight="600" letter-spacing="1.8" fill="url(#${goldGradId})">PUCK &amp; WICK<tspan font-family="'Inter', sans-serif" font-size="4.5" font-weight="600" dy="-5" dx="0.5" letter-spacing="0">&#8482;</tspan></text>
     `;
   }
 
