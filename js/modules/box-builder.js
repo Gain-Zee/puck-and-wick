@@ -46,11 +46,11 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
     : 'INCLUDES CHARCOAL + LAUSON-98™ PUCK &amp; 8 OZ BODY WASH • SAVE $26';
 
   return `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 568" width="100%" height="100%" class="box-presentation-svg" role="img" aria-label="${isWomen ? "Women's Exclusive Box Presentation" : "Men's Athlete Exclusive Box Presentation"}">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%" class="box-presentation-svg" role="img" aria-label="${isWomen ? "Women's Exclusive Box Presentation" : "Men's Athlete Exclusive Box Presentation"}">
       <title>${isWomen ? "Women's Exclusive Box Presentation Mockup" : "Men's Athlete Exclusive Box Presentation Mockup"}</title>
       <defs>
         <clipPath id="box-photo-clip">
-          <rect x="16" y="14" width="488" height="488" rx="14" />
+          <rect x="4" y="4" width="492" height="492" rx="14" />
         </clipPath>
         <linearGradient id="box-case-grad" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stop-color="#1A1C23" />
@@ -121,21 +121,15 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
         <text x="260" y="306" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8.5" font-weight="600" letter-spacing="2.5" fill="#9CA3AF">
           CUSTOM RIGID GIFT BOX • SAVE $26.00 ($124 VALUE FOR $98)
         </text>
+        <text x="260" y="322" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="13.5" font-weight="600" fill="#FAF5E8">
+          SELECTED CANDLE: ${candleName} (10 OZ SOY) • ${subFooterText}
+        </text>
       </g>
 
-      <!-- Photorealistic Studio Exclusive Box Photograph (Uncropped 1:1 Frame with Zero Overlap) -->
-      <rect x="16" y="14" width="488" height="488" rx="14" fill="#08090C" />
-      <image href="${boxPhotoHref}" x="16" y="14" width="488" height="488" preserveAspectRatio="xMidYMid slice" clip-path="url(#box-photo-clip)" />
-      <rect x="16" y="14" width="488" height="488" rx="14" fill="none" stroke="url(#box-gold-foil)" stroke-width="2" />
-
-      <!-- Dedicated Bottom Custom Candle Badge Bar (Placed Cleanly Below Photo — Zero Overlap) -->
-      <rect x="16" y="510" width="488" height="48" rx="8" fill="#101218" stroke="rgba(197, 160, 89, 0.55)" stroke-width="1.2" />
-      <text x="260" y="532" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="13.5" font-weight="600" letter-spacing="2.5" fill="#FAF5E8">
-        SELECTED CANDLE: ${candleName} (10 OZ SOY)
-      </text>
-      <text x="260" y="548" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8" font-weight="500" letter-spacing="2" fill="#C5A059">
-        ${subFooterText}
-      </text>
+      <!-- Photorealistic Studio Exclusive Box Photograph (Edge-to-Edge 1:1 Frame) -->
+      <rect x="4" y="4" width="492" height="492" rx="14" fill="#08090C" />
+      <image href="${boxPhotoHref}" x="4" y="4" width="492" height="492" preserveAspectRatio="xMidYMid slice" clip-path="url(#box-photo-clip)" />
+      <rect x="4" y="4" width="492" height="492" rx="14" fill="none" stroke="url(#box-gold-foil)" stroke-width="2.5" />
     </svg>
   `;
 }
@@ -219,7 +213,7 @@ export function initBoxBuilder(store, openCartCallback) {
               ${getBoxPresentationSvg(activeEditionKey, selectedCandle, store.state.activeLogoConcept || 1, activeView.image)}
               <button type="button" class="box-enlarge-floating-btn" data-open-lightbox="${activeView.id}" aria-label="Open full-screen photo viewer">
                 ${getIcon('search')}
-                <span>Tap Photo to Enlarge (${allLightboxSlides.length} Angles)</span>
+                <span>Enlarge (${allLightboxSlides.length})</span>
               </button>
             </div>
 
@@ -381,61 +375,6 @@ export function initBoxBuilder(store, openCartCallback) {
           </div>
         </div>
 
-        <!-- Full-Screen Solid Lightbox Gallery Modal (2-Column Split Layout: Zero Overlap, Uncropped object-fit: contain) -->
-        ${lightboxOpen ? `
-          <div class="box-lightbox-backdrop" id="box-lightbox-modal" data-testid="box-lightbox-modal" role="dialog" aria-modal="true" aria-label="${currentLightboxSlide.title}">
-            <div class="box-lightbox-window">
-              <!-- Left Column: Dedicated Uncropped Photo Stage -->
-              <div class="box-lightbox-stage" id="box-lightbox-swipe-stage">
-                <button type="button" class="box-lightbox-nav-btn prev" id="btn-lightbox-prev" aria-label="Previous photo">
-                  ‹
-                </button>
-                <div class="box-lightbox-img-container">
-                  <img src="${currentLightboxSlide.image}" alt="${currentLightboxSlide.title}" class="box-lightbox-full-img" />
-                </div>
-                <button type="button" class="box-lightbox-nav-btn next" id="btn-lightbox-next" aria-label="Next photo">
-                  ›
-                </button>
-              </div>
-
-              <!-- Right Column: Dedicated Info, Caption & 6-Photo Thumbnail Grid -->
-              <div class="box-lightbox-sidebar">
-                <div class="box-lightbox-header">
-                  <div class="box-lightbox-meta">
-                    <span class="box-lightbox-step">${currentLightboxSlide.step}</span>
-                    <span class="box-lightbox-counter">Photo ${lightboxIndex + 1} of ${allLightboxSlides.length}</span>
-                  </div>
-                  <button type="button" class="box-lightbox-close-btn" id="btn-close-box-lightbox" aria-label="Close full-screen photo viewer">
-                    ✕ Close
-                  </button>
-                </div>
-
-                <div class="box-lightbox-caption">
-                  <h4 class="box-lightbox-title">${currentLightboxSlide.title}</h4>
-                  <p class="box-lightbox-desc">${currentLightboxSlide.description}</p>
-                </div>
-
-                <div class="box-lightbox-filmstrip-section">
-                  <div class="box-lightbox-filmstrip-label">Select Angle or Use Arrow Keys / Swipe:</div>
-                  <div class="box-lightbox-filmstrip">
-                    ${allLightboxSlides.map((slide, idx) => `
-                      <button
-                        type="button"
-                        class="box-lightbox-thumb ${idx === lightboxIndex ? 'active' : ''}"
-                        data-lightbox-index="${idx}"
-                        aria-label="View ${slide.shortLabel || slide.title}"
-                      >
-                        <img src="${slide.image}" alt="${slide.title}" />
-                        <span>0${idx + 1}. ${slide.shortLabel}</span>
-                      </button>
-                    `).join('')}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        ` : ''}
-
         <!-- Feature 19: Compact Dual-Action Odor Science Breakdown -->
         <div class="odor-science" id="odor-science" data-testid="odor-science-section">
           <div class="odor-science-header">
@@ -537,41 +476,112 @@ export function initBoxBuilder(store, openCartCallback) {
       });
     });
 
-    // Bind Lightbox Controls if Open
-    if (lightboxOpen) {
-      const closeBtn = root.querySelector('#btn-close-box-lightbox');
-      const backdrop = root.querySelector('#box-lightbox-modal');
-      const prevBtn = root.querySelector('#btn-lightbox-prev');
-      const nextBtn = root.querySelector('#btn-lightbox-next');
-      const swipeStage = root.querySelector('#box-lightbox-swipe-stage');
-      const thumbBtns = root.querySelectorAll('[data-lightbox-index]');
+    // Render Lightbox Portal directly into document.body (avoids iOS Safari overflow-x fixed-position touch trap)
+    let lightboxPortal = document.getElementById('box-lightbox-portal');
+    if (!lightboxPortal) {
+      lightboxPortal = document.createElement('div');
+      lightboxPortal.id = 'box-lightbox-portal';
+      document.body.appendChild(lightboxPortal);
+    }
 
-      const goPrev = () => {
+    if (lightboxOpen) {
+      document.body.style.overflow = 'hidden';
+      lightboxPortal.innerHTML = `
+        <div class="box-lightbox-backdrop" id="box-lightbox-modal" data-testid="box-lightbox-modal" role="dialog" aria-modal="true" aria-label="${currentLightboxSlide.title}">
+          <div class="box-lightbox-window">
+            <!-- Left / Top Column: Dedicated Uncropped Photo Stage with Always-Visible Top-Right Close Button -->
+            <div class="box-lightbox-stage" id="box-lightbox-swipe-stage">
+              <button type="button" class="box-lightbox-top-close-btn" id="btn-close-box-lightbox-top" aria-label="Close full-screen photo viewer">
+                ✕ Close
+              </button>
+              <button type="button" class="box-lightbox-nav-btn prev" id="btn-lightbox-prev" aria-label="Previous photo">
+                ‹
+              </button>
+              <div class="box-lightbox-img-container" id="box-lightbox-img-wrap">
+                <img src="${currentLightboxSlide.image}" alt="${currentLightboxSlide.title}" class="box-lightbox-full-img" id="box-lightbox-main-img" />
+              </div>
+              <button type="button" class="box-lightbox-nav-btn next" id="btn-lightbox-next" aria-label="Next photo">
+                ›
+              </button>
+            </div>
+
+            <!-- Right / Bottom Column: Dedicated Info, Caption & 6-Photo Thumbnail Grid -->
+            <div class="box-lightbox-sidebar">
+              <div class="box-lightbox-header">
+                <div class="box-lightbox-meta">
+                  <span class="box-lightbox-step">${currentLightboxSlide.step}</span>
+                  <span class="box-lightbox-counter">Photo ${lightboxIndex + 1} of ${allLightboxSlides.length} • Tap Photo or ✕ to Close</span>
+                </div>
+                <button type="button" class="box-lightbox-close-btn" id="btn-close-box-lightbox" aria-label="Close full-screen photo viewer">
+                  ✕ Close
+                </button>
+              </div>
+
+              <div class="box-lightbox-caption">
+                <h4 class="box-lightbox-title">${currentLightboxSlide.title}</h4>
+                <p class="box-lightbox-desc">${currentLightboxSlide.description}</p>
+              </div>
+
+              <div class="box-lightbox-filmstrip-section">
+                <div class="box-lightbox-filmstrip-label">Select Angle or Swipe:</div>
+                <div class="box-lightbox-filmstrip">
+                  ${allLightboxSlides.map((slide, idx) => `
+                    <button
+                      type="button"
+                      class="box-lightbox-thumb ${idx === lightboxIndex ? 'active' : ''}"
+                      data-lightbox-index="${idx}"
+                      aria-label="View ${slide.shortLabel || slide.title}"
+                    >
+                      <img src="${slide.image}" alt="${slide.title}" />
+                      <span>0${idx + 1}. ${slide.shortLabel}</span>
+                    </button>
+                  `).join('')}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      const closeLightbox = () => {
+        lightboxOpen = false;
+        document.body.style.overflow = '';
+        render();
+      };
+
+      const closeBtn = lightboxPortal.querySelector('#btn-close-box-lightbox');
+      const topCloseBtn = lightboxPortal.querySelector('#btn-close-box-lightbox-top');
+      const backdrop = lightboxPortal.querySelector('#box-lightbox-modal');
+      const prevBtn = lightboxPortal.querySelector('#btn-lightbox-prev');
+      const nextBtn = lightboxPortal.querySelector('#btn-lightbox-next');
+      const swipeStage = lightboxPortal.querySelector('#box-lightbox-swipe-stage');
+      const imgWrap = lightboxPortal.querySelector('#box-lightbox-img-wrap');
+      const mainImg = lightboxPortal.querySelector('#box-lightbox-main-img');
+      const thumbBtns = lightboxPortal.querySelectorAll('[data-lightbox-index]');
+
+      const goPrev = (e) => {
+        if (e) e.stopPropagation();
         lightboxIndex = (lightboxIndex - 1 + allLightboxSlides.length) % allLightboxSlides.length;
         const slideId = allLightboxSlides[lightboxIndex]?.id;
         if (galleryViews.some((g) => g.id === slideId)) activeGalleryViewId = slideId;
         render();
       };
 
-      const goNext = () => {
+      const goNext = (e) => {
+        if (e) e.stopPropagation();
         lightboxIndex = (lightboxIndex + 1) % allLightboxSlides.length;
         const slideId = allLightboxSlides[lightboxIndex]?.id;
         if (galleryViews.some((g) => g.id === slideId)) activeGalleryViewId = slideId;
         render();
       };
 
-      if (closeBtn) {
-        closeBtn.addEventListener('click', () => {
-          lightboxOpen = false;
-          render();
-        });
-      }
+      if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+      if (topCloseBtn) topCloseBtn.addEventListener('click', closeLightbox);
 
       if (backdrop) {
         backdrop.addEventListener('click', (e) => {
-          if (e.target === backdrop) {
-            lightboxOpen = false;
-            render();
+          if (e.target === backdrop || e.target === swipeStage || e.target === imgWrap || e.target === mainImg) {
+            closeLightbox();
           }
         });
       }
@@ -580,7 +590,8 @@ export function initBoxBuilder(store, openCartCallback) {
       if (nextBtn) nextBtn.addEventListener('click', goNext);
 
       thumbBtns.forEach((btn) => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
           const idx = Number(btn.getAttribute('data-lightbox-index'));
           if (!Number.isNaN(idx)) {
             lightboxIndex = idx;
@@ -591,22 +602,31 @@ export function initBoxBuilder(store, openCartCallback) {
         });
       });
 
-      // Touch swipe support (left/right)
+      // Touch swipe support (left/right for next/prev; swipe up/down to close!)
       if (swipeStage) {
         let touchStartX = 0;
+        let touchStartY = 0;
         swipeStage.addEventListener('touchstart', (e) => {
           touchStartX = e.changedTouches?.[0]?.screenX || 0;
+          touchStartY = e.changedTouches?.[0]?.screenY || 0;
         }, { passive: true });
 
         swipeStage.addEventListener('touchend', (e) => {
           const touchEndX = e.changedTouches?.[0]?.screenX || 0;
-          const delta = touchEndX - touchStartX;
-          if (Math.abs(delta) > 40) {
-            if (delta < 0) goNext();
+          const touchEndY = e.changedTouches?.[0]?.screenY || 0;
+          const deltaX = touchEndX - touchStartX;
+          const deltaY = touchEndY - touchStartY;
+          if (Math.abs(deltaY) > 55 && Math.abs(deltaY) > Math.abs(deltaX)) {
+            closeLightbox();
+          } else if (Math.abs(deltaX) > 40 && Math.abs(deltaX) > Math.abs(deltaY)) {
+            if (deltaX < 0) goNext();
             else goPrev();
           }
         }, { passive: true });
       }
+    } else {
+      document.body.style.overflow = '';
+      lightboxPortal.innerHTML = '';
     }
 
     // Bind interactive events
