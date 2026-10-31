@@ -285,7 +285,7 @@ export const PRODUCTS = [
     weightOz: 4,
     vessel: '1x 3.0" Regulation-Size Matte-Black Anodized Aluminum Disc with Brushed Gold Bezel',
     wax: 'Sub-2nm Coconut Charcoal (>1,000 m²/g) + Lauson-98™ Molecular Core (40g Fill)',
-    wick: 'Laser-Drilled 18-Port Vapor Diffusion Vent Array',
+    wick: '360° Perimeter Double-Ring Vent Array (96 Micro-Ports + 8 Side Intake Slots)',
     description: 'Sold individually as a standalone 3.0" regulation-diameter odor puck engineered to sit at the bottom of hockey bags, gym duffels, and equipment lockers. Heavy-gauge Matte-Black & Brushed-Gold anodized aluminum combines >1,000 m²/g microporous coconut carbon with our proprietary Swiss-inspired Lauson-98™ vapor complex to permanently destroy whole-bag sweat and gear odors.',
     notes: {
       top: ['Lauson-98™ Vapor-Phase Complex', 'Zero Masking Perfumes', 'Hypoallergenic'],
@@ -316,7 +316,7 @@ export const PRODUCTS = [
     weightOz: 4,
     vessel: '1x 3.0" Warm Matte Alabaster-Ivory Anodized Aluminum Disc with Brushed Champagne-Gold Bezel',
     wax: 'Sub-2nm Coconut Charcoal (>1,000 m²/g) + Lauson-98™ Molecular Core (40g Fill)',
-    wick: 'Laser-Drilled 18-Port Vapor Diffusion Vent Array',
+    wick: '360° Perimeter Double-Ring Vent Array (96 Micro-Ports + 8 Side Intake Slots)',
     description: 'Sold individually as a standalone 3.0" puck tailored in our signature Warm Alabaster-Ivory/White and Brushed Champagne-Gold finish for women’s yoga & Pilates workout bags, gym totes, running sneaker shelves, and walk-in closets. Built with sub-2nm activated coconut carbon (>1,000 m²/g) and our proprietary Lauson-98™ vapor-phase complex to permanently eliminate workout and fabric odors with zero masking perfumes.',
     notes: {
       top: ['Lauson-98™ Vapor-Phase Complex', 'Zero Masking Perfumes', 'Hypoallergenic'],
@@ -347,7 +347,7 @@ export const PRODUCTS = [
     weightOz: 3,
     vessel: '2x Compact 2.0" (50mm) Matte-Black & Brushed-Gold Anodized Aluminum Discs',
     wax: 'Sub-2nm Coconut Charcoal (>1,000 m²/g) + Lauson-98™ Core (2x 18g Targeted Fill)',
-    wick: 'Dual Laser-Drilled 12-Port Toe-Box & Cuff Vapor Vent Arrays',
+    wick: 'Dual 360° Perimeter Double-Ring Vent Arrays (72 Micro-Ports + 8 Side Slots Each)',
     description: 'While our 3.0" Puck treats your entire gear bag, hockey gloves and skate boots trap moisture and bacteria deep inside narrow cuffs and toe boxes. This compact 2.0" Twin-Pack slides effortlessly into your left and right skates, hockey gloves, cleats, or daily footwear—delivering targeted Lauson-98™ + Activated Carbon molecular odor destruction right at the source.',
     notes: {
       top: ['Lauson-98™ Vapor-Phase Complex', 'Zero Masking Perfumes', 'Hypoallergenic'],
