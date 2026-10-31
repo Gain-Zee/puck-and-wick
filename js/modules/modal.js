@@ -100,7 +100,7 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
 
             <div class="modal-included-callout" data-testid="modal-included-callout">
               <span class="included-callout-badge">WHAT YOU RECEIVE</span>
-              <span class="included-callout-text">${product.includedSummary || `SOLD INDIVIDUALLY • Includes 1x 10 oz (${product.name}) Hand-Poured Soy Candle in Two-Piece Collector Box.`}</span>
+              <span class="included-callout-text">${product.includedSummary || `SOLD INDIVIDUALLY • Includes 1x 10 oz (${product.name}) Hand-Poured Soy Candle, Two-Piece Collector Box, Circular Wax Dust Guard & 3.5"×3.5" Atelier Certificate Card.`}</span>
             </div>
 
             <p class="modal-description">${product.description}</p>

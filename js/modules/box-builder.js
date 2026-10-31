@@ -113,8 +113,8 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
           <rect x="39" y="68" width="52" height="72" rx="3" fill="#0A0A0C" stroke="#C5A059" stroke-width="0.9" />
           <text x="65" y="88" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="7" font-weight="700" letter-spacing="1" fill="#C5A059">PUCK &amp; WICK&#8482;</text>
           <text x="65" y="104" text-anchor="middle" font-family="'Inter', sans-serif" font-size="6" font-weight="700" fill="#FAF5E8">${washLabel.slice(0, 16)}</text>
-          <text x="65" y="117" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" fill="#9CA3AF">CHARCOAL + LAUSON-98™</text>
-          <text x="65" y="130" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" font-weight="600" fill="#D4AF37">8 FL OZ (236 ML)</text>
+          <text x="65" y="117" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" fill="#9CA3AF">${isWomen ? 'LAUSON-98™ FABRIC MIST' : 'CHARCOAL + LAUSON-98™'}</text>
+          <text x="65" y="130" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" font-weight="600" fill="#D4AF37">${isWomen ? '4 FL OZ (118 ML)' : '8 FL OZ (236 ML)'}</text>
           <text x="65" y="186" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8" font-weight="600" letter-spacing="1" fill="#D4AF37">03. MIST / WASH</text>
         </g>
 

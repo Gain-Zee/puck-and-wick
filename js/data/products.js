@@ -516,6 +516,9 @@ export function getProductGallerySlides(product, conceptId = 1) {
       : (CONCEPT_CANDLE_PHOTOS[Number(conceptId)] || 'assets/images/candle-obsidian.jpg');
 
   if (!product.productType || product.productType === 'candle') {
+    const atelierCardImg = product.vesselType === 'ivory'
+      ? 'assets/images/packaging/atelier-card-ivory.jpg'
+      : 'assets/images/packaging/atelier-card-obsidian.jpg';
     return [
       {
         id: 'lit',
@@ -533,17 +536,17 @@ export function getProductGallerySlides(product, conceptId = 1) {
         thumb: `assets/images/packaging/shelf-${product.id}.jpg`
       },
       {
-        id: 'sides',
-        shortLabel: '4 Sides',
-        title: `${product.name} — All 4 Box Sides & Circular Wax Dust Cover`,
+        id: 'atelier_card',
+        shortLabel: 'Atelier Card',
+        title: `${product.name} — Included 3.5"×3.5" Square Atelier Card (Story, QC #1 & Burn Ritual)`,
         type: 'image',
-        src: `assets/images/packaging/sides-${product.id}.jpg`,
-        thumb: `assets/images/packaging/sides-${product.id}.jpg`
+        src: atelierCardImg,
+        thumb: atelierCardImg
       },
       {
         id: 'spin360',
         shortLabel: '360° Box',
-        title: `${product.name} — Interactive 360° Rotating Rigid Shoulder Box`,
+        title: `${product.name} — Interactive 360° Rotating Pristine Collector Box`,
         type: 'box360',
         thumb: `assets/images/packaging/shelf-${product.id}.jpg`
       }
@@ -725,6 +728,7 @@ export function getInteractive360BoxHtml(product, mode = 'card') {
     : isIvory
       ? 'SANCTUARY SCENT • BATCH #098'
       : 'SIGNATURE SCENT • BATCH #098';
+  const strokeColor = isIvory ? '#8C6624' : '#E5C878';
 
   return `
     <div class="box360-stage ${themeClass} ${sizeClass}" data-box360-root="${product.id}">
@@ -734,9 +738,9 @@ export function getInteractive360BoxHtml(product, mode = 'card') {
           <div class="box360-angle-pills" role="group" aria-label="Rotate box to specific side">
             <button type="button" class="box360-angle-btn active" data-box360-angle="auto">Levitating Spin</button>
             <button type="button" class="box360-angle-btn" data-box360-angle="0">01 Front</button>
-            <button type="button" class="box360-angle-btn" data-box360-angle="-90">02 Craft</button>
-            <button type="button" class="box360-angle-btn" data-box360-angle="-180">03 Story</button>
-            <button type="button" class="box360-angle-btn" data-box360-angle="-270">04 Care</button>
+            <button type="button" class="box360-angle-btn" data-box360-angle="-90">02 Side Band</button>
+            <button type="button" class="box360-angle-btn" data-box360-angle="-180">03 Back Stamp</button>
+            <button type="button" class="box360-angle-btn" data-box360-angle="-270">04 Matte Side</button>
           </div>
         ` : ''}
       </div>
@@ -744,7 +748,7 @@ export function getInteractive360BoxHtml(product, mode = 'card') {
       <div class="box360-scene" data-box360-drag-zone>
         <div class="box360-levitate-wrapper">
           <div class="box360-turntable" data-box360-turntable>
-          <!-- FACE 01: FRONT CREST + SCENT CORNER BAND -->
+          <!-- FACE 01: FRONT CREST (EXACT STICKS & FLAME MARK) + SCENT CORNER BAND -->
           <div class="box360-face face-front">
             <div class="box360-lid">
               <div class="box360-qc-seal">
@@ -754,12 +758,14 @@ export function getInteractive360BoxHtml(product, mode = 'card') {
             </div>
             <div class="box360-gold-neck"></div>
             <div class="box360-body">
-              <div class="box360-crest-frame">
-                <div class="box360-crest-kicker">EST. PURCELLVILLE, VA</div>
-                <div class="box360-crest-icon">⚔</div>
-                <div class="box360-crest-brand">PUCK &amp; WICK™</div>
-                <div class="box360-crest-loc">LOUDOUN COUNTY • VIRGINIA</div>
-                <div class="box360-crest-soy">100% AMERICAN SOY WAX</div>
+              <div class="box360-crest-frame box360-crest-clean">
+                <svg class="box360-sticks-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <line x1="28" y1="36" x2="92" y2="96" stroke="${strokeColor}" stroke-width="3.2" stroke-linecap="round" />
+                  <line x1="92" y1="36" x2="28" y2="96" stroke="${strokeColor}" stroke-width="3.2" stroke-linecap="round" />
+                  <path d="M 60,54 C 53,45 50,33 56,22 C 59,17 60,13 60,10 C 60,13 61,17 64,22 C 70,33 67,45 60,54 Z" fill="${strokeColor}" />
+                  <path d="M 60,50 C 57,44 56,37 58.5,31 C 60,28 60.5,28 61.5,31 C 64,37 63,44 60,50 Z" fill="${isIvory ? '#FAF5EB' : '#0B0C0E'}" opacity="0.5" />
+                </svg>
+                <div class="box360-crest-brand">PUCK &amp; WICK</div>
               </div>
               <div class="box360-scent-band band-front">
                 <span class="band-kicker">${kickerText}</span>
@@ -769,59 +775,36 @@ export function getInteractive360BoxHtml(product, mode = 'card') {
             </div>
           </div>
 
-          <!-- FACE 02: RIGHT SIDE (CANDLE CARE & BURN RITUAL + WRAPPED SCENT BAND) -->
+          <!-- FACE 02: SIDE PANEL (PRISTINE MATTE UPPER WALL + WRAPPED SCENT BAND ONLY) -->
           <div class="box360-face face-right">
             <div class="box360-lid"></div>
             <div class="box360-gold-neck"></div>
             <div class="box360-body box360-side-panel">
-              <div class="side-kicker">OPTIMAL PERFORMANCE</div>
-              <div class="side-heading">CANDLE CARE &amp; BURN RITUAL</div>
-              <div class="side-rule"></div>
-              <div class="side-item"><strong>1. FIRST LIGHT (MEMORY RING)</strong><span>Melt wax to glass edges on 1st burn (2–3 hrs).</span></div>
-              <div class="side-item"><strong>2. TRIM WICK TO 1/4 INCH</strong><span>Trim organic cotton wick to 1/4" before lighting.</span></div>
-              <div class="side-item"><strong>3. 4-HOUR MAX SESSIONS</strong><span>Burn max 4 hrs at a time; extinguish with lid.</span></div>
-              <div class="side-item"><strong>4. REUSABLE APOTHECARY JAR</strong><span>Stop at 1/2" wax; wash warm glass to reuse.</span></div>
               <div class="box360-scent-band band-right">
-                <span class="band-kicker">10 OZ (283G) • 55–65 HR CLEAN BURN</span>
+                <span class="band-kicker">10 OZ (283G) SOY WAX</span>
                 <strong class="band-scent">${scentName}</strong>
-                <span class="band-notes">HAND-POURED IN PURCELLVILLE, VA</span>
+                <span class="band-notes">QC #1 CERTIFIED • VA POUR</span>
               </div>
             </div>
           </div>
 
-          <!-- FACE 03: BACK PANEL (TWENTY-FIVE YEARS ON THE ICE STORY & 4 BADGES) -->
+          <!-- FACE 03: BACK PANEL (QUIET LUXURY STAMP: EST. • 2026 • PURCELLVILLE, VA) -->
           <div class="box360-face face-back">
             <div class="box360-lid"></div>
             <div class="box360-gold-neck"></div>
             <div class="box360-body box360-side-panel">
-              <div class="side-kicker">TWENTY-FIVE YEARS ON THE ICE</div>
-              <div class="side-heading">ONE STANDARD OF EXCELLENCE</div>
-              <div class="side-rule"></div>
-              <p class="side-story">Born in Lausanne, Switzerland to proud Bulgarian roots and forged in Purcellville, VA, Puck &amp; Wick™ unites Swiss-born Lauson-98™ precision, Bulgarian botanical heritage, and small-batch American soy craftsmanship—cured 14 days in tribute to #98.</p>
-              <div class="side-badges-grid">
-                <div class="side-badge-box"><strong>25 YRS</strong><span>COMPETITIVE ICE</span></div>
-                <div class="side-badge-box"><strong>#98</strong><span>FOUNDER TRIBUTE</span></div>
-                <div class="side-badge-box"><strong>14 DAYS</strong><span>CURED IN GLASS</span></div>
-                <div class="side-badge-box"><strong>VA</strong><span>PURCELLVILLE POUR</span></div>
+              <div class="box360-minimal-back-stamp">
+                <strong>EST. &bull; 2026 &bull; PURCELLVILLE, VA</strong>
+                <span>SMALL-BATCH AMERICAN SOY</span>
               </div>
-              <div class="side-footer">PUCKANDWICK.COM • HAND-POURED IN PURCELLVILLE, VA</div>
             </div>
           </div>
 
-          <!-- FACE 04: LEFT PANEL (THE 4 PILLARS OF CRAFT) -->
+          <!-- FACE 04: PRISTINE MATTE SIDE PANEL (ZERO CLUTTER) -->
           <div class="box360-face face-left">
             <div class="box360-lid"></div>
             <div class="box360-gold-neck"></div>
-            <div class="box360-body box360-side-panel">
-              <div class="side-kicker">QUALITY CONTROL #1 STANDARD</div>
-              <div class="side-heading">THE 4 PILLARS OF CRAFT</div>
-              <div class="side-rule"></div>
-              <div class="side-item"><strong>01 • 100% AMERICAN SOY WAX</strong><span>Renewable Midwest soy wax; burns 30–50% slower with zero soot.</span></div>
-              <div class="side-item"><strong>02 • PHTHALATE-FREE BOTANICALS</strong><span>IFRA-certified luxury oils; 100% free from phthalates &amp; parabens.</span></div>
-              <div class="side-item"><strong>03 • LEAD-FREE COTTON WICKS</strong><span>Braided organic cotton wicks calibrated for an even melt pool.</span></div>
-              <div class="side-item"><strong>04 • 14-DAY SMALL-BATCH CURE</strong><span>Hand-poured in Purcellville, VA and cured 14 full days in glass.</span></div>
-              <div class="side-footer">ZERO PARAFFIN • ZERO PHTHALATES • QC #1</div>
-            </div>
+            <div class="box360-body box360-side-panel"></div>
           </div>
 
           <!-- TOP LID ROOF -->

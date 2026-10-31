@@ -1125,11 +1125,76 @@
   color: #8C6624;
 }
 
-.box360-crest-brand {
-  font-family: var(--font-serif, 'Cormorant Garamond', 'Cinzel', serif);
-  font-size: 0.62rem;
+.box360-crest-frame.box360-crest-clean {
+  width: 98px;
+  height: 82px;
+  outline: none;
+  background: rgba(11, 12, 14, 0.45);
+  gap: 2px;
+}
+
+.box360-ivory .box360-crest-frame.box360-crest-clean {
+  background: rgba(250, 245, 235, 0.55);
+}
+
+.box360-sticks-svg {
+  width: 36px;
+  height: 36px;
+  display: block;
+}
+
+.box360-minimal-back-stamp {
+  margin: auto;
+  border: 1px solid rgba(212, 175, 55, 0.65);
+  background: rgba(11, 12, 14, 0.55);
+  padding: 7px 8px;
+  width: 126px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.box360-ivory .box360-minimal-back-stamp {
+  border-color: rgba(140, 102, 36, 0.65);
+  background: rgba(250, 245, 235, 0.7);
+}
+
+.box360-minimal-back-stamp strong {
+  font-size: 0.35rem;
   font-weight: 800;
   letter-spacing: 0.08em;
+  color: #F3D88C;
+}
+
+.box360-ivory .box360-minimal-back-stamp strong {
+  color: #7D5B20;
+}
+
+.box360-minimal-back-stamp span {
+  font-size: 0.28rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  color: #D1D5DB;
+}
+
+.box360-ivory .box360-minimal-back-stamp span {
+  color: #4A3B28;
+}
+
+.box360-crest-brand {
+  font-family: var(--font-serif, 'Cormorant Garamond', 'Cinzel', serif);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #E5C878;
+}
+
+.box360-ivory .box360-crest-brand {
+  color: #7D5B20;
 }
 
 .box360-crest-loc {
