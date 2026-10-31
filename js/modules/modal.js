@@ -4,7 +4,7 @@
  * vessel specs, quantity controls, and add-to-cart integration.
  */
 
-import { getProductById, getCandleVesselSvg, getProductGallerySlides } from '../data/products.js';
+import { getProductById, getCandleVesselSvg, getProductGallerySlides, getInteractive360BoxHtml } from '../data/products.js';
 import { getIcon } from '../utils/svg-assets.js';
 
 let activeTriggerElement = null;
@@ -25,6 +25,9 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
     const slide = gallerySlides[idx] || gallerySlides[0];
     if (slide.type === 'svg') {
       return getCandleVesselSvg(product, activeLogoConcept, true);
+    }
+    if (slide.type === 'box360') {
+      return getInteractive360BoxHtml(product, true);
     }
     return `
       <div class="modal-slide-photo-frame">
@@ -210,10 +213,33 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
   const nextSlideBtn = document.getElementById('modal-slide-next');
   const thumbBtns = backdrop.querySelectorAll('.modal-thumb-btn');
 
+  const bind360AngleControls = () => {
+    if (!galleryStage) return;
+    const turntable = galleryStage.querySelector('[data-box360-turntable]');
+    const angleBtns = galleryStage.querySelectorAll('[data-box360-angle]');
+    if (!turntable || !angleBtns.length) return;
+    angleBtns.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const angle = btn.getAttribute('data-box360-angle');
+        angleBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        if (angle === 'auto') {
+          turntable.classList.add('is-spinning');
+          turntable.style.transform = '';
+        } else {
+          turntable.classList.remove('is-spinning');
+          turntable.style.transform = `rotateX(-8deg) rotateY(${angle}deg)`;
+        }
+      });
+    });
+  };
+
   const setActiveSlide = (newIdx) => {
     activeSlideIdx = (newIdx + gallerySlides.length) % gallerySlides.length;
     if (galleryStage) {
       galleryStage.innerHTML = renderSlideStage(activeSlideIdx);
+      bind360AngleControls();
     }
     if (counterEl) {
       counterEl.innerHTML = `<span>${activeSlideIdx + 1} / ${gallerySlides.length}</span>`;
@@ -224,6 +250,8 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
       btn.setAttribute('aria-selected', String(isAct));
     });
   };
+
+  bind360AngleControls();
 
   if (prevSlideBtn) {
     prevSlideBtn.addEventListener('click', (e) => {

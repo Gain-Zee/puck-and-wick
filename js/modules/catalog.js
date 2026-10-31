@@ -4,7 +4,7 @@
  * quick-view modal triggers, and direct quick-add cart triggers.
  */
 
-import { PRODUCTS, getProductsByCategory, getCandleVesselSvg, getProductGallerySlides } from '../data/products.js';
+import { PRODUCTS, getProductsByCategory, getCandleVesselSvg, getProductGallerySlides, getInteractive360BoxHtml } from '../data/products.js';
 import { openProductModal } from './modal.js';
 import { getIcon } from '../utils/svg-assets.js';
 
@@ -68,7 +68,9 @@ export function initCatalog(store, openCartDrawer) {
                   <div class="vessel-wrapper" style="width:100%;height:100%;max-width:none;">
                     ${currentSlide.type === 'svg'
                       ? getCandleVesselSvg(p, store.state.activeLogoConcept || 1)
-                      : `<img src="${currentSlide.src}" alt="${currentSlide.title}" class="card-slide-img slide-${currentSlide.id}" loading="lazy" />`
+                      : currentSlide.type === 'box360'
+                        ? getInteractive360BoxHtml(p, false)
+                        : `<img src="${currentSlide.src}" alt="${currentSlide.title}" class="card-slide-img slide-${currentSlide.id}" loading="lazy" />`
                     }
                   </div>
                   
