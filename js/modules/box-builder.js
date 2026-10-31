@@ -478,22 +478,11 @@ export function initBoxBuilder(store, openCartCallback) {
           </div>
         </div>
 
-        <!-- Full-Screen Solid Lightbox Gallery Modal (Swipeable, Uncropped object-fit: contain) -->
+        <!-- Full-Screen Solid Lightbox Gallery Modal (2-Column Split Layout: Zero Overlap, Uncropped object-fit: contain) -->
         ${lightboxOpen ? `
           <div class="box-lightbox-backdrop" id="box-lightbox-modal" data-testid="box-lightbox-modal" role="dialog" aria-modal="true" aria-label="${currentLightboxSlide.title}">
             <div class="box-lightbox-window">
-              <!-- Top Bar -->
-              <div class="box-lightbox-header">
-                <div class="box-lightbox-meta">
-                  <span class="box-lightbox-step">${currentLightboxSlide.step}</span>
-                  <span class="box-lightbox-counter">Photo ${lightboxIndex + 1} of ${allLightboxSlides.length} • Swipe or Use Arrows</span>
-                </div>
-                <button type="button" class="box-lightbox-close-btn" id="btn-close-box-lightbox" aria-label="Close full-screen photo viewer">
-                  ✕ Close
-                </button>
-              </div>
-
-              <!-- Main Uncropped Image Stage with Prev / Next Controls -->
+              <!-- Left Column: Dedicated Uncropped Photo Stage -->
               <div class="box-lightbox-stage" id="box-lightbox-swipe-stage">
                 <button type="button" class="box-lightbox-nav-btn prev" id="btn-lightbox-prev" aria-label="Previous photo">
                   ‹
@@ -506,24 +495,38 @@ export function initBoxBuilder(store, openCartCallback) {
                 </button>
               </div>
 
-              <!-- Caption & Filmstrip Thumbnails -->
-              <div class="box-lightbox-footer">
+              <!-- Right Column: Dedicated Info, Caption & 6-Photo Thumbnail Grid -->
+              <div class="box-lightbox-sidebar">
+                <div class="box-lightbox-header">
+                  <div class="box-lightbox-meta">
+                    <span class="box-lightbox-step">${currentLightboxSlide.step}</span>
+                    <span class="box-lightbox-counter">Photo ${lightboxIndex + 1} of ${allLightboxSlides.length}</span>
+                  </div>
+                  <button type="button" class="box-lightbox-close-btn" id="btn-close-box-lightbox" aria-label="Close full-screen photo viewer">
+                    ✕ Close
+                  </button>
+                </div>
+
                 <div class="box-lightbox-caption">
                   <h4 class="box-lightbox-title">${currentLightboxSlide.title}</h4>
                   <p class="box-lightbox-desc">${currentLightboxSlide.description}</p>
                 </div>
-                <div class="box-lightbox-filmstrip">
-                  ${allLightboxSlides.map((slide, idx) => `
-                    <button
-                      type="button"
-                      class="box-lightbox-thumb ${idx === lightboxIndex ? 'active' : ''}"
-                      data-lightbox-index="${idx}"
-                      aria-label="View ${slide.shortLabel || slide.title}"
-                    >
-                      <img src="${slide.image}" alt="${slide.title}" />
-                      <span>0${idx + 1}. ${slide.shortLabel}</span>
-                    </button>
-                  `).join('')}
+
+                <div class="box-lightbox-filmstrip-section">
+                  <div class="box-lightbox-filmstrip-label">Select Angle or Use Arrow Keys / Swipe:</div>
+                  <div class="box-lightbox-filmstrip">
+                    ${allLightboxSlides.map((slide, idx) => `
+                      <button
+                        type="button"
+                        class="box-lightbox-thumb ${idx === lightboxIndex ? 'active' : ''}"
+                        data-lightbox-index="${idx}"
+                        aria-label="View ${slide.shortLabel || slide.title}"
+                      >
+                        <img src="${slide.image}" alt="${slide.title}" />
+                        <span>0${idx + 1}. ${slide.shortLabel}</span>
+                      </button>
+                    `).join('')}
+                  </div>
                 </div>
               </div>
             </div>
