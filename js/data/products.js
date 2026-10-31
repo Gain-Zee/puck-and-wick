@@ -289,37 +289,37 @@ export const PRODUCTS = [
     notes: {
       top: ['Lauson-98™ Vapor-Phase Complex', 'Zero Masking Perfumes', 'Hypoallergenic'],
       middle: ['Sub-2nm Activated Coconut Carbon', '>1,000 m²/g Micropore Lattice'],
-      base: ['Traps Thiols (R-SH) & Amines (R-NH₂)', '6+ Months Continuous Gear Protection']
+      base: ['Traps Thiols (R-SH) & Amines (R-NH₂)', '6+ Months Continuous Protection']
     },
     featured: true,
     seasonal: false,
     vesselType: 'obsidian',
     photo: 'assets/images/item-puck-men.jpg',
-    subSpecText: 'ANODIZED HARDWARE PUCK • LAUSON-98™ + CHARCOAL',
+    subSpecText: 'ANODIZED HARDWARE PUCK • LAUSON-98™ + CARBON',
     waxSpecSub: 'Lauson-98™ + Carbon Matrix',
     accentColor: '#C5A059'
   },
   {
     id: 'puck-womens-sanctuary',
     name: "Women's Sanctuary Closet & Tote Puck",
-    tagline: 'Warm Ivory & Champagne-Gold Hardware Disc. Lauson-98™ + Coconut Carbon.',
+    tagline: 'Warm Ivory & Champagne-Gold Hardware Disc. Activated Coconut Carbon + Lauson-98™.',
     price: 44.00,
     formattedPrice: '$44.00',
     category: ['womens', 'odor_care'],
     productType: 'odor_care',
     genderLine: 'womens',
     genderLabel: 'WOMENS',
-    specUnitLabel: 'Sanctuary Puck',
+    specUnitLabel: 'Anodized Puck',
     burnTime: '6+ Months Active',
     weightOz: 4,
-    vessel: 'Warm Matte Alabaster-Ivory Anodized Shell with Brushed Champagne-Gold Bezel',
+    vessel: 'Warm Matte Alabaster-Ivory Anodized Aluminum with Brushed Champagne-Gold Chamfered Bezel',
     wax: 'Sub-2nm Coconut Charcoal (>1,000 m²/g) + Lauson-98™ Molecular Core',
     wick: 'Laser-Drilled 18-Port Vapor Diffusion Vent Array',
-    description: 'Designed in our signature Warm Alabaster-Ivory and Brushed Champagne-Gold finish for walk-in closets, Pilates & yoga totes, handbag shelves, and luxury car interiors. Silently adsorbs stale moisture and neutralizes airborne odors at the molecular level with Lauson-98™ while leaving delicate fabrics untouched.',
+    description: 'Designed in our signature Warm Alabaster-Ivory and Brushed Champagne-Gold finish for walk-in closets, Pilates & yoga totes, handbag shelves, and luxury car interiors. Built with the exact same sub-2nm activated coconut carbon (>1,000 m²/g) and proprietary Lauson-98™ vapor-phase complex as our Athlete Puck to permanently neutralize odors without masking perfumes.',
     notes: {
-      top: ['Lauson-98™ Molecular Neutralizer', 'Whisper-Clean Sheer White Tea Aura'],
-      middle: ['Virgin Coconut-Shell Activated Carbon', '>1,000 m²/g Micropore Matrix'],
-      base: ['Purifies Walk-In Closets & Gym Totes', 'Safe for Cashmere, Silk & Leather']
+      top: ['Lauson-98™ Vapor-Phase Complex', 'Zero Masking Perfumes', 'Hypoallergenic'],
+      middle: ['Sub-2nm Activated Coconut Carbon', '>1,000 m²/g Micropore Lattice'],
+      base: ['Traps Thiols (R-SH) & Amines (R-NH₂)', '6+ Months Continuous Protection']
     },
     featured: true,
     seasonal: false,
@@ -428,7 +428,7 @@ export const CONCEPT_CANDLE_PHOTOS = {
   4: 'assets/images/candle-concept-4.jpg'
 };
 
-export function getCandleVesselSvg(product, conceptId) {
+export function getCandleVesselSvg(product, conceptId, isModal = false) {
   const activeConcept = Number(
     conceptId ||
     (typeof window !== 'undefined' && window.PuckWickStore?.state?.activeLogoConcept) ||
@@ -440,7 +440,7 @@ export function getCandleVesselSvg(product, conceptId) {
     : (isIvory && activeConcept === 1)
       ? 'assets/images/candle-ivory.jpg'
       : (CONCEPT_CANDLE_PHOTOS[activeConcept] || 'assets/images/candle-obsidian.jpg');
-  const vignetteId = `vessel-vig-${product.id}`;
+  const vignetteId = `vessel-vig-${product.id}${isModal ? '-modal' : ''}`;
   const subSpecText = product.subSpecText
     ? product.subSpecText
     : (isIvory ? '10 OZ FROSTED IVORY • 100% AMERICAN SOY' : '10 OZ • 100% AMERICAN SOY');
@@ -448,6 +448,37 @@ export function getCandleVesselSvg(product, conceptId) {
     ? product.name.slice(0, 25).toUpperCase() + '…'
     : product.name.toUpperCase();
   const nameFontSize = product.name.length > 22 ? '12.5' : '15.5';
+
+  if (isModal) {
+    return `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 680" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" style="width:100%;height:100%;display:block;" class="candle-vessel-svg" data-active-concept="${activeConcept}" aria-label="${product.name} Luxury Presentation (Concept ${activeConcept})" role="img">
+        <defs>
+          <linearGradient id="${vignetteId}" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#08090C" stop-opacity="0.06" />
+            <stop offset="68%" stop-color="#08090C" stop-opacity="0" />
+            <stop offset="86%" stop-color="#08090C" stop-opacity="0.92" />
+            <stop offset="100%" stop-color="#08090C" stop-opacity="1" />
+          </linearGradient>
+          <clipPath id="${vignetteId}-clip">
+            <rect x="0" y="0" width="400" height="680" />
+          </clipPath>
+        </defs>
+
+        <g clip-path="url(#${vignetteId}-clip)">
+          <rect x="0" y="0" width="400" height="680" fill="#08090C" />
+
+          <!-- Full-Height Studio Product Photograph (Starts at Top Edge y=0, Smoothly Fades into Bottom Nameplate) -->
+          <image href="${photoHref}" x="0" y="0" width="400" height="600" preserveAspectRatio="xMidYMid slice" />
+          <rect x="0" y="0" width="400" height="680" fill="url(#${vignetteId})" />
+
+          <!-- Minimalist Product Name Plate at Bottom of Modal Stage -->
+          <rect x="24" y="606" width="352" height="50" rx="6" fill="rgba(11, 12, 14, 0.92)" stroke="rgba(197, 160, 89, 0.68)" stroke-width="1.2" />
+          <text x="200" y="629" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="${nameFontSize}" font-weight="600" letter-spacing="2.2" fill="#FAF5E8">${displayName}</text>
+          <text x="200" y="646" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7.5" font-weight="500" letter-spacing="1.8" fill="#C5A059">${subSpecText}</text>
+        </g>
+      </svg>
+    `;
+  }
 
   return `
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%" style="width:100%;height:100%;display:block;" class="candle-vessel-svg" data-active-concept="${activeConcept}" aria-label="${product.name} Luxury Presentation (Concept ${activeConcept})" role="img">

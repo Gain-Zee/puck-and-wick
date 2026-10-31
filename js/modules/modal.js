@@ -30,7 +30,7 @@ export function openProductModal(productId, store, openCartCallback) {
           <!-- Left: Vessel Visual Showcase -->
           <div class="modal-visual-column">
             <div class="modal-vessel-stage">
-              ${getCandleVesselSvg(product, store?.state?.activeLogoConcept || 1)}
+              ${getCandleVesselSvg(product, store?.state?.activeLogoConcept || 1, true)}
             </div>
             ${product.seasonal ? `<div class="modal-badge-seasonal">${product.seasonalBadge || 'Seasonal Collaboration'}</div>` : ''}
           </div>
@@ -92,11 +92,11 @@ export function openProductModal(productId, store, openCartCallback) {
                 <span class="spec-value vessel-specs" data-testid="product-vessel-specs">${product.vessel}</span>
               </div>
               <div class="spec-item">
-                <span class="spec-label">Wax Formulation</span>
+                <span class="spec-label">${product.productType === 'odor_care' ? 'Active Formulation' : 'Wax Formulation'}</span>
                 <span class="spec-value">${product.wax}</span>
               </div>
               <div class="spec-item">
-                <span class="spec-label">Wick Engineering</span>
+                <span class="spec-label">${product.productType === 'odor_care' ? 'Delivery System' : 'Wick Engineering'}</span>
                 <span class="spec-value">${product.wick}</span>
               </div>
             </div>
