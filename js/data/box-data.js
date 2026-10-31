@@ -75,14 +75,14 @@ export const EXCLUSIVE_BOX_EDITIONS = {
     id: 'women_luxe',
     badge: 'Warm Frosted Ivory & Gold • Sanctuary #98 Edition',
     title: "Women's Sanctuary Exclusive Box",
-    subtitle: '10 oz Frosted Ivory Candle + 6 oz Whipped Shea Body Butter + 4 oz Botanical Linen Mist',
+    subtitle: '10 oz Frosted Ivory Candle + 3.0" White/Ivory Sanctuary Puck + 4 oz Botanical Linen Mist',
     price: 98.00,
     compareAtValue: 124.00,
     savings: 26.00,
     defaultCandleId: 'candle-top-shelf',
     photo: 'assets/images/box-women-open.jpg',
     description:
-      'Crafted in Warm Frosted Ivory & Champagne Gold (#98 Founder Tribute). Pairs your choice of 10 oz soy candle with our 6 oz Whipped Shea & Cashmere Body Butter and 4 oz Lauson-98™ Botanical Linen Mist.',
+      'Crafted in Warm Frosted Ivory & Champagne Gold (#98 Founder Tribute). Pairs your choice of 10 oz soy candle with our 3.0" Warm Ivory/White Lauson-98™ + Carbon Workout Tote & Closet Puck and 4 oz Lauson-98™ Botanical Linen Mist.',
     bundledItems: {
       candle: {
         role: '1x Full-Size Hand-Poured Soy Candle (10 oz Frosted Ivory Vessel)',
@@ -90,9 +90,9 @@ export const EXCLUSIVE_BOX_EDITIONS = {
         retailValue: '$36.00'
       },
       puck: {
-        title: '6 oz Whipped Shea & Cashmere Body Butter (Sanctuary Care)',
-        detail: 'Triple-whipped organic shea butter, cold-pressed jojoba & white tea extract for velvet skin hydration (Botanical Linen Refresher tier).',
-        notes: 'Notes: Silver Needle White Tea & Bergamot • Whipped Raw Shea & Jasmine • Cashmere Woods & Vanilla Bean',
+        title: '3.0" Warm Ivory/White & Gold Sanctuary Workout Tote & Closet Puck',
+        detail: 'Vented warm ivory & champagne-gold anodized shell with >1,000 m²/g coconut carbon & Lauson-98™ molecular core for yoga bags, workout totes & walk-in closets.',
+        notes: 'Active Matrix: Sub-2nm Coconut Carbon (>1,000 m²/g) • Lauson-98™ Proprietary Vapor-Phase Neutralizer • Zero Perfumes',
         retailValue: '$44.00'
       },
       bodyWash: {
@@ -109,7 +109,7 @@ export const EXCLUSIVE_BOX_EDITIONS = {
         shortLabel: 'Open Box',
         title: 'Warm Alabaster-Ivory & Champagne-Gold Magnetic Box (Open)',
         image: 'assets/images/box-women-open.jpg',
-        description: 'Warm cream suede-touch foam cradles your 10 oz Frosted Ivory Soy Candle, 6 oz Whipped Shea Body Butter, and 4 oz Botanical Linen Mist.'
+        description: 'Warm cream suede-touch foam cradles your 10 oz Unlit Frosted Ivory Soy Candle, 3.0" Warm Ivory/White Sanctuary Puck, and 4 oz Botanical Linen Mist.'
       },
       {
         id: 'closed',
@@ -125,15 +125,15 @@ export const EXCLUSIVE_BOX_EDITIONS = {
         shortLabel: '3 Items',
         title: 'All 3 Full-Size Women’s Sanctuary Components ($124 Value)',
         image: 'assets/images/box-women-items-out.jpg',
-        description: '(1) 10 oz Soy Candle in Frosted Ivory Glass ($36), (2) 6 oz Whipped Shea Body Butter ($44), and (3) 4 oz Lauson-98™ Linen Mist ($44).'
+        description: '(1) 10 oz Soy Candle in Frosted Ivory Glass ($36), (2) 3.0" Warm Ivory/White Sanctuary Workout Tote & Closet Puck ($44), and (3) 4 oz Lauson-98™ Linen Mist ($44).'
       },
       {
         id: 'usecase',
         step: '04 • IN ACTION',
         shortLabel: 'In Action',
-        title: 'Closet & Linens to Spa Vanity to Bedside Sanctuary',
+        title: 'Yoga Tote & Closet to Linens to Bedside Sanctuary',
         image: 'assets/images/box-women-usecase.jpg',
-        description: 'Mist bedding or gym totes with Lauson-98™ Botanical Spray, hydrate skin with Whipped Shea Butter, and light your Frosted Ivory Candle.'
+        description: 'Tuck the 3.0" Warm Ivory Sanctuary Puck into your yoga or workout tote bag, refresh fabrics with Lauson-98™ Botanical Mist, and light your Frosted Ivory Candle.'
       }
     ]
   }

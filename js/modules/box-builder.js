@@ -13,7 +13,7 @@ import { getIcon, getCharcoalScienceSvg, getLausonScienceSvg } from '../utils/sv
 function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhotoHref = '') {
   const isWomen = edition === 'women_luxe';
   const accentStroke = isWomen ? '#E2C178' : '#C5A059';
-  const puckLabel = isWomen ? 'WHIPPED SHEA BUTTER' : 'LAUSON-98™ PUCK';
+  const puckLabel = isWomen ? '3.0" SANCTUARY PUCK' : 'LAUSON-98™ PUCK';
   const washLabel = isWomen ? 'BOTANICAL LINEN MIST' : 'ATHLETE BODY WASH';
   const candleName = (candleProduct?.name || 'TOP SHELF').toUpperCase();
   const editionTitle = isWomen ? "WOMEN'S SANCTUARY CURATION" : "MEN'S / ATHLETE EDITION";
@@ -42,7 +42,7 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
 
   const boxPhotoHref = customPhotoHref || (isWomen ? 'assets/images/box-women-open.jpg' : 'assets/images/box-men-open.jpg');
   const subFooterText = isWomen
-    ? 'INCLUDES 6 OZ WHIPPED SHEA BUTTER &amp; 4 OZ BOTANICAL MIST • SAVE $26'
+    ? 'INCLUDES 3.0" IVORY SANCTUARY PUCK &amp; 4 OZ BOTANICAL MIST • SAVE $26'
     : 'INCLUDES CHARCOAL + LAUSON-98™ PUCK &amp; 8 OZ BODY WASH • SAVE $26';
 
   return `

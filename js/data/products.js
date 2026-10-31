@@ -301,31 +301,31 @@ export const PRODUCTS = [
   },
   {
     id: 'puck-womens-sanctuary',
-    name: "Women's Sanctuary Closet & Tote Puck",
-    tagline: '3.0" Warm Ivory & Champagne-Gold Disc. Activated Coconut Carbon + Lauson-98™.',
+    name: "Women's Sanctuary Workout Tote & Closet Puck",
+    tagline: '3.0" Warm Ivory/White & Champagne-Gold Disc. For Yoga Bags, Gym Totes & Closets.',
     price: 44.00,
     formattedPrice: '$44.00',
     category: ['womens', 'odor_care'],
     productType: 'odor_care',
     genderLine: 'womens',
     genderLabel: 'WOMENS',
-    specUnitLabel: '3.0" Closet Puck',
+    specUnitLabel: '3.0" Sanctuary Puck',
     burnTime: '6+ Months Active',
     weightOz: 4,
     vessel: '3.0" Warm Matte Alabaster-Ivory Anodized Aluminum with Brushed Champagne-Gold Bezel',
     wax: 'Sub-2nm Coconut Charcoal (>1,000 m²/g) + Lauson-98™ Molecular Core (40g Fill)',
     wick: 'Laser-Drilled 18-Port Vapor Diffusion Vent Array',
-    description: 'Designed in our signature Warm Alabaster-Ivory and Brushed Champagne-Gold finish for walk-in closets, Pilates & yoga totes, handbag shelves, and luxury car interiors. Built with the exact same sub-2nm activated coconut carbon (>1,000 m²/g) and proprietary Lauson-98™ vapor-phase complex as our Athlete Puck to permanently neutralize odors without masking perfumes.',
+    description: 'Tailored in our signature Warm Alabaster-Ivory/White and Brushed Champagne-Gold finish for women’s yoga & Pilates workout bags, gym totes, running sneaker shelves, and walk-in closets. Built with the exact same sub-2nm activated coconut carbon (>1,000 m²/g) and proprietary Lauson-98™ vapor-phase complex as our Athlete Puck to permanently eliminate workout and fabric odors with zero masking perfumes.',
     notes: {
       top: ['Lauson-98™ Vapor-Phase Complex', 'Zero Masking Perfumes', 'Hypoallergenic'],
       middle: ['Sub-2nm Activated Coconut Carbon', '>1,000 m²/g Micropore Lattice'],
-      base: ['Destroys Deep Closet & Tote Odor', '6+ Months Continuous Protection']
+      base: ['Yoga Totes, Gym Bags & Closets', '6+ Months Continuous Protection']
     },
     featured: true,
     seasonal: false,
     vesselType: 'ivory',
     photo: 'assets/images/item-puck-women.jpg',
-    subSpecText: '3.0" WARM IVORY PUCK • LAUSON-98™ + CARBON',
+    subSpecText: '3.0" WARM IVORY PUCK • YOGA TOTES & CLOSETS',
     waxSpecSub: 'Lauson-98™ + Carbon Matrix',
     accentColor: '#E5C878'
   },
@@ -390,36 +390,6 @@ export const PRODUCTS = [
     accentColor: '#C5A059'
   },
   {
-    id: 'butter-womens-shea',
-    name: 'Whipped Shea & Cashmere Body Butter',
-    tagline: 'Sanctuary Skin Restoration (6 oz Jar). Triple-Whipped Shea, Jojoba & Santal.',
-    price: 44.00,
-    formattedPrice: '$44.00',
-    category: ['womens', 'odor_care'],
-    productType: 'odor_care',
-    genderLine: 'womens',
-    genderLabel: 'WOMENS',
-    specUnitLabel: '6 oz Glass Jar',
-    burnTime: '6 oz (170 g)',
-    weightOz: 6,
-    vessel: '6 oz Frosted Warm Ivory Wide-Mouth Glass Jar with Champagne-Gold Lid',
-    wax: 'Triple-Whipped Unrefined Shea Butter + Cold-Pressed Golden Jojoba',
-    wick: 'Non-Greasy Cloud Emulsion • Paraben & Phthalate Free',
-    description: 'An ultra-rich, cloud-whipped body butter that melts effortlessly into warm post-shower skin. Crafted with unrefined grade-A shea butter, golden jojoba esters, and vitamin E, scented with our serene Sanctuary notes of white tea bud, spun cashmere, Madagascar vanilla bean, and creamy sandalwood.',
-    notes: {
-      top: ['Sicilian Bergamot Zest', 'White Tea Bud', 'Spun Silk Accord'],
-      middle: ['Warm Cashmere Musk', 'Jasmine Grandiflorum', 'Whipped Shea Cream'],
-      base: ['Madagascar Vanilla Bean', 'Australian Sandalwood', 'Golden Amber']
-    },
-    featured: true,
-    seasonal: false,
-    vesselType: 'ivory',
-    photo: 'assets/images/item-bodybutter-women.jpg',
-    subSpecText: '6 OZ FROSTED IVORY JAR • TRIPLE-WHIPPED SHEA',
-    waxSpecSub: 'Whipped Shea & Jojoba',
-    accentColor: '#E5C878'
-  },
-  {
     id: 'mist-womens-linen',
     name: 'Sanctuary Botanical Linen & Pillow Mist',
     tagline: 'Fine-Mist Atomizer (4 fl oz). Lauson-98™ Fabric Refresher & White Lavender.',
@@ -435,13 +405,13 @@ export const PRODUCTS = [
     vessel: '4 oz Frosted Warm Ivory Glass Bottle with Brushed Champagne-Gold Atomizer',
     wax: 'Botanical Hydrosol Base + Lauson-98™ Molecular Fabric Neutralizer',
     wick: 'Non-Staining Micro-Mist Spray • Safe for Linen, Cashmere & Silk',
-    description: 'Transform bedrooms, walk-in closets, cashmere knits, and travel totes into a five-star sanctuary. Powered by our proprietary Lauson-98™ molecular complex to permanently neutralize fabric odors while leaving a delicate veil of crushed French lavender leaf, white orchid, and sun-bleached driftwood.',
+    description: 'Transform bedrooms, walk-in closets, cashmere knits, and workout totes into a five-star sanctuary. Powered by our proprietary Lauson-98™ molecular complex to permanently neutralize fabric odors while leaving a delicate veil of crushed French lavender leaf, white orchid, and sun-bleached driftwood.',
     notes: {
       top: ['Crushed French Lavender Leaf', 'Petitgrain', 'Lemon Verbena'],
       middle: ['Night-Blooming White Orchid', 'Eucalyptus Dew', 'Sheer Magnolia'],
       base: ['Sun-Bleached Driftwood', 'Ambrette Seed', 'Lauson-98™ Fabric Neutralizer']
     },
-    featured: false,
+    featured: true,
     seasonal: false,
     vesselType: 'ivory',
     photo: 'assets/images/item-mist-women.jpg',
@@ -611,30 +581,70 @@ export function getProductGallerySlides(product, conceptId = 1) {
     ];
   }
 
-  // Other Odor Care & Sanctuary Items
+  if (product.id === 'puck-mens-athlete') {
+    return [
+      {
+        id: 'primary',
+        shortLabel: 'Studio Puck',
+        title: '3.0" Athlete Gear & Locker Puck — Matte-Black & Gold Anodized Hardware',
+        type: 'svg',
+        thumb: primaryPhoto
+      },
+      {
+        id: 'gym_bag',
+        shortLabel: 'In Gear Bag',
+        title: '3.0" Athlete Puck — Drop Directly Into Your Hockey or Gym Duffel Bag',
+        type: 'image',
+        src: 'assets/images/packaging/puck-men-gym-bag.jpg',
+        thumb: 'assets/images/packaging/puck-men-gym-bag.jpg'
+      },
+      {
+        id: 'locker',
+        shortLabel: 'In Locker',
+        title: '3.0" Athlete Puck — Continuous 6+ Month Odor Elimination in Lockers & Closets',
+        type: 'image',
+        src: 'assets/images/packaging/puck-men-locker.jpg',
+        thumb: 'assets/images/packaging/puck-men-locker.jpg'
+      }
+    ];
+  }
+
+  if (product.id === 'puck-womens-sanctuary') {
+    return [
+      {
+        id: 'primary',
+        shortLabel: 'White Puck',
+        title: '3.0" Women’s Sanctuary Puck — Warm Ivory/White & Champagne-Gold Hardware',
+        type: 'svg',
+        thumb: primaryPhoto
+      },
+      {
+        id: 'yoga_bag',
+        shortLabel: 'Yoga & Gym Tote',
+        title: '3.0" Sanctuary Puck — Tuck Into Your Yoga, Pilates, or Workout Tote Bag',
+        type: 'image',
+        src: 'assets/images/packaging/puck-women-yoga-bag.jpg',
+        thumb: 'assets/images/packaging/puck-women-yoga-bag.jpg'
+      },
+      {
+        id: 'closet',
+        shortLabel: 'Closet & Shoes',
+        title: '3.0" Sanctuary Puck — Fresh Protection for Walk-In Closets & Athletic Sneakers',
+        type: 'image',
+        src: 'assets/images/packaging/puck-women-closet.jpg',
+        thumb: 'assets/images/packaging/puck-women-closet.jpg'
+      }
+    ];
+  }
+
+  // Individual Body Wash or Botanical Mist (Focused strictly on the single bottle)
   return [
     {
       id: 'primary',
       shortLabel: 'Studio View',
-      title: `${product.name} — Studio Hardware & Apothecary View`,
+      title: `${product.name} — Individual Full-Size Bottle`,
       type: 'svg',
       thumb: primaryPhoto
-    },
-    {
-      id: 'in_action',
-      shortLabel: 'In Action',
-      title: `${product.name} — Daily Ritual & Gear Action`,
-      type: 'image',
-      src: isIvory ? 'assets/images/box-women-usecase.jpg' : 'assets/images/box-men-usecase.jpg',
-      thumb: isIvory ? 'assets/images/box-women-usecase.jpg' : 'assets/images/box-men-usecase.jpg'
-    },
-    {
-      id: 'collection',
-      shortLabel: 'Full Lineup',
-      title: `${product.name} — Complete Exclusive Box Lineup`,
-      type: 'image',
-      src: isIvory ? 'assets/images/box-women-items-out.jpg' : 'assets/images/box-men-items-out.jpg',
-      thumb: isIvory ? 'assets/images/box-women-items-out.jpg' : 'assets/images/box-men-items-out.jpg'
     }
   ];
 }
