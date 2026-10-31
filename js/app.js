@@ -199,7 +199,7 @@ window.PuckWickStore = {
         }
 
         // Automatic shipping threshold evaluation
-        if (this.getCartSubtotal() >= 75 && this.state.shippingMethod === 'standard') {
+        if (this.getCartSubtotal() >= 125 && this.state.shippingMethod === 'standard') {
           this.state.shippingMethod = 'free';
         }
         storage.set('puck_wick_cart', JSON.stringify(this.state.cart));
@@ -390,9 +390,9 @@ window.PuckWickStore = {
 
     // Auto update shipping threshold if subtotal shifted
     const currentSubtotal = this.getCartSubtotal();
-    if (currentSubtotal >= 75 && this.state.shippingMethod === 'standard') {
+    if (currentSubtotal >= 125 && this.state.shippingMethod === 'standard') {
       this.state.shippingMethod = 'free';
-    } else if (currentSubtotal < 75 && this.state.shippingMethod === 'free') {
+    } else if (currentSubtotal < 125 && this.state.shippingMethod === 'free') {
       this.state.shippingMethod = 'standard';
     }
 
@@ -429,7 +429,7 @@ window.PuckWickStore = {
     const subtotal = this.getCartSubtotal();
     if (subtotal === 0) return 0;
     if (this.state.shippingMethod === 'pickup') return 0;
-    if (subtotal >= 75) return 0;
+    if (subtotal >= 125) return 0;
     if (this.state.shippingMethod === 'free') return 0;
     return 6.95;
   },

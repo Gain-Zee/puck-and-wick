@@ -1,7 +1,7 @@
 /**
  * Puck & Wick POS-Ready Slide-Out Cart Drawer Module
  * Implements off-canvas cart drawer, line item management, quantity stepping,
- * $75 Free Shipping progress tracker, and promo code validation engine.
+ * $125 Free Shipping progress tracker, and promo code validation engine.
  */
 
 import { getIcon } from '../utils/svg-assets.js';
@@ -52,8 +52,8 @@ export function initCart(store, openCheckoutCallback) {
     const count = store.getCartCount();
     const promo = store.state.promoCode;
 
-    // Free shipping progress calculation ($75 Threshold)
-    const freeShippingThreshold = 75.00;
+    // Free shipping progress calculation ($125 Threshold)
+    const freeShippingThreshold = 125.00;
     const progressPercent = Math.min(100, Math.max(0, (subtotal / freeShippingThreshold) * 100));
     const remaining = Math.max(0, freeShippingThreshold - subtotal);
     const isFreeShippingUnlocked = subtotal >= freeShippingThreshold || store.state.shippingMethod === 'pickup';
@@ -82,7 +82,7 @@ export function initCart(store, openCheckoutCallback) {
                     ? '🎉 Free Shipping Unlocked!' 
                     : `$${remaining.toFixed(2)} away from Free Shipping!`}
                 </span>
-                <span class="shipping-threshold-target">$75 Threshold</span>
+                <span class="shipping-threshold-target">$125 Threshold</span>
               </div>
               <div class="shipping-meter-track" role="progressbar" aria-valuenow="${progressPercent}" aria-valuemin="0" aria-valuemax="100">
                 <div class="shipping-meter-fill" data-testid="shipping-progress-bar" style="width: ${progressPercent}%; min-width: 4px;"></div>

@@ -266,7 +266,7 @@ export function initBoxBuilder(store, openCartCallback) {
               <p class="box-edition-desc">${editionConfig.description}</p>
 
               <div class="box-jersey-98-callout" data-testid="jersey-98-callout">
-                <strong>#98 Founder Tribute:</strong> All 3 full-size essentials ($124 value for $98 — Save $26 + <strong>Free Shipping</strong>).
+                <strong>#98 Founder Tribute:</strong> All 3 full-size essentials ($124 value for $98 — <strong>Save $26</strong> • Free Shipping at $125+).
               </div>
             </div>
 
@@ -314,7 +314,7 @@ export function initBoxBuilder(store, openCartCallback) {
             <div class="box-step-block">
               <div class="box-step-label">
                 <span>2. Included Full-Size Components (3 Items)</span>
-                <span class="box-free-ship-badge">✓ Free Shipping</span>
+                <span class="box-free-ship-badge">$124 Retail Value • Save $26</span>
               </div>
 
               <div class="bundled-items" data-testid="bundled-items-list">
