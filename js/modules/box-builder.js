@@ -1,8 +1,9 @@
 /**
  * Puck & Wick Interactive Exclusive Box Builder & Dual-Action Odor Science Module
- * Implements Men's/Athlete vs Women's Luxury Box Customizer ($78 bundle / $98 value),
+ * Implements Men's/Athlete vs Women's Luxury Box Customizer ($98 bundle / $124 value),
  * custom candle scent selection (retaining scent on edition switch per EC9),
- * distinct cart line item creation (EC10), and Molecular Odor Science Breakdown.
+ * distinct cart line item creation (EC10), full-screen swipeable lightbox gallery,
+ * and Molecular Odor Science Breakdown.
  */
 
 import { EXCLUSIVE_BOX_EDITIONS, ODOR_SCIENCE_DATA } from '../data/box-data.js';
@@ -16,14 +17,8 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
   const washLabel = isWomen ? 'BOTANICAL LINEN MIST' : 'ATHLETE BODY WASH';
   const candleName = (candleProduct?.name || 'TOP SHELF').toUpperCase();
   const editionTitle = isWomen ? "WOMEN'S SANCTUARY CURATION" : "MEN'S / ATHLETE EDITION";
-  const cid = Number(conceptId) || 1;
 
   // Dynamic candle vessel glass tint per dispatch requirements:
-  // - Emerald (#0F2417) for Balsam Fir (candle-balsam-fir)
-  // - Amber (#2B1706) for Barnwood & Bourbon (candle-barnwood-bourbon) & Warm Amber (candle-warm-amber-vanilla)
-  // - Frosted Ice (#1E2530) for Fresh Cut (candle-fresh-cut)
-  // - Warm Frosted Ivory (#EAE3D5) for Women's Sanctuary Ivory vessels
-  // - Matte Obsidian (#16181F) for Top Shelf and other pours
   const candleId = candleProduct?.id || '';
   const candleVessel = (candleProduct?.vessel || '').toLowerCase();
   let jarFill = '#16181F'; // Matte obsidian default
@@ -36,13 +31,13 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
   } else if (candleProduct?.vesselType === 'ivory' || candleVessel.includes('ivory') || candleVessel.includes('alabaster')) {
     jarFill = '#EAE3D5'; // Warm Frosted Ivory
   } else if (candleVessel.includes('emerald') || candleVessel.includes('forest')) {
-    jarFill = '#0F2417'; // Emerald fallback
+    jarFill = '#0F2417';
   } else if (candleVessel.includes('frost') || candleVessel.includes('ice')) {
-    jarFill = '#1E2530'; // Frosted Ice fallback
+    jarFill = '#1E2530';
   } else if (candleVessel.includes('amber')) {
-    jarFill = '#2B1706'; // Amber fallback
+    jarFill = '#2B1706';
   } else {
-    jarFill = '#16181F'; // Matte obsidian
+    jarFill = '#16181F';
   }
 
   const boxPhotoHref = customPhotoHref || (isWomen ? 'assets/images/box-women-open.jpg' : 'assets/images/box-men-open.jpg');
@@ -80,17 +75,13 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
 
       <!-- Underlying Structural Elements for Test & Screen-Reader Compatibility -->
       <g opacity="0">
-        <!-- Outer Rigid Magnetic Presentation Box -->
         <rect x="16" y="16" width="488" height="388" rx="14" fill="url(#box-case-grad)" stroke="url(#box-gold-foil)" stroke-width="2.5" />
         <rect x="26" y="26" width="468" height="368" rx="10" fill="none" stroke="${accentStroke}" stroke-width="0.9" stroke-dasharray="5,4" opacity="0.55" />
-
-        <!-- Box Header Bar -->
         <text x="260" y="50" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="13" font-weight="700" letter-spacing="4" fill="url(#box-gold-foil)">
           PUCK &amp; WICK • ${editionTitle}
         </text>
         <line x1="90" y1="58" x2="430" y2="58" stroke="url(#box-gold-foil)" stroke-width="0.8" opacity="0.45" />
 
-        <!-- Slot 1: 10 oz Hand-Poured Soy Candle (Dynamic Vessel Tint) -->
         <g transform="translate(46, 72)">
           <rect x="0" y="0" width="130" height="205" rx="8" fill="#0B0C0F" stroke="#262934" stroke-width="1.5" filter="url(#foam-inset-shadow)" />
           <circle cx="65" cy="45" r="32" fill="url(#box-flame-glow)" />
@@ -105,7 +96,6 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
           <text x="65" y="186" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8" font-weight="600" letter-spacing="1" fill="#D4AF37">01. SOY CANDLE</text>
         </g>
 
-        <!-- Slot 2: Item 02 -->
         <g transform="translate(195, 72)">
           <rect x="0" y="0" width="130" height="205" rx="8" fill="#0B0C0F" stroke="#262934" stroke-width="1.5" filter="url(#foam-inset-shadow)" />
           <ellipse cx="65" cy="108" rx="46" ry="22" fill="#101216" stroke="url(#box-gold-foil)" stroke-width="1.5" />
@@ -117,7 +107,6 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
           <text x="65" y="186" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8" font-weight="600" letter-spacing="1" fill="#D4AF37">02. CARE / PUCK</text>
         </g>
 
-        <!-- Slot 3: Item 03 -->
         <g transform="translate(344, 72)">
           <rect x="0" y="0" width="130" height="205" rx="8" fill="#0B0C0F" stroke="#262934" stroke-width="1.5" filter="url(#foam-inset-shadow)" />
           <rect x="33" y="48" width="64" height="114" rx="10" fill="#15171E" stroke="url(#box-gold-foil)" stroke-width="1.5" />
@@ -157,6 +146,27 @@ export function initBoxBuilder(store, openCartCallback) {
   const candles = getAllProducts();
   let feedbackMsg = '';
   let activeGalleryViewId = 'open';
+  let lightboxOpen = false;
+  let lightboxIndex = 0;
+
+  const EXTRA_GALLERY_SLIDES = [
+    {
+      id: 'his_hers',
+      step: '05 • DUAL ARCHITECTURE COLORWAYS',
+      shortLabel: 'His & Hers Vessels',
+      title: 'Matte Obsidian & Gold vs. Warm Frosted Ivory & Champagne Gold',
+      image: 'assets/images/his-hers-colorway.jpg',
+      description: 'Identical architectural vessel geometry and minimalist square gold-foil Precision Mark emblem—engineered in deep Matte Obsidian for the Locker Room & Den, and Warm Frosted Alabaster-Ivory for the Spa & Bedroom Sanctuary.'
+    },
+    {
+      id: 'ivory_lineup',
+      step: '06 • SANCTUARY IVORY LINEUP',
+      shortLabel: '3 Ivory Candles',
+      title: 'The Sanctuary Ivory Candle Collection (10 oz Soy Vessels)',
+      image: 'assets/images/womens-candle-lineup.jpg',
+      description: 'Cashmere & White Tea (Silver Needle White Tea • Spun Cashmere • Blond Woods), Velvet Vanilla & Santal (Cardamom • Australian Sandalwood • Madagascar Vanilla Bean), and Sea Salt & White Orchid (Flaky Sea Salt • White Orchid • Sun-Bleached Driftwood).'
+    }
+  ];
 
   const render = () => {
     const builderState = store.state.boxBuilder || {
@@ -168,6 +178,8 @@ export function initBoxBuilder(store, openCartCallback) {
     const editionConfig = EXCLUSIVE_BOX_EDITIONS[activeEditionKey];
     const selectedCandle = getProductById(builderState.selectedCandleId) || candles[0];
     const galleryViews = editionConfig.galleryViews || [];
+    const allLightboxSlides = [...galleryViews, ...EXTRA_GALLERY_SLIDES];
+
     const activeView = galleryViews.find((v) => v.id === activeGalleryViewId) || galleryViews[0] || {
       id: 'open',
       step: '01 • INSIDE THE BOX',
@@ -176,6 +188,8 @@ export function initBoxBuilder(store, openCartCallback) {
       image: activeEditionKey === 'women_luxe' ? 'assets/images/box-women-open.jpg' : 'assets/images/box-men-open.jpg',
       description: editionConfig.description
     };
+
+    const currentLightboxSlide = allLightboxSlides[lightboxIndex] || allLightboxSlides[0];
 
     root.innerHTML = `
       <div class="box-builder-wrapper">
@@ -219,8 +233,12 @@ export function initBoxBuilder(store, openCartCallback) {
               <div class="box-savings-pill">Save $${editionConfig.savings.toFixed(2)} Bundle Value</div>
             </div>
 
-            <div class="box-svg-container">
+            <div class="box-svg-container box-stage-clickable" data-open-lightbox="${activeView.id}" role="button" tabindex="0" aria-label="Click to enlarge ${activeView.title}">
               ${getBoxPresentationSvg(activeEditionKey, selectedCandle, store.state.activeLogoConcept || 1, activeView.image)}
+              <button type="button" class="box-enlarge-floating-btn" data-open-lightbox="${activeView.id}" aria-label="Open full-screen photo viewer">
+                ${getIcon('search')}
+                <span>Click to Enlarge Full Photo</span>
+              </button>
             </div>
 
             <!-- 4-Photo Interactive Gallery Switcher (Open Box, Closed Box, 3 Items Out, 3 Items Use Case) -->
@@ -395,16 +413,20 @@ export function initBoxBuilder(store, openCartCallback) {
             </div>
             <h3 class="box-unboxing-title">Every Angle, Component &amp; Real-World Use Case</h3>
             <p class="box-unboxing-lead">
-              Explore the ${editionConfig.title}—from the sealed magnetic gift box to all three full-size components unboxed and in action across your daily routine. Click any card below to inspect it in the main viewer.
+              Explore the ${editionConfig.title}—from the sealed magnetic gift box to all three full-size components unboxed and in action across your daily routine. <strong>Click any photo below to open the full-screen swipeable gallery.</strong>
             </p>
           </div>
 
           <div class="box-unboxing-grid">
             ${galleryViews.map((v) => `
-              <article class="box-unboxing-card ${v.id === activeView.id ? 'active-view-card' : ''}" data-gallery-view="${v.id}">
+              <article class="box-unboxing-card ${v.id === activeView.id ? 'active-view-card' : ''}" data-open-lightbox="${v.id}" role="button" tabindex="0" aria-label="Enlarge ${v.title}">
                 <div class="box-unboxing-img-wrap">
                   <img src="${v.image}" alt="${v.title}" class="box-unboxing-img" />
                   <span class="box-unboxing-step-pill">${v.step}</span>
+                  <span class="box-unboxing-zoom-pill">
+                    ${getIcon('search')}
+                    <span>Enlarge</span>
+                  </span>
                 </div>
                 <div class="box-unboxing-body">
                   <h4 class="box-unboxing-card-title">${v.title}</h4>
@@ -416,10 +438,14 @@ export function initBoxBuilder(store, openCartCallback) {
 
           <!-- Dual Colorway & Sanctuary Candle Lineup Visual Comparison -->
           <div class="box-colorway-comparison">
-            <div class="box-unboxing-card">
+            <div class="box-unboxing-card" data-open-lightbox="his_hers" role="button" tabindex="0" aria-label="Enlarge His & Hers Colorway Comparison">
               <div class="box-unboxing-img-wrap">
                 <img src="assets/images/his-hers-colorway.jpg" alt="Matte Obsidian Men's Collection vs. Warm Frosted Ivory Women's Sanctuary Collection" class="box-unboxing-img" />
                 <span class="box-unboxing-step-pill">DUAL ARCHITECTURE • HIS &amp; HERS COLORWAYS</span>
+                <span class="box-unboxing-zoom-pill">
+                  ${getIcon('search')}
+                  <span>Enlarge</span>
+                </span>
               </div>
               <div class="box-unboxing-body">
                 <h4 class="box-unboxing-card-title">Matte Obsidian &amp; Gold vs. Warm Frosted Ivory &amp; Champagne Gold</h4>
@@ -429,10 +455,14 @@ export function initBoxBuilder(store, openCartCallback) {
               </div>
             </div>
 
-            <div class="box-unboxing-card">
+            <div class="box-unboxing-card" data-open-lightbox="ivory_lineup" role="button" tabindex="0" aria-label="Enlarge Sanctuary Ivory Candle Collection">
               <div class="box-unboxing-img-wrap">
                 <img src="assets/images/womens-candle-lineup.jpg" alt="Women's Sanctuary Ivory Candle Trio: Cashmere & White Tea, Velvet Vanilla & Santal, Sea Salt & White Orchid" class="box-unboxing-img" />
                 <span class="box-unboxing-step-pill">SANCTUARY IVORY LINEUP • 3 SIGNATURE POURS</span>
+                <span class="box-unboxing-zoom-pill">
+                  ${getIcon('search')}
+                  <span>Enlarge</span>
+                </span>
               </div>
               <div class="box-unboxing-body">
                 <h4 class="box-unboxing-card-title">The Sanctuary Ivory Candle Collection (10 oz Soy Vessels)</h4>
@@ -443,6 +473,58 @@ export function initBoxBuilder(store, openCartCallback) {
             </div>
           </div>
         </div>
+
+        <!-- Full-Screen Solid Lightbox Gallery Modal (Swipeable, Uncropped object-fit: contain) -->
+        ${lightboxOpen ? `
+          <div class="box-lightbox-backdrop" id="box-lightbox-modal" data-testid="box-lightbox-modal" role="dialog" aria-modal="true" aria-label="${currentLightboxSlide.title}">
+            <div class="box-lightbox-window">
+              <!-- Top Bar -->
+              <div class="box-lightbox-header">
+                <div class="box-lightbox-meta">
+                  <span class="box-lightbox-step">${currentLightboxSlide.step}</span>
+                  <span class="box-lightbox-counter">Photo ${lightboxIndex + 1} of ${allLightboxSlides.length} • Swipe or Use Arrows</span>
+                </div>
+                <button type="button" class="box-lightbox-close-btn" id="btn-close-box-lightbox" aria-label="Close full-screen photo viewer">
+                  ✕ Close
+                </button>
+              </div>
+
+              <!-- Main Uncropped Image Stage with Prev / Next Controls -->
+              <div class="box-lightbox-stage" id="box-lightbox-swipe-stage">
+                <button type="button" class="box-lightbox-nav-btn prev" id="btn-lightbox-prev" aria-label="Previous photo">
+                  ‹
+                </button>
+                <div class="box-lightbox-img-container">
+                  <img src="${currentLightboxSlide.image}" alt="${currentLightboxSlide.title}" class="box-lightbox-full-img" />
+                </div>
+                <button type="button" class="box-lightbox-nav-btn next" id="btn-lightbox-next" aria-label="Next photo">
+                  ›
+                </button>
+              </div>
+
+              <!-- Caption & Filmstrip Thumbnails -->
+              <div class="box-lightbox-footer">
+                <div class="box-lightbox-caption">
+                  <h4 class="box-lightbox-title">${currentLightboxSlide.title}</h4>
+                  <p class="box-lightbox-desc">${currentLightboxSlide.description}</p>
+                </div>
+                <div class="box-lightbox-filmstrip">
+                  ${allLightboxSlides.map((slide, idx) => `
+                    <button
+                      type="button"
+                      class="box-lightbox-thumb ${idx === lightboxIndex ? 'active' : ''}"
+                      data-lightbox-index="${idx}"
+                      aria-label="View ${slide.shortLabel || slide.title}"
+                    >
+                      <img src="${slide.image}" alt="${slide.title}" />
+                      <span>0${idx + 1}. ${slide.shortLabel}</span>
+                    </button>
+                  `).join('')}
+                </div>
+              </div>
+            </div>
+          </div>
+        ` : ''}
 
         <!-- Feature 19: Dual-Action Odor Science Breakdown -->
         <div class="odor-science" id="odor-science" data-testid="odor-science-section">
@@ -506,7 +588,7 @@ export function initBoxBuilder(store, openCartCallback) {
       </div>
     `;
 
-    // Bind gallery thumbnail & showcase card clicks
+    // Bind gallery thumbnail clicks (under main stage)
     const galleryTriggers = root.querySelectorAll('[data-gallery-view]');
     galleryTriggers.forEach((el) => {
       el.addEventListener('click', () => {
@@ -517,6 +599,105 @@ export function initBoxBuilder(store, openCartCallback) {
         }
       });
     });
+
+    // Bind Lightbox Open Triggers (Showcase Cards + Main Box Stage)
+    const lightboxTriggers = root.querySelectorAll('[data-open-lightbox]');
+    lightboxTriggers.forEach((el) => {
+      el.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const targetId = el.getAttribute('data-open-lightbox');
+        const foundIdx = allLightboxSlides.findIndex((s) => s.id === targetId);
+        lightboxIndex = foundIdx >= 0 ? foundIdx : 0;
+        if (galleryViews.some((g) => g.id === targetId)) {
+          activeGalleryViewId = targetId;
+        }
+        lightboxOpen = true;
+        render();
+      });
+
+      el.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          const targetId = el.getAttribute('data-open-lightbox');
+          const foundIdx = allLightboxSlides.findIndex((s) => s.id === targetId);
+          lightboxIndex = foundIdx >= 0 ? foundIdx : 0;
+          lightboxOpen = true;
+          render();
+        }
+      });
+    });
+
+    // Bind Lightbox Controls if Open
+    if (lightboxOpen) {
+      const closeBtn = root.querySelector('#btn-close-box-lightbox');
+      const backdrop = root.querySelector('#box-lightbox-modal');
+      const prevBtn = root.querySelector('#btn-lightbox-prev');
+      const nextBtn = root.querySelector('#btn-lightbox-next');
+      const swipeStage = root.querySelector('#box-lightbox-swipe-stage');
+      const thumbBtns = root.querySelectorAll('[data-lightbox-index]');
+
+      const goPrev = () => {
+        lightboxIndex = (lightboxIndex - 1 + allLightboxSlides.length) % allLightboxSlides.length;
+        const slideId = allLightboxSlides[lightboxIndex]?.id;
+        if (galleryViews.some((g) => g.id === slideId)) activeGalleryViewId = slideId;
+        render();
+      };
+
+      const goNext = () => {
+        lightboxIndex = (lightboxIndex + 1) % allLightboxSlides.length;
+        const slideId = allLightboxSlides[lightboxIndex]?.id;
+        if (galleryViews.some((g) => g.id === slideId)) activeGalleryViewId = slideId;
+        render();
+      };
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+          lightboxOpen = false;
+          render();
+        });
+      }
+
+      if (backdrop) {
+        backdrop.addEventListener('click', (e) => {
+          if (e.target === backdrop) {
+            lightboxOpen = false;
+            render();
+          }
+        });
+      }
+
+      if (prevBtn) prevBtn.addEventListener('click', goPrev);
+      if (nextBtn) nextBtn.addEventListener('click', goNext);
+
+      thumbBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const idx = Number(btn.getAttribute('data-lightbox-index'));
+          if (!Number.isNaN(idx)) {
+            lightboxIndex = idx;
+            const slideId = allLightboxSlides[lightboxIndex]?.id;
+            if (galleryViews.some((g) => g.id === slideId)) activeGalleryViewId = slideId;
+            render();
+          }
+        });
+      });
+
+      // Touch swipe support (left/right)
+      if (swipeStage) {
+        let touchStartX = 0;
+        swipeStage.addEventListener('touchstart', (e) => {
+          touchStartX = e.changedTouches?.[0]?.screenX || 0;
+        }, { passive: true });
+
+        swipeStage.addEventListener('touchend', (e) => {
+          const touchEndX = e.changedTouches?.[0]?.screenX || 0;
+          const delta = touchEndX - touchStartX;
+          if (Math.abs(delta) > 40) {
+            if (delta < 0) goNext();
+            else goPrev();
+          }
+        }, { passive: true });
+      }
+    }
 
     // Bind interactive events
     const menBtn = root.querySelector('[data-testid="edition-toggle-men"]');
@@ -587,6 +768,25 @@ export function initBoxBuilder(store, openCartCallback) {
       });
     }
   };
+
+  // Global keyboard navigation when Lightbox is open
+  window.addEventListener('keydown', (e) => {
+    if (!lightboxOpen) return;
+    const builderState = store.state.boxBuilder || { edition: 'men_athlete' };
+    const activeEditionKey = builderState.edition === 'women_luxe' ? 'women_luxe' : 'men_athlete';
+    const galleryViews = EXCLUSIVE_BOX_EDITIONS[activeEditionKey]?.galleryViews || [];
+    const total = galleryViews.length + EXTRA_GALLERY_SLIDES.length;
+    if (e.key === 'Escape') {
+      lightboxOpen = false;
+      render();
+    } else if (e.key === 'ArrowRight') {
+      lightboxIndex = (lightboxIndex + 1) % total;
+      render();
+    } else if (e.key === 'ArrowLeft') {
+      lightboxIndex = (lightboxIndex - 1 + total) % total;
+      render();
+    }
+  });
 
   store.subscribe((state, action) => {
     if (

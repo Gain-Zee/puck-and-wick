@@ -655,6 +655,7 @@ async function runTier5Suite() {
   });
 
   await page.click('[data-testid="place-order-btn"]');
+  await page.waitForFunction(() => document.querySelector('[data-testid="checkout-error"]')?.textContent?.includes('Simulated payment processing network failure'));
   const failureErrorText = await page.textContent('[data-testid="checkout-error"]');
   const buttonNotDisabled = await page.isEnabled('[data-testid="place-order-btn"]');
 
@@ -874,9 +875,9 @@ async function runTier5Suite() {
   });
 
   assert(boxEditions.menTitle.includes("Men's / Athlete"), 'T5-BOX-01a', 'Men\'s / Athlete Box title renders correctly');
-  assert(boxEditions.menPrice.includes('$78.00'), 'T5-BOX-01b', 'Men\'s Box priced at $78.00');
+  assert(boxEditions.menPrice.includes('$98.00'), 'T5-BOX-01b', 'Men\'s Box priced at $98.00');
   assert(boxEditions.womenTitle.includes("Women's Sanctuary"), 'T5-BOX-01c', 'Women\'s Sanctuary Box title renders correctly');
-  assert(boxEditions.womenPrice.includes('$78.00'), 'T5-BOX-01d', 'Women\'s Sanctuary Box priced at $78.00');
+  assert(boxEditions.womenPrice.includes('$98.00'), 'T5-BOX-01d', 'Women\'s Sanctuary Box priced at $98.00');
 
   // T5-BOX-02: Candle Scent Selection Retention Across Edition Toggles
   const scentRetention = await page.evaluate(() => {
@@ -1001,7 +1002,7 @@ async function runTier5Suite() {
 
   // T5-VIEWPORT-04: Newsletter Form Validation
   await page.setViewportSize({ width: 1440, height: 900 });
-  await page.fill('#footer-newsletter-email', 'bad_email');
+  await page.fill('#footer-newsletter-email', 'bad@domain_no_dot');
   await page.click('#footer-newsletter-form button[type="submit"]');
   const newsError = await page.textContent('#footer-newsletter-msg');
   assert(newsError.includes('valid email'), 'T5-VIEWPORT-04a', 'Newsletter form rejects invalid email format');
