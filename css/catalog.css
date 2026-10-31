@@ -444,7 +444,7 @@
 
 @media (max-width: 640px) {
   .product-card-visual {
-    aspect-ratio: 1 / 0.85;
+    aspect-ratio: 1 / 1;
   }
 
   .product-badge {

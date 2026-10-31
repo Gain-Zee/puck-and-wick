@@ -481,30 +481,30 @@ export function getCandleVesselSvg(product, conceptId, isModal = false) {
 
   if (isModal) {
     return `
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 680" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" style="width:100%;height:100%;display:block;" class="candle-vessel-svg" data-active-concept="${activeConcept}" aria-label="${product.name} Luxury Presentation (Concept ${activeConcept})" role="img">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 448" preserveAspectRatio="xMidYMid meet" width="100%" height="100%" style="width:100%;height:100%;display:block;" class="candle-vessel-svg" data-active-concept="${activeConcept}" aria-label="${product.name} Luxury Presentation (Concept ${activeConcept})" role="img">
         <defs>
           <linearGradient id="${vignetteId}" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#08090C" stop-opacity="0.06" />
-            <stop offset="68%" stop-color="#08090C" stop-opacity="0" />
-            <stop offset="86%" stop-color="#08090C" stop-opacity="0.92" />
+            <stop offset="0%" stop-color="#08090C" stop-opacity="0.02" />
+            <stop offset="72%" stop-color="#08090C" stop-opacity="0" />
+            <stop offset="89%" stop-color="#08090C" stop-opacity="0.92" />
             <stop offset="100%" stop-color="#08090C" stop-opacity="1" />
           </linearGradient>
           <clipPath id="${vignetteId}-clip">
-            <rect x="0" y="0" width="400" height="680" />
+            <rect x="0" y="0" width="400" height="448" />
           </clipPath>
         </defs>
 
         <g clip-path="url(#${vignetteId}-clip)">
-          <rect x="0" y="0" width="400" height="680" fill="#08090C" />
+          <rect x="0" y="0" width="400" height="448" fill="#08090C" />
 
-          <!-- Full-Height Studio Product Photograph (Starts at Top Edge y=0, Smoothly Fades into Bottom Nameplate) -->
-          <image href="${photoHref}" x="0" y="0" width="400" height="600" preserveAspectRatio="xMidYMid slice" />
-          <rect x="0" y="0" width="400" height="680" fill="url(#${vignetteId})" />
+          <!-- Full Uncropped 1:1 Studio Product Photograph (Full Flame Tip + Full Vessel) -->
+          <image href="${photoHref}" x="0" y="0" width="400" height="400" preserveAspectRatio="xMidYMid meet" />
+          <rect x="0" y="0" width="400" height="448" fill="url(#${vignetteId})" />
 
           <!-- Minimalist Product Name Plate at Bottom of Modal Stage -->
-          <rect x="24" y="606" width="352" height="50" rx="6" fill="rgba(11, 12, 14, 0.92)" stroke="rgba(197, 160, 89, 0.68)" stroke-width="1.2" />
-          <text x="200" y="629" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="${nameFontSize}" font-weight="600" letter-spacing="2.2" fill="#FAF5E8">${displayName}</text>
-          <text x="200" y="646" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7.5" font-weight="500" letter-spacing="1.8" fill="#C5A059">${subSpecText}</text>
+          <rect x="24" y="384" width="352" height="50" rx="6" fill="rgba(11, 12, 14, 0.92)" stroke="rgba(197, 160, 89, 0.68)" stroke-width="1.2" />
+          <text x="200" y="407" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="${nameFontSize}" font-weight="600" letter-spacing="2.2" fill="#FAF5E8">${displayName}</text>
+          <text x="200" y="424" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7.5" font-weight="500" letter-spacing="1.8" fill="#C5A059">${subSpecText}</text>
         </g>
       </svg>
     `;

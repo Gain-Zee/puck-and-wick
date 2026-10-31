@@ -110,11 +110,11 @@
 .modal-vessel-stage {
   width: 100%;
   max-width: none;
-  height: 100%;
-  min-height: 440px;
-  flex: 1;
+  aspect-ratio: 400 / 448;
+  height: auto;
   overflow: hidden;
   border-radius: 0;
+  background: #08090C;
 }
 
 .modal-vessel-stage svg {
@@ -385,8 +385,10 @@
 
   .modal-vessel-stage {
     max-width: none;
-    min-height: 280px;
-    max-height: 320px;
+    aspect-ratio: 400 / 448;
+    height: auto;
+    min-height: 0;
+    max-height: none;
   }
 
   .modal-title {
