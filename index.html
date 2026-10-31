@@ -7,22 +7,44 @@
   <meta name="description" content="Manly, rustic, black-and-gold luxury artisan soy candles and athlete odor-care founded in Loudoun County, VA by a former elite hockey player with 20 years on competitive ice. Featured at The Blue Hydrangea.">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230A0A0C'/%3E%3Cpath d='M16 4c-3 4-6 8-6 12a6 6 0 0 0 12 0c0-4-3-8-6-12z' fill='%23F59E0B'/%3E%3Cellipse cx='16' cy='26' rx='10' ry='3' fill='%23C5A059'/%3E%3C/svg%3E">
 
-  <!-- Core Theme & Layout Stylesheets -->
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/nav.css">
-  <link rel="stylesheet" href="css/hero.css">
-  <link rel="stylesheet" href="css/catalog.css">
-  <link rel="stylesheet" href="css/modal.css">
-  <link rel="stylesheet" href="css/cart.css">
-  <link rel="stylesheet" href="css/checkout.css">
-  <link rel="stylesheet" href="css/box-builder.css">
-  <link rel="stylesheet" href="css/odor-science.css">
-  <link rel="stylesheet" href="css/brand-studio.css">
-  <link rel="stylesheet" href="css/story.css">
-  <link rel="stylesheet" href="css/stockist.css">
-  <link rel="stylesheet" href="css/footer.css">
-  <link rel="stylesheet" href="css/responsive.css">
+  <!-- Core Theme & Layout Stylesheets (Cache-Busted v3) -->
+  <link rel="stylesheet" href="css/variables.css?v=3">
+  <link rel="stylesheet" href="css/base.css?v=3">
+  <link rel="stylesheet" href="css/nav.css?v=3">
+  <link rel="stylesheet" href="css/hero.css?v=3">
+  <link rel="stylesheet" href="css/catalog.css?v=3">
+  <link rel="stylesheet" href="css/modal.css?v=3">
+  <link rel="stylesheet" href="css/cart.css?v=3">
+  <link rel="stylesheet" href="css/checkout.css?v=3">
+  <link rel="stylesheet" href="css/box-builder.css?v=3">
+  <link rel="stylesheet" href="css/odor-science.css?v=3">
+  <link rel="stylesheet" href="css/brand-studio.css?v=3">
+  <link rel="stylesheet" href="css/story.css?v=3">
+  <link rel="stylesheet" href="css/stockist.css?v=3">
+  <link rel="stylesheet" href="css/footer.css?v=3">
+  <link rel="stylesheet" href="css/responsive.css?v=3">
+
+  <!-- Module Cache-Busting Import Map (Forces Fresh Fetch of All ES Modules) -->
+  <script type="importmap">
+  {
+    "imports": {
+      "./js/app.js": "./js/app.js?v=3",
+      "./js/data/products.js": "./js/data/products.js?v=3",
+      "./js/data/box-data.js": "./js/data/box-data.js?v=3",
+      "./js/data/logos.js": "./js/data/logos.js?v=3",
+      "./js/utils/svg-assets.js": "./js/utils/svg-assets.js?v=3",
+      "./js/modules/navigation.js": "./js/modules/navigation.js?v=3",
+      "./js/modules/catalog.js": "./js/modules/catalog.js?v=3",
+      "./js/modules/modal.js": "./js/modules/modal.js?v=3",
+      "./js/modules/cart.js": "./js/modules/cart.js?v=3",
+      "./js/modules/checkout.js": "./js/modules/checkout.js?v=3",
+      "./js/modules/box-builder.js": "./js/modules/box-builder.js?v=3",
+      "./js/modules/brand-studio.js": "./js/modules/brand-studio.js?v=3",
+      "./js/modules/jar-mockup.js": "./js/modules/jar-mockup.js?v=3",
+      "./js/modules/payment-adapters.js": "./js/modules/payment-adapters.js?v=3"
+    }
+  }
+  </script>
 </head>
 <body>
   <!-- Accessibility Skip Navigation Link -->
@@ -162,9 +184,9 @@
           <div class="hero-visual-card">
             <span class="badge badge-gold">Founder Hand-Crafted</span>
 
-            <div class="hero-flame-container" data-testid="hero-flame">
+            <div class="hero-flame-container" data-testid="hero-flame" style="width:100%;max-width:340px;height:auto;aspect-ratio:1/1;">
               <div class="hero-flame-aura"></div>
-              <svg class="hero-flame-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" aria-label="Puck &amp; Wick Signature Matte Obsidian Luxury Soy Candle">
+              <svg class="hero-flame-svg" width="100%" height="100%" style="width:100%;height:100%;display:block;border-radius:14px;animation:none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" aria-label="Puck &amp; Wick Signature Matte Obsidian Luxury Soy Candle">
                 <defs>
                   <clipPath id="hero-photo-clip">
                     <rect x="0" y="0" width="360" height="360" rx="16" />
@@ -213,7 +235,7 @@
       <div class="container">
         <div class="section-header">
           <div class="section-kicker">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
             <span>Custom Athlete Curations</span>
           </div>
           <h2 class="section-title">The Puck &amp; Wick Exclusive Boxes</h2>
@@ -625,6 +647,6 @@
   </footer>
 
   <!-- Application Bootstrap Module -->
-  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/app.js?v=3"></script>
 </body>
 </html>

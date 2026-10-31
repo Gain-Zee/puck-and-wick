@@ -5,7 +5,7 @@
  */
 
 export const SVG_LOGOS = {
-  // Concept 1: Minimalist Crossed Sticks & Flame ("The Precision Mark")
+  // Concept 1: Minimalist Crossed Sticks & Flame ("The Precision Mark" - Matching Obsidian Jar Label)
   1: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%" aria-label="Puck and Wick - Minimalist Crossed Sticks and Flame Logo">
   <defs>
     <linearGradient id="c1-gold-metallic" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -13,26 +13,18 @@ export const SVG_LOGOS = {
       <stop offset="50%" stop-color="#E5C878" />
       <stop offset="100%" stop-color="#9A7632" />
     </linearGradient>
-    <linearGradient id="c1-flame-core" x1="0%" y1="100%" x2="0%" y2="0%">
-      <stop offset="0%" stop-color="#C5A059" />
-      <stop offset="55%" stop-color="#F3D689" />
-      <stop offset="100%" stop-color="#FFFDF7" />
-    </linearGradient>
   </defs>
-  <!-- Ultra-clean Minimalist Mark -->
-  <g transform="translate(0, 12)">
-    <!-- Minimalist Geometric Crossed Hockey Sticks -->
-    <path d="M 155,115 L 335,315 C 346,327 362,332 384,328" fill="none" stroke="url(#c1-gold-metallic)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" />
-    <path d="M 345,115 L 165,315 C 154,327 138,332 116,328" fill="none" stroke="url(#c1-gold-metallic)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" />
-    <!-- Minimalist Teardrop Flame Above Intersection -->
-    <path d="M 250,185 C 236,170 230,148 236,126 C 240,111 247,98 250,88 C 253,98 260,111 264,126 C 270,148 264,170 250,185 Z" fill="url(#c1-flame-core)" />
-    <!-- Clean Vulcanized Puck Pill Below Intersection -->
-    <rect x="210" y="294" width="80" height="14" rx="7" fill="#0B0C0E" stroke="url(#c1-gold-metallic)" stroke-width="4" />
+  <!-- Outer Minimalist Square Gold Frame (Exact Match to Obsidian Candle Label) -->
+  <rect x="65" y="65" width="370" height="370" fill="#0B0C0E" stroke="url(#c1-gold-metallic)" stroke-width="3.5" />
+  <!-- Minimalist Crossed Lines + Flame in Top V -->
+  <g transform="translate(250, 198)">
+    <line x1="-38" y1="-34" x2="38" y2="38" stroke="url(#c1-gold-metallic)" stroke-width="2.6" stroke-linecap="round" />
+    <line x1="38" y1="-34" x2="-38" y2="38" stroke="url(#c1-gold-metallic)" stroke-width="2.6" stroke-linecap="round" />
+    <path d="M 0,-12 C -7,-20 -10,-32 -4,-43 C -1,-48 0,-52 0,-55 C 0,-52 1,-48 4,-43 C 10,-32 7,-20 0,-12 Z" fill="url(#c1-gold-metallic)" />
+    <path d="M 0,-16 C -3,-21 -4,-28 -1.5,-34 C 0,-37 0.5,-37 1.5,-34 C 4,-28 3,-21 0,-16 Z" fill="#0B0C0E" opacity="0.45" />
   </g>
-  <!-- Clean Minimalist Typography -->
-  <text x="250" y="408" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="32" font-weight="600" letter-spacing="10" fill="#FAF5E8">PUCK &amp; WICK</text>
-  <line x1="205" y1="428" x2="295" y2="428" stroke="url(#c1-gold-metallic)" stroke-width="1" opacity="0.6" />
-  <text x="250" y="450" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9.5" font-weight="500" letter-spacing="5" fill="#C5A059">LOUDOUN CO. • VIRGINIA</text>
+  <!-- Clean Gold Serif Wordmark Centered Inside Frame -->
+  <text x="250" y="296" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="38" font-weight="600" letter-spacing="5" fill="url(#c1-gold-metallic)">PUCK &amp; WICK</text>
 </svg>`,
 
   // Concept 2: Minimalist Architectural Shield ("20 Years on the Ice")

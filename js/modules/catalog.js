@@ -51,10 +51,10 @@ export function initCatalog(store, openCartDrawer) {
         ${products.length > 0 ? `
           <div class="product-cards-grid" id="product-grid" data-testid="product-grid">
             ${products.map(p => `
-              <article class="product-card surface-card" data-testid="product-card" data-product-id="${p.id}">
+              <article class="product-card surface-card" style="padding:0;" data-testid="product-card" data-product-id="${p.id}">
                 <!-- Vessel Visual Stage -->
-                <div class="product-card-visual" data-action="quick-view" data-product-id="${p.id}" tabindex="0" role="button" aria-label="View details for ${p.name}">
-                  <div class="vessel-wrapper">
+                <div class="product-card-visual" style="padding:0;" data-action="quick-view" data-product-id="${p.id}" tabindex="0" role="button" aria-label="View details for ${p.name}">
+                  <div class="vessel-wrapper" style="width:100%;height:100%;max-width:none;">
                     ${getCandleVesselSvg(p)}
                   </div>
                   

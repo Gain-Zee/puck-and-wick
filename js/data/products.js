@@ -177,34 +177,27 @@ export const PRODUCTS = [
  * Pure mathematical SVG with zero external dependencies.
  */
 export function getCandleVesselSvg(product) {
-  const isAmber = product.vesselType === 'amber';
-  const photoHref = isAmber ? 'assets/images/candle-amber.jpg' : 'assets/images/candle-obsidian.jpg';
-  const clipId = `vessel-clip-${product.id}`;
+  const photoHref = 'assets/images/candle-obsidian.jpg';
   const vignetteId = `vessel-vig-${product.id}`;
 
   return `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" width="100%" height="100%" class="candle-vessel-svg" aria-label="${product.name} Luxury Candle Jar" role="img">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%" style="width:100%;height:100%;display:block;" class="candle-vessel-svg" aria-label="${product.name} Luxury Candle Jar" role="img">
       <defs>
-        <clipPath id="${clipId}">
-          <rect x="0" y="0" width="360" height="360" rx="14" />
-        </clipPath>
         <linearGradient id="${vignetteId}" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="#08090C" stop-opacity="0.1" />
-          <stop offset="68%" stop-color="#08090C" stop-opacity="0" />
+          <stop offset="0%" stop-color="#08090C" stop-opacity="0.08" />
+          <stop offset="72%" stop-color="#08090C" stop-opacity="0" />
           <stop offset="100%" stop-color="#08090C" stop-opacity="0.92" />
         </linearGradient>
       </defs>
 
-      <g clip-path="url(#${clipId})">
-        <!-- Studio Product Photography Placeholder -->
-        <image href="${photoHref}" x="0" y="0" width="360" height="360" preserveAspectRatio="xMidYMid slice" />
-        <rect x="0" y="0" width="360" height="360" fill="url(#${vignetteId})" />
+      <!-- Full-Bleed Studio Candle Photography with Signature Minimalist Crossed-Sticks & Flame Label -->
+      <image href="${photoHref}" x="0" y="0" width="400" height="400" preserveAspectRatio="xMidYMid slice" />
+      <rect x="0" y="0" width="400" height="400" fill="url(#${vignetteId})" />
 
-        <!-- Minimalist Scent Name Plate Overlay -->
-        <rect x="34" y="302" width="292" height="42" rx="4" fill="rgba(11, 12, 14, 0.86)" stroke="rgba(197, 160, 89, 0.55)" stroke-width="1" />
-        <text x="180" y="321" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="14" font-weight="600" letter-spacing="2.5" fill="#FAF5E8">${product.name.toUpperCase()}</text>
-        <text x="180" y="335" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7.5" font-weight="500" letter-spacing="2.2" fill="#C5A059">10 OZ • 100% AMERICAN SOY</text>
-      </g>
+      <!-- Minimalist Scent Name Plate at Bottom of Card View -->
+      <rect x="40" y="338" width="320" height="44" rx="4" fill="rgba(11, 12, 14, 0.88)" stroke="rgba(197, 160, 89, 0.6)" stroke-width="1" />
+      <text x="200" y="358" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="15.5" font-weight="600" letter-spacing="2.8" fill="#FAF5E8">${product.name.toUpperCase()}</text>
+      <text x="200" y="373" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8" font-weight="500" letter-spacing="2.4" fill="#C5A059">10 OZ • 100% AMERICAN SOY</text>
     </svg>
   `;
 }
