@@ -9,7 +9,7 @@ import { EXCLUSIVE_BOX_EDITIONS, ODOR_SCIENCE_DATA } from '../data/box-data.js';
 import { getAllProducts, getProductById } from '../data/products.js';
 import { getIcon, getCharcoalScienceSvg, getMetazeneScienceSvg } from '../utils/svg-assets.js';
 
-function getBoxPresentationSvg(edition, candleProduct, conceptId = 1) {
+function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhotoHref = '') {
   const isWomen = edition === 'women_luxe';
   const accentStroke = isWomen ? '#E2C178' : '#C5A059';
   const puckLabel = isWomen ? 'BOTANICAL LINEN PUCK' : 'METAZENE® PUCK';
@@ -42,7 +42,7 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1) {
     jarFill = '#16181F'; // Matte obsidian
   }
 
-  const boxPhotoHref = isWomen ? 'assets/images/box-womens.jpg' : 'assets/images/box-athlete.jpg';
+  const boxPhotoHref = customPhotoHref || (isWomen ? 'assets/images/box-women-open.jpg' : 'assets/images/box-men-open.jpg');
 
   return `
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420" width="100%" height="100%" class="box-presentation-svg" role="img" aria-label="${isWomen ? "Women's Exclusive Box Presentation" : "Men's Athlete Exclusive Box Presentation"}">
@@ -150,6 +150,7 @@ export function initBoxBuilder(store, openCartCallback) {
 
   const candles = getAllProducts();
   let feedbackMsg = '';
+  let activeGalleryViewId = 'open';
 
   const render = () => {
     const builderState = store.state.boxBuilder || {
@@ -160,6 +161,15 @@ export function initBoxBuilder(store, openCartCallback) {
     const activeEditionKey = builderState.edition === 'women_luxe' ? 'women_luxe' : 'men_athlete';
     const editionConfig = EXCLUSIVE_BOX_EDITIONS[activeEditionKey];
     const selectedCandle = getProductById(builderState.selectedCandleId) || candles[0];
+    const galleryViews = editionConfig.galleryViews || [];
+    const activeView = galleryViews.find((v) => v.id === activeGalleryViewId) || galleryViews[0] || {
+      id: 'open',
+      step: '01 • INSIDE THE BOX',
+      shortLabel: 'Open Box',
+      title: editionConfig.title,
+      image: activeEditionKey === 'women_luxe' ? 'assets/images/box-women-open.jpg' : 'assets/images/box-men-open.jpg',
+      description: editionConfig.description
+    };
 
     root.innerHTML = `
       <div class="box-builder-wrapper">
@@ -204,7 +214,30 @@ export function initBoxBuilder(store, openCartCallback) {
             </div>
 
             <div class="box-svg-container">
-              ${getBoxPresentationSvg(activeEditionKey, selectedCandle, store.state.activeLogoConcept || 1)}
+              ${getBoxPresentationSvg(activeEditionKey, selectedCandle, store.state.activeLogoConcept || 1, activeView.image)}
+            </div>
+
+            <!-- 4-Photo Interactive Gallery Switcher (Open Box, Closed Box, 3 Items Out, 3 Items Use Case) -->
+            <div class="box-gallery-thumbs" role="tablist" aria-label="Exclusive Box Photo Angles & Use Cases">
+              ${galleryViews.map((v, idx) => `
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected="${v.id === activeView.id}"
+                  class="box-gallery-thumb-btn ${v.id === activeView.id ? 'active' : ''}"
+                  data-gallery-view="${v.id}"
+                >
+                  <img src="${v.image}" alt="${v.title}" class="box-thumb-img" loading="lazy" />
+                  <span class="box-thumb-caption">0${idx + 1}. ${v.shortLabel}</span>
+                </button>
+              `).join('')}
+            </div>
+
+            <!-- Active View Caption & Description -->
+            <div class="box-active-view-caption">
+              <div class="view-caption-step">${activeView.step}</div>
+              <div class="view-caption-title">${activeView.title}</div>
+              <p class="view-caption-desc">${activeView.description}</p>
             </div>
 
             <div class="box-selected-scent-banner">
@@ -334,6 +367,35 @@ export function initBoxBuilder(store, openCartCallback) {
           </div>
         </div>
 
+        <!-- Complete 4-Photo Unboxing & Real-World Use-Case Breakdown Grid -->
+        <div class="box-unboxing-showcase" data-testid="box-unboxing-showcase">
+          <div class="box-unboxing-header">
+            <div class="section-kicker">
+              ${getIcon('box')}
+              <span>Inside the ${activeEditionKey === 'women_luxe' ? "Women's Sanctuary" : "Men's / Athlete"} Curation</span>
+            </div>
+            <h3 class="box-unboxing-title">Every Angle, Component &amp; Real-World Use Case</h3>
+            <p class="box-unboxing-lead">
+              Explore the ${editionConfig.title}—from the sealed magnetic gift box to all three full-size components unboxed and in action across your daily routine.
+            </p>
+          </div>
+
+          <div class="box-unboxing-grid">
+            ${galleryViews.map((v) => `
+              <article class="box-unboxing-card ${v.id === activeView.id ? 'active-view-card' : ''}" data-gallery-view="${v.id}">
+                <div class="box-unboxing-img-wrap">
+                  <img src="${v.image}" alt="${v.title}" class="box-unboxing-img" loading="lazy" />
+                  <span class="box-unboxing-step-pill">${v.step}</span>
+                </div>
+                <div class="box-unboxing-body">
+                  <h4 class="box-unboxing-card-title">${v.title}</h4>
+                  <p class="box-unboxing-card-desc">${v.description}</p>
+                </div>
+              </article>
+            `).join('')}
+          </div>
+        </div>
+
         <!-- Feature 19: Dual-Action Odor Science Breakdown -->
         <div class="odor-science" id="odor-science" data-testid="odor-science-section">
           <div class="odor-science-header">
@@ -395,6 +457,18 @@ export function initBoxBuilder(store, openCartCallback) {
         </div>
       </div>
     `;
+
+    // Bind gallery thumbnail & showcase card clicks
+    const galleryTriggers = root.querySelectorAll('[data-gallery-view]');
+    galleryTriggers.forEach((el) => {
+      el.addEventListener('click', () => {
+        const viewId = el.getAttribute('data-gallery-view');
+        if (viewId && viewId !== activeGalleryViewId) {
+          activeGalleryViewId = viewId;
+          render();
+        }
+      });
+    });
 
     // Bind interactive events
     const menBtn = root.querySelector('[data-testid="edition-toggle-men"]');

@@ -32,7 +32,41 @@ export const EXCLUSIVE_BOX_EDITIONS = {
         detail: 'Deep-cleansing detoxifying body wash formulated with activated binchotan charcoal, cold-pressed eucalyptus, and molecular odor neutralizers to strip post-rink sweat.',
         retailValue: '$32.00'
       }
-    }
+    },
+    galleryViews: [
+      {
+        id: 'open',
+        step: '01 • INSIDE THE BOX',
+        shortLabel: 'Open Box',
+        title: 'Custom-Cut Magnetic Presentation Box (Open)',
+        image: 'assets/images/box-men-open.jpg',
+        description: 'Precision-cut high-density charcoal foam cradles your choice of 10 oz signature matte-black soy candle alongside the vulcanized Activated Charcoal + Metazene® Gear Puck and 8 oz Athlete Body Wash.'
+      },
+      {
+        id: 'closed',
+        step: '02 • SEALED & GIFT-READY',
+        shortLabel: 'Box Closed',
+        title: 'Heavy-Weight Matte Obsidian Magnetic Gift Box (Closed)',
+        image: 'assets/images/box-men-closed.jpg',
+        description: 'Engineered from 1200gsm matte-black rigid board with a concealed magnetic snap lid and hot-stamped metallic gold Precision Mark logo. Arrives ready to hand to any player, coach, or host.'
+      },
+      {
+        id: 'items_out',
+        step: '03 • FULL-SIZE LINEUP',
+        shortLabel: '3 Items Unboxed',
+        title: 'All 3 Full-Size Men’s / Athlete Components Unboxed',
+        image: 'assets/images/box-men-items-out.jpg',
+        description: 'Every piece is full retail size ($98 combined value): (1) 10 oz American Soy Candle (55–65 hr burn), (2) Vented Activated Charcoal + Metazene® Gear Puck, and (3) 8 oz Detoxifying Charcoal & Eucalyptus Body Wash.'
+      },
+      {
+        id: 'usecase',
+        step: '04 • REAL-WORLD USE CASES',
+        shortLabel: '3 Items in Action',
+        title: 'Rink to Shower to Living Room: All 3 Items in Action',
+        image: 'assets/images/box-men-usecase.jpg',
+        description: '1. Drop the Odor Puck directly into your hockey bag, skate boots, or gym locker to destroy sweat thiols & amines. 2. Strip post-game grime in the shower with the 8 oz Charcoal Body Wash. 3. Light the 10 oz Soy Candle in your den or living room.'
+      }
+    ]
   },
   women_luxe: {
     id: 'women_luxe',
@@ -61,7 +95,41 @@ export const EXCLUSIVE_BOX_EDITIONS = {
         detail: 'Silky botanical gel enriched with jojoba micro-esters, shea butter, and clean molecular deodorizers for radiant, hydrated skin.',
         retailValue: '$32.00'
       }
-    }
+    },
+    galleryViews: [
+      {
+        id: 'open',
+        step: '01 • INSIDE THE BOX',
+        shortLabel: 'Open Box',
+        title: 'Botanical Sanctuary Presentation Box (Open)',
+        image: 'assets/images/box-women-open.jpg',
+        description: 'Custom-contoured presentation interior showcasing our signature 10 oz matte-black soy candle, the champagne-gold & charcoal Botanical Refresher Puck, and the 8 oz Luxe Spa Body Wash.'
+      },
+      {
+        id: 'closed',
+        step: '02 • SEALED & GIFT-READY',
+        shortLabel: 'Box Closed',
+        title: 'Matte Obsidian & Champagne-Gold Magnetic Gift Box (Closed)',
+        image: 'assets/images/box-women-closed.jpg',
+        description: 'Rigid magnetic keepsake box finished in velvety matte obsidian with our signature minimalist gold-foil square frame, crossed sticks & flame emblem stamped on the lid.'
+      },
+      {
+        id: 'items_out',
+        step: '03 • FULL-SIZE LINEUP',
+        shortLabel: '3 Items Unboxed',
+        title: 'All 3 Full-Size Women’s Sanctuary Components Unboxed',
+        image: 'assets/images/box-women-items-out.jpg',
+        description: 'Three full-size essentials ($98 combined value): (1) 10 oz Phthalate-Free Virginia Soy Candle, (2) Activated Coconut Carbon + Metazene® Botanical Linen & Tote Puck, and (3) 8 oz Jojoba & Shea Spa Body Wash.'
+      },
+      {
+        id: 'usecase',
+        step: '04 • REAL-WORLD USE CASES',
+        shortLabel: '3 Items in Action',
+        title: 'Wardrobe & Tote to Spa Shower to Sanctuary: All 3 Items in Action',
+        image: 'assets/images/box-women-usecase.jpg',
+        description: '1. Place the Botanical Odor Puck in your walk-in closet, linen drawer, or Pilates/yoga tote to keep fabrics fresh. 2. Elevate your daily shower with the 8 oz Botanical Spa Body Wash. 3. Unwind bedside with the 55–65 hr clean-burning Soy Candle.'
+      }
+    ]
   }
 };
 

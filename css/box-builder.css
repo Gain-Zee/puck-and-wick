@@ -141,6 +141,205 @@
   display: block;
 }
 
+/* 4-Thumbnail Interactive Gallery Switcher */
+.box-gallery-thumbs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6rem;
+  width: 100%;
+}
+
+.box-gallery-thumb-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem;
+  background: var(--color-charcoal-900, #121318);
+  border: 1px solid var(--color-border-dark, #262934);
+  border-radius: var(--radius-md, 0.5rem);
+  color: var(--color-text-muted, #9EA3AE);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.box-gallery-thumb-btn:hover {
+  border-color: var(--color-gold-500, #C5A059);
+  color: var(--color-parchment, #FAF5E8);
+}
+
+.box-gallery-thumb-btn.active {
+  border-color: var(--color-gold-bright, #D4AF37);
+  background: rgba(197, 160, 89, 0.14);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(197, 160, 89, 0.2);
+}
+
+.box-thumb-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 0.3rem;
+  display: block;
+}
+
+.box-thumb-caption {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+}
+
+/* Active View Description Callout */
+.box-active-view-caption {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid var(--color-border-dark, #24262E);
+  border-left: 3px solid var(--color-gold-bright, #D4AF37);
+  border-radius: var(--radius-md, 0.5rem);
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.view-caption-step {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gold-500, #C5A059);
+}
+
+.view-caption-title {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.view-caption-desc {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--color-text-muted, #9EA3AE);
+  margin: 0;
+}
+
+/* 4-Card Full Unboxing & Use-Case Showcase Grid */
+.box-unboxing-showcase {
+  background: var(--color-obsidian-950, #0A0A0C);
+  border: 1px solid var(--color-border-gold-subtle, rgba(197, 160, 89, 0.25));
+  border-radius: var(--radius-xl, 1rem);
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.box-unboxing-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.box-unboxing-title {
+  font-family: var(--font-serif, 'Cormorant Garamond', 'Cinzel', serif);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0.35rem 0 0.5rem;
+}
+
+.box-unboxing-lead {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--color-text-muted, #9EA3AE);
+  margin: 0;
+}
+
+.box-unboxing-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.box-unboxing-card {
+  background: var(--color-charcoal-900, #121318);
+  border: 1px solid var(--color-border-dark, #24262E);
+  border-radius: var(--radius-lg, 0.75rem);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all 0.22s ease;
+}
+
+.box-unboxing-card:hover,
+.box-unboxing-card.active-view-card {
+  border-color: var(--color-gold-bright, #D4AF37);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(212, 175, 55, 0.25);
+}
+
+.box-unboxing-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #08090C;
+}
+
+.box-unboxing-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.box-unboxing-card:hover .box-unboxing-img {
+  transform: scale(1.04);
+}
+
+.box-unboxing-step-pill {
+  position: absolute;
+  top: 0.65rem;
+  left: 0.65rem;
+  background: rgba(10, 10, 12, 0.88);
+  border: 1px solid rgba(197, 160, 89, 0.6);
+  color: var(--color-gold-bright, #D4AF37);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 0.25rem 0.55rem;
+  border-radius: 9999px;
+  backdrop-filter: blur(6px);
+}
+
+.box-unboxing-body {
+  padding: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  flex: 1;
+}
+
+.box-unboxing-card-title {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.box-unboxing-card-desc {
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: var(--color-text-muted, #9EA3AE);
+  margin: 0;
+}
+
 .box-selected-scent-banner {
   background: rgba(197, 160, 89, 0.08);
   border: 1px solid rgba(197, 160, 89, 0.25);
@@ -383,14 +582,24 @@
   .box-customizer-grid {
     grid-template-columns: 1fr;
   }
+  .box-unboxing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 640px) {
   .box-edition-switcher {
     grid-template-columns: 1fr;
   }
+  .box-gallery-thumbs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .box-unboxing-grid {
+    grid-template-columns: 1fr;
+  }
   .box-visual-stage,
-  .box-controls-panel {
+  .box-controls-panel,
+  .box-unboxing-showcase {
     padding: 1.15rem;
   }
   .box-edition-heading {
