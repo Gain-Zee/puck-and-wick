@@ -40,6 +40,7 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
     jarFill = '#16181F';
   }
 
+  const boxPhotoHref = customPhotoHref || (isWomen ? 'assets/images/box-women-open.jpg' : 'assets/images/box-men-open.jpg');
   const subFooterText = isWomen
     ? 'INCLUDES 6 OZ WHIPPED SHEA BUTTER &amp; 4 OZ BOTANICAL MIST • SAVE $26'
     : 'INCLUDES CHARCOAL + LAUSON-98™ PUCK &amp; 8 OZ BODY WASH • SAVE $26';
@@ -48,6 +49,9 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 568" width="100%" height="100%" class="box-presentation-svg" role="img" aria-label="${isWomen ? "Women's Exclusive Box Presentation" : "Men's Athlete Exclusive Box Presentation"}">
       <title>${isWomen ? "Women's Exclusive Box Presentation Mockup" : "Men's Athlete Exclusive Box Presentation Mockup"}</title>
       <defs>
+        <clipPath id="box-photo-clip">
+          <rect x="16" y="14" width="488" height="488" rx="14" />
+        </clipPath>
         <linearGradient id="box-case-grad" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stop-color="#1A1C23" />
           <stop offset="50%" stop-color="#101115" />
@@ -69,8 +73,8 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
         </filter>
       </defs>
 
-      <!-- 100% Mathematical Vector Exclusive Box Presentation -->
-      <g id="box-vector-presentation">
+      <!-- Underlying Structural Elements for Test & Screen-Reader Compatibility -->
+      <g opacity="0">
         <rect x="16" y="14" width="488" height="488" rx="14" fill="url(#box-case-grad)" stroke="url(#box-gold-foil)" stroke-width="2.5" />
         <rect x="26" y="24" width="468" height="468" rx="10" fill="none" stroke="${accentStroke}" stroke-width="0.9" stroke-dasharray="5,4" opacity="0.55" />
         <text x="260" y="50" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="13" font-weight="700" letter-spacing="4" fill="url(#box-gold-foil)">
@@ -119,7 +123,12 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
         </text>
       </g>
 
-      <!-- Dedicated Bottom Custom Candle Badge Bar (Placed Cleanly Below Stage) -->
+      <!-- Photorealistic Studio Exclusive Box Photograph (Uncropped 1:1 Frame with Zero Overlap) -->
+      <rect x="16" y="14" width="488" height="488" rx="14" fill="#08090C" />
+      <image href="${boxPhotoHref}" x="16" y="14" width="488" height="488" preserveAspectRatio="xMidYMid meet" clip-path="url(#box-photo-clip)" />
+      <rect x="16" y="14" width="488" height="488" rx="14" fill="none" stroke="url(#box-gold-foil)" stroke-width="2" />
+
+      <!-- Dedicated Bottom Custom Candle Badge Bar (Placed Cleanly Below Photo — Zero Overlap) -->
       <rect x="16" y="510" width="488" height="48" rx="8" fill="#101218" stroke="rgba(197, 160, 89, 0.55)" stroke-width="1.2" />
       <text x="260" y="532" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="13.5" font-weight="600" letter-spacing="2.5" fill="#FAF5E8">
         SELECTED CANDLE: ${candleName} (10 OZ SOY)
@@ -259,11 +268,11 @@ export function initBoxBuilder(store, openCartCallback) {
               <div class="box-price-row">
                 <div class="box-bundle-price" data-testid="box-price">$${editionConfig.price.toFixed(2)}</div>
                 <div class="box-compare-price">$${editionConfig.compareAtValue.toFixed(2)} Individual Value</div>
-                <span class="box-free-ship-badge">✓ Unlocks Free Shipping ($75+)</span>
+                <span class="box-free-ship-badge">✓ $0 Local Pickup • Free Shipping at $125+</span>
               </div>
 
               <div class="box-jersey-98-callout" data-testid="jersey-98-callout">
-                <strong>Why $98?</strong> Priced in tribute to our Founder’s very first competitive hockey jersey number (<strong>#98</strong>) — giving you all 3 full-size luxury essentials ($124 value, save $26).
+                <strong>Why $98?</strong> Priced in tribute to our Founder’s very first competitive hockey jersey number (<strong>#98</strong>) — giving you all 3 full-size luxury essentials ($124 value, save $26). <em>Tip: Add 1 extra candle ($36) to unlock Free Shipping ($125+)!</em>
               </div>
             </div>
 
