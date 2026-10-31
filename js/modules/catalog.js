@@ -55,7 +55,7 @@ export function initCatalog(store, openCartDrawer) {
                 <!-- Vessel Visual Stage -->
                 <div class="product-card-visual" style="padding:0;" data-action="quick-view" data-product-id="${p.id}" tabindex="0" role="button" aria-label="View details for ${p.name}">
                   <div class="vessel-wrapper" style="width:100%;height:100%;max-width:none;">
-                    ${getCandleVesselSvg(p)}
+                    ${getCandleVesselSvg(p, store.state.activeLogoConcept || 1)}
                   </div>
                   
                   ${p.seasonal ? `
@@ -215,9 +215,14 @@ export function initCatalog(store, openCartDrawer) {
   // Initial render
   render();
 
-  // Re-render when category changes in store
+  // Re-render when category or active logo concept changes in store
   store.subscribe((state, action) => {
-    if (action === 'SET_CATEGORY' || action === 'SET_ACTIVE_CATEGORY') {
+    if (
+      action === 'SET_CATEGORY' ||
+      action === 'SET_ACTIVE_CATEGORY' ||
+      action === 'SET_LOGO_CONCEPT' ||
+      action === 'SET_ACTIVE_LOGO'
+    ) {
       render();
     }
   });

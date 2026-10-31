@@ -4,55 +4,61 @@
  * legacy Word-style labels with cohesive retail-ready luxury packaging.
  */
 
-import { getLogoSvg } from '../utils/svg-assets.js';
+import { SVG_LOGOS, getLogoSvg } from '../utils/svg-assets.js';
+
+export { SVG_LOGOS, getLogoSvg };
 
 export const LOGO_CONCEPTS = [
   {
     id: 1,
     slug: 'concept-1-crossed-sticks',
-    name: 'Concept 1 — Minimalist Crossed Sticks & Flame',
-    shortTitle: 'Crossed Sticks & Flame',
+    name: 'Concept 1 — The Precision Mark (Square Hairline Frame)',
+    shortTitle: 'The Precision Mark',
     archetype: 'The Precision Mark',
-    tagline: 'Sleek crossed hockey sticks forming a geometric V with a radiant candle flame rising from a vulcanized puck base.',
-    typography: 'Cormorant Garamond Bold + Inter Tracking',
-    finish: 'Brushed Championship Gold Foil (#D4AF37) on Matte Obsidian (#0A0A0C)',
+    tagline: 'Minimalist square gold hairline frame with razor-clean crossed hockey sticks, a radiant flame in the top V, and centered serif wordmark.',
+    typography: 'Cormorant Garamond SemiBold + Wide Tracking',
+    finish: 'Brushed Championship Gold Foil (#D4AF37) on Matte Obsidian (#0B0C0E)',
     bestFor: 'Flagship Signature Jars & Men/Athlete Gear Packaging',
+    svg: SVG_LOGOS[1],
     getSvg: () => getLogoSvg(1)
   },
   {
     id: 2,
     slug: 'concept-2-heritage-shield',
-    name: 'Concept 2 — Heritage Crest / Shield ("20 Years on the Ice")',
-    shortTitle: 'Heritage Shield Crest',
-    archetype: 'The Championship Crest',
-    tagline: 'Architectural heraldic shield uniting a burning wick, laurel wreath, puck silhouette, and "20 Years on the Ice" heritage seal.',
-    typography: 'Cinzel Engraved Serif + Geometric Sans',
-    finish: 'Embossed Metallic Gold Crest with Micro-Etched Border',
-    bestFor: 'Limited Edition Releases, Gift Boxes & Founder Reserves',
+    name: 'Concept 2 — The Precision Reserve (Vertical Double-Frame)',
+    shortTitle: 'The Precision Reserve',
+    archetype: 'The Precision Reserve',
+    tagline: 'Tall architectural double-hairline frame combining the crossed sticks, flame, and vulcanized puck base with a diamond divider rule and "20 Years on the Ice" reserve stamp.',
+    typography: 'Cormorant Garamond Display + Inter Geometric Sans',
+    finish: 'Dual-Line Metallic Gold Foil with Center Diamond Rule',
+    bestFor: 'Reserve Candle Releases, Gift Boxes & Founder Editions',
+    svg: SVG_LOGOS[2],
     getSvg: () => getLogoSvg(2)
   },
   {
     id: 3,
     slug: 'concept-3-apothecary-stamp',
-    name: 'Concept 3 — Modern Luxury Apothecary Stamp',
-    shortTitle: 'Luxury Apothecary Stamp',
-    archetype: 'The Botanical Monogram',
-    tagline: 'Unisex architectural P&W monogram encased in a circular apothecary seal with Purcellville GPS coordinates (39.1368° N, 77.7144° W).',
-    typography: 'High-Contrast Editorial Serif + Technical Monospace',
-    finish: 'Satin Gold Stamping on Warm Parchment & Amber Glass',
-    bestFor: 'The Blue Hydrangea Boutique Display & Unisex Home Decor',
+    name: 'Concept 3 — The Atelier Lockup (Open Architectural Rules)',
+    shortTitle: 'The Atelier Lockup',
+    archetype: 'The Atelier Lockup',
+    tagline: 'Open-sided architectural lockup framed by top and bottom double gold hairlines, featuring the crossed blades, puck, and flame emblem above wide-tracked editorial typography.',
+    typography: 'High-Contrast Editorial Serif + Minimalist Sans',
+    finish: 'Open-Frame Satin Gold Foil on Matte Obsidian & Amber Glass',
+    bestFor: 'The Blue Hydrangea Boutique Display & Modern Home Decor',
+    svg: SVG_LOGOS[3],
     getSvg: () => getLogoSvg(3)
   },
   {
     id: 4,
     slug: 'concept-4-stamped-leather',
-    name: 'Concept 4 — Rustic Stamped-Leather & Gold Foil Badge',
-    shortTitle: 'Stamped Leather & Foil',
+    name: 'Concept 4 — The Workshop Emblem (Double-Hairline Plaque)',
+    shortTitle: 'The Workshop Emblem',
     archetype: 'The Workshop Emblem',
-    tagline: 'Artisanal workshop plaque with corner brass rivets, saddle-stitch border, and bold stencil-inspired craftsmanship typography.',
-    typography: 'Industrial Display Serif + Stamped Workshop Sans',
-    finish: 'Distressed Gold Leaf & Matte Saddle-Hide Texture',
+    tagline: 'Horizontal double-hairline workshop plaque uniting the crossed hockey blades, puck silhouette, and flame with crisp "Hand-Poured in Virginia" craftsmanship typography.',
+    typography: 'Cormorant Garamond Bold + Stamped Workshop Sans',
+    finish: 'Brushed Gold Foil Plaque on Matte Obsidian Vessel',
     bestFor: 'Woods & Rustic Collection (Barnwood & Bourbon, Rinkside Cedar)',
+    svg: SVG_LOGOS[4],
     getSvg: () => getLogoSvg(4)
   }
 ];

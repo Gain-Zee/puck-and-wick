@@ -25,6 +25,11 @@
   text-align: center;
   line-height: 1.35;
   max-width: 100%;
+  min-height: 44px; /* WCAG 2.5.5 Touch Target compliance */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 /* Studio Toolbar */
@@ -344,6 +349,7 @@
   align-items: center;
   gap: 0.65rem;
   padding: 0.8rem 1rem;
+  min-height: 44px; /* WCAG 2.5.5 Touch Target compliance */
   background: #0A0A0C;
   border: 1px solid var(--color-border-dark, #24262E);
   border-radius: var(--radius-md, 0.5rem);

@@ -34,10 +34,37 @@ const storage = {
   }
 };
 
+/**
+ * Resolves arbitrary logo concept representations (numbers, numeric strings, slugs, names)
+ * into a strictly clamped integer in [1, 4], falling back safely to 1.
+ */
+export function resolveConceptId(payload, fallback = 1) {
+  if (typeof payload === 'number') {
+    if (isNaN(payload)) return fallback;
+    return Math.min(4, Math.max(1, Math.round(payload)));
+  }
+  if (typeof payload === 'string') {
+    const trimmed = payload.trim();
+    if (/^-?\d+$/.test(trimmed)) {
+      const num = parseInt(trimmed, 10);
+      return Math.min(4, Math.max(1, num));
+    }
+    const match = trimmed.match(/concept-(\d)/i);
+    if (match) {
+      const slugNum = parseInt(match[1], 10);
+      return Math.min(4, Math.max(1, slugNum));
+    }
+    if (/crossed/i.test(trimmed)) return 1;
+    if (/heritage|shield/i.test(trimmed)) return 2;
+    if (/apothecary|monogram/i.test(trimmed)) return 3;
+    if (/stamped|leather|badge|plaque/i.test(trimmed)) return 4;
+  }
+  return fallback;
+}
+
 // Initial persisted state recovery
 const rawSavedLogo = storage.get('pw_active_brand_concept') || storage.get('puck_wick_logo');
-const savedLogo = parseInt(rawSavedLogo, 10);
-const initialLogo = savedLogo >= 1 && savedLogo <= 4 ? savedLogo : 1;
+const initialLogo = resolveConceptId(rawSavedLogo, 1);
 
 let savedCart = [];
 try {
@@ -65,7 +92,8 @@ window.PuckWickStore = {
       activeAdapter: 'offline_reservation',
       alinaPos: { apiKey: '', merchantId: 'ALINA-BH-01', terminalId: 'TERM-PURCELLVILLE-01', sandbox: true }
     },
-    showBrandStudio: true
+    showBrandStudio: true,
+    brandStudioVisible: true
   },
 
   listeners: [],
@@ -91,12 +119,7 @@ window.PuckWickStore = {
 
       case 'SET_LOGO_CONCEPT':
       case 'SET_ACTIVE_LOGO': {
-        let parsedId = parseInt(payload, 10);
-        if (!parsedId && typeof payload === 'string') {
-          const match = payload.match(/concept-(\d)/i);
-          if (match) parsedId = parseInt(match[1], 10);
-        }
-        const logoId = parsedId >= 1 && parsedId <= 4 ? parsedId : 1;
+        const logoId = resolveConceptId(payload, 1);
         this.state.activeLogoConcept = logoId;
         storage.set('puck_wick_logo', logoId.toString());
         storage.set('pw_active_brand_concept', logoId.toString());
@@ -311,9 +334,13 @@ window.PuckWickStore = {
         break;
       }
 
-      case 'TOGGLE_STUDIO': {
-        const explicit = typeof payload === 'boolean' ? payload : !this.state.showBrandStudio;
+      case 'TOGGLE_STUDIO':
+      case 'SET_STUDIO_VISIBLE': {
+        const explicit = typeof payload === 'boolean' ? payload : !this.state.brandStudioVisible;
         this.state.showBrandStudio = explicit;
+        this.state.brandStudioVisible = explicit;
+        if (window.BRAND_STUDIO_CONFIG) window.BRAND_STUDIO_CONFIG.enabled = explicit;
+        if (window.APP_CONFIG) window.APP_CONFIG.showBrandStudio = explicit;
         break;
       }
 

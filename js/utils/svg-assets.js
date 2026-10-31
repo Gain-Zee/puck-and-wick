@@ -5,99 +5,145 @@
  */
 
 export const SVG_LOGOS = {
-  // Concept 1: Minimalist Crossed Sticks & Flame ("The Precision Mark" - Matching Obsidian Jar Label)
-  1: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%" aria-label="Puck and Wick - Minimalist Crossed Sticks and Flame Logo">
+  // Concept 1: The Precision Mark (Square Hairline Frame - Crossed Sticks & Flame)
+  1: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%" role="img" aria-label="Puck and Wick - Concept 1 The Precision Mark Logo">
+  <title>Puck &amp; Wick The Precision Mark — Square Hairline Crossed Sticks and Flame Logo</title>
   <defs>
+    <linearGradient id="c1-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B69146" />
+      <stop offset="50%" stop-color="#E5C878" />
+      <stop offset="100%" stop-color="#9A7632" />
+    </linearGradient>
     <linearGradient id="c1-gold-metallic" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#B69146" />
       <stop offset="50%" stop-color="#E5C878" />
       <stop offset="100%" stop-color="#9A7632" />
     </linearGradient>
   </defs>
-  <!-- Outer Minimalist Square Gold Frame (Exact Match to Obsidian Candle Label) -->
-  <rect x="65" y="65" width="370" height="370" fill="#0B0C0E" stroke="url(#c1-gold-metallic)" stroke-width="3.5" />
+  <!-- Outer Minimalist Square Gold Frame -->
+  <rect x="65" y="65" width="370" height="370" fill="#0B0C0E" stroke="url(#c1-gold)" stroke-width="3.5" />
   <!-- Minimalist Crossed Lines + Flame in Top V -->
-  <g transform="translate(250, 198)">
-    <line x1="-38" y1="-34" x2="38" y2="38" stroke="url(#c1-gold-metallic)" stroke-width="2.6" stroke-linecap="round" />
-    <line x1="38" y1="-34" x2="-38" y2="38" stroke="url(#c1-gold-metallic)" stroke-width="2.6" stroke-linecap="round" />
-    <path d="M 0,-12 C -7,-20 -10,-32 -4,-43 C -1,-48 0,-52 0,-55 C 0,-52 1,-48 4,-43 C 10,-32 7,-20 0,-12 Z" fill="url(#c1-gold-metallic)" />
+  <g id="c1-mark-symbol" transform="translate(250, 198)">
+    <line x1="-38" y1="-34" x2="38" y2="38" stroke="url(#c1-gold)" stroke-width="2.6" stroke-linecap="round" />
+    <line x1="38" y1="-34" x2="-38" y2="38" stroke="url(#c1-gold)" stroke-width="2.6" stroke-linecap="round" />
+    <path d="M 0,-12 C -7,-20 -10,-32 -4,-43 C -1,-48 0,-52 0,-55 C 0,-52 1,-48 4,-43 C 10,-32 7,-20 0,-12 Z" fill="url(#c1-gold)" />
     <path d="M 0,-16 C -3,-21 -4,-28 -1.5,-34 C 0,-37 0.5,-37 1.5,-34 C 4,-28 3,-21 0,-16 Z" fill="#0B0C0E" opacity="0.45" />
   </g>
   <!-- Clean Gold Serif Wordmark Centered Inside Frame -->
-  <text x="250" y="296" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="38" font-weight="600" letter-spacing="5" fill="url(#c1-gold-metallic)">PUCK &amp; WICK</text>
+  <text x="250" y="296" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="38" font-weight="600" letter-spacing="5" fill="url(#c1-gold)">PUCK &amp; WICK</text>
 </svg>`,
 
-  // Concept 2: Minimalist Architectural Shield ("20 Years on the Ice")
-  2: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%" aria-label="Puck and Wick - Minimalist Heritage Shield Logo">
+  // Concept 2: The Precision Reserve (Vertical Double-Frame with Crossed Sticks, Puck Base & Diamond Rule)
+  2: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%" role="img" aria-label="Puck and Wick - Concept 2 The Precision Reserve Logo">
+  <title>Puck &amp; Wick The Precision Reserve — Vertical Double-Frame Crossed Sticks and Puck Logo</title>
   <defs>
+    <linearGradient id="c2-crest-shield" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B69146" />
+      <stop offset="50%" stop-color="#E5C878" />
+      <stop offset="100%" stop-color="#9A7632" />
+    </linearGradient>
     <linearGradient id="c2-gold" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#B69146" />
       <stop offset="50%" stop-color="#E5C878" />
       <stop offset="100%" stop-color="#9A7632" />
     </linearGradient>
   </defs>
-  <!-- Clean Single-Line Architectural Crest -->
-  <path d="M 165,80 L 335,80 L 335,210 C 335,288 268,334 250,346 C 232,334 165,288 165,210 Z" fill="#0D0E12" stroke="url(#c2-gold)" stroke-width="3.5" stroke-linejoin="round" />
-  <path d="M 177,92 L 323,92 L 323,208 C 323,276 264,318 250,329 C 236,318 177,276 177,208 Z" fill="none" stroke="url(#c2-gold)" stroke-width="0.9" opacity="0.45" />
-  <!-- Minimalist Flame + Crossed Line Inside Shield -->
-  <path d="M 250,168 C 240,156 235,140 240,124 C 243,114 248,105 250,98 C 252,105 257,114 260,124 C 265,140 260,156 250,168 Z" fill="url(#c2-gold)" />
-  <line x1="215" y1="196" x2="285" y2="196" stroke="url(#c2-gold)" stroke-width="1" opacity="0.5" />
-  <text x="250" y="232" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="24" font-weight="600" letter-spacing="6" fill="#FAF5E8">XX YRS</text>
-  <text x="250" y="254" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8.5" font-weight="500" letter-spacing="4" fill="#C5A059">ON THE ICE</text>
-  <rect x="224" y="276" width="52" height="10" rx="5" fill="none" stroke="url(#c2-gold)" stroke-width="2" />
-  <!-- Wordmark Below -->
-  <text x="250" y="408" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="32" font-weight="600" letter-spacing="10" fill="#FAF5E8">PUCK &amp; WICK</text>
-  <text x="250" y="442" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9.5" font-weight="500" letter-spacing="5" fill="#C5A059">SMALL BATCH SOY • EST. 2024</text>
+  <!-- Tall Architectural Double-Hairline Frame -->
+  <rect x="75" y="42" width="350" height="416" rx="3" fill="#0B0C0E" stroke="url(#c2-gold)" stroke-width="3" />
+  <rect x="87" y="54" width="326" height="392" rx="2" fill="none" stroke="url(#c2-gold)" stroke-width="0.9" opacity="0.5" />
+  <!-- Crossed Hockey Sticks + Flame + Vulcanized Puck Pill -->
+  <g transform="translate(250, 152)">
+    <path d="M -34,-28 L 32,32 C 37,36 44,37 52,34" fill="none" stroke="url(#c2-gold)" stroke-width="3" stroke-linecap="round" />
+    <path d="M 34,-28 L -32,32 C -37,36 -44,37 -52,34" fill="none" stroke="url(#c2-gold)" stroke-width="3" stroke-linecap="round" />
+    <path d="M 0,-10 C -7,-19 -10,-31 -5,-42 C -2,-49 0,-55 0,-59 C 0,-55 2,-49 5,-42 C 10,-31 7,-19 0,-10 Z" fill="url(#c2-gold)" />
+    <rect x="-24" y="28" width="48" height="8" rx="4" fill="#0B0C0E" stroke="url(#c2-gold)" stroke-width="2.2" />
+  </g>
+  <!-- Primary Wordmark -->
+  <text x="250" y="264" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="36" font-weight="600" letter-spacing="8" fill="#FAF5E8">PUCK &amp; WICK</text>
+  <!-- Diamond Center Rule -->
+  <line x1="135" y1="290" x2="236" y2="290" stroke="url(#c2-gold)" stroke-width="1" opacity="0.65" />
+  <polygon points="250,285 255,290 250,295 245,290" fill="url(#c2-gold)" />
+  <line x1="264" y1="290" x2="365" y2="290" stroke="url(#c2-gold)" stroke-width="1" opacity="0.65" />
+  <!-- Reserve Subtitles -->
+  <text x="250" y="328" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10.5" font-weight="600" letter-spacing="4.2" fill="#E5C878">XX YRS • 20 YEARS ON THE ICE</text>
+  <text x="250" y="356" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9.5" font-weight="500" letter-spacing="4" fill="#9CA3AF">SMALL BATCH SOY • LOUDOUN CO. VA</text>
+  <text x="250" y="408" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="13" font-weight="600" letter-spacing="3.5" fill="url(#c2-gold)">RESERVE EDITION</text>
 </svg>`,
 
-  // Concept 3: Modern Luxury Apothecary Seal ("The Botanical Monogram")
-  3: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%" aria-label="Puck and Wick - Modern Luxury Apothecary Stamp">
+  // Concept 3: The Atelier Lockup (Open Architectural Top & Bottom Rules with Crossed Blades)
+  3: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%" role="img" aria-label="Puck and Wick - Concept 3 The Atelier Lockup Logo">
+  <title>Puck &amp; Wick The Atelier Lockup — Open Architectural Crossed Blades Logo</title>
   <defs>
+    <linearGradient id="c3-apothecary" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B69146" />
+      <stop offset="50%" stop-color="#E5C878" />
+      <stop offset="100%" stop-color="#9A7632" />
+    </linearGradient>
     <linearGradient id="c3-gold" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#B69146" />
       <stop offset="50%" stop-color="#E5C878" />
       <stop offset="100%" stop-color="#9A7632" />
     </linearGradient>
   </defs>
-  <!-- Ultra-Clean Concentric Minimalist Ring -->
-  <circle cx="250" cy="215" r="135" fill="#0D0E12" stroke="url(#c3-gold)" stroke-width="2.5" />
-  <circle cx="250" cy="215" r="124" fill="none" stroke="url(#c3-gold)" stroke-width="0.75" opacity="0.45" />
-  <!-- Minimalist Flame Above Divider -->
-  <path d="M 250,148 C 243,139 240,127 243,115 C 245,108 248,101 250,96 C 252,101 255,108 257,115 C 260,127 257,139 250,148 Z" fill="url(#c3-gold)" />
-  <!-- Crisp Editorial P | W Monogram with Generous Breathing Room -->
-  <text x="202" y="238" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="68" font-weight="600" fill="#FAF5E8">P</text>
-  <line x1="250" y1="168" x2="250" y2="262" stroke="url(#c3-gold)" stroke-width="1.5" opacity="0.75" />
-  <text x="302" y="238" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="68" font-weight="600" fill="#FAF5E8">W</text>
-  <text x="250" y="298" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8.5" font-weight="500" letter-spacing="3.5" fill="#C5A059">39.1368° N • 77.7144° W</text>
-  <!-- Wordmark Below -->
-  <text x="250" y="408" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="32" font-weight="600" letter-spacing="10" fill="#FAF5E8">PUCK &amp; WICK</text>
-  <text x="250" y="442" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9.5" font-weight="500" letter-spacing="5" fill="#C5A059">PURCELLVILLE • VIRGINIA</text>
+  <!-- Open Architectural Top & Bottom Double Hairlines (Frameless Sides) -->
+  <rect x="40" y="64" width="420" height="372" fill="#0B0C0E" />
+  <line x1="55" y1="78" x2="445" y2="78" stroke="url(#c3-gold)" stroke-width="2.5" />
+  <line x1="55" y1="86" x2="445" y2="86" stroke="url(#c3-gold)" stroke-width="0.8" opacity="0.5" />
+  <line x1="55" y1="414" x2="445" y2="414" stroke="url(#c3-gold)" stroke-width="0.8" opacity="0.5" />
+  <line x1="55" y1="422" x2="445" y2="422" stroke="url(#c3-gold)" stroke-width="2.5" />
+  <!-- Minimalist Crossed Sticks + Flame + Puck Emblem -->
+  <g transform="translate(250, 178)">
+    <path d="M -38,-30 L 34,34 C 39,38 47,39 56,36" fill="none" stroke="url(#c3-gold)" stroke-width="3" stroke-linecap="round" />
+    <path d="M 38,-30 L -34,34 C -39,38 -47,39 -56,36" fill="none" stroke="url(#c3-gold)" stroke-width="3" stroke-linecap="round" />
+    <path d="M 0,-10 C -7,-19 -10,-32 -5,-43 C -2,-50 0,-56 0,-60 C 0,-56 2,-50 5,-43 C 10,-32 7,-19 0,-10 Z" fill="url(#c3-gold)" />
+    <path d="M 0,-15 C -3,-21 -4,-28 -1.5,-34 C 0,-37 0.5,-37 1.5,-34 C 4,-28 3,-21 0,-15 Z" fill="#0B0C0E" opacity="0.45" />
+    <rect x="-22" y="30" width="44" height="7" rx="3.5" fill="#0B0C0E" stroke="url(#c3-gold)" stroke-width="2" />
+  </g>
+  <!-- Wide-Tracked Editorial Wordmark -->
+  <text x="250" y="286" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="40" font-weight="600" letter-spacing="11" fill="url(#c3-gold)">PUCK &amp; WICK</text>
+  <line x1="190" y1="312" x2="310" y2="312" stroke="url(#c3-gold)" stroke-width="1" opacity="0.6" />
+  <text x="250" y="344" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10.5" font-weight="500" letter-spacing="5.5" fill="#FAF5E8">ARTISAN SOY CANDLE CO.</text>
+  <text x="250" y="372" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" font-weight="500" letter-spacing="3.5" fill="#9CA3AF">PURCELLVILLE, VA • 39.1368° N • 77.7144° W</text>
 </svg>`,
 
-  // Concept 4: Minimalist Architectural Label Plaque ("The Atelier Plaque")
-  4: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 380" width="100%" height="100%" aria-label="Puck and Wick - Minimalist Architectural Plaque Logo">
+  // Concept 4: The Workshop Emblem (Double-Hairline Rectangular Plaque)
+  4: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 380" width="100%" height="100%" role="img" aria-label="Puck and Wick - Concept 4 The Workshop Emblem Badge">
+  <title>Puck &amp; Wick The Workshop Emblem Plaque Logo</title>
   <defs>
+    <linearGradient id="c4-badge" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B69146" />
+      <stop offset="50%" stop-color="#E5C878" />
+      <stop offset="100%" stop-color="#9A7632" />
+    </linearGradient>
+    <linearGradient id="c4-foil" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B69146" />
+      <stop offset="50%" stop-color="#E5C878" />
+      <stop offset="100%" stop-color="#9A7632" />
+    </linearGradient>
     <linearGradient id="c4-gold-foil" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#B69146" />
       <stop offset="50%" stop-color="#E5C878" />
       <stop offset="100%" stop-color="#9A7632" />
     </linearGradient>
   </defs>
-  <!-- Crisp Hairline Architectural Plaque (No rivets, no messy dashed stitching) -->
-  <rect x="36" y="32" width="468" height="316" rx="4" fill="#0D0E12" stroke="url(#c4-gold-foil)" stroke-width="2.5" />
-  <rect x="46" y="42" width="448" height="296" rx="2" fill="none" stroke="url(#c4-gold-foil)" stroke-width="0.75" opacity="0.4" />
-  <!-- Minimalist Crossed Stick & Flame Emblem -->
-  <g transform="translate(270, 118)">
-    <path d="M -28,-22 L 26,26 C 30,29 36,30 42,28" fill="none" stroke="url(#c4-gold-foil)" stroke-width="2.8" stroke-linecap="round" />
-    <path d="M 28,-22 L -26,26 C -30,29 -36,30 -42,28" fill="none" stroke="url(#c4-gold-foil)" stroke-width="2.8" stroke-linecap="round" />
-    <path d="M 0,-8 C -6,-15 -8,-25 -5,-34 C -3,-40 0,-45 0,-49 C 0,-45 3,-40 5,-34 C 8,-25 6,-15 0,-8 Z" fill="url(#c4-gold-foil)" />
-    <rect x="-18" y="22" width="36" height="6" rx="3" fill="#0D0E12" stroke="url(#c4-gold-foil)" stroke-width="2" />
+
+  <!-- Crisp Double-Hairline Workshop Plaque -->
+  <rect x="36" y="32" width="468" height="316" rx="4" fill="#0D0E12" stroke="url(#c4-badge)" stroke-width="2.5" />
+  <rect x="46" y="42" width="448" height="296" rx="2" fill="none" stroke="url(#c4-foil)" stroke-width="0.75" opacity="0.45" />
+
+  <!-- Crossed Stick Blades, Puck & Flame Centerpiece -->
+  <g transform="translate(270, 116)">
+    <path d="M -28,-22 L 26,26 C 30,29 36,30 42,28" fill="none" stroke="url(#c4-foil)" stroke-width="2.8" stroke-linecap="round" />
+    <path d="M 28,-22 L -26,26 C -30,29 -36,30 -42,28" fill="none" stroke="url(#c4-foil)" stroke-width="2.8" stroke-linecap="round" />
+    <path d="M 0,-8 C -6,-15 -8,-25 -5,-34 C -3,-40 0,-45 0,-49 C 0,-45 3,-40 5,-34 C 8,-25 6,-15 0,-8 Z" fill="url(#c4-foil)" />
+    <rect x="-18" y="22" width="36" height="7" rx="3" fill="#0D0E12" stroke="url(#c4-foil)" stroke-width="2" />
   </g>
-  <!-- Clean Minimalist Typography -->
-  <text x="270" y="218" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="38" font-weight="600" letter-spacing="11" fill="#FAF5E8">PUCK &amp; WICK</text>
-  <line x1="170" y1="242" x2="370" y2="242" stroke="url(#c4-gold-foil)" stroke-width="0.9" opacity="0.55" />
-  <text x="270" y="272" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10.5" font-weight="500" letter-spacing="5.5" fill="#C5A059">HAND-POURED IN VIRGINIA</text>
-  <text x="270" y="298" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" font-weight="400" letter-spacing="4" fill="#9CA3AF">100% AMERICAN SOY WAX</text>
+
+  <!-- Stamped Workshop Typography -->
+  <text x="270" y="218" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="38" font-weight="700" letter-spacing="11" fill="#FAF5E8">PUCK &amp; WICK</text>
+  <line x1="170" y1="240" x2="370" y2="240" stroke="url(#c4-badge)" stroke-width="0.9" opacity="0.6" />
+  <text x="270" y="270" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10.5" font-weight="600" letter-spacing="5.5" fill="#C5A059">HAND-POURED IN VIRGINIA</text>
+  <text x="270" y="296" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" font-weight="400" letter-spacing="4" fill="#9CA3AF">100% AMERICAN SOY WAX</text>
 </svg>`
 };
 
@@ -239,6 +285,112 @@ export function getIcon(iconName, customClass = '') {
   const raw = SVG_ICONS[iconName] || SVG_ICONS.flame;
   if (!customClass) return raw;
   return raw.replace('<svg ', `<svg class="${customClass}" `);
+}
+
+/**
+ * Renders the active Concept (1, 2, 3, or 4) label directly onto the front of the
+ * 400x400 studio candle jar photograph so every candle in the inventory reflects
+ * the active Brand Studio concept at full scale.
+ */
+export function renderJarPhotoLabelOverlay(conceptId = 1, scentName = 'TOP SHELF', uid = 'jar') {
+  const cid = Number(conceptId) || 1;
+  const cleanScent = String(scentName || 'TOP SHELF').toUpperCase();
+  const displayScent = cleanScent;
+  const scentFontSize = cleanScent.length > 22 ? '4.8' : cleanScent.length > 16 ? '5.8' : '7.4';
+  const scentSpacing = cleanScent.length > 22 ? '0.7' : cleanScent.length > 16 ? '1.0' : '1.4';
+  const surfaceGradId = `jar-lbl-surf-${uid}-${cid}`;
+  const goldGradId = `jar-lbl-gold-${uid}-${cid}`;
+
+  let conceptArtwork = '';
+
+  if (cid === 2) {
+    // Concept 2: The Precision Reserve (Tall Vertical Double-Frame + Crossed Sticks & Puck + Diamond Rule)
+    conceptArtwork = `
+      <rect x="142" y="162" width="112" height="124" rx="1.5" fill="none" stroke="url(#${goldGradId})" stroke-width="1.2" />
+      <rect x="146" y="166" width="104" height="116" rx="1" fill="none" stroke="url(#${goldGradId})" stroke-width="0.5" opacity="0.55" />
+      <g transform="translate(198, 193)">
+        <path d="M -11,-9 L 10,10 C 12,11.5 14,12 17,11" fill="none" stroke="url(#${goldGradId})" stroke-width="1.2" stroke-linecap="round" />
+        <path d="M 11,-9 L -10,10 C -12,11.5 -14,12 -17,11" fill="none" stroke="url(#${goldGradId})" stroke-width="1.2" stroke-linecap="round" />
+        <path d="M 0,-3 C -2.5,-6 -3.5,-10 -1.8,-14 C -0.6,-16 0,-18 0,-19.5 C 0,-18 0.6,-16 1.8,-14 C 3.5,-10 2.5,-6 0,-3 Z" fill="url(#${goldGradId})" />
+        <rect x="-8" y="9" width="16" height="3" rx="1.5" fill="#0B0C0E" stroke="url(#${goldGradId})" stroke-width="0.9" />
+      </g>
+      <text x="198" y="223" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="10.5" font-weight="600" letter-spacing="2" fill="#FAF5E8">PUCK &amp; WICK</text>
+      <line x1="158" y1="231" x2="193" y2="231" stroke="url(#${goldGradId})" stroke-width="0.5" opacity="0.7" />
+      <polygon points="198,229 200,231 198,233 196,231" fill="url(#${goldGradId})" />
+      <line x1="203" y1="231" x2="238" y2="231" stroke="url(#${goldGradId})" stroke-width="0.5" opacity="0.7" />
+      <text x="198" y="246" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="${scentFontSize}" font-weight="600" letter-spacing="${scentSpacing}" fill="#E5C878">${displayScent}</text>
+      <text x="198" y="260" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.6" font-weight="600" letter-spacing="1.4" fill="#9CA3AF">20 YEARS ON THE ICE</text>
+      <text x="198" y="272" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="5.2" font-weight="600" letter-spacing="1.6" fill="url(#${goldGradId})">RESERVE EDITION</text>
+    `;
+  } else if (cid === 3) {
+    // Concept 3: The Atelier Lockup (Open Architectural Top & Bottom Double Hairlines)
+    conceptArtwork = `
+      <line x1="138" y1="168" x2="258" y2="168" stroke="url(#${goldGradId})" stroke-width="1.2" />
+      <line x1="138" y1="171.5" x2="258" y2="171.5" stroke="url(#${goldGradId})" stroke-width="0.45" opacity="0.55" />
+      <line x1="138" y1="276.5" x2="258" y2="276.5" stroke="url(#${goldGradId})" stroke-width="0.45" opacity="0.55" />
+      <line x1="138" y1="280" x2="258" y2="280" stroke="url(#${goldGradId})" stroke-width="1.2" />
+      <g transform="translate(198, 198)">
+        <path d="M -12,-10 L 11,11 C 13,12.5 15,13 18,12" fill="none" stroke="url(#${goldGradId})" stroke-width="1.2" stroke-linecap="round" />
+        <path d="M 12,-10 L -11,11 C -13,12.5 -15,13 -18,12" fill="none" stroke="url(#${goldGradId})" stroke-width="1.2" stroke-linecap="round" />
+        <path d="M 0,-3.5 C -2.5,-6.5 -3.5,-10.5 -1.8,-14.5 C -0.6,-16.5 0,-18.5 0,-20 C 0,-18.5 0.6,-16.5 1.8,-14.5 C 3.5,-10.5 2.5,-6.5 0,-3.5 Z" fill="url(#${goldGradId})" />
+        <rect x="-7.5" y="9.5" width="15" height="2.8" rx="1.4" fill="#0B0C0E" stroke="url(#${goldGradId})" stroke-width="0.85" />
+      </g>
+      <text x="198" y="228" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="11" font-weight="600" letter-spacing="2.6" fill="url(#${goldGradId})">PUCK &amp; WICK</text>
+      <line x1="176" y1="236" x2="220" y2="236" stroke="url(#${goldGradId})" stroke-width="0.5" opacity="0.65" />
+      <text x="198" y="250" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="${scentFontSize}" font-weight="600" letter-spacing="${scentSpacing}" fill="#FAF5E8">${displayScent}</text>
+      <text x="198" y="264" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.6" font-weight="500" letter-spacing="1.5" fill="#9CA3AF">ARTISAN SOY CANDLE CO.</text>
+    `;
+  } else if (cid === 4) {
+    // Concept 4: The Workshop Emblem (Double-Hairline Rectangular Plaque)
+    conceptArtwork = `
+      <rect x="136" y="172" width="124" height="104" rx="2" fill="none" stroke="url(#${goldGradId})" stroke-width="1.2" />
+      <rect x="140" y="176" width="116" height="96" rx="1" fill="none" stroke="url(#${goldGradId})" stroke-width="0.45" opacity="0.5" />
+      <g transform="translate(198, 200)">
+        <path d="M -11,-9 L 10,10 C 12,11.5 14,12 17,11" fill="none" stroke="url(#${goldGradId})" stroke-width="1.2" stroke-linecap="round" />
+        <path d="M 11,-9 L -10,10 C -12,11.5 -14,12 -17,11" fill="none" stroke="url(#${goldGradId})" stroke-width="1.2" stroke-linecap="round" />
+        <path d="M 0,-3 C -2.5,-6 -3.5,-10 -1.8,-14 C -0.6,-16 0,-18 0,-19.5 C 0,-18 0.6,-16 1.8,-14 C 3.5,-10 2.5,-6 0,-3 Z" fill="url(#${goldGradId})" />
+        <rect x="-7.5" y="9" width="15" height="2.8" rx="1.4" fill="#0B0C0E" stroke="url(#${goldGradId})" stroke-width="0.85" />
+      </g>
+      <text x="198" y="227" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="10.8" font-weight="700" letter-spacing="2.4" fill="#FAF5E8">PUCK &amp; WICK</text>
+      <line x1="158" y1="235" x2="238" y2="235" stroke="url(#${goldGradId})" stroke-width="0.5" opacity="0.65" />
+      <text x="198" y="248" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="${scentFontSize}" font-weight="600" letter-spacing="${scentSpacing}" fill="#E5C878">${displayScent}</text>
+      <text x="198" y="261" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.6" font-weight="600" letter-spacing="1.4" fill="#C5A059">HAND-POURED IN VIRGINIA</text>
+    `;
+  } else {
+    // Concept 1 (Default): The Precision Mark (Square Hairline Frame)
+    conceptArtwork = `
+      <rect x="140" y="166" width="116" height="116" fill="none" stroke="url(#${goldGradId})" stroke-width="1.2" />
+      <g transform="translate(198, 204)">
+        <line x1="-12" y1="-11" x2="12" y2="12" stroke="url(#${goldGradId})" stroke-width="0.95" stroke-linecap="round" />
+        <line x1="12" y1="-11" x2="-12" y2="12" stroke="url(#${goldGradId})" stroke-width="0.95" stroke-linecap="round" />
+        <path d="M 0,-3.5 C -2.2,-6.5 -3.2,-10.5 -1.4,-14 C -0.4,-15.8 0,-17 0,-18 C 0,-17 0.4,-15.8 1.4,-14 C 3.2,-10.5 2.2,-6.5 0,-3.5 Z" fill="url(#${goldGradId})" />
+      </g>
+      <text x="198" y="235" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="12" font-weight="600" letter-spacing="1.5" fill="url(#${goldGradId})">PUCK &amp; WICK</text>
+      <text x="198" y="256" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="${scentFontSize}" font-weight="600" letter-spacing="${scentSpacing}" fill="#FAF5E8">${displayScent}</text>
+      <text x="198" y="270" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.5" font-weight="500" letter-spacing="1.4" fill="#9CA3AF">10 OZ • 100% SOY WAX</text>
+    `;
+  }
+
+  return `
+    <g class="jar-photo-dynamic-label" data-active-concept="${cid}">
+      <defs>
+        <linearGradient id="${surfaceGradId}" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#22211F" />
+          <stop offset="28%" stop-color="#19191B" />
+          <stop offset="72%" stop-color="#111214" />
+          <stop offset="100%" stop-color="#0B0C0E" />
+        </linearGradient>
+        <linearGradient id="${goldGradId}" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#B69146" />
+          <stop offset="50%" stop-color="#E5C878" />
+          <stop offset="100%" stop-color="#9A7632" />
+        </linearGradient>
+      </defs>
+      <!-- Seamless Matte Obsidian Label Patch Over Jar Front -->
+      <rect x="133" y="159" width="130" height="130" rx="2" fill="url(#${surfaceGradId})" />
+      ${conceptArtwork}
+    </g>
+  `;
 }
 
 /**

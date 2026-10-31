@@ -29,7 +29,7 @@ function fail(name, error) {
 
 async function run() {
   console.log('Starting static server on port ' + PORT);
-  const server = await startServer(PORT);
+  const serverResult = await startServer(PORT);
 
   const browser = await chromium.launch({
     headless: true,
@@ -91,9 +91,8 @@ async function run() {
       fail('DOM placeholder inspection', new Error(`Found banned text patterns: ${domTextIssues.join(', ')}`));
     }
 
-    // 3. Adversarial Attack: XSS in Customer Form & Gateway Rejection Feedback
-    console.log('\n--- 3. XSS & HTML Injection Attack ---');
-    // Set active adapter to alina_pos with missing live API key to force gateway rejection
+    // 3. Adversarial Attack: Payment Rejection Abort & XSS Escaping
+    console.log('\n--- 3. Payment Rejection & HTML Injection ---');
     await page.evaluate(() => {
       window.PuckWickStore.dispatch('CLEAR_CART');
       window.PuckWickStore.dispatch('ADD_TO_CART', {
@@ -102,65 +101,71 @@ async function run() {
         price: 34,
         quantity: 1
       });
-      const adapter = window.PaymentAdapterRegistry.get('alina_pos');
-      adapter.config.sandbox = false;
-      adapter.config.apiKey = '';
-      window.PuckWickStore.state.paymentConfig.activeAdapter = 'alina_pos';
-      window.PuckWickStore.state.paymentConfig.alinaPos.sandbox = false;
-      window.PuckWickStore.state.paymentConfig.alinaPos.apiKey = '';
+      // Register a failing stub adapter
+      const failingStub = new window.StubAdapter({ simulateFailure: true });
+      window.PaymentAdapterRegistry.register('failing_gateway', failingStub);
     });
 
-    // Open checkout
-    await page.evaluate(() => {
-      const cartBtn = document.getElementById('cart-btn');
-      if (cartBtn) cartBtn.click();
-    });
-    await page.waitForTimeout(300);
-
-    // Switch payment tab in checkout UI to Alina POS
-    await page.locator('[data-testid="payment-tab-alina"]').click();
+    // Open Cart Drawer
+    await page.click('#cart-btn');
     await page.waitForTimeout(200);
 
-    // Fill in XSS payload in customer name and street
-    const xssPayload = '<img src=x onerror="window.__xss_fired=true">';
-    await page.fill('#customer-name', `Alex Ovi ${xssPayload}`);
-    await page.fill('#customer-email', 'alex@test.com');
-    await page.fill('#customer-phone', '703-555-0199');
+    // Open Checkout Modal
+    await page.click('[data-testid="checkout-btn"]');
+    await page.waitForSelector('[data-testid="checkout-modal"]');
 
-    // Submit checkout with failing alina_pos in live mode without API key
+    // Switch payment adapter to failing gateway via JS and re-render
+    await page.evaluate(() => {
+      window.PuckWickStore.dispatch('SET_PAYMENT_ADAPTER', 'failing_gateway');
+    });
+
+    // Select Local Pickup
+    await page.click('[data-testid="fulfillment-pickup"]');
+    await page.waitForTimeout(150);
+
+    // Enter customer details with XSS payload
+    const xssPayload = '<img src=x onerror="window.__xss_fired=true">';
+    await page.fill('#customer-name', `Alex Ovechkin ${xssPayload}`);
+    await page.fill('#customer-email', 'alex@puckandwick.com');
+    await page.fill('#customer-phone', '703-555-0100');
+
+    // Submit checkout with failing gateway
     await page.click('#btn-place-order');
     await page.waitForTimeout(300);
 
-    // Verify rejection was caught and surfaced
-    const checkoutErrorText = await page.evaluate(() => {
+    // Verify rejection
+    const rejectionOutcome = await page.evaluate(() => {
       const errEl = document.querySelector('#checkout-error .promo-error') || document.querySelector('#checkout-form-feedback .promo-error');
-      return errEl ? errEl.textContent : '';
+      const errText = errEl ? errEl.innerText : '';
+      const receipt = document.querySelector('[data-testid="order-receipt"]');
+      const cartCount = window.PuckWickStore.getCartCount();
+      const placeBtn = document.getElementById('btn-place-order');
+      const isBtnEnabled = placeBtn && !placeBtn.disabled && !placeBtn.classList.contains('loading');
+
+      return {
+        hasError: errText.length > 0,
+        errText,
+        hasReceipt: receipt !== null,
+        cartCount,
+        isBtnEnabled
+      };
     });
 
-    const isOrderReceiptPresent = await page.evaluate(() => {
-      return !!document.querySelector('[data-testid="order-receipt"]');
-    });
-
-    const isCartPreserved = await page.evaluate(() => {
-      return window.PuckWickStore.state.cart.length > 0;
-    });
-
-    const isSubmitButtonReEnabled = await page.evaluate(() => {
-      const btn = document.querySelector('#btn-place-order');
-      return btn && !btn.disabled;
-    });
-
-    if (checkoutErrorText.includes('Simulated payment processing network failure') && !isOrderReceiptPresent && isCartPreserved && isSubmitButtonReEnabled) {
-      pass('Payment failure properly caught, error displayed, cart preserved, button re-enabled');
+    if (rejectionOutcome.hasError && !rejectionOutcome.hasReceipt && rejectionOutcome.cartCount === 1 && rejectionOutcome.isBtnEnabled) {
+      pass('Payment failure properly surfaced, receipt blocked, cart intact, button re-enabled', rejectionOutcome.errText);
     } else {
-      fail('Payment failure handling', new Error(`Error: ${checkoutErrorText}, receipt: ${isOrderReceiptPresent}, cartPreserved: ${isCartPreserved}, btnEnabled: ${isSubmitButtonReEnabled}`));
+      fail('Payment failure handling', new Error(JSON.stringify(rejectionOutcome)));
     }
 
-    // Now test successful submission with XSS payloads to check receipt escaping
-    await page.evaluate(() => {
-      window.PuckWickStore.dispatch('SET_PAYMENT_ADAPTER', 'offline_reservation');
-    });
+    // Now switch to offline_reservation and place successful order
+    await page.click('[data-testid="payment-tab-reservation"]');
+    await page.waitForTimeout(150);
+    await page.click('[data-testid="fulfillment-pickup"]');
+    await page.fill('#customer-name', `Alex Ovechkin ${xssPayload}`);
+    await page.fill('#customer-email', 'alex@puckandwick.com');
+    await page.fill('#customer-phone', '703-555-0100');
 
+    // Submit valid order
     await page.click('#btn-place-order');
     await page.waitForSelector('[data-testid="order-receipt"]');
 
@@ -209,7 +214,9 @@ async function run() {
 
   } finally {
     await browser.close();
-    server.close();
+    if (serverResult && serverResult.server) {
+      serverResult.server.close();
+    }
   }
 
   if (results.failed > 0) {

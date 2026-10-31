@@ -19,11 +19,19 @@ export function initBrandStudio(store) {
   let previewConceptId = Number(store.state.activeLogoConcept) || 1;
   let statusBannerMsg = '';
 
-  const syncStudioVisibility = () => {
-    const enabled =
+  const isStudioEnabled = () => {
+    return (
       window.BRAND_STUDIO_CONFIG?.enabled !== false &&
       window.APP_CONFIG?.showBrandStudio !== false &&
-      store.state.showBrandStudio !== false;
+      store.state.showBrandStudio !== false &&
+      store.state.brandStudioVisible !== false
+    );
+  };
+
+  const syncStudioVisibility = () => {
+    const enabled = isStudioEnabled();
+
+    document.body.setAttribute('data-brand-studio-visible', enabled ? 'true' : 'false');
 
     if (studioSection) {
       studioSection.style.display = enabled ? '' : 'none';
@@ -32,7 +40,17 @@ export function initBrandStudio(store) {
     navItems.forEach((el) => {
       el.style.display = enabled ? '' : 'none';
     });
+
+    if (!enabled && window.location.hash === '#studio') {
+      window.location.replace('#shop');
+    }
   };
+
+  window.addEventListener('hashchange', () => {
+    if (!isStudioEnabled() && window.location.hash === '#studio') {
+      window.location.replace('#shop');
+    }
+  });
 
   const render = () => {
     syncStudioVisibility();
@@ -55,10 +73,13 @@ export function initBrandStudio(store) {
               <span>Founder Identity Review Mode</span>
             </span>
             <span class="studio-active-indicator">
-              Live Site Header Logo: <strong>Concept ${liveSiteLogoId} (${LOGO_CONCEPTS[liveSiteLogoId - 1]?.shortTitle})</strong>
+              Active Across All Candles &amp; Site Photos: <strong>Concept ${liveSiteLogoId} (${LOGO_CONCEPTS[liveSiteLogoId - 1]?.shortTitle})</strong>
             </span>
           </div>
-          <div class="studio-toolbar-right">
+          <div class="studio-toolbar-right" style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;">
+            <a href="#shop" class="btn btn-outline btn-sm" style="min-height:36px;padding:0.35rem 0.85rem;font-size:0.75rem;">
+              <span>View Full-Scale on All 7 Candles ↑</span>
+            </a>
             <span class="studio-config-hint">Config Flag: <code>BRAND_STUDIO_CONFIG.enabled = true</code></span>
           </div>
         </div>
@@ -109,7 +130,7 @@ export function initBrandStudio(store) {
                       data-testid="apply-logo-btn"
                       data-apply-concept="${concept.id}"
                     >
-                      <span>${isLiveOnSite ? '✓ Applied to Website Header' : `Apply Concept ${concept.id} to Website Header`}</span>
+                      <span>${isLiveOnSite ? '✓ Applied to All Candles & Site Photos' : `Preview Concept ${concept.id} on All Site Candles`}</span>
                     </button>
                   </div>
                 </div>
@@ -233,11 +254,15 @@ export function initBrandStudio(store) {
                 type="button"
                 class="btn btn-gold btn-lg apply-logo-btn"
                 id="btn-apply-active-concept"
+                data-testid="apply-logo-btn"
                 data-apply-concept="${previewConceptId}"
               >
                 ${getIcon('check')}
-                <span>Apply Concept ${previewConceptId} (${activeConceptObj.shortTitle}) to Live Website Header &amp; Footer</span>
+                <span>Apply Concept ${previewConceptId} (${activeConceptObj.shortTitle}) to All Candles &amp; Site Photos</span>
               </button>
+              <a href="#shop" class="btn btn-outline btn-sm" style="margin-top:0.65rem;width:100%;justify-content:center;">
+                <span>See Concept ${previewConceptId} Full-Scale on All 7 Inventory Candles ↑</span>
+              </a>
               ${statusBannerMsg ? `<div class="studio-status-feedback" role="status" aria-live="polite">${statusBannerMsg}</div>` : ''}
             </div>
           </div>
@@ -245,7 +270,7 @@ export function initBrandStudio(store) {
       </div>
     `;
 
-    // Event bindings
+    // Event bindings — clicking a concept card or its button immediately applies to all candles & site photos
     const conceptCards = root.querySelectorAll('.logo-concept-card');
     conceptCards.forEach((card) => {
       card.addEventListener('click', (e) => {
@@ -253,7 +278,9 @@ export function initBrandStudio(store) {
         const cid = parseInt(card.getAttribute('data-concept-id'), 10);
         if (cid >= 1 && cid <= 4) {
           previewConceptId = cid;
-          statusBannerMsg = '';
+          const cObj = LOGO_CONCEPTS.find((c) => c.id === cid) || LOGO_CONCEPTS[0];
+          statusBannerMsg = `✓ Applied ${cObj.name} across all 7 inventory candles, Hero candle, Exclusive Box, and site header/footer!`;
+          store.dispatch('SET_LOGO_CONCEPT', cid);
           render();
         }
       });
@@ -265,9 +292,9 @@ export function initBrandStudio(store) {
         e.stopPropagation();
         const targetConcept = parseInt(btn.getAttribute('data-apply-concept'), 10) || previewConceptId || 1;
         previewConceptId = targetConcept;
-        store.dispatch('SET_LOGO_CONCEPT', targetConcept);
         const cObj = LOGO_CONCEPTS.find((c) => c.id === targetConcept) || LOGO_CONCEPTS[0];
-        statusBannerMsg = `✓ Live site header, mobile drawer, and footer updated to ${cObj.name}!`;
+        statusBannerMsg = `✓ Applied ${cObj.name} across all 7 inventory candles, Hero candle, Exclusive Box, and site header/footer!`;
+        store.dispatch('SET_LOGO_CONCEPT', targetConcept);
         render();
       });
     });

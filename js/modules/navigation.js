@@ -4,7 +4,7 @@
  * cart counter badge animations, and dynamic logo mark updates from the store.
  */
 
-import { getLogoSvg } from '../utils/svg-assets.js';
+import { getLogoSvg, renderJarPhotoLabelOverlay } from '../utils/svg-assets.js';
 
 export function initNavigation(store) {
   const header = document.getElementById('site-header');
@@ -93,13 +93,18 @@ export function initNavigation(store) {
     sections.forEach((sec) => sectionObserver.observe(sec));
   }
 
-  // 4. Render Brand Logo Marks
+  // 4. Render Brand Logo Marks & Hero Candle Label Overlay
   const renderLogos = (conceptId) => {
     const svgCode = getLogoSvg(conceptId);
     const logoContainers = document.querySelectorAll('.brand-mark');
     logoContainers.forEach((container) => {
       container.innerHTML = svgCode;
     });
+
+    const heroLabelOverlay = document.getElementById('hero-jar-label-overlay');
+    if (heroLabelOverlay) {
+      heroLabelOverlay.innerHTML = renderJarPhotoLabelOverlay(conceptId, 'TOP SHELF', 'hero');
+    }
   };
 
   // 5. Update Cart Badge Count with Animation
@@ -125,11 +130,18 @@ export function initNavigation(store) {
 
   // 6. Update Studio Nav Visibility based on config
   const updateStudioVisibility = (showBrandStudio) => {
+    const isVisible =
+      showBrandStudio !== false &&
+      store?.state?.brandStudioVisible !== false &&
+      window.BRAND_STUDIO_CONFIG?.enabled !== false &&
+      window.APP_CONFIG?.showBrandStudio !== false;
     studioNavItems.forEach((item) => {
-      if (showBrandStudio) {
+      if (isVisible) {
         item.classList.remove('hidden');
+        item.style.display = '';
       } else {
         item.classList.add('hidden');
+        item.style.display = 'none';
       }
     });
   };
@@ -138,7 +150,7 @@ export function initNavigation(store) {
   if (store && store.state) {
     renderLogos(store.state.activeLogoConcept || 1);
     updateCartBadge(typeof store.getCartCount === 'function' ? store.getCartCount() : 0);
-    updateStudioVisibility(store.state.showBrandStudio !== false);
+    updateStudioVisibility(store.state.showBrandStudio !== false && store.state.brandStudioVisible !== false);
 
     // Subscribe to store updates
     store.subscribe((state, action) => {
@@ -158,8 +170,8 @@ export function initNavigation(store) {
         const count = typeof store.getCartCount === 'function' ? store.getCartCount() : 0;
         updateCartBadge(count);
       }
-      if (action === 'TOGGLE_STUDIO') {
-        updateStudioVisibility(state.showBrandStudio !== false);
+      if (action === 'TOGGLE_STUDIO' || action === 'SET_STUDIO_VISIBLE') {
+        updateStudioVisibility(state.showBrandStudio !== false && state.brandStudioVisible !== false);
       }
     });
   }

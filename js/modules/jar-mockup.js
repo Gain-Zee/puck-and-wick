@@ -1,7 +1,8 @@
 /**
  * Puck & Wick Interactive Candle Jar Mockup Engine
- * Renders vector candle vessel in Matte Obsidian or Deep Amber glass
- * with ultra-clean, minimalist retail-ready labels across all 4 logo concepts.
+ * Renders 3D perspective vector candle vessel in Matte Obsidian or Deep Amber glass
+ * with realistic wax fill, melt pool, braided cotton wick, flame glow, metallic gold lid,
+ * and authentic luxury packaging labels across all 4 logo concepts.
  */
 
 import { MOCKUP_SCENT_SPECS } from '../data/logos.js';
@@ -9,46 +10,54 @@ import { MOCKUP_SCENT_SPECS } from '../data/logos.js';
 function getLabelEmblemSvg(conceptId, isParchmentLabel) {
   const id = Number(conceptId) || 1;
   const strokeTone = isParchmentLabel ? '#8A6623' : 'url(#mockup-gold-foil)';
-  const textTone = isParchmentLabel ? '#111318' : '#FAF5E8';
+  const puckFill = isParchmentLabel ? '#F6F2E9' : '#0C0D10';
 
   if (id === 2) {
-    // Concept 2: Minimalist Architectural Shield Outline
+    // Concept 2: The Precision Reserve (Vertical Double-Frame + Crossed Sticks, Flame & Puck + Diamond Rule)
     return `
-      <g transform="translate(170, 206)">
-        <path d="M -16,-18 L 16,-18 L 16,2 C 16,14 4,23 0,26 C -4,23 -16,14 -16,2 Z" fill="none" stroke="${strokeTone}" stroke-width="1.4" stroke-linejoin="round" />
-        <path d="M 0,-2 C -3,-6 -4,-11 -2,-15 C -1,-17 0,-19 0,-21 C 0,-19 1,-17 2,-15 C 4,-11 3,-6 0,-2 Z" fill="#D4AF37" />
-        <text x="0" y="9" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="7.5" font-weight="600" letter-spacing="1.5" fill="${textTone}">XX</text>
+      <g transform="translate(170, 202)">
+        <rect x="-56" y="-28" width="112" height="50" rx="1.5" fill="none" stroke="${strokeTone}" stroke-width="0.9" opacity="0.7" />
+        <path d="M -16,-11 L 15,11 C 18,13 21,13.5 24,12" fill="none" stroke="${strokeTone}" stroke-width="1.35" stroke-linecap="round" />
+        <path d="M 16,-11 L -15,11 C -18,13 -21,13.5 -24,12" fill="none" stroke="${strokeTone}" stroke-width="1.35" stroke-linecap="round" />
+        <path d="M 0,-3 C -3,-8 -4,-13 -2,-18 C -0.8,-21 0,-23 0,-25 C 0,-23 0.8,-21 2,-18 C 4,-13 3,-8 0,-3 Z" fill="#D4AF37" />
+        <rect x="-10" y="9" width="20" height="3.8" rx="1.8" fill="${puckFill}" stroke="${strokeTone}" stroke-width="0.9" />
       </g>
     `;
   }
   if (id === 3) {
-    // Concept 3: Minimalist P | W Editorial Monogram Circle
+    // Concept 3: The Atelier Lockup (Open Architectural Top & Bottom Double Hairlines + Crossed Blades & Puck)
     return `
-      <g transform="translate(170, 206)">
-        <circle cx="0" cy="2" r="20" fill="none" stroke="${strokeTone}" stroke-width="1.2" />
-        <path d="M 0,-9 C -2,-12 -3,-15 -1.5,-18 C -0.5,-20 0,-21 0,-22 C 0,-21 0.5,-20 1.5,-18 C 3,-15 2,-12 0,-9 Z" fill="#D4AF37" />
-        <text x="-8" y="8" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="13" font-weight="600" fill="${textTone}">P</text>
-        <line x1="0" y1="-6" x2="0" y2="12" stroke="${strokeTone}" stroke-width="0.9" opacity="0.8" />
-        <text x="9" y="8" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="13" font-weight="600" fill="${textTone}">W</text>
+      <g transform="translate(170, 202)">
+        <line x1="-58" y1="-26" x2="58" y2="-26" stroke="${strokeTone}" stroke-width="1.3" />
+        <line x1="-58" y1="-22.5" x2="58" y2="-22.5" stroke="${strokeTone}" stroke-width="0.6" opacity="0.6" />
+        <path d="M -18,-10 L 16,12 C 19,14 23,14.5 27,13" fill="none" stroke="${strokeTone}" stroke-width="1.4" stroke-linecap="round" />
+        <path d="M 18,-10 L -16,12 C -19,14 -23,14.5 -27,13" fill="none" stroke="${strokeTone}" stroke-width="1.4" stroke-linecap="round" />
+        <path d="M 0,-2 C -3,-7 -4,-12 -2,-17 C -0.8,-20 0,-22 0,-24 C 0,-22 0.8,-20 2,-17 C 4,-12 3,-7 0,-2 Z" fill="#D4AF37" />
+        <rect x="-10" y="10" width="20" height="3.5" rx="1.7" fill="${puckFill}" stroke="${strokeTone}" stroke-width="0.9" />
+        <line x1="-58" y1="20" x2="58" y2="20" stroke="${strokeTone}" stroke-width="0.6" opacity="0.6" />
       </g>
     `;
   }
   if (id === 4) {
-    // Concept 4: Minimalist Atelier Plaque Emblem
+    // Concept 4: The Workshop Emblem (Double-Hairline Rectangular Plaque + Crossed Blades, Flame & Puck)
     return `
-      <g transform="translate(170, 206)">
-        <rect x="-24" y="-14" width="48" height="30" rx="2" fill="none" stroke="${strokeTone}" stroke-width="1.2" />
-        <path d="M -11,-6 L 11,11 M 11,-6 L -11,11" stroke="${strokeTone}" stroke-width="1.4" stroke-linecap="round" />
-        <path d="M 0,-2 C -2.5,-5 -3.5,-9 -1.5,-12 C -0.5,-14 0,-15 0,-16 C 0,-15 0.5,-14 1.5,-12 C 3.5,-9 2.5,-5 0,-2 Z" fill="#D4AF37" />
+      <g transform="translate(170, 202)">
+        <rect x="-54" y="-23" width="108" height="44" rx="2" fill="none" stroke="${strokeTone}" stroke-width="1.3" />
+        <rect x="-50" y="-19" width="100" height="36" rx="1" fill="none" stroke="${strokeTone}" stroke-width="0.6" opacity="0.55" />
+        <path d="M -14,-9 L 13,10 C 15.5,11.5 18.5,12 22,10.5" fill="none" stroke="${strokeTone}" stroke-width="1.35" stroke-linecap="round" />
+        <path d="M 14,-9 L -13,10 C -15.5,11.5 -18.5,12 -22,10.5" fill="none" stroke="${strokeTone}" stroke-width="1.35" stroke-linecap="round" />
+        <path d="M 0,-2 C -2.5,-6 -3.5,-10 -1.5,-14 C -0.5,-16 0,-18 0,-19.5 C 0,-18 0.5,-16 1.5,-14 C 3.5,-10 2.5,-6 0,-2 Z" fill="#D4AF37" />
+        <rect x="-9" y="8" width="18" height="3.5" rx="1.5" fill="${puckFill}" stroke="${strokeTone}" stroke-width="0.85" />
       </g>
     `;
   }
-  // Concept 1 (default): Ultra-Clean Minimalist Crossed Lines & Flame
+  // Concept 1 (default): The Precision Mark (Square Hairline Crossed Lines & Flame)
   return `
-    <g transform="translate(170, 206)">
-      <path d="M -16,-10 L 16,16" fill="none" stroke="${strokeTone}" stroke-width="1.5" stroke-linecap="round" />
-      <path d="M 16,-10 L -16,16" fill="none" stroke="${strokeTone}" stroke-width="1.5" stroke-linecap="round" />
-      <path d="M 0,-2 C -3.5,-6 -5,-12 -2.5,-17 C -1,-20 0,-23 0,-25 C 0,-23 1,-20 2.5,-17 C 5,-12 3.5,-6 0,-2 Z" fill="#D4AF37" />
+    <g transform="translate(170, 202)">
+      <line x1="-17" y1="-14" x2="17" y2="15" stroke="${strokeTone}" stroke-width="1.4" stroke-linecap="round" />
+      <line x1="17" y1="-14" x2="-17" y2="15" stroke="${strokeTone}" stroke-width="1.4" stroke-linecap="round" />
+      <rect x="-8" y="10" width="16" height="3.5" rx="1.5" fill="${puckFill}" stroke="${strokeTone}" stroke-width="0.85" />
+      <path d="M 0,-4 C -3,-8 -4,-13 -2,-18 C -1,-20 0,-22 0,-24 C 0,-22 1,-20 2,-18 C 4,-13 3,-8 0,-4 Z" fill="#D4AF37" />
     </g>
   `;
 }
@@ -62,12 +71,16 @@ export function renderJarMockupSvg({ conceptId = 1, scentKey = 'top-shelf', vess
   const glassMid = isAmber ? '#7C340B' : '#12151C';
   const glassEnd = isAmber ? '#260E02' : '#08090C';
 
-  const isParchmentLabel = cid === 3 || isAmber;
+  const isParchmentLabel = isAmber;
   const labelBg = isParchmentLabel ? '#F6F2E9' : '#0C0D10';
   const primaryTextFill = isParchmentLabel ? '#111318' : '#FAF5E8';
   const brandTitleFill = isParchmentLabel ? '#111318' : '#D4AF37';
   const secondaryTextFill = isParchmentLabel ? '#57534E' : '#9CA3AF';
   const hairlineFill = isParchmentLabel ? '#B69146' : 'url(#mockup-gold-foil)';
+
+  const notesPyramidText = scent.id === 'fresh-cut'
+    ? 'TOP: GLACIAL OZONE • HEART: SILVER FIR • BASE: WHITE CEDAR'
+    : 'TOP: BOURBON CASK • HEART: AGED TOBACCO • BASE: SMOKED AMBER';
 
   return `
     <svg
@@ -83,6 +96,7 @@ export function renderJarMockupSvg({ conceptId = 1, scentKey = 'top-shelf', vess
       role="img"
       aria-label="Interactive ${scent.displayTitle} Candle Jar Mockup in ${isAmber ? 'Deep Amber' : 'Matte Obsidian'} Glass with Concept ${cid} Label"
     >
+      <title>Interactive ${scent.displayTitle} Candle Jar Mockup with Concept ${cid} Label</title>
       <defs>
         <linearGradient id="mockup-jar-glass" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stop-color="${glassStart}" />
@@ -94,6 +108,13 @@ export function renderJarMockupSvg({ conceptId = 1, scentKey = 'top-shelf', vess
           <stop offset="0%" stop-color="#9A7632" />
           <stop offset="50%" stop-color="#E5C878" />
           <stop offset="100%" stop-color="#8A6623" />
+        </linearGradient>
+        <linearGradient id="mockup-lid-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#9A7632" />
+          <stop offset="25%" stop-color="#E5C878" />
+          <stop offset="50%" stop-color="#FFFDF5" />
+          <stop offset="75%" stop-color="#D4AF37" />
+          <stop offset="100%" stop-color="#78551E" />
         </linearGradient>
         <radialGradient id="mockup-flame-rad" cx="50%" cy="68%" r="65%">
           <stop offset="0%" stop-color="#FFFFFF" />
@@ -129,33 +150,57 @@ export function renderJarMockupSvg({ conceptId = 1, scentKey = 'top-shelf', vess
       <path d="M 94,148 L 99,350" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.07" />
       <ellipse cx="170" cy="132" rx="92" ry="16" fill="none" stroke="url(#mockup-gold-foil)" stroke-width="1.5" opacity="0.7" />
 
-      <!-- Ultra-Clean Minimalist Front Label Plate (Generous Negative Space, Thin Hairline Frame) -->
+      <!-- Luxury Printed Front Label Plate -->
       <rect x="98" y="164" width="144" height="172" rx="2" fill="${labelBg}" />
       <rect x="104" y="170" width="132" height="160" rx="1" fill="none" stroke="${hairlineFill}" stroke-width="1" opacity="0.85" />
 
-      <!-- Minimalist Concept Emblem Artwork -->
+      <!-- Dynamic Logo Concept Emblem -->
       ${getLabelEmblemSvg(cid, isParchmentLabel)}
 
-      <!-- Clean Minimalist Brand Title -->
-      <text x="170" y="254" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="14.5" font-weight="600" letter-spacing="3.5" fill="${brandTitleFill}">
+      <!-- Brand Wordmark -->
+      <text x="170" y="244" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="14.5" font-weight="600" letter-spacing="3.5" fill="${brandTitleFill}">
         PUCK &amp; WICK
       </text>
 
-      <!-- Subtle Short Divider -->
-      <line x1="152" y1="266" x2="188" y2="266" stroke="${hairlineFill}" stroke-width="0.75" opacity="0.65" />
+      <!-- Short Hairline Divider -->
+      <line x1="152" y1="253" x2="188" y2="253" stroke="${hairlineFill}" stroke-width="0.75" opacity="0.65" />
+
+      <!-- Scent Edition -->
+      <text x="170" y="265" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" font-weight="600" letter-spacing="1.4" fill="${secondaryTextFill}">
+        ${scent.edition.toUpperCase()}
+      </text>
 
       <!-- Scent Name -->
-      <text x="170" y="286" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="13.5" font-weight="600" letter-spacing="2.5" fill="${primaryTextFill}">
+      <text x="170" y="280" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="13.5" font-weight="600" letter-spacing="2.5" fill="${primaryTextFill}">
         ${scent.name}
       </text>
 
-      <!-- Minimalist 2-Line Spec Footer -->
-      <text x="170" y="308" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.8" font-weight="500" letter-spacing="1.8" fill="${secondaryTextFill}">
-        HAND-POURED | SOY WAX
+      <!-- 3-Tier Olfactory Notes Pyramid -->
+      <text x="170" y="295" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.6" font-weight="600" letter-spacing="1.1" fill="${secondaryTextFill}">
+        ${notesPyramidText}
       </text>
-      <text x="170" y="319" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" font-weight="500" letter-spacing="1.4" fill="${secondaryTextFill}">
-        10 OZ | 283G
+
+      <line x1="148" y1="303" x2="192" y2="303" stroke="${hairlineFill}" stroke-width="0.65" opacity="0.5" />
+
+      <!-- Burn Specs -->
+      <text x="170" y="313" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.6" font-weight="500" letter-spacing="1.3" fill="${secondaryTextFill}">
+        100% AMERICAN SOY WAX • 60 HR CLEAN BURN
       </text>
+
+      <!-- Vessel Specs & Origin -->
+      <text x="170" y="322" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.4" font-weight="500" letter-spacing="1.2" fill="${secondaryTextFill}">
+        10 OZ (283G) • HAND-POURED IN VA
+      </text>
+
+      <!-- Metallic Gold Lid Resting on Pedestal Beside Jar -->
+      <g id="jar-mockup-lid" transform="translate(252, 344) rotate(14)">
+        <ellipse cx="0" cy="16" rx="40" ry="9" fill="#000000" opacity="0.45" />
+        <path d="M -36,0 L -36,10 C -36,17 36,17 36,10 L 36,0 Z" fill="#78551E" stroke="url(#mockup-gold-foil)" stroke-width="0.8" />
+        <path d="M -36,3 C -36,10 36,10 36,3 L 36,7 C 36,14 -36,14 -36,7 Z" fill="url(#mockup-lid-gold)" opacity="0.8" />
+        <ellipse cx="0" cy="0" rx="36" ry="10" fill="url(#mockup-lid-gold)" stroke="#E5C878" stroke-width="1.2" />
+        <ellipse cx="0" cy="0" rx="31" ry="8.5" fill="none" stroke="#9A7632" stroke-width="0.75" opacity="0.6" stroke-dasharray="3 2" />
+        <circle cx="0" cy="0" r="2.8" fill="#D4AF37" opacity="0.7" />
+      </g>
 
       <!-- Heavy Glass Base Sham -->
       <ellipse cx="170" cy="364" rx="82" ry="11" fill="none" stroke="url(#mockup-gold-foil)" stroke-width="0.9" opacity="0.35" />
@@ -169,3 +214,4 @@ function MOCKUP_SCENT_CS(scentKey) {
   }
   return MOCKUP_SCENT_SPECS['top-shelf'];
 }
+

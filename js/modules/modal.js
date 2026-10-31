@@ -30,7 +30,7 @@ export function openProductModal(productId, store, openCartCallback) {
           <!-- Left: Vessel Visual Showcase -->
           <div class="modal-visual-column">
             <div class="modal-vessel-stage">
-              ${getCandleVesselSvg(product)}
+              ${getCandleVesselSvg(product, store?.state?.activeLogoConcept || 1)}
             </div>
             ${product.seasonal ? `<div class="modal-badge-seasonal">${product.seasonalBadge || 'Seasonal Collaboration'}</div>` : ''}
           </div>

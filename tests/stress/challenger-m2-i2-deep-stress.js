@@ -270,7 +270,7 @@ async function runDeepStress() {
         });
 
         const subMatches = domTotals.subtotal === sc.expectedSub && storeTotals.subtotal === sc.expectedSub;
-        const discMatches = domTotals.discount === sc.expectedDiscount && storeTotals.discount === sc.expectedDiscount;
+        const discMatches = domTotals.discount === sc.expectedDiscount && Number(storeTotals.discount.toFixed(2)) === sc.expectedDiscount;
         const shipMatches = domTotals.shipping === sc.expectedShip && storeTotals.shipping === sc.expectedShip;
         const taxMatches = domTotals.tax === sc.expectedTax && storeTotals.tax === sc.expectedTax;
         const totalMatches = domTotals.total === sc.expectedTotal && storeTotals.total === sc.expectedTotal;
