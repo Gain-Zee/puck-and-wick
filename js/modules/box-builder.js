@@ -413,7 +413,7 @@ export function initBoxBuilder(store, openCartCallback) {
           <!-- Full-Width Interactive Stage Spotlight Reader (Clean, Large Molecule View) -->
           <div class="odor-science-spotlight" id="odor-science-spotlight" role="tabpanel">
             ${activeScienceTab === 'stage1' ? `
-              <div class="science-spotlight-grid">
+              <div class="science-spotlight-grid" data-testid="science-charcoal">
                 <div class="science-spotlight-diagram">
                   <div class="spotlight-diagram-badge">STAGE 01 MOLECULE BREAKDOWN • MICROPOROUS CARBON LATTICE</div>
                   ${getCharcoalScienceSvg()}
@@ -435,7 +435,7 @@ export function initBoxBuilder(store, openCartCallback) {
                 </div>
               </div>
             ` : activeScienceTab === 'stage2' ? `
-              <div class="science-spotlight-grid">
+              <div class="science-spotlight-grid" data-testid="science-lauson98">
                 <div class="science-spotlight-diagram">
                   <div class="spotlight-diagram-badge">STAGE 02 MOLECULE BREAKDOWN • LAUSON-98™ RECEPTOR LOCKOUT</div>
                   ${getLausonScienceSvg()}
@@ -504,61 +504,6 @@ export function initBoxBuilder(store, openCartCallback) {
                 </div>
               </div>
             `}
-          </div>
-
-          <div class="odor-science-stages-grid">
-            <!-- Stage 1: Activated Charcoal -->
-            <div class="science-stage-card science-charcoal ${activeScienceTab === 'stage1' ? 'active-science-card' : ''}" data-testid="science-charcoal" data-science-tab="stage1" role="button" tabindex="0" aria-label="Inspect Stage 1 Activated Coconut Charcoal">
-              <div class="science-card-click-pill">${activeScienceTab === 'stage1' ? '✓ Currently Selected in Reader Above' : 'Click to Expand Stage 01 Breakdown ↑'}</div>
-              <div class="science-stage-visual">
-                ${getCharcoalScienceSvg()}
-              </div>
-              <div class="science-stage-content">
-                <div class="science-stage-step">${ODOR_SCIENCE_DATA.stages[0].step}</div>
-                <h4 class="science-stage-heading">${ODOR_SCIENCE_DATA.stages[0].title}</h4>
-                <div class="science-stage-metric">${ODOR_SCIENCE_DATA.stages[0].metric}</div>
-                <p class="science-stage-desc">${ODOR_SCIENCE_DATA.stages[0].description}</p>
-              </div>
-            </div>
-
-            <!-- Stage 2: Lauson-98™ Molecular Neutralization -->
-            <div class="science-stage-card science-lauson98 ${activeScienceTab === 'stage2' ? 'active-science-card' : ''}" data-testid="science-lauson98" data-science-tab="stage2" role="button" tabindex="0" aria-label="Inspect Stage 2 Lauson-98 Molecular Neutralization">
-              <div class="science-card-click-pill">${activeScienceTab === 'stage2' ? '✓ Currently Selected in Reader Above' : 'Click to Expand Stage 02 Breakdown ↑'}</div>
-              <div class="science-stage-visual">
-                ${getLausonScienceSvg()}
-              </div>
-              <div class="science-stage-content">
-                <div class="science-stage-step">${ODOR_SCIENCE_DATA.stages[1].step}</div>
-                <h4 class="science-stage-heading">${ODOR_SCIENCE_DATA.stages[1].title}</h4>
-                <div class="science-stage-metric">${ODOR_SCIENCE_DATA.stages[1].metric}</div>
-                <p class="science-stage-desc">${ODOR_SCIENCE_DATA.stages[1].description}</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Comparison: Conventional Masking Sprays vs Puck & Wick -->
-          <div class="odor-comparison-grid">
-            ${ODOR_SCIENCE_DATA.comparison.map((col, idx) => {
-              const tabKey = idx === 0 ? 'masking' : 'lauson_vs';
-              const isCardActive = activeScienceTab === tabKey;
-              return `
-              <div class="odor-comparison-card ${col.isPositive ? 'comparison-positive' : 'comparison-negative'} ${isCardActive ? 'active-science-card' : ''}" data-science-tab="${tabKey}" role="button" tabindex="0">
-                <div class="science-card-click-pill">${isCardActive ? '✓ Currently Selected in Reader Above' : `Click to Focus Tab 0${idx + 3} in Reader ↑`}</div>
-                <div class="comparison-card-header">
-                  <span class="comparison-method">${col.method}</span>
-                  <span class="comparison-verdict">${col.verdict}</span>
-                </div>
-                <ul class="comparison-points">
-                  ${col.points.map((pt) => `
-                    <li>
-                      <span class="comparison-bullet">${col.isPositive ? '✓' : '✕'}</span>
-                      <span>${pt}</span>
-                    </li>
-                  `).join('')}
-                </ul>
-              </div>
-            `;
-            }).join('')}
           </div>
         </div>
       </div>
