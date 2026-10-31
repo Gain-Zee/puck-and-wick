@@ -12,16 +12,17 @@ import { getIcon, getCharcoalScienceSvg, getMetazeneScienceSvg } from '../utils/
 function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhotoHref = '') {
   const isWomen = edition === 'women_luxe';
   const accentStroke = isWomen ? '#E2C178' : '#C5A059';
-  const puckLabel = isWomen ? 'BOTANICAL LINEN PUCK' : 'METAZENE® PUCK';
-  const washLabel = isWomen ? 'LUXE SPA BODY WASH' : 'ATHLETE BODY WASH';
+  const puckLabel = isWomen ? 'WHIPPED SHEA BUTTER' : 'METAZENE® PUCK';
+  const washLabel = isWomen ? 'BOTANICAL LINEN MIST' : 'ATHLETE BODY WASH';
   const candleName = (candleProduct?.name || 'TOP SHELF').toUpperCase();
-  const editionTitle = isWomen ? "WOMEN'S LUXURY CURATION" : "MEN'S / ATHLETE EDITION";
+  const editionTitle = isWomen ? "WOMEN'S SANCTUARY CURATION" : "MEN'S / ATHLETE EDITION";
   const cid = Number(conceptId) || 1;
 
   // Dynamic candle vessel glass tint per dispatch requirements:
   // - Emerald (#0F2417) for Balsam Fir (candle-balsam-fir)
   // - Amber (#2B1706) for Barnwood & Bourbon (candle-barnwood-bourbon) & Warm Amber (candle-warm-amber-vanilla)
   // - Frosted Ice (#1E2530) for Fresh Cut (candle-fresh-cut)
+  // - Warm Frosted Ivory (#EAE3D5) for Women's Sanctuary Ivory vessels
   // - Matte Obsidian (#16181F) for Top Shelf and other pours
   const candleId = candleProduct?.id || '';
   const candleVessel = (candleProduct?.vessel || '').toLowerCase();
@@ -32,6 +33,8 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
     jarFill = '#1E2530'; // Frosted Ice
   } else if (candleId === 'candle-barnwood-bourbon' || candleId === 'candle-warm-amber-vanilla') {
     jarFill = '#2B1706'; // Amber
+  } else if (candleProduct?.vesselType === 'ivory' || candleVessel.includes('ivory') || candleVessel.includes('alabaster')) {
+    jarFill = '#EAE3D5'; // Warm Frosted Ivory
   } else if (candleVessel.includes('emerald') || candleVessel.includes('forest')) {
     jarFill = '#0F2417'; // Emerald fallback
   } else if (candleVessel.includes('frost') || candleVessel.includes('ice')) {
@@ -43,6 +46,9 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
   }
 
   const boxPhotoHref = customPhotoHref || (isWomen ? 'assets/images/box-women-open.jpg' : 'assets/images/box-men-open.jpg');
+  const subFooterText = isWomen
+    ? 'INCLUDES 6 OZ WHIPPED SHEA BUTTER &amp; 4 OZ BOTANICAL MIST • SAVE $20'
+    : 'INCLUDES CHARCOAL + METAZENE® PUCK &amp; 8 OZ BODY WASH • SAVE $20';
 
   return `
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420" width="100%" height="100%" class="box-presentation-svg" role="img" aria-label="${isWomen ? "Women's Exclusive Box Presentation" : "Men's Athlete Exclusive Box Presentation"}">
@@ -99,7 +105,7 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
           <text x="65" y="186" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8" font-weight="600" letter-spacing="1" fill="#D4AF37">01. SOY CANDLE</text>
         </g>
 
-        <!-- Slot 2: Activated Charcoal & Metazene® Puck -->
+        <!-- Slot 2: Item 02 -->
         <g transform="translate(195, 72)">
           <rect x="0" y="0" width="130" height="205" rx="8" fill="#0B0C0F" stroke="#262934" stroke-width="1.5" filter="url(#foam-inset-shadow)" />
           <ellipse cx="65" cy="108" rx="46" ry="22" fill="#101216" stroke="url(#box-gold-foil)" stroke-width="1.5" />
@@ -108,10 +114,10 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
           <ellipse cx="65" cy="92" rx="34" ry="15" fill="none" stroke="#C5A059" stroke-width="0.9" stroke-dasharray="3,3" />
           <text x="65" y="148" text-anchor="middle" font-family="'Inter', sans-serif" font-size="6.5" font-weight="700" letter-spacing="1" fill="#FAF5E8">${puckLabel}</text>
           <text x="65" y="162" text-anchor="middle" font-family="'Inter', sans-serif" font-size="6" fill="#9CA3AF">&gt;1,000 m²/g CARBON</text>
-          <text x="65" y="186" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8" font-weight="600" letter-spacing="1" fill="#D4AF37">02. ODOR PUCK</text>
+          <text x="65" y="186" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8" font-weight="600" letter-spacing="1" fill="#D4AF37">02. CARE / PUCK</text>
         </g>
 
-        <!-- Slot 3: Odor-Eliminating Body Wash (8 oz) -->
+        <!-- Slot 3: Item 03 -->
         <g transform="translate(344, 72)">
           <rect x="0" y="0" width="130" height="205" rx="8" fill="#0B0C0F" stroke="#262934" stroke-width="1.5" filter="url(#foam-inset-shadow)" />
           <rect x="33" y="48" width="64" height="114" rx="10" fill="#15171E" stroke="url(#box-gold-foil)" stroke-width="1.5" />
@@ -120,7 +126,7 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
           <text x="65" y="104" text-anchor="middle" font-family="'Inter', sans-serif" font-size="6" font-weight="700" fill="#FAF5E8">${washLabel.slice(0, 16)}</text>
           <text x="65" y="117" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" fill="#9CA3AF">CHARCOAL + METAZENE®</text>
           <text x="65" y="130" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" font-weight="600" fill="#D4AF37">8 FL OZ (236 ML)</text>
-          <text x="65" y="186" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8" font-weight="600" letter-spacing="1" fill="#D4AF37">03. BODY WASH</text>
+          <text x="65" y="186" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8" font-weight="600" letter-spacing="1" fill="#D4AF37">03. MIST / WASH</text>
         </g>
 
         <text x="260" y="306" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8.5" font-weight="600" letter-spacing="2.5" fill="#9CA3AF">
@@ -138,7 +144,7 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
         SELECTED CANDLE: ${candleName} (10 OZ SOY)
       </text>
       <text x="260" y="387" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8" font-weight="500" letter-spacing="2" fill="#C5A059">
-        INCLUDES CHARCOAL + METAZENE® PUCK &amp; 8 OZ BODY CARE • SAVE $20
+        ${subFooterText}
       </text>
     </svg>
   `;
@@ -185,7 +191,7 @@ export function initBoxBuilder(store, openCartCallback) {
             data-testid="edition-toggle-men"
             data-edition="men_athlete"
           >
-            <span class="edition-tab-kicker">01 • Locker Room &amp; Home</span>
+            <span class="edition-tab-kicker">01 • Matte Obsidian &amp; Gold</span>
             <span class="edition-tab-title">Men's / Athlete Exclusive Box</span>
           </button>
 
@@ -199,8 +205,8 @@ export function initBoxBuilder(store, openCartCallback) {
             data-testid="edition-toggle-women"
             data-edition="women_luxe"
           >
-            <span class="edition-tab-kicker">02 • Sanctuary &amp; Botanical</span>
-            <span class="edition-tab-title">Women's Exclusive Box</span>
+            <span class="edition-tab-kicker">02 • Warm Frosted Ivory &amp; Gold</span>
+            <span class="edition-tab-title">Women's Sanctuary Exclusive Box</span>
           </button>
         </div>
 
@@ -227,7 +233,7 @@ export function initBoxBuilder(store, openCartCallback) {
                   class="box-gallery-thumb-btn ${v.id === activeView.id ? 'active' : ''}"
                   data-gallery-view="${v.id}"
                 >
-                  <img src="${v.image}" alt="${v.title}" class="box-thumb-img" loading="lazy" />
+                  <img src="${v.image}" alt="${v.title}" class="box-thumb-img" />
                   <span class="box-thumb-caption">0${idx + 1}. ${v.shortLabel}</span>
                 </button>
               `).join('')}
@@ -241,14 +247,14 @@ export function initBoxBuilder(store, openCartCallback) {
             </div>
 
             <div class="box-selected-scent-banner">
-              <div class="scent-banner-label">Configured Candle Pour:</div>
+              <div class="scent-banner-label">Configured 10 oz Candle Pour &amp; 3-Tier Olfactory Architecture:</div>
               <div class="scent-banner-value">
                 <strong>${selectedCandle.name}</strong>${selectedCandle.subtitle ? ` (${selectedCandle.subtitle})` : (selectedCandle.tagline ? ` (${selectedCandle.tagline})` : '')}
               </div>
               <div class="scent-banner-notes">
-                <span><strong>Top:</strong> ${selectedCandle.notes.top.join(', ')}</span> •
-                <span><strong>Middle:</strong> ${selectedCandle.notes.middle.join(', ')}</span> •
-                <span><strong>Base:</strong> ${selectedCandle.notes.base.join(', ')}</span>
+                <span><strong>Top Notes:</strong> ${selectedCandle.notes.top.join(', ')}</span><br />
+                <span><strong>Heart / Middle Notes:</strong> ${selectedCandle.notes.middle.join(', ')}</span><br />
+                <span><strong>Base Notes:</strong> ${selectedCandle.notes.base.join(', ')}</span>
               </div>
             </div>
           </div>
@@ -306,10 +312,10 @@ export function initBoxBuilder(store, openCartCallback) {
               </div>
             </div>
 
-            <!-- Step 2: Review 3 Included Full-Size Components -->
+            <!-- Step 2: Review 3 Included Full-Size Components with Full Note Breakdowns -->
             <div class="box-step-block">
               <div class="box-step-label">
-                <span>Step 2: Included Full-Size Box Components (3 Items)</span>
+                <span>Step 2: Included Full-Size Box Components &amp; Note Breakdowns (3 Items)</span>
               </div>
 
               <div class="bundled-items" data-testid="bundled-items-list">
@@ -322,10 +328,13 @@ export function initBoxBuilder(store, openCartCallback) {
                       <span class="bundled-item-val">${editionConfig.bundledItems.candle.retailValue}</span>
                     </div>
                     <p class="bundled-item-sub">${editionConfig.bundledItems.candle.detail}</p>
+                    <div class="bundled-item-notes">
+                      <strong>Olfactory Notes:</strong> Top: ${selectedCandle.notes.top.join(', ')} • Heart: ${selectedCandle.notes.middle.join(', ')} • Base: ${selectedCandle.notes.base.join(', ')}
+                    </div>
                   </div>
                 </div>
 
-                <!-- Item 2: Activated Charcoal + Metazene Puck -->
+                <!-- Item 2: Puck / Whipped Shea Body Butter -->
                 <div class="bundled-item-card bundle-item-puck" data-testid="bundled-puck">
                   <div class="bundled-item-num">02</div>
                   <div class="bundled-item-body">
@@ -334,10 +343,15 @@ export function initBoxBuilder(store, openCartCallback) {
                       <span class="bundled-item-val">${editionConfig.bundledItems.puck.retailValue}</span>
                     </div>
                     <p class="bundled-item-sub">${editionConfig.bundledItems.puck.detail}</p>
+                    ${editionConfig.bundledItems.puck.notes ? `
+                      <div class="bundled-item-notes">
+                        <strong>Formulation &amp; Notes:</strong> ${editionConfig.bundledItems.puck.notes}
+                      </div>
+                    ` : ''}
                   </div>
                 </div>
 
-                <!-- Item 3: Odor-Eliminating Body Wash -->
+                <!-- Item 3: Body Wash / Botanical Linen & Pillow Mist -->
                 <div class="bundled-item-card bundle-item-bodywash" data-testid="bundled-bodywash">
                   <div class="bundled-item-num">03</div>
                   <div class="bundled-item-body">
@@ -346,6 +360,11 @@ export function initBoxBuilder(store, openCartCallback) {
                       <span class="bundled-item-val">${editionConfig.bundledItems.bodyWash.retailValue}</span>
                     </div>
                     <p class="bundled-item-sub">${editionConfig.bundledItems.bodyWash.detail}</p>
+                    ${editionConfig.bundledItems.bodyWash.notes ? `
+                      <div class="bundled-item-notes">
+                        <strong>Formulation &amp; Notes:</strong> ${editionConfig.bundledItems.bodyWash.notes}
+                      </div>
+                    ` : ''}
                   </div>
                 </div>
               </div>
@@ -360,7 +379,7 @@ export function initBoxBuilder(store, openCartCallback) {
                 id="btn-add-box-to-cart"
               >
                 ${getIcon('cart')}
-                <span>Add Configured ${activeEditionKey === 'women_luxe' ? "Women's" : "Men's / Athlete"} Box to Cart • $${editionConfig.price.toFixed(2)}</span>
+                <span>Add Configured ${activeEditionKey === 'women_luxe' ? "Women's Sanctuary" : "Men's / Athlete"} Box to Cart • $${editionConfig.price.toFixed(2)}</span>
               </button>
               ${feedbackMsg ? `<div class="box-added-feedback" role="status" aria-live="polite">${feedbackMsg}</div>` : ''}
             </div>
@@ -372,11 +391,11 @@ export function initBoxBuilder(store, openCartCallback) {
           <div class="box-unboxing-header">
             <div class="section-kicker">
               ${getIcon('box')}
-              <span>Inside the ${activeEditionKey === 'women_luxe' ? "Women's Sanctuary" : "Men's / Athlete"} Curation</span>
+              <span>Inside the ${activeEditionKey === 'women_luxe' ? "Women's Warm Ivory Sanctuary" : "Men's / Athlete Matte Obsidian"} Curation</span>
             </div>
             <h3 class="box-unboxing-title">Every Angle, Component &amp; Real-World Use Case</h3>
             <p class="box-unboxing-lead">
-              Explore the ${editionConfig.title}—from the sealed magnetic gift box to all three full-size components unboxed and in action across your daily routine.
+              Explore the ${editionConfig.title}—from the sealed magnetic gift box to all three full-size components unboxed and in action across your daily routine. Click any card below to inspect it in the main viewer.
             </p>
           </div>
 
@@ -384,7 +403,7 @@ export function initBoxBuilder(store, openCartCallback) {
             ${galleryViews.map((v) => `
               <article class="box-unboxing-card ${v.id === activeView.id ? 'active-view-card' : ''}" data-gallery-view="${v.id}">
                 <div class="box-unboxing-img-wrap">
-                  <img src="${v.image}" alt="${v.title}" class="box-unboxing-img" loading="lazy" />
+                  <img src="${v.image}" alt="${v.title}" class="box-unboxing-img" />
                   <span class="box-unboxing-step-pill">${v.step}</span>
                 </div>
                 <div class="box-unboxing-body">
@@ -393,6 +412,35 @@ export function initBoxBuilder(store, openCartCallback) {
                 </div>
               </article>
             `).join('')}
+          </div>
+
+          <!-- Dual Colorway & Sanctuary Candle Lineup Visual Comparison -->
+          <div class="box-colorway-comparison">
+            <div class="box-unboxing-card">
+              <div class="box-unboxing-img-wrap">
+                <img src="assets/images/his-hers-colorway.jpg" alt="Matte Obsidian Men's Collection vs. Warm Frosted Ivory Women's Sanctuary Collection" class="box-unboxing-img" />
+                <span class="box-unboxing-step-pill">DUAL ARCHITECTURE • HIS &amp; HERS COLORWAYS</span>
+              </div>
+              <div class="box-unboxing-body">
+                <h4 class="box-unboxing-card-title">Matte Obsidian &amp; Gold vs. Warm Frosted Ivory &amp; Champagne Gold</h4>
+                <p class="box-unboxing-card-desc">
+                  Identical architectural vessel geometry and minimalist square gold-foil Precision Mark emblem—engineered in deep Matte Obsidian for the Locker Room &amp; Den, and Warm Frosted Alabaster-Ivory for the Spa &amp; Bedroom Sanctuary.
+                </p>
+              </div>
+            </div>
+
+            <div class="box-unboxing-card">
+              <div class="box-unboxing-img-wrap">
+                <img src="assets/images/womens-candle-lineup.jpg" alt="Women's Sanctuary Ivory Candle Trio: Cashmere & White Tea, Velvet Vanilla & Santal, Sea Salt & White Orchid" class="box-unboxing-img" />
+                <span class="box-unboxing-step-pill">SANCTUARY IVORY LINEUP • 3 SIGNATURE POURS</span>
+              </div>
+              <div class="box-unboxing-body">
+                <h4 class="box-unboxing-card-title">The Sanctuary Ivory Candle Collection (10 oz Soy Vessels)</h4>
+                <p class="box-unboxing-card-desc">
+                  <strong>Cashmere &amp; White Tea</strong> (Silver Needle White Tea • Spun Cashmere • Blond Woods), <strong>Velvet Vanilla &amp; Santal</strong> (Cardamom • Australian Sandalwood • Madagascar Vanilla Bean), and <strong>Sea Salt &amp; White Orchid</strong> (Flaky Sea Salt • White Orchid • Sun-Bleached Driftwood).
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 

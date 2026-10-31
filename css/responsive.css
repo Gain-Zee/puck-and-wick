@@ -308,9 +308,11 @@
 
   .cart-btn,
   .nav-toggle {
-    width: 38px;
-    height: 38px;
-    padding: 6px;
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    min-height: 44px;
+    padding: 8px;
   }
 
   .container,

@@ -194,7 +194,10 @@
   align-items: center;
   justify-content: center;
   width: 44px;
+  min-width: 44px;
   height: 44px;
+  min-height: 44px;
+  box-sizing: border-box;
   border-radius: var(--radius-md);
   background: var(--color-charcoal-850);
   border: 1px solid var(--color-border-subtle);
@@ -249,7 +252,10 @@
   justify-content: center;
   gap: 5px;
   width: 44px;
+  min-width: 44px;
   height: 44px;
+  min-height: 44px;
+  box-sizing: border-box;
   padding: 10px;
   border-radius: var(--radius-md);
   background: var(--color-charcoal-850);

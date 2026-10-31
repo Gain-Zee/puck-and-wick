@@ -84,6 +84,7 @@ try {
 
 // Global Reactive Store Instance
 window.PuckWickStore = {
+  resolveConceptId,
   state: {
     activeCategory: 'all',
     activeLogoConcept: initialLogo, // 1: Crossed Sticks, 2: Heritage Crest, 3: Apothecary, 4: Stamped Leather
@@ -99,7 +100,8 @@ window.PuckWickStore = {
       alinaPos: { apiKey: '', merchantId: 'ALINA-BH-01', terminalId: 'TERM-PURCELLVILLE-01', sandbox: true }
     },
     showBrandStudio: initialStudioEnabled,
-    brandStudioVisible: initialStudioEnabled
+    brandStudioVisible: initialStudioEnabled,
+    studioPreviewConcept: initialLogo
   },
 
   listeners: [],
@@ -340,6 +342,7 @@ window.PuckWickStore = {
         break;
       }
 
+      case 'TOGGLE_BRAND_STUDIO':
       case 'TOGGLE_STUDIO':
       case 'SET_STUDIO_VISIBLE': {
         const explicit = typeof payload === 'boolean' ? payload : !this.state.brandStudioVisible;
@@ -347,6 +350,12 @@ window.PuckWickStore = {
         this.state.brandStudioVisible = explicit;
         if (window.BRAND_STUDIO_CONFIG) window.BRAND_STUDIO_CONFIG.enabled = explicit;
         if (window.APP_CONFIG) window.APP_CONFIG.showBrandStudio = explicit;
+        break;
+      }
+
+      case 'SET_STUDIO_PREVIEW_CONCEPT': {
+        const previewId = resolveConceptId(payload, 1);
+        this.state.studioPreviewConcept = previewId;
         break;
       }
 

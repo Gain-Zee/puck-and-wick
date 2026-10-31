@@ -176,7 +176,7 @@ export function initNavigation(store) {
         const count = typeof store.getCartCount === 'function' ? store.getCartCount() : 0;
         updateCartBadge(count);
       }
-      if (action === 'TOGGLE_STUDIO' || action === 'SET_STUDIO_VISIBLE') {
+      if (action === 'TOGGLE_STUDIO' || action === 'TOGGLE_BRAND_STUDIO' || action === 'SET_STUDIO_VISIBLE') {
         updateStudioVisibility(state.showBrandStudio !== false && state.brandStudioVisible !== false);
       }
     });

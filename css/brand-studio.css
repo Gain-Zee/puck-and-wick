@@ -44,6 +44,7 @@
   border: 1px solid var(--color-border-gold-subtle, rgba(197, 160, 89, 0.3));
   border-radius: var(--radius-lg, 0.75rem);
   box-sizing: border-box;
+  max-width: 100%;
 }
 
 .studio-toolbar-left {
@@ -51,6 +52,41 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 0.85rem;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.studio-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.studio-toolbar-right a.btn,
+.studio-toolbar-right .btn {
+  white-space: normal;
+  text-align: center;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  word-break: break-word;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem 0.85rem;
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.studio-toolbar-right a.btn span,
+.studio-toolbar-right .btn span {
+  white-space: normal;
+  word-break: break-word;
+  display: inline-block;
+  max-width: 100%;
 }
 
 .studio-mode-pill {
@@ -84,6 +120,9 @@
 .studio-config-hint {
   font-size: 0.78rem;
   color: var(--color-text-muted, #9EA3AE);
+  max-width: 100%;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .studio-config-hint code {
@@ -91,6 +130,8 @@
   background: rgba(0, 0, 0, 0.45);
   padding: 0.2rem 0.45rem;
   border-radius: 0.25rem;
+  word-break: break-all;
+  overflow-wrap: anywhere;
 }
 
 /* 4 Logo Concept Cards Grid */
@@ -429,11 +470,32 @@
   display: flex;
   flex-direction: column;
   gap: 0.65rem;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
-.studio-primary-cta-row .apply-logo-btn {
-  width: 100%;
+.studio-primary-cta-row a.btn,
+.studio-primary-cta-row .btn {
+  white-space: normal;
+  text-align: center;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
+  word-break: break-word;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.65rem 1rem;
+  line-height: 1.35;
+}
+
+.studio-primary-cta-row a.btn span,
+.studio-primary-cta-row .btn span {
+  white-space: normal;
+  word-break: break-word;
+  display: inline-block;
+  max-width: 100%;
 }
 
 .studio-status-feedback {
@@ -455,6 +517,19 @@
 }
 
 @media (max-width: 640px) {
+  .studio-toolbar {
+    padding: 0.75rem;
+    gap: 0.65rem;
+  }
+  .studio-toolbar-left,
+  .studio-toolbar-right {
+    width: 100%;
+    max-width: 100%;
+  }
+  .studio-toolbar-right a.btn {
+    width: 100%;
+    min-height: 44px;
+  }
   .studio-toggle-row {
     grid-template-columns: 1fr;
   }
@@ -465,3 +540,17 @@
     padding: 1.1rem;
   }
 }
+
+@media (max-width: 360px) {
+  .studio-toolbar {
+    padding: 0.5rem;
+  }
+  .studio-active-indicator {
+    font-size: 0.78rem;
+    word-break: break-word;
+  }
+  .studio-config-hint {
+    font-size: 0.72rem;
+  }
+}
+

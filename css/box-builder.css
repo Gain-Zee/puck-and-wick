@@ -552,6 +552,30 @@
   margin: 0;
 }
 
+.bundled-item-notes {
+  margin-top: 0.45rem;
+  padding-top: 0.45rem;
+  border-top: 1px dashed rgba(197, 160, 89, 0.25);
+  font-size: 0.74rem;
+  line-height: 1.45;
+  color: var(--color-parchment, #FAF5E8);
+}
+
+.bundled-item-notes strong {
+  color: var(--color-gold-bright, #D4AF37);
+}
+
+.box-colorway-comparison {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.box-colorway-comparison .box-unboxing-img-wrap {
+  aspect-ratio: 16 / 10;
+}
+
 .box-cta-row {
   display: flex;
   flex-direction: column;
@@ -584,6 +608,9 @@
   }
   .box-unboxing-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .box-colorway-comparison {
+    grid-template-columns: 1fr;
   }
 }
 

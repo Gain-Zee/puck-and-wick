@@ -9,6 +9,30 @@ import { LOGO_CONCEPTS, MOCKUP_SCENT_SPECS } from '../data/logos.js';
 import { renderJarMockupSvg } from './jar-mockup.js';
 import { getIcon } from '../utils/svg-assets.js';
 
+function resolveConceptId(payload, fallback = 1) {
+  if (typeof payload === 'number') {
+    if (isNaN(payload)) return fallback;
+    return Math.min(4, Math.max(1, Math.round(payload)));
+  }
+  if (typeof payload === 'string') {
+    const trimmed = payload.trim();
+    if (/^-?\d+$/.test(trimmed)) {
+      const num = parseInt(trimmed, 10);
+      return Math.min(4, Math.max(1, num));
+    }
+    const match = trimmed.match(/concept-(\d)/i);
+    if (match) {
+      const slugNum = parseInt(match[1], 10);
+      return Math.min(4, Math.max(1, slugNum));
+    }
+    if (/crossed/i.test(trimmed)) return 1;
+    if (/heritage|shield/i.test(trimmed)) return 2;
+    if (/apothecary|monogram/i.test(trimmed)) return 3;
+    if (/stamped|leather|badge|plaque/i.test(trimmed)) return 4;
+  }
+  return fallback;
+}
+
 export function initBrandStudio(store) {
   const root = document.getElementById('brand-studio-root');
   const studioSection = document.getElementById('studio');
@@ -76,8 +100,8 @@ export function initBrandStudio(store) {
               Active Across All Candles &amp; Site Photos: <strong>Concept ${liveSiteLogoId} (${LOGO_CONCEPTS[liveSiteLogoId - 1]?.shortTitle})</strong>
             </span>
           </div>
-          <div class="studio-toolbar-right" style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;">
-            <a href="#shop" class="btn btn-outline btn-sm" style="min-height:36px;padding:0.35rem 0.85rem;font-size:0.75rem;">
+          <div class="studio-toolbar-right">
+            <a href="#shop" class="btn btn-outline btn-sm">
               <span>View Full-Scale on All 7 Candles ↑</span>
             </a>
             <span class="studio-config-hint">Config Flag: <code>BRAND_STUDIO_CONFIG.enabled = true</code></span>
@@ -260,7 +284,7 @@ export function initBrandStudio(store) {
                 ${getIcon('check')}
                 <span>Apply Concept ${previewConceptId} (${activeConceptObj.shortTitle}) to All Candles &amp; Site Photos</span>
               </button>
-              <a href="#shop" class="btn btn-outline btn-sm" style="margin-top:0.65rem;width:100%;justify-content:center;">
+              <a href="#shop" class="btn btn-outline btn-sm">
                 <span>See Concept ${previewConceptId} Full-Scale on All 7 Inventory Candles ↑</span>
               </a>
               ${statusBannerMsg ? `<div class="studio-status-feedback" role="status" aria-live="polite">${statusBannerMsg}</div>` : ''}
@@ -330,8 +354,21 @@ export function initBrandStudio(store) {
     }
   };
 
-  store.subscribe((state, action) => {
-    if (action === 'SET_LOGO_CONCEPT' || action === 'SET_ACTIVE_LOGO' || action === 'TOGGLE_STUDIO' || action === 'SET_STUDIO_VISIBLE' || !action) {
+  store.subscribe((state, action, payload) => {
+    if (action === 'SET_STUDIO_PREVIEW_CONCEPT') {
+      const resolveFn = typeof store?.resolveConceptId === 'function' ? store.resolveConceptId : resolveConceptId;
+      previewConceptId = resolveFn(payload || state.studioPreviewConcept, 1);
+      render();
+      return;
+    }
+    if (
+      action === 'SET_LOGO_CONCEPT' ||
+      action === 'SET_ACTIVE_LOGO' ||
+      action === 'TOGGLE_STUDIO' ||
+      action === 'TOGGLE_BRAND_STUDIO' ||
+      action === 'SET_STUDIO_VISIBLE' ||
+      !action
+    ) {
       previewConceptId = Number(state.activeLogoConcept) || 1;
       render();
     }
