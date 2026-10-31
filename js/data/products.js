@@ -532,6 +532,106 @@ export function getCandleVesselSvg(product, conceptId, isModal = false) {
   `;
 }
 
+export function getProductGallerySlides(product, conceptId = 1) {
+  const isIvory = product.vesselType === 'ivory';
+  const primaryPhoto = product.photo
+    ? product.photo
+    : (isIvory && Number(conceptId) === 1)
+      ? 'assets/images/candle-ivory.jpg'
+      : (CONCEPT_CANDLE_PHOTOS[Number(conceptId)] || 'assets/images/candle-obsidian.jpg');
+
+  if (!product.productType || product.productType === 'candle') {
+    return [
+      {
+        id: 'lit',
+        shortLabel: 'Lit Vessel',
+        title: `${product.name} — Lit 10 oz Vessel`,
+        type: 'svg',
+        thumb: primaryPhoto
+      },
+      {
+        id: 'shelf',
+        shortLabel: 'Box & Dust Cover',
+        title: `${product.name} — Rigid Box, Custom Scent Band & Wax Dust Cover`,
+        type: 'image',
+        src: `assets/images/packaging/shelf-${product.id}.jpg`,
+        thumb: `assets/images/packaging/shelf-${product.id}.jpg`
+      },
+      {
+        id: 'sides',
+        shortLabel: 'All 4 Box Sides',
+        title: `${product.name} — All 4 Box Sides, Dust Cover & Stickers`,
+        type: 'image',
+        src: `assets/images/packaging/sides-${product.id}.jpg`,
+        thumb: `assets/images/packaging/sides-${product.id}.jpg`
+      }
+    ];
+  }
+
+  if (product.id === 'puck-mini-pair') {
+    return [
+      {
+        id: 'primary',
+        shortLabel: 'Twin-Pack',
+        title: '2.0" Skate, Glove & Boot Mini Pucks (Set of 2)',
+        type: 'svg',
+        thumb: primaryPhoto
+      },
+      {
+        id: 'step1',
+        shortLabel: '1. Palm Scale',
+        title: 'Step 01 • Compact 2.0" (50mm) Open-Palm Scale',
+        type: 'image',
+        src: 'assets/images/packaging/mini-puck-step-1.jpg',
+        thumb: 'assets/images/packaging/mini-puck-step-1.jpg'
+      },
+      {
+        id: 'step2',
+        shortLabel: '2. Glove Cuff',
+        title: 'Step 02 • Drop Straight Into Hockey Glove Wrist Cuff Opening',
+        type: 'image',
+        src: 'assets/images/packaging/mini-puck-step-2.jpg',
+        thumb: 'assets/images/packaging/mini-puck-step-2.jpg'
+      },
+      {
+        id: 'step3',
+        shortLabel: '3. Skate Boot',
+        title: 'Step 03 • Drop Into Skate Boot Ankle Collar Overnight',
+        type: 'image',
+        src: 'assets/images/packaging/mini-puck-step-3.jpg',
+        thumb: 'assets/images/packaging/mini-puck-step-3.jpg'
+      }
+    ];
+  }
+
+  // Other Odor Care & Sanctuary Items
+  return [
+    {
+      id: 'primary',
+      shortLabel: 'Studio View',
+      title: `${product.name} — Studio Hardware & Apothecary View`,
+      type: 'svg',
+      thumb: primaryPhoto
+    },
+    {
+      id: 'in_action',
+      shortLabel: 'In Action',
+      title: `${product.name} — Daily Ritual & Gear Action`,
+      type: 'image',
+      src: isIvory ? 'assets/images/box-women-usecase.jpg' : 'assets/images/box-men-usecase.jpg',
+      thumb: isIvory ? 'assets/images/box-women-usecase.jpg' : 'assets/images/box-men-usecase.jpg'
+    },
+    {
+      id: 'collection',
+      shortLabel: 'Full Lineup',
+      title: `${product.name} — Complete Exclusive Box Lineup`,
+      type: 'image',
+      src: isIvory ? 'assets/images/box-women-items-out.jpg' : 'assets/images/box-men-items-out.jpg',
+      thumb: isIvory ? 'assets/images/box-women-items-out.jpg' : 'assets/images/box-men-items-out.jpg'
+    }
+  ];
+}
+
 export function getAllProducts() {
   return [...PRODUCTS];
 }

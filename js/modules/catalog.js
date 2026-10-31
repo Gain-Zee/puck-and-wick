@@ -4,13 +4,14 @@
  * quick-view modal triggers, and direct quick-add cart triggers.
  */
 
-import { PRODUCTS, getProductsByCategory, getCandleVesselSvg } from '../data/products.js';
+import { PRODUCTS, getProductsByCategory, getCandleVesselSvg, getProductGallerySlides } from '../data/products.js';
 import { openProductModal } from './modal.js';
 import { getIcon } from '../utils/svg-assets.js';
 
 export function initCatalog(store, openCartDrawer) {
   const root = document.getElementById('catalog-root');
   if (!root) return;
+  const cardSlideState = {};
 
   const render = () => {
     const currentCategory = store.state.activeCategory || 'all';
@@ -56,12 +57,19 @@ export function initCatalog(store, openCartDrawer) {
         <!-- Product Cards Grid (3-Col Desktop, 2-Col Mobile) -->
         ${products.length > 0 ? `
           <div class="product-cards-grid" id="product-grid" data-testid="product-grid">
-            ${products.map(p => `
+            ${products.map(p => {
+              const slides = getProductGallerySlides(p, store.state.activeLogoConcept || 1);
+              const activeIdx = cardSlideState[p.id] || 0;
+              const currentSlide = slides[activeIdx] || slides[0];
+              return `
               <article class="product-card surface-card" style="padding:0;" data-testid="product-card" data-product-id="${p.id}" tabindex="0" role="button" aria-label="View details for ${p.name}">
                 <!-- Vessel Visual Stage -->
                 <div class="product-card-visual" style="padding:0;" data-action="quick-view" data-product-id="${p.id}" tabindex="0" role="button" aria-label="View details for ${p.name}">
                   <div class="vessel-wrapper" style="width:100%;height:100%;max-width:none;">
-                    ${getCandleVesselSvg(p, store.state.activeLogoConcept || 1)}
+                    ${currentSlide.type === 'svg'
+                      ? getCandleVesselSvg(p, store.state.activeLogoConcept || 1)
+                      : `<img src="${currentSlide.src}" alt="${currentSlide.title}" class="card-slide-img slide-${currentSlide.id}" loading="lazy" />`
+                    }
                   </div>
                   
                   ${p.seasonal ? `
@@ -85,9 +93,18 @@ export function initCatalog(store, openCartDrawer) {
                   <div class="visual-hover-overlay">
                     <span class="btn-hover-quick-view">
                       ${getIcon('search')}
-                      <span>Quick View</span>
+                      <span>Quick View (${slides.length} Photos)</span>
                     </span>
                   </div>
+                </div>
+
+                <!-- Interactive Card Multi-Photo Carousel Switcher Bar -->
+                <div class="card-carousel-bar" role="tablist" aria-label="Switch photos for ${p.name}">
+                  ${slides.map((s, sIdx) => `
+                    <button type="button" class="card-slide-pill ${sIdx === activeIdx ? 'active' : ''}" data-card-slide-pid="${p.id}" data-card-slide-idx="${sIdx}" role="tab" aria-selected="${sIdx === activeIdx}">
+                      <span>${s.shortLabel}</span>
+                    </button>
+                  `).join('')}
                 </div>
 
                 <!-- Product Card Content -->
@@ -132,61 +149,8 @@ export function initCatalog(store, openCartDrawer) {
                   </div>
                 </div>
               </article>
-            `).join('')}
-          </div>
-
-          <!-- 3-Step Visual Picture Guide Banner for 2.0" Skate & Glove Mini Pucks -->
-          <div class="mini-pucks-guide-banner surface-card" data-testid="mini-pucks-guide-banner">
-            <div class="mini-banner-top">
-              <div>
-                <div class="mini-banner-kicker">LAUSON-98&trade; MOLECULAR ODOR CARE • HOW IT FITS &amp; WORKS</div>
-                <h3 class="mini-banner-title">2.0&Prime; Skate, Glove &amp; Boot Mini Pucks <span>(Set of 2)</span></h3>
-              </div>
-              <div class="mini-banner-actions">
-                <button type="button" class="btn btn-outline btn-sm" data-action="quick-view" data-product-id="puck-mini-pair">
-                  <span>Full Specs</span>
-                </button>
-                <button type="button" class="btn btn-gold btn-sm quick-add-btn" data-product-id="puck-mini-pair">
-                  ${getIcon('cart')}
-                  <span>Add Twin-Pack ($38)</span>
-                </button>
-              </div>
-            </div>
-
-            <div class="mini-banner-grid">
-              <div class="mini-banner-visual" data-action="quick-view" data-product-id="puck-mini-pair" role="button" tabindex="0" aria-label="Open 2.0 inch Skate and Glove Mini Pucks details">
-                <img src="assets/images/mini-pucks-action-triptych.jpg" alt="3-Step Visual Guide: 1. Hold 2.0 inch Mini Pucks in palm, 2. Slide into hockey glove cuff, 3. Drop into skate boot" loading="lazy" />
-                <div class="mini-banner-overlay-pills">
-                  <span><strong>01</strong> 2.0&Prime; Palm-Sized Pair</span>
-                  <span><strong>02</strong> Slide Into Glove Cuffs</span>
-                  <span><strong>03</strong> Drop Into Skates &amp; Boots</span>
-                </div>
-              </div>
-
-              <div class="mini-banner-steps">
-                <div class="mini-banner-step">
-                  <div class="step-num-badge">01</div>
-                  <div>
-                    <h4>Palm-Sized 2.0&Prime; (50mm) Twin-Pack</h4>
-                    <p>Compact dual discs engineered specifically for your <strong>left &amp; right</strong> gear—zero messy sprays or powders.</p>
-                  </div>
-                </div>
-                <div class="mini-banner-step">
-                  <div class="step-num-badge">02</div>
-                  <div>
-                    <h4>Slide Straight Into Glove Cuffs</h4>
-                    <p>Fits effortlessly deep inside narrow <strong>hockey gloves, lacrosse mitts, or boxing gloves</strong> right after the game.</p>
-                  </div>
-                </div>
-                <div class="mini-banner-step">
-                  <div class="step-num-badge">03</div>
-                  <div>
-                    <h4>Drop Into Skates, Cleats &amp; Boots</h4>
-                    <p>Sub-2nm coconut carbon + <strong>Lauson-98&trade; vapor</strong> permanently destroy sweat odor overnight for <strong>6+ months</strong>.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            `;
+            }).join('')}
           </div>
         ` : `
           <!-- Empty Filter State Fallback -->
@@ -229,6 +193,21 @@ export function initCatalog(store, openCartDrawer) {
       });
     }
 
+    // Attach card slide switcher pills
+    const cardSlidePills = root.querySelectorAll('.card-slide-pill');
+    cardSlidePills.forEach(pill => {
+      pill.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const pid = pill.getAttribute('data-card-slide-pid');
+        const idx = Number(pill.getAttribute('data-card-slide-idx') || 0);
+        if (pid) {
+          cardSlideState[pid] = idx;
+          render();
+        }
+      });
+    });
+
     // Attach quick-view triggers
     const quickViewTriggers = root.querySelectorAll('[data-action="quick-view"], .quick-view-btn');
     quickViewTriggers.forEach(el => {
@@ -236,7 +215,7 @@ export function initCatalog(store, openCartDrawer) {
         e.preventDefault();
         const pid = el.getAttribute('data-product-id');
         if (pid) {
-          openProductModal(pid, store, openCartDrawer);
+          openProductModal(pid, store, openCartDrawer, cardSlideState[pid] || 0);
         }
       });
 
@@ -246,7 +225,7 @@ export function initCatalog(store, openCartDrawer) {
             e.preventDefault();
             const pid = el.getAttribute('data-product-id');
             if (pid) {
-              openProductModal(pid, store, openCartDrawer);
+              openProductModal(pid, store, openCartDrawer, cardSlideState[pid] || 0);
             }
           }
         });
@@ -264,7 +243,7 @@ export function initCatalog(store, openCartDrawer) {
           e.preventDefault();
           const pid = card.getAttribute('data-product-id');
           if (pid) {
-            openProductModal(pid, store, openCartDrawer);
+            openProductModal(pid, store, openCartDrawer, cardSlideState[pid] || 0);
           }
         }
       });
@@ -275,7 +254,7 @@ export function initCatalog(store, openCartDrawer) {
         }
         const pid = card.getAttribute('data-product-id');
         if (pid) {
-          openProductModal(pid, store, openCartDrawer);
+          openProductModal(pid, store, openCartDrawer, cardSlideState[pid] || 0);
         }
       });
     });

@@ -4,12 +4,12 @@
  * vessel specs, quantity controls, and add-to-cart integration.
  */
 
-import { getProductById, getCandleVesselSvg } from '../data/products.js';
+import { getProductById, getCandleVesselSvg, getProductGallerySlides } from '../data/products.js';
 import { getIcon } from '../utils/svg-assets.js';
 
 let activeTriggerElement = null;
 
-export function openProductModal(productId, store, openCartCallback) {
+export function openProductModal(productId, store, openCartCallback, initialSlideIndex = 0) {
   const product = getProductById(productId);
   if (!product) return;
 
@@ -17,6 +17,24 @@ export function openProductModal(productId, store, openCartCallback) {
   const modalContainer = document.getElementById('modal-container') || document.body;
 
   let quantity = 1;
+  const activeLogoConcept = store?.state?.activeLogoConcept || 1;
+  const gallerySlides = getProductGallerySlides(product, activeLogoConcept);
+  let activeSlideIdx = Math.max(0, Math.min(initialSlideIndex, gallerySlides.length - 1));
+
+  const renderSlideStage = (idx) => {
+    const slide = gallerySlides[idx] || gallerySlides[0];
+    if (slide.type === 'svg') {
+      return getCandleVesselSvg(product, activeLogoConcept, true);
+    }
+    return `
+      <div class="modal-slide-photo-frame">
+        <img src="${slide.src}" alt="${slide.title}" class="modal-slide-photo-img" loading="eager" />
+        <div class="modal-slide-caption-bar">
+          <span>${slide.title}</span>
+        </div>
+      </div>
+    `;
+  };
 
   const modalHtml = `
     <div class="product-modal-backdrop" id="product-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-product-title">
@@ -27,12 +45,34 @@ export function openProductModal(productId, store, openCartCallback) {
         </button>
 
         <div class="modal-grid">
-          <!-- Left: Vessel Visual Showcase -->
+          <!-- Left: Multi-Photo Interactive Gallery Carousel -->
           <div class="modal-visual-column">
-            <div class="modal-vessel-stage">
-              ${getCandleVesselSvg(product, store?.state?.activeLogoConcept || 1, true)}
+            <div class="modal-vessel-stage" id="modal-gallery-stage" data-testid="modal-gallery-stage">
+              ${renderSlideStage(activeSlideIdx)}
             </div>
+
+            <!-- Carousel Prev/Next Controls & Counter Badge -->
+            <div class="modal-carousel-counter" id="modal-carousel-counter">
+              <span>${activeSlideIdx + 1} / ${gallerySlides.length}</span>
+            </div>
+            <button type="button" class="modal-carousel-arrow arrow-prev" id="modal-slide-prev" aria-label="Previous product photo">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button type="button" class="modal-carousel-arrow arrow-next" id="modal-slide-next" aria-label="Next product photo">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+
             ${product.seasonal ? `<div class="modal-badge-seasonal">${product.seasonalBadge || 'Seasonal Collaboration'}</div>` : ''}
+
+            <!-- Interactive Multi-Photo Thumbnail Strip -->
+            <div class="modal-gallery-thumbs" id="modal-gallery-thumbs" role="tablist" aria-label="Product gallery views">
+              ${gallerySlides.map((s, idx) => `
+                <button type="button" class="modal-thumb-btn ${idx === activeSlideIdx ? 'active' : ''}" data-slide-idx="${idx}" role="tab" aria-selected="${idx === activeSlideIdx}">
+                  <img src="${s.thumb}" alt="${s.shortLabel}" class="modal-thumb-img" loading="lazy" />
+                  <span class="modal-thumb-label">${s.shortLabel}</span>
+                </button>
+              `).join('')}
+            </div>
           </div>
 
           <!-- Right: Product Scent & Specs Details -->
@@ -61,10 +101,10 @@ export function openProductModal(productId, store, openCartCallback) {
                   <span class="mini-guide-badge">Zero Sprays • Works Overnight</span>
                 </div>
                 <div class="mini-guide-photo-wrap">
-                  <img src="assets/images/mini-pucks-action-triptych.jpg" alt="3-Step Guide: 1. Hold 2.0 inch Mini Pucks in palm, 2. Slide into hockey glove cuff, 3. Drop into skate boot ankle" class="mini-guide-img" loading="lazy" />
+                  <img src="assets/images/mini-pucks-action-triptych.jpg" alt="3-Step Guide: 1. Hold 2.0 inch Mini Pucks in open palm, 2. Drop into hockey glove wrist cuff opening, 3. Drop into skate boot ankle" class="mini-guide-img" loading="lazy" />
                   <div class="mini-guide-step-tags">
                     <span class="mini-step-tag"><strong>01</strong> 2.0&Prime; Palm Fit</span>
-                    <span class="mini-step-tag"><strong>02</strong> Slide in Gloves</span>
+                    <span class="mini-step-tag"><strong>02</strong> Glove Wrist Cuff</span>
                     <span class="mini-step-tag"><strong>03</strong> Drop in Skates</span>
                   </div>
                 </div>
@@ -73,7 +113,7 @@ export function openProductModal(productId, store, openCartCallback) {
                     <strong>1. Grab Twin-Pack:</strong> Compact 50mm size fits left &amp; right gear.
                   </div>
                   <div class="mini-guide-step-item">
-                    <strong>2. Hockey Gloves:</strong> Slides deep into narrow cuffs &amp; palms.
+                    <strong>2. Glove Wrist Cuff:</strong> Drops straight inside where your hand goes.
                   </div>
                   <div class="mini-guide-step-item">
                     <strong>3. Skates &amp; Cleats:</strong> Destroys sweat odor overnight (6+ mos).
@@ -164,6 +204,48 @@ export function openProductModal(productId, store, openCartCallback) {
   const qtyVal = document.getElementById('modal-qty-val');
   const addBtn = document.getElementById('modal-add-btn');
   const addTotal = document.getElementById('modal-add-total');
+  const galleryStage = document.getElementById('modal-gallery-stage');
+  const counterEl = document.getElementById('modal-carousel-counter');
+  const prevSlideBtn = document.getElementById('modal-slide-prev');
+  const nextSlideBtn = document.getElementById('modal-slide-next');
+  const thumbBtns = backdrop.querySelectorAll('.modal-thumb-btn');
+
+  const setActiveSlide = (newIdx) => {
+    activeSlideIdx = (newIdx + gallerySlides.length) % gallerySlides.length;
+    if (galleryStage) {
+      galleryStage.innerHTML = renderSlideStage(activeSlideIdx);
+    }
+    if (counterEl) {
+      counterEl.innerHTML = `<span>${activeSlideIdx + 1} / ${gallerySlides.length}</span>`;
+    }
+    thumbBtns.forEach((btn, idx) => {
+      const isAct = idx === activeSlideIdx;
+      btn.classList.toggle('active', isAct);
+      btn.setAttribute('aria-selected', String(isAct));
+    });
+  };
+
+  if (prevSlideBtn) {
+    prevSlideBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setActiveSlide(activeSlideIdx - 1);
+    });
+  }
+
+  if (nextSlideBtn) {
+    nextSlideBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setActiveSlide(activeSlideIdx + 1);
+    });
+  }
+
+  thumbBtns.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const idx = Number(btn.getAttribute('data-slide-idx') || 0);
+      setActiveSlide(idx);
+    });
+  });
 
   // Focus close button initially for accessibility
   if (closeBtn) {
