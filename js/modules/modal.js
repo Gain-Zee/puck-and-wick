@@ -21,6 +21,24 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
   const gallerySlides = getProductGallerySlides(product, activeLogoConcept);
   let activeSlideIdx = Math.max(0, Math.min(initialSlideIndex, gallerySlides.length - 1));
 
+  const getSlideSlug = (s) => String(s?.id || 'primary').replace(/_/g, '-').toLowerCase();
+  const getSlideSeoUrl = (idx) => {
+    const s = gallerySlides[idx] || gallerySlides[0];
+    return `https://puckandwick.com/p/${product.id}/${getSlideSlug(s)}`;
+  };
+  const getSlideDisplayPath = (idx) => {
+    const s = gallerySlides[idx] || gallerySlides[0];
+    return `puckandwick.com/p/${product.id}/${getSlideSlug(s)}`;
+  };
+  const syncBrowserUrl = (idx) => {
+    try {
+      const s = gallerySlides[idx] || gallerySlides[0];
+      const nextUrl = `${window.location.pathname}?item=${encodeURIComponent(product.id)}&photo=${encodeURIComponent(s.id)}`;
+      window.history.replaceState({ item: product.id, photo: s.id }, '', nextUrl);
+    } catch (_) {}
+  };
+  syncBrowserUrl(activeSlideIdx);
+
   const renderSlideStage = (idx, isLightbox = false) => {
     const slide = gallerySlides[idx] || gallerySlides[0];
     if (slide.type === 'svg') {
@@ -85,11 +103,22 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
             <!-- Interactive Multi-Photo Thumbnail Strip -->
             <div class="modal-gallery-thumbs" id="modal-gallery-thumbs" role="tablist" aria-label="Product gallery views">
               ${gallerySlides.map((s, idx) => `
-                <button type="button" class="modal-thumb-btn ${idx === activeSlideIdx ? 'active' : ''}" data-slide-idx="${idx}" role="tab" aria-selected="${idx === activeSlideIdx}">
+                <button type="button" class="modal-thumb-btn ${idx === activeSlideIdx ? 'active' : ''}" data-slide-idx="${idx}" data-seo-href="/p/${product.id}/${getSlideSlug(s)}" role="tab" aria-selected="${idx === activeSlideIdx}">
                   <img src="${s.thumb}" alt="${s.shortLabel}" class="modal-thumb-img" loading="lazy" />
                   <span class="modal-thumb-label">${s.shortLabel}</span>
                 </button>
               `).join('')}
+            </div>
+
+            <!-- Direct Shareable SEO Photo URL Bar -->
+            <div class="modal-seo-share-bar" style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;padding:8px 12px;background:rgba(15,17,23,0.92);border:1px solid rgba(197,160,89,0.35);border-radius:10px;">
+              <div style="min-width:0;flex:1;">
+                <span style="display:block;font-size:9.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#C5A059;">Direct Share URL for This Photo</span>
+                <a href="${getSlideSeoUrl(activeSlideIdx)}" id="modal-seo-url-link" target="_blank" rel="noopener" style="display:block;font-size:11.5px;color:#FAF5E8;text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:monospace;">${getSlideDisplayPath(activeSlideIdx)}</a>
+              </div>
+              <button type="button" id="modal-share-photo-btn" data-testid="modal-share-photo-btn" style="flex-shrink:0;background:linear-gradient(135deg,#E5C878 0%,#B69146 100%);color:#08090C;border:none;border-radius:999px;padding:7px 14px;font-size:11px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;">
+                Copy Link
+              </button>
             </div>
           </div>
 
@@ -276,6 +305,8 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
   const enlargePrevBtn = document.getElementById('enlarge-slide-prev');
   const enlargeNextBtn = document.getElementById('enlarge-slide-next');
   const enlargeThumbBtns = backdrop.querySelectorAll('[data-enlarge-slide-idx]');
+  const seoUrlLinkEl = document.getElementById('modal-seo-url-link');
+  const sharePhotoBtn = document.getElementById('modal-share-photo-btn');
 
   let isEnlargeOpen = false;
   let cleanupStage360 = () => {};
@@ -335,10 +366,40 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
       btn.classList.toggle('active', isAct);
       btn.setAttribute('aria-selected', String(isAct));
     });
+    if (seoUrlLinkEl) {
+      seoUrlLinkEl.href = getSlideSeoUrl(activeSlideIdx);
+      seoUrlLinkEl.textContent = getSlideDisplayPath(activeSlideIdx);
+    }
+    syncBrowserUrl(activeSlideIdx);
     if (isEnlargeOpen) {
       renderEnlargeLightboxSlide();
     }
   };
+
+  if (sharePhotoBtn) {
+    sharePhotoBtn.addEventListener('click', async (e) => {
+      e.stopPropagation();
+      const urlToShare = getSlideSeoUrl(activeSlideIdx);
+      const slideObj = gallerySlides[activeSlideIdx] || gallerySlides[0];
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(urlToShare);
+        }
+        const origText = sharePhotoBtn.textContent;
+        sharePhotoBtn.textContent = '✓ Link Copied!';
+        setTimeout(() => {
+          sharePhotoBtn.textContent = origText;
+        }, 2200);
+        if (navigator.share && /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent || '')) {
+          await navigator.share({
+            title: `${product.name} — ${slideObj.shortLabel} | Puck & Wick™`,
+            text: `${product.name} (${product.formattedPrice}) — ${slideObj.title}`,
+            url: urlToShare
+          }).catch(() => {});
+        }
+      } catch (_) {}
+    });
+  }
 
   mountStage360();
 
@@ -462,6 +523,12 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
     window.removeEventListener('keydown', handleKeyDown);
     document.body.style.overflow = '';
     modalContainer.innerHTML = '';
+    try {
+      const url = new URL(window.location.href);
+      url.searchParams.delete('item');
+      url.searchParams.delete('photo');
+      window.history.replaceState({}, '', url.pathname + (url.search ? url.search : '') + url.hash);
+    } catch (_) {}
     if (activeTriggerElement && typeof activeTriggerElement.focus === 'function') {
       activeTriggerElement.focus();
     }

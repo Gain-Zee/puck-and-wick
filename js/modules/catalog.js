@@ -122,7 +122,7 @@ export function initCatalog(store, openCartDrawer) {
                   </div>
 
                   <h3 class="product-title" data-testid="product-title">
-                    <a href="#modal-details" class="title-link" data-action="quick-view" data-product-id="${p.id}">${p.name}</a>
+                    <a href="/p/${p.id}/${String(currentSlide.id || 'primary').replace(/_/g, '-').toLowerCase()}" class="title-link" data-action="quick-view" data-product-id="${p.id}">${p.name}</a>
                   </h3>
 
                   <div class="product-tagline-text">${p.tagline}</div>
@@ -145,6 +145,9 @@ export function initCatalog(store, openCartDrawer) {
                     </div>
 
                     <div class="card-button-group">
+                      <button type="button" class="btn btn-outline btn-sm card-share-btn" data-share-pid="${p.id}" data-share-slide="${String(currentSlide.id || 'primary').replace(/_/g, '-').toLowerCase()}" aria-label="Copy share link for ${p.name}" title="Copy direct link to this item &amp; photo">
+                        <span>Share</span>
+                      </button>
                       <button type="button" class="btn btn-outline btn-sm quick-view-btn" data-testid="quick-view-btn" data-product-id="${p.id}" aria-label="Quick view ${p.name}">
                         <span>Info</span>
                       </button>
@@ -210,8 +213,45 @@ export function initCatalog(store, openCartDrawer) {
         const idx = Number(pill.getAttribute('data-card-slide-idx') || 0);
         if (pid) {
           cardSlideState[pid] = idx;
+          const prod = PRODUCTS.find(item => item.id === pid);
+          if (prod) {
+            const pSlides = getProductGallerySlides(prod, store.state.activeLogoConcept || 1);
+            const activeS = pSlides[idx] || pSlides[0];
+            try {
+              window.history.replaceState({}, '', `${window.location.pathname}?item=${encodeURIComponent(pid)}&photo=${encodeURIComponent(activeS.id)}`);
+            } catch (_) {}
+          }
           render();
         }
+      });
+    });
+
+    // Attach 1-click card Share Link buttons
+    const cardShareBtns = root.querySelectorAll('.card-share-btn');
+    cardShareBtns.forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const pid = btn.getAttribute('data-share-pid');
+        const slideSlug = btn.getAttribute('data-share-slide') || 'primary';
+        const shareUrl = `https://puckandwick.com/p/${pid}/${slideSlug}`;
+        const prod = PRODUCTS.find(item => item.id === pid);
+        try {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText(shareUrl);
+          }
+          const spanEl = btn.querySelector('span');
+          if (spanEl) {
+            spanEl.textContent = '✓ Copied';
+            setTimeout(() => { spanEl.textContent = 'Share'; }, 2000);
+          }
+          if (navigator.share && /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent || '')) {
+            await navigator.share({
+              title: `${prod ? prod.name : 'Puck & Wick™'} (${prod ? prod.formattedPrice : ''})`,
+              url: shareUrl
+            }).catch(() => {});
+          }
+        } catch (_) {}
       });
     });
 

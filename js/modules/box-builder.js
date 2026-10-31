@@ -145,6 +145,18 @@ export function initBoxBuilder(store, openCartCallback) {
   let lightboxOpen = false;
   let lightboxIndex = 0;
 
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const boxParam = params.get('box');
+    const viewParam = params.get('view');
+    if (boxParam === 'women_luxe' || boxParam === 'men_athlete') {
+      store.dispatch('SET_BOX_EDITION', boxParam);
+    }
+    if (viewParam) {
+      activeGalleryViewId = viewParam.replace(/-/g, '_');
+    }
+  } catch (_) {}
+
   const render = () => {
     const builderState = store.state.boxBuilder || {
       edition: 'men_athlete',
@@ -232,6 +244,17 @@ export function initBoxBuilder(store, openCartCallback) {
                   <span class="box-thumb-caption">${v.shortLabel}</span>
                 </button>
               `).join('')}
+            </div>
+
+            <!-- Direct Shareable SEO Box Photo URL Bar -->
+            <div class="box-seo-share-bar" style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;padding:8px 12px;background:rgba(15,17,23,0.92);border:1px solid rgba(197,160,89,0.35);border-radius:10px;">
+              <div style="min-width:0;flex:1;">
+                <span style="display:block;font-size:9.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#C5A059;">Direct Share URL for This Box Photo</span>
+                <a href="https://puckandwick.com/p/${activeEditionKey === 'women_luxe' ? 'box-womens-sanctuary' : 'box-mens-athlete'}/${String(activeView.id).replace(/_/g, '-')}" target="_blank" rel="noopener" style="display:block;font-size:11.5px;color:#FAF5E8;text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:monospace;">puckandwick.com/p/${activeEditionKey === 'women_luxe' ? 'box-womens-sanctuary' : 'box-mens-athlete'}/${String(activeView.id).replace(/_/g, '-')}</a>
+              </div>
+              <button type="button" class="box-share-photo-btn" data-box-share-url="https://puckandwick.com/p/${activeEditionKey === 'women_luxe' ? 'box-womens-sanctuary' : 'box-mens-athlete'}/${String(activeView.id).replace(/_/g, '-')}" style="flex-shrink:0;background:linear-gradient(135deg,#E5C878 0%,#B69146 100%);color:#08090C;border:none;border-radius:999px;padding:7px 14px;font-size:11px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;">
+                Copy Link
+              </button>
             </div>
 
             <!-- Active View Caption & Selected Scent Banner (Desktop Only; Hidden on Mobile for Single-Scroll Fit) -->
@@ -516,10 +539,37 @@ export function initBoxBuilder(store, openCartCallback) {
         const viewId = el.getAttribute('data-gallery-view');
         if (viewId && viewId !== activeGalleryViewId) {
           activeGalleryViewId = viewId;
+          try {
+            window.history.replaceState({}, '', `${window.location.pathname}?box=${encodeURIComponent(activeEditionKey)}&view=${encodeURIComponent(viewId)}#exclusive-boxes`);
+          } catch (_) {}
           render();
         }
       });
     });
+
+    // Bind 1-click Box Share Link button
+    const boxShareBtn = root.querySelector('.box-share-photo-btn');
+    if (boxShareBtn) {
+      boxShareBtn.addEventListener('click', async (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const urlToShare = boxShareBtn.getAttribute('data-box-share-url');
+        try {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText(urlToShare);
+          }
+          const origText = boxShareBtn.textContent;
+          boxShareBtn.textContent = '✓ Link Copied!';
+          setTimeout(() => { boxShareBtn.textContent = origText; }, 2200);
+          if (navigator.share && /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent || '')) {
+            await navigator.share({
+              title: `${editionConfig.title} — ${activeView.shortLabel} | Puck & Wick™`,
+              url: urlToShare
+            }).catch(() => {});
+          }
+        } catch (_) {}
+      });
+    }
 
     // Bind Odor Science 4-Tab Switcher & Card Clicks
     const scienceTabTriggers = root.querySelectorAll('[data-science-tab]');

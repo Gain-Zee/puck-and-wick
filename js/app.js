@@ -10,6 +10,8 @@ import { initCart } from './modules/cart.js';
 import { initCheckout } from './modules/checkout.js';
 import { initBoxBuilder } from './modules/box-builder.js';
 import { initBrandStudio } from './modules/brand-studio.js';
+import { getProductById, getProductGallerySlides } from './data/products.js';
+import { openProductModal } from './modules/modal.js';
 import './modules/payment-adapters.js';
 
 // Global Brand Studio Production Toggle Configuration (Disabled by default for clean production storefront)
@@ -696,4 +698,44 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize interactive forms & modals
   setupWholesaleModal();
   setupNewsletterForm();
+
+  // Handle Direct SEO Deep-Links (?item=<id>&photo=<slideId> or ?box=<edition>&view=<viewId>)
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const itemParam = params.get('item');
+    const photoParam = params.get('photo');
+    const boxParam = params.get('box');
+
+    if (itemParam) {
+      const targetProduct = getProductById(itemParam);
+      if (targetProduct) {
+        const slides = getProductGallerySlides(targetProduct, window.PuckWickStore.state.activeLogoConcept || 1);
+        let slideIdx = 0;
+        if (photoParam) {
+          const norm = photoParam.replace(/-/g, '_').toLowerCase();
+          const foundIdx = slides.findIndex(s => String(s.id).replace(/-/g, '_').toLowerCase() === norm);
+          if (foundIdx >= 0) slideIdx = foundIdx;
+        }
+        const collectionEl = document.getElementById('collection');
+        if (collectionEl) {
+          collectionEl.scrollIntoView({ behavior: 'instant', block: 'start' });
+        }
+        openProductModal(
+          targetProduct.id,
+          window.PuckWickStore,
+          () => {
+            if (cartModule && typeof cartModule.openCart === 'function') {
+              cartModule.openCart();
+            }
+          },
+          slideIdx
+        );
+      }
+    } else if (boxParam) {
+      const boxesEl = document.getElementById('exclusive-boxes');
+      if (boxesEl) {
+        setTimeout(() => boxesEl.scrollIntoView({ behavior: 'smooth', block: 'start' }), 120);
+      }
+    }
+  } catch (_) {}
 });
