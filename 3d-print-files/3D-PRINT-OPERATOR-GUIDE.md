@@ -15,10 +15,10 @@ You are printing the **empty 2-piece outer shells** (**Part A: Bottom Knurled Cu
 
 | File Name | Part Description | Exact Dimensions |
 | :--- | :--- | :--- |
-| **`puck-3inch-bottom-knurled-cup.stl`** | **Full-Size `3.0"` Bottom Cup** with 3D diamond-knurled grip band, top/bottom chamfered bezel collars, solid `3.5 mm` floor, and `3.0 mm` internal female step-ledge | `76.2 mm` OD × `22.4 mm` Tall (`4.0 mm` wall) |
-| **`puck-3inch-top-vent-cap.stl`** | **Full-Size `3.0"` Vented Top Cap** with 18 precision `1.7 mm` through-holes in a lower curved arc and a raised `2.9 mm` male snap-lock plug ring | `72.2 mm` OD × `5.9 mm` Total Height (`3.0 mm` faceplate) |
-| **`puck-2inch-mini-bottom-cup.stl`** | **Compact `2.0"` Mini Bottom Cup** with 3D diamond-knurled grip band, chamfered collars, `3.0 mm` floor, and `2.5 mm` internal female step-ledge | `50.8 mm` OD × `17.5 mm` Tall (`3.2 mm` wall) |
-| **`puck-2inch-mini-top-vent-cap.stl`** | **Compact `2.0"` Mini Vented Top Cap** with 12 precision `1.5 mm` through-holes in a lower curved arc and a raised `2.4 mm` male snap-lock plug ring | `47.6 mm` OD × `4.9 mm` Total Height (`2.5 mm` faceplate) |
+| **`puck-3inch-bottom-knurled-cup.stl`** | **Full-Size `3.0"` Bottom Cup** with 3D diamond-knurled grip band, 8 horizontal side intake channels, top/bottom chamfered bezel collars, recessed `3.5 mm` floor, and `3.0 mm` internal female step-ledge | `76.2 mm` OD × `22.4 mm` Tall (`4.0 mm` wall) |
+| **`puck-3inch-top-vent-cap.stl`** | **Full-Size `3.0"` 360° Perimeter Vented Top Cap** with a continuous 360° double staggered ring of 96 precision `1.6 mm` micro-holes around the outer bezel perimeter and a raised `2.9 mm` male snap-lock plug ring | `72.2 mm` OD × `5.9 mm` Total Height (`3.0 mm` faceplate) |
+| **`puck-2inch-mini-bottom-cup.stl`** | **Compact `2.0"` Mini Bottom Cup** with 3D diamond-knurled grip band, 8 horizontal side intake channels, chamfered collars, recessed `3.0 mm` floor, and `2.5 mm` internal female step-ledge | `50.8 mm` OD × `17.5 mm` Tall (`3.2 mm` wall) |
+| **`puck-2inch-mini-top-vent-cap.stl`** | **Compact `2.0"` Mini 360° Perimeter Vented Top Cap** with a continuous 360° double staggered ring of 72 precision `1.4 mm` micro-holes around the outer bezel perimeter and a raised `2.4 mm` male snap-lock plug ring | `47.6 mm` OD × `4.9 mm` Total Height (`2.5 mm` faceplate) |
 
 ---
 
