@@ -162,7 +162,9 @@ export const tests = [
       assertZeroErrors();
 
       const studio = page.locator(selectors.brandStudio.section).first();
-      if ((await studio.count()) > 0) await studio.scrollIntoViewIfNeeded();
+      if ((await studio.count()) > 0 && (await studio.isVisible())) {
+        await studio.scrollIntoViewIfNeeded();
+      }
 
       await page.evaluate(() => {
         if (window.PuckWickStore?.dispatch) {

@@ -12,12 +12,13 @@ import { initBoxBuilder } from './modules/box-builder.js';
 import { initBrandStudio } from './modules/brand-studio.js';
 import './modules/payment-adapters.js';
 
-// Global Brand Studio Production Toggle Configuration
+// Global Brand Studio Production Toggle Configuration (Disabled by default for clean production storefront)
+const urlParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
 const initialStudioEnabled = (typeof window !== 'undefined' && window.BRAND_STUDIO_CONFIG && typeof window.BRAND_STUDIO_CONFIG.enabled === 'boolean')
   ? window.BRAND_STUDIO_CONFIG.enabled
   : (typeof window !== 'undefined' && window.APP_CONFIG && typeof window.APP_CONFIG.showBrandStudio === 'boolean')
     ? window.APP_CONFIG.showBrandStudio
-    : true;
+    : (urlParams && urlParams.get('studio') === '1');
 
 window.BRAND_STUDIO_CONFIG = Object.assign({ enabled: initialStudioEnabled }, window.BRAND_STUDIO_CONFIG || {});
 window.APP_CONFIG = Object.assign({ showBrandStudio: initialStudioEnabled }, window.APP_CONFIG || {});
@@ -193,8 +194,8 @@ window.PuckWickStore = {
           });
         }
 
-        // Automatic shipping threshold evaluation ($125+ Cart-Stretcher Threshold)
-        if (this.getCartSubtotal() >= 125 && this.state.shippingMethod === 'standard') {
+        // Automatic shipping threshold evaluation
+        if (this.getCartSubtotal() >= 75 && this.state.shippingMethod === 'standard') {
           this.state.shippingMethod = 'free';
         }
         storage.set('puck_wick_cart', JSON.stringify(this.state.cart));
@@ -248,6 +249,7 @@ window.PuckWickStore = {
 
       case 'CLEAR_CART':
         this.state.cart = [];
+        this.state.shippingMethod = 'standard';
         storage.set('puck_wick_cart', JSON.stringify([]));
         break;
 
@@ -382,11 +384,11 @@ window.PuckWickStore = {
         break;
     }
 
-    // Auto update shipping threshold if subtotal shifted ($125+ Cart-Stretcher Threshold)
+    // Auto update shipping threshold if subtotal shifted
     const currentSubtotal = this.getCartSubtotal();
-    if (currentSubtotal >= 125 && this.state.shippingMethod === 'standard') {
+    if (currentSubtotal >= 75 && this.state.shippingMethod === 'standard') {
       this.state.shippingMethod = 'free';
-    } else if (currentSubtotal < 125 && this.state.shippingMethod === 'free') {
+    } else if (currentSubtotal < 75 && this.state.shippingMethod === 'free') {
       this.state.shippingMethod = 'standard';
     }
 
@@ -423,9 +425,9 @@ window.PuckWickStore = {
     const subtotal = this.getCartSubtotal();
     if (subtotal === 0) return 0;
     if (this.state.shippingMethod === 'pickup') return 0;
-    if (subtotal >= 125) return 0;
+    if (subtotal >= 75) return 0;
     if (this.state.shippingMethod === 'free') return 0;
-    return 9.95;
+    return 6.95;
   },
 
   getTaxAmount() {
@@ -455,7 +457,7 @@ function setupWholesaleModal() {
     modalContainer.innerHTML = `
       <div class="modal-backdrop" id="wholesale-modal-backdrop" style="position:fixed;inset:0;background:rgba(10,10,12,0.85);backdrop-filter:blur(10px);z-index:9999;display:flex;align-items:flex-start;justify-content:center;padding:1.5rem 1rem;overflow-y:auto;box-sizing:border-box;">
         <div class="modal-card surface-card wholesale-modal" data-testid="wholesale-modal" style="max-width:540px;width:100%;margin:1.5rem auto;position:relative;background:var(--color-obsidian-950);border:1px solid var(--color-border-gold-subtle);border-radius:var(--radius-xl);padding:2rem 1.5rem;box-shadow:var(--shadow-card), var(--shadow-gold-md);box-sizing:border-box;" role="dialog" aria-modal="true" aria-labelledby="wholesale-title">
-          <button type="button" id="btn-close-wholesale" style="position:absolute;top:1rem;right:1rem;width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;color:var(--color-gold-500);cursor:pointer;background:none;border:none;border-radius:var(--radius-sm);" aria-label="Close modal">
+          <button type="button" id="btn-close-wholesale" style="position:absolute;top:1rem;right:1rem;width:44px;height:44px;min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;color:var(--color-gold-500);cursor:pointer;background:none;border:none;border-radius:var(--radius-sm);" aria-label="Close modal">
             ${getIcon('close')}
           </button>
 
