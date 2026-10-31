@@ -5,14 +5,12 @@
  */
 
 export const SCENT_CATEGORIES = [
-  { id: 'all', label: 'All Pours' },
-  { id: 'mens', label: "Men's Line" },
-  { id: 'womens', label: "Women's Line" },
-  { id: 'signature', label: 'Signature Line' },
-  { id: 'fresh_clean', label: 'Fresh & Clean' },
-  { id: 'woods_rustic', label: 'Woods & Rustic' },
-  { id: 'seasonal', label: 'Seasonal Releases' },
-  { id: 'exclusive_boxes', label: 'Exclusive Boxes' }
+  { id: 'all', label: 'All Items' },
+  { id: 'mens', label: "Men's Collection" },
+  { id: 'womens', label: "Women's Sanctuary" },
+  { id: 'candles', label: 'Soy Candles' },
+  { id: 'odor_care', label: 'Lauson-98™ Odor Killer & Body Care' },
+  { id: 'exclusive_boxes', label: 'Exclusive Boxes ($98)' }
 ];
 
 export const PRODUCTS = [
@@ -22,13 +20,14 @@ export const PRODUCTS = [
     tagline: 'The Flagship Pour. Crimson Saffron, Jasmine Grandiflorum & Warm Amberwood.',
     price: 36.00,
     formattedPrice: '$36.00',
-    category: ['mens', 'signature', 'woods_rustic'],
+    category: ['mens', 'candles', 'signature', 'woods_rustic'],
+    productType: 'candle',
     genderLine: 'mens',
     genderLabel: 'MENS',
     burnTime: '55 - 65 hours',
     weightOz: 10,
     vessel: '10 oz Heavy-Base Matte Obsidian Glass with Brushed Gold Lid',
-    wax: '100% Pure American Soy Wax',
+    wax: '100% Pure American Soy Wax + Lauson-98™ Vapor Complex',
     wick: 'Lead-Free Braided Organic Cotton Wick',
     description: 'Inspired by top-shelf snipes and championship prestige. A radiant, hypnotic master formulation opening with crushed crimson saffron threads and bitter almond, unfolding into airy Egyptian jasmine grandiflorum and Virginia white cedar, and anchored by crystalline ambergris, fir balsam resin, and warm amberwood.',
     notes: {
@@ -46,13 +45,14 @@ export const PRODUCTS = [
     tagline: '6:00 AM Zamboni Cut. Glacial Ozone, Crisp Pine & Silver Fir.',
     price: 36.00,
     formattedPrice: '$36.00',
-    category: ['mens', 'signature', 'fresh_clean'],
+    category: ['mens', 'candles', 'signature', 'fresh_clean'],
+    productType: 'candle',
     genderLine: 'mens',
     genderLabel: 'MENS',
     burnTime: '55 - 65 hours',
     weightOz: 10,
     vessel: '10 oz Heavy-Base Matte Obsidian Glass with Brushed Gold Lid',
-    wax: '100% Pure American Soy Wax',
+    wax: '100% Pure American Soy Wax + Lauson-98™ Vapor Complex',
     wick: 'Lead-Free Braided Organic Cotton Wick',
     description: 'That sacred stillness when you step onto fresh sheet ice before anyone else touches the rink. Crisp sub-zero glacial ozone, crushed Siberian fir needles, and invigorating frosted eucalyptus, anchored by chilled driftwood.',
     notes: {
@@ -70,13 +70,14 @@ export const PRODUCTS = [
     tagline: 'Loudoun Valley Mountain Winter. Blue Ridge Balsam & Spiced Cypress.',
     price: 36.00,
     formattedPrice: '$36.00',
-    category: ['mens', 'seasonal', 'woods_rustic'],
+    category: ['mens', 'candles', 'seasonal', 'woods_rustic'],
+    productType: 'candle',
     genderLine: 'mens',
     genderLabel: 'MENS',
     burnTime: '55 - 65 hours',
     weightOz: 10,
     vessel: '10 oz Heavy-Base Matte Obsidian Glass with Gold Embossed Label',
-    wax: '100% Pure American Soy Wax',
+    wax: '100% Pure American Soy Wax + Lauson-98™ Vapor Complex',
     wick: 'Lead-Free Braided Organic Cotton Wick',
     description: 'Handcrafted exclusively in seasonal collaboration with The Blue Hydrangea boutique in Purcellville, VA. Captures the crisp scent of snow-laden Blue Ridge evergreens, resinous balsam fir, spiced clove bud, and smoky cedar embers.',
     notes: {
@@ -96,13 +97,14 @@ export const PRODUCTS = [
     tagline: 'Historic Virginia Homestead. Weathered Oak & Small-Batch Rye.',
     price: 36.00,
     formattedPrice: '$36.00',
-    category: ['mens', 'woods_rustic'],
+    category: ['mens', 'candles', 'woods_rustic'],
+    productType: 'candle',
     genderLine: 'mens',
     genderLabel: 'MENS',
     burnTime: '55 - 65 hours',
     weightOz: 10,
     vessel: '10 oz Heavy-Base Matte Obsidian Glass with Brushed Gold Lid',
-    wax: '100% Pure American Soy Wax',
+    wax: '100% Pure American Soy Wax + Lauson-98™ Vapor Complex',
     wick: 'Lead-Free Braided Organic Cotton Wick',
     description: 'The scent of an authentic 19th-century Virginia barn workshop where hand-hewn oak rafters have absorbed decades of sweet woodsmoke, enriched by small-batch rye bourbon, burnt brown sugar, and toasted tonka.',
     notes: {
@@ -120,13 +122,14 @@ export const PRODUCTS = [
     tagline: 'Hockey Heritage / Woods. Cedar Benches & Campfire Embers.',
     price: 36.00,
     formattedPrice: '$36.00',
-    category: ['mens', 'signature', 'woods_rustic'],
+    category: ['mens', 'candles', 'signature', 'woods_rustic'],
+    productType: 'candle',
     genderLine: 'mens',
     genderLabel: 'MENS',
     burnTime: '55 - 65 hours',
     weightOz: 10,
     vessel: '10 oz Heavy-Base Matte Obsidian Glass with Brushed Gold Lid',
-    wax: '100% Pure American Soy Wax',
+    wax: '100% Pure American Soy Wax + Lauson-98™ Vapor Complex',
     wick: 'Lead-Free Braided Organic Cotton Wick',
     description: 'The aromatic nostalgia of an outdoor pond hockey game followed by an open-fire tailgate. Aromatic red cedar boards, oiled leather glove patina, and crackling birchwood smoke softened by dark resinous musk.',
     notes: {
@@ -144,13 +147,14 @@ export const PRODUCTS = [
     tagline: 'Unapologetic Hearthside Warmth. Baltic Amber & Madagascar Vanilla.',
     price: 36.00,
     formattedPrice: '$36.00',
-    category: ['mens', 'signature', 'woods_rustic'],
+    category: ['mens', 'candles', 'signature', 'woods_rustic'],
+    productType: 'candle',
     genderLine: 'mens',
     genderLabel: 'MENS',
     burnTime: '55 - 65 hours',
     weightOz: 10,
     vessel: '10 oz Heavy-Base Matte Obsidian Glass with Brushed Gold Lid',
-    wax: '100% Pure American Soy Wax',
+    wax: '100% Pure American Soy Wax + Lauson-98™ Vapor Complex',
     wick: 'Lead-Free Braided Organic Cotton Wick',
     description: 'Rich, sensual, and universally appealing. Rich golden Baltic amber layered with cracked Madagascar vanilla pods, warm cashmere musk, and subtle benzoin resin that fills the room with comforting elegance.',
     notes: {
@@ -168,13 +172,14 @@ export const PRODUCTS = [
     tagline: 'Post-Game Oxygen Shot. Tasmanian Eucalyptus & Crushed Spearmint.',
     price: 36.00,
     formattedPrice: '$36.00',
-    category: ['mens', 'signature', 'fresh_clean'],
+    category: ['mens', 'candles', 'signature', 'fresh_clean'],
+    productType: 'candle',
     genderLine: 'mens',
     genderLabel: 'MENS',
     burnTime: '55 - 65 hours',
     weightOz: 10,
     vessel: '10 oz Heavy-Base Matte Obsidian Glass with Brushed Gold Lid',
-    wax: '100% Pure American Soy Wax',
+    wax: '100% Pure American Soy Wax + Lauson-98™ Vapor Complex',
     wick: 'Lead-Free Braided Organic Cotton Wick',
     description: 'Engineered to wipe away mental fatigue and stale room air. A high-voltage surge of pure Tasmanian eucalyptus globulus, crushed garden spearmint, clary sage, and crisp mountain mineral salt.',
     notes: {
@@ -192,13 +197,14 @@ export const PRODUCTS = [
     tagline: 'Sanctuary Ivory Collection. Imperial White Tea, Spun Cashmere & Hinoki Wood.',
     price: 36.00,
     formattedPrice: '$36.00',
-    category: ['womens', 'signature', 'fresh_clean', 'seasonal'],
+    category: ['womens', 'candles', 'signature', 'fresh_clean', 'seasonal'],
+    productType: 'candle',
     genderLine: 'womens',
     genderLabel: 'WOMENS',
     burnTime: '55 - 65 hours',
     weightOz: 10,
     vessel: '10 oz Frosted Warm Ivory Glass with Brushed Champagne-Gold Lid',
-    wax: '100% Pure American Soy Wax',
+    wax: '100% Pure American Soy Wax + Lauson-98™ Vapor Complex',
     wick: 'Lead-Free Braided Organic Cotton Wick',
     description: 'Poured in our signature Frosted Warm Ivory & Champagne-Gold Sanctuary vessel. An enveloping, serene botanical infusion of steeped imperial white tea leaves and Sicilian bergamot zest, wrapped in spun cashmere accord, silver jasmine petals, and warm blond hinoki wood.',
     notes: {
@@ -217,13 +223,14 @@ export const PRODUCTS = [
     tagline: 'Sanctuary Ivory Collection. Australian Sandalwood, Cardamom & Madagascar Vanilla.',
     price: 36.00,
     formattedPrice: '$36.00',
-    category: ['womens', 'signature', 'woods_rustic'],
+    category: ['womens', 'candles', 'signature', 'woods_rustic'],
+    productType: 'candle',
     genderLine: 'womens',
     genderLabel: 'WOMENS',
     burnTime: '55 - 65 hours',
     weightOz: 10,
     vessel: '10 oz Frosted Warm Ivory Glass with Brushed Champagne-Gold Lid',
-    wax: '100% Pure American Soy Wax',
+    wax: '100% Pure American Soy Wax + Lauson-98™ Vapor Complex',
     wick: 'Lead-Free Braided Organic Cotton Wick',
     description: 'Poured in our Frosted Warm Ivory & Champagne-Gold Sanctuary vessel. A sensual, intoxicating balance of crushed green cardamom and warm papyrus layered over creamy Australian sandalwood heart, cured Madagascar vanilla bean pods, and golden benzoin resin.',
     notes: {
@@ -242,13 +249,14 @@ export const PRODUCTS = [
     tagline: 'Sanctuary Ivory Collection. Crystalline Sea Salt, Night Orchid & Driftwood.',
     price: 36.00,
     formattedPrice: '$36.00',
-    category: ['womens', 'signature', 'fresh_clean'],
+    category: ['womens', 'candles', 'signature', 'fresh_clean'],
+    productType: 'candle',
     genderLine: 'womens',
     genderLabel: 'WOMENS',
     burnTime: '55 - 65 hours',
     weightOz: 10,
     vessel: '10 oz Frosted Warm Ivory Glass with Brushed Champagne-Gold Lid',
-    wax: '100% Pure American Soy Wax',
+    wax: '100% Pure American Soy Wax + Lauson-98™ Vapor Complex',
     wick: 'Lead-Free Braided Organic Cotton Wick',
     description: 'Poured in our Frosted Warm Ivory & Champagne-Gold Sanctuary vessel. A luminous, airy coastal-botanical composition pairing crystalline sea salt and ozonated mist with velvety night-blooming white orchid, wild freesia, and sun-bleached driftwood.',
     notes: {
@@ -259,6 +267,156 @@ export const PRODUCTS = [
     featured: false,
     seasonal: false,
     vesselType: 'ivory',
+    accentColor: '#E5C878'
+  },
+  {
+    id: 'puck-mens-athlete',
+    name: "Men's Lauson-98™ Gear & Locker Puck",
+    tagline: 'Matte Obsidian & Gold Hardware Disc. Activated Coconut Carbon + Lauson-98™.',
+    price: 44.00,
+    formattedPrice: '$44.00',
+    category: ['mens', 'odor_care'],
+    productType: 'odor_care',
+    genderLine: 'mens',
+    genderLabel: 'MENS',
+    specUnitLabel: 'Anodized Puck',
+    burnTime: '6+ Months Active',
+    weightOz: 4,
+    vessel: 'Machined Matte-Black Anodized Aluminum with Brushed Gold Chamfered Bezel',
+    wax: 'Sub-2nm Coconut Charcoal (>1,000 m²/g) + Lauson-98™ Molecular Core',
+    wick: 'Laser-Drilled 18-Port Vapor Diffusion Vent Array',
+    description: 'Engineered to live inside hockey bags, skate boots, gym duffels, and lockers without ever peeling or cracking. Our heavy-gauge Matte-Black & Brushed-Gold hardware puck combines >1,000 m²/g microporous coconut carbon with our proprietary Swiss-inspired Lauson-98™ vapor complex to permanently destroy sweat thiols and amines.',
+    notes: {
+      top: ['Lauson-98™ Vapor-Phase Complex', 'Zero Masking Perfumes', 'Hypoallergenic'],
+      middle: ['Sub-2nm Activated Coconut Carbon', '>1,000 m²/g Micropore Lattice'],
+      base: ['Traps Thiols (R-SH) & Amines (R-NH₂)', '6+ Months Continuous Gear Protection']
+    },
+    featured: true,
+    seasonal: false,
+    vesselType: 'obsidian',
+    photo: 'assets/images/item-puck-men.jpg',
+    subSpecText: 'ANODIZED HARDWARE PUCK • LAUSON-98™ + CHARCOAL',
+    waxSpecSub: 'Lauson-98™ + Carbon Matrix',
+    accentColor: '#C5A059'
+  },
+  {
+    id: 'puck-womens-sanctuary',
+    name: "Women's Sanctuary Closet & Tote Puck",
+    tagline: 'Warm Ivory & Champagne-Gold Hardware Disc. Lauson-98™ + Coconut Carbon.',
+    price: 44.00,
+    formattedPrice: '$44.00',
+    category: ['womens', 'odor_care'],
+    productType: 'odor_care',
+    genderLine: 'womens',
+    genderLabel: 'WOMENS',
+    specUnitLabel: 'Sanctuary Puck',
+    burnTime: '6+ Months Active',
+    weightOz: 4,
+    vessel: 'Warm Matte Alabaster-Ivory Anodized Shell with Brushed Champagne-Gold Bezel',
+    wax: 'Sub-2nm Coconut Charcoal (>1,000 m²/g) + Lauson-98™ Molecular Core',
+    wick: 'Laser-Drilled 18-Port Vapor Diffusion Vent Array',
+    description: 'Designed in our signature Warm Alabaster-Ivory and Brushed Champagne-Gold finish for walk-in closets, Pilates & yoga totes, handbag shelves, and luxury car interiors. Silently adsorbs stale moisture and neutralizes airborne odors at the molecular level with Lauson-98™ while leaving delicate fabrics untouched.',
+    notes: {
+      top: ['Lauson-98™ Molecular Neutralizer', 'Whisper-Clean Sheer White Tea Aura'],
+      middle: ['Virgin Coconut-Shell Activated Carbon', '>1,000 m²/g Micropore Matrix'],
+      base: ['Purifies Walk-In Closets & Gym Totes', 'Safe for Cashmere, Silk & Leather']
+    },
+    featured: true,
+    seasonal: false,
+    vesselType: 'ivory',
+    photo: 'assets/images/item-puck-women.jpg',
+    subSpecText: 'WARM IVORY & GOLD PUCK • LAUSON-98™ + CARBON',
+    waxSpecSub: 'Lauson-98™ + Carbon Matrix',
+    accentColor: '#E5C878'
+  },
+  {
+    id: 'wash-mens-charcoal',
+    name: 'Athlete Charcoal & Lauson-98™ Body Wash',
+    tagline: 'Post-Rink Detox Gel (8 fl oz). Activated Binchotan Charcoal & Blue Eucalyptus.',
+    price: 44.00,
+    formattedPrice: '$44.00',
+    category: ['mens', 'odor_care'],
+    productType: 'odor_care',
+    genderLine: 'mens',
+    genderLabel: 'MENS',
+    specUnitLabel: '8 fl oz Pump',
+    burnTime: '8 fl oz (236 mL)',
+    weightOz: 8,
+    vessel: '8 oz Matte-Black Apothecary Bottle with Lockable Dispenser Pump',
+    wax: 'Activated Binchotan Charcoal + Lauson-98™ Molecular Deodorizer',
+    wick: 'Sulfate-Free, Phthalate-Free Botanical Gel Base',
+    description: 'Formulated specifically to strip deep-seated locker-room sweat, equipment bacteria, and rink grime without drying skin. Activated binchotan charcoal draws impurities from pores while our proprietary Lauson-98™ complex and cold-pressed blue eucalyptus eliminate post-game odor on contact.',
+    notes: {
+      top: ['Cold-Pressed Blue Eucalyptus', 'Crushed Peppermint', 'Alpine Juniper'],
+      middle: ['Activated Binchotan Charcoal', 'Black Spruce Needle', 'Rosemary Leaf'],
+      base: ['Atlas Cedarwood', 'Earthy Vetiver', 'Lauson-98™ Skin Deodorizer']
+    },
+    featured: false,
+    seasonal: false,
+    vesselType: 'obsidian',
+    photo: 'assets/images/item-bodywash-men.jpg',
+    subSpecText: '8 FL OZ DETOX WASH • BINCHOTAN + LAUSON-98™',
+    waxSpecSub: 'Binchotan + Lauson-98™',
+    accentColor: '#C5A059'
+  },
+  {
+    id: 'butter-womens-shea',
+    name: 'Whipped Shea & Cashmere Body Butter',
+    tagline: 'Sanctuary Skin Restoration (6 oz Jar). Triple-Whipped Shea, Jojoba & Santal.',
+    price: 44.00,
+    formattedPrice: '$44.00',
+    category: ['womens', 'odor_care'],
+    productType: 'odor_care',
+    genderLine: 'womens',
+    genderLabel: 'WOMENS',
+    specUnitLabel: '6 oz Glass Jar',
+    burnTime: '6 oz (170 g)',
+    weightOz: 6,
+    vessel: '6 oz Frosted Warm Ivory Wide-Mouth Glass Jar with Champagne-Gold Lid',
+    wax: 'Triple-Whipped Unrefined Shea Butter + Cold-Pressed Golden Jojoba',
+    wick: 'Non-Greasy Cloud Emulsion • Paraben & Phthalate Free',
+    description: 'An ultra-rich, cloud-whipped body butter that melts effortlessly into warm post-shower skin. Crafted with unrefined grade-A shea butter, golden jojoba esters, and vitamin E, scented with our serene Sanctuary notes of white tea bud, spun cashmere, Madagascar vanilla bean, and creamy sandalwood.',
+    notes: {
+      top: ['Sicilian Bergamot Zest', 'White Tea Bud', 'Spun Silk Accord'],
+      middle: ['Warm Cashmere Musk', 'Jasmine Grandiflorum', 'Whipped Shea Cream'],
+      base: ['Madagascar Vanilla Bean', 'Australian Sandalwood', 'Golden Amber']
+    },
+    featured: true,
+    seasonal: false,
+    vesselType: 'ivory',
+    photo: 'assets/images/item-bodybutter-women.jpg',
+    subSpecText: '6 OZ FROSTED IVORY JAR • TRIPLE-WHIPPED SHEA',
+    waxSpecSub: 'Whipped Shea & Jojoba',
+    accentColor: '#E5C878'
+  },
+  {
+    id: 'mist-womens-linen',
+    name: 'Sanctuary Botanical Linen & Pillow Mist',
+    tagline: 'Fine-Mist Atomizer (4 fl oz). Lauson-98™ Fabric Refresher & White Lavender.',
+    price: 44.00,
+    formattedPrice: '$44.00',
+    category: ['womens', 'odor_care'],
+    productType: 'odor_care',
+    genderLine: 'womens',
+    genderLabel: 'WOMENS',
+    specUnitLabel: '4 fl oz Mist',
+    burnTime: '4 fl oz (118 mL)',
+    weightOz: 4,
+    vessel: '4 oz Frosted Warm Ivory Glass Bottle with Brushed Champagne-Gold Atomizer',
+    wax: 'Botanical Hydrosol Base + Lauson-98™ Molecular Fabric Neutralizer',
+    wick: 'Non-Staining Micro-Mist Spray • Safe for Linen, Cashmere & Silk',
+    description: 'Transform bedrooms, walk-in closets, cashmere knits, and travel totes into a five-star sanctuary. Powered by our proprietary Lauson-98™ molecular complex to permanently neutralize fabric odors while leaving a delicate veil of crushed French lavender leaf, white orchid, and sun-bleached driftwood.',
+    notes: {
+      top: ['Crushed French Lavender Leaf', 'Petitgrain', 'Lemon Verbena'],
+      middle: ['Night-Blooming White Orchid', 'Eucalyptus Dew', 'Sheer Magnolia'],
+      base: ['Sun-Bleached Driftwood', 'Ambrette Seed', 'Lauson-98™ Fabric Neutralizer']
+    },
+    featured: false,
+    seasonal: false,
+    vesselType: 'ivory',
+    photo: 'assets/images/item-mist-women.jpg',
+    subSpecText: '4 FL OZ FROSTED ATOMIZER • LAUSON-98™ MIST',
+    waxSpecSub: 'Lauson-98™ Botanical Mist',
     accentColor: '#E5C878'
   }
 ];
@@ -277,14 +435,22 @@ export function getCandleVesselSvg(product, conceptId) {
     1
   );
   const isIvory = product.vesselType === 'ivory';
-  const photoHref = (isIvory && activeConcept === 1)
-    ? 'assets/images/candle-ivory.jpg'
-    : (CONCEPT_CANDLE_PHOTOS[activeConcept] || 'assets/images/candle-obsidian.jpg');
+  const photoHref = product.photo
+    ? product.photo
+    : (isIvory && activeConcept === 1)
+      ? 'assets/images/candle-ivory.jpg'
+      : (CONCEPT_CANDLE_PHOTOS[activeConcept] || 'assets/images/candle-obsidian.jpg');
   const vignetteId = `vessel-vig-${product.id}`;
-  const subSpecText = isIvory ? '10 OZ FROSTED IVORY • 100% AMERICAN SOY' : '10 OZ • 100% AMERICAN SOY';
+  const subSpecText = product.subSpecText
+    ? product.subSpecText
+    : (isIvory ? '10 OZ FROSTED IVORY • 100% AMERICAN SOY' : '10 OZ • 100% AMERICAN SOY');
+  const displayName = product.name.length > 26
+    ? product.name.slice(0, 25).toUpperCase() + '…'
+    : product.name.toUpperCase();
+  const nameFontSize = product.name.length > 22 ? '12.5' : '15.5';
 
   return `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%" style="width:100%;height:100%;display:block;" class="candle-vessel-svg" data-active-concept="${activeConcept}" aria-label="${product.name} Luxury Candle Jar (Concept ${activeConcept})" role="img">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%" style="width:100%;height:100%;display:block;" class="candle-vessel-svg" data-active-concept="${activeConcept}" aria-label="${product.name} Luxury Presentation (Concept ${activeConcept})" role="img">
       <defs>
         <linearGradient id="${vignetteId}" x1="0%" y1="0%" x2="0%" y2="100%">
           <stop offset="0%" stop-color="#08090C" stop-opacity="0.08" />
@@ -293,20 +459,24 @@ export function getCandleVesselSvg(product, conceptId) {
         </linearGradient>
       </defs>
 
-      <!-- Full-Bleed Studio Candle Photography (No Pasted Vector Sticker Over the Jar) -->
+      <!-- Full-Bleed Studio Product Photography -->
       <image href="${photoHref}" x="0" y="0" width="400" height="400" preserveAspectRatio="xMidYMid slice" />
       <rect x="0" y="0" width="400" height="400" fill="url(#${vignetteId})" />
 
-      <!-- Minimalist Scent Name Plate at Bottom of Card View -->
-      <rect x="40" y="338" width="320" height="44" rx="4" fill="rgba(11, 12, 14, 0.88)" stroke="rgba(197, 160, 89, 0.6)" stroke-width="1" />
-      <text x="200" y="358" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="15.5" font-weight="600" letter-spacing="2.8" fill="#FAF5E8">${product.name.toUpperCase()}</text>
-      <text x="200" y="373" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8" font-weight="500" letter-spacing="2.4" fill="#C5A059">${subSpecText}</text>
+      <!-- Minimalist Product Name Plate at Bottom of Card View -->
+      <rect x="32" y="338" width="336" height="44" rx="4" fill="rgba(11, 12, 14, 0.88)" stroke="rgba(197, 160, 89, 0.6)" stroke-width="1" />
+      <text x="200" y="358" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="${nameFontSize}" font-weight="600" letter-spacing="2.2" fill="#FAF5E8">${displayName}</text>
+      <text x="200" y="373" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7.5" font-weight="500" letter-spacing="2" fill="#C5A059">${subSpecText}</text>
     </svg>
   `;
 }
 
 export function getAllProducts() {
   return [...PRODUCTS];
+}
+
+export function getCandleProducts() {
+  return PRODUCTS.filter(p => !p.productType || p.productType === 'candle');
 }
 
 export function getProductById(id) {

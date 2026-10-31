@@ -6,14 +6,14 @@
  * and Molecular Odor Science Breakdown.
  */
 
-import { EXCLUSIVE_BOX_EDITIONS, ODOR_SCIENCE_DATA } from '../data/box-data.js';
-import { getAllProducts, getProductById } from '../data/products.js';
+import { EXCLUSIVE_BOX_EDITIONS, ODOR_SCIENCE_DATA, EXTRA_BOX_GALLERY_SLIDES } from '../data/box-data.js';
+import { getCandleProducts, getProductById } from '../data/products.js';
 import { getIcon, getCharcoalScienceSvg, getMetazeneScienceSvg } from '../utils/svg-assets.js';
 
 function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhotoHref = '') {
   const isWomen = edition === 'women_luxe';
   const accentStroke = isWomen ? '#E2C178' : '#C5A059';
-  const puckLabel = isWomen ? 'WHIPPED SHEA BUTTER' : 'METAZENE® PUCK';
+  const puckLabel = isWomen ? 'WHIPPED SHEA BUTTER' : 'LAUSON-98™ PUCK';
   const washLabel = isWomen ? 'BOTANICAL LINEN MIST' : 'ATHLETE BODY WASH';
   const candleName = (candleProduct?.name || 'TOP SHELF').toUpperCase();
   const editionTitle = isWomen ? "WOMEN'S SANCTUARY CURATION" : "MEN'S / ATHLETE EDITION";
@@ -40,18 +40,14 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
     jarFill = '#16181F';
   }
 
-  const boxPhotoHref = customPhotoHref || (isWomen ? 'assets/images/box-women-open.jpg' : 'assets/images/box-men-open.jpg');
   const subFooterText = isWomen
     ? 'INCLUDES 6 OZ WHIPPED SHEA BUTTER &amp; 4 OZ BOTANICAL MIST • SAVE $26'
-    : 'INCLUDES CHARCOAL + METAZENE® PUCK &amp; 8 OZ BODY WASH • SAVE $26';
+    : 'INCLUDES CHARCOAL + LAUSON-98™ PUCK &amp; 8 OZ BODY WASH • SAVE $26';
 
   return `
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 568" width="100%" height="100%" class="box-presentation-svg" role="img" aria-label="${isWomen ? "Women's Exclusive Box Presentation" : "Men's Athlete Exclusive Box Presentation"}">
       <title>${isWomen ? "Women's Exclusive Box Presentation Mockup" : "Men's Athlete Exclusive Box Presentation Mockup"}</title>
       <defs>
-        <clipPath id="box-photo-clip">
-          <rect x="16" y="14" width="488" height="488" rx="14" />
-        </clipPath>
         <linearGradient id="box-case-grad" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stop-color="#1A1C23" />
           <stop offset="50%" stop-color="#101115" />
@@ -73,8 +69,8 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
         </filter>
       </defs>
 
-      <!-- Underlying Structural Elements for Test & Screen-Reader Compatibility -->
-      <g opacity="0">
+      <!-- 100% Mathematical Vector Exclusive Box Presentation -->
+      <g id="box-vector-presentation">
         <rect x="16" y="14" width="488" height="488" rx="14" fill="url(#box-case-grad)" stroke="url(#box-gold-foil)" stroke-width="2.5" />
         <rect x="26" y="24" width="468" height="468" rx="10" fill="none" stroke="${accentStroke}" stroke-width="0.9" stroke-dasharray="5,4" opacity="0.55" />
         <text x="260" y="50" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="13" font-weight="700" letter-spacing="4" fill="url(#box-gold-foil)">
@@ -113,7 +109,7 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
           <rect x="39" y="68" width="52" height="72" rx="3" fill="#0A0A0C" stroke="#C5A059" stroke-width="0.9" />
           <text x="65" y="88" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="7" font-weight="700" letter-spacing="1" fill="#C5A059">PUCK &amp; WICK&#8482;</text>
           <text x="65" y="104" text-anchor="middle" font-family="'Inter', sans-serif" font-size="6" font-weight="700" fill="#FAF5E8">${washLabel.slice(0, 16)}</text>
-          <text x="65" y="117" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" fill="#9CA3AF">CHARCOAL + METAZENE®</text>
+          <text x="65" y="117" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" fill="#9CA3AF">CHARCOAL + LAUSON-98™</text>
           <text x="65" y="130" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" font-weight="600" fill="#D4AF37">8 FL OZ (236 ML)</text>
           <text x="65" y="186" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8" font-weight="600" letter-spacing="1" fill="#D4AF37">03. MIST / WASH</text>
         </g>
@@ -123,12 +119,7 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
         </text>
       </g>
 
-      <!-- Photorealistic Studio Exclusive Box Photograph (Uncropped 1:1 Frame with Zero Overlap) -->
-      <rect x="16" y="14" width="488" height="488" rx="14" fill="#08090C" />
-      <image href="${boxPhotoHref}" x="16" y="14" width="488" height="488" preserveAspectRatio="xMidYMid meet" clip-path="url(#box-photo-clip)" />
-      <rect x="16" y="14" width="488" height="488" rx="14" fill="none" stroke="url(#box-gold-foil)" stroke-width="2" />
-
-      <!-- Dedicated Bottom Custom Candle Badge Bar (Placed Cleanly Below Photo — Zero Overlap) -->
+      <!-- Dedicated Bottom Custom Candle Badge Bar (Placed Cleanly Below Stage) -->
       <rect x="16" y="510" width="488" height="48" rx="8" fill="#101218" stroke="rgba(197, 160, 89, 0.55)" stroke-width="1.2" />
       <text x="260" y="532" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="13.5" font-weight="600" letter-spacing="2.5" fill="#FAF5E8">
         SELECTED CANDLE: ${candleName} (10 OZ SOY)
@@ -144,30 +135,11 @@ export function initBoxBuilder(store, openCartCallback) {
   const root = document.getElementById('box-builder-root');
   if (!root) return;
 
-  const candles = getAllProducts();
+  const candles = getCandleProducts();
   let feedbackMsg = '';
   let activeGalleryViewId = 'open';
   let lightboxOpen = false;
   let lightboxIndex = 0;
-
-  const EXTRA_GALLERY_SLIDES = [
-    {
-      id: 'his_hers',
-      step: '05 • DUAL ARCHITECTURE COLORWAYS',
-      shortLabel: 'His & Hers Vessels',
-      title: 'Matte Obsidian & Gold vs. Warm Frosted Ivory & Champagne Gold',
-      image: 'assets/images/his-hers-colorway.jpg',
-      description: 'Identical architectural vessel geometry and minimalist square gold-foil Precision Mark emblem—engineered in deep Matte Obsidian for the Locker Room & Den, and Warm Frosted Alabaster-Ivory for the Spa & Bedroom Sanctuary.'
-    },
-    {
-      id: 'ivory_lineup',
-      step: '06 • SANCTUARY IVORY LINEUP',
-      shortLabel: '3 Ivory Candles',
-      title: 'The Sanctuary Ivory Candle Collection (10 oz Soy Vessels)',
-      image: 'assets/images/womens-candle-lineup.jpg',
-      description: 'Cashmere & White Tea (Silver Needle White Tea • Spun Cashmere • Blond Woods), Velvet Vanilla & Santal (Cardamom • Australian Sandalwood • Madagascar Vanilla Bean), and Sea Salt & White Orchid (Flaky Sea Salt • White Orchid • Sun-Bleached Driftwood).'
-    }
-  ];
 
   const render = () => {
     const builderState = store.state.boxBuilder || {
@@ -179,14 +151,14 @@ export function initBoxBuilder(store, openCartCallback) {
     const editionConfig = EXCLUSIVE_BOX_EDITIONS[activeEditionKey];
     const selectedCandle = getProductById(builderState.selectedCandleId) || candles[0];
     const galleryViews = editionConfig.galleryViews || [];
-    const allLightboxSlides = [...galleryViews, ...EXTRA_GALLERY_SLIDES];
+    const allLightboxSlides = [...galleryViews, ...EXTRA_BOX_GALLERY_SLIDES];
 
     const activeView = galleryViews.find((v) => v.id === activeGalleryViewId) || galleryViews[0] || {
       id: 'open',
       step: '01 • INSIDE THE BOX',
       shortLabel: 'Open Box',
       title: editionConfig.title,
-      image: activeEditionKey === 'women_luxe' ? 'assets/images/box-women-open.jpg' : 'assets/images/box-men-open.jpg',
+      image: editionConfig.galleryViews[0]?.image || '',
       description: editionConfig.description
     };
 
@@ -287,11 +259,11 @@ export function initBoxBuilder(store, openCartCallback) {
               <div class="box-price-row">
                 <div class="box-bundle-price" data-testid="box-price">$${editionConfig.price.toFixed(2)}</div>
                 <div class="box-compare-price">$${editionConfig.compareAtValue.toFixed(2)} Individual Value</div>
-                <span class="box-free-ship-badge">✓ $0 Local Pickup • Free Shipping at $125+</span>
+                <span class="box-free-ship-badge">✓ Unlocks Free Shipping ($75+)</span>
               </div>
 
               <div class="box-jersey-98-callout" data-testid="jersey-98-callout">
-                <strong>Why $98?</strong> Priced in tribute to our Founder’s very first competitive hockey jersey number (<strong>#98</strong>) — giving you all 3 full-size luxury essentials ($124 value, save $26). <em>Tip: Add 1 extra candle ($36) to unlock Free Shipping ($125+)!</em>
+                <strong>Why $98?</strong> Priced in tribute to our Founder’s very first competitive hockey jersey number (<strong>#98</strong>) — giving you all 3 full-size luxury essentials ($124 value, save $26).
               </div>
             </div>
 
@@ -445,7 +417,7 @@ export function initBoxBuilder(store, openCartCallback) {
           <div class="box-colorway-comparison">
             <div class="box-unboxing-card" data-open-lightbox="his_hers" role="button" tabindex="0" aria-label="Enlarge His & Hers Colorway Comparison">
               <div class="box-unboxing-img-wrap">
-                <img src="assets/images/his-hers-colorway.jpg" alt="Matte Obsidian Men's Collection vs. Warm Frosted Ivory Women's Sanctuary Collection" class="box-unboxing-img" />
+                <img src="${EXTRA_BOX_GALLERY_SLIDES[0].image}" alt="Matte Obsidian Men's Collection vs. Warm Frosted Ivory Women's Sanctuary Collection" class="box-unboxing-img" />
                 <span class="box-unboxing-step-pill">DUAL ARCHITECTURE • HIS &amp; HERS COLORWAYS</span>
                 <span class="box-unboxing-zoom-pill">
                   ${getIcon('search')}
@@ -462,7 +434,7 @@ export function initBoxBuilder(store, openCartCallback) {
 
             <div class="box-unboxing-card" data-open-lightbox="ivory_lineup" role="button" tabindex="0" aria-label="Enlarge Sanctuary Ivory Candle Collection">
               <div class="box-unboxing-img-wrap">
-                <img src="assets/images/womens-candle-lineup.jpg" alt="Women's Sanctuary Ivory Candle Trio: Cashmere & White Tea, Velvet Vanilla & Santal, Sea Salt & White Orchid" class="box-unboxing-img" />
+                <img src="${EXTRA_BOX_GALLERY_SLIDES[1].image}" alt="Women's Sanctuary Ivory Candle Trio: Cashmere & White Tea, Velvet Vanilla & Santal, Sea Salt & White Orchid" class="box-unboxing-img" />
                 <span class="box-unboxing-step-pill">SANCTUARY IVORY LINEUP • 3 SIGNATURE POURS</span>
                 <span class="box-unboxing-zoom-pill">
                   ${getIcon('search')}

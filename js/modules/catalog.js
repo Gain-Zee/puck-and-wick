@@ -18,41 +18,37 @@ export function initCatalog(store, openCartDrawer) {
 
     root.innerHTML = `
       <div class="catalog-container">
-        <!-- Scent Family Filter Tabs Bar -->
-        <div class="catalog-filters-bar" role="tablist" aria-label="Filter candles by scent family">
+        <!-- Focused Collection Filter Tabs Bar -->
+        <div class="catalog-filters-bar" role="tablist" aria-label="Filter items by collection">
           <button type="button" class="filter-tab filter-all ${currentCategory === 'all' ? 'active' : ''}" data-testid="filter-all" data-filter="all" role="tab" aria-selected="${currentCategory === 'all'}">
-            <span>All Pours</span>
+            <span>All Items</span>
             <span class="filter-count">(${PRODUCTS.length})</span>
           </button>
 
           <button type="button" class="filter-tab filter-mens ${currentCategory === 'mens' ? 'active' : ''}" data-testid="filter-mens" data-filter="mens" role="tab" aria-selected="${currentCategory === 'mens'}">
+            <span class="tab-swatch swatch-mens" aria-hidden="true"></span>
             <span>Men's Line</span>
             <span class="filter-count">(${PRODUCTS.filter(p => p.genderLine === 'mens').length})</span>
           </button>
 
           <button type="button" class="filter-tab filter-womens ${currentCategory === 'womens' ? 'active' : ''}" data-testid="filter-womens" data-filter="womens" role="tab" aria-selected="${currentCategory === 'womens'}">
+            <span class="tab-swatch swatch-womens" aria-hidden="true"></span>
             <span>Women's Line</span>
             <span class="filter-count">(${PRODUCTS.filter(p => p.genderLine === 'womens').length})</span>
           </button>
-          
-          <button type="button" class="filter-tab filter-signature ${currentCategory === 'signature' ? 'active' : ''}" data-testid="filter-signature" data-filter="signature" role="tab" aria-selected="${currentCategory === 'signature'}">
-            <span>Signature Line</span>
+
+          <button type="button" class="filter-tab filter-candles ${currentCategory === 'candles' ? 'active' : ''}" data-testid="filter-candles" data-filter="candles" role="tab" aria-selected="${currentCategory === 'candles'}">
+            <span>Soy Candles</span>
+            <span class="filter-count">(${PRODUCTS.filter(p => p.productType !== 'odor_care').length})</span>
           </button>
 
-          <button type="button" class="filter-tab filter-fresh-clean ${currentCategory === 'fresh_clean' ? 'active' : ''}" data-testid="filter-fresh-clean" data-filter="fresh_clean" role="tab" aria-selected="${currentCategory === 'fresh_clean'}">
-            <span>Fresh &amp; Clean</span>
-          </button>
-
-          <button type="button" class="filter-tab filter-woods-rustic ${currentCategory === 'woods_rustic' ? 'active' : ''}" data-testid="filter-woods-rustic" data-filter="woods_rustic" role="tab" aria-selected="${currentCategory === 'woods_rustic'}">
-            <span>Woods &amp; Rustic</span>
-          </button>
-
-          <button type="button" class="filter-tab filter-seasonal ${currentCategory === 'seasonal' ? 'active' : ''}" data-testid="filter-seasonal" data-filter="seasonal" role="tab" aria-selected="${currentCategory === 'seasonal'}">
-            <span>Seasonal Releases</span>
+          <button type="button" class="filter-tab filter-odor-care ${currentCategory === 'odor_care' ? 'active' : ''}" data-testid="filter-odor-care" data-filter="odor_care" role="tab" aria-selected="${currentCategory === 'odor_care'}">
+            <span>Lauson-98&trade; Odor Killer &amp; Care</span>
+            <span class="filter-count">(${PRODUCTS.filter(p => p.productType === 'odor_care').length})</span>
           </button>
 
           <button type="button" class="filter-tab filter-exclusive-boxes filter-boxes" data-testid="filter-exclusive-boxes" data-filter="exclusive_boxes" role="tab" aria-selected="false">
-            <span>Exclusive Boxes</span>
+            <span>Exclusive Boxes ($98)</span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="box-icon-link" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </button>
         </div>
@@ -61,7 +57,7 @@ export function initCatalog(store, openCartDrawer) {
         ${products.length > 0 ? `
           <div class="product-cards-grid" id="product-grid" data-testid="product-grid">
             ${products.map(p => `
-              <article class="product-card surface-card" style="padding:0;" data-testid="product-card" data-product-id="${p.id}">
+              <article class="product-card surface-card" style="padding:0;" data-testid="product-card" data-product-id="${p.id}" tabindex="0" role="button" aria-label="View details for ${p.name}">
                 <!-- Vessel Visual Stage -->
                 <div class="product-card-visual" style="padding:0;" data-action="quick-view" data-product-id="${p.id}" tabindex="0" role="button" aria-label="View details for ${p.name}">
                   <div class="vessel-wrapper" style="width:100%;height:100%;max-width:none;">
@@ -71,6 +67,10 @@ export function initCatalog(store, openCartDrawer) {
                   ${p.seasonal ? `
                     <div class="product-badge badge-seasonal">
                       <span>Blue Hydrangea Collab</span>
+                    </div>
+                  ` : p.productType === 'odor_care' ? `
+                    <div class="product-badge badge-flagship">
+                      <span>${p.id.includes('butter') ? 'Sanctuary Body Care' : 'Lauson-98™ Odor Killer'}</span>
                     </div>
                   ` : p.featured ? `
                     <div class="product-badge badge-flagship">
@@ -93,8 +93,8 @@ export function initCatalog(store, openCartDrawer) {
                 <!-- Product Card Content -->
                 <div class="product-card-body">
                   <div class="card-meta-line">
-                    <span class="card-vessel-spec">10 oz Vessel</span>
-                    <span class="card-burn-time">${p.burnTime} Burn Time</span>
+                    <span class="card-vessel-spec">${p.specUnitLabel || '10 oz Vessel'}</span>
+                    <span class="card-burn-time">${p.productType === 'odor_care' ? p.burnTime : `${p.burnTime} Burn Time`}</span>
                   </div>
 
                   <h3 class="product-title" data-testid="product-title">
@@ -105,7 +105,7 @@ export function initCatalog(store, openCartDrawer) {
 
                   <!-- Notes Teaser Pills -->
                   <div class="product-notes-summary">
-                    <span class="notes-kicker">Fragrance Notes:</span>
+                    <span class="notes-kicker">${p.productType === 'odor_care' ? 'Active Matrix &amp; Notes:' : 'Fragrance Notes:'}</span>
                     <div class="notes-pills-row">
                       <span class="mini-note-pill">${p.notes.top[0] || 'Clean Scent'}</span>
                       <span class="mini-note-pill">${p.notes.middle[0] || 'Botanical'}</span>
@@ -117,7 +117,7 @@ export function initCatalog(store, openCartDrawer) {
                   <div class="product-card-footer">
                     <div class="price-container">
                       <span class="product-price" data-testid="product-price">${p.formattedPrice}</span>
-                      <span class="wax-spec-sub">100% American Soy</span>
+                      <span class="wax-spec-sub">${p.waxSpecSub || '100% American Soy'}</span>
                     </div>
 
                     <div class="card-button-group">
@@ -199,6 +199,34 @@ export function initCatalog(store, openCartDrawer) {
           }
         });
       }
+    });
+
+    // Product card keyboard activation (Enter & Space) and outside click
+    const productCards = root.querySelectorAll('.product-card');
+    productCards.forEach(card => {
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          // Do not intercept if user was interacting with an inner interactive control (e.g. quick-add button)
+          if (e.target !== card && e.target.closest('button, a')) {
+            return;
+          }
+          e.preventDefault();
+          const pid = card.getAttribute('data-product-id');
+          if (pid) {
+            openProductModal(pid, store, openCartDrawer);
+          }
+        }
+      });
+
+      card.addEventListener('click', (e) => {
+        if (e.target.closest('button, a, [data-action="quick-view"]')) {
+          return;
+        }
+        const pid = card.getAttribute('data-product-id');
+        if (pid) {
+          openProductModal(pid, store, openCartDrawer);
+        }
+      });
     });
 
     // Attach quick-add triggers

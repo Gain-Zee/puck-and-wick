@@ -447,12 +447,12 @@ export function getCharcoalScienceSvg() {
 }
 
 /**
- * Metazene® Covalent Neutralization and Olfactory Receptor Lockout Diagram SVG.
+ * Lauson-98™ Covalent Neutralization and Olfactory Receptor Lockout Diagram SVG.
  */
 export function getMetazeneScienceSvg() {
   return `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" width="100%" height="180" class="science-diagram-svg" role="img" aria-label="Metazene Covalent Molecular Neutralization and Olfactory Receptor Lockout Diagram">
-      <title>Metazene Chemical Counteraction, Covalent Bonding and Receptor Inactivation</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" width="100%" height="180" class="science-diagram-svg" role="img" aria-label="Lauson-98 Covalent Molecular Neutralization and Olfactory Receptor Lockout Diagram">
+      <title>Lauson-98™ Chemical Counteraction, Covalent Bonding and Receptor Inactivation</title>
       <defs>
         <linearGradient id="metazene-bg" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stop-color="#0A0B0E" />
@@ -466,8 +466,8 @@ export function getMetazeneScienceSvg() {
       <text x="55" y="80" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" fill="#9EA3AE">Active Poles δ⁻/δ⁺</text>
       <text x="88" y="69" text-anchor="middle" font-family="'Inter', sans-serif" font-size="14" font-weight="700" fill="#D4AF37">+</text>
       <circle cx="125" cy="65" r="22" fill="#1A1C16" stroke="#D4AF37" stroke-width="1.6" />
-      <text x="125" y="60" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7" font-weight="700" fill="#FAF5E8">METAZENE®</text>
-      <text x="125" y="70" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" fill="#C5A059">Active Ester Complex</text>
+      <text x="125" y="60" text-anchor="middle" font-family="'Inter', sans-serif" font-size="6.8" font-weight="700" fill="#FAF5E8">LAUSON-98™</text>
+      <text x="125" y="70" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" fill="#C5A059">Proprietary Complex</text>
       <path d="M 154,65 L 176,65 M 172,60 L 177,65 L 172,70" stroke="#34D399" stroke-width="2" fill="none" stroke-linecap="round" />
       <text x="165" y="55" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" font-weight="600" fill="#34D399">Covalent Reaction</text>
       <ellipse cx="215" cy="65" rx="28" ry="22" fill="#121820" stroke="#34D399" stroke-width="1.8" />

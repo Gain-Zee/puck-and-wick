@@ -48,7 +48,7 @@ export function openProductModal(productId, store, openCartCallback) {
 
             <div class="modal-price-row">
               <span class="modal-price" data-testid="modal-price">${product.formattedPrice}</span>
-              <span class="modal-burn-badge" data-testid="product-burn-time">${product.burnTime} Slow Burn</span>
+              <span class="modal-burn-badge" data-testid="product-burn-time">${product.productType === 'odor_care' ? product.burnTime : `${product.burnTime} Slow Burn`}</span>
             </div>
 
             <p class="modal-description">${product.description}</p>
@@ -57,7 +57,7 @@ export function openProductModal(productId, store, openCartCallback) {
             <div class="scent-pyramid-block">
               <div class="scent-pyramid-heading">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="pyramid-icon" aria-hidden="true"><polygon points="12 2 2 22 22 22"/></svg>
-                <span>3-Tier Fragrance Architecture</span>
+                <span>${product.productType === 'odor_care' ? '3-Tier Active &amp; Botanical Architecture' : '3-Tier Fragrance Architecture'}</span>
               </div>
 
               <!-- Top Notes -->
