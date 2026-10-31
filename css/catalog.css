@@ -868,6 +868,14 @@
   z-index: 5;
 }
 
+.box360-modal .box360-badge {
+  display: none;
+}
+
+.box360-modal .box360-top-hud {
+  margin-top: 32px;
+}
+
 .box360-badge {
   display: inline-block;
   font-size: 0.58rem;
