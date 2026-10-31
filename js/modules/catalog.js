@@ -134,6 +134,60 @@ export function initCatalog(store, openCartDrawer) {
               </article>
             `).join('')}
           </div>
+
+          <!-- 3-Step Visual Picture Guide Banner for 2.0" Skate & Glove Mini Pucks -->
+          <div class="mini-pucks-guide-banner surface-card" data-testid="mini-pucks-guide-banner">
+            <div class="mini-banner-top">
+              <div>
+                <div class="mini-banner-kicker">LAUSON-98&trade; MOLECULAR ODOR CARE • HOW IT FITS &amp; WORKS</div>
+                <h3 class="mini-banner-title">2.0&Prime; Skate, Glove &amp; Boot Mini Pucks <span>(Set of 2)</span></h3>
+              </div>
+              <div class="mini-banner-actions">
+                <button type="button" class="btn btn-outline btn-sm" data-action="quick-view" data-product-id="puck-mini-pair">
+                  <span>Full Specs</span>
+                </button>
+                <button type="button" class="btn btn-gold btn-sm quick-add-btn" data-product-id="puck-mini-pair">
+                  ${getIcon('cart')}
+                  <span>Add Twin-Pack ($38)</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="mini-banner-grid">
+              <div class="mini-banner-visual" data-action="quick-view" data-product-id="puck-mini-pair" role="button" tabindex="0" aria-label="Open 2.0 inch Skate and Glove Mini Pucks details">
+                <img src="assets/images/mini-pucks-action-triptych.jpg" alt="3-Step Visual Guide: 1. Hold 2.0 inch Mini Pucks in palm, 2. Slide into hockey glove cuff, 3. Drop into skate boot" loading="lazy" />
+                <div class="mini-banner-overlay-pills">
+                  <span><strong>01</strong> 2.0&Prime; Palm-Sized Pair</span>
+                  <span><strong>02</strong> Slide Into Glove Cuffs</span>
+                  <span><strong>03</strong> Drop Into Skates &amp; Boots</span>
+                </div>
+              </div>
+
+              <div class="mini-banner-steps">
+                <div class="mini-banner-step">
+                  <div class="step-num-badge">01</div>
+                  <div>
+                    <h4>Palm-Sized 2.0&Prime; (50mm) Twin-Pack</h4>
+                    <p>Compact dual discs engineered specifically for your <strong>left &amp; right</strong> gear—zero messy sprays or powders.</p>
+                  </div>
+                </div>
+                <div class="mini-banner-step">
+                  <div class="step-num-badge">02</div>
+                  <div>
+                    <h4>Slide Straight Into Glove Cuffs</h4>
+                    <p>Fits effortlessly deep inside narrow <strong>hockey gloves, lacrosse mitts, or boxing gloves</strong> right after the game.</p>
+                  </div>
+                </div>
+                <div class="mini-banner-step">
+                  <div class="step-num-badge">03</div>
+                  <div>
+                    <h4>Drop Into Skates, Cleats &amp; Boots</h4>
+                    <p>Sub-2nm coconut carbon + <strong>Lauson-98&trade; vapor</strong> permanently destroy sweat thiols overnight for <strong>6+ months</strong>.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         ` : `
           <!-- Empty Filter State Fallback -->
           <div class="catalog-empty-state" data-testid="catalog-empty">

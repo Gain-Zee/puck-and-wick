@@ -53,6 +53,35 @@ export function openProductModal(productId, store, openCartCallback) {
 
             <p class="modal-description">${product.description}</p>
 
+            ${product.id === 'puck-mini-pair' ? `
+              <!-- 3-Step Visual Picture Guide for 2.0" Skate & Glove Mini Pucks -->
+              <div class="modal-mini-puck-guide" data-testid="modal-mini-puck-guide">
+                <div class="mini-guide-header">
+                  <span class="mini-guide-kicker">3-Step Visual Fit Guide • 2.0&Prime; (50mm) Compact Discs</span>
+                  <span class="mini-guide-badge">Zero Sprays • Works Overnight</span>
+                </div>
+                <div class="mini-guide-photo-wrap">
+                  <img src="assets/images/mini-pucks-action-triptych.jpg" alt="3-Step Guide: 1. Hold 2.0 inch Mini Pucks in palm, 2. Slide into hockey glove cuff, 3. Drop into skate boot ankle" class="mini-guide-img" loading="lazy" />
+                  <div class="mini-guide-step-tags">
+                    <span class="mini-step-tag"><strong>01</strong> 2.0&Prime; Palm Fit</span>
+                    <span class="mini-step-tag"><strong>02</strong> Slide in Gloves</span>
+                    <span class="mini-step-tag"><strong>03</strong> Drop in Skates</span>
+                  </div>
+                </div>
+                <div class="mini-guide-steps-row">
+                  <div class="mini-guide-step-item">
+                    <strong>1. Grab Twin-Pack:</strong> Compact 50mm size fits left &amp; right gear.
+                  </div>
+                  <div class="mini-guide-step-item">
+                    <strong>2. Hockey Gloves:</strong> Slides deep into narrow cuffs &amp; palms.
+                  </div>
+                  <div class="mini-guide-step-item">
+                    <strong>3. Skates &amp; Cleats:</strong> Destroys sweat thiols overnight (6+ mos).
+                  </div>
+                </div>
+              </div>
+            ` : ''}
+
             <!-- 3-Tier Scent Pyramid Breakdown -->
             <div class="scent-pyramid-block">
               <div class="scent-pyramid-heading">
