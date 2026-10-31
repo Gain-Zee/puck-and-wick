@@ -17,24 +17,15 @@ This site is pre-configured and 100% production-ready for **Cloudflare Pages** a
 
 ---
 
-## Deploying Updates via CLI (Fastest)
+## Deploying Updates (Automatic GitHub Auto-Deploy)
 
-Run from this project directory:
+Your `Gain-Zee/puck-and-wick` GitHub repository is directly linked to Cloudflare Pages (`Git Provider: Yes`). Every time changes are pushed to `main`, Cloudflare automatically builds and deploys the update to `https://puck-and-wick.pages.dev` within seconds:
+
 ```bash
 git add -A && git commit -m "Update Puck & Wick site" && git push origin main
-npx wrangler pages deploy . --project-name=puck-and-wick --branch=main
 ```
 
----
-
-## Connecting Automatic GitHub Deployments in Cloudflare Dashboard
-
-If you want Cloudflare to auto-deploy every `git push` automatically:
-1. Open [Cloudflare Dashboard](https://dash.cloudflare.com) → **Compute (Workers & Pages)** → **puck-and-wick**.
-2. Go to **Settings** → **Builds & deployments** → **Connect to Git** (or create via **Connect to Git** selecting `Gain-Zee/puck-and-wick`).
-3. **Framework preset:** `None` (Static HTML/CSS/ES6 Modules)
-4. **Build command:** *(Leave blank)*
-5. **Build output directory:** `.` (root)
+*(Any non-`main` branch or Pull Request you push will also automatically get its own isolated preview URL like `https://<branch>.puck-and-wick.pages.dev`.)*
 
 ---
 
