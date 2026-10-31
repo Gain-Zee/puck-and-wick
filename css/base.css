@@ -107,7 +107,7 @@ img, svg {
   max-width: 100%;
 }
 
-svg:not([width]) {
+:where(svg:not([width])) {
   width: 20px;
   height: 20px;
 }

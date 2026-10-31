@@ -3,6 +3,18 @@
  * Matte Obsidian, Deep Charcoal, and Brushed Gold bundle customizer layout.
  */
 
+#exclusive-boxes,
+.box-builder {
+  scroll-margin-top: calc(var(--header-height, 72px) + 20px);
+}
+
+.thumb-box-icon {
+  width: 28px;
+  height: 28px;
+  stroke: var(--color-gold-bright, #D4AF37);
+  display: block;
+}
+
 .box-builder-wrapper {
   display: flex;
   flex-direction: column;

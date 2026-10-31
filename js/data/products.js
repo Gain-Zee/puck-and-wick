@@ -178,81 +178,33 @@ export const PRODUCTS = [
  */
 export function getCandleVesselSvg(product) {
   const isAmber = product.vesselType === 'amber';
-  const jarGradientId = `jar-grad-${product.id}`;
-  const lidGradientId = `lid-grad-${product.id}`;
-  const flameGradientId = `flame-grad-${product.id}`;
-  const waxGradientId = `wax-grad-${product.id}`;
-
-  const jarColorStart = isAmber ? '#451A03' : '#1F2937';
-  const jarColorMid = isAmber ? '#78350F' : '#111827';
-  const jarColorEnd = isAmber ? '#291003' : '#0B0F19';
+  const photoHref = isAmber ? 'assets/images/candle-amber.jpg' : 'assets/images/candle-obsidian.jpg';
+  const clipId = `vessel-clip-${product.id}`;
+  const vignetteId = `vessel-vig-${product.id}`;
 
   return `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 320" class="candle-vessel-svg" aria-label="${product.name} Luxury Candle Jar" role="img">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" width="100%" height="100%" class="candle-vessel-svg" aria-label="${product.name} Luxury Candle Jar" role="img">
       <defs>
-        <linearGradient id="${jarGradientId}" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="${jarColorStart}" />
-          <stop offset="40%" stop-color="${jarColorMid}" />
-          <stop offset="85%" stop-color="${jarColorEnd}" />
-          <stop offset="100%" stop-color="#050507" />
+        <clipPath id="${clipId}">
+          <rect x="0" y="0" width="360" height="360" rx="14" />
+        </clipPath>
+        <linearGradient id="${vignetteId}" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#08090C" stop-opacity="0.1" />
+          <stop offset="68%" stop-color="#08090C" stop-opacity="0" />
+          <stop offset="100%" stop-color="#08090C" stop-opacity="0.92" />
         </linearGradient>
-        <linearGradient id="${lidGradientId}" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#997732" />
-          <stop offset="35%" stop-color="#F5D77F" />
-          <stop offset="55%" stop-color="#D4AF37" />
-          <stop offset="80%" stop-color="#C5A059" />
-          <stop offset="100%" stop-color="#7B5B20" />
-        </linearGradient>
-        <radialGradient id="${flameGradientId}" cx="50%" cy="70%" r="65%">
-          <stop offset="0%" stop-color="#FFFFFF" />
-          <stop offset="25%" stop-color="#FEF08A" />
-          <stop offset="60%" stop-color="#F59E0B" />
-          <stop offset="90%" stop-color="#D97706" />
-          <stop offset="100%" stop-color="#78350F" stop-opacity="0" />
-        </radialGradient>
-        <linearGradient id="${waxGradientId}" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="#FAF5E8" />
-          <stop offset="100%" stop-color="#E7DECD" />
-        </linearGradient>
-        <filter id="glow-${product.id}" x="-30%" y="-30%" width="160%" height="160%">
-          <feGaussianBlur stdDeviation="8" result="blur" />
-          <feComposite in="SourceGraphic" in2="blur" operator="over" />
-        </filter>
       </defs>
 
-      <!-- Soft Ambient Glow behind Flame -->
-      <circle cx="140" cy="85" r="45" fill="#F59E0B" opacity="0.22" filter="url(#glow-${product.id})" />
+      <g clip-path="url(#${clipId})">
+        <!-- Studio Product Photography Placeholder -->
+        <image href="${photoHref}" x="0" y="0" width="360" height="360" preserveAspectRatio="xMidYMid slice" />
+        <rect x="0" y="0" width="360" height="360" fill="url(#${vignetteId})" />
 
-      <!-- Burning Cotton Wick & Flame -->
-      <path d="M 140,82 C 126,68 112,46 122,25 C 130,10 138,0 140,-5 C 142,0 150,10 158,25 C 168,46 154,68 140,82 Z" fill="url(#${flameGradientId})" transform="translate(0, 18)" />
-      <path d="M 140,80 C 132,70 124,56 129,42 C 133,32 138,20 140,16 C 142,20 147,32 151,42 C 156,56 148,70 140,80 Z" fill="#FFFDF0" opacity="0.9" transform="translate(0, 18)" />
-      <!-- Cotton Wick -->
-      <line x1="140" y1="96" x2="140" y2="114" stroke="#1C1917" stroke-width="3" stroke-linecap="round" />
-
-      <!-- Candle Glass Vessel Body -->
-      <!-- Top Wax Pool Ellipse -->
-      <ellipse cx="140" cy="115" rx="76" ry="16" fill="url(#${waxGradientId})" stroke="#C5A059" stroke-width="1.2" opacity="0.95" />
-      
-      <!-- Tumbler Glass Body -->
-      <path d="M 64,115 C 64,108 80,102 140,102 C 200,102 216,108 216,115 L 208,272 C 208,284 180,292 140,292 C 100,292 72,284 72,272 Z" fill="url(#${jarGradientId})" stroke="#C5A059" stroke-width="1.5" />
-      
-      <!-- Glass Rim Highlight -->
-      <ellipse cx="140" cy="115" rx="76" ry="14" fill="none" stroke="url(#${lidGradientId})" stroke-width="2" opacity="0.8" />
-
-      <!-- Luxury Label Plate on Jar Front -->
-      <rect x="88" y="152" width="104" height="96" rx="4" fill="#0C0D10" stroke="#C5A059" stroke-width="1.2" />
-      <rect x="92" y="156" width="96" height="88" rx="2" fill="none" stroke="#C5A059" stroke-width="0.75" stroke-dasharray="3,2" opacity="0.7" />
-      
-      <!-- Label Typography -->
-      <text x="140" y="174" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="11" font-weight="700" letter-spacing="2.5" fill="#C5A059">PUCK &amp; WICK</text>
-      <line x1="108" y1="180" x2="172" y2="180" stroke="#C5A059" stroke-width="0.8" opacity="0.7" />
-      <text x="140" y="196" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="13" font-weight="700" letter-spacing="1" fill="#FAF5E8">${product.name.toUpperCase()}</text>
-      <text x="140" y="212" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7" font-weight="600" letter-spacing="1.5" fill="#C5A059">10 OZ • PURE SOY</text>
-      <text x="140" y="226" text-anchor="middle" font-family="'Inter', sans-serif" font-size="6.5" font-weight="500" letter-spacing="1" fill="#9CA3AF">LOUDOUN CO. VA</text>
-      <text x="140" y="238" text-anchor="middle" font-family="'Inter', sans-serif" font-size="6" font-weight="600" letter-spacing="1" fill="#D4AF37">QC #1 CERTIFIED</text>
-
-      <!-- Glass Base Rim Bottom Arc -->
-      <ellipse cx="140" cy="272" rx="68" ry="12" fill="none" stroke="#C5A059" stroke-width="1" opacity="0.4" />
+        <!-- Minimalist Scent Name Plate Overlay -->
+        <rect x="34" y="302" width="292" height="42" rx="4" fill="rgba(11, 12, 14, 0.86)" stroke="rgba(197, 160, 89, 0.55)" stroke-width="1" />
+        <text x="180" y="321" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="14" font-weight="600" letter-spacing="2.5" fill="#FAF5E8">${product.name.toUpperCase()}</text>
+        <text x="180" y="335" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7.5" font-weight="500" letter-spacing="2.2" fill="#C5A059">10 OZ • 100% AMERICAN SOY</text>
+      </g>
     </svg>
   `;
 }

@@ -67,44 +67,44 @@ export const EXCLUSIVE_BOX_EDITIONS = {
 
 export const ODOR_SCIENCE_DATA = {
   headline: 'Dual-Action Molecular Odor Elimination',
-  kicker: 'Why Activated Charcoal + Metazene® Outperform Conventional Sprays',
-  lead: 'Locker room sweat, damp skate liners, and athletic gear produce volatile sulfur compounds, amines, and isovaleric acid. Conventional aerosol sprays merely coat gear in heavy synthetic perfume—masking the stench temporarily before mixing into a worse odor. Puck & Wick destroys odor molecules permanently in two stages.',
+  kicker: 'Physical Adsorption + Metazene® Covalent Neutralization vs Synthetic Masking',
+  lead: 'Athletic sweat, damp leather skate liners, and technical pads generate volatile organic compounds: thiols (sulfur bacteria), volatile amines (ammoniacal sweat breakdown), and isovaleric acid (pungent sweat-sock acid). Conventional aerosol sprays temporarily overpower nasal receptors with cheap synthetic perfumes, creating a sickening compound odor. Puck & Wick eliminates odors at the molecular level in two irreversible phases.',
   stages: [
     {
       id: 'charcoal',
       step: 'STAGE 01 • PHYSICAL ADSORPTION',
-      title: 'Microporous Activated Charcoal Matrix',
-      metric: '> 1,000 m²/gram Surface Area',
+      title: 'Activated Coconut Charcoal Micropore Matrix',
+      metric: '> 1,000 m²/gram Surface Area • < 2 nm Micropores',
       description:
-        'Steam-activated coconut and bamboo charcoal creates a vast labyrinth of microscopic pores. Through Van der Waals dispersion forces, this high-surface-area carbon lattice physically traps airborne moisture, bacterial byproducts, and heavy organic odor molecules directly out of your hockey bag or gym tote.'
+        'Steam-activated virgin coconut shell carbon yields a labyrinth of sub-2.0 nanometer micropores matching the kinetic molecular diameter of athletic volatile organic compounds. Through London dispersion and Van der Waals forces, this vast lattice (>1,000 m²/g) physically adsorbs and traps volatile thiols (R-SH), amines (R-NH₂), and isovaleric acid (C₅H₁₀O₂) directly out of gear fabrics.'
     },
     {
       id: 'metazene',
-      step: 'STAGE 02 • CHEMICAL NEUTRALIZATION',
-      title: 'Metazene® Covalent Molecular Bonding',
-      metric: 'Irreversible Vapor-Phase Neutralization',
+      step: 'STAGE 02 • COVALENT CHEMICAL NEUTRALIZATION',
+      title: 'Metazene® Molecular Electron Alteration',
+      metric: 'Irreversible Vapor-Phase Covalent Adduct',
       description:
-        'Metazene® (an advanced aliphatic ester complex) reacts directly with malodorous nitrogen and sulfur functional groups in the vapor phase. By forming permanent covalent bonds, it increases the molecular weight of volatile odor compounds and forces them to drop out of the air—resulting in true zero-odor neutrality.'
+        'Metazene® (an advanced aliphatic ester complex) reacts directly in the vapor phase with malodorous sulfur and nitrogen functional groups. By forming irreversible covalent bonds, it alters the molecule’s electron cloud geometry and steric conformation. Once altered, the malodor compound can no longer fit or bind to human olfactory receptor proteins (GPCRs)—cancelling odor perception permanently.'
     }
   ],
   comparison: [
     {
       method: 'Conventional Masking Sprays',
-      verdict: 'Temporary Cover-Up',
+      verdict: 'Temporary Receptor Overload',
       points: [
-        'Floods air with heavy synthetic fragrance and propellants',
-        'Leaves sticky chemical residue inside skates and athletic fabrics',
-        'Odor rebounds within 2–3 hours as perfume evaporates'
+        'Floods olfactory receptors with synthetic perfumes and butane/propane propellants',
+        'Employs synthetic phthalate fixatives (DEP) that leave sticky residue on technical fabrics',
+        'Odor rebounds within 2–3 hours as perfume evaporates, yielding foul compound stench'
       ],
       isPositive: false
     },
     {
       method: 'Puck & Wick Charcoal + Metazene®',
-      verdict: 'Permanent Molecular Eradication',
+      verdict: 'Permanent Molecular Destruction',
       points: [
-        'Physically traps moisture and adsorbs volatile organic compounds',
-        'Chemically bonds and neutralizes sulfur and amine odor molecules',
-        '100% phthalate-free, non-toxic, and safe for skin & premium gear'
+        'Sub-2nm microporous matrix physically traps thiols, amines, and isovaleric acid',
+        'Metazene® covalently alters malodor electron clouds, preventing olfactory receptor binding',
+        '100% clean, phthalate-free, non-aerosol, hypoallergenic, and safe for premium leather & gear'
       ],
       isPositive: true
     }

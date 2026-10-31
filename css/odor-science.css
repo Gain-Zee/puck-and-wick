@@ -69,11 +69,23 @@
   justify-content: center;
 }
 
+/* Ensure science diagram SVGs scale properly and override svg:not([width]) */
+svg.science-diagram-svg,
+.science-stage-visual svg,
 .science-diagram-svg {
-  width: 100%;
+  width: 100% !important;
   max-width: 280px;
-  height: auto;
+  height: auto !important;
   display: block;
+}
+
+.science-stage-card {
+  transition: transform var(--transition-normal, 200ms ease), border-color var(--transition-normal, 200ms ease);
+}
+
+.science-stage-card:hover {
+  border-color: rgba(197, 160, 89, 0.45);
+  transform: translateY(-2px);
 }
 
 .science-stage-step {

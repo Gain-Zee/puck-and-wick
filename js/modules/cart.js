@@ -75,10 +75,12 @@ export function initCart(store, openCheckoutCallback) {
                   return `
                     <div class="cart-item" data-testid="cart-item" data-item-id="${item.id}">
                       <div class="cart-item-thumb">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="thumb-candle-icon">
-                          <path d="M12 2c-.5 2.5-3 5-3 8 0 3.3 2.7 6 6 6s6-2.7 6-6c0-2.5-1.5-4.5-2.5-6-.5 1.5-1.5 2.5-2.5 3-1-3-3-4-4-5Z" fill="#F59E0B" stroke="#D4AF37"/>
-                          <rect x="7" y="14" width="10" height="9" rx="1.5" fill="#1C1D24" stroke="#C5A059"/>
-                        </svg>
+                        ${item.type === 'exclusive_box'
+                          ? getIcon('box', 'thumb-box-icon')
+                          : `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="thumb-candle-icon">
+                              <path d="M12 2c-.5 2.5-3 5-3 8 0 3.3 2.7 6 6 6s6-2.7 6-6c0-2.5-1.5-4.5-2.5-6-.5 1.5-1.5 2.5-2.5 3-1-3-3-4-4-5Z" fill="#F59E0B" stroke="#D4AF37"/>
+                              <rect x="7" y="14" width="10" height="9" rx="1.5" fill="#1C1D24" stroke="#C5A059"/>
+                            </svg>`}
                       </div>
 
                       <div class="cart-item-details">

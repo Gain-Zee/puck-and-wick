@@ -7,153 +7,48 @@
 
 import { EXCLUSIVE_BOX_EDITIONS, ODOR_SCIENCE_DATA } from '../data/box-data.js';
 import { getAllProducts, getProductById } from '../data/products.js';
-import { getIcon } from '../utils/svg-assets.js';
+import { getIcon, getCharcoalScienceSvg, getMetazeneScienceSvg } from '../utils/svg-assets.js';
 
 function getBoxPresentationSvg(edition, candleProduct) {
   const isWomen = edition === 'women_luxe';
-  const accentStroke = isWomen ? '#E2C178' : '#C5A059';
-  const puckLabel = isWomen ? 'BOTANICAL LINEN PUCK' : 'METAZENE® PUCK';
-  const washLabel = isWomen ? 'LUXE SPA BODY WASH' : 'ATHLETE BODY WASH';
+  const photoHref = isWomen ? 'assets/images/box-womens.jpg' : 'assets/images/box-athlete.jpg';
   const candleName = (candleProduct?.name || 'TOP SHELF').toUpperCase();
+  const editionTitle = isWomen ? "WOMEN'S LUXURY CURATION" : "MEN'S / ATHLETE EDITION";
 
   return `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 340" class="box-presentation-svg" role="img" aria-label="${isWomen ? "Women's Exclusive Box Presentation" : "Men's Athlete Exclusive Box Presentation"}">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420" width="100%" height="100%" class="box-presentation-svg" role="img" aria-label="${isWomen ? "Women's Exclusive Box Presentation" : "Men's Athlete Exclusive Box Presentation"}">
       <defs>
-        <linearGradient id="box-case-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#1A1C23" />
-          <stop offset="50%" stop-color="#101115" />
-          <stop offset="100%" stop-color="#07080A" />
+        <clipPath id="box-photo-clip">
+          <rect x="8" y="8" width="504" height="404" rx="14" />
+        </clipPath>
+        <linearGradient id="box-photo-vignette" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#07080A" stop-opacity="0.65" />
+          <stop offset="22%" stop-color="#07080A" stop-opacity="0" />
+          <stop offset="72%" stop-color="#07080A" stop-opacity="0" />
+          <stop offset="100%" stop-color="#07080A" stop-opacity="0.92" />
         </linearGradient>
-        <linearGradient id="box-gold-foil" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#8A6623" />
-          <stop offset="30%" stop-color="#D4AF37" />
-          <stop offset="55%" stop-color="#FDF6C7" />
-          <stop offset="80%" stop-color="#C5A059" />
-          <stop offset="100%" stop-color="#7B5B20" />
-        </linearGradient>
-        <radialGradient id="box-flame-glow" cx="50%" cy="50%" r="55%">
-          <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.35" />
-          <stop offset="100%" stop-color="#F59E0B" stop-opacity="0" />
-        </radialGradient>
       </defs>
 
-      <!-- Outer Rigid Magnetic Presentation Box -->
-      <rect x="16" y="16" width="488" height="308" rx="14" fill="url(#box-case-grad)" stroke="url(#box-gold-foil)" stroke-width="2.5" />
-      <rect x="26" y="26" width="468" height="288" rx="10" fill="none" stroke="${accentStroke}" stroke-width="0.9" stroke-dasharray="5,4" opacity="0.55" />
+      <g clip-path="url(#box-photo-clip)">
+        <image href="${photoHref}" x="8" y="8" width="504" height="404" preserveAspectRatio="xMidYMid slice" />
+        <rect x="8" y="8" width="504" height="404" fill="url(#box-photo-vignette)" />
 
-      <!-- Box Header Bar -->
-      <text x="260" y="52" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="13" font-weight="700" letter-spacing="4" fill="url(#box-gold-foil)">
-        PUCK &amp; WICK • ${isWomen ? "WOMEN'S LUXURY CURATION" : "MEN'S / ATHLETE EDITION"}
-      </text>
-      <line x1="90" y1="62" x2="430" y2="62" stroke="url(#box-gold-foil)" stroke-width="0.8" opacity="0.45" />
+        <!-- Top Minimalist Edition Header -->
+        <text x="260" y="38" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="13" font-weight="600" letter-spacing="4" fill="#FAF5E8">
+          PUCK &amp; WICK • ${editionTitle}
+        </text>
 
-      <!-- Slot 1: 10 oz Hand-Poured Soy Candle -->
-      <g transform="translate(46, 80)">
-        <rect x="0" y="0" width="130" height="205" rx="8" fill="#0B0C0F" stroke="#262934" stroke-width="1.5" />
-        <circle cx="65" cy="45" r="32" fill="url(#box-flame-glow)" />
-        <!-- Flame -->
-        <path d="M 65,48 C 58,40 53,28 57,18 C 60,10 64,4 65,0 C 66,4 70,10 73,18 C 77,28 72,40 65,48 Z" fill="#F59E0B" />
-        <path d="M 65,45 C 61,39 58,31 60,23 C 62,17 64,12 65,9 C 66,12 68,17 70,23 C 72,31 69,39 65,45 Z" fill="#FFFDF0" />
-        <line x1="65" y1="48" x2="65" y2="56" stroke="#FAF5E8" stroke-width="2" />
-        <!-- Jar Body -->
-        <rect x="25" y="56" width="80" height="106" rx="6" fill="#16181F" stroke="url(#box-gold-foil)" stroke-width="1.5" />
-        <rect x="33" y="76" width="64" height="64" rx="3" fill="#0A0A0C" stroke="url(#box-gold-foil)" stroke-width="1" />
-        <text x="65" y="96" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="7.5" font-weight="700" letter-spacing="1.5" fill="#C5A059">PUCK &amp; WICK</text>
-        <text x="65" y="113" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="8.5" font-weight="700" fill="#FAF5E8">${candleName.slice(0, 14)}</text>
-        <text x="65" y="128" text-anchor="middle" font-family="'Inter', sans-serif" font-size="6" font-weight="600" letter-spacing="1" fill="#9CA3AF">10 OZ • SOY WAX</text>
-        <text x="65" y="186" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8" font-weight="600" letter-spacing="1" fill="#D4AF37">01. SOY CANDLE</text>
+        <!-- Bottom Minimalist Custom Candle Badge -->
+        <rect x="44" y="352" width="432" height="44" rx="6" fill="rgba(11, 12, 14, 0.88)" stroke="rgba(197, 160, 89, 0.55)" stroke-width="1" />
+        <text x="260" y="371" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="13.5" font-weight="600" letter-spacing="2.5" fill="#FAF5E8">
+          SELECTED CANDLE: ${candleName} (10 OZ SOY)
+        </text>
+        <text x="260" y="387" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8" font-weight="500" letter-spacing="2" fill="#C5A059">
+          INCLUDES CHARCOAL + METAZENE® PUCK &amp; 8 OZ BODY CARE • SAVE $20
+        </text>
       </g>
 
-      <!-- Slot 2: Activated Charcoal & Metazene® Puck -->
-      <g transform="translate(195, 80)">
-        <rect x="0" y="0" width="130" height="205" rx="8" fill="#0B0C0F" stroke="#262934" stroke-width="1.5" />
-        <!-- Puck 3D Cylinder -->
-        <ellipse cx="65" cy="108" rx="46" ry="22" fill="#101216" stroke="url(#box-gold-foil)" stroke-width="1.5" />
-        <path d="M 19,92 L 19,108 A 46,22 0 0,0 111,108 L 111,92 Z" fill="#181A20" stroke="url(#box-gold-foil)" stroke-width="1.5" />
-        <ellipse cx="65" cy="92" rx="46" ry="22" fill="#20232B" stroke="url(#box-gold-foil)" stroke-width="1.8" />
-        <ellipse cx="65" cy="92" rx="34" ry="15" fill="none" stroke="#C5A059" stroke-width="0.9" stroke-dasharray="3,3" />
-        <!-- Vent Pores -->
-        <circle cx="50" cy="89" r="2" fill="#D4AF37" />
-        <circle cx="65" cy="86" r="2" fill="#D4AF37" />
-        <circle cx="80" cy="89" r="2" fill="#D4AF37" />
-        <circle cx="57" cy="96" r="2" fill="#D4AF37" />
-        <circle cx="73" cy="96" r="2" fill="#D4AF37" />
-        <text x="65" y="148" text-anchor="middle" font-family="'Inter', sans-serif" font-size="6.5" font-weight="700" letter-spacing="1" fill="#FAF5E8">${puckLabel}</text>
-        <text x="65" y="162" text-anchor="middle" font-family="'Inter', sans-serif" font-size="6" fill="#9CA3AF">&gt;1,000 m²/g CARBON</text>
-        <text x="65" y="186" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8" font-weight="600" letter-spacing="1" fill="#D4AF37">02. ODOR PUCK</text>
-      </g>
-
-      <!-- Slot 3: Odor-Eliminating Body Wash (8 oz) -->
-      <g transform="translate(344, 80)">
-        <rect x="0" y="0" width="130" height="205" rx="8" fill="#0B0C0F" stroke="#262934" stroke-width="1.5" />
-        <!-- Pump Dispenser Top -->
-        <rect x="57" y="24" width="16" height="14" rx="2" fill="url(#box-gold-foil)" />
-        <path d="M 55,24 L 84,24 L 88,30 L 55,30 Z" fill="url(#box-gold-foil)" />
-        <rect x="61" y="38" width="8" height="10" fill="#9CA3AF" />
-        <!-- Bottle Body -->
-        <rect x="33" y="48" width="64" height="114" rx="10" fill="#15171E" stroke="url(#box-gold-foil)" stroke-width="1.5" />
-        <rect x="39" y="68" width="52" height="72" rx="3" fill="#0A0A0C" stroke="#C5A059" stroke-width="0.9" />
-        <text x="65" y="88" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="7" font-weight="700" letter-spacing="1" fill="#C5A059">PUCK &amp; WICK</text>
-        <text x="65" y="104" text-anchor="middle" font-family="'Inter', sans-serif" font-size="6" font-weight="700" fill="#FAF5E8">${washLabel.slice(0, 16)}</text>
-        <text x="65" y="117" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" fill="#9CA3AF">CHARCOAL + METAZENE®</text>
-        <text x="65" y="130" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" font-weight="600" fill="#D4AF37">8 FL OZ (236 ML)</text>
-        <text x="65" y="186" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8" font-weight="600" letter-spacing="1" fill="#D4AF37">03. BODY WASH</text>
-      </g>
-
-      <!-- Bottom Stamp -->
-      <text x="260" y="306" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8.5" font-weight="600" letter-spacing="2.5" fill="#9CA3AF">
-        CUSTOM RIGID GIFT BOX • SAVE $20.00 ($98 VALUE FOR $78)
-      </text>
-    </svg>
-  `;
-}
-
-function getCharcoalScienceSvg() {
-  return `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 150" class="science-diagram-svg" role="img" aria-label="Microporous Activated Charcoal Adsorption Diagram">
-      <title>Microporous Activated Charcoal Physical Adsorption Matrix</title>
-      <rect x="4" y="4" width="252" height="142" rx="10" fill="#0B0C10" stroke="#C5A059" stroke-width="1.2" opacity="0.9" />
-      <!-- Carbon Lattice Hexagons -->
-      <g stroke="#C5A059" stroke-width="1.2" fill="#14161D" opacity="0.85">
-        <polygon points="70,45 90,33 110,45 110,68 90,80 70,68" />
-        <polygon points="110,45 130,33 150,45 150,68 130,80 110,68" />
-        <polygon points="150,45 170,33 190,45 190,68 170,80 150,68" />
-        <polygon points="90,80 110,68 130,80 130,103 110,115 90,103" />
-        <polygon points="130,80 150,68 170,80 170,103 150,115 130,103" />
-      </g>
-      <!-- Trapped Odor Molecules Inside Pores -->
-      <circle cx="90" cy="56" r="6" fill="#F59E0B" />
-      <circle cx="130" cy="56" r="6" fill="#34D399" />
-      <circle cx="170" cy="56" r="6" fill="#F59E0B" />
-      <circle cx="110" cy="91" r="6" fill="#34D399" />
-      <circle cx="150" cy="91" r="6" fill="#F59E0B" />
-      <text x="130" y="134" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8.5" font-weight="600" letter-spacing="1.5" fill="#D4AF37">
-        &gt;1,000 m²/g MICROPOROUS CARBON TRAP
-      </text>
-    </svg>
-  `;
-}
-
-function getMetazeneScienceSvg() {
-  return `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 150" class="science-diagram-svg" role="img" aria-label="Metazene Covalent Molecular Neutralization Diagram">
-      <title>Metazene Chemical Counteraction and Covalent Bonding</title>
-      <rect x="4" y="4" width="252" height="142" rx="10" fill="#0B0C10" stroke="#C5A059" stroke-width="1.2" opacity="0.9" />
-      <!-- Left: Malodor Molecule -->
-      <circle cx="65" cy="65" r="18" fill="#1F2430" stroke="#F87171" stroke-width="1.8" />
-      <text x="65" y="68" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8" font-weight="700" fill="#F87171">NH₃/H₂S</text>
-      <!-- Covalent Bond Link -->
-      <line x1="83" y1="65" x2="122" y2="65" stroke="#D4AF37" stroke-width="2.5" stroke-dasharray="4,2" />
-      <circle cx="102" cy="65" r="4" fill="#F59E0B" />
-      <!-- Center: Metazene Ester Complex -->
-      <circle cx="145" cy="65" r="22" fill="#171922" stroke="#D4AF37" stroke-width="2" />
-      <text x="145" y="63" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7" font-weight="700" fill="#FAF5E8">METAZENE®</text>
-      <text x="145" y="73" text-anchor="middle" font-family="'Inter', sans-serif" font-size="6" fill="#C5A059">ESTER BOND</text>
-      <!-- Arrow Down: Precipitates Out of Air -->
-      <path d="M 185,55 L 210,55 L 210,75 L 218,75 L 202,93 L 186,75 L 194,75 Z" fill="#34D399" opacity="0.85" />
-      <text x="130" y="134" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8.5" font-weight="600" letter-spacing="1.5" fill="#34D399">
-        IRREVERSIBLE COVALENT NEUTRALIZATION
-      </text>
+      <rect x="8" y="8" width="504" height="404" rx="14" fill="none" stroke="rgba(197, 160, 89, 0.45)" stroke-width="1.5" />
     </svg>
   `;
 }
@@ -182,7 +77,9 @@ export function initBoxBuilder(store, openCartCallback) {
           <button
             type="button"
             role="tab"
+            id="tab-edition-men"
             aria-selected="${activeEditionKey === 'men_athlete'}"
+            aria-controls="box-customizer-panel"
             class="edition-toggle-btn ${activeEditionKey === 'men_athlete' ? 'active' : ''}"
             data-testid="edition-toggle-men"
             data-edition="men_athlete"
@@ -194,7 +91,9 @@ export function initBoxBuilder(store, openCartCallback) {
           <button
             type="button"
             role="tab"
+            id="tab-edition-women"
             aria-selected="${activeEditionKey === 'women_luxe'}"
+            aria-controls="box-customizer-panel"
             class="edition-toggle-btn ${activeEditionKey === 'women_luxe' ? 'active' : ''}"
             data-testid="edition-toggle-women"
             data-edition="women_luxe"
@@ -205,7 +104,7 @@ export function initBoxBuilder(store, openCartCallback) {
         </div>
 
         <!-- Main 2-Column Customizer Stage -->
-        <div class="box-customizer-grid">
+        <div class="box-customizer-grid" id="box-customizer-panel" role="tabpanel" aria-labelledby="${activeEditionKey === 'women_luxe' ? 'tab-edition-women' : 'tab-edition-men'}">
           <!-- Left Column: Visual Rigid Box Preview & Value Callout -->
           <div class="box-visual-stage">
             <div class="box-stage-header">

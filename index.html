@@ -157,35 +157,22 @@
           </div>
         </div>
 
-        <!-- Visual Column (Right - Flame & Puck Presentation) -->
+        <!-- Visual Column (Right - Luxury Candle Presentation) -->
         <div class="hero-visual">
           <div class="hero-visual-card">
             <span class="badge badge-gold">Founder Hand-Crafted</span>
 
             <div class="hero-flame-container" data-testid="hero-flame">
               <div class="hero-flame-aura"></div>
-              <svg class="hero-flame-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" aria-label="Radiant Puck &amp; Wick Candle Flame">
+              <svg class="hero-flame-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" aria-label="Puck &amp; Wick Signature Matte Obsidian Luxury Soy Candle">
                 <defs>
-                  <radialGradient id="hero-flame-grad" cx="50%" cy="70%" r="65%">
-                    <stop offset="0%" stop-color="#FFFFFF" />
-                    <stop offset="20%" stop-color="#FEF08A" />
-                    <stop offset="50%" stop-color="#F59E0B" />
-                    <stop offset="80%" stop-color="#D97706" />
-                    <stop offset="100%" stop-color="#9A3412" stop-opacity="0" />
-                  </radialGradient>
-                  <linearGradient id="hero-wick-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stop-color="#1C1917" />
-                    <stop offset="60%" stop-color="#FAF5E8" />
-                    <stop offset="100%" stop-color="#D4AF37" />
-                  </linearGradient>
+                  <clipPath id="hero-photo-clip">
+                    <rect x="0" y="0" width="360" height="360" rx="16" />
+                  </clipPath>
                 </defs>
-                <!-- Cotton Wick -->
-                <rect x="98" y="240" width="4" height="40" rx="2" fill="url(#hero-wick-grad)" />
-                <circle cx="100" cy="238" r="3" fill="#1C1917" />
-                <!-- Outer Flame -->
-                <path d="M 100,245 C 70,230 40,185 50,130 C 60,75 88,25 100,0 C 112,25 140,75 150,130 C 160,185 130,230 100,245 Z" fill="url(#hero-flame-grad)" opacity="0.95" />
-                <!-- Inner Flame Core -->
-                <path d="M 100,240 C 85,225 70,195 78,155 C 84,120 95,85 100,55 C 105,85 116,120 122,155 C 130,195 115,225 100,240 Z" fill="#FFFDF0" opacity="0.9" />
+                <g clip-path="url(#hero-photo-clip)">
+                  <image href="assets/images/candle-obsidian.jpg" x="0" y="0" width="360" height="360" preserveAspectRatio="xMidYMid slice" />
+                </g>
               </svg>
             </div>
 

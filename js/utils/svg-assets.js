@@ -9,216 +9,103 @@ export const SVG_LOGOS = {
   1: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%" aria-label="Puck and Wick - Minimalist Crossed Sticks and Flame Logo">
   <defs>
     <linearGradient id="c1-gold-metallic" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#997732" />
-      <stop offset="25%" stop-color="#C5A059" />
-      <stop offset="45%" stop-color="#F3E5AB" />
-      <stop offset="55%" stop-color="#D4AF37" />
-      <stop offset="75%" stop-color="#FDF6C7" />
-      <stop offset="90%" stop-color="#C5A059" />
-      <stop offset="100%" stop-color="#805F20" />
+      <stop offset="0%" stop-color="#B69146" />
+      <stop offset="50%" stop-color="#E5C878" />
+      <stop offset="100%" stop-color="#9A7632" />
     </linearGradient>
-    <radialGradient id="c1-flame-core" cx="50%" cy="65%" r="65%">
-      <stop offset="0%" stop-color="#FFFFFF" />
-      <stop offset="20%" stop-color="#FEF08A" />
-      <stop offset="55%" stop-color="#F59E0B" />
-      <stop offset="85%" stop-color="#D97706" />
-      <stop offset="100%" stop-color="#9A3412" />
-    </radialGradient>
-    <linearGradient id="c1-puck-body" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#262830" />
-      <stop offset="40%" stop-color="#16171B" />
-      <stop offset="100%" stop-color="#0A0A0C" />
+    <linearGradient id="c1-flame-core" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#C5A059" />
+      <stop offset="55%" stop-color="#F3D689" />
+      <stop offset="100%" stop-color="#FFFDF7" />
     </linearGradient>
-    <filter id="c1-gold-glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="6" result="blur" />
-      <feComposite in="SourceGraphic" in2="blur" operator="over" />
-    </filter>
   </defs>
-  <g transform="translate(0, -10)">
-    <!-- LEFT HOCKEY STICK -->
-    <path d="M 105,95 L 118,85 L 368,365 C 388,382 418,386 442,374 C 448,371 445,360 436,362 C 416,368 392,364 378,350 L 126,80 Z" fill="url(#c1-gold-metallic)" />
-    <path d="M 125,122 L 138,138 M 140,142 L 153,158 M 155,162 L 168,178 M 170,182 L 183,198" stroke="#0A0A0C" stroke-width="2.5" stroke-linecap="round" opacity="0.6" />
-    <!-- RIGHT HOCKEY STICK -->
-    <path d="M 395,95 L 382,85 L 132,365 C 112,382 82,386 58,374 C 52,371 55,360 64,362 C 84,368 108,364 122,350 L 374,80 Z" fill="url(#c1-gold-metallic)" />
-    <path d="M 375,122 L 362,138 M 360,142 L 347,158 M 345,162 L 332,178 M 330,182 L 317,198" stroke="#0A0A0C" stroke-width="2.5" stroke-linecap="round" opacity="0.6" />
-    <!-- HOCKEY PUCK BASE -->
-    <path d="M 175,345 C 175,330 208,320 250,320 C 292,320 325,330 325,345 L 325,372 C 325,387 292,398 250,398 C 208,398 175,387 175,372 Z" fill="url(#c1-puck-body)" stroke="url(#c1-gold-metallic)" stroke-width="2" />
-    <path d="M 185,355 L 185,368 M 200,360 L 200,373 M 220,364 L 220,377 M 250,366 L 250,379 M 280,364 L 280,377 M 300,360 L 300,373 M 315,355 L 315,368" stroke="url(#c1-gold-metallic)" stroke-width="1.5" stroke-linecap="round" opacity="0.4" />
-    <ellipse cx="250" cy="345" rx="75" ry="18" fill="#1C1D22" stroke="url(#c1-gold-metallic)" stroke-width="2.5" />
-    <ellipse cx="250" cy="345" rx="55" ry="12" fill="none" stroke="url(#c1-gold-metallic)" stroke-width="1" stroke-dasharray="4,4" opacity="0.7" />
-    <!-- WICK & FLAME -->
-    <rect x="248" y="300" width="4" height="28" rx="2" fill="#FAF5E8" stroke="#78350F" stroke-width="1" />
-    <circle cx="250" cy="299" r="2.5" fill="#1C1917" />
-    <path d="M 250,305 C 230,295 210,265 215,225 C 220,185 242,145 250,110 C 258,145 280,185 285,225 C 290,265 270,295 250,305 Z" fill="url(#c1-flame-core)" filter="url(#c1-gold-glow)" />
-    <path d="M 250,302 C 238,295 228,272 232,244 C 235,218 246,188 250,165 C 254,188 265,218 268,244 C 272,272 262,295 250,302 Z" fill="#FFFDF0" opacity="0.9" />
+  <!-- Ultra-clean Minimalist Mark -->
+  <g transform="translate(0, 12)">
+    <!-- Minimalist Geometric Crossed Hockey Sticks -->
+    <path d="M 155,115 L 335,315 C 346,327 362,332 384,328" fill="none" stroke="url(#c1-gold-metallic)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M 345,115 L 165,315 C 154,327 138,332 116,328" fill="none" stroke="url(#c1-gold-metallic)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" />
+    <!-- Minimalist Teardrop Flame Above Intersection -->
+    <path d="M 250,185 C 236,170 230,148 236,126 C 240,111 247,98 250,88 C 253,98 260,111 264,126 C 270,148 264,170 250,185 Z" fill="url(#c1-flame-core)" />
+    <!-- Clean Vulcanized Puck Pill Below Intersection -->
+    <rect x="210" y="294" width="80" height="14" rx="7" fill="#0B0C0E" stroke="url(#c1-gold-metallic)" stroke-width="4" />
   </g>
-  <text x="250" y="435" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="34" font-weight="700" letter-spacing="8" fill="url(#c1-gold-metallic)">PUCK &amp; WICK</text>
-  <line x1="160" y1="452" x2="340" y2="452" stroke="url(#c1-gold-metallic)" stroke-width="1" opacity="0.6" />
-  <text x="250" y="472" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10.5" font-weight="600" letter-spacing="4" fill="#C5A059">ARTISAN SOY • EST. 2024</text>
+  <!-- Clean Minimalist Typography -->
+  <text x="250" y="408" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="32" font-weight="600" letter-spacing="10" fill="#FAF5E8">PUCK &amp; WICK</text>
+  <line x1="205" y1="428" x2="295" y2="428" stroke="url(#c1-gold-metallic)" stroke-width="1" opacity="0.6" />
+  <text x="250" y="450" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9.5" font-weight="500" letter-spacing="5" fill="#C5A059">LOUDOUN CO. • VIRGINIA</text>
 </svg>`,
 
-  // Concept 2: Heritage Crest / Shield ("20 Years on the Ice")
-  2: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 520" width="100%" height="100%" aria-label="Puck and Wick - Heritage Shield 20 Years on the Ice Logo">
+  // Concept 2: Minimalist Architectural Shield ("20 Years on the Ice")
+  2: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%" aria-label="Puck and Wick - Minimalist Heritage Shield Logo">
   <defs>
     <linearGradient id="c2-gold" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#997732" />
-      <stop offset="20%" stop-color="#C5A059" />
-      <stop offset="45%" stop-color="#FDF6C7" />
-      <stop offset="60%" stop-color="#D4AF37" />
-      <stop offset="85%" stop-color="#C5A059" />
-      <stop offset="100%" stop-color="#735218" />
+      <stop offset="0%" stop-color="#B69146" />
+      <stop offset="50%" stop-color="#E5C878" />
+      <stop offset="100%" stop-color="#9A7632" />
     </linearGradient>
-    <radialGradient id="c2-shield-bg" cx="50%" cy="40%" r="60%">
-      <stop offset="0%" stop-color="#1E2026" />
-      <stop offset="70%" stop-color="#121316" />
-      <stop offset="100%" stop-color="#0A0A0C" />
-    </radialGradient>
   </defs>
-  <g transform="translate(0, 10)">
-    <!-- Flanking Wings -->
-    <line x1="40" y1="230" x2="175" y2="230" stroke="url(#c2-gold)" stroke-width="1.5" />
-    <circle cx="40" cy="230" r="3.5" fill="url(#c2-gold)" />
-    <text x="135" y="215" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="32" font-weight="700" letter-spacing="6" fill="url(#c2-gold)">PUCK</text>
-    <line x1="75" y1="240" x2="175" y2="240" stroke="url(#c2-gold)" stroke-width="0.75" stroke-dasharray="4,3" opacity="0.6" />
-    <line x1="425" y1="230" x2="560" y2="230" stroke="url(#c2-gold)" stroke-width="1.5" />
-    <circle cx="560" cy="230" r="3.5" fill="url(#c2-gold)" />
-    <text x="465" y="215" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="32" font-weight="700" letter-spacing="6" fill="url(#c2-gold)">WICK</text>
-    <line x1="425" y1="240" x2="525" y2="240" stroke="url(#c2-gold)" stroke-width="0.75" stroke-dasharray="4,3" opacity="0.6" />
-  </g>
-  <g transform="translate(0, 10)">
-    <!-- Main Shield -->
-    <path d="M 200,90 L 400,90 L 400,240 C 400,340 320,400 300,415 C 280,400 200,340 200,240 Z" fill="url(#c2-shield-bg)" stroke="url(#c2-gold)" stroke-width="4" stroke-linejoin="round" />
-    <path d="M 212,102 L 388,102 L 388,236 C 388,324 316,378 300,392 C 284,378 212,324 212,236 Z" fill="none" stroke="url(#c2-gold)" stroke-width="1.5" opacity="0.8" />
-    <path d="M 218,108 L 382,108 L 382,234 C 382,316 314,368 300,381 C 286,368 218,316 218,234 Z" fill="none" stroke="url(#c2-gold)" stroke-width="0.75" stroke-dasharray="3,3" opacity="0.5" />
-    <!-- Laurel Wreath -->
-    <g fill="url(#c2-gold)" opacity="0.85">
-      <path d="M 235,165 C 227,162 225,152 232,148 C 238,145 243,154 235,165 Z" />
-      <path d="M 230,195 C 222,192 220,182 227,178 C 233,175 238,184 230,195 Z" />
-      <path d="M 230,225 C 222,223 221,213 228,208 C 234,204 238,214 230,225 Z" />
-      <path d="M 235,255 C 227,253 226,243 233,238 C 239,234 243,244 235,255 Z" />
-      <path d="M 245,285 C 238,283 236,273 243,268 C 250,264 253,274 245,285 Z" />
-      <path d="M 260,312 C 253,310 252,300 259,295 C 265,291 268,301 260,312 Z" />
-    </g>
-    <g fill="url(#c2-gold)" opacity="0.85">
-      <path d="M 365,165 C 373,162 375,152 368,148 C 362,145 357,154 365,165 Z" />
-      <path d="M 370,195 C 378,192 380,182 373,178 C 367,175 362,184 370,195 Z" />
-      <path d="M 370,225 C 378,223 379,213 372,208 C 366,204 362,214 370,225 Z" />
-      <path d="M 365,255 C 373,253 374,243 367,238 C 361,234 357,244 365,255 Z" />
-      <path d="M 355,285 C 362,283 364,273 357,268 C 350,264 347,274 355,285 Z" />
-      <path d="M 340,312 C 347,310 348,300 341,295 C 335,291 332,301 340,312 Z" />
-    </g>
-    <!-- Flame & Typography -->
-    <path d="M 300,182 C 288,175 278,155 282,135 C 285,115 296,95 300,80 C 304,95 315,115 318,135 C 322,155 312,175 300,182 Z" fill="url(#c2-gold)" />
-    <path d="M 300,178 C 293,172 288,160 290,147 C 292,133 298,120 300,105 C 302,120 308,133 310,147 C 312,160 307,172 300,178 Z" fill="#FFFDF2" opacity="0.85" />
-    <line x1="300" y1="182" x2="300" y2="192" stroke="url(#c2-gold)" stroke-width="2" />
-    <text x="300" y="222" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="25" font-weight="700" letter-spacing="4" fill="url(#c2-gold)">20 YEARS</text>
-    <text x="300" y="244" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10.5" font-weight="600" letter-spacing="3" fill="#FAF5E8">ON THE ICE</text>
-    <!-- Puck -->
-    <ellipse cx="300" cy="285" rx="36" ry="9" fill="#1C1D22" stroke="url(#c2-gold)" stroke-width="1.5" />
-    <path d="M 264,285 C 264,295 280,302 300,302 C 320,302 336,295 336,285 L 336,298 C 336,308 320,315 300,315 C 280,315 264,308 264,298 Z" fill="#121316" stroke="url(#c2-gold)" stroke-width="1.5" />
-    <ellipse cx="300" cy="285" rx="24" ry="5" fill="none" stroke="url(#c2-gold)" stroke-width="1" stroke-dasharray="3,3" opacity="0.7" />
-    <text x="300" y="348" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" font-weight="600" letter-spacing="2.5" fill="url(#c2-gold)">PURCELLVILLE, VA</text>
-  </g>
-  <text x="300" y="475" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-weight="600" letter-spacing="5" fill="#C5A059">HAND-CRAFTED SOY • EST. 2004</text>
+  <!-- Clean Single-Line Architectural Crest -->
+  <path d="M 165,80 L 335,80 L 335,210 C 335,288 268,334 250,346 C 232,334 165,288 165,210 Z" fill="#0D0E12" stroke="url(#c2-gold)" stroke-width="3.5" stroke-linejoin="round" />
+  <path d="M 177,92 L 323,92 L 323,208 C 323,276 264,318 250,329 C 236,318 177,276 177,208 Z" fill="none" stroke="url(#c2-gold)" stroke-width="0.9" opacity="0.45" />
+  <!-- Minimalist Flame + Crossed Line Inside Shield -->
+  <path d="M 250,168 C 240,156 235,140 240,124 C 243,114 248,105 250,98 C 252,105 257,114 260,124 C 265,140 260,156 250,168 Z" fill="url(#c2-gold)" />
+  <line x1="215" y1="196" x2="285" y2="196" stroke="url(#c2-gold)" stroke-width="1" opacity="0.5" />
+  <text x="250" y="232" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="24" font-weight="600" letter-spacing="6" fill="#FAF5E8">XX YRS</text>
+  <text x="250" y="254" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8.5" font-weight="500" letter-spacing="4" fill="#C5A059">ON THE ICE</text>
+  <rect x="224" y="276" width="52" height="10" rx="5" fill="none" stroke="url(#c2-gold)" stroke-width="2" />
+  <!-- Wordmark Below -->
+  <text x="250" y="408" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="32" font-weight="600" letter-spacing="10" fill="#FAF5E8">PUCK &amp; WICK</text>
+  <text x="250" y="442" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9.5" font-weight="500" letter-spacing="5" fill="#C5A059">SMALL BATCH SOY • EST. 2024</text>
 </svg>`,
 
-  // Concept 3: Modern Luxury Apothecary Stamp
+  // Concept 3: Modern Luxury Apothecary Seal ("The Botanical Monogram")
   3: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%" aria-label="Puck and Wick - Modern Luxury Apothecary Stamp">
   <defs>
     <linearGradient id="c3-gold" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#997732" />
-      <stop offset="25%" stop-color="#C5A059" />
-      <stop offset="50%" stop-color="#FDF6C7" />
-      <stop offset="75%" stop-color="#D4AF37" />
-      <stop offset="100%" stop-color="#805F20" />
+      <stop offset="0%" stop-color="#B69146" />
+      <stop offset="50%" stop-color="#E5C878" />
+      <stop offset="100%" stop-color="#9A7632" />
     </linearGradient>
-    <path id="c3-arc-top" d="M 85,250 A 165,165 0 0,1 415,250" fill="none" />
-    <path id="c3-arc-bottom" d="M 415,250 A 165,165 0 0,1 85,250" fill="none" />
   </defs>
-  <circle cx="250" cy="250" r="225" fill="#0E0F12" stroke="url(#c3-gold)" stroke-width="3" />
-  <circle cx="250" cy="250" r="215" fill="none" stroke="url(#c3-gold)" stroke-width="1" stroke-dasharray="2,4" opacity="0.6" />
-  <circle cx="250" cy="250" r="140" fill="#121316" stroke="url(#c3-gold)" stroke-width="2" />
-  <circle cx="250" cy="250" r="132" fill="none" stroke="url(#c3-gold)" stroke-width="0.75" opacity="0.5" />
-  <polygon points="250,28 253,35 250,42 247,35" fill="url(#c3-gold)" />
-  <polygon points="250,458 253,465 250,472 247,465" fill="url(#c3-gold)" />
-  <polygon points="28,250 35,253 42,250 35,247" fill="url(#c3-gold)" />
-  <polygon points="458,250 465,253 472,250 465,247" fill="url(#c3-gold)" />
-  <text font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="23" font-weight="700" letter-spacing="8" fill="url(#c3-gold)">
-    <textPath href="#c3-arc-top" startOffset="50%" text-anchor="middle">PUCK &amp; WICK</textPath>
-  </text>
-  <text font-family="'Inter', sans-serif" font-size="10.5" font-weight="600" letter-spacing="4" fill="#C5A059">
-    <textPath href="#c3-arc-bottom" startOffset="50%" text-anchor="middle">ARTISAN SOY • LOUDOUN COUNTY</textPath>
-  </text>
-  <text x="180" y="255" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" font-weight="600" letter-spacing="2" fill="url(#c3-gold)">NO. 01</text>
-  <text x="320" y="255" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" font-weight="600" letter-spacing="2" fill="url(#c3-gold)">100% SOY</text>
-  <!-- Monogram P + W -->
-  <g transform="translate(0, 0)">
-    <path d="M 222,175 C 215,168 210,154 213,140 C 216,126 220,112 222,100 C 224,112 228,126 231,140 C 234,154 229,168 222,175 Z" fill="url(#c3-gold)" />
-    <path d="M 222,171 C 218,166 215,156 217,147 C 218,138 221,128 222,118 C 223,128 226,138 227,147 C 229,156 226,166 222,171 Z" fill="#FFFDF5" />
-    <line x1="222" y1="175" x2="222" y2="182" stroke="url(#c3-gold)" stroke-width="2" />
-    <!-- Letter P -->
-    <rect x="218" y="182" width="7" height="110" rx="1" fill="url(#c3-gold)" />
-    <line x1="211" y1="182" x2="232" y2="182" stroke="url(#c3-gold)" stroke-width="2" />
-    <line x1="211" y1="292" x2="232" y2="292" stroke="url(#c3-gold)" stroke-width="2" />
-    <path d="M 225,182 L 255,182 C 275,182 285,195 285,212 C 285,229 275,242 255,242 L 225,242 Z" fill="none" stroke="url(#c3-gold)" stroke-width="7" stroke-linejoin="round" />
-    <!-- Letter W -->
-    <polygon points="238,220 245,220 262,292 255,292" fill="url(#c3-gold)" />
-    <polygon points="262,292 269,292 284,232 277,232" fill="url(#c3-gold)" />
-    <polygon points="277,232 284,232 299,292 292,292" fill="url(#c3-gold)" />
-    <path d="M 299,292 L 316,220 L 323,220 L 305,296 C 302,308 316,308 322,305 L 320,300 C 314,302 308,300 306,294 Z" fill="url(#c3-gold)" />
-  </g>
-  <text x="250" y="338" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8.5" font-weight="600" letter-spacing="3" fill="#FAF5E8" opacity="0.8">39.1368° N, 77.7144° W</text>
+  <!-- Ultra-Clean Concentric Minimalist Ring -->
+  <circle cx="250" cy="215" r="135" fill="#0D0E12" stroke="url(#c3-gold)" stroke-width="2.5" />
+  <circle cx="250" cy="215" r="124" fill="none" stroke="url(#c3-gold)" stroke-width="0.75" opacity="0.45" />
+  <!-- Minimalist Flame Above Divider -->
+  <path d="M 250,148 C 243,139 240,127 243,115 C 245,108 248,101 250,96 C 252,101 255,108 257,115 C 260,127 257,139 250,148 Z" fill="url(#c3-gold)" />
+  <!-- Crisp Editorial P | W Monogram with Generous Breathing Room -->
+  <text x="202" y="238" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="68" font-weight="600" fill="#FAF5E8">P</text>
+  <line x1="250" y1="168" x2="250" y2="262" stroke="url(#c3-gold)" stroke-width="1.5" opacity="0.75" />
+  <text x="302" y="238" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="68" font-weight="600" fill="#FAF5E8">W</text>
+  <text x="250" y="298" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8.5" font-weight="500" letter-spacing="3.5" fill="#C5A059">39.1368° N • 77.7144° W</text>
+  <!-- Wordmark Below -->
+  <text x="250" y="408" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="32" font-weight="600" letter-spacing="10" fill="#FAF5E8">PUCK &amp; WICK</text>
+  <text x="250" y="442" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9.5" font-weight="500" letter-spacing="5" fill="#C5A059">PURCELLVILLE • VIRGINIA</text>
 </svg>`,
 
-  // Concept 4: Rustic Stamped-Leather & Gold Foil Badge
-  4: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 380" width="100%" height="100%" aria-label="Puck and Wick - Rustic Stamped Leather and Gold Badge Logo">
+  // Concept 4: Minimalist Architectural Label Plaque ("The Atelier Plaque")
+  4: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 380" width="100%" height="100%" aria-label="Puck and Wick - Minimalist Architectural Plaque Logo">
   <defs>
-    <linearGradient id="c4-gold-foil" x1="0%" y1="0%" x2="100%" y2="80%">
-      <stop offset="0%" stop-color="#8A6623" />
-      <stop offset="20%" stop-color="#C5A059" />
-      <stop offset="40%" stop-color="#FDF6C7" />
-      <stop offset="60%" stop-color="#D4AF37" />
-      <stop offset="85%" stop-color="#997732" />
-      <stop offset="100%" stop-color="#5A4015" />
-    </linearGradient>
-    <radialGradient id="c4-rivet-grad" cx="35%" cy="35%" r="65%">
-      <stop offset="0%" stop-color="#FFFDF5" />
-      <stop offset="30%" stop-color="#D4AF37" />
-      <stop offset="70%" stop-color="#8A6623" />
-      <stop offset="100%" stop-color="#38290D" />
-    </radialGradient>
-    <linearGradient id="c4-leather-surface" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#1A1B20" />
-      <stop offset="50%" stop-color="#131418" />
-      <stop offset="100%" stop-color="#0B0C0E" />
+    <linearGradient id="c4-gold-foil" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B69146" />
+      <stop offset="50%" stop-color="#E5C878" />
+      <stop offset="100%" stop-color="#9A7632" />
     </linearGradient>
   </defs>
-  <rect x="20" y="20" width="500" height="340" rx="28" fill="url(#c4-leather-surface)" stroke="url(#c4-gold-foil)" stroke-width="4.5" />
-  <rect x="36" y="36" width="468" height="308" rx="18" fill="none" stroke="#C5A059" stroke-width="2" stroke-dasharray="8,6" opacity="0.75" />
-  <!-- Corner Rivets -->
-  <circle cx="58" cy="58" r="11" fill="url(#c4-rivet-grad)" stroke="#261C08" stroke-width="1.5" />
-  <line x1="51" y1="58" x2="65" y2="58" stroke="#1C1405" stroke-width="2" />
-  <circle cx="482" cy="58" r="11" fill="url(#c4-rivet-grad)" stroke="#261C08" stroke-width="1.5" />
-  <line x1="475" y1="58" x2="489" y2="58" stroke="#1C1405" stroke-width="2" />
-  <circle cx="58" cy="322" r="11" fill="url(#c4-rivet-grad)" stroke="#261C08" stroke-width="1.5" />
-  <line x1="51" y1="322" x2="65" y2="322" stroke="#1C1405" stroke-width="2" />
-  <circle cx="482" cy="322" r="11" fill="url(#c4-rivet-grad)" stroke="#261C08" stroke-width="1.5" />
-  <line x1="475" y1="322" x2="489" y2="322" stroke="#1C1405" stroke-width="2" />
-  <!-- Crossed Sticks, Flame & Puck -->
-  <g transform="translate(0, -10)">
-    <path d="M 215,85 L 295,155 L 308,155 C 314,155 316,148 310,146 L 222,80 Z" fill="url(#c4-gold-foil)" />
-    <path d="M 325,85 L 245,155 L 232,155 C 226,155 224,148 230,146 L 318,80 Z" fill="url(#c4-gold-foil)" />
-    <ellipse cx="270" cy="148" rx="28" ry="7" fill="#0A0A0C" stroke="url(#c4-gold-foil)" stroke-width="1.5" />
-    <path d="M 242,148 C 242,154 254,159 270,159 C 286,159 298,154 298,148 L 298,155 C 298,161 286,166 270,166 C 254,166 242,161 242,155 Z" fill="#16171B" stroke="url(#c4-gold-foil)" stroke-width="1.5" />
-    <path d="M 270,135 C 262,128 256,115 259,102 C 261,90 268,78 270,68 C 272,78 279,90 281,102 C 284,115 278,128 270,135 Z" fill="url(#c4-gold-foil)" />
-    <path d="M 270,131 C 265,127 262,118 263,110 C 265,103 268,96 270,88 C 272,96 275,103 277,110 C 278,118 275,127 270,131 Z" fill="#FFFDF5" />
+  <!-- Crisp Hairline Architectural Plaque (No rivets, no messy dashed stitching) -->
+  <rect x="36" y="32" width="468" height="316" rx="4" fill="#0D0E12" stroke="url(#c4-gold-foil)" stroke-width="2.5" />
+  <rect x="46" y="42" width="448" height="296" rx="2" fill="none" stroke="url(#c4-gold-foil)" stroke-width="0.75" opacity="0.4" />
+  <!-- Minimalist Crossed Stick & Flame Emblem -->
+  <g transform="translate(270, 118)">
+    <path d="M -28,-22 L 26,26 C 30,29 36,30 42,28" fill="none" stroke="url(#c4-gold-foil)" stroke-width="2.8" stroke-linecap="round" />
+    <path d="M 28,-22 L -26,26 C -30,29 -36,30 -42,28" fill="none" stroke="url(#c4-gold-foil)" stroke-width="2.8" stroke-linecap="round" />
+    <path d="M 0,-8 C -6,-15 -8,-25 -5,-34 C -3,-40 0,-45 0,-49 C 0,-45 3,-40 5,-34 C 8,-25 6,-15 0,-8 Z" fill="url(#c4-gold-foil)" />
+    <rect x="-18" y="22" width="36" height="6" rx="3" fill="#0D0E12" stroke="url(#c4-gold-foil)" stroke-width="2" />
   </g>
-  <text x="270" y="215" text-anchor="middle" font-family="'Oswald', 'Bebas Neue', 'Cinzel', sans-serif" font-size="44" font-weight="700" letter-spacing="8" fill="url(#c4-gold-foil)">PUCK &amp; WICK</text>
-  <line x1="80" y1="235" x2="230" y2="235" stroke="url(#c4-gold-foil)" stroke-width="1.5" />
-  <polygon points="270,227 272,233 278,234 274,238 275,244 270,241 265,244 266,238 262,234 268,233" fill="url(#c4-gold-foil)" />
-  <line x1="310" y1="235" x2="460" y2="235" stroke="url(#c4-gold-foil)" stroke-width="1.5" />
-  <text x="270" y="268" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" font-weight="700" letter-spacing="4" fill="#FAF5E8">HAND-POURED IN VIRGINIA</text>
-  <text x="270" y="294" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" font-weight="600" letter-spacing="3" fill="#C5A059">SMALL BATCH SOY • 20 YEARS ON ICE</text>
+  <!-- Clean Minimalist Typography -->
+  <text x="270" y="218" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="38" font-weight="600" letter-spacing="11" fill="#FAF5E8">PUCK &amp; WICK</text>
+  <line x1="170" y1="242" x2="370" y2="242" stroke="url(#c4-gold-foil)" stroke-width="0.9" opacity="0.55" />
+  <text x="270" y="272" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10.5" font-weight="500" letter-spacing="5.5" fill="#C5A059">HAND-POURED IN VIRGINIA</text>
+  <text x="270" y="298" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" font-weight="400" letter-spacing="4" fill="#9CA3AF">100% AMERICAN SOY WAX</text>
 </svg>`
 };
 
@@ -360,4 +247,99 @@ export function getIcon(iconName, customClass = '') {
   const raw = SVG_ICONS[iconName] || SVG_ICONS.flame;
   if (!customClass) return raw;
   return raw.replace('<svg ', `<svg class="${customClass}" `);
+}
+
+/**
+ * Microporous Activated Coconut Charcoal Adsorption Diagram SVG.
+ */
+export function getCharcoalScienceSvg() {
+  return `
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" width="100%" height="180" class="science-diagram-svg" role="img" aria-label="Microporous Activated Coconut Charcoal Adsorption Diagram">
+      <title>Microporous Activated Coconut Charcoal Physical Adsorption Matrix</title>
+      <defs>
+        <linearGradient id="charcoal-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#0A0B0E" />
+          <stop offset="100%" stop-color="#14161F" />
+        </linearGradient>
+        <radialGradient id="vdw-glow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="rgba(197, 160, 89, 0.35)" />
+          <stop offset="100%" stop-color="rgba(197, 160, 89, 0)" />
+        </radialGradient>
+      </defs>
+      <rect x="2" y="2" width="316" height="176" rx="8" fill="url(#charcoal-bg)" stroke="#C5A059" stroke-width="1.2" opacity="0.95" />
+      <g stroke="#C5A059" stroke-width="1.3" fill="#181B24" opacity="0.9">
+        <polygon points="50,40 70,28 90,40 90,64 70,76 50,64" />
+        <polygon points="90,40 110,28 130,40 130,64 110,76 90,64" />
+        <polygon points="130,40 150,28 170,40 170,64 150,76 130,64" />
+        <polygon points="170,40 190,28 210,40 210,64 190,76 170,64" />
+        <polygon points="70,76 90,64 110,76 110,100 90,112 70,100" />
+        <polygon points="110,76 130,64 150,76 150,100 130,112 110,100" />
+        <polygon points="150,76 170,64 190,76 190,100 170,112 150,100" />
+      </g>
+      <circle cx="110" cy="52" r="14" fill="url(#vdw-glow)" />
+      <circle cx="150" cy="52" r="14" fill="url(#vdw-glow)" />
+      <circle cx="130" cy="88" r="14" fill="url(#vdw-glow)" />
+      <circle cx="70" cy="52" r="7" fill="#EF4444" opacity="0.9" />
+      <text x="70" y="55" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" font-weight="700" fill="#FFFFFF">R-SH</text>
+      <text x="70" y="69" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" fill="#FCA5A5">Thiols</text>
+      <circle cx="110" cy="52" r="8" fill="#F59E0B" opacity="0.9" />
+      <text x="110" y="55" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" font-weight="700" fill="#0A0A0C">C₅H₁₀O₂</text>
+      <text x="110" y="69" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" fill="#FDE68A">Isovaleric</text>
+      <circle cx="150" cy="52" r="7.5" fill="#3B82F6" opacity="0.9" />
+      <text x="150" y="55" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" font-weight="700" fill="#FFFFFF">R-NH₂</text>
+      <text x="150" y="69" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" fill="#93C5FD">Amines</text>
+      <circle cx="130" cy="88" r="7" fill="#10B981" opacity="0.9" />
+      <text x="130" y="91" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" font-weight="700" fill="#FFFFFF">H₂O</text>
+      <text x="130" y="105" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" fill="#6EE7B7">Moisture</text>
+      <line x1="225" y1="35" x2="225" y2="105" stroke="#D4AF37" stroke-width="0.75" stroke-dasharray="3,2" />
+      <text x="232" y="55" font-family="'Inter', sans-serif" font-size="6.5" font-weight="600" fill="#D4AF37">PORE SIZE &lt;2nm</text>
+      <text x="232" y="66" font-family="'Inter', sans-serif" font-size="5.5" fill="#9EA3AE">Microporous Lattice</text>
+      <text x="232" y="82" font-family="'Inter', sans-serif" font-size="6.5" font-weight="600" fill="#D4AF37">VAN DER WAALS</text>
+      <text x="232" y="93" font-family="'Inter', sans-serif" font-size="5.5" fill="#9EA3AE">Dispersion Physisorption</text>
+      <rect x="20" y="145" width="280" height="20" rx="4" fill="rgba(197, 160, 89, 0.12)" stroke="rgba(197, 160, 89, 0.3)" />
+      <text x="160" y="158" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7.5" font-weight="700" letter-spacing="1.2" fill="#D4AF37">&gt;1,000 m²/g SURFACE AREA • IRREVERSIBLE PHYSISORPTION</text>
+    </svg>
+  `;
+}
+
+/**
+ * Metazene® Covalent Neutralization and Olfactory Receptor Lockout Diagram SVG.
+ */
+export function getMetazeneScienceSvg() {
+  return `
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" width="100%" height="180" class="science-diagram-svg" role="img" aria-label="Metazene Covalent Molecular Neutralization and Olfactory Receptor Lockout Diagram">
+      <title>Metazene Chemical Counteraction, Covalent Bonding and Receptor Inactivation</title>
+      <defs>
+        <linearGradient id="metazene-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#0A0B0E" />
+          <stop offset="100%" stop-color="#14161F" />
+        </linearGradient>
+      </defs>
+      <rect x="2" y="2" width="316" height="176" rx="8" fill="url(#metazene-bg)" stroke="#C5A059" stroke-width="1.2" opacity="0.95" />
+      <circle cx="55" cy="65" r="22" fill="#1C1820" stroke="#EF4444" stroke-width="1.6" />
+      <text x="55" y="60" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7.5" font-weight="700" fill="#EF4444">MALODOR</text>
+      <text x="55" y="71" text-anchor="middle" font-family="'Inter', sans-serif" font-size="6" fill="#FCA5A5">R-SH / R-NH₂</text>
+      <text x="55" y="80" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" fill="#9EA3AE">Active Poles δ⁻/δ⁺</text>
+      <text x="88" y="69" text-anchor="middle" font-family="'Inter', sans-serif" font-size="14" font-weight="700" fill="#D4AF37">+</text>
+      <circle cx="125" cy="65" r="22" fill="#1A1C16" stroke="#D4AF37" stroke-width="1.6" />
+      <text x="125" y="60" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7" font-weight="700" fill="#FAF5E8">METAZENE®</text>
+      <text x="125" y="70" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" fill="#C5A059">Active Ester Complex</text>
+      <path d="M 154,65 L 176,65 M 172,60 L 177,65 L 172,70" stroke="#34D399" stroke-width="2" fill="none" stroke-linecap="round" />
+      <text x="165" y="55" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" font-weight="600" fill="#34D399">Covalent Reaction</text>
+      <ellipse cx="215" cy="65" rx="28" ry="22" fill="#121820" stroke="#34D399" stroke-width="1.8" />
+      <text x="215" y="58" text-anchor="middle" font-family="'Inter', sans-serif" font-size="6.5" font-weight="700" fill="#34D399">NEUTRAL ADDUCT</text>
+      <text x="215" y="68" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.2" fill="#93C5FD">Electron Cloud Shifted</text>
+      <text x="215" y="78" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" fill="#9EA3AE">Mass ↑ • Vapor Press. ↓</text>
+      <g transform="translate(260, 42)">
+        <path d="M 5,5 C 5,25 35,25 35,5" fill="none" stroke="#F87171" stroke-width="1.5" />
+        <text x="20" y="36" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" font-weight="700" fill="#F87171">OLFACTORY GPCR</text>
+        <circle cx="20" cy="14" r="8" fill="rgba(239, 68, 68, 0.15)" stroke="#EF4444" stroke-width="1.2" />
+        <line x1="15" y1="9" x2="25" y2="19" stroke="#EF4444" stroke-width="1.5" />
+        <line x1="25" y1="9" x2="15" y2="19" stroke="#EF4444" stroke-width="1.5" />
+        <text x="20" y="44" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.5" fill="#EF4444">Binding Blocked</text>
+      </g>
+      <rect x="20" y="145" width="280" height="20" rx="4" fill="rgba(52, 211, 153, 0.12)" stroke="rgba(52, 211, 153, 0.3)" />
+      <text x="160" y="158" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7.5" font-weight="700" letter-spacing="1.2" fill="#34D399">MOLECULAR ELECTRON ALTERATION • ZERO RECEPTOR BINDING</text>
+    </svg>
+  `;
 }
