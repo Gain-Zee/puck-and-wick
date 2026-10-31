@@ -139,23 +139,26 @@ export function initCatalog(store, openCartDrawer) {
 
                   <!-- Price & Action CTA Row -->
                   <div class="product-card-footer">
-                    <div class="price-container">
-                      <span class="product-price" data-testid="product-price">${p.formattedPrice}</span>
-                      <span class="wax-spec-sub">${p.waxSpecSub || '100% American Soy'}</span>
+                    <div class="card-footer-top">
+                      <div class="price-container">
+                        <span class="product-price" data-testid="product-price">${p.formattedPrice}</span>
+                        <span class="wax-spec-sub">${p.waxSpecSub || '100% American Soy'}</span>
+                      </div>
+
+                      <div class="card-secondary-btns">
+                        <button type="button" class="btn btn-outline btn-sm quick-view-btn" data-testid="quick-view-btn" data-product-id="${p.id}" aria-label="Quick view ${p.name}">
+                          <span>Info</span>
+                        </button>
+                        <button type="button" class="btn btn-outline btn-sm card-share-btn" data-share-pid="${p.id}" data-share-slide="${String(currentSlide.id || 'primary').replace(/_/g, '-').toLowerCase()}" aria-label="Copy share link for ${p.name}" title="Copy direct link to this item &amp; photo">
+                          ${getIcon('share')}
+                        </button>
+                      </div>
                     </div>
 
-                    <div class="card-button-group">
-                      <button type="button" class="btn btn-outline btn-sm card-share-btn" data-share-pid="${p.id}" data-share-slide="${String(currentSlide.id || 'primary').replace(/_/g, '-').toLowerCase()}" aria-label="Copy share link for ${p.name}" title="Copy direct link to this item &amp; photo">
-                        <span>Share</span>
-                      </button>
-                      <button type="button" class="btn btn-outline btn-sm quick-view-btn" data-testid="quick-view-btn" data-product-id="${p.id}" aria-label="Quick view ${p.name}">
-                        <span>Info</span>
-                      </button>
-                      <button type="button" class="btn btn-gold btn-sm quick-add-btn" data-testid="quick-add-btn" data-product-id="${p.id}" aria-label="Add ${p.name} to cart">
-                        ${getIcon('cart')}
-                        <span>Add</span>
-                      </button>
-                    </div>
+                    <button type="button" class="btn btn-gold btn-sm quick-add-btn" data-testid="quick-add-btn" data-product-id="${p.id}" aria-label="Add ${p.name} to cart">
+                      ${getIcon('cart')}
+                      <span>Add to Cart</span>
+                    </button>
                   </div>
                 </div>
               </article>
@@ -240,11 +243,9 @@ export function initCatalog(store, openCartDrawer) {
           if (navigator.clipboard && navigator.clipboard.writeText) {
             await navigator.clipboard.writeText(shareUrl);
           }
-          const spanEl = btn.querySelector('span');
-          if (spanEl) {
-            spanEl.textContent = '✓ Copied';
-            setTimeout(() => { spanEl.textContent = 'Share'; }, 2000);
-          }
+          const origHtml = btn.innerHTML;
+          btn.innerHTML = getIcon('check');
+          setTimeout(() => { btn.innerHTML = origHtml; }, 2000);
           if (navigator.share && /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent || '')) {
             await navigator.share({
               title: `${prod ? prod.name : 'Puck & Wick™'} (${prod ? prod.formattedPrice : ''})`,

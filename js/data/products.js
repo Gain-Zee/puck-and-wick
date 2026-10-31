@@ -445,64 +445,20 @@ export function getCandleVesselSvg(product, conceptId, isModal = false) {
     : (isIvory && activeConcept === 1)
       ? 'assets/images/candle-ivory.jpg'
       : (CONCEPT_CANDLE_PHOTOS[activeConcept] || 'assets/images/candle-obsidian.jpg');
-  const vignetteId = `vessel-vig-${product.id}${isModal ? '-modal' : ''}`;
-  const subSpecText = product.subSpecText
-    ? product.subSpecText
-    : (isIvory ? '10 OZ FROSTED IVORY • 100% AMERICAN SOY' : '10 OZ • 100% AMERICAN SOY');
-  const displayName = product.name.length > 26
-    ? product.name.slice(0, 25).toUpperCase() + '…'
-    : product.name.toUpperCase();
-  const nameFontSize = product.name.length > 22 ? '12.5' : '15.5';
 
   if (isModal) {
     return `
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 448" preserveAspectRatio="xMidYMid meet" width="100%" height="100%" style="width:100%;height:100%;display:block;" class="candle-vessel-svg" data-active-concept="${activeConcept}" aria-label="${product.name} Luxury Presentation (Concept ${activeConcept})" role="img">
-        <defs>
-          <linearGradient id="${vignetteId}" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#08090C" stop-opacity="0.02" />
-            <stop offset="72%" stop-color="#08090C" stop-opacity="0" />
-            <stop offset="89%" stop-color="#08090C" stop-opacity="0.92" />
-            <stop offset="100%" stop-color="#08090C" stop-opacity="1" />
-          </linearGradient>
-          <clipPath id="${vignetteId}-clip">
-            <rect x="0" y="0" width="400" height="448" />
-          </clipPath>
-        </defs>
-
-        <g clip-path="url(#${vignetteId}-clip)">
-          <rect x="0" y="0" width="400" height="448" fill="#08090C" />
-
-          <!-- Full Uncropped 1:1 Studio Product Photograph (Full Flame Tip + Full Vessel) -->
-          <image href="${photoHref}" x="0" y="0" width="400" height="400" preserveAspectRatio="xMidYMid meet" />
-          <rect x="0" y="0" width="400" height="448" fill="url(#${vignetteId})" />
-
-          <!-- Minimalist Product Name Plate at Bottom of Modal Stage -->
-          <rect x="24" y="384" width="352" height="50" rx="6" fill="rgba(11, 12, 14, 0.92)" stroke="rgba(197, 160, 89, 0.68)" stroke-width="1.2" />
-          <text x="200" y="407" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="${nameFontSize}" font-weight="600" letter-spacing="2.2" fill="#FAF5E8">${displayName}</text>
-          <text x="200" y="424" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7.5" font-weight="500" letter-spacing="1.8" fill="#C5A059">${subSpecText}</text>
-        </g>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet" width="100%" height="100%" style="width:100%;height:100%;display:block;" class="candle-vessel-svg" data-active-concept="${activeConcept}" aria-label="${product.name} Luxury Presentation (Concept ${activeConcept})" role="img">
+        <rect x="0" y="0" width="400" height="400" fill="#08090C" />
+        <image href="${photoHref}" x="0" y="0" width="400" height="400" preserveAspectRatio="xMidYMid slice" />
       </svg>
     `;
   }
 
   return `
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%" style="width:100%;height:100%;display:block;" class="candle-vessel-svg" data-active-concept="${activeConcept}" aria-label="${product.name} Luxury Presentation (Concept ${activeConcept})" role="img">
-      <defs>
-        <linearGradient id="${vignetteId}" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="#08090C" stop-opacity="0.08" />
-          <stop offset="72%" stop-color="#08090C" stop-opacity="0" />
-          <stop offset="100%" stop-color="#08090C" stop-opacity="0.92" />
-        </linearGradient>
-      </defs>
-
-      <!-- Full-Bleed Studio Product Photography -->
+      <rect x="0" y="0" width="400" height="400" fill="#08090C" />
       <image href="${photoHref}" x="0" y="0" width="400" height="400" preserveAspectRatio="xMidYMid slice" />
-      <rect x="0" y="0" width="400" height="400" fill="url(#${vignetteId})" />
-
-      <!-- Minimalist Product Name Plate at Bottom of Card View -->
-      <rect x="32" y="338" width="336" height="44" rx="4" fill="rgba(11, 12, 14, 0.88)" stroke="rgba(197, 160, 89, 0.6)" stroke-width="1" />
-      <text x="200" y="358" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="${nameFontSize}" font-weight="600" letter-spacing="2.2" fill="#FAF5E8">${displayName}</text>
-      <text x="200" y="373" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7.5" font-weight="500" letter-spacing="2" fill="#C5A059">${subSpecText}</text>
     </svg>
   `;
 }
@@ -522,14 +478,14 @@ export function getProductGallerySlides(product, conceptId = 1) {
     return [
       {
         id: 'lit',
-        shortLabel: 'Lit Vessel',
+        shortLabel: 'Vessel',
         title: `${product.name} — Lit 10 oz Vessel`,
         type: 'svg',
         thumb: primaryPhoto
       },
       {
         id: 'shelf',
-        shortLabel: 'Box & Dust Cover',
+        shortLabel: 'Box',
         title: `${product.name} — Rigid Box, Custom Scent Band & Wax Dust Cover`,
         type: 'image',
         src: `assets/images/packaging/shelf-${product.id}.jpg`,
@@ -537,7 +493,7 @@ export function getProductGallerySlides(product, conceptId = 1) {
       },
       {
         id: 'atelier_card',
-        shortLabel: 'Atelier Card',
+        shortLabel: 'Card',
         title: `${product.name} — Included 3.5"×3.5" Square Atelier Card (Story, QC #1 & Burn Ritual)`,
         type: 'image',
         src: atelierCardImg,
@@ -545,7 +501,7 @@ export function getProductGallerySlides(product, conceptId = 1) {
       },
       {
         id: 'spin360',
-        shortLabel: '360° Box',
+        shortLabel: '360°',
         title: `${product.name} — Interactive 360° Rotating Pristine Collector Box`,
         type: 'box360',
         thumb: `assets/images/packaging/shelf-${product.id}.jpg`
@@ -557,14 +513,14 @@ export function getProductGallerySlides(product, conceptId = 1) {
     return [
       {
         id: 'primary',
-        shortLabel: 'Twin-Pack',
+        shortLabel: 'Pair',
         title: '2.0" Skate, Glove & Boot Mini Pucks (Set of 2)',
         type: 'svg',
         thumb: primaryPhoto
       },
       {
         id: 'step1',
-        shortLabel: '1. Palm Scale',
+        shortLabel: 'Palm',
         title: 'Step 01 • Compact 2.0" (50mm) Open-Palm Scale',
         type: 'image',
         src: 'assets/images/packaging/mini-puck-step-1.jpg',
@@ -572,7 +528,7 @@ export function getProductGallerySlides(product, conceptId = 1) {
       },
       {
         id: 'step2',
-        shortLabel: '2. Glove Cuff',
+        shortLabel: 'Glove',
         title: 'Step 02 • Drop Straight Into Hockey Glove Wrist Cuff Opening',
         type: 'image',
         src: 'assets/images/packaging/mini-puck-step-2.jpg',
@@ -580,7 +536,7 @@ export function getProductGallerySlides(product, conceptId = 1) {
       },
       {
         id: 'step3',
-        shortLabel: '3. Skate Boot',
+        shortLabel: 'Skate',
         title: 'Step 03 • Drop Into Skate Boot Ankle Collar Overnight',
         type: 'image',
         src: 'assets/images/packaging/mini-puck-step-3.jpg',
@@ -593,14 +549,14 @@ export function getProductGallerySlides(product, conceptId = 1) {
     return [
       {
         id: 'primary',
-        shortLabel: 'Studio Puck',
+        shortLabel: 'Puck',
         title: '3.0" Athlete Gear & Locker Puck — Matte-Black & Gold Anodized Hardware',
         type: 'svg',
         thumb: primaryPhoto
       },
       {
         id: 'gym_bag',
-        shortLabel: 'In Gear Bag',
+        shortLabel: 'In Bag',
         title: '3.0" Athlete Puck — Drop Directly Into Your Hockey or Gym Duffel Bag',
         type: 'image',
         src: 'assets/images/packaging/puck-men-gym-bag.jpg',
@@ -608,7 +564,7 @@ export function getProductGallerySlides(product, conceptId = 1) {
       },
       {
         id: 'angled_open',
-        shortLabel: '3/4 Puck Profile',
+        shortLabel: '3/4 View',
         title: '3.0" × 1.0" Sealed Athlete Puck — Heavyweight 3/4 Profile & Knurled Edge',
         type: 'image',
         src: 'assets/images/packaging/puck-men-angled-open.jpg',
@@ -621,14 +577,14 @@ export function getProductGallerySlides(product, conceptId = 1) {
     return [
       {
         id: 'primary',
-        shortLabel: 'White Puck',
+        shortLabel: 'Puck',
         title: '3.0" Women’s Sanctuary Puck — Warm Ivory/White & Champagne-Gold Hardware',
         type: 'svg',
         thumb: primaryPhoto
       },
       {
         id: 'yoga_bag',
-        shortLabel: 'Yoga & Gym Tote',
+        shortLabel: 'In Tote',
         title: '3.0" Sanctuary Puck — Tuck Into Your Yoga, Pilates, or Workout Tote Bag',
         type: 'image',
         src: 'assets/images/packaging/puck-women-yoga-bag.jpg',
@@ -636,7 +592,7 @@ export function getProductGallerySlides(product, conceptId = 1) {
       },
       {
         id: 'closet',
-        shortLabel: 'Closet & Shoes',
+        shortLabel: 'Closet',
         title: '3.0" Sanctuary Puck — Fresh Protection for Walk-In Closets & Athletic Sneakers',
         type: 'image',
         src: 'assets/images/packaging/puck-women-closet.jpg',
@@ -649,14 +605,14 @@ export function getProductGallerySlides(product, conceptId = 1) {
     return [
       {
         id: 'primary',
-        shortLabel: '8 oz Bottle',
+        shortLabel: 'Bottle',
         title: '8 fl oz Athlete Charcoal & Lauson-98™ Body Wash — Individual Pump Bottle',
         type: 'svg',
         thumb: primaryPhoto
       },
       {
         id: 'shower',
-        shortLabel: 'In Shower',
+        shortLabel: 'Shower',
         title: '8 fl oz Athlete Body Wash — Post-Game Binchotan Charcoal & Blue Eucalyptus Gel',
         type: 'image',
         src: 'assets/images/packaging/wash-men-shower.jpg',
@@ -664,7 +620,7 @@ export function getProductGallerySlides(product, conceptId = 1) {
       },
       {
         id: 'locker_towel',
-        shortLabel: 'Locker Room',
+        shortLabel: 'Locker',
         title: '8 fl oz Athlete Body Wash — Built for Locker Room & Post-Workout Recovery',
         type: 'image',
         src: 'assets/images/packaging/wash-men-gym-towel.jpg',
@@ -677,14 +633,14 @@ export function getProductGallerySlides(product, conceptId = 1) {
     return [
       {
         id: 'primary',
-        shortLabel: '4 oz Mist',
+        shortLabel: 'Bottle',
         title: '4 fl oz Sanctuary Botanical Linen & Pillow Mist — Individual Spray Bottle',
         type: 'svg',
         thumb: primaryPhoto
       },
       {
         id: 'bedding',
-        shortLabel: 'Linen & Pillows',
+        shortLabel: 'Bedding',
         title: '4 fl oz Sanctuary Mist — Fine-Mist Lauson-98™ Refresher for Bedding & Cashmere',
         type: 'image',
         src: 'assets/images/packaging/mist-women-bedding.jpg',
@@ -692,7 +648,7 @@ export function getProductGallerySlides(product, conceptId = 1) {
       },
       {
         id: 'closet_knits',
-        shortLabel: 'Closet & Totes',
+        shortLabel: 'Closet',
         title: '4 fl oz Sanctuary Mist — Eliminates Odors on Walk-In Closet Fabrics & Workout Totes',
         type: 'image',
         src: 'assets/images/packaging/mist-women-closet.jpg',
@@ -705,7 +661,7 @@ export function getProductGallerySlides(product, conceptId = 1) {
   return [
     {
       id: 'primary',
-      shortLabel: 'Studio View',
+      shortLabel: 'Studio',
       title: `${product.name} — Individual Standalone Item`,
       type: 'svg',
       thumb: primaryPhoto
