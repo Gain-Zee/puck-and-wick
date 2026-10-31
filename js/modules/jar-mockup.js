@@ -159,7 +159,7 @@ export function renderJarMockupSvg({ conceptId = 1, scentKey = 'top-shelf', vess
 
       <!-- Brand Wordmark -->
       <text x="170" y="244" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="14.5" font-weight="600" letter-spacing="3.5" fill="${brandTitleFill}">
-        PUCK &amp; WICK
+        PUCK &amp; WICK<tspan font-family="'Inter', sans-serif" font-size="5.5" font-weight="600" dy="-5.5" dx="0.5" letter-spacing="0">&#8482;</tspan>
       </text>
 
       <!-- Short Hairline Divider -->

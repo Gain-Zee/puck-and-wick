@@ -78,7 +78,7 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
         <rect x="16" y="14" width="488" height="488" rx="14" fill="url(#box-case-grad)" stroke="url(#box-gold-foil)" stroke-width="2.5" />
         <rect x="26" y="24" width="468" height="468" rx="10" fill="none" stroke="${accentStroke}" stroke-width="0.9" stroke-dasharray="5,4" opacity="0.55" />
         <text x="260" y="50" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="13" font-weight="700" letter-spacing="4" fill="url(#box-gold-foil)">
-          PUCK &amp; WICK • ${editionTitle}
+          PUCK &amp; WICK&#8482; • ${editionTitle}
         </text>
         <line x1="90" y1="58" x2="430" y2="58" stroke="url(#box-gold-foil)" stroke-width="0.8" opacity="0.45" />
 
@@ -90,7 +90,7 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
           <line x1="65" y1="48" x2="65" y2="56" stroke="#FAF5E8" stroke-width="2" />
           <rect x="25" y="56" width="80" height="106" rx="6" fill="${jarFill}" stroke="url(#box-gold-foil)" stroke-width="1.5" />
           <rect x="33" y="76" width="64" height="64" rx="3" fill="#0A0A0C" stroke="url(#box-gold-foil)" stroke-width="1" />
-          <text x="65" y="103" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="7" font-weight="700" letter-spacing="1.4" fill="#C5A059">PUCK &amp; WICK</text>
+          <text x="65" y="103" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="7" font-weight="700" letter-spacing="1.4" fill="#C5A059">PUCK &amp; WICK&#8482;</text>
           <text x="65" y="116" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="8" font-weight="700" fill="#FAF5E8">${candleName.slice(0, 14)}</text>
           <text x="65" y="129" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" font-weight="600" letter-spacing="1" fill="#9CA3AF">10 OZ • SOY WAX</text>
           <text x="65" y="186" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8" font-weight="600" letter-spacing="1" fill="#D4AF37">01. SOY CANDLE</text>
@@ -111,7 +111,7 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
           <rect x="0" y="0" width="130" height="205" rx="8" fill="#0B0C0F" stroke="#262934" stroke-width="1.5" filter="url(#foam-inset-shadow)" />
           <rect x="33" y="48" width="64" height="114" rx="10" fill="#15171E" stroke="url(#box-gold-foil)" stroke-width="1.5" />
           <rect x="39" y="68" width="52" height="72" rx="3" fill="#0A0A0C" stroke="#C5A059" stroke-width="0.9" />
-          <text x="65" y="88" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="7" font-weight="700" letter-spacing="1" fill="#C5A059">PUCK &amp; WICK</text>
+          <text x="65" y="88" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="7" font-weight="700" letter-spacing="1" fill="#C5A059">PUCK &amp; WICK&#8482;</text>
           <text x="65" y="104" text-anchor="middle" font-family="'Inter', sans-serif" font-size="6" font-weight="700" fill="#FAF5E8">${washLabel.slice(0, 16)}</text>
           <text x="65" y="117" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" fill="#9CA3AF">CHARCOAL + METAZENE®</text>
           <text x="65" y="130" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" font-weight="600" fill="#D4AF37">8 FL OZ (236 ML)</text>

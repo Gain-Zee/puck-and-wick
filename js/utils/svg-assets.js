@@ -30,7 +30,7 @@ export const SVG_LOGOS = {
     <path d="M 0,-16 C -3,-21 -4,-28 -1.5,-34 C 0,-37 0.5,-37 1.5,-34 C 4,-28 3,-21 0,-16 Z" fill="#0B0C0E" opacity="0.45" />
   </g>
   <!-- Clean Gold Serif Wordmark Centered Inside Frame -->
-  <text x="250" y="296" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="38" font-weight="600" letter-spacing="5" fill="url(#c1-gold)">PUCK &amp; WICK</text>
+  <text x="250" y="296" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="38" font-weight="600" letter-spacing="5" fill="url(#c1-gold)">PUCK &amp; WICK<tspan font-family="'Inter', sans-serif" font-size="13" font-weight="600" dy="-15" dx="2" letter-spacing="0">&#8482;</tspan></text>
 </svg>`,
 
   // Concept 2: The Precision Reserve (Vertical Double-Frame with Crossed Sticks, Puck Base & Diamond Rule)
@@ -59,7 +59,7 @@ export const SVG_LOGOS = {
     <rect x="-24" y="28" width="48" height="8" rx="4" fill="#0B0C0E" stroke="url(#c2-gold)" stroke-width="2.2" />
   </g>
   <!-- Primary Wordmark -->
-  <text x="250" y="264" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="36" font-weight="600" letter-spacing="8" fill="#FAF5E8">PUCK &amp; WICK</text>
+  <text x="250" y="264" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="36" font-weight="600" letter-spacing="8" fill="#FAF5E8">PUCK &amp; WICK<tspan font-family="'Inter', sans-serif" font-size="12.5" font-weight="600" dy="-14" dx="1" letter-spacing="0" fill="url(#c2-gold)">&#8482;</tspan></text>
   <!-- Diamond Center Rule -->
   <line x1="135" y1="290" x2="236" y2="290" stroke="url(#c2-gold)" stroke-width="1" opacity="0.65" />
   <polygon points="250,285 255,290 250,295 245,290" fill="url(#c2-gold)" />
@@ -100,7 +100,7 @@ export const SVG_LOGOS = {
     <rect x="-22" y="30" width="44" height="7" rx="3.5" fill="#0B0C0E" stroke="url(#c3-gold)" stroke-width="2" />
   </g>
   <!-- Wide-Tracked Editorial Wordmark -->
-  <text x="250" y="286" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="40" font-weight="600" letter-spacing="11" fill="url(#c3-gold)">PUCK &amp; WICK</text>
+  <text x="250" y="286" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="40" font-weight="600" letter-spacing="11" fill="url(#c3-gold)">PUCK &amp; WICK<tspan font-family="'Inter', sans-serif" font-size="13.5" font-weight="600" dy="-16" dx="1" letter-spacing="0">&#8482;</tspan></text>
   <line x1="190" y1="312" x2="310" y2="312" stroke="url(#c3-gold)" stroke-width="1" opacity="0.6" />
   <text x="250" y="344" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10.5" font-weight="500" letter-spacing="5.5" fill="#FAF5E8">ARTISAN SOY CANDLE CO.</text>
   <text x="250" y="372" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" font-weight="500" letter-spacing="3.5" fill="#9CA3AF">PURCELLVILLE, VA • 39.1368° N • 77.7144° W</text>
@@ -140,7 +140,7 @@ export const SVG_LOGOS = {
   </g>
 
   <!-- Stamped Workshop Typography -->
-  <text x="270" y="218" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="38" font-weight="700" letter-spacing="11" fill="#FAF5E8">PUCK &amp; WICK</text>
+  <text x="270" y="218" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="38" font-weight="700" letter-spacing="11" fill="#FAF5E8">PUCK &amp; WICK<tspan font-family="'Inter', sans-serif" font-size="13" font-weight="600" dy="-15" dx="1" letter-spacing="0" fill="url(#c4-foil)">&#8482;</tspan></text>
   <line x1="170" y1="240" x2="370" y2="240" stroke="url(#c4-badge)" stroke-width="0.9" opacity="0.6" />
   <text x="270" y="270" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10.5" font-weight="600" letter-spacing="5.5" fill="#C5A059">HAND-POURED IN VIRGINIA</text>
   <text x="270" y="296" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" font-weight="400" letter-spacing="4" fill="#9CA3AF">100% AMERICAN SOY WAX</text>
@@ -314,7 +314,7 @@ export function renderJarPhotoLabelOverlay(conceptId = 1, scentName = 'TOP SHELF
         <path d="M 0,-3 C -2.5,-6 -3.5,-10 -1.8,-14 C -0.6,-16 0,-18 0,-19.5 C 0,-18 0.6,-16 1.8,-14 C 3.5,-10 2.5,-6 0,-3 Z" fill="url(#${goldGradId})" />
         <rect x="-8" y="9" width="16" height="3" rx="1.5" fill="#0B0C0E" stroke="url(#${goldGradId})" stroke-width="0.9" />
       </g>
-      <text x="198" y="223" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="10.5" font-weight="600" letter-spacing="2" fill="#FAF5E8">PUCK &amp; WICK</text>
+      <text x="198" y="223" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="10.5" font-weight="600" letter-spacing="2" fill="#FAF5E8">PUCK &amp; WICK<tspan font-family="'Inter', sans-serif" font-size="4.2" font-weight="600" dy="-4.5" dx="0.5" letter-spacing="0" fill="url(#${goldGradId})">&#8482;</tspan></text>
       <line x1="158" y1="231" x2="193" y2="231" stroke="url(#${goldGradId})" stroke-width="0.5" opacity="0.7" />
       <polygon points="198,229 200,231 198,233 196,231" fill="url(#${goldGradId})" />
       <line x1="203" y1="231" x2="238" y2="231" stroke="url(#${goldGradId})" stroke-width="0.5" opacity="0.7" />
@@ -335,7 +335,7 @@ export function renderJarPhotoLabelOverlay(conceptId = 1, scentName = 'TOP SHELF
         <path d="M 0,-3.5 C -2.5,-6.5 -3.5,-10.5 -1.8,-14.5 C -0.6,-16.5 0,-18.5 0,-20 C 0,-18.5 0.6,-16.5 1.8,-14.5 C 3.5,-10.5 2.5,-6.5 0,-3.5 Z" fill="url(#${goldGradId})" />
         <rect x="-7.5" y="9.5" width="15" height="2.8" rx="1.4" fill="#0B0C0E" stroke="url(#${goldGradId})" stroke-width="0.85" />
       </g>
-      <text x="198" y="228" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="11" font-weight="600" letter-spacing="2.6" fill="url(#${goldGradId})">PUCK &amp; WICK</text>
+      <text x="198" y="228" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="11" font-weight="600" letter-spacing="2.6" fill="url(#${goldGradId})">PUCK &amp; WICK<tspan font-family="'Inter', sans-serif" font-size="4.2" font-weight="600" dy="-4.5" dx="0.5" letter-spacing="0">&#8482;</tspan></text>
       <line x1="176" y1="236" x2="220" y2="236" stroke="url(#${goldGradId})" stroke-width="0.5" opacity="0.65" />
       <text x="198" y="250" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="${scentFontSize}" font-weight="600" letter-spacing="${scentSpacing}" fill="#FAF5E8">${displayScent}</text>
       <text x="198" y="264" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.6" font-weight="500" letter-spacing="1.5" fill="#9CA3AF">ARTISAN SOY CANDLE CO.</text>
@@ -351,7 +351,7 @@ export function renderJarPhotoLabelOverlay(conceptId = 1, scentName = 'TOP SHELF
         <path d="M 0,-3 C -2.5,-6 -3.5,-10 -1.8,-14 C -0.6,-16 0,-18 0,-19.5 C 0,-18 0.6,-16 1.8,-14 C 3.5,-10 2.5,-6 0,-3 Z" fill="url(#${goldGradId})" />
         <rect x="-7.5" y="9" width="15" height="2.8" rx="1.4" fill="#0B0C0E" stroke="url(#${goldGradId})" stroke-width="0.85" />
       </g>
-      <text x="198" y="227" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="10.8" font-weight="700" letter-spacing="2.4" fill="#FAF5E8">PUCK &amp; WICK</text>
+      <text x="198" y="227" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="10.8" font-weight="700" letter-spacing="2.4" fill="#FAF5E8">PUCK &amp; WICK<tspan font-family="'Inter', sans-serif" font-size="4.2" font-weight="600" dy="-4.5" dx="0.5" letter-spacing="0" fill="url(#${goldGradId})">&#8482;</tspan></text>
       <line x1="158" y1="235" x2="238" y2="235" stroke="url(#${goldGradId})" stroke-width="0.5" opacity="0.65" />
       <text x="198" y="248" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="${scentFontSize}" font-weight="600" letter-spacing="${scentSpacing}" fill="#E5C878">${displayScent}</text>
       <text x="198" y="261" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.6" font-weight="600" letter-spacing="1.4" fill="#C5A059">HAND-POURED IN VIRGINIA</text>
@@ -365,7 +365,7 @@ export function renderJarPhotoLabelOverlay(conceptId = 1, scentName = 'TOP SHELF
         <line x1="12" y1="-11" x2="-12" y2="12" stroke="url(#${goldGradId})" stroke-width="0.95" stroke-linecap="round" />
         <path d="M 0,-3.5 C -2.2,-6.5 -3.2,-10.5 -1.4,-14 C -0.4,-15.8 0,-17 0,-18 C 0,-17 0.4,-15.8 1.4,-14 C 3.2,-10.5 2.2,-6.5 0,-3.5 Z" fill="url(#${goldGradId})" />
       </g>
-      <text x="198" y="235" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="12" font-weight="600" letter-spacing="1.5" fill="url(#${goldGradId})">PUCK &amp; WICK</text>
+      <text x="198" y="235" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="12" font-weight="600" letter-spacing="1.5" fill="url(#${goldGradId})">PUCK &amp; WICK<tspan font-family="'Inter', sans-serif" font-size="4.5" font-weight="600" dy="-5" dx="0.5" letter-spacing="0">&#8482;</tspan></text>
       <text x="198" y="256" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="${scentFontSize}" font-weight="600" letter-spacing="${scentSpacing}" fill="#FAF5E8">${displayScent}</text>
       <text x="198" y="270" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.5" font-weight="500" letter-spacing="1.4" fill="#9CA3AF">10 OZ • 100% SOY WAX</text>
     `;
