@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://puck-and-wick.pages.dev/sitemap.xml

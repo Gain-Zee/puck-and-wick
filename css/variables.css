@@ -1,0 +1,188 @@
+/**
+ * Puck & Wick Design System Tokens
+ * Luxury Obsidian & Championship Gold Theme
+ */
+
+:root {
+  /* ==========================================================================
+     Color Palette
+     ========================================================================== */
+  /* Obsidian & Charcoal (Athletic Grit / Deep Canvas) */
+  --color-obsidian-950: #0A0A0C;
+  --obsidian-black: #0A0A0C;
+  --bg-primary: #0A0A0C;
+  --color-obsidian: #0A0A0C;
+  --charcoal-black: #0A0A0C;
+  --color-charcoal-900: #121316;
+  --color-charcoal-850: #16171B;
+  --color-charcoal-800: #1A1B1F;
+  --color-charcoal-700: #24262C;
+  --color-charcoal-600: #2F323A;
+
+  /* Borders & Hairlines */
+  --color-border-dark: #2D3039;
+  --color-border-subtle: #3E424E;
+  --color-border-gold-subtle: rgba(197, 160, 89, 0.25);
+  --color-border-gold-bright: rgba(212, 175, 55, 0.5);
+
+  /* Championship Brushed Gold (Primary Luxury Accent) */
+  --color-gold-500: #C5A059;
+  --brushed-gold: #C5A059;
+  --gold-champ-500: #C5A059;
+  --color-gold: #C5A059;
+  --color-gold-bright: #D4AF37;
+  --color-gold-light: #F3E5AB;
+  --color-gold-pale: #FDF6C7;
+  --color-gold-deep: #997732;
+  --color-gold-dark: #5A451B;
+
+  /* Radiant Amber Glow (Candlelight Flame & Status Badges) */
+  --color-amber-500: #F59E0B;
+  --amber-glow: #F59E0B;
+  --amber-glow-500: #F59E0B;
+  --color-amber: #F59E0B;
+  --color-amber-warm: #FFB020;
+  --color-amber-jar: #8A4712;
+  --color-amber-dark: #4A2306;
+
+  /* Paper Parchment & Soy Wax */
+  --color-parchment: #F5F0E6;
+  --color-parchment-200: #E8E0D0;
+  --color-soy-wax: #FAF8F5;
+  --color-ink-espresso: #1C1917;
+
+  /* Technical & Accent Neutrals */
+  --color-ice: #38BDF8;
+  --color-ice-subtle: rgba(56, 189, 248, 0.12);
+  --color-text-main: #F5F0E6;
+  --color-text-muted: #9EA3AE;
+  --color-text-dim: #6B7280;
+
+  /* ==========================================================================
+     Metallic Gradients & Procedural Lighting
+     ========================================================================== */
+  --gradient-gold-brushed: linear-gradient(
+    135deg,
+    #997732 0%,
+    #C5A059 22%,
+    #F3E5AB 45%,
+    #D4AF37 55%,
+    #FDF6C7 68%,
+    #C5A059 82%,
+    #997732 100%
+  );
+
+  --gradient-gold-sheen: linear-gradient(
+    90deg,
+    #997732 0%,
+    #C5A059 25%,
+    #F3E5AB 50%,
+    #C5A059 75%,
+    #997732 100%
+  );
+
+  --gradient-flame-radial: radial-gradient(
+    circle at 50% 60%,
+    #FFFBEB 0%,
+    #FEF08A 25%,
+    #F59E0B 60%,
+    #B45309 85%,
+    transparent 100%
+  );
+
+  --gradient-amber-glass: linear-gradient(
+    90deg,
+    rgba(74, 35, 6, 0.95) 0%,
+    rgba(138, 71, 18, 0.85) 15%,
+    rgba(217, 119, 6, 0.45) 45%,
+    rgba(255, 176, 32, 0.25) 55%,
+    rgba(138, 71, 18, 0.8) 85%,
+    rgba(74, 35, 6, 0.98) 100%
+  );
+
+  --gradient-matte-obsidian: linear-gradient(
+    90deg,
+    #0B0B0E 0%,
+    #18191E 20%,
+    #262830 45%,
+    #1E2026 60%,
+    #121316 85%,
+    #0A0A0C 100%
+  );
+
+  --gradient-card-surface: linear-gradient(
+    180deg,
+    rgba(26, 27, 31, 0.9) 0%,
+    rgba(18, 19, 22, 0.95) 100%
+  );
+
+  --gradient-hero-overlay: radial-gradient(
+    ellipse at 50% 20%,
+    rgba(245, 158, 11, 0.12) 0%,
+    rgba(10, 10, 12, 0.85) 60%,
+    #0A0A0C 100%
+  );
+
+  /* ==========================================================================
+     Shadows & Atmospheric Glow Scales
+     ========================================================================== */
+  --shadow-gold-sm: 0 0 10px rgba(197, 160, 89, 0.2);
+  --shadow-gold-md: 0 4px 20px rgba(197, 160, 89, 0.25), 0 0 40px rgba(212, 175, 55, 0.1);
+  --shadow-gold-lg: 0 10px 30px rgba(197, 160, 89, 0.35), 0 0 60px rgba(245, 158, 11, 0.15);
+  --shadow-flame: 0 0 25px rgba(245, 158, 11, 0.45), 0 0 50px rgba(255, 176, 32, 0.2);
+  --shadow-card: 0 12px 32px rgba(0, 0, 0, 0.6), 0 1px 2px rgba(197, 160, 89, 0.1);
+  --shadow-drawer: -10px 0 40px rgba(0, 0, 0, 0.8);
+
+  /* ==========================================================================
+     Typography Scales
+     ========================================================================== */
+  --font-serif: 'Cormorant Garamond', 'Cinzel', 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-stencil: 'Oswald', 'Bebas Neue', 'Cinzel', sans-serif;
+
+  /* Font Sizes */
+  --text-display: clamp(2.5rem, 5vw, 3.75rem); /* 40px - 60px */
+  --text-h1: clamp(2rem, 4vw, 3rem);           /* 32px - 48px */
+  --text-h2: clamp(1.625rem, 3vw, 2.25rem);     /* 26px - 36px */
+  --text-h3: clamp(1.25rem, 2vw, 1.5rem);       /* 20px - 24px */
+  --text-body-lg: 1.0625rem;                   /* 17px */
+  --text-body: 0.9375rem;                       /* 15px */
+  --text-small: 0.8125rem;                      /* 13px */
+  --text-kicker: 0.75rem;                       /* 12px */
+
+  /* ==========================================================================
+     Layout, Spacing & Sizing
+     ========================================================================== */
+  --max-width-content: 1280px;
+  --max-width-wide: 1440px;
+  --header-height: 80px;
+  --header-height-mobile: 68px;
+
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.25rem;  /* 20px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-8: 2rem;     /* 32px */
+  --space-10: 2.5rem;  /* 40px */
+  --space-12: 3rem;    /* 48px */
+  --space-16: 4rem;    /* 64px */
+  --space-20: 5rem;    /* 80px */
+  --space-24: 6rem;    /* 96px */
+
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* ==========================================================================
+     Animation & Transitions
+     ========================================================================== */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}

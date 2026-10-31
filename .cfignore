@@ -1,0 +1,13 @@
+.DS_Store
+Thumbs.db
+*.log
+.git/
+.agents/
+.wrangler/
+node_modules/
+test-results/
+tests/
+scripts/
+package.json
+package-lock.json
+DEPLOYMENT.md

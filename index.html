@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Puck &amp; Wick | Artisan Soy Candles &amp; Athlete Odor Care | Loudoun County, VA</title>
+  <meta name="description" content="Manly, rustic, black-and-gold luxury artisan soy candles and athlete odor-care founded in Loudoun County, VA by a former elite hockey player with 20 years on competitive ice. Featured at The Blue Hydrangea.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230A0A0C'/%3E%3Cpath d='M16 4c-3 4-6 8-6 12a6 6 0 0 0 12 0c0-4-3-8-6-12z' fill='%23F59E0B'/%3E%3Cellipse cx='16' cy='26' rx='10' ry='3' fill='%23C5A059'/%3E%3C/svg%3E">
+
+  <!-- Core Theme & Layout Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/catalog.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/cart.css">
+  <link rel="stylesheet" href="css/checkout.css">
+  <link rel="stylesheet" href="css/box-builder.css">
+  <link rel="stylesheet" href="css/odor-science.css">
+  <link rel="stylesheet" href="css/brand-studio.css">
+  <link rel="stylesheet" href="css/story.css">
+  <link rel="stylesheet" href="css/stockist.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <!-- Accessibility Skip Navigation Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ==========================================================================
+       Sticky Navigation Bar
+       ========================================================================== -->
+  <header class="site-header" id="site-header" data-testid="header">
+    <div class="nav-container">
+      <!-- Left: Dynamic Brand Lockup -->
+      <a href="#hero" class="nav-brand" data-testid="nav-brand" aria-label="Puck and Wick Home">
+        <div class="brand-mark" id="brand-mark-header" data-testid="brand-mark" aria-hidden="true">
+          <!-- Dynamically injected active SVG logo from PuckWickStore -->
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">PUCK &amp; WICK</span>
+          <span class="brand-subtext">LOUDOUN CO. VA</span>
+        </div>
+      </a>
+
+      <!-- Center: Navigation Links (Desktop) -->
+      <nav data-testid="main-nav" aria-label="Primary Navigation">
+        <ul class="nav-menu">
+          <li><a href="#shop" class="nav-link" data-testid="nav-link-shop">Shop Candles</a></li>
+          <li><a href="#exclusive-boxes" class="nav-link" data-testid="nav-link-exclusive-boxes">Exclusive Boxes</a></li>
+          <li><a href="#story" class="nav-link" data-testid="nav-link-story">Our Story &amp; QC</a></li>
+          <li><a href="#stockists" class="nav-link" data-testid="nav-link-stockists">Retail Stockists</a></li>
+          <li class="nav-item-studio"><a href="#studio" class="nav-link" data-testid="nav-link-studio">Brand Studio</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right: Stockist Indicator, Live Cart Trigger & Hamburger Toggle -->
+      <div class="nav-actions">
+        <a href="#stockists" class="nav-pickup-pill" title="Local Store Pickup Available at The Blue Hydrangea in Purcellville, VA">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Pickup: <strong>Purcellville, VA</strong></span>
+        </a>
+
+        <button type="button" class="cart-btn" id="cart-btn" data-testid="cart-trigger" aria-label="Open Shopping Cart Drawer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-badge cart-count" id="cart-badge" data-testid="cart-badge-count" aria-label="0 items in cart"><span id="cart-count" data-testid="cart-badge">0</span></span>
+        </button>
+
+        <button type="button" class="nav-toggle" id="nav-toggle" data-testid="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay -->
+  <div class="mobile-nav" id="mobile-nav" data-testid="mobile-nav" aria-label="Mobile Navigation">
+    <ul class="mobile-menu">
+      <li><a href="#shop" class="mobile-nav-link" data-testid="nav-link-shop">Shop Candles <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></li>
+      <li><a href="#exclusive-boxes" class="mobile-nav-link" data-testid="nav-link-exclusive-boxes">Exclusive Boxes <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></li>
+      <li><a href="#story" class="mobile-nav-link" data-testid="nav-link-story">Our Story &amp; QC <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></li>
+      <li><a href="#stockists" class="mobile-nav-link" data-testid="nav-link-stockists">Retail Stockists <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></li>
+      <li class="nav-item-studio"><a href="#studio" class="mobile-nav-link" data-testid="nav-link-studio">Brand Studio <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></li>
+    </ul>
+
+    <div class="mobile-nav-footer">
+      <div class="mobile-stockist-card">
+        <div class="mobile-stockist-title">Featured Retail Partner</div>
+        <div class="mobile-stockist-text"><strong>The Blue Hydrangea</strong><br>604 E. Main St., Purcellville, VA 20132</div>
+        <div class="mobile-stockist-text" style="margin-top:0.35rem;color:var(--color-gold-bright);">Free In-Store Pickup Available</div>
+      </div>
+      <a href="https://instagram.com/puckandwick" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="width:100%;text-align:center;">
+        Follow @puckandwick on Instagram
+      </a>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       Main Content Container
+       ========================================================================== -->
+  <main id="main-content">
+
+    <!-- 1. Hero Section -->
+    <section class="hero-section" id="hero" data-testid="hero-section" aria-labelledby="hero-title">
+      <div class="hero-ambient-glow" aria-hidden="true"></div>
+      <div class="hero-ambient-cold" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <!-- Content Column (Left) -->
+        <div class="hero-content">
+          <div class="hero-kicker-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c-.5 2.5-3 5-3 8 0 3.3 2.7 6 6 6s6-2.7 6-6c0-2.5-1.5-4.5-2.5-6-.5 1.5-1.5 2.5-2.5 3-1-3-3-4-4-5Z"/></svg>
+            <span>20 Years on Competitive Ice • Quality Control #1</span>
+          </div>
+
+          <h1 class="hero-title" id="hero-title" data-testid="hero-headline">
+            Hand-Poured Soy Candles &amp; Athlete Odor Care Formulated with <span class="gold-gradient-text">Locker-Room Grit</span> and Championship Precision.
+          </h1>
+
+          <p class="hero-tagline" data-testid="hero-tagline">
+            Founded in Loudoun County, Virginia by a former elite hockey player with 20 years on competitive ice. We replaced synthetic paraffin, chemical fillers, and amateur labels with <strong>100% clean-burning American soy wax</strong>, <strong>phthalate-free essential fragrance oils</strong>, and <strong>dual-action Metazene® odor-eliminating technology</strong>.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#shop" class="btn btn-gold btn-lg" data-testid="hero-cta-shop">
+              <span>Shop Candle Collection</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="#exclusive-boxes" class="btn btn-outline btn-lg" data-testid="hero-cta-boxes">
+              <span>Explore Exclusive Boxes</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+            </a>
+          </div>
+
+          <!-- Quality Footprint Badges -->
+          <div class="hero-trust-bar">
+            <div class="hero-trust-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+              <span>100% American Soy</span>
+            </div>
+            <div class="hero-trust-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/><path d="M12 11v4"/><path d="M10 13h4"/></svg>
+              <span>Phthalate-Free Oils</span>
+            </div>
+            <div class="hero-trust-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 11V4H5v7a7 7 0 0 0 14 0Z"/><path d="M19 7h3a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-3"/><path d="M2 4h20"/><path d="M12 18v3"/><path d="M8 21h8"/></svg>
+              <span>Loudoun County, VA</span>
+            </div>
+            <div class="hero-trust-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <span>The Blue Hydrangea Stockist</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Column (Right - Flame & Puck Presentation) -->
+        <div class="hero-visual">
+          <div class="hero-visual-card">
+            <span class="badge badge-gold">Founder Hand-Crafted</span>
+
+            <div class="hero-flame-container" data-testid="hero-flame">
+              <div class="hero-flame-aura"></div>
+              <svg class="hero-flame-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" aria-label="Radiant Puck &amp; Wick Candle Flame">
+                <defs>
+                  <radialGradient id="hero-flame-grad" cx="50%" cy="70%" r="65%">
+                    <stop offset="0%" stop-color="#FFFFFF" />
+                    <stop offset="20%" stop-color="#FEF08A" />
+                    <stop offset="50%" stop-color="#F59E0B" />
+                    <stop offset="80%" stop-color="#D97706" />
+                    <stop offset="100%" stop-color="#9A3412" stop-opacity="0" />
+                  </radialGradient>
+                  <linearGradient id="hero-wick-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#1C1917" />
+                    <stop offset="60%" stop-color="#FAF5E8" />
+                    <stop offset="100%" stop-color="#D4AF37" />
+                  </linearGradient>
+                </defs>
+                <!-- Cotton Wick -->
+                <rect x="98" y="240" width="4" height="40" rx="2" fill="url(#hero-wick-grad)" />
+                <circle cx="100" cy="238" r="3" fill="#1C1917" />
+                <!-- Outer Flame -->
+                <path d="M 100,245 C 70,230 40,185 50,130 C 60,75 88,25 100,0 C 112,25 140,75 150,130 C 160,185 130,230 100,245 Z" fill="url(#hero-flame-grad)" opacity="0.95" />
+                <!-- Inner Flame Core -->
+                <path d="M 100,240 C 85,225 70,195 78,155 C 84,120 95,85 100,55 C 105,85 116,120 122,155 C 130,195 115,225 100,240 Z" fill="#FFFDF0" opacity="0.9" />
+              </svg>
+            </div>
+
+            <div class="hero-candle-base">
+              <div class="hero-candle-puck">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+                <span>Tape-to-Tape Precision</span>
+              </div>
+              <div class="hero-candle-caption">Small-Batch Virginia Pour</div>
+              <div class="hero-candle-sub">55-65 Hour Clean Burn • Lead-Free Organic Cotton</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Product Catalog Mount Section (Milestone 2 mount point) -->
+    <section class="catalog-section catalog" id="shop" data-testid="catalog-section" style="padding-block:var(--space-16);border-bottom:1px solid var(--color-border-dark);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c-.5 2.5-3 5-3 8 0 3.3 2.7 6 6 6s6-2.7 6-6c0-2.5-1.5-4.5-2.5-6-.5 1.5-1.5 2.5-2.5 3-1-3-3-4-4-5Z"/></svg>
+            <span>Artisan Fragrance Collection</span>
+          </div>
+          <h2 class="section-title">Small-Batch Hand-Poured Candles</h2>
+          <p class="section-lead">
+            Crafted with 100% pure American soy wax, lead-free braided cotton wicks, and clean fragrance oils. Calibrated with complex 3-tier scent pyramids for an enduring 55–65 hour clean burn.
+          </p>
+        </div>
+        <div id="catalog-root">
+          <!-- Milestone 2 will mount dynamic category filter pills, product grid, and quick view modals here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Exclusive Box Builder Mount Section (Milestone 3 mount point) -->
+    <section class="boxes-section box-builder" id="exclusive-boxes" data-testid="box-builder-section" style="padding-block:var(--space-16);border-bottom:1px solid var(--color-border-dark);background:var(--color-charcoal-900);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+            <span>Custom Athlete Curations</span>
+          </div>
+          <h2 class="section-title">The Puck &amp; Wick Exclusive Boxes</h2>
+          <p class="section-lead">
+            Engineered bundles pairing our signature hand-poured candles with scientific athlete odor-care essentials powered by Activated Charcoal and Metazene® molecular neutralization.
+          </p>
+        </div>
+        <div id="box-builder-root">
+          <!-- Milestone 3 will mount Men's vs Women's interactive box builder & odor science breakdown here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 20-Year Hockey Heritage & Quality Control Story -->
+    <section class="story-section" id="story" data-testid="story-section" aria-labelledby="story-title">
+      <div class="container">
+        <!-- 2-Column Editorial Narrative -->
+        <div class="story-editorial-grid">
+          <div class="story-narrative">
+            <div class="section-kicker">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 3l12 14c1 1.2 2.5 1.5 4 .5l.5-.3c.4-.3.2-.8-.2-.9-1.2-.2-2.5-.2-3.3-1.3L5 3z"/><path d="M20 3L8 17c-1 1.2-2.5 1.5-4 .5l-.5-.3c-.4-.3-.2-.8.2-.9 1.2-.2 2.5-.2 3.3-1.3L19 3z"/></svg>
+              <span>The Founder Story</span>
+            </div>
+
+            <h2 class="story-headline" id="story-title">
+              Twenty Years on the Ice.<br>
+              <span class="gold-gradient-text">One Uncompromising Standard.</span>
+            </h2>
+
+            <blockquote class="story-lead-quote" data-testid="founder-quote">
+              &ldquo;In competitive hockey, games are won in the inches. Tape-to-tape precision, relentless locker-room discipline, and zero tolerance for cutting corners. When I hung up my competitive skates after two decades, I brought that exact obsession to hand-pouring clean soy candles.&rdquo;
+            </blockquote>
+
+            <div class="story-prose">
+              <p>
+                For twenty years, our founder lived inside the rink—from dawn practices on sub-zero ice to high-stakes tournament finals. On the ice, success is governed by relentless preparation: blade sharpness calibrated to the millimeter, stick flex dialed for explosive release, and total accountability to the locker room.
+              </p>
+              <p>
+                When transitioning from competitive athletics to artisan craft, the goal was not to make ordinary candles with synthetic fragrances or cheap paraffin wax imported from overseas refineries. Instead, <strong>Puck &amp; Wick</strong> was forged in Loudoun County, Virginia to create luxury home fragrances and athlete gear care that uphold collegiate and professional standards of durability, clean air, and aesthetic refinement.
+              </p>
+              <p>
+                Every batch is hand-poured in small volumes, temp-checked with digital infrared probes, and cured for a full 14 days before boxing. Because whether you are stepping onto fresh sheet ice or striking a match in your living room, <strong>Quality Control is always #1.</strong>
+              </p>
+            </div>
+          </div>
+
+          <!-- Heritage Credentials Plaque (Right) -->
+          <div class="story-heritage-card">
+            <div class="story-heritage-header">
+              <div class="story-heritage-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div>
+                <div class="story-heritage-title">Heritage Credentials</div>
+                <div class="story-heritage-sub">Loudoun County Workshop</div>
+              </div>
+            </div>
+
+            <div class="story-metrics-grid">
+              <div class="story-metric-item">
+                <div class="story-metric-number">20</div>
+                <div class="story-metric-label">Years on Competitive Ice</div>
+              </div>
+              <div class="story-metric-item">
+                <div class="story-metric-number">100%</div>
+                <div class="story-metric-label">Pure American Soy Wax</div>
+              </div>
+              <div class="story-metric-item">
+                <div class="story-metric-number">0%</div>
+                <div class="story-metric-label">Paraffin or Phthalates</div>
+              </div>
+              <div class="story-metric-item">
+                <div class="story-metric-number">14</div>
+                <div class="story-metric-label">Days Mandatory Jar Cure</div>
+              </div>
+            </div>
+
+            <p style="font-size:0.875rem;color:var(--color-text-muted);line-height:1.6;margin:0;">
+              Every vessel bears a handwritten batch stamp and individual founder inspection seal. Tested to guarantee an even melt pool without tunneling or black soot.
+            </p>
+
+            <div class="story-heritage-signature">
+              <span>Standard: <strong>QC #1 Certified</strong></span>
+              <span>Origin: <strong>Purcellville, VA</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quality Control #1 Breakdown (4 Pillars) -->
+        <div class="qc-breakdown">
+          <div class="section-header">
+            <div class="section-kicker">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Quality Control #1</span>
+            </div>
+            <h3 class="section-title">The Four Pillars of Uncompromising Craft</h3>
+            <p class="section-lead">
+              We reject petroleum byproducts, zinc cores, and synthetic additives. Our four-pillar formulation protocol ensures clean-burning luxury from first spark to final burn.
+            </p>
+          </div>
+
+          <div class="qc-pillars-grid" data-testid="qc-grid" id="qc-pillars-grid">
+            <!-- Pillar 1 -->
+            <div class="qc-pillar-card pillar-soy" data-testid="qc-pillar-soy" data-pillar="soy">
+              <div class="qc-pillar-header">
+                <span class="qc-pillar-number">01</span>
+                <div class="qc-pillar-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+                </div>
+              </div>
+              <h4 class="qc-pillar-title">100% American Clean-Burning Soy Wax</h4>
+              <p class="qc-pillar-desc">
+                Harvested from renewable Midwest soybean farms. Biodegradable, non-toxic, and free from petroleum paraffin sludge. Burns 30–50% slower and cooler than paraffin, releasing zero toxic black soot into your home.
+              </p>
+              <div class="qc-pillar-spec">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+                <span>30-50% Slower Burn • Zero Paraffin</span>
+              </div>
+            </div>
+
+            <!-- Pillar 2 -->
+            <div class="qc-pillar-card pillar-phthalate" data-testid="qc-pillar-phthalate" data-pillar="phthalate">
+              <div class="qc-pillar-header">
+                <span class="qc-pillar-number">02</span>
+                <div class="qc-pillar-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/><path d="M12 11v4"/><path d="M10 13h4"/></svg>
+                </div>
+              </div>
+              <h4 class="qc-pillar-title">Phthalate-Free Fragrance Oils</h4>
+              <p class="qc-pillar-desc">
+                Clean-scent certified and rigorously screened against California Prop 65 hazards. 100% free from phthalates, parabens, acute toxins, and carcinogens. Masterfully blended with natural therapeutic essential oils.
+              </p>
+              <div class="qc-pillar-spec">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+                <span>100% Phthalate-Free • IFRA Certified</span>
+              </div>
+            </div>
+
+            <!-- Pillar 3 -->
+            <div class="qc-pillar-card pillar-wicks" data-testid="qc-pillar-wicks" data-pillar="wicks">
+              <div class="qc-pillar-header">
+                <span class="qc-pillar-number">03</span>
+                <div class="qc-pillar-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 3c-1.5 2-3 3.5-3 5.5a3 3 0 0 0 6 0C15 6.5 13.5 5 12 3z"/><path d="M12 11.5V21"/><path d="M9 15h6"/><path d="M8 18h8"/><path d="M9.5 21h5"/></svg>
+                </div>
+              </div>
+              <h4 class="qc-pillar-title">Lead-Free Cotton Wicks &amp; Burn Testing</h4>
+              <p class="qc-pillar-desc">
+                Custom-braided organic cotton wicks calibrated specifically to the exact diameter, wax density, and fragrance oil load of each vessel. Eliminates candle tunneling, uneven burn pools, and flare-ups.
+              </p>
+              <div class="qc-pillar-spec">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+                <span>Zero Tunneling • Calibrated Melt Pool</span>
+              </div>
+            </div>
+
+            <!-- Pillar 4 -->
+            <div class="qc-pillar-card pillar-handpour" data-testid="qc-pillar-handpour" data-pillar="handpour">
+              <div class="qc-pillar-header">
+                <span class="qc-pillar-number">04</span>
+                <div class="qc-pillar-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M19 11V4H5v7a7 7 0 0 0 14 0Z"/><path d="M19 7h3a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-3"/><path d="M2 4h20"/><path d="M12 18v3"/><path d="M8 21h8"/></svg>
+                </div>
+              </div>
+              <h4 class="qc-pillar-title">Small-Batch Hand-Poured in Virginia</h4>
+              <p class="qc-pillar-desc">
+                Hand-crafted in micro-batches in Loudoun County, VA under tight thermal tolerances: 185°F fragrance binding and 135°F slow pour. Cured for a mandatory 14 days before boxed packaging.
+              </p>
+              <div class="qc-pillar-spec">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+                <span>14-Day Mandatory Cure • Batch Tracked</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Retail Stockist Spotlight: The Blue Hydrangea -->
+    <section class="stockist-section stockist" id="stockists" data-testid="stockist-section" rel="noopener noreferrer" aria-labelledby="stockist-title">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Brick &amp; Mortar Stockist Hub</span>
+          </div>
+          <h2 class="section-title" id="stockist-title">Experience Puck &amp; Wick in Person</h2>
+          <p class="section-lead">
+            Smell all signature pours in person, shop exclusive limited holiday vessels, and enjoy zero-fee local order pickup at our premier boutique partner.
+          </p>
+        </div>
+
+        <div class="stockist-showcase">
+          <!-- Left: Boutique Profile & Features -->
+          <div class="stockist-content">
+            <div class="stockist-header">
+              <h3 class="stockist-boutique-name">The Blue Hydrangea</h3>
+              <div class="stockist-location-tagline">Purcellville, Virginia • Premier Stockist</div>
+            </div>
+
+            <p class="stockist-description">
+              Nestled on Historic Main Street in Western Loudoun County, <strong>The Blue Hydrangea</strong> is an artisan home decor, gift boutique, and floral studio renowned for its curated, high-end editorial polish. Puck &amp; Wick is proud to partner with The Blue Hydrangea to offer our complete collection alongside in-store exclusives.
+            </p>
+
+            <ul class="stockist-features-list">
+              <li class="stockist-feature-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>In-Store Scent Sniff Bar:</strong> Experience all 7+ fragrances (including <em>Top Shelf</em>, <em>Fresh Cut</em>, and <em>Barnwood &amp; Bourbon</em>) in person before you buy.</span>
+              </li>
+              <li class="stockist-feature-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Exclusive Boutique Pour:</strong> Home to our collaborative <em>Balsam Fir</em> winter release, poured in limited frosted amber vessels.</span>
+              </li>
+              <li class="stockist-feature-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Instant Local Pickup:</strong> Order online and select "Local Pickup at The Blue Hydrangea" at checkout for 100% free fulfillment.</span>
+              </li>
+            </ul>
+
+            <div class="stockist-actions">
+              <a href="https://maps.google.com/?q=604+E+Main+St,+Purcellville,+VA+20132" target="_blank" rel="noopener noreferrer" class="btn btn-gold" data-testid="stockist-directions-btn">
+                <span>Get Driving Directions</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+              <button type="button" class="btn btn-outline wholesale-btn" id="btn-inquire-wholesale" data-testid="inquire-wholesale-btn" data-action="wholesale">
+                <span>Inquire Wholesale &amp; Custom Pours</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right: Details, Hours & Pickup Banner -->
+          <div class="stockist-details-card">
+            <!-- Free Local Pickup Banner -->
+            <div class="stockist-pickup-banner" data-testid="stockist-pickup-badge">
+              <div class="stockist-pickup-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="stockist-pickup-text">
+                <span class="stockist-pickup-title">Free Local Store Pickup ($0)</span>
+                <span class="stockist-pickup-sub">Select during checkout to pick up your order at The Blue Hydrangea</span>
+              </div>
+            </div>
+
+            <!-- Address Block -->
+            <div class="stockist-address-block">
+              <div class="stockist-address-heading">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Boutique Address</span>
+              </div>
+              <div class="stockist-address-text" data-testid="stockist-address">
+                604 E. Main St.<br>
+                Purcellville, VA 20132
+              </div>
+              <a href="https://instagram.com/bluehydrangeapurcellville" target="_blank" rel="noopener noreferrer" class="stockist-social-link">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                <span>@bluehydrangeapurcellville</span>
+              </a>
+            </div>
+
+            <!-- Operating Hours -->
+            <div class="stockist-hours-block" data-testid="stockist-hours">
+              <div class="stockist-hours-heading">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>Retail Store Hours</span>
+              </div>
+              <table class="stockist-hours-table">
+                <tbody>
+                  <tr>
+                    <td class="day-col">Wednesday – Saturday</td>
+                    <td class="time-col">10:00 AM – 5:00 PM</td>
+                  </tr>
+                  <tr>
+                    <td class="day-col">Sunday</td>
+                    <td class="time-col">12:00 PM – 4:00 PM</td>
+                  </tr>
+                  <tr>
+                    <td class="day-col">Monday – Tuesday</td>
+                    <td class="time-col closed">Closed (Workshop Pours)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Brand & Label Concept Studio Mount Section (Milestone 4 mount point) -->
+    <section class="brand-studio-section brand-studio" id="studio" data-testid="brand-studio-section" style="padding-block:var(--space-16);border-bottom:1px solid var(--color-border-dark);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="2" y2="6"/><line x1="12" x2="12" y1="18" y2="22"/></svg>
+            <span>Founder Identity Studio</span>
+          </div>
+          <h2 class="section-title">Brand &amp; Label Concept Studio</h2>
+          <p class="section-lead">
+            Founder Review Mode: Compare 4 custom SVG logo concepts, test interactive candle jar mockups for <em>Top Shelf</em> and <em>Fresh Cut</em>, and apply your preferred identity to the live site header.
+          </p>
+        </div>
+        <div id="brand-studio-root">
+          <!-- Milestone 4 will mount the 4 SVG logo cards, live candle jar previewer, and site logo switcher here -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       Modals & Slide-Out Overlay Mount Containers
+       ========================================================================== -->
+  <!-- Cart Drawer Overlay Container (Milestone 2 mount point) -->
+  <div id="cart-drawer-root"></div>
+
+  <!-- General Modal / Dialog Container (Quick Views, Wholesale, etc.) -->
+  <div id="modal-container"></div>
+
+  <!-- Checkout Modal Container (Milestone 2 mount point) -->
+  <div id="checkout-modal-root"></div>
+
+  <!-- ==========================================================================
+       Luxury Site Footer
+       ========================================================================== -->
+  <footer class="site-footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Manifesto -->
+        <div class="footer-col-brand">
+          <a href="#hero" class="footer-brand-lockup" aria-label="Puck &amp; Wick Home">
+            <div class="brand-mark" id="brand-mark-footer" aria-hidden="true">
+              <!-- Dynamically injected active SVG logo from PuckWickStore -->
+            </div>
+            <div class="brand-text">
+              <span class="brand-name">PUCK &amp; WICK</span>
+              <span class="brand-subtext">LOUDOUN CO. VA</span>
+            </div>
+          </a>
+
+          <p class="footer-manifesto" data-testid="footer-manifesto">
+            Small-batch artisan soy candles and athlete odor-care hand-poured in Loudoun County, Virginia. Born from 20 years on competitive ice, engineered with tape-to-tape precision and uncompromising quality control.
+          </p>
+
+          <div class="footer-social-links">
+            <a href="https://instagram.com/puckandwick" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Follow Puck &amp; Wick on Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+            <a href="https://instagram.com/bluehydrangeapurcellville" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Follow The Blue Hydrangea on Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation Directory -->
+        <div>
+          <div class="footer-heading">Navigation</div>
+          <ul class="footer-links-list">
+            <li><a href="#shop" class="footer-link">Shop Candles</a></li>
+            <li><a href="#exclusive-boxes" class="footer-link">Exclusive Boxes</a></li>
+            <li><a href="#story" class="footer-link">Our Story &amp; QC</a></li>
+            <li><a href="#stockists" class="footer-link">Retail Stockists</a></li>
+            <li class="nav-item-studio"><a href="#studio" class="footer-link">Brand Studio</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Stockist & Pickup Info -->
+        <div>
+          <div class="footer-heading">Retail Partner</div>
+          <div class="footer-stockist-details">
+            <div class="footer-stockist-title">The Blue Hydrangea</div>
+            <div>604 E. Main St.<br>Purcellville, VA 20132</div>
+            <div class="footer-stockist-hours">
+              Wed – Sat: 10am – 5pm<br>
+              Sun: 12pm – 4pm
+            </div>
+            <div style="color:var(--color-gold-bright);font-weight:600;">$0 Free Local Store Pickup</div>
+          </div>
+        </div>
+
+        <!-- Col 4: Newsletter -->
+        <div>
+          <div class="footer-heading">Locker Room Dispatch</div>
+          <p class="footer-newsletter-text">
+            Subscribe for exclusive small-batch pour alerts, limited holiday vessel releases, and retail stockist events.
+          </p>
+          <form class="footer-newsletter-form" id="footer-newsletter-form" data-testid="footer-newsletter-form">
+            <div class="footer-input-group">
+              <input type="email" id="footer-newsletter-email" data-testid="footer-newsletter-input" class="footer-input" placeholder="Enter your email address" required aria-label="Email Address for Newsletter">
+            </div>
+            <button type="submit" class="btn btn-gold btn-sm" data-testid="footer-newsletter-btn" style="width:100%;">
+              Join the Dispatch
+            </button>
+            <div class="footer-newsletter-msg" id="footer-newsletter-msg" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-brand">
+          <span>&copy; 2026 Puck &amp; Wick LLC. All rights reserved.</span>
+          <span>•</span>
+          <span>Purcellville, Loudoun County, Virginia</span>
+        </div>
+        <div class="footer-qc-seal">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>QC #1 Founder Inspected</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Bootstrap Module -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

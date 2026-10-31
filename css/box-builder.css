@@ -1,0 +1,387 @@
+/**
+ * Puck & Wick Exclusive Box Builder Stylesheet
+ * Matte Obsidian, Deep Charcoal, and Brushed Gold bundle customizer layout.
+ */
+
+.box-builder-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.box-customizer-grid > *,
+.box-edition-switcher > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Edition Switcher Tabs */
+.box-edition-switcher {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  max-width: 780px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.edition-toggle-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  padding: 1.15rem 1.35rem;
+  background: var(--color-obsidian-950, #0A0A0C);
+  border: 1px solid var(--color-border-dark, #24262E);
+  border-radius: var(--radius-lg, 0.75rem);
+  color: var(--color-parchment, #FAF5E8);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.22s ease;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.edition-toggle-btn:hover {
+  border-color: var(--color-gold-500, #C5A059);
+  background: rgba(197, 160, 89, 0.06);
+}
+
+.edition-toggle-btn.active {
+  background: linear-gradient(135deg, rgba(197, 160, 89, 0.16), rgba(10, 10, 12, 0.95));
+  border-color: var(--color-gold-bright, #D4AF37);
+  box-shadow: 0 8px 24px rgba(197, 160, 89, 0.14);
+}
+
+.edition-tab-kicker {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-gold-500, #C5A059);
+}
+
+.edition-tab-title {
+  font-family: var(--font-serif, 'Cormorant Garamond', 'Cinzel', serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+/* Main 2-Column Customizer Grid */
+.box-customizer-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 2.25rem;
+  align-items: start;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Visual Stage (Left) */
+.box-visual-stage {
+  background: var(--color-obsidian-950, #0A0A0C);
+  border: 1px solid var(--color-border-gold-subtle, rgba(197, 160, 89, 0.28));
+  border-radius: var(--radius-xl, 1rem);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.box-stage-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.box-savings-pill {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #34D399;
+  background: rgba(52, 211, 153, 0.12);
+  border: 1px solid rgba(52, 211, 153, 0.35);
+  padding: 0.3rem 0.75rem;
+  border-radius: 9999px;
+}
+
+.box-svg-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-presentation-svg {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  display: block;
+}
+
+.box-selected-scent-banner {
+  background: rgba(197, 160, 89, 0.08);
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  border-radius: var(--radius-md, 0.5rem);
+  padding: 0.9rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.scent-banner-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-gold-500, #C5A059);
+}
+
+.scent-banner-value {
+  font-size: 0.95rem;
+  color: #FFFFFF;
+}
+
+.scent-banner-notes {
+  font-size: 0.78rem;
+  color: var(--color-text-muted, #9EA3AE);
+  line-height: 1.45;
+}
+
+/* Controls Panel (Right) */
+.box-controls-panel {
+  background: var(--color-obsidian-950, #0A0A0C);
+  border: 1px solid var(--color-border-dark, #24262E);
+  border-radius: var(--radius-xl, 1rem);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.box-edition-heading {
+  font-family: var(--font-serif, 'Cormorant Garamond', 'Cinzel', serif);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0 0 0.5rem 0;
+}
+
+.box-edition-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-text-muted, #9EA3AE);
+  margin: 0 0 1rem 0;
+}
+
+.box-price-row {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.box-bundle-price {
+  font-family: var(--font-serif, 'Cormorant Garamond', 'Cinzel', serif);
+  font-size: 2.15rem;
+  font-weight: 700;
+  color: var(--color-gold-bright, #D4AF37);
+}
+
+.box-compare-price {
+  font-size: 0.9rem;
+  color: var(--color-text-muted, #9EA3AE);
+  text-decoration: line-through;
+}
+
+.box-free-ship-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #34D399;
+}
+
+.box-step-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.box-step-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-parchment, #FAF5E8);
+}
+
+.box-step-selected {
+  color: var(--color-gold-bright, #D4AF37);
+}
+
+.box-scent-select {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  text-overflow: ellipsis;
+  padding: 0.8rem 1rem;
+  background: var(--color-charcoal-850, #16181F);
+  border: 1px solid var(--color-gold-500, #C5A059);
+  border-radius: var(--radius-md, 0.5rem);
+  color: #FFFFFF;
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.box-scent-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.box-scent-pill {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.76rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--color-border-dark, #262934);
+  color: var(--color-parchment, #FAF5E8);
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.box-scent-pill:hover {
+  border-color: var(--color-gold-500, #C5A059);
+}
+
+.box-scent-pill.active {
+  background: var(--color-gold-500, #C5A059);
+  border-color: var(--color-gold-bright, #D4AF37);
+  color: #0A0A0C;
+  font-weight: 700;
+}
+
+/* Bundled Items Cards */
+.bundled-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.bundled-item-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 0.85rem 1rem;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid var(--color-border-dark, #24262E);
+  border-radius: var(--radius-md, 0.5rem);
+}
+
+.bundled-item-num {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-gold-bright, #D4AF37);
+  background: rgba(197, 160, 89, 0.14);
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  border-radius: 0.35rem;
+  padding: 0.2rem 0.5rem;
+  flex-shrink: 0;
+}
+
+.bundled-item-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.bundled-item-title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  color: #FFFFFF;
+  font-size: 0.88rem;
+  margin-bottom: 0.25rem;
+}
+
+.bundled-item-val {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-gold-500, #C5A059);
+}
+
+.bundled-item-sub {
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--color-text-muted, #9EA3AE);
+  margin: 0;
+}
+
+.box-cta-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.add-exclusive-box-btn {
+  width: 100%;
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.35;
+  justify-content: center;
+}
+
+.box-added-feedback {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #34D399;
+  text-align: center;
+  padding: 0.5rem;
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  border-radius: var(--radius-sm, 0.35rem);
+}
+
+@media (max-width: 960px) {
+  .box-customizer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .box-edition-switcher {
+    grid-template-columns: 1fr;
+  }
+  .box-visual-stage,
+  .box-controls-panel {
+    padding: 1.15rem;
+  }
+  .box-edition-heading {
+    font-size: 1.5rem;
+  }
+}

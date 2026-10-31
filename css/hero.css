@@ -1,0 +1,285 @@
+/**
+ * Puck & Wick Hero Section Styles
+ * High-impact editorial hero banner with radiant candle flame visual and dual CTAs
+ */
+
+.hero-section {
+  position: relative;
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  align-items: center;
+  padding-block: var(--space-16) var(--space-20);
+  background: var(--gradient-hero-overlay);
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-border-dark);
+}
+
+/* Atmospheric Ambient Glow behind Hero */
+.hero-ambient-glow {
+  position: absolute;
+  top: 15%;
+  right: 10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, rgba(212, 175, 55, 0.08) 40%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-ambient-cold {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.06) 0%, transparent 70%);
+  filter: blur(70px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: var(--space-12);
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   Hero Content Column (Left)
+   ========================================================================== */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-kicker-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0.45rem 1rem;
+  background: rgba(197, 160, 89, 0.1);
+  border: 1px solid var(--color-border-gold-subtle);
+  border-radius: var(--radius-full);
+  font-size: var(--text-kicker);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-gold-bright);
+  margin-bottom: var(--space-6);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-kicker-badge svg {
+  width: 14px;
+  height: 14px;
+  color: var(--color-amber-warm);
+}
+
+.hero-title {
+  font-size: var(--text-display);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-parchment);
+  margin-bottom: var(--space-6);
+  letter-spacing: 0.02em;
+}
+
+.hero-tagline {
+  font-size: var(--text-body-lg);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: var(--space-8);
+  max-width: 620px;
+}
+
+.hero-tagline strong {
+  color: var(--color-parchment);
+  font-weight: 600;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-12);
+  flex-wrap: wrap;
+}
+
+/* Feature Footprint Badges Bar */
+.hero-trust-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border-dark);
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.hero-trust-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-kicker);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.hero-trust-item svg {
+  width: 15px;
+  height: 15px;
+  color: var(--color-gold-500);
+}
+
+/* ==========================================================================
+   Hero Visual Stage (Right Column - Radiant Flame & Puck)
+   ========================================================================== */
+.hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 480px;
+}
+
+.hero-visual-card {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  aspect-ratio: 4 / 5;
+  background: radial-gradient(ellipse at 50% 60%, rgba(26, 27, 31, 0.85) 0%, rgba(10, 10, 12, 0.95) 100%);
+  border: 1px solid var(--color-border-gold-subtle);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--shadow-card), var(--shadow-gold-sm);
+  backdrop-filter: blur(8px);
+}
+
+/* Inset Corner Accent Borders */
+.hero-visual-card::before {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 1px dashed rgba(197, 160, 89, 0.2);
+  border-radius: var(--radius-lg);
+  pointer-events: none;
+}
+
+.hero-flame-container {
+  position: relative;
+  width: 180px;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--space-4);
+}
+
+/* Realistic Animated Flame Glow */
+.hero-flame-aura {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.35) 0%, rgba(212, 175, 55, 0.15) 50%, transparent 70%);
+  filter: blur(25px);
+  border-radius: var(--radius-full);
+  animation: flameAuraPulse 3s ease-in-out infinite alternate;
+}
+
+.hero-flame-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 20px rgba(245, 158, 11, 0.5));
+  animation: flameFlicker 2.5s ease-in-out infinite alternate;
+  transform-origin: bottom center;
+}
+
+/* Candle Base & Puck Silhouette */
+.hero-candle-base {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  margin-top: var(--space-4);
+  z-index: 2;
+}
+
+.hero-candle-puck {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0.35rem 0.85rem;
+  background: var(--color-charcoal-700);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-full);
+  font-size: var(--text-kicker);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-parchment);
+  margin-bottom: var(--space-2);
+}
+
+.hero-candle-puck svg {
+  width: 13px;
+  height: 13px;
+  color: var(--color-gold-500);
+}
+
+.hero-candle-caption {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--color-gold-bright);
+}
+
+.hero-candle-sub {
+  font-size: 0.75rem;
+  color: var(--color-text-dim);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   Keyframe Animations for Flame
+   ========================================================================== */
+@keyframes flameFlicker {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.02, 0.98) rotate(0.8deg);
+  }
+  50% {
+    transform: scale(0.98, 1.03) rotate(-0.5deg);
+  }
+  75% {
+    transform: scale(1.01, 1.01) rotate(0.4deg);
+  }
+  100% {
+    transform: scale(0.99, 1.02) rotate(-0.8deg);
+  }
+}
+
+@keyframes flameAuraPulse {
+  0% {
+    opacity: 0.7;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}

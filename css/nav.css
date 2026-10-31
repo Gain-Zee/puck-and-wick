@@ -1,0 +1,383 @@
+/**
+ * Puck & Wick Sticky Navigation Styles
+ * Fixed header, dynamic brand lockup, section anchor links, live cart badge & mobile drawer
+ */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background: rgba(10, 10, 12, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--color-border-dark);
+  z-index: 1000;
+  transition: all var(--transition-normal);
+}
+
+.site-header.scrolled {
+  background: rgba(10, 10, 12, 0.96);
+  border-bottom: 1px solid var(--color-border-gold-subtle);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  height: var(--header-height);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: var(--max-width-wide);
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+}
+
+/* ==========================================================================
+   Brand Lockup (Header Left)
+   ========================================================================== */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+
+.nav-brand:hover {
+  transform: translateY(-1px);
+}
+
+.brand-mark {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  transition: transform var(--transition-fast);
+}
+
+.brand-mark svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.1;
+  background: var(--gradient-gold-sheen);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.brand-subtext {
+  font-family: var(--font-sans);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-gold-500);
+  opacity: 0.9;
+}
+
+/* ==========================================================================
+   Center Navigation Links (Desktop)
+   ========================================================================== */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  list-style: none;
+}
+
+.nav-link {
+  font-family: var(--font-sans);
+  font-size: var(--text-small);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-parchment);
+  padding-block: var(--space-2);
+  position: relative;
+  transition: color var(--transition-fast);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-gold-sheen);
+  transition: all var(--transition-normal);
+  transform: translateX(-50%);
+  border-radius: var(--radius-full);
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--color-gold-bright);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: var(--color-gold-bright);
+  font-weight: 600;
+}
+
+/* Hidden studio link modifier */
+.nav-item-studio.hidden {
+  display: none !important;
+}
+
+/* ==========================================================================
+   Right Navigation Actions (Cart & Stockist Badge)
+   ========================================================================== */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.nav-pickup-pill {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0.4rem 0.85rem;
+  background: rgba(18, 19, 22, 0.8);
+  border: 1px solid var(--color-border-dark);
+  border-radius: var(--radius-full);
+  font-size: var(--text-kicker);
+  color: var(--color-text-muted);
+  letter-spacing: 0.05em;
+  transition: all var(--transition-fast);
+}
+
+.nav-pickup-pill svg {
+  width: 13px;
+  height: 13px;
+  color: var(--color-gold-500);
+}
+
+.nav-pickup-pill strong {
+  color: var(--color-parchment);
+  font-weight: 600;
+}
+
+.nav-pickup-pill:hover {
+  border-color: var(--color-border-gold-subtle);
+  color: var(--color-parchment);
+}
+
+/* Live Cart Drawer Trigger Button */
+.cart-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--color-charcoal-850);
+  border: 1px solid var(--color-border-subtle);
+  color: var(--color-gold-500);
+  transition: all var(--transition-normal);
+}
+
+.cart-btn:hover {
+  background: var(--color-charcoal-800);
+  border-color: var(--color-gold-bright);
+  color: var(--color-gold-bright);
+  box-shadow: var(--shadow-gold-sm);
+  transform: translateY(-1px);
+}
+
+.cart-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Live Cart Count Badge */
+.cart-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  min-width: 20px;
+  height: 20px;
+  padding-inline: 4px;
+  border-radius: var(--radius-full);
+  background: var(--gradient-gold-sheen);
+  color: var(--color-obsidian-950);
+  font-size: 0.6875rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  border: 2px solid var(--color-obsidian-950);
+  transition: transform var(--transition-bounce);
+}
+
+.cart-badge.bounce {
+  transform: scale(1.35);
+}
+
+/* ==========================================================================
+   Mobile Hamburger Toggle Button
+   ========================================================================== */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  border-radius: var(--radius-md);
+  background: var(--color-charcoal-850);
+  border: 1px solid var(--color-border-subtle);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.nav-toggle-bar {
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-parchment);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-normal);
+  transform-origin: center;
+}
+
+.nav-toggle:hover {
+  border-color: var(--color-gold-500);
+}
+
+.nav-toggle.active .nav-toggle-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.active .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.nav-toggle.active .nav-toggle-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ==========================================================================
+   Mobile Navigation Drawer Overlay
+   ========================================================================== */
+.mobile-nav {
+  position: fixed;
+  top: var(--header-height-mobile);
+  left: 0;
+  width: 100%;
+  height: auto;
+  max-height: calc(100vh - 120px);
+  background: rgba(10, 10, 12, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: var(--space-8) var(--space-6);
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--transition-smooth);
+  z-index: 999;
+  border-bottom: 1px solid var(--color-border-gold-subtle);
+}
+
+.mobile-nav.open {
+  display: flex;
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-parchment);
+  padding-block: var(--space-3);
+  border-bottom: 1px solid var(--color-border-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all var(--transition-fast);
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link:focus-visible {
+  color: var(--color-gold-bright);
+  padding-left: var(--space-2);
+}
+
+.mobile-nav-link svg {
+  width: 18px;
+  height: 18px;
+  color: var(--color-gold-500);
+}
+
+.mobile-nav-footer {
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border-dark);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.mobile-stockist-card {
+  background: var(--color-charcoal-900);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.mobile-stockist-title {
+  font-family: var(--font-sans);
+  font-size: var(--text-kicker);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-gold-500);
+  margin-bottom: var(--space-1);
+}
+
+.mobile-stockist-text {
+  font-size: var(--text-small);
+  color: var(--color-text-muted);
+}

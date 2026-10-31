@@ -1,0 +1,306 @@
+/**
+ * Puck & Wick Story & Quality Control #1 Styles
+ * 20-Year Hockey Heritage editorial layout and 4-pillar quality control breakdown
+ */
+
+.story-section {
+  position: relative;
+  padding-block: var(--space-20);
+  background: var(--color-obsidian-950);
+  border-bottom: 1px solid var(--color-border-dark);
+  overflow: hidden;
+}
+
+/* Background rink ice subtle watermarks */
+.story-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.03) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   Editorial Narrative Layout (2-Column)
+   ========================================================================== */
+.story-editorial-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: var(--space-16);
+  align-items: center;
+  margin-bottom: var(--space-20);
+}
+
+.story-narrative {
+  display: flex;
+  flex-direction: column;
+}
+
+.story-headline {
+  font-size: var(--text-h1);
+  color: var(--color-parchment);
+  line-height: 1.15;
+  margin-bottom: var(--space-6);
+}
+
+.story-lead-quote {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--color-gold-bright);
+  padding-left: var(--space-5);
+  border-left: 3px solid var(--color-gold-500);
+  margin-bottom: var(--space-6);
+}
+
+.story-prose p {
+  font-size: var(--text-body-lg);
+  line-height: 1.8;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-5);
+}
+
+.story-prose strong {
+  color: var(--color-parchment);
+  font-weight: 600;
+}
+
+/* Heritage Founder Plaque (Right Column) */
+.story-heritage-card {
+  background: var(--gradient-card-surface);
+  border: 1px solid var(--color-border-gold-subtle);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  position: relative;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.story-heritage-card::before {
+  content: '';
+  position: absolute;
+  inset: 10px;
+  border: 1px dashed rgba(197, 160, 89, 0.25);
+  border-radius: var(--radius-lg);
+  pointer-events: none;
+}
+
+.story-heritage-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding-bottom: var(--space-5);
+  border-bottom: 1px solid var(--color-border-dark);
+}
+
+.story-heritage-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  background: rgba(197, 160, 89, 0.12);
+  border: 1px solid var(--color-gold-500);
+  color: var(--color-gold-bright);
+  flex-shrink: 0;
+}
+
+.story-heritage-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.story-heritage-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-parchment);
+}
+
+.story-heritage-sub {
+  font-size: var(--text-kicker);
+  color: var(--color-gold-500);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.story-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+.story-metric-item {
+  background: var(--color-charcoal-800);
+  border: 1px solid var(--color-border-dark);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  text-align: center;
+}
+
+.story-metric-number {
+  font-family: var(--font-stencil);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-gold-bright);
+  line-height: 1;
+  margin-bottom: var(--space-1);
+}
+
+.story-metric-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.story-heritage-signature {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border-dark);
+  font-size: var(--text-kicker);
+  color: var(--color-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.story-heritage-signature strong {
+  color: var(--color-parchment);
+}
+
+/* ==========================================================================
+   Quality Control #1 Breakdown (4 Pillars Grid)
+   ========================================================================== */
+.qc-breakdown {
+  position: relative;
+  padding-top: var(--space-12);
+}
+
+.qc-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+  margin-top: var(--space-10);
+}
+
+.qc-pillar-card {
+  background: var(--gradient-card-surface);
+  border: 1px solid var(--color-border-dark);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all var(--transition-normal);
+  overflow: hidden;
+}
+
+.qc-pillar-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--color-border-dark);
+  transition: background var(--transition-fast);
+}
+
+.qc-pillar-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-border-gold-subtle);
+  box-shadow: var(--shadow-card), var(--shadow-gold-sm);
+}
+
+.qc-pillar-card:hover::before {
+  background: var(--gradient-gold-sheen);
+}
+
+/* Card Header with Pillar Number & Icon */
+.qc-pillar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-5);
+}
+
+.qc-pillar-number {
+  font-family: var(--font-stencil);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-gold-500);
+  letter-spacing: 0.05em;
+  opacity: 0.8;
+}
+
+.qc-pillar-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: rgba(197, 160, 89, 0.1);
+  border: 1px solid var(--color-border-gold-subtle);
+  color: var(--color-gold-bright);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast);
+}
+
+.qc-pillar-card:hover .qc-pillar-icon {
+  transform: scale(1.08);
+  border-color: var(--color-gold-bright);
+}
+
+.qc-pillar-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.qc-pillar-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-parchment);
+  line-height: 1.3;
+  margin-bottom: var(--space-3);
+}
+
+.qc-pillar-desc {
+  font-size: var(--text-body);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: var(--space-5);
+  flex-grow: 1;
+}
+
+.qc-pillar-spec {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0.35rem 0.65rem;
+  background: var(--color-charcoal-800);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-sm);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-gold-bright);
+  width: fit-content;
+}
+
+.qc-pillar-spec svg {
+  width: 12px;
+  height: 12px;
+  color: var(--color-amber-warm);
+}

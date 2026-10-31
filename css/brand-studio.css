@@ -1,0 +1,461 @@
+/**
+ * Puck & Wick Interactive Brand & Label Concept Studio Stylesheet
+ * 4 SVG Logo Concept Cards, Live Candle Jar Label Previewer, and Header Switcher.
+ */
+
+.brand-studio-workspace {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.logo-concepts-grid > *,
+.jar-mockup-workbench > *,
+.studio-toggle-row > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.apply-logo-btn {
+  white-space: normal;
+  text-align: center;
+  line-height: 1.35;
+  max-width: 100%;
+}
+
+/* Studio Toolbar */
+.studio-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  padding: 0.9rem 1.25rem;
+  background: var(--color-charcoal-900, #121316);
+  border: 1px solid var(--color-border-gold-subtle, rgba(197, 160, 89, 0.3));
+  border-radius: var(--radius-lg, 0.75rem);
+  box-sizing: border-box;
+}
+
+.studio-toolbar-left {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.studio-mode-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #0A0A0C;
+  background: var(--color-gold-bright, #D4AF37);
+  padding: 0.3rem 0.75rem;
+  border-radius: 9999px;
+}
+
+.studio-mode-pill svg {
+  width: 14px;
+  height: 14px;
+}
+
+.studio-active-indicator {
+  font-size: 0.86rem;
+  color: var(--color-parchment, #FAF5E8);
+}
+
+.studio-active-indicator strong {
+  color: var(--color-gold-bright, #D4AF37);
+}
+
+.studio-config-hint {
+  font-size: 0.78rem;
+  color: var(--color-text-muted, #9EA3AE);
+}
+
+.studio-config-hint code {
+  color: var(--color-gold-500, #C5A059);
+  background: rgba(0, 0, 0, 0.45);
+  padding: 0.2rem 0.45rem;
+  border-radius: 0.25rem;
+}
+
+/* 4 Logo Concept Cards Grid */
+.logo-concepts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.logo-concept-card {
+  background: var(--color-charcoal-900, #121316);
+  border: 1px solid var(--color-border-dark, #24262E);
+  border-radius: var(--radius-xl, 1rem);
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.logo-concept-card:hover {
+  border-color: var(--color-gold-500, #C5A059);
+  transform: translateY(-2px);
+}
+
+.logo-concept-card.selected {
+  border-color: var(--color-gold-bright, #D4AF37);
+  box-shadow: 0 12px 32px rgba(197, 160, 89, 0.16);
+}
+
+.concept-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.concept-number-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-gold-500, #C5A059);
+}
+
+.concept-live-pill {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #34D399;
+  background: rgba(52, 211, 153, 0.12);
+  border: 1px solid rgba(52, 211, 153, 0.35);
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+}
+
+.concept-preview-pill {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-text-muted, #9EA3AE);
+}
+
+.concept-svg-stage {
+  background: #08090C;
+  border: 1px solid rgba(197, 160, 89, 0.22);
+  border-radius: var(--radius-lg, 0.75rem);
+  padding: 1.25rem;
+  height: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.concept-svg-stage svg {
+  max-height: 195px;
+  width: auto;
+  max-width: 100%;
+  display: block;
+}
+
+.concept-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.concept-card-title {
+  font-family: var(--font-serif, 'Cormorant Garamond', 'Cinzel', serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.concept-card-desc {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--color-text-muted, #9EA3AE);
+  margin: 0;
+}
+
+.concept-specs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.75rem;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: var(--radius-md, 0.5rem);
+  font-size: 0.78rem;
+}
+
+.concept-spec-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.spec-key {
+  color: var(--color-gold-500, #C5A059);
+  font-weight: 600;
+}
+
+.spec-val {
+  color: var(--color-parchment, #FAF5E8);
+  text-align: right;
+}
+
+.concept-card-actions {
+  margin-top: auto;
+  padding-top: 0.35rem;
+}
+
+.concept-card-actions .apply-logo-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Interactive Candle Jar Mockup Workbench */
+.jar-mockup-workbench {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 2.25rem;
+  background: var(--color-charcoal-900, #121316);
+  border: 1px solid var(--color-border-gold-subtle, rgba(197, 160, 89, 0.32));
+  border-radius: var(--radius-xl, 1rem);
+  padding: 2rem;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.jar-mockup-stage {
+  background: radial-gradient(circle at 50% 35%, rgba(197, 160, 89, 0.14), #07080A 75%);
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  border-radius: var(--radius-lg, 0.75rem);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  box-sizing: border-box;
+}
+
+.mockup-stage-badges {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.mockup-replace-note {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-gold-500, #C5A059);
+}
+
+.jar-svg-mount {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.jar-mockup-svg {
+  width: 100%;
+  max-width: 310px;
+  height: auto;
+  display: block;
+}
+
+.mockup-stage-caption {
+  font-size: 0.8rem;
+  color: var(--color-text-muted, #9EA3AE);
+  text-align: center;
+}
+
+.mockup-stage-caption strong {
+  color: #FFFFFF;
+}
+
+/* Mockup Controls (Right) */
+.jar-mockup-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+  box-sizing: border-box;
+}
+
+.mockup-controls-title {
+  font-family: var(--font-serif, 'Cormorant Garamond', 'Cinzel', serif);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.mockup-controls-lead {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-text-muted, #9EA3AE);
+  margin: 0;
+}
+
+.studio-control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.studio-control-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-gold-500, #C5A059);
+}
+
+.studio-toggle-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.studio-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.8rem 1rem;
+  background: #0A0A0C;
+  border: 1px solid var(--color-border-dark, #24262E);
+  border-radius: var(--radius-md, 0.5rem);
+  color: var(--color-parchment, #FAF5E8);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.18s ease;
+  box-sizing: border-box;
+}
+
+.studio-toggle-btn:hover {
+  border-color: var(--color-gold-500, #C5A059);
+}
+
+.studio-toggle-btn.active {
+  background: rgba(197, 160, 89, 0.15);
+  border-color: var(--color-gold-bright, #D4AF37);
+}
+
+.toggle-main {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.toggle-sub {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--color-text-muted, #9EA3AE);
+}
+
+.vessel-swatch {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-gold-500, #C5A059);
+  flex-shrink: 0;
+}
+
+.swatch-obsidian {
+  background: linear-gradient(135deg, #242936, #08090C);
+}
+
+.swatch-amber {
+  background: linear-gradient(135deg, #9A420E, #3B1504);
+}
+
+.studio-label-readout {
+  background: #0A0A0C;
+  border: 1px solid var(--color-border-dark, #24262E);
+  border-radius: var(--radius-md, 0.5rem);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  font-size: 0.8rem;
+}
+
+.readout-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.readout-key {
+  color: var(--color-gold-500, #C5A059);
+  font-weight: 600;
+}
+
+.readout-val {
+  color: var(--color-parchment, #FAF5E8);
+}
+
+.studio-primary-cta-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.studio-primary-cta-row .apply-logo-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.studio-status-feedback {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #34D399;
+  text-align: center;
+  padding: 0.55rem;
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.32);
+  border-radius: var(--radius-sm, 0.35rem);
+}
+
+@media (max-width: 960px) {
+  .logo-concepts-grid,
+  .jar-mockup-workbench {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .studio-toggle-row {
+    grid-template-columns: 1fr;
+  }
+  .jar-mockup-workbench {
+    padding: 1.15rem;
+  }
+  .logo-concept-card {
+    padding: 1.1rem;
+  }
+}
