@@ -405,7 +405,7 @@ export function renderJarPhotoLabelOverlay(conceptId = 1, scentName = 'TOP SHELF
  */
 export function getCharcoalScienceSvg() {
   return `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 185" width="100%" height="185" class="science-diagram-svg" role="img" aria-label="Microporous Activated Coconut Charcoal Adsorption Diagram">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 196" width="100%" height="196" class="science-diagram-svg" role="img" aria-label="Microporous Activated Coconut Charcoal Adsorption Diagram">
       <title>Microporous Activated Coconut Charcoal Physical Adsorption Matrix</title>
       <defs>
         <linearGradient id="charcoal-bg" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -413,57 +413,69 @@ export function getCharcoalScienceSvg() {
           <stop offset="100%" stop-color="#14161F" />
         </linearGradient>
         <radialGradient id="vdw-glow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="rgba(197, 160, 89, 0.38)" />
+          <stop offset="0%" stop-color="rgba(197, 160, 89, 0.34)" />
           <stop offset="100%" stop-color="rgba(197, 160, 89, 0)" />
         </radialGradient>
       </defs>
-      <rect x="2" y="2" width="316" height="181" rx="8" fill="url(#charcoal-bg)" stroke="#C5A059" stroke-width="1.2" opacity="0.95" />
-      <g stroke="#C5A059" stroke-width="1.25" fill="#181B24" opacity="0.92">
-        <polygon points="28,36 52,22 76,36 76,64 52,78 28,64" />
-        <polygon points="76,36 100,22 124,36 124,64 100,78 76,64" />
-        <polygon points="124,36 148,22 172,36 172,64 148,78 124,64" />
-        <polygon points="172,36 196,22 220,36 220,64 196,78 172,64" />
-        <polygon points="52,78 76,64 100,78 100,106 76,120 52,106" />
-        <polygon points="100,78 124,64 148,78 148,106 124,120 100,106" />
-        <polygon points="148,78 172,64 196,78 196,106 172,120 148,106" />
+      <rect x="2" y="2" width="316" height="192" rx="8" fill="url(#charcoal-bg)" stroke="#C5A059" stroke-width="1.2" opacity="0.95" />
+
+      <!-- Enlarged Honeycomb Hexagons (66px wide x 72px tall so circles + labels sit 100% inside each hex) -->
+      <g stroke="#C5A059" stroke-width="1.35" fill="#161922" opacity="0.95">
+        <!-- Top Row: 3 Large Hexagons -->
+        <polygon points="14,28 47,12 80,28 80,68 47,84 14,68" />
+        <polygon points="80,28 113,12 146,28 146,68 113,84 80,68" />
+        <polygon points="146,28 179,12 212,28 212,68 179,84 146,68" />
+        <!-- Bottom Row: 2 Large Interlocked Hexagons -->
+        <polygon points="47,84 80,68 113,84 113,124 80,140 47,124" />
+        <polygon points="113,84 146,68 179,84 179,124 146,140 113,124" />
       </g>
-      <circle cx="100" cy="50" r="18" fill="url(#vdw-glow)" />
-      <circle cx="148" cy="50" r="18" fill="url(#vdw-glow)" />
-      <circle cx="124" cy="92" r="18" fill="url(#vdw-glow)" />
 
-      <!-- Node 1: ODOR -->
-      <circle cx="52" cy="46" r="13.5" fill="#DC2626" stroke="#FCA5A5" stroke-width="0.9" />
-      <text x="52" y="48" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" font-weight="800" fill="#FFFFFF">ODOR</text>
-      <rect x="33" y="62" width="38" height="10" rx="3" fill="#0D0F14" stroke="rgba(252,165,165,0.4)" stroke-width="0.6" />
-      <text x="52" y="69" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.8" font-weight="600" fill="#FCA5A5">Sweat VOCs</text>
+      <circle cx="47" cy="40" r="20" fill="url(#vdw-glow)" />
+      <circle cx="113" cy="40" r="20" fill="url(#vdw-glow)" />
+      <circle cx="179" cy="40" r="20" fill="url(#vdw-glow)" />
+      <circle cx="80" cy="96" r="20" fill="url(#vdw-glow)" />
+      <circle cx="146" cy="96" r="20" fill="url(#vdw-glow)" />
 
-      <!-- Node 2: GEAR -->
-      <circle cx="100" cy="46" r="13.5" fill="#D97706" stroke="#FDE68A" stroke-width="0.9" />
-      <text x="100" y="48" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" font-weight="800" fill="#FFFFFF">GEAR</text>
-      <rect x="82" y="62" width="36" height="10" rx="3" fill="#0D0F14" stroke="rgba(253,230,138,0.4)" stroke-width="0.6" />
-      <text x="100" y="69" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.8" font-weight="600" fill="#FDE68A">Rink Odor</text>
+      <!-- Hex 1: ODOR (Sweat VOCs) — Fits 100% inside Hex 1 -->
+      <circle cx="47" cy="39" r="13.5" fill="#DC2626" stroke="#FCA5A5" stroke-width="0.9" />
+      <text x="47" y="41" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.6" font-weight="800" fill="#FFFFFF">ODOR</text>
+      <rect x="25" y="55" width="44" height="10" rx="3" fill="#0B0D12" stroke="rgba(252,165,165,0.45)" stroke-width="0.6" />
+      <text x="47" y="62" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.8" font-weight="600" fill="#FCA5A5">Sweat VOCs</text>
 
-      <!-- Node 3: LOCKER -->
-      <circle cx="148" cy="46" r="14" fill="#2563EB" stroke="#93C5FD" stroke-width="0.9" />
-      <text x="148" y="48" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.9" font-weight="800" fill="#FFFFFF">LOCKER</text>
-      <rect x="128" y="62" width="40" height="10" rx="3" fill="#0D0F14" stroke="rgba(147,197,253,0.4)" stroke-width="0.6" />
-      <text x="148" y="69" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.8" font-weight="600" fill="#93C5FD">Stagnant Air</text>
+      <!-- Hex 2: GEAR (Rink Odor) — Fits 100% inside Hex 2 -->
+      <circle cx="113" cy="39" r="13.5" fill="#D97706" stroke="#FDE68A" stroke-width="0.9" />
+      <text x="113" y="41" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.6" font-weight="800" fill="#FFFFFF">GEAR</text>
+      <rect x="92" y="55" width="42" height="10" rx="3" fill="#0B0D12" stroke="rgba(253,230,138,0.45)" stroke-width="0.6" />
+      <text x="113" y="62" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.8" font-weight="600" fill="#FDE68A">Rink Odor</text>
 
-      <!-- Node 4: DAMP -->
-      <circle cx="124" cy="90" r="13.5" fill="#059669" stroke="#6EE7B7" stroke-width="0.9" />
-      <text x="124" y="92" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" font-weight="800" fill="#FFFFFF">DAMP</text>
-      <rect x="107" y="106" width="34" height="10" rx="3" fill="#0D0F14" stroke="rgba(110,231,183,0.4)" stroke-width="0.6" />
-      <text x="124" y="113" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.8" font-weight="600" fill="#6EE7B7">Moisture</text>
+      <!-- Hex 3: LOCKER (Stagnant Air) — Fits 100% inside Hex 3 -->
+      <circle cx="179" cy="39" r="14" fill="#2563EB" stroke="#93C5FD" stroke-width="0.9" />
+      <text x="179" y="41" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.9" font-weight="800" fill="#FFFFFF">LOCKER</text>
+      <rect x="155" y="55" width="48" height="10" rx="3" fill="#0B0D12" stroke="rgba(147,197,253,0.45)" stroke-width="0.6" />
+      <text x="179" y="62" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.8" font-weight="600" fill="#93C5FD">Stagnant Air</text>
 
-      <line x1="228" y1="30" x2="228" y2="112" stroke="#D4AF37" stroke-width="0.85" stroke-dasharray="3,2" />
-      <text x="235" y="50" font-family="'Inter', sans-serif" font-size="6.4" font-weight="700" fill="#D4AF37">PORE SIZE &lt;2nm</text>
-      <text x="235" y="61" font-family="'Inter', sans-serif" font-size="5.4" fill="#B0B5C0">Microporous Lattice</text>
-      <text x="235" y="82" font-family="'Inter', sans-serif" font-size="6.4" font-weight="700" fill="#D4AF37">DEEP CAPTURE</text>
-      <text x="235" y="93" font-family="'Inter', sans-serif" font-size="5.4" fill="#B0B5C0">Physical Adsorption</text>
+      <!-- Hex 4: DAMP (Moisture) — Fits 100% inside Hex 4 -->
+      <circle cx="80" cy="95" r="13.5" fill="#059669" stroke="#6EE7B7" stroke-width="0.9" />
+      <text x="80" y="97" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.6" font-weight="800" fill="#FFFFFF">DAMP</text>
+      <rect x="60" y="111" width="40" height="10" rx="3" fill="#0B0D12" stroke="rgba(110,231,183,0.45)" stroke-width="0.6" />
+      <text x="80" y="118" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.8" font-weight="600" fill="#6EE7B7">Moisture</text>
+
+      <!-- Hex 5: LOCKED (<2nm Carbon Trap) — Fits 100% inside Hex 5 -->
+      <circle cx="146" cy="95" r="13.5" fill="#1F2430" stroke="#D4AF37" stroke-width="1.1" />
+      <text x="146" y="97" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.9" font-weight="800" fill="#D4AF37">LOCKED</text>
+      <rect x="122" y="111" width="48" height="10" rx="3" fill="#0B0D12" stroke="rgba(212,175,55,0.45)" stroke-width="0.6" />
+      <text x="146" y="118" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.6" font-weight="600" fill="#E5C878">&lt;2nm Pore Trap</text>
+
+      <!-- Right Callout Column -->
+      <line x1="224" y1="24" x2="224" y2="128" stroke="#D4AF37" stroke-width="0.85" stroke-dasharray="3,2" />
+      <text x="232" y="48" font-family="'Inter', sans-serif" font-size="6.4" font-weight="700" fill="#D4AF37">PORE SIZE &lt;2nm</text>
+      <text x="232" y="59" font-family="'Inter', sans-serif" font-size="5.4" fill="#B0B5C0">Microporous Lattice</text>
+      <text x="232" y="88" font-family="'Inter', sans-serif" font-size="6.4" font-weight="700" fill="#D4AF37">DEEP CAPTURE</text>
+      <text x="232" y="99" font-family="'Inter', sans-serif" font-size="5.4" fill="#B0B5C0">Physical Adsorption</text>
 
       <!-- Bottom Holder Box: Widen & scale text so zero letters overflow -->
-      <rect x="10" y="144" width="300" height="24" rx="5" fill="rgba(197, 160, 89, 0.14)" stroke="rgba(197, 160, 89, 0.42)" />
-      <text x="160" y="159" text-anchor="middle" font-family="'Inter', sans-serif" font-size="6.2" font-weight="700" letter-spacing="0.55" fill="#D4AF37">&gt;1,000 m²/g SURFACE AREA • PERMANENT ODOR CAPTURE</text>
+      <rect x="10" y="156" width="300" height="24" rx="5" fill="rgba(197, 160, 89, 0.14)" stroke="rgba(197, 160, 89, 0.42)" />
+      <text x="160" y="171" text-anchor="middle" font-family="'Inter', sans-serif" font-size="6.2" font-weight="700" letter-spacing="0.55" fill="#D4AF37">&gt;1,000 m²/g SURFACE AREA • PERMANENT ODOR CAPTURE</text>
     </svg>
   `;
 }
