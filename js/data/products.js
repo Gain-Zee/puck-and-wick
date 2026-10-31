@@ -272,20 +272,21 @@ export const PRODUCTS = [
   {
     id: 'puck-mens-athlete',
     name: "Men's Lauson-98™ Gear & Locker Puck",
-    tagline: 'Matte Obsidian & Gold Hardware Disc. Activated Coconut Carbon + Lauson-98™.',
+    tagline: 'Single 3.0" Matte Obsidian & Gold Hardware Puck. Activated Coconut Carbon + Lauson-98™.',
     price: 44.00,
     formattedPrice: '$44.00',
     category: ['mens', 'odor_care'],
     productType: 'odor_care',
     genderLine: 'mens',
     genderLabel: 'MENS',
-    specUnitLabel: '3.0" Bag Puck',
+    specUnitLabel: '1x 3.0" Bag Puck (Single)',
+    includedSummary: 'SOLD INDIVIDUALLY • Includes 1x Full-Size 3.0" Matte-Black & Gold Athlete Odor Puck (40g Lauson-98™ + Carbon Core). Standalone single item — does not include candle or body wash.',
     burnTime: '6+ Months Active',
     weightOz: 4,
-    vessel: '3.0" Regulation-Size Matte-Black Anodized Aluminum with Brushed Gold Bezel',
+    vessel: '1x 3.0" Regulation-Size Matte-Black Anodized Aluminum Disc with Brushed Gold Bezel',
     wax: 'Sub-2nm Coconut Charcoal (>1,000 m²/g) + Lauson-98™ Molecular Core (40g Fill)',
     wick: 'Laser-Drilled 18-Port Vapor Diffusion Vent Array',
-    description: 'Our full-size 3.0" regulation-diameter odor puck engineered to sit at the bottom of hockey bags, gym duffels, and equipment lockers. Heavy-gauge Matte-Black & Brushed-Gold anodized aluminum combines >1,000 m²/g microporous coconut carbon with our proprietary Swiss-inspired Lauson-98™ vapor complex to permanently destroy whole-bag sweat and gear odors.',
+    description: 'Sold individually as a standalone 3.0" regulation-diameter odor puck engineered to sit at the bottom of hockey bags, gym duffels, and equipment lockers. Heavy-gauge Matte-Black & Brushed-Gold anodized aluminum combines >1,000 m²/g microporous coconut carbon with our proprietary Swiss-inspired Lauson-98™ vapor complex to permanently destroy whole-bag sweat and gear odors.',
     notes: {
       top: ['Lauson-98™ Vapor-Phase Complex', 'Zero Masking Perfumes', 'Hypoallergenic'],
       middle: ['Sub-2nm Activated Coconut Carbon', '>1,000 m²/g Micropore Lattice'],
@@ -295,27 +296,28 @@ export const PRODUCTS = [
     seasonal: false,
     vesselType: 'obsidian',
     photo: 'assets/images/item-puck-men.jpg',
-    subSpecText: '3.0" FULL-BAG HARDWARE PUCK • LAUSON-98™ + CARBON',
-    waxSpecSub: 'Lauson-98™ + Carbon Matrix',
+    subSpecText: 'SINGLE 3.0" FULL-BAG PUCK • LAUSON-98™ + CARBON',
+    waxSpecSub: '1x 3.0" Puck Only',
     accentColor: '#C5A059'
   },
   {
     id: 'puck-womens-sanctuary',
     name: "Women's Sanctuary Workout Tote & Closet Puck",
-    tagline: '3.0" Warm Ivory/White & Champagne-Gold Disc. For Yoga Bags, Gym Totes & Closets.',
+    tagline: 'Single 3.0" Warm Ivory/White & Champagne-Gold Puck. For Yoga Bags, Gym Totes & Closets.',
     price: 44.00,
     formattedPrice: '$44.00',
     category: ['womens', 'odor_care'],
     productType: 'odor_care',
     genderLine: 'womens',
     genderLabel: 'WOMENS',
-    specUnitLabel: '3.0" Sanctuary Puck',
+    specUnitLabel: '1x 3.0" White Puck (Single)',
+    includedSummary: 'SOLD INDIVIDUALLY • Includes 1x Full-Size 3.0" Warm Ivory/White & Champagne-Gold Sanctuary Odor Puck (40g Lauson-98™ + Carbon Core). Standalone single item — does not include candle or linen mist.',
     burnTime: '6+ Months Active',
     weightOz: 4,
-    vessel: '3.0" Warm Matte Alabaster-Ivory Anodized Aluminum with Brushed Champagne-Gold Bezel',
+    vessel: '1x 3.0" Warm Matte Alabaster-Ivory Anodized Aluminum Disc with Brushed Champagne-Gold Bezel',
     wax: 'Sub-2nm Coconut Charcoal (>1,000 m²/g) + Lauson-98™ Molecular Core (40g Fill)',
     wick: 'Laser-Drilled 18-Port Vapor Diffusion Vent Array',
-    description: 'Tailored in our signature Warm Alabaster-Ivory/White and Brushed Champagne-Gold finish for women’s yoga & Pilates workout bags, gym totes, running sneaker shelves, and walk-in closets. Built with the exact same sub-2nm activated coconut carbon (>1,000 m²/g) and proprietary Lauson-98™ vapor-phase complex as our Athlete Puck to permanently eliminate workout and fabric odors with zero masking perfumes.',
+    description: 'Sold individually as a standalone 3.0" puck tailored in our signature Warm Alabaster-Ivory/White and Brushed Champagne-Gold finish for women’s yoga & Pilates workout bags, gym totes, running sneaker shelves, and walk-in closets. Built with sub-2nm activated coconut carbon (>1,000 m²/g) and our proprietary Lauson-98™ vapor-phase complex to permanently eliminate workout and fabric odors with zero masking perfumes.',
     notes: {
       top: ['Lauson-98™ Vapor-Phase Complex', 'Zero Masking Perfumes', 'Hypoallergenic'],
       middle: ['Sub-2nm Activated Coconut Carbon', '>1,000 m²/g Micropore Lattice'],
@@ -325,8 +327,8 @@ export const PRODUCTS = [
     seasonal: false,
     vesselType: 'ivory',
     photo: 'assets/images/item-puck-women.jpg',
-    subSpecText: '3.0" WARM IVORY PUCK • YOGA TOTES & CLOSETS',
-    waxSpecSub: 'Lauson-98™ + Carbon Matrix',
+    subSpecText: 'SINGLE 3.0" WHITE PUCK • YOGA TOTES & CLOSETS',
+    waxSpecSub: '1x 3.0" White Puck Only',
     accentColor: '#E5C878'
   },
   {
@@ -339,7 +341,8 @@ export const PRODUCTS = [
     productType: 'odor_care',
     genderLine: 'mens',
     genderLabel: 'MENS',
-    specUnitLabel: 'Set of 2 (2.0" Discs)',
+    specUnitLabel: 'Set of 2 (2.0" Mini Pucks)',
+    includedSummary: 'SOLD AS A 2-PUCK TWIN-PACK • Includes 2x Compact 2.0" (50mm) Matte-Black & Gold Mini Pucks for Left & Right Skates, Hockey Gloves, or Shoes. Standalone item.',
     burnTime: '6+ Months Active',
     weightOz: 3,
     vessel: '2x Compact 2.0" (50mm) Matte-Black & Brushed-Gold Anodized Aluminum Discs',
@@ -356,26 +359,27 @@ export const PRODUCTS = [
     vesselType: 'obsidian',
     photo: 'assets/images/item-mini-pucks-pair.jpg',
     subSpecText: 'SET OF 2 (2.0" COMPACT DISCS) • SKATES & GLOVES',
-    waxSpecSub: 'Lauson-98™ Twin-Pack',
+    waxSpecSub: '2x 2.0" Mini Pucks Only',
     accentColor: '#C5A059'
   },
   {
     id: 'wash-mens-charcoal',
     name: 'Athlete Charcoal & Lauson-98™ Body Wash',
-    tagline: 'Post-Rink Detox Gel (8 fl oz). Activated Binchotan Charcoal & Blue Eucalyptus.',
+    tagline: 'Single 8 fl oz Post-Rink Detox Gel Pump Bottle. Activated Binchotan Charcoal & Blue Eucalyptus.',
     price: 44.00,
     formattedPrice: '$44.00',
     category: ['mens', 'odor_care'],
     productType: 'odor_care',
     genderLine: 'mens',
     genderLabel: 'MENS',
-    specUnitLabel: '8 fl oz Pump',
+    specUnitLabel: '1x 8 fl oz Wash (Single)',
+    includedSummary: 'SOLD INDIVIDUALLY • Includes 1x Full-Size 8 fl oz (236 mL) Athlete Charcoal & Lauson-98™ Body Wash Pump Bottle. Standalone single item — does not include candle or odor puck.',
     burnTime: '8 fl oz (236 mL)',
     weightOz: 8,
-    vessel: '8 oz Matte-Black Apothecary Bottle with Lockable Dispenser Pump',
+    vessel: '1x 8 oz Matte-Black Apothecary Bottle with Lockable Dispenser Pump',
     wax: 'Activated Binchotan Charcoal + Lauson-98™ Molecular Deodorizer',
     wick: 'Sulfate-Free, Phthalate-Free Botanical Gel Base',
-    description: 'Formulated specifically to strip deep-seated locker-room sweat, equipment bacteria, and rink grime without drying skin. Activated binchotan charcoal draws impurities from pores while our proprietary Lauson-98™ complex and cold-pressed blue eucalyptus eliminate post-game odor on contact.',
+    description: 'Sold individually as a standalone 8 fl oz full-size pump bottle formulated specifically to strip deep-seated locker-room sweat, equipment bacteria, and rink grime without drying skin. Activated binchotan charcoal draws impurities from pores while our proprietary Lauson-98™ complex and cold-pressed blue eucalyptus eliminate post-game odor on contact.',
     notes: {
       top: ['Cold-Pressed Blue Eucalyptus', 'Crushed Peppermint', 'Alpine Juniper'],
       middle: ['Activated Binchotan Charcoal', 'Black Spruce Needle', 'Rosemary Leaf'],
@@ -385,27 +389,28 @@ export const PRODUCTS = [
     seasonal: false,
     vesselType: 'obsidian',
     photo: 'assets/images/item-bodywash-men.jpg',
-    subSpecText: '8 FL OZ DETOX WASH • BINCHOTAN + LAUSON-98™',
-    waxSpecSub: 'Binchotan + Lauson-98™',
+    subSpecText: 'SINGLE 8 FL OZ PUMP BOTTLE • BINCHOTAN + LAUSON-98™',
+    waxSpecSub: '1x 8 oz Body Wash Only',
     accentColor: '#C5A059'
   },
   {
     id: 'mist-womens-linen',
     name: 'Sanctuary Botanical Linen & Pillow Mist',
-    tagline: 'Fine-Mist Atomizer (4 fl oz). Lauson-98™ Fabric Refresher & White Lavender.',
+    tagline: 'Single 4 fl oz Fine-Mist Spray Bottle. Lauson-98™ Fabric Refresher & White Lavender.',
     price: 44.00,
     formattedPrice: '$44.00',
     category: ['womens', 'odor_care'],
     productType: 'odor_care',
     genderLine: 'womens',
     genderLabel: 'WOMENS',
-    specUnitLabel: '4 fl oz Mist',
+    specUnitLabel: '1x 4 fl oz Mist (Single)',
+    includedSummary: 'SOLD INDIVIDUALLY • Includes 1x Full-Size 4 fl oz (118 mL) Sanctuary Botanical Linen & Pillow Mist Spray Bottle. Standalone single item — does not include candle or odor puck.',
     burnTime: '4 fl oz (118 mL)',
     weightOz: 4,
-    vessel: '4 oz Frosted Warm Ivory Glass Bottle with Brushed Champagne-Gold Atomizer',
+    vessel: '1x 4 oz Frosted Warm Ivory Glass Bottle with Brushed Champagne-Gold Atomizer',
     wax: 'Botanical Hydrosol Base + Lauson-98™ Molecular Fabric Neutralizer',
     wick: 'Non-Staining Micro-Mist Spray • Safe for Linen, Cashmere & Silk',
-    description: 'Transform bedrooms, walk-in closets, cashmere knits, and workout totes into a five-star sanctuary. Powered by our proprietary Lauson-98™ molecular complex to permanently neutralize fabric odors while leaving a delicate veil of crushed French lavender leaf, white orchid, and sun-bleached driftwood.',
+    description: 'Sold individually as a standalone 4 fl oz fine-mist spray bottle to transform bedrooms, walk-in closets, cashmere knits, and workout totes into a five-star sanctuary. Powered by our proprietary Lauson-98™ molecular complex to permanently neutralize fabric odors while leaving a delicate veil of crushed French lavender leaf, white orchid, and sun-bleached driftwood.',
     notes: {
       top: ['Crushed French Lavender Leaf', 'Petitgrain', 'Lemon Verbena'],
       middle: ['Night-Blooming White Orchid', 'Eucalyptus Dew', 'Sheer Magnolia'],
@@ -415,8 +420,8 @@ export const PRODUCTS = [
     seasonal: false,
     vesselType: 'ivory',
     photo: 'assets/images/item-mist-women.jpg',
-    subSpecText: '4 FL OZ FROSTED ATOMIZER • LAUSON-98™ MIST',
-    waxSpecSub: 'Lauson-98™ Botanical Mist',
+    subSpecText: 'SINGLE 4 FL OZ SPRAY BOTTLE • LAUSON-98™ MIST',
+    waxSpecSub: '1x 4 oz Mist Spray Only',
     accentColor: '#E5C878'
   }
 ];
@@ -637,12 +642,68 @@ export function getProductGallerySlides(product, conceptId = 1) {
     ];
   }
 
-  // Individual Body Wash or Botanical Mist (Focused strictly on the single bottle)
+  if (product.id === 'wash-mens-charcoal') {
+    return [
+      {
+        id: 'primary',
+        shortLabel: '8 oz Bottle',
+        title: '8 fl oz Athlete Charcoal & Lauson-98™ Body Wash — Individual Pump Bottle',
+        type: 'svg',
+        thumb: primaryPhoto
+      },
+      {
+        id: 'shower',
+        shortLabel: 'In Shower',
+        title: '8 fl oz Athlete Body Wash — Post-Game Binchotan Charcoal & Blue Eucalyptus Gel',
+        type: 'image',
+        src: 'assets/images/packaging/wash-men-shower.jpg',
+        thumb: 'assets/images/packaging/wash-men-shower.jpg'
+      },
+      {
+        id: 'locker_towel',
+        shortLabel: 'Locker Room',
+        title: '8 fl oz Athlete Body Wash — Built for Locker Room & Post-Workout Recovery',
+        type: 'image',
+        src: 'assets/images/packaging/wash-men-gym-towel.jpg',
+        thumb: 'assets/images/packaging/wash-men-gym-towel.jpg'
+      }
+    ];
+  }
+
+  if (product.id === 'mist-womens-linen') {
+    return [
+      {
+        id: 'primary',
+        shortLabel: '4 oz Mist',
+        title: '4 fl oz Sanctuary Botanical Linen & Pillow Mist — Individual Spray Bottle',
+        type: 'svg',
+        thumb: primaryPhoto
+      },
+      {
+        id: 'bedding',
+        shortLabel: 'Linen & Pillows',
+        title: '4 fl oz Sanctuary Mist — Fine-Mist Lauson-98™ Refresher for Bedding & Cashmere',
+        type: 'image',
+        src: 'assets/images/packaging/mist-women-bedding.jpg',
+        thumb: 'assets/images/packaging/mist-women-bedding.jpg'
+      },
+      {
+        id: 'closet_knits',
+        shortLabel: 'Closet & Totes',
+        title: '4 fl oz Sanctuary Mist — Eliminates Odors on Walk-In Closet Fabrics & Workout Totes',
+        type: 'image',
+        src: 'assets/images/packaging/mist-women-closet.jpg',
+        thumb: 'assets/images/packaging/mist-women-closet.jpg'
+      }
+    ];
+  }
+
+  // Fallback for any other individual Odor Care item
   return [
     {
       id: 'primary',
       shortLabel: 'Studio View',
-      title: `${product.name} — Individual Full-Size Bottle`,
+      title: `${product.name} — Individual Standalone Item`,
       type: 'svg',
       thumb: primaryPhoto
     }
@@ -728,17 +789,17 @@ export function getInteractive360BoxHtml(product, mode = 'card') {
             </div>
           </div>
 
-          <!-- FACE 03: BACK PANEL (TWENTY YEARS ON THE ICE STORY & 4 BADGES) -->
+          <!-- FACE 03: BACK PANEL (TWENTY-FIVE YEARS ON THE ICE STORY & 4 BADGES) -->
           <div class="box360-face face-back">
             <div class="box360-lid"></div>
             <div class="box360-gold-neck"></div>
             <div class="box360-body box360-side-panel">
-              <div class="side-kicker">TWENTY YEARS ON THE ICE</div>
+              <div class="side-kicker">TWENTY-FIVE YEARS ON THE ICE</div>
               <div class="side-heading">ONE STANDARD OF EXCELLENCE</div>
               <div class="side-rule"></div>
               <p class="side-story">Born in Lausanne, Switzerland to proud Bulgarian roots and forged in Purcellville, VA, Puck &amp; Wick™ unites Swiss-born Lauson-98™ precision, Bulgarian botanical heritage, and small-batch American soy craftsmanship—cured 14 days in tribute to #98.</p>
               <div class="side-badges-grid">
-                <div class="side-badge-box"><strong>20 YRS</strong><span>COMPETITIVE ICE</span></div>
+                <div class="side-badge-box"><strong>25 YRS</strong><span>COMPETITIVE ICE</span></div>
                 <div class="side-badge-box"><strong>#98</strong><span>FOUNDER TRIBUTE</span></div>
                 <div class="side-badge-box"><strong>14 DAYS</strong><span>CURED IN GLASS</span></div>
                 <div class="side-badge-box"><strong>VA</strong><span>PURCELLVILLE POUR</span></div>

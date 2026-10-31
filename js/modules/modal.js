@@ -98,6 +98,11 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
               <span class="modal-burn-badge" data-testid="product-burn-time">${product.productType === 'odor_care' ? product.burnTime : `${product.burnTime} Slow Burn`}</span>
             </div>
 
+            <div class="modal-included-callout" data-testid="modal-included-callout">
+              <span class="included-callout-badge">WHAT YOU RECEIVE</span>
+              <span class="included-callout-text">${product.includedSummary || `SOLD INDIVIDUALLY • Includes 1x 10 oz (${product.name}) Hand-Poured Soy Candle in Two-Piece Collector Box.`}</span>
+            </div>
+
             <p class="modal-description">${product.description}</p>
 
             ${product.id === 'puck-mini-pair' ? `

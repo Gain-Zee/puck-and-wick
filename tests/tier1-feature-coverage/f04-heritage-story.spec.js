@@ -28,7 +28,7 @@ export const tests = [
     run: async ({ page, baseUrl, selectors }) => {
       await page.goto(baseUrl);
       const storyText = await page.locator(selectors.story.section).first().innerText();
-      const has20Years = /20\s*years/i.test(storyText) || /twenty\s*years/i.test(storyText);
+      const has20Years = /25\s*years/i.test(storyText) || /twenty[- ]five\s*years/i.test(storyText) || /20\s*years/i.test(storyText) || /twenty\s*years/i.test(storyText);
       const hasHockey = /hockey/i.test(storyText) || /ice/i.test(storyText);
       if (!has20Years || !hasHockey) {
         throw new Error('Story copy is missing 20 years competitive hockey heritage context');

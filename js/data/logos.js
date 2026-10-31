@@ -28,7 +28,7 @@ export const LOGO_CONCEPTS = [
     name: 'Concept 2 — The Precision Reserve (Vertical Double-Frame)',
     shortTitle: 'The Precision Reserve',
     archetype: 'The Precision Reserve',
-    tagline: 'Tall architectural double-hairline frame combining the crossed sticks, flame, and vulcanized puck base with a diamond divider rule and "20 Years on the Ice" reserve stamp.',
+    tagline: 'Tall architectural double-hairline frame combining the crossed sticks, flame, and vulcanized puck base with a diamond divider rule and "25 Years on the Ice" reserve stamp.',
     typography: 'Cormorant Garamond Display + Inter Geometric Sans',
     finish: 'Dual-Line Metallic Gold Foil with Center Diamond Rule',
     bestFor: 'Reserve Candle Releases, Gift Boxes & Founder Editions',

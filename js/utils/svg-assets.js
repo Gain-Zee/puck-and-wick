@@ -64,7 +64,7 @@ export const SVG_LOGOS = {
   <polygon points="250,285 255,290 250,295 245,290" fill="url(#c2-gold)" />
   <line x1="264" y1="290" x2="365" y2="290" stroke="url(#c2-gold)" stroke-width="1" opacity="0.65" />
   <!-- Reserve Subtitles -->
-  <text x="250" y="328" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10.5" font-weight="600" letter-spacing="4.2" fill="#E5C878">XX YRS • 20 YEARS ON THE ICE</text>
+  <text x="250" y="328" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10.5" font-weight="600" letter-spacing="4.2" fill="#E5C878">XXV YRS • 25 YEARS ON THE ICE</text>
   <text x="250" y="356" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9.5" font-weight="500" letter-spacing="4" fill="#9CA3AF">SMALL BATCH SOY • LOUDOUN CO. VA</text>
   <text x="250" y="408" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="13" font-weight="600" letter-spacing="3.5" fill="url(#c2-gold)">RESERVE EDITION</text>
 </svg>`,
@@ -328,7 +328,7 @@ export function renderJarPhotoLabelOverlay(conceptId = 1, scentName = 'TOP SHELF
       <polygon points="198,229 200,231 198,233 196,231" fill="url(#${goldGradId})" />
       <line x1="203" y1="231" x2="238" y2="231" stroke="url(#${goldGradId})" stroke-width="0.5" opacity="0.7" />
       <text x="198" y="246" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="${scentFontSize}" font-weight="600" letter-spacing="${scentSpacing}" fill="#E5C878">${displayScent}</text>
-      <text x="198" y="260" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.6" font-weight="600" letter-spacing="1.4" fill="#9CA3AF">20 YEARS ON THE ICE</text>
+      <text x="198" y="260" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.6" font-weight="600" letter-spacing="1.4" fill="#9CA3AF">25 YEARS ON THE ICE</text>
       <text x="198" y="272" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="5.2" font-weight="600" letter-spacing="1.6" fill="url(#${goldGradId})">RESERVE EDITION</text>
     `;
   } else if (cid === 3) {

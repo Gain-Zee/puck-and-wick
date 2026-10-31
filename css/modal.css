@@ -569,6 +569,33 @@
   border-radius: 4px;
 }
 
+.modal-included-callout {
+  display: flex;
+  flex-direction: column;
+  gap: 0.22rem;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.13) 0%, rgba(197, 160, 89, 0.05) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  border-left: 3px solid var(--color-gold-bright, #D4AF37);
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.6rem;
+}
+
+.included-callout-badge {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gold-bright, #D4AF37);
+}
+
+.included-callout-text {
+  font-size: 0.76rem;
+  line-height: 1.38;
+  font-weight: 600;
+  color: #FAF5E8;
+}
+
 .modal-description {
   font-size: 0.82rem;
   line-height: 1.48;
