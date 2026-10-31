@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Puck &amp; Wick™ — 3D Print Enclosure Package &amp; Operator Guide</title>
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #08090C;
+      color: #FAF5E8;
+      line-height: 1.65;
+      padding: 32px 20px 80px;
+    }
+    .wrap {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    .kicker {
+      color: #C5A059;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    h1 {
+      font-size: 2rem;
+      margin: 6px 0 12px;
+      color: #FAF5E8;
+    }
+    h2 {
+      font-size: 1.25rem;
+      color: #E5C878;
+      margin: 32px 0 12px;
+      border-bottom: 1px solid rgba(197, 160, 89, 0.25);
+      padding-bottom: 8px;
+    }
+    .card {
+      background: #101218;
+      border: 1px solid rgba(197, 160, 89, 0.35);
+      border-radius: 14px;
+      padding: 22px;
+      margin-bottom: 24px;
+    }
+    .hero-img {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid rgba(197, 160, 89, 0.3);
+      display: block;
+      margin: 16px 0;
+    }
+    .dl-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #E5C878 0%, #B69146 100%);
+      color: #08090C;
+      font-weight: 800;
+      text-decoration: none;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+    }
+    .btn-outline {
+      display: flex;
+      flex-direction: column;
+      background: rgba(197, 160, 89, 0.08);
+      border: 1px solid rgba(197, 160, 89, 0.4);
+      color: #FAF5E8;
+      text-decoration: none;
+      padding: 14px;
+      border-radius: 10px;
+    }
+    .btn-outline strong { color: #E5C878; font-size: 0.92rem; }
+    .btn-outline span { color: #9CA3AF; font-size: 0.78rem; margin-top: 4px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin-top: 10px;
+    }
+    th, td {
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    th { color: #C5A059; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; }
+    ul, ol { padding-left: 20px; }
+    li { margin-bottom: 8px; }
+    code {
+      background: rgba(255,255,255,0.08);
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #E5C878;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="kicker">Puck &amp; Wick™ • Hardware Enclosure Fabrication Brief</div>
+    <h1>3D Print Operator Guide &amp; STL Package</h1>
+    <p>Complete 3D print files and slicer settings for the <strong>Full-Size 3.0" Puck Enclosure</strong> and <strong>Compact 2.0" Mini Puck Enclosure</strong>.</p>
+
+    <div class="card">
+      <a href="puck-and-wick-3d-print-package.zip" download class="btn" style="width:100%;font-size:0.95rem;padding:15px;">
+        ⬇ Download All 4 STL Files + Operator Guide (.ZIP)
+      </a>
+      <div class="dl-grid">
+        <a href="puck-3inch-bottom-knurled-cup.stl" download class="btn-outline">
+          <strong>1. puck-3inch-bottom-knurled-cup.stl</strong>
+          <span>3.0" (76.2mm × 22.4mm) Diamond-Knurled Cup</span>
+        </a>
+        <a href="puck-3inch-top-vent-cap.stl" download class="btn-outline">
+          <strong>2. puck-3inch-top-vent-cap.stl</strong>
+          <span>3.0" (72.2mm) 18-Port Vented Top Cap</span>
+        </a>
+        <a href="puck-2inch-mini-bottom-cup.stl" download class="btn-outline">
+          <strong>3. puck-2inch-mini-bottom-cup.stl</strong>
+          <span>2.0" (50.8mm × 17.5mm) Mini Knurled Cup</span>
+        </a>
+        <a href="puck-2inch-mini-top-vent-cap.stl" download class="btn-outline">
+          <strong>4. puck-2inch-mini-top-vent-cap.stl</strong>
+          <span>2.0" (47.6mm) 12-Port Mini Vented Top Cap</span>
+        </a>
+      </div>
+    </div>
+
+    <h2>1. Target Look &amp; What You Are Printing</h2>
+    <img src="reference-puck-target-look.jpg" alt="Target Matte-Black Knurled Hockey Puck Enclosure" class="hero-img" />
+    <ul>
+      <li><strong>What You Are Printing:</strong> Empty 2-piece matte-black outer shells (<strong>Part A: Bottom Knurled Cup</strong> + <strong>Part B: Vented Top Cap</strong>).</li>
+      <li><strong>Important — Deliver Unsealed:</strong> Do <strong>not</strong> glue or permanently seal the Top Cap onto the Bottom Cup after printing. Hand off the printed Bottom Cups and Top Caps as separate pieces so internal hardware weighting, gold trim rings, and final sealing can be completed in our studio.</li>
+    </ul>
+
+    <h2>2. Recommended Filament (For Matte Look, Heat &amp; Impact Strength)</h2>
+    <ul>
+      <li><strong>Filament:</strong> <strong>Matte-Black Carbon-Fiber PETG (<code>PETG-CF</code>)</strong> or <strong>Matte-Black <code>ASA</code> / <code>ASA-CF</code></strong> (e.g., <em>Bambu Lab PETG-CF Black</em> or <em>Polymaker Fiberon PETG-CF</em>).</li>
+      <li><strong>Why Not Standard PLA:</strong> Pucks sit inside gear bags and car trunks in the summer where temperatures hit <code>150°F+</code> (standard PLA softens at <code>130°F</code>). <code>PETG-CF</code> and <code>ASA</code> handle <code>175°F–200°F</code>, have high impact resistance, and hide 100% of layer lines with a dead-matte carbon finish.</li>
+      <li><strong>Nozzle:</strong> <code>0.4 mm</code> Hardened Steel Nozzle.</li>
+    </ul>
+
+    <h2>3. Exact Slicer Settings (Bambu Studio / OrcaSlicer / PrusaSlicer)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Setting</th>
+          <th>Recommended Value</th>
+          <th>Reason</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Part Orientation</strong></td>
+          <td>• <strong>Bottom Cup:</strong> Flat on base (cavity UP)<br>• <strong>Top Cap:</strong> Flat on outer face (plug ring UP)</td>
+          <td>Printing the Top Cap face-down on a <strong>Smooth PEI</strong> or fine <strong>Matte PEI</strong> plate makes the front face look injection-molded with zero top-layer lines.</td>
+        </tr>
+        <tr>
+          <td><strong>Supports</strong></td>
+          <td><code>Disabled (None)</code></td>
+          <td>All 45° chamfers and diamond knurls are 100% self-supporting.</td>
+        </tr>
+        <tr>
+          <td><strong>Layer Height</strong></td>
+          <td><code>0.16 mm</code> (Optimal) or <code>0.20 mm</code></td>
+          <td>Crisp diamond knurling and clean snap-ledge tolerance.</td>
+        </tr>
+        <tr>
+          <td><strong>Wall Loops / Perimeters</strong></td>
+          <td><code>5 Walls</code> (<code>2.0 mm</code> solid wall)</td>
+          <td>Heavy-duty impact strength for locker rooms and gear bags.</td>
+        </tr>
+        <tr>
+          <td><strong>Top / Bottom Shell Layers</strong></td>
+          <td><code>5 Top</code> / <code>5 Bottom</code></td>
+          <td>Solid floor and faceplate rigidity.</td>
+        </tr>
+        <tr>
+          <td><strong>Sparse Infill</strong></td>
+          <td><code>35% – 40% Gyroid</code></td>
+          <td>Isotropic crush resistance from all angles.</td>
+        </tr>
+        <tr>
+          <td><strong>Seam Position</strong></td>
+          <td><code>Random</code> on Cup / <code>Aligned</code> on Cap</td>
+          <td><code>Random</code> hides the Z-seam completely inside the diamond knurling teeth.</td>
+        </tr>
+        <tr>
+          <td><strong>First Layer Speed (Top Cap)</strong></td>
+          <td><code>35 mm/s</code> + <code>Arachne</code> Wall Generator</td>
+          <td>Keeps the 18 small <code>1.7 mm</code> vent holes crisp and round on Layer 1.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>4. Print Time &amp; Spool Yield Reference</h2>
+    <ul>
+      <li><strong>Single 3.0" Test Puck (1 Cup + 1 Cap):</strong> <code>~48–52 minutes</code> • Uses <code>~50g</code> of filament (<strong>19–20 full-size pucks per 1 kg spool</strong>).</li>
+      <li><strong>Full Bed of 3.0" Pucks (256×256mm Plate):</strong> Fit <code>9x Bottom Cups</code> on Plate 1 (<code>~4.5 hrs</code> overnight) and <code>9x Top Caps</code> on Plate 2 (<code>~1.5 hrs</code>).</li>
+      <li><strong>Single 2.0" Mini Puck (1 Cup + 1 Cap):</strong> <code>~24 minutes</code> • Uses <code>~22g</code> of filament (<strong>44 mini pucks per 1 kg spool</strong>).</li>
+    </ul>
+  </div>
+</body>
+</html>
