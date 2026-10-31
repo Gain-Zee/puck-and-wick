@@ -4,8 +4,6 @@
  * Adheres strictly to ORIGINAL_REQUEST.md, PROJECT.md, and test fixtures.
  */
 
-import { renderJarPhotoLabelOverlay } from '../utils/svg-assets.js';
-
 export const SCENT_CATEGORIES = [
   { id: 'all', label: 'All Pours' },
   { id: 'signature', label: 'Signature Line' },
@@ -178,14 +176,21 @@ export const PRODUCTS = [
  * Returns candle vessel SVG illustration (Matte Obsidian or Amber Glass).
  * Pure mathematical SVG with zero external dependencies.
  */
+export const CONCEPT_CANDLE_PHOTOS = {
+  1: 'assets/images/candle-obsidian.jpg',
+  2: 'assets/images/candle-concept-2.jpg',
+  3: 'assets/images/candle-concept-3.jpg',
+  4: 'assets/images/candle-concept-4.jpg'
+};
+
 export function getCandleVesselSvg(product, conceptId) {
-  const photoHref = 'assets/images/candle-obsidian.jpg';
-  const vignetteId = `vessel-vig-${product.id}`;
   const activeConcept = Number(
     conceptId ||
     (typeof window !== 'undefined' && window.PuckWickStore?.state?.activeLogoConcept) ||
     1
   );
+  const photoHref = CONCEPT_CANDLE_PHOTOS[activeConcept] || 'assets/images/candle-obsidian.jpg';
+  const vignetteId = `vessel-vig-${product.id}`;
 
   return `
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%" style="width:100%;height:100%;display:block;" class="candle-vessel-svg" data-active-concept="${activeConcept}" aria-label="${product.name} Luxury Candle Jar (Concept ${activeConcept})" role="img">
@@ -197,9 +202,8 @@ export function getCandleVesselSvg(product, conceptId) {
         </linearGradient>
       </defs>
 
-      <!-- Full-Bleed Studio Candle Photography with Dynamic Active Concept Label Overlay -->
+      <!-- Full-Bleed Studio Candle Photography (No Pasted Vector Sticker Over the Jar) -->
       <image href="${photoHref}" x="0" y="0" width="400" height="400" preserveAspectRatio="xMidYMid slice" />
-      ${renderJarPhotoLabelOverlay(activeConcept, product.name, product.id)}
       <rect x="0" y="0" width="400" height="400" fill="url(#${vignetteId})" />
 
       <!-- Minimalist Scent Name Plate at Bottom of Card View -->

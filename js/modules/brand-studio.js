@@ -331,7 +331,7 @@ export function initBrandStudio(store) {
   };
 
   store.subscribe((state, action) => {
-    if (action === 'SET_LOGO_CONCEPT' || action === 'SET_ACTIVE_LOGO' || action === 'TOGGLE_STUDIO' || !action) {
+    if (action === 'SET_LOGO_CONCEPT' || action === 'SET_ACTIVE_LOGO' || action === 'TOGGLE_STUDIO' || action === 'SET_STUDIO_VISIBLE' || !action) {
       previewConceptId = Number(state.activeLogoConcept) || 1;
       render();
     }

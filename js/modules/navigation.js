@@ -4,7 +4,8 @@
  * cart counter badge animations, and dynamic logo mark updates from the store.
  */
 
-import { getLogoSvg, renderJarPhotoLabelOverlay } from '../utils/svg-assets.js';
+import { getLogoSvg } from '../utils/svg-assets.js';
+import { CONCEPT_CANDLE_PHOTOS } from '../data/products.js';
 
 export function initNavigation(store) {
   const header = document.getElementById('site-header');
@@ -93,7 +94,7 @@ export function initNavigation(store) {
     sections.forEach((sec) => sectionObserver.observe(sec));
   }
 
-  // 4. Render Brand Logo Marks & Hero Candle Label Overlay
+  // 4. Render Brand Logo Marks & Sync Hero Candle Photo
   const renderLogos = (conceptId) => {
     const svgCode = getLogoSvg(conceptId);
     const logoContainers = document.querySelectorAll('.brand-mark');
@@ -101,9 +102,14 @@ export function initNavigation(store) {
       container.innerHTML = svgCode;
     });
 
+    const heroPhotoEl = document.querySelector('#hero [data-testid="hero-flame"] image');
+    if (heroPhotoEl) {
+      const targetHref = CONCEPT_CANDLE_PHOTOS[Number(conceptId) || 1] || 'assets/images/candle-obsidian.jpg';
+      heroPhotoEl.setAttribute('href', targetHref);
+    }
     const heroLabelOverlay = document.getElementById('hero-jar-label-overlay');
     if (heroLabelOverlay) {
-      heroLabelOverlay.innerHTML = renderJarPhotoLabelOverlay(conceptId, 'TOP SHELF', 'hero');
+      heroLabelOverlay.innerHTML = '';
     }
   };
 

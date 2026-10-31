@@ -13,8 +13,14 @@ import { initBrandStudio } from './modules/brand-studio.js';
 import './modules/payment-adapters.js';
 
 // Global Brand Studio Production Toggle Configuration
-window.BRAND_STUDIO_CONFIG = { enabled: true };
-window.APP_CONFIG = { showBrandStudio: true };
+const initialStudioEnabled = (typeof window !== 'undefined' && window.BRAND_STUDIO_CONFIG && typeof window.BRAND_STUDIO_CONFIG.enabled === 'boolean')
+  ? window.BRAND_STUDIO_CONFIG.enabled
+  : (typeof window !== 'undefined' && window.APP_CONFIG && typeof window.APP_CONFIG.showBrandStudio === 'boolean')
+    ? window.APP_CONFIG.showBrandStudio
+    : true;
+
+window.BRAND_STUDIO_CONFIG = Object.assign({ enabled: initialStudioEnabled }, window.BRAND_STUDIO_CONFIG || {});
+window.APP_CONFIG = Object.assign({ showBrandStudio: initialStudioEnabled }, window.APP_CONFIG || {});
 
 // Safe localStorage access wrapper
 const storage = {
@@ -92,8 +98,8 @@ window.PuckWickStore = {
       activeAdapter: 'offline_reservation',
       alinaPos: { apiKey: '', merchantId: 'ALINA-BH-01', terminalId: 'TERM-PURCELLVILLE-01', sandbox: true }
     },
-    showBrandStudio: true,
-    brandStudioVisible: true
+    showBrandStudio: initialStudioEnabled,
+    brandStudioVisible: initialStudioEnabled
   },
 
   listeners: [],
