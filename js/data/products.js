@@ -608,8 +608,8 @@ export function getProductGallerySlides(product, conceptId = 1) {
       },
       {
         id: 'angled_open',
-        shortLabel: 'Angled & Open',
-        title: '3.0" × 1.0" Athlete Puck — 3/4 Profile & Unscrewed Interior Chamber',
+        shortLabel: '3/4 Puck Profile',
+        title: '3.0" × 1.0" Sealed Athlete Puck — Heavyweight 3/4 Profile & Knurled Edge',
         type: 'image',
         src: 'assets/images/packaging/puck-men-angled-open.jpg',
         thumb: 'assets/images/packaging/puck-men-angled-open.jpg'
