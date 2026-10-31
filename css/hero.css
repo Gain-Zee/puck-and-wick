@@ -1,6 +1,6 @@
 /**
  * Puck & Wick Hero Section Styles
- * High-impact editorial hero banner with radiant candle flame visual and dual CTAs
+ * 99/100 Editorial Stage + 3-Photo Bento Trio Hybrid Hero
  */
 
 .hero-section {
@@ -8,8 +8,8 @@
   min-height: calc(100vh - var(--header-height));
   display: flex;
   align-items: center;
-  padding-block: var(--space-16) var(--space-20);
-  background: var(--gradient-hero-overlay);
+  padding-block: var(--space-12) var(--space-16);
+  background: radial-gradient(circle at 50% 18%, rgba(212, 175, 55, 0.16) 0%, var(--color-obsidian, #0A0A0C) 74%);
   overflow: hidden;
   border-bottom: 1px solid var(--color-border-dark);
 }
@@ -21,7 +21,7 @@
   right: 10%;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, rgba(212, 175, 55, 0.08) 40%, transparent 70%);
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.14) 0%, rgba(212, 175, 55, 0.08) 40%, transparent 70%);
   filter: blur(80px);
   pointer-events: none;
   z-index: 0;
@@ -33,7 +33,7 @@
   left: 5%;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.05) 0%, transparent 70%);
   filter: blur(70px);
   pointer-events: none;
   z-index: 0;
@@ -41,60 +41,146 @@
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-columns: 1.08fr 0.92fr;
   align-items: center;
   gap: var(--space-12);
   position: relative;
   z-index: 1;
 }
 
-/* ==========================================================================
-   Hero Content Column (Left)
-   ========================================================================== */
+/* Desktop order: Content on Left (order 1), Visual Stage on Right (order 2) */
 .hero-content {
+  order: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
+.hero-visual {
+  order: 2;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* ==========================================================================
+   Hero Visual Stage Banner (Full-Width Top on Mobile, Right Card on Desktop)
+   ========================================================================== */
+.hero-stage-banner {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  height: 440px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1.5px solid rgba(212, 175, 55, 0.65);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.85);
+}
+
+.hero-stage-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+  filter: contrast(1.06) brightness(0.94);
+  display: block;
+}
+
+.hero-stage-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 10, 12, 0.34) 0%, rgba(10, 10, 12, 0.08) 40%, rgba(10, 10, 12, 0.94) 100%);
+  pointer-events: none;
+}
+
+.hero-stage-pills {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  z-index: 2;
+}
+
+.hero-glass-tag {
+  padding: 5px 11px;
+  border-radius: 999px;
+  white-space: nowrap;
+  background: rgba(10, 10, 12, 0.86);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(212, 175, 55, 0.65);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-gold-bright, #D4AF37);
+  text-transform: uppercase;
+}
+
+.hero-stage-caption {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  z-index: 2;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: 2.15rem;
+  font-weight: 700;
+  line-height: 1.06;
+  color: #FFFFFF;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.95);
+  margin: 0;
+}
+
+.hero-title .hero-title-italic {
+  display: block;
+  font-style: italic;
+}
+
+/* Desktop Kicker & Headline */
 .hero-kicker-badge {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
   padding: 0.45rem 1rem;
-  background: rgba(197, 160, 89, 0.1);
+  background: rgba(197, 160, 89, 0.12);
   border: 1px solid var(--color-border-gold-subtle);
   border-radius: var(--radius-full);
   font-size: var(--text-kicker);
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--color-gold-bright);
-  margin-bottom: var(--space-6);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: var(--space-4);
 }
 
-.hero-kicker-badge svg {
-  width: 14px;
-  height: 14px;
-  color: var(--color-amber-warm);
-}
-
-.hero-title {
+.hero-desktop-headline {
+  font-family: var(--font-serif);
   font-size: var(--text-display);
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1.08;
   color: var(--color-parchment);
-  margin-bottom: var(--space-6);
-  letter-spacing: 0.02em;
+  margin-bottom: var(--space-4);
+}
+
+.hero-desktop-headline .gold-gradient-text {
+  font-style: italic;
 }
 
 .hero-tagline {
-  font-size: var(--text-body-lg);
-  color: var(--color-text-muted);
-  line-height: 1.7;
-  margin-bottom: var(--space-8);
-  max-width: 620px;
+  font-size: 1.05rem;
+  color: #CED3DE;
+  line-height: 1.58;
+  margin-bottom: var(--space-6);
+  max-width: 600px;
 }
 
 .hero-tagline strong {
@@ -102,186 +188,93 @@
   font-weight: 600;
 }
 
-.hero-actions {
-  display: flex;
-  align-items: center;
-  gap: var(--space-4);
-  margin-bottom: var(--space-12);
-  flex-wrap: wrap;
-}
-
-/* Feature Footprint Badges Bar */
-.hero-trust-bar {
-  display: flex;
-  align-items: center;
-  gap: var(--space-6);
-  padding-top: var(--space-6);
-  border-top: 1px solid var(--color-border-dark);
-  width: 100%;
-  flex-wrap: wrap;
-}
-
-.hero-trust-item {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  font-size: var(--text-kicker);
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-}
-
-.hero-trust-item svg {
-  width: 15px;
-  height: 15px;
-  color: var(--color-gold-500);
-}
-
 /* ==========================================================================
-   Hero Visual Stage (Right Column - Radiant Flame & Puck)
+   3-Photo Bento Category Shortcuts (.hero-bento-trio)
    ========================================================================== */
-.hero-visual {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 480px;
-}
-
-.hero-visual-card {
-  position: relative;
+.hero-bento-trio {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
   width: 100%;
-  max-width: 440px;
-  aspect-ratio: 4 / 5;
-  background: radial-gradient(ellipse at 50% 60%, rgba(26, 27, 31, 0.85) 0%, rgba(10, 10, 12, 0.95) 100%);
-  border: 1px solid var(--color-border-gold-subtle);
-  border-radius: var(--radius-xl);
-  padding: var(--space-8);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  box-shadow: var(--shadow-card), var(--shadow-gold-sm);
-  backdrop-filter: blur(8px);
+  margin-bottom: var(--space-6);
 }
 
-/* Inset Corner Accent Borders */
-.hero-visual-card::before {
-  content: '';
-  position: absolute;
-  inset: 12px;
-  border: 1px solid rgba(197, 160, 89, 0.22);
-  border-radius: var(--radius-lg);
-  pointer-events: none;
-}
-
-.hero-flame-container {
+.hero-mini-bento {
   position: relative;
-  width: 100%;
-  max-width: 310px;
-  aspect-ratio: 1 / 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: var(--space-3);
+  height: 126px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  background: #12141B;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+  display: block;
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
-/* Realistic Animated Flame Glow */
-.hero-flame-aura {
-  position: absolute;
-  width: 220px;
-  height: 220px;
-  background: radial-gradient(circle, rgba(245, 158, 11, 0.25) 0%, rgba(212, 175, 55, 0.1) 50%, transparent 70%);
-  filter: blur(28px);
-  border-radius: var(--radius-full);
-  animation: flameAuraPulse 3s ease-in-out infinite alternate;
+.hero-mini-bento:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-gold-bright, #D4AF37);
 }
 
-.hero-flame-svg {
+.hero-mini-bento img {
   width: 100%;
   height: 100%;
-  border-radius: 1rem;
-  border: 1px solid rgba(197, 160, 89, 0.35);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.75);
-  z-index: 1;
+  object-fit: cover;
+  filter: brightness(0.9);
+  display: block;
 }
 
-/* Candle Base & Puck Silhouette */
-.hero-candle-base {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  text-align: center;
-  margin-top: var(--space-4);
+.hero-mini-price {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: rgba(10, 10, 12, 0.9);
+  border: 1px solid var(--color-gold-bright, #D4AF37);
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: var(--color-gold-bright, #D4AF37);
   z-index: 2;
 }
 
-.hero-candle-puck {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  padding: 0.35rem 0.85rem;
-  background: var(--color-charcoal-700);
-  border: 1px solid var(--color-border-subtle);
-  border-radius: var(--radius-full);
-  font-size: var(--text-kicker);
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--color-parchment);
-  margin-bottom: var(--space-2);
+.hero-mini-grad {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 10, 12, 0.08) 0%, rgba(10, 10, 12, 0.22) 45%, rgba(10, 10, 12, 0.94) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 8px 9px;
+  text-align: left;
+  z-index: 1;
 }
 
-.hero-candle-puck svg {
-  width: 13px;
-  height: 13px;
-  color: var(--color-gold-500);
-}
-
-.hero-candle-caption {
+.hero-mini-title {
   font-family: var(--font-serif);
-  font-size: 1.25rem;
-  font-style: italic;
-  color: var(--color-gold-bright);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.08;
 }
 
-.hero-candle-sub {
-  font-size: 0.75rem;
-  color: var(--color-text-dim);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+.hero-mini-sub {
+  font-size: 0.68rem;
+  color: var(--color-gold-bright, #D4AF37);
+  font-weight: 600;
+  margin-top: 2px;
 }
 
-/* ==========================================================================
-   Keyframe Animations for Flame
-   ========================================================================== */
-@keyframes flameFlicker {
-  0% {
-    transform: scale(1) rotate(0deg);
-  }
-  25% {
-    transform: scale(1.02, 0.98) rotate(0.8deg);
-  }
-  50% {
-    transform: scale(0.98, 1.03) rotate(-0.5deg);
-  }
-  75% {
-    transform: scale(1.01, 1.01) rotate(0.4deg);
-  }
-  100% {
-    transform: scale(0.99, 1.02) rotate(-0.8deg);
-  }
+.hero-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+  max-width: 540px;
 }
 
-@keyframes flameAuraPulse {
-  0% {
-    opacity: 0.7;
-    transform: scale(0.95);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1.1);
-  }
+.hero-actions .btn {
+  width: 100%;
+  justify-content: center;
 }

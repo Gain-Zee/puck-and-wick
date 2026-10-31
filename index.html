@@ -151,87 +151,80 @@
        ========================================================================== -->
   <main id="main-content">
 
-    <!-- 1. Hero Section (Compact Single-Screen Mobile Fit) -->
+    <!-- 1. Hero Section (99/100 Hybrid Editorial Stage + 3-Photo Bento Trio) -->
     <section class="hero-section" id="hero" data-testid="hero-section" aria-labelledby="hero-title">
       <div class="hero-ambient-glow" aria-hidden="true"></div>
       <div class="hero-ambient-cold" aria-hidden="true"></div>
       <div class="container hero-grid">
-        <!-- Content Column (Left) -->
-        <div class="hero-content">
-          <div class="hero-kicker-badge">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c-.5 2.5-3 5-3 8 0 3.3 2.7 6 6 6s6-2.7 6-6c0-2.5-1.5-4.5-2.5-6-.5 1.5-1.5 2.5-2.5 3-1-3-3-4-4-5Z"/></svg>
-            <span>20 Years on Competitive Ice • Quality Control #1</span>
-          </div>
-
-          <h1 class="hero-title" id="hero-title" data-testid="hero-headline">
-            Hand-Poured Soy Candles &amp; Athlete Odor Care with <span class="gold-gradient-text">Championship Precision.</span>
-          </h1>
-
-          <p class="hero-tagline" data-testid="hero-tagline">
-            Crafted in Loudoun County, VA with <strong>100% American soy wax</strong>, <strong>phthalate-free oils</strong>, and proprietary <strong>Lauson-98&trade; molecular odor elimination</strong>.
-          </p>
-
-          <div class="hero-actions">
-            <a href="#shop" class="btn btn-gold btn-lg" data-testid="hero-cta-shop">
-              <span>Shop Collection</span>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-            <a href="#exclusive-boxes" class="btn btn-outline btn-lg" data-testid="hero-cta-boxes">
-              <span>Exclusive Boxes ($98)</span>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
-            </a>
-          </div>
-
-          <!-- Quality Footprint Badges -->
-          <div class="hero-trust-bar">
-            <div class="hero-trust-item">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
-              <span>100% American Soy</span>
+        <!-- Visual Stage Banner (Top on Mobile, Right on Desktop) -->
+        <div class="hero-visual">
+          <div class="hero-stage-banner" data-testid="hero-flame">
+            <img src="assets/images/box-men-open.jpg" alt="Puck &amp; Wick Matte Obsidian Luxury Candle, Lauson-98 Odor Puck, and Charcoal Wash Gift Box" class="hero-stage-img" fetchpriority="high">
+            <div class="hero-stage-overlay"></div>
+            <div class="hero-stage-pills">
+              <span class="hero-glass-tag">&#10024; Small-Batch Luxury</span>
+              <span class="hero-glass-tag">Hand-Poured in Virginia</span>
             </div>
-            <div class="hero-trust-item">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/><path d="M12 11v4"/><path d="M10 13h4"/></svg>
-              <span>Phthalate-Free Oils</span>
-            </div>
-            <div class="hero-trust-item">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 11V4H5v7a7 7 0 0 0 14 0Z"/><path d="M19 7h3a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-3"/><path d="M2 4h20"/><path d="M12 18v3"/><path d="M8 21h8"/></svg>
-              <span>Loudoun County, VA</span>
-            </div>
-            <div class="hero-trust-item">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <span>Blue Hydrangea Pickup</span>
+            <div class="hero-stage-caption">
+              <h1 class="hero-title" id="hero-title" data-testid="hero-headline">
+                Luxury Home Scents &amp; <span class="gold-gradient-text hero-title-italic">Heavy-Duty Odor Science.</span>
+              </h1>
             </div>
           </div>
         </div>
 
-        <!-- Visual Column (Right - Luxury Candle Presentation) -->
-        <div class="hero-visual">
-          <div class="hero-visual-card">
-            <span class="badge badge-gold">Founder Hand-Crafted</span>
+        <!-- Content & 3-Photo Bento Column -->
+        <div class="hero-content">
+          <div class="hero-kicker-badge desktop-only-kicker">
+            <span>&#10024; Small-Batch Luxury • Hand-Poured in Loudoun County, VA</span>
+          </div>
 
-            <div class="hero-flame-container" data-testid="hero-flame" style="width:100%;max-width:340px;height:auto;aspect-ratio:1/1;">
-              <div class="hero-flame-aura"></div>
-              <svg class="hero-flame-svg" width="100%" height="100%" style="width:100%;height:100%;display:block;border-radius:14px;animation:none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Puck &amp; Wick Signature Matte Obsidian Luxury Soy Candle">
-                <title>Puck &amp; Wick Signature Matte Obsidian Luxury Soy Candle</title>
-                <defs>
-                  <clipPath id="hero-photo-clip">
-                    <rect x="0" y="0" width="400" height="400" rx="16" />
-                  </clipPath>
-                </defs>
-                <g clip-path="url(#hero-photo-clip)">
-                  <image href="assets/images/candle-obsidian.jpg" x="0" y="0" width="400" height="400" preserveAspectRatio="xMidYMid slice" />
-                  <g id="hero-jar-label-overlay"></g>
-                </g>
-              </svg>
-            </div>
+          <div class="hero-desktop-headline" aria-hidden="true">
+            Luxury Home Scents &amp; <span class="gold-gradient-text">Heavy-Duty Odor Science.</span>
+          </div>
 
-            <div class="hero-candle-base">
-              <div class="hero-candle-puck">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
-                <span>Tape-to-Tape Precision</span>
+          <p class="hero-tagline" data-testid="hero-tagline">
+            Hand-poured <strong>100% American soy candles</strong> &amp; <strong>body care</strong>—plus <strong>Lauson-98&trade; odor pucks</strong> engineered after 20 years of hockey to destroy tough gear &amp; shoe odor.
+          </p>
+
+          <!-- 3-Photo Bento Category Shortcuts -->
+          <div class="hero-bento-trio" aria-label="Product Category Shortcuts">
+            <a href="#shop" class="hero-mini-bento" data-bento-target="candles">
+              <img src="assets/images/candle-obsidian.jpg" alt="100% American Soy Candles" loading="eager">
+              <span class="hero-mini-price">$36</span>
+              <div class="hero-mini-grad">
+                <div class="hero-mini-title">Soy Candles</div>
+                <div class="hero-mini-sub">10 Signature Scents</div>
               </div>
-              <div class="hero-candle-caption">Small-Batch Virginia Pour</div>
-              <div class="hero-candle-sub">55-65 Hour Clean Burn • Lead-Free Cotton Wick</div>
-            </div>
+            </a>
+
+            <a href="#shop" class="hero-mini-bento" data-bento-target="pucks">
+              <img src="assets/images/item-puck-men.jpg" alt="Lauson-98 Molecular Odor Pucks" loading="eager">
+              <span class="hero-mini-price">$38+</span>
+              <div class="hero-mini-grad">
+                <div class="hero-mini-title">Odor Pucks</div>
+                <div class="hero-mini-sub">Bags, Shoes &amp; Gear</div>
+              </div>
+            </a>
+
+            <a href="#exclusive-boxes" class="hero-mini-bento" data-bento-target="boxes">
+              <img src="assets/images/box-women-open.jpg" alt="The $98 Exclusive Gift Boxes" loading="eager">
+              <span class="hero-mini-price">$98</span>
+              <div class="hero-mini-grad">
+                <div class="hero-mini-title">Gift Boxes</div>
+                <div class="hero-mini-sub">Men&rsquo;s &amp; Women&rsquo;s</div>
+              </div>
+            </a>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#shop" class="btn btn-gold btn-lg" data-testid="hero-cta-shop">
+              <span>Shop All 16 Items</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="#exclusive-boxes" class="btn btn-outline btn-lg" data-testid="hero-cta-boxes">
+              <span>The $98 Gift Boxes</span>
+            </a>
           </div>
         </div>
       </div>
@@ -278,7 +271,7 @@
           <div class="story-narrative">
             <div class="section-kicker">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 3l12 14c1 1.2 2.5 1.5 4 .5l.5-.3c.4-.3.2-.8-.2-.9-1.2-.2-2.5-.2-3.3-1.3L5 3z"/><path d="M20 3L8 17c-1 1.2-2.5 1.5-4 .5l-.5-.3c-.4-.3-.2-.8.2-.9 1.2-.2 2.5-.2 3.3-1.3L19 3z"/></svg>
-              <span>The Founder Story</span>
+              <span>The Founder Story • Swiss-Born • Bulgarian Roots</span>
             </div>
 
             <h2 class="story-headline" id="story-title">
@@ -291,7 +284,7 @@
 
             <div class="story-prose">
               <p>
-                Born in Lausanne, Switzerland and forged in Purcellville, Virginia, <strong>Puck &amp; Wick&trade;</strong> replaces synthetic paraffin and masking sprays with small-batch soy vessels and <strong>Lauson-98&trade;</strong> molecular odor elimination—cured for 14 days and priced at <strong>$98</strong> in tribute to jersey <strong>#98</strong>.
+                Born in <strong>Lausanne, Switzerland</strong> to proud <strong>Bulgarian roots</strong> and forged in <strong>Purcellville, Virginia</strong>, <strong>Puck &amp; Wick&trade;</strong> unites <strong>Swiss-born molecular precision</strong> (our <strong>Lauson-98&trade;</strong> odor-eliminating technology), <strong>Bulgarian botanical fragrance heritage</strong>, and <strong>small-batch American soy craftsmanship</strong>—cured for 14 days and priced at <strong>$98</strong> in tribute to jersey <strong>#98</strong>.
               </p>
             </div>
           </div>
