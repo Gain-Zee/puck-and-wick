@@ -25,8 +25,8 @@ export const EXCLUSIVE_BOX_EDITIONS = {
       },
       puck: {
         title: '3.0" Lauson-98™ & Activated Charcoal Odor Puck',
-        detail: 'Vented anodized shell with >1,000 m²/g coconut carbon & Lauson-98™ (Metazene® complex) for hockey bags, skates & lockers.',
-        notes: 'Active Matrix: Sub-2nm Coconut Carbon (>1,000 m²/g) • Lauson-98™ / Metazene® Vapor-Phase Neutralizer',
+        detail: 'Vented anodized shell with >1,000 m²/g coconut carbon & proprietary Lauson-98™ molecular core for hockey bags, skates & lockers.',
+        notes: 'Active Matrix: Sub-2nm Coconut Carbon (>1,000 m²/g) • Lauson-98™ Proprietary Vapor-Phase Neutralizer',
         retailValue: '$44.00'
       },
       bodyWash: {
@@ -97,7 +97,7 @@ export const EXCLUSIVE_BOX_EDITIONS = {
       },
       bodyWash: {
         title: '4 oz Botanical Linen, Closet & Pillow Mist with Lauson-98™',
-        detail: 'Fine-mist atomizer powered by Lauson-98™ (Metazene® complex), French lavender & white tea to neutralize fabric odors (Luxe Spa Care).',
+        detail: 'Fine-mist atomizer powered by our proprietary Lauson-98™ complex, French lavender & white tea to neutralize fabric odors (Luxe Spa Care).',
         notes: 'Active Matrix: Lauson-98™ Vapor-Phase Complex • French Lavender Hydrosol & White Tea • Zero Fabric Residue',
         retailValue: '$44.00'
       }
@@ -142,7 +142,7 @@ export const EXCLUSIVE_BOX_EDITIONS = {
 export const ODOR_SCIENCE_DATA = {
   headline: 'Lauson-98™ Dual-Action Odor Science',
   kicker: 'Activated Charcoal Adsorption + Lauson-98™ Molecular Neutralization vs Masking Sprays',
-  lead: 'Sweat, skate liners, and gear bags generate volatile thiols and amines. Unlike conventional aerosol sprays that mask stench with heavy perfumes, Puck & Wick™ destroys odor molecules permanently in two stages.',
+  lead: 'Sweat, skate liners, and gear bags generate stubborn, deep-seated odor molecules. Unlike conventional aerosol sprays that mask stench with heavy perfumes, Puck & Wick™ destroys odor at the molecular level in two stages.',
   stages: [
     {
       id: 'charcoal',
@@ -150,15 +150,15 @@ export const ODOR_SCIENCE_DATA = {
       title: 'Activated Coconut Charcoal (>1,000 m²/g)',
       metric: '> 1,000 m²/gram Surface Area • < 2 nm Micropores',
       description:
-        'Steam-activated coconut shell carbon creates a sub-2nm microporous matrix (>1,000 m²/g) that physically traps volatile sulfur thiols (R-SH), amines (R-NH₂), and sweat acids directly out of air and fabric.'
+        'Steam-activated coconut shell carbon creates a sub-2nm microporous matrix (>1,000 m²/g) that physically traps airborne sweat and gear odor molecules directly out of air and fabric.'
     },
     {
-      id: 'metazene',
+      id: 'lauson98',
       step: 'STAGE 02 • MOLECULAR NEUTRALIZATION',
-      title: 'Lauson-98™ Covalent Complex (Metazene®)',
+      title: 'Lauson-98™ Proprietary Vapor Complex',
       metric: 'Born in Lausanne • #98 Tribute • Zero Masking Perfumes',
       description:
-        'Our proprietary Lauson-98™ vapor-phase complex (engineered with Metazene® aliphatic esters) bonds covalently to malodorous molecules, altering their electron geometry so they can never trigger human olfactory receptors.'
+        'Our proprietary Swiss-inspired Lauson-98™ vapor-phase complex bonds directly to airborne malodor molecules, permanently neutralizing their structure so they can never trigger human olfactory receptors.'
     }
   ],
   comparison: [
@@ -167,7 +167,7 @@ export const ODOR_SCIENCE_DATA = {
       verdict: 'Temporary Perfume Overload',
       points: [
         'Floods air with synthetic perfumes & propellants that rebound in 2 hours',
-        'Leaves sticky phthalate residue on technical gear & leather liners'
+        'Leaves sticky residue on technical gear & leather liners'
       ],
       isPositive: false
     },
@@ -175,8 +175,8 @@ export const ODOR_SCIENCE_DATA = {
       method: 'Puck & Wick™ Lauson-98™ + Carbon',
       verdict: 'Permanent Molecular Destruction',
       points: [
-        'Sub-2nm coconut carbon (>1,000 m²/g) physically traps thiols & amines',
-        'Lauson-98™ (Metazene®) covalently neutralizes odors with zero residue'
+        'Sub-2nm coconut carbon (>1,000 m²/g) physically traps deep gear & sweat odors',
+        'Proprietary Lauson-98™ complex permanently neutralizes odors with zero residue'
       ],
       isPositive: true
     }

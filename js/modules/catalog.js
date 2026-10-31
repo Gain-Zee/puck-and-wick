@@ -182,7 +182,7 @@ export function initCatalog(store, openCartDrawer) {
                   <div class="step-num-badge">03</div>
                   <div>
                     <h4>Drop Into Skates, Cleats &amp; Boots</h4>
-                    <p>Sub-2nm coconut carbon + <strong>Lauson-98&trade; vapor</strong> permanently destroy sweat thiols overnight for <strong>6+ months</strong>.</p>
+                    <p>Sub-2nm coconut carbon + <strong>Lauson-98&trade; vapor</strong> permanently destroy sweat odor overnight for <strong>6+ months</strong>.</p>
                   </div>
                 </div>
               </div>

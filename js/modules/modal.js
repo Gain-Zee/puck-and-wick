@@ -76,7 +76,7 @@ export function openProductModal(productId, store, openCartCallback) {
                     <strong>2. Hockey Gloves:</strong> Slides deep into narrow cuffs &amp; palms.
                   </div>
                   <div class="mini-guide-step-item">
-                    <strong>3. Skates &amp; Cleats:</strong> Destroys sweat thiols overnight (6+ mos).
+                    <strong>3. Skates &amp; Cleats:</strong> Destroys sweat odor overnight (6+ mos).
                   </div>
                 </div>
               </div>

@@ -285,11 +285,11 @@ export const PRODUCTS = [
     vessel: '3.0" Regulation-Size Matte-Black Anodized Aluminum with Brushed Gold Bezel',
     wax: 'Sub-2nm Coconut Charcoal (>1,000 m²/g) + Lauson-98™ Molecular Core (40g Fill)',
     wick: 'Laser-Drilled 18-Port Vapor Diffusion Vent Array',
-    description: 'Our full-size 3.0" regulation-diameter odor puck engineered to sit at the bottom of hockey bags, gym duffels, and equipment lockers. Heavy-gauge Matte-Black & Brushed-Gold anodized aluminum combines >1,000 m²/g microporous coconut carbon with our proprietary Swiss-inspired Lauson-98™ vapor complex to permanently destroy whole-bag sweat thiols and amines.',
+    description: 'Our full-size 3.0" regulation-diameter odor puck engineered to sit at the bottom of hockey bags, gym duffels, and equipment lockers. Heavy-gauge Matte-Black & Brushed-Gold anodized aluminum combines >1,000 m²/g microporous coconut carbon with our proprietary Swiss-inspired Lauson-98™ vapor complex to permanently destroy whole-bag sweat and gear odors.',
     notes: {
       top: ['Lauson-98™ Vapor-Phase Complex', 'Zero Masking Perfumes', 'Hypoallergenic'],
       middle: ['Sub-2nm Activated Coconut Carbon', '>1,000 m²/g Micropore Lattice'],
-      base: ['Traps Thiols (R-SH) & Amines (R-NH₂)', '6+ Months Continuous Protection']
+      base: ['Destroys Deep Gear & Sweat Odor', '6+ Months Continuous Protection']
     },
     featured: true,
     seasonal: false,
@@ -319,7 +319,7 @@ export const PRODUCTS = [
     notes: {
       top: ['Lauson-98™ Vapor-Phase Complex', 'Zero Masking Perfumes', 'Hypoallergenic'],
       middle: ['Sub-2nm Activated Coconut Carbon', '>1,000 m²/g Micropore Lattice'],
-      base: ['Traps Thiols (R-SH) & Amines (R-NH₂)', '6+ Months Continuous Protection']
+      base: ['Destroys Deep Closet & Tote Odor', '6+ Months Continuous Protection']
     },
     featured: true,
     seasonal: false,
@@ -349,7 +349,7 @@ export const PRODUCTS = [
     notes: {
       top: ['Lauson-98™ Vapor-Phase Complex', 'Zero Masking Perfumes', 'Hypoallergenic'],
       middle: ['Sub-2nm Activated Coconut Carbon', '>1,000 m²/g Micropore Lattice'],
-      base: ['Traps Thiols (R-SH) & Amines (R-NH₂)', 'Fits Left & Right Skates / Gloves']
+      base: ['Destroys Deep Skate & Glove Odor', 'Fits Left & Right Skates / Gloves']
     },
     featured: true,
     seasonal: false,

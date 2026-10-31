@@ -418,66 +418,66 @@ export function getCharcoalScienceSvg() {
       <circle cx="150" cy="52" r="14" fill="url(#vdw-glow)" />
       <circle cx="130" cy="88" r="14" fill="url(#vdw-glow)" />
       <circle cx="70" cy="52" r="7" fill="#EF4444" opacity="0.9" />
-      <text x="70" y="55" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" font-weight="700" fill="#FFFFFF">R-SH</text>
-      <text x="70" y="69" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" fill="#FCA5A5">Thiols</text>
+      <text x="70" y="55" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" font-weight="700" fill="#FFFFFF">ODOR</text>
+      <text x="70" y="69" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" fill="#FCA5A5">Sweat VOCs</text>
       <circle cx="110" cy="52" r="8" fill="#F59E0B" opacity="0.9" />
-      <text x="110" y="55" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" font-weight="700" fill="#0A0A0C">C₅H₁₀O₂</text>
-      <text x="110" y="69" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" fill="#FDE68A">Isovaleric</text>
+      <text x="110" y="55" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" font-weight="700" fill="#0A0A0C">GEAR</text>
+      <text x="110" y="69" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" fill="#FDE68A">Rink Odor</text>
       <circle cx="150" cy="52" r="7.5" fill="#3B82F6" opacity="0.9" />
-      <text x="150" y="55" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" font-weight="700" fill="#FFFFFF">R-NH₂</text>
-      <text x="150" y="69" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" fill="#93C5FD">Amines</text>
+      <text x="150" y="55" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" font-weight="700" fill="#FFFFFF">LOCKER</text>
+      <text x="150" y="69" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" fill="#93C5FD">Stagnant Air</text>
       <circle cx="130" cy="88" r="7" fill="#10B981" opacity="0.9" />
-      <text x="130" y="91" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" font-weight="700" fill="#FFFFFF">H₂O</text>
+      <text x="130" y="91" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" font-weight="700" fill="#FFFFFF">DAMP</text>
       <text x="130" y="105" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" fill="#6EE7B7">Moisture</text>
       <line x1="225" y1="35" x2="225" y2="105" stroke="#D4AF37" stroke-width="0.75" stroke-dasharray="3,2" />
       <text x="232" y="55" font-family="'Inter', sans-serif" font-size="6.5" font-weight="600" fill="#D4AF37">PORE SIZE &lt;2nm</text>
       <text x="232" y="66" font-family="'Inter', sans-serif" font-size="5.5" fill="#9EA3AE">Microporous Lattice</text>
-      <text x="232" y="82" font-family="'Inter', sans-serif" font-size="6.5" font-weight="600" fill="#D4AF37">VAN DER WAALS</text>
-      <text x="232" y="93" font-family="'Inter', sans-serif" font-size="5.5" fill="#9EA3AE">Dispersion Physisorption</text>
+      <text x="232" y="82" font-family="'Inter', sans-serif" font-size="6.5" font-weight="600" fill="#D4AF37">DEEP CAPTURE</text>
+      <text x="232" y="93" font-family="'Inter', sans-serif" font-size="5.5" fill="#9EA3AE">Physical Adsorption</text>
       <rect x="20" y="145" width="280" height="20" rx="4" fill="rgba(197, 160, 89, 0.12)" stroke="rgba(197, 160, 89, 0.3)" />
-      <text x="160" y="158" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7.5" font-weight="700" letter-spacing="1.2" fill="#D4AF37">&gt;1,000 m²/g SURFACE AREA • IRREVERSIBLE PHYSISORPTION</text>
+      <text x="160" y="158" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7.5" font-weight="700" letter-spacing="1.2" fill="#D4AF37">&gt;1,000 m²/g SURFACE AREA • PERMANENT ODOR CAPTURE</text>
     </svg>
   `;
 }
 
 /**
- * Metazene® Covalent Neutralization and Olfactory Receptor Lockout Diagram SVG.
+ * Lauson-98™ Molecular Neutralization and Olfactory Receptor Lockout Diagram SVG.
  */
-export function getMetazeneScienceSvg() {
+export function getLausonScienceSvg() {
   return `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" width="100%" height="180" class="science-diagram-svg" role="img" aria-label="Metazene Covalent Molecular Neutralization and Olfactory Receptor Lockout Diagram">
-      <title>Metazene Chemical Counteraction, Covalent Bonding and Receptor Inactivation</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" width="100%" height="180" class="science-diagram-svg" role="img" aria-label="Lauson-98 Molecular Neutralization and Olfactory Receptor Lockout Diagram">
+      <title>Lauson-98 Proprietary Molecular Counteraction and Receptor Inactivation</title>
       <defs>
-        <linearGradient id="metazene-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+        <linearGradient id="lauson-bg" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stop-color="#0A0B0E" />
           <stop offset="100%" stop-color="#14161F" />
         </linearGradient>
       </defs>
-      <rect x="2" y="2" width="316" height="176" rx="8" fill="url(#metazene-bg)" stroke="#C5A059" stroke-width="1.2" opacity="0.95" />
+      <rect x="2" y="2" width="316" height="176" rx="8" fill="url(#lauson-bg)" stroke="#C5A059" stroke-width="1.2" opacity="0.95" />
       <circle cx="55" cy="65" r="22" fill="#1C1820" stroke="#EF4444" stroke-width="1.6" />
       <text x="55" y="60" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7.5" font-weight="700" fill="#EF4444">MALODOR</text>
-      <text x="55" y="71" text-anchor="middle" font-family="'Inter', sans-serif" font-size="6" fill="#FCA5A5">R-SH / R-NH₂</text>
-      <text x="55" y="80" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" fill="#9EA3AE">Active Poles δ⁻/δ⁺</text>
+      <text x="55" y="71" text-anchor="middle" font-family="'Inter', sans-serif" font-size="6" fill="#FCA5A5">Sweat &amp; Gear</text>
+      <text x="55" y="80" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" fill="#9EA3AE">Airborne Odor</text>
       <text x="88" y="69" text-anchor="middle" font-family="'Inter', sans-serif" font-size="14" font-weight="700" fill="#D4AF37">+</text>
       <circle cx="125" cy="65" r="22" fill="#1A1C16" stroke="#D4AF37" stroke-width="1.6" />
-      <text x="125" y="60" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7" font-weight="700" fill="#FAF5E8">METAZENE®</text>
-      <text x="125" y="70" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" fill="#C5A059">Active Ester Complex</text>
+      <text x="125" y="60" text-anchor="middle" font-family="'Inter', sans-serif" font-size="6.8" font-weight="700" fill="#FAF5E8">LAUSON-98™</text>
+      <text x="125" y="70" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.2" fill="#C5A059">Proprietary Core</text>
       <path d="M 154,65 L 176,65 M 172,60 L 177,65 L 172,70" stroke="#34D399" stroke-width="2" fill="none" stroke-linecap="round" />
-      <text x="165" y="55" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" font-weight="600" fill="#34D399">Covalent Reaction</text>
+      <text x="165" y="55" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" font-weight="600" fill="#34D399">Molecular Lock</text>
       <ellipse cx="215" cy="65" rx="28" ry="22" fill="#121820" stroke="#34D399" stroke-width="1.8" />
-      <text x="215" y="58" text-anchor="middle" font-family="'Inter', sans-serif" font-size="6.5" font-weight="700" fill="#34D399">NEUTRAL ADDUCT</text>
-      <text x="215" y="68" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.2" fill="#93C5FD">Electron Cloud Shifted</text>
-      <text x="215" y="78" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" fill="#9EA3AE">Mass ↑ • Vapor Press. ↓</text>
+      <text x="215" y="58" text-anchor="middle" font-family="'Inter', sans-serif" font-size="6.5" font-weight="700" fill="#34D399">NEUTRALIZED</text>
+      <text x="215" y="68" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.2" fill="#93C5FD">100% Odorless</text>
+      <text x="215" y="78" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" fill="#9EA3AE">Zero Perfume Mask</text>
       <g transform="translate(260, 42)">
         <path d="M 5,5 C 5,25 35,25 35,5" fill="none" stroke="#F87171" stroke-width="1.5" />
-        <text x="20" y="36" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" font-weight="700" fill="#F87171">OLFACTORY GPCR</text>
+        <text x="20" y="36" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5" font-weight="700" fill="#F87171">SCENT RECEPTOR</text>
         <circle cx="20" cy="14" r="8" fill="rgba(239, 68, 68, 0.15)" stroke="#EF4444" stroke-width="1.2" />
         <line x1="15" y1="9" x2="25" y2="19" stroke="#EF4444" stroke-width="1.5" />
         <line x1="25" y1="9" x2="15" y2="19" stroke="#EF4444" stroke-width="1.5" />
-        <text x="20" y="44" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.5" fill="#EF4444">Binding Blocked</text>
+        <text x="20" y="44" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.5" fill="#EF4444">Odor Blocked</text>
       </g>
       <rect x="20" y="145" width="280" height="20" rx="4" fill="rgba(52, 211, 153, 0.12)" stroke="rgba(52, 211, 153, 0.3)" />
-      <text x="160" y="158" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7.5" font-weight="700" letter-spacing="1.2" fill="#34D399">MOLECULAR ELECTRON ALTERATION • ZERO RECEPTOR BINDING</text>
+      <text x="160" y="158" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7.5" font-weight="700" letter-spacing="1.2" fill="#34D399">LAUSON-98™ MOLECULAR LOCKOUT • ZERO RECEPTOR BINDING</text>
     </svg>
   `;
 }

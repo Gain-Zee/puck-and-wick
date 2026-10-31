@@ -8,7 +8,7 @@
 
 import { EXCLUSIVE_BOX_EDITIONS, ODOR_SCIENCE_DATA, EXTRA_BOX_GALLERY_SLIDES } from '../data/box-data.js';
 import { getCandleProducts, getProductById } from '../data/products.js';
-import { getIcon, getCharcoalScienceSvg, getMetazeneScienceSvg } from '../utils/svg-assets.js';
+import { getIcon, getCharcoalScienceSvg, getLausonScienceSvg } from '../utils/svg-assets.js';
 
 function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhotoHref = '') {
   const isWomen = edition === 'women_luxe';
@@ -400,10 +400,10 @@ export function initBoxBuilder(store, openCartCallback) {
               </div>
             </div>
 
-            <!-- Stage 2: Lauson-98™ / Metazene® Molecular Neutralization -->
-            <div class="science-stage-card science-metazene" data-testid="science-metazene">
+            <!-- Stage 2: Lauson-98™ Molecular Neutralization -->
+            <div class="science-stage-card science-lauson98" data-testid="science-lauson98">
               <div class="science-stage-visual">
-                ${getMetazeneScienceSvg()}
+                ${getLausonScienceSvg()}
               </div>
               <div class="science-stage-content">
                 <div class="science-stage-step">${ODOR_SCIENCE_DATA.stages[1].step}</div>
