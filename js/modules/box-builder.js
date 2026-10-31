@@ -46,11 +46,11 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
     : 'INCLUDES CHARCOAL + METAZENE® PUCK &amp; 8 OZ BODY WASH • SAVE $26';
 
   return `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420" width="100%" height="100%" class="box-presentation-svg" role="img" aria-label="${isWomen ? "Women's Exclusive Box Presentation" : "Men's Athlete Exclusive Box Presentation"}">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 568" width="100%" height="100%" class="box-presentation-svg" role="img" aria-label="${isWomen ? "Women's Exclusive Box Presentation" : "Men's Athlete Exclusive Box Presentation"}">
       <title>${isWomen ? "Women's Exclusive Box Presentation Mockup" : "Men's Athlete Exclusive Box Presentation Mockup"}</title>
       <defs>
         <clipPath id="box-photo-clip">
-          <rect x="16" y="16" width="488" height="388" rx="14" />
+          <rect x="16" y="14" width="488" height="488" rx="14" />
         </clipPath>
         <linearGradient id="box-case-grad" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stop-color="#1A1C23" />
@@ -75,8 +75,8 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
 
       <!-- Underlying Structural Elements for Test & Screen-Reader Compatibility -->
       <g opacity="0">
-        <rect x="16" y="16" width="488" height="388" rx="14" fill="url(#box-case-grad)" stroke="url(#box-gold-foil)" stroke-width="2.5" />
-        <rect x="26" y="26" width="468" height="368" rx="10" fill="none" stroke="${accentStroke}" stroke-width="0.9" stroke-dasharray="5,4" opacity="0.55" />
+        <rect x="16" y="14" width="488" height="488" rx="14" fill="url(#box-case-grad)" stroke="url(#box-gold-foil)" stroke-width="2.5" />
+        <rect x="26" y="24" width="468" height="468" rx="10" fill="none" stroke="${accentStroke}" stroke-width="0.9" stroke-dasharray="5,4" opacity="0.55" />
         <text x="260" y="50" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="13" font-weight="700" letter-spacing="4" fill="url(#box-gold-foil)">
           PUCK &amp; WICK • ${editionTitle}
         </text>
@@ -123,16 +123,17 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
         </text>
       </g>
 
-      <!-- Photorealistic Studio Exclusive Box Photograph (Men's / Athlete vs Women's Luxury) -->
-      <image href="${boxPhotoHref}" x="16" y="16" width="488" height="388" preserveAspectRatio="xMidYMid slice" clip-path="url(#box-photo-clip)" />
-      <rect x="16" y="16" width="488" height="388" rx="14" fill="none" stroke="url(#box-gold-foil)" stroke-width="2" />
+      <!-- Photorealistic Studio Exclusive Box Photograph (Uncropped 1:1 Frame with Zero Overlap) -->
+      <rect x="16" y="14" width="488" height="488" rx="14" fill="#08090C" />
+      <image href="${boxPhotoHref}" x="16" y="14" width="488" height="488" preserveAspectRatio="xMidYMid meet" clip-path="url(#box-photo-clip)" />
+      <rect x="16" y="14" width="488" height="488" rx="14" fill="none" stroke="url(#box-gold-foil)" stroke-width="2" />
 
-      <!-- Bottom Minimalist Custom Candle Badge -->
-      <rect x="44" y="348" width="432" height="48" rx="6" fill="rgba(11, 12, 14, 0.92)" stroke="rgba(197, 160, 89, 0.55)" stroke-width="1" />
-      <text x="260" y="371" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="13.5" font-weight="600" letter-spacing="2.5" fill="#FAF5E8">
+      <!-- Dedicated Bottom Custom Candle Badge Bar (Placed Cleanly Below Photo — Zero Overlap) -->
+      <rect x="16" y="510" width="488" height="48" rx="8" fill="#101218" stroke="rgba(197, 160, 89, 0.55)" stroke-width="1.2" />
+      <text x="260" y="532" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="13.5" font-weight="600" letter-spacing="2.5" fill="#FAF5E8">
         SELECTED CANDLE: ${candleName} (10 OZ SOY)
       </text>
-      <text x="260" y="387" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8" font-weight="500" letter-spacing="2" fill="#C5A059">
+      <text x="260" y="548" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8" font-weight="500" letter-spacing="2" fill="#C5A059">
         ${subFooterText}
       </text>
     </svg>
