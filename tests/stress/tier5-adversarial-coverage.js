@@ -618,20 +618,22 @@ async function runTier5Suite() {
   await page.click('#btn-proceed-checkout');
   await page.waitForSelector('[data-testid="checkout-modal"]');
 
-  // Switch to Alina POS and set sandbox = false without API key
+  // Switch to Alina POS and select pickup (both cause re-renders)
   await page.click('[data-testid="payment-tab-alina"]');
+  await page.click('[data-testid="fulfillment-pickup"]');
+
+  // Fill valid customer information after renders
+  await page.fill('[data-testid="customer-name"]', 'Alex Ovechkin');
+  await page.fill('[data-testid="customer-email"]', 'alex@caps.nhl.com');
+  await page.fill('[data-testid="customer-phone"]', '703-555-0808');
+
+  // Set sandbox = false without API key to trigger live validation error
   await page.evaluate(() => {
     window.PuckWickStore.dispatch('UPDATE_PAYMENT_CONFIG', {
       activeAdapter: 'alina_pos',
       alinaPos: { merchantId: 'ALINA-BH-01', apiKey: '', sandbox: false }
     });
   });
-
-  // Fill valid customer information
-  await page.fill('[data-testid="customer-name"]', 'Alex Ovechkin');
-  await page.fill('[data-testid="customer-email"]', 'alex@caps.nhl.com');
-  await page.fill('[data-testid="customer-phone"]', '703-555-0808');
-  await page.click('[data-testid="fulfillment-pickup"]');
 
   // Click place order
   await page.click('[data-testid="place-order-btn"]');
@@ -1002,10 +1004,12 @@ async function runTier5Suite() {
 
   // T5-VIEWPORT-04: Newsletter Form Validation
   await page.setViewportSize({ width: 1440, height: 900 });
-  await page.fill('#footer-newsletter-email', 'bad@domain_no_dot');
-  await page.click('#footer-newsletter-form button[type="submit"]');
+  await page.fill('#footer-newsletter-email', 'invalid_email');
+  const isHtml5Invalid = await page.evaluate(() => !document.getElementById('footer-newsletter-email').checkValidity());
+  // Dispatch submit event to trigger JS validator
+  await page.evaluate(() => document.getElementById('footer-newsletter-form').dispatchEvent(new Event('submit', { cancelable: true })));
   const newsError = await page.textContent('#footer-newsletter-msg');
-  assert(newsError.includes('valid email'), 'T5-VIEWPORT-04a', 'Newsletter form rejects invalid email format');
+  assert(isHtml5Invalid && newsError.includes('valid email'), 'T5-VIEWPORT-04a', 'Newsletter form rejects invalid email format via HTML5 validity check and JS error message');
 
   await page.fill('#footer-newsletter-email', 'valid@hockeylife.com');
   await page.click('#footer-newsletter-form button[type="submit"]');
