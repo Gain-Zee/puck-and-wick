@@ -549,15 +549,6 @@ export function getProductGallerySlides(product, conceptId = 1) {
         title: `${product.name} — Interactive 360° Rotating Pristine Collector Box`,
         type: 'box360',
         thumb: `assets/images/packaging/shelf-${product.id}.jpg`
-      },
-      {
-        id: 'unboxing_video_4k',
-        shortLabel: '4K Unboxing Video',
-        title: `${product.name} — 4K UHD Manufacturer Unboxing & Assembly Specification Video`,
-        type: 'video',
-        src: 'assets/videos/manufacturer-box-unboxing-4k.mp4',
-        poster: `assets/images/packaging/shelf-${product.id}.jpg`,
-        thumb: `assets/images/packaging/shelf-${product.id}.jpg`
       }
     ];
   }
@@ -616,21 +607,12 @@ export function getProductGallerySlides(product, conceptId = 1) {
         thumb: 'assets/images/packaging/puck-men-gym-bag.jpg'
       },
       {
-        id: 'puck_360_video',
-        shortLabel: '360° 1080p Video',
-        title: '3.0" Athlete Puck — Real-Life 1080p 60fps 360° CNC Hardware Turnaround Video',
-        type: 'video',
-        src: 'assets/videos/puck-men-360-1080p.mp4',
-        poster: 'assets/images/packaging/puck-men-360-angles.jpg',
-        thumb: 'assets/images/packaging/puck-men-360-angles.jpg'
-      },
-      {
-        id: 'puck_360_angles',
-        shortLabel: '4-Angle CNC Spec',
-        title: '3.0" Athlete Puck — All 4 Real-Life Angles (Top Cap, 1.0" Knurled Edge, Lauson-98™ Core & Engraved Base)',
+        id: 'angled_open',
+        shortLabel: 'Angled & Open',
+        title: '3.0" × 1.0" Athlete Puck — 3/4 Profile & Unscrewed Interior Chamber',
         type: 'image',
-        src: 'assets/images/packaging/puck-men-360-angles.jpg',
-        thumb: 'assets/images/packaging/puck-men-360-angles.jpg'
+        src: 'assets/images/packaging/puck-men-angled-open.jpg',
+        thumb: 'assets/images/packaging/puck-men-angled-open.jpg'
       }
     ];
   }
