@@ -4,7 +4,7 @@
  * quick-view modal triggers, and direct quick-add cart triggers.
  */
 
-import { PRODUCTS, getProductsByCategory, getCandleVesselSvg, getProductGallerySlides, getInteractive360BoxHtml } from '../data/products.js';
+import { PRODUCTS, getProductsByCategory, getCandleVesselSvg, getProductGallerySlides, getInteractive360BoxHtml, attachBox360Physics } from '../data/products.js';
 import { openProductModal } from './modal.js';
 import { getIcon } from '../utils/svg-assets.js';
 
@@ -12,8 +12,11 @@ export function initCatalog(store, openCartDrawer) {
   const root = document.getElementById('catalog-root');
   if (!root) return;
   const cardSlideState = {};
+  let card360Cleanups = [];
 
   const render = () => {
+    card360Cleanups.forEach(fn => { try { fn(); } catch (_) {} });
+    card360Cleanups = [];
     const currentCategory = store.state.activeCategory || 'all';
     const products = getProductsByCategory(currentCategory);
 
@@ -210,10 +213,16 @@ export function initCatalog(store, openCartDrawer) {
       });
     });
 
+    // Attach 360° Box drag-and-rotate physics to any active 360° card views
+    root.querySelectorAll('.box360-stage').forEach(stageEl => {
+      card360Cleanups.push(attachBox360Physics(stageEl));
+    });
+
     // Attach quick-view triggers
     const quickViewTriggers = root.querySelectorAll('[data-action="quick-view"], .quick-view-btn');
     quickViewTriggers.forEach(el => {
       el.addEventListener('click', (e) => {
+        if (e.target.closest('.box360-stage')) return;
         e.preventDefault();
         const pid = el.getAttribute('data-product-id');
         if (pid) {

@@ -4,7 +4,7 @@
  * vessel specs, quantity controls, and add-to-cart integration.
  */
 
-import { getProductById, getCandleVesselSvg, getProductGallerySlides, getInteractive360BoxHtml } from '../data/products.js';
+import { getProductById, getCandleVesselSvg, getProductGallerySlides, getInteractive360BoxHtml, attachBox360Physics } from '../data/products.js';
 import { getIcon } from '../utils/svg-assets.js';
 
 let activeTriggerElement = null;
@@ -21,16 +21,16 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
   const gallerySlides = getProductGallerySlides(product, activeLogoConcept);
   let activeSlideIdx = Math.max(0, Math.min(initialSlideIndex, gallerySlides.length - 1));
 
-  const renderSlideStage = (idx) => {
+  const renderSlideStage = (idx, isLightbox = false) => {
     const slide = gallerySlides[idx] || gallerySlides[0];
     if (slide.type === 'svg') {
       return getCandleVesselSvg(product, activeLogoConcept, true);
     }
     if (slide.type === 'box360') {
-      return getInteractive360BoxHtml(product, true);
+      return getInteractive360BoxHtml(product, isLightbox ? 'lightbox' : 'modal');
     }
     return `
-      <div class="modal-slide-photo-frame">
+      <div class="modal-slide-photo-frame ${isLightbox ? 'lightbox-photo-frame' : ''}">
         <img src="${slide.src}" alt="${slide.title}" class="modal-slide-photo-img" loading="eager" />
         <div class="modal-slide-caption-bar">
           <span>${slide.title}</span>
@@ -54,10 +54,14 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
               ${renderSlideStage(activeSlideIdx)}
             </div>
 
-            <!-- Carousel Prev/Next Controls & Counter Badge -->
+            <!-- Carousel Prev/Next Controls, Enlarge Full-Screen Button & Counter Badge -->
             <div class="modal-carousel-counter" id="modal-carousel-counter">
               <span>${activeSlideIdx + 1} / ${gallerySlides.length}</span>
             </div>
+            <button type="button" class="modal-enlarge-btn" id="modal-enlarge-btn" data-testid="modal-enlarge-btn" aria-label="Enlarge photo in distraction-free full-screen viewer">
+              ${getIcon('search')}
+              <span>Enlarge Full Screen</span>
+            </button>
             <button type="button" class="modal-carousel-arrow arrow-prev" id="modal-slide-prev" aria-label="Previous product photo">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="15 18 9 12 15 6"/></svg>
             </button>
@@ -192,6 +196,41 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
             </div>
           </div>
         </div>
+
+        <!-- Nested Distraction-Free Enlarge Full-Screen Lightbox Window (Window-Within-a-Window) -->
+        <div class="modal-enlarge-lightbox" id="modal-enlarge-lightbox" data-testid="modal-enlarge-lightbox" aria-hidden="true">
+          <div class="enlarge-lightbox-topbar">
+            <div class="enlarge-lightbox-title-group">
+              <span class="enlarge-lightbox-kicker">DISTRACTION-FREE STUDIO INSPECTION • ${product.name.toUpperCase()}</span>
+              <span class="enlarge-lightbox-counter" id="enlarge-lightbox-counter">${activeSlideIdx + 1} / ${gallerySlides.length}</span>
+            </div>
+            <button type="button" class="enlarge-lightbox-close" id="enlarge-lightbox-close" aria-label="Exit full-screen view">
+              ${getIcon('close')}
+              <span>Close Full Screen</span>
+            </button>
+          </div>
+
+          <div class="enlarge-lightbox-stage-wrap">
+            <button type="button" class="enlarge-lightbox-arrow arrow-prev" id="enlarge-slide-prev" aria-label="Previous enlarged photo">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+
+            <div class="enlarge-lightbox-stage" id="enlarge-lightbox-stage"></div>
+
+            <button type="button" class="enlarge-lightbox-arrow arrow-next" id="enlarge-slide-next" aria-label="Next enlarged photo">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+
+          <div class="enlarge-lightbox-thumbs" id="enlarge-lightbox-thumbs" role="tablist" aria-label="Switch enlarged photo">
+            ${gallerySlides.map((s, idx) => `
+              <button type="button" class="enlarge-thumb-pill ${idx === activeSlideIdx ? 'active' : ''}" data-enlarge-slide-idx="${idx}">
+                <img src="${s.thumb}" alt="${s.shortLabel}" />
+                <span>${s.shortLabel}</span>
+              </button>
+            `).join('')}
+          </div>
+        </div>
       </div>
     </div>
   `;
@@ -213,33 +252,64 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
   const nextSlideBtn = document.getElementById('modal-slide-next');
   const thumbBtns = backdrop.querySelectorAll('.modal-thumb-btn');
 
-  const bind360AngleControls = () => {
-    if (!galleryStage) return;
-    const turntable = galleryStage.querySelector('[data-box360-turntable]');
-    const angleBtns = galleryStage.querySelectorAll('[data-box360-angle]');
-    if (!turntable || !angleBtns.length) return;
-    angleBtns.forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const angle = btn.getAttribute('data-box360-angle');
-        angleBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        if (angle === 'auto') {
-          turntable.classList.add('is-spinning');
-          turntable.style.transform = '';
-        } else {
-          turntable.classList.remove('is-spinning');
-          turntable.style.transform = `rotateX(-8deg) rotateY(${angle}deg)`;
-        }
-      });
+  const enlargeBtn = document.getElementById('modal-enlarge-btn');
+  const enlargeLightbox = document.getElementById('modal-enlarge-lightbox');
+  const enlargeStage = document.getElementById('modal-enlarge-lightbox') ? document.getElementById('enlarge-lightbox-stage') : null;
+  const enlargeCounter = document.getElementById('enlarge-lightbox-counter');
+  const enlargeCloseBtn = document.getElementById('enlarge-lightbox-close');
+  const enlargePrevBtn = document.getElementById('enlarge-slide-prev');
+  const enlargeNextBtn = document.getElementById('enlarge-slide-next');
+  const enlargeThumbBtns = backdrop.querySelectorAll('[data-enlarge-slide-idx]');
+
+  let isEnlargeOpen = false;
+  let cleanupStage360 = () => {};
+  let cleanupLightbox360 = () => {};
+
+  const mountStage360 = () => {
+    cleanupStage360();
+    cleanupStage360 = attachBox360Physics(galleryStage);
+  };
+
+  const mountLightbox360 = () => {
+    cleanupLightbox360();
+    if (isEnlargeOpen && enlargeStage) {
+      cleanupLightbox360 = attachBox360Physics(enlargeStage);
+    }
+  };
+
+  const renderEnlargeLightboxSlide = () => {
+    if (!enlargeStage) return;
+    enlargeStage.innerHTML = renderSlideStage(activeSlideIdx, true);
+    if (enlargeCounter) {
+      enlargeCounter.textContent = `${activeSlideIdx + 1} / ${gallerySlides.length}`;
+    }
+    enlargeThumbBtns.forEach((btn, idx) => {
+      btn.classList.toggle('active', idx === activeSlideIdx);
     });
+    mountLightbox360();
+  };
+
+  const openEnlargeLightbox = () => {
+    if (!enlargeLightbox) return;
+    isEnlargeOpen = true;
+    enlargeLightbox.classList.add('open');
+    enlargeLightbox.setAttribute('aria-hidden', 'false');
+    renderEnlargeLightboxSlide();
+  };
+
+  const closeEnlargeLightbox = () => {
+    if (!enlargeLightbox) return;
+    isEnlargeOpen = false;
+    cleanupLightbox360();
+    enlargeLightbox.classList.remove('open');
+    enlargeLightbox.setAttribute('aria-hidden', 'true');
   };
 
   const setActiveSlide = (newIdx) => {
     activeSlideIdx = (newIdx + gallerySlides.length) % gallerySlides.length;
     if (galleryStage) {
-      galleryStage.innerHTML = renderSlideStage(activeSlideIdx);
-      bind360AngleControls();
+      galleryStage.innerHTML = renderSlideStage(activeSlideIdx, false);
+      mountStage360();
     }
     if (counterEl) {
       counterEl.innerHTML = `<span>${activeSlideIdx + 1} / ${gallerySlides.length}</span>`;
@@ -249,9 +319,76 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
       btn.classList.toggle('active', isAct);
       btn.setAttribute('aria-selected', String(isAct));
     });
+    if (isEnlargeOpen) {
+      renderEnlargeLightboxSlide();
+    }
   };
 
-  bind360AngleControls();
+  mountStage360();
+
+  if (enlargeBtn) {
+    enlargeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openEnlargeLightbox();
+    });
+  }
+
+  // Clicking directly on a static photo inside the modal stage also opens the full-screen enlarge viewer
+  if (galleryStage) {
+    galleryStage.addEventListener('click', (e) => {
+      // Do not open lightbox if interacting with the 360° drag zone or angle buttons
+      if (e.target.closest('.box360-stage')) return;
+      openEnlargeLightbox();
+    });
+  }
+
+  if (enlargeCloseBtn) {
+    enlargeCloseBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeEnlargeLightbox();
+    });
+  }
+
+  if (enlargePrevBtn) {
+    enlargePrevBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setActiveSlide(activeSlideIdx - 1);
+    });
+  }
+
+  if (enlargeNextBtn) {
+    enlargeNextBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setActiveSlide(activeSlideIdx + 1);
+    });
+  }
+
+  enlargeThumbBtns.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const idx = Number(btn.getAttribute('data-enlarge-slide-idx') || 0);
+      setActiveSlide(idx);
+    });
+  });
+
+  // Touch swipe support inside the Enlarge Lightbox stage
+  if (enlargeStage) {
+    let touchStartX = 0;
+    let touchStartY = 0;
+    enlargeStage.addEventListener('touchstart', (e) => {
+      if (e.target.closest('.box360-stage')) return;
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+    enlargeStage.addEventListener('touchend', (e) => {
+      if (e.target.closest('.box360-stage')) return;
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      const dy = e.changedTouches[0].clientY - touchStartY;
+      if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy)) {
+        setActiveSlide(dx < 0 ? activeSlideIdx + 1 : activeSlideIdx - 1);
+      }
+    }, { passive: true });
+  }
 
   if (prevSlideBtn) {
     prevSlideBtn.addEventListener('click', (e) => {
@@ -304,6 +441,8 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
   const closeModal = () => {
     if (isClosed) return;
     isClosed = true;
+    cleanupStage360();
+    cleanupLightbox360();
     window.removeEventListener('keydown', handleKeyDown);
     document.body.style.overflow = '';
     modalContainer.innerHTML = '';
@@ -312,11 +451,20 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
     }
   };
 
-  // Keyboard accessibility: Escape to dismiss & Tab focus trapping
+  // Keyboard accessibility: Escape to dismiss (closes Enlarge Lightbox first if open!) & Arrow keys to cycle slides
   const handleKeyDown = (e) => {
     if (e.key === 'Escape') {
       e.preventDefault();
-      closeModal();
+      if (isEnlargeOpen) {
+        closeEnlargeLightbox();
+      } else {
+        closeModal();
+      }
+      return;
+    }
+    if (isEnlargeOpen && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) {
+      e.preventDefault();
+      setActiveSlide(e.key === 'ArrowRight' ? activeSlideIdx + 1 : activeSlideIdx - 1);
       return;
     }
 

@@ -639,7 +639,7 @@ export function getProductGallerySlides(product, conceptId = 1) {
   ];
 }
 
-export function getInteractive360BoxHtml(product, isModal = false) {
+export function getInteractive360BoxHtml(product, mode = 'card') {
   const isIvory = product.vesselType === 'ivory';
   const scentName = (product.name || 'TOP SHELF').toUpperCase();
   const topNote = product.notes?.top?.[0] || 'Bergamot';
@@ -647,6 +647,8 @@ export function getInteractive360BoxHtml(product, isModal = false) {
   const baseNote = product.notes?.base?.[0] || 'Amberwood';
   const notesLine = `${topNote} • ${midNote} • ${baseNote}`;
   const themeClass = isIvory ? 'box360-ivory' : 'box360-obsidian';
+  const isModalOrLightbox = mode === true || mode === 'modal' || mode === 'lightbox';
+  const sizeClass = mode === 'lightbox' ? 'box360-lightbox' : isModalOrLightbox ? 'box360-modal' : 'box360-card';
   const kickerText = product.seasonal
     ? 'SEASONAL COLLAB • BATCH #098'
     : isIvory
@@ -654,12 +656,12 @@ export function getInteractive360BoxHtml(product, isModal = false) {
       : 'SIGNATURE SCENT • BATCH #098';
 
   return `
-    <div class="box360-stage ${themeClass} ${isModal ? 'box360-modal' : 'box360-card'}" data-box360-root="${product.id}">
+    <div class="box360-stage ${themeClass} ${sizeClass}" data-box360-root="${product.id}">
       <div class="box360-top-hud">
-        <span class="box360-badge">↻ 360° Auto-Rotating Rigid Box</span>
-        ${isModal ? `
+        <span class="box360-badge">↻ Hold &amp; Drag to Rotate • Release for Calm Levitating Spin</span>
+        ${isModalOrLightbox ? `
           <div class="box360-angle-pills" role="group" aria-label="Rotate box to specific side">
-            <button type="button" class="box360-angle-btn active" data-box360-angle="auto">Auto Spin</button>
+            <button type="button" class="box360-angle-btn active" data-box360-angle="auto">Levitating Spin</button>
             <button type="button" class="box360-angle-btn" data-box360-angle="0">01 Front</button>
             <button type="button" class="box360-angle-btn" data-box360-angle="-90">02 Craft</button>
             <button type="button" class="box360-angle-btn" data-box360-angle="-180">03 Story</button>
@@ -668,8 +670,9 @@ export function getInteractive360BoxHtml(product, isModal = false) {
         ` : ''}
       </div>
 
-      <div class="box360-scene">
-        <div class="box360-turntable is-spinning" data-box360-turntable>
+      <div class="box360-scene" data-box360-drag-zone>
+        <div class="box360-levitate-wrapper">
+          <div class="box360-turntable" data-box360-turntable>
           <!-- FACE 01: FRONT CREST + SCENT CORNER BAND -->
           <div class="box360-face face-front">
             <div class="box360-lid">
@@ -755,15 +758,143 @@ export function getInteractive360BoxHtml(product, isModal = false) {
           <div class="box360-face face-top">
             <div class="top-monogram">P &amp; W</div>
           </div>
+          </div>
         </div>
         <div class="box360-pedestal-shadow"></div>
       </div>
 
       <div class="box360-bottom-caption">
-        <span>2-Piece Lift-Off Top Lid • Brushed Gold Neck • Purcellville, VA Dust Cover Inside</span>
+        <span>Click &amp; Hold (or Touch &amp; Drag) to Rotate 360° • Release for Calm Levitating Spin</span>
       </div>
     </div>
   `;
+}
+
+export function attachBox360Physics(containerEl) {
+  if (!containerEl) return () => {};
+  const stage = containerEl.querySelector('.box360-stage') || (containerEl.classList?.contains('box360-stage') ? containerEl : null);
+  if (!stage) return () => {};
+  const turntable = stage.querySelector('[data-box360-turntable]');
+  const dragZone = stage.querySelector('[data-box360-drag-zone]') || stage;
+  const angleBtns = stage.querySelectorAll('[data-box360-angle]');
+  if (!turntable) return () => {};
+
+  let yaw = -24;
+  let pitch = -8;
+  let isDragging = false;
+  let isAutoSpinning = true;
+  let targetSnapYaw = null;
+  let startX = 0;
+  let startY = 0;
+  let startYaw = yaw;
+  let startPitch = pitch;
+  let rafId = null;
+  let lastTime = performance.now();
+
+  const applyTransform = () => {
+    turntable.style.transform = `rotateX(${pitch.toFixed(2)}deg) rotateY(${yaw.toFixed(2)}deg)`;
+  };
+
+  const tick = (now) => {
+    const dt = Math.min(0.06, Math.max(0.001, (now - lastTime) / 1000));
+    lastTime = now;
+
+    if (!isDragging) {
+      if (targetSnapYaw !== null) {
+        // Smoothly ease toward the requested snap face
+        const diff = targetSnapYaw - yaw;
+        yaw += diff * Math.min(1, dt * 8);
+        pitch += (-8 - pitch) * Math.min(1, dt * 8);
+        if (Math.abs(diff) < 0.15) {
+          yaw = targetSnapYaw;
+        }
+        applyTransform();
+      } else if (isAutoSpinning) {
+        // Calm, continuous levitating rotation (~20 degrees per second)
+        yaw -= 20 * dt;
+        if (yaw <= -36000) yaw += 36000;
+        // Gently ease pitch back to -8deg after manual drag release
+        pitch += (-8 - pitch) * Math.min(1, dt * 5);
+        applyTransform();
+      }
+    }
+
+    rafId = requestAnimationFrame(tick);
+  };
+
+  rafId = requestAnimationFrame(tick);
+
+  const onPointerDown = (e) => {
+    // Ignore clicks on top HUD angle buttons
+    if (e.target.closest('[data-box360-angle]')) return;
+    e.stopPropagation();
+    isDragging = true;
+    targetSnapYaw = null;
+    startX = e.clientX ?? (e.touches?.[0]?.clientX || 0);
+    startY = e.clientY ?? (e.touches?.[0]?.clientY || 0);
+    startYaw = yaw;
+    startPitch = pitch;
+    stage.classList.add('is-dragging');
+    if (dragZone.setPointerCapture && e.pointerId !== undefined) {
+      try { dragZone.setPointerCapture(e.pointerId); } catch (_) {}
+    }
+  };
+
+  const onPointerMove = (e) => {
+    if (!isDragging) return;
+    e.stopPropagation();
+    const cx = e.clientX ?? (e.touches?.[0]?.clientX || startX);
+    const cy = e.clientY ?? (e.touches?.[0]?.clientY || startY);
+    const dx = cx - startX;
+    const dy = cy - startY;
+    yaw = startYaw + dx * 0.65;
+    pitch = Math.max(-24, Math.min(14, startPitch - dy * 0.25));
+    applyTransform();
+  };
+
+  const onPointerUp = (e) => {
+    if (!isDragging) return;
+    e.stopPropagation();
+    isDragging = false;
+    stage.classList.remove('is-dragging');
+    // Immediately resume calm levitating auto-rotation from the exact angle the user released at!
+    isAutoSpinning = true;
+    targetSnapYaw = null;
+    angleBtns.forEach((b) => {
+      b.classList.toggle('active', b.getAttribute('data-box360-angle') === 'auto');
+    });
+  };
+
+  dragZone.addEventListener('pointerdown', onPointerDown);
+  window.addEventListener('pointermove', onPointerMove);
+  window.addEventListener('pointerup', onPointerUp);
+  window.addEventListener('pointercancel', onPointerUp);
+
+  angleBtns.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const angle = btn.getAttribute('data-box360-angle');
+      angleBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      if (angle === 'auto') {
+        targetSnapYaw = null;
+        isAutoSpinning = true;
+      } else {
+        isAutoSpinning = false;
+        // Normalize current yaw to [-360, 0] so snapping is always the shortest turn
+        yaw = ((yaw % 360) + 360) % 360 - 360;
+        targetSnapYaw = Number(angle);
+      }
+    });
+  });
+
+  return () => {
+    if (rafId) cancelAnimationFrame(rafId);
+    dragZone.removeEventListener('pointerdown', onPointerDown);
+    window.removeEventListener('pointermove', onPointerMove);
+    window.removeEventListener('pointerup', onPointerUp);
+    window.removeEventListener('pointercancel', onPointerUp);
+  };
 }
 
 export function getAllProducts() {

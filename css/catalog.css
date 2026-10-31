@@ -913,11 +913,17 @@
   position: relative;
   width: 160px;
   height: 205px;
-  perspective: 850px;
+  perspective: 900px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: auto;
+  cursor: grab;
+  touch-action: none;
+}
+
+.box360-stage.is-dragging .box360-scene {
+  cursor: grabbing;
 }
 
 .box360-card .box360-scene {
@@ -928,30 +934,37 @@
   transform: scale(1.06);
 }
 
+.box360-lightbox .box360-scene {
+  transform: scale(1.52);
+}
+
+.box360-levitate-wrapper {
+  width: 160px;
+  height: 200px;
+  transform-style: preserve-3d;
+  animation: calmBoxLevitate 4.2s ease-in-out infinite;
+}
+
+.box360-stage.is-dragging .box360-levitate-wrapper {
+  animation-play-state: paused;
+}
+
+@keyframes calmBoxLevitate {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
 .box360-turntable {
   width: 160px;
   height: 200px;
   position: relative;
   transform-style: preserve-3d;
-  transform: rotateX(-8deg) rotateY(-28deg);
-  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.box360-turntable.is-spinning {
-  animation: spin360RigidBox 15s infinite linear;
-}
-
-.box360-stage:hover .box360-turntable.is-spinning {
-  animation-play-state: paused;
-}
-
-@keyframes spin360RigidBox {
-  0% {
-    transform: rotateX(-8deg) rotateY(0deg);
-  }
-  100% {
-    transform: rotateX(-8deg) rotateY(-360deg);
-  }
+  transform: rotateX(-8deg) rotateY(-24deg);
+  will-change: transform;
 }
 
 .box360-face {
