@@ -286,7 +286,11 @@ export function initBoxBuilder(store, openCartCallback) {
               <div class="box-price-row">
                 <div class="box-bundle-price" data-testid="box-price">$${editionConfig.price.toFixed(2)}</div>
                 <div class="box-compare-price">$${editionConfig.compareAtValue.toFixed(2)} Individual Value</div>
-                <span class="box-free-ship-badge">✓ Unlocks Free Shipping ($75+)</span>
+                <span class="box-free-ship-badge">✓ $0 Local Pickup • Free Shipping at $125+</span>
+              </div>
+
+              <div class="box-jersey-98-callout" data-testid="jersey-98-callout">
+                <strong>Why $98?</strong> Priced in tribute to our Founder’s very first competitive hockey jersey number (<strong>#98</strong>) — giving you all 3 full-size luxury essentials ($124 value, save $26). <em>Tip: Add 1 extra candle ($36) to unlock Free Shipping ($125+)!</em>
               </div>
             </div>
 

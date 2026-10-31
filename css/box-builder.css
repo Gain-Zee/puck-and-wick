@@ -425,6 +425,22 @@
   color: #34D399;
 }
 
+.box-jersey-98-callout {
+  margin-top: 0.65rem;
+  padding: 0.7rem 0.95rem;
+  background: rgba(197, 160, 89, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-left: 3px solid var(--color-gold-bright, #D4AF37);
+  border-radius: var(--radius-md, 0.5rem);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--color-parchment, #FAF5E8);
+}
+
+.box-jersey-98-callout strong {
+  color: var(--color-gold-bright, #D4AF37);
+}
+
 .box-step-block {
   display: flex;
   flex-direction: column;

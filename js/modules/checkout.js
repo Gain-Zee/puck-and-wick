@@ -37,7 +37,7 @@ export function initCheckout(store) {
   };
 
   const render = () => {
-    const cart = store.state.cart || [];
+    const cart = (store.state.cart || []).filter(item => item && typeof item === 'object' && item.id);
     const subtotal = store.getCartSubtotal();
     const discount = store.getDiscountAmount();
     const shipping = store.getShippingTotal();
@@ -253,7 +253,7 @@ export function initCheckout(store) {
                       <div class="radio-card-content">
                         <div class="radio-title-row">
                           <span class="radio-title">Standard Tracked Delivery</span>
-                          <span class="radio-price-tag">${subtotal >= 75 ? 'Free ($75+ Order)' : '$6.95'}</span>
+                          <span class="radio-price-tag">${subtotal >= 125 ? 'Free ($125+ Order)' : '$9.95'}</span>
                         </div>
                         <p class="radio-desc">
                           Hand-packed in insulated custom packaging with ice-pack protection during warm months.
@@ -486,7 +486,7 @@ export function initCheckout(store) {
 
     if (shippingRadio) {
       shippingRadio.addEventListener('change', () => {
-        store.dispatch('SET_SHIPPING_METHOD', subtotal >= 75 ? 'free' : 'standard');
+        store.dispatch('SET_SHIPPING_METHOD', subtotal >= 125 ? 'free' : 'standard');
         render();
       });
     }

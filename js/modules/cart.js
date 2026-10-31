@@ -16,7 +16,9 @@ export function initCart(store, openCheckoutCallback) {
   let enteredPromoCode = '';
 
   const render = () => {
-    const cart = store.state.cart || [];
+    const cart = Array.isArray(store.state.cart)
+      ? store.state.cart.filter(item => item && typeof item === 'object' && item.id)
+      : [];
     const subtotal = store.getCartSubtotal();
     const discount = store.getDiscountAmount();
     const shipping = store.getShippingTotal();
@@ -24,8 +26,8 @@ export function initCart(store, openCheckoutCallback) {
     const count = store.getCartCount();
     const promo = store.state.promoCode;
 
-    // Free shipping progress calculation
-    const freeShippingThreshold = 75.00;
+    // Free shipping progress calculation ($125+ Cart-Stretcher Threshold)
+    const freeShippingThreshold = 125.00;
     const progressPercent = Math.min(100, Math.max(0, (subtotal / freeShippingThreshold) * 100));
     const remaining = Math.max(0, freeShippingThreshold - subtotal);
     const isFreeShippingUnlocked = subtotal >= freeShippingThreshold || store.state.shippingMethod === 'pickup';
@@ -54,7 +56,7 @@ export function initCart(store, openCheckoutCallback) {
                     ? '🎉 Free Shipping Unlocked!' 
                     : `$${remaining.toFixed(2)} away from Free Shipping!`}
                 </span>
-                <span class="shipping-threshold-target">$75 Threshold</span>
+                <span class="shipping-threshold-target">$125 Threshold</span>
               </div>
               <div class="shipping-meter-track" role="progressbar" aria-valuenow="${progressPercent}" aria-valuemin="0" aria-valuemax="100">
                 <div class="shipping-meter-fill" data-testid="shipping-progress-bar" style="width: ${progressPercent}%; min-width: 4px;"></div>
@@ -67,6 +69,7 @@ export function initCart(store, openCheckoutCallback) {
             ${cart.length > 0 ? `
               <div class="cart-items-list" data-testid="cart-items">
                 ${cart.map((item, idx) => {
+                  if (!item || typeof item !== 'object' || !item.id) return '';
                   const unitPrice = Number(item.price) || 36.00;
                   const itemTotal = (unitPrice * (item.quantity || 1)).toFixed(2);
                   const scentSubtitle = item.scent && item.scent !== 'Default' ? item.scent : (item.subtitle || '');
@@ -228,7 +231,7 @@ export function initCart(store, openCheckoutCallback) {
         e.stopPropagation();
         const id = btn.getAttribute('data-id');
         const scent = btn.getAttribute('data-scent');
-        const item = store.state.cart.find(it => it.id === id && (it.scent || '') === scent);
+        const item = (Array.isArray(store.state.cart) ? store.state.cart : []).find(it => it && it.id === id && (it.scent || '') === scent);
         if (item) {
           const currentQty = item.quantity || 1;
           if (currentQty <= 1) {
@@ -248,7 +251,7 @@ export function initCart(store, openCheckoutCallback) {
         e.stopPropagation();
         const id = btn.getAttribute('data-id');
         const scent = btn.getAttribute('data-scent');
-        const item = store.state.cart.find(it => it.id === id && (it.scent || '') === scent);
+        const item = (Array.isArray(store.state.cart) ? store.state.cart : []).find(it => it && it.id === id && (it.scent || '') === scent);
         if (item) {
           const currentQty = item.quantity || 1;
           if (currentQty >= 99) {
@@ -268,7 +271,9 @@ export function initCart(store, openCheckoutCallback) {
         e.stopPropagation();
         const id = btn.getAttribute('data-id');
         const scent = btn.getAttribute('data-scent');
-        store.dispatch('REMOVE_ITEM', { id, scent });
+        if (id) {
+          store.dispatch('REMOVE_ITEM', { id, scent });
+        }
         render();
       });
     });

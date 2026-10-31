@@ -80,7 +80,7 @@ export const EXCLUSIVE_BOX_EDITIONS = {
     savings: 26.00,
     defaultCandleId: 'candle-cashmere-white-tea',
     description:
-      'Crafted in our Warm Frosted Ivory & Brushed Champagne Gold colorway for serene home rituals, velvet-soft skin restoration, and luxury fabric care. Pairs your choice of 10 oz hand-poured Virginia soy candle with our triple-whipped Shea, Jojoba & Cashmere Body Butter and our Metazene®-infused Botanical Linen, Closet & Pillow Mist.',
+      'Crafted in our Warm Frosted Ivory & Brushed Champagne Gold colorway for serene home rituals, velvet-soft skin restoration, and luxury fabric care. Priced at $98 in tribute to our founder’s first competitive hockey jersey number (#98), pairing your choice of 10 oz Virginia soy candle with our triple-whipped Shea, Jojoba & Cashmere Body Butter and our Metazene®-infused Botanical Linen, Closet & Pillow Mist.',
     bundledItems: {
       candle: {
         role: '1x Full-Size Hand-Poured Soy Candle (10 oz Frosted Warm Ivory Vessel)',

@@ -76,7 +76,10 @@ let savedCart = [];
 try {
   const rawCart = storage.get('puck_wick_cart');
   if (rawCart) {
-    savedCart = JSON.parse(rawCart);
+    const parsed = JSON.parse(rawCart);
+    savedCart = Array.isArray(parsed)
+      ? parsed.filter(item => item && typeof item === 'object' && item.id)
+      : [];
   }
 } catch (e) {
   savedCart = [];
@@ -88,7 +91,9 @@ window.PuckWickStore = {
   state: {
     activeCategory: 'all',
     activeLogoConcept: initialLogo, // 1: Crossed Sticks, 2: Heritage Crest, 3: Apothecary, 4: Stamped Leather
-    cart: Array.isArray(savedCart) ? savedCart : [],
+    cart: Array.isArray(savedCart)
+      ? savedCart.filter(item => item && typeof item === 'object' && item.id)
+      : [],
     promoCode: null, // { code: 'PUCK10', discountPercent: 10 }
     shippingMethod: 'standard', // 'standard' ($6.95), 'free' ($0), 'pickup' ($0)
     boxBuilder: {
@@ -156,12 +161,16 @@ window.PuckWickStore = {
       case 'ADD_ITEM':
       case 'ADD_TO_CART': {
         if (!payload || !payload.id) break;
+        if (!Array.isArray(this.state.cart)) {
+          this.state.cart = [];
+        }
+        this.state.cart = this.state.cart.filter((item) => item && typeof item === 'object' && item.id);
         const itemScent = payload.scent || 'Default';
         const customObj = payload.customizations || payload.customOptions || {};
         const itemCustom = JSON.stringify(customObj);
 
         const existingIdx = this.state.cart.findIndex(
-          (item) => item.id === payload.id &&
+          (item) => item && item.id === payload.id &&
                     (item.scent || 'Default') === itemScent &&
                     JSON.stringify(item.customizations || item.customOptions || {}) === itemCustom
         );
@@ -184,8 +193,8 @@ window.PuckWickStore = {
           });
         }
 
-        // Automatic shipping threshold evaluation
-        if (this.getCartSubtotal() >= 75 && this.state.shippingMethod === 'standard') {
+        // Automatic shipping threshold evaluation ($125+ Cart-Stretcher Threshold)
+        if (this.getCartSubtotal() >= 125 && this.state.shippingMethod === 'standard') {
           this.state.shippingMethod = 'free';
         }
         storage.set('puck_wick_cart', JSON.stringify(this.state.cart));
@@ -195,12 +204,16 @@ window.PuckWickStore = {
       case 'UPDATE_QUANTITY':
       case 'UPDATE_CART_QUANTITY': {
         if (!payload) break;
+        if (!Array.isArray(this.state.cart)) {
+          this.state.cart = [];
+        }
+        this.state.cart = this.state.cart.filter((item) => item && typeof item === 'object' && item.id);
         const { id, scent, quantity } = payload;
         const targetQty = parseInt(quantity, 10);
         const itemScent = scent || 'Default';
 
         const idx = this.state.cart.findIndex(
-          (item) => item.id === id && (item.scent || 'Default') === itemScent
+          (item) => item && item.id === id && (item.scent || 'Default') === itemScent
         );
 
         if (idx > -1) {
@@ -217,9 +230,13 @@ window.PuckWickStore = {
       case 'REMOVE_ITEM':
       case 'REMOVE_FROM_CART': {
         if (!payload) break;
+        if (!Array.isArray(this.state.cart)) {
+          this.state.cart = [];
+        }
         const { id, scent } = typeof payload === 'object' ? payload : { id: payload, scent: null };
         if (!id) break;
         this.state.cart = this.state.cart.filter((item) => {
+          if (!item || typeof item !== 'object' || !item.id) return false;
           if (scent) {
             return !(item.id === id && item.scent === scent);
           }
@@ -310,7 +327,9 @@ window.PuckWickStore = {
           orderId: orderNum,
           timestamp: new Date().toISOString(),
           customer: payload?.customer || {},
-          items: [...this.state.cart],
+          items: Array.isArray(this.state.cart)
+            ? this.state.cart.filter(item => item && typeof item === 'object' && item.id)
+            : [],
           subtotal,
           discount,
           shipping,
@@ -363,11 +382,11 @@ window.PuckWickStore = {
         break;
     }
 
-    // Auto update shipping threshold if subtotal shifted
+    // Auto update shipping threshold if subtotal shifted ($125+ Cart-Stretcher Threshold)
     const currentSubtotal = this.getCartSubtotal();
-    if (currentSubtotal >= 75 && this.state.shippingMethod === 'standard') {
+    if (currentSubtotal >= 125 && this.state.shippingMethod === 'standard') {
       this.state.shippingMethod = 'free';
-    } else if (currentSubtotal < 75 && this.state.shippingMethod === 'free') {
+    } else if (currentSubtotal < 125 && this.state.shippingMethod === 'free') {
       this.state.shippingMethod = 'standard';
     }
 
@@ -384,17 +403,13 @@ window.PuckWickStore = {
   },
 
   getCartSubtotal() {
-    return this.state.cart.reduce((sum, item) => {
-      const price = Number(item.price) || 0;
-      const qty = parseInt(item.quantity, 10) || 1;
-      return sum + (price * qty);
-    }, 0);
+    if (!Array.isArray(this.state.cart)) return 0;
+    return this.state.cart.reduce((sum, item) => sum + (item && Number(item.price) && Number(item.quantity) ? Number(item.price) * Number(item.quantity) : 0), 0);
   },
 
   getCartCount() {
-    return this.state.cart.reduce((sum, item) => {
-      return sum + (parseInt(item.quantity, 10) || 0);
-    }, 0);
+    if (!Array.isArray(this.state.cart)) return 0;
+    return this.state.cart.reduce((sum, item) => sum + (item && Number(item.quantity) ? Number(item.quantity) : 0), 0);
   },
 
   getDiscountAmount() {
@@ -408,9 +423,9 @@ window.PuckWickStore = {
     const subtotal = this.getCartSubtotal();
     if (subtotal === 0) return 0;
     if (this.state.shippingMethod === 'pickup') return 0;
-    if (subtotal >= 75) return 0;
+    if (subtotal >= 125) return 0;
     if (this.state.shippingMethod === 'free') return 0;
-    return 6.95;
+    return 9.95;
   },
 
   getTaxAmount() {
