@@ -473,9 +473,9 @@ export function getProductGallerySlides(product, conceptId = 1) {
 
   if (!product.productType || product.productType === 'candle') {
     const atelierCardImg = product.vesselType === 'ivory'
-      ? 'assets/images/packaging/atelier-card-ivory.jpg?v=44'
-      : 'assets/images/packaging/atelier-card-obsidian.jpg?v=44';
-    const thumb360Img = `assets/images/packaging/thumb-360-${product.id}.jpg?v=44`;
+      ? 'assets/images/packaging/atelier-card-ivory.jpg?v=46'
+      : 'assets/images/packaging/atelier-card-obsidian.jpg?v=46';
+    const thumb360Img = `assets/images/packaging/thumb-360-${product.id}.jpg?v=46`;
     return [
       {
         id: 'lit',
@@ -487,10 +487,10 @@ export function getProductGallerySlides(product, conceptId = 1) {
       {
         id: 'shelf',
         shortLabel: 'Box',
-        title: `${product.name} — Rigid Box, Custom Scent Band & Wax Dust Cover`,
+        title: `${product.name} — Rigid Two-Piece Collector Box & 10 oz Soy Vessel`,
         type: 'image',
-        src: `assets/images/packaging/shelf-${product.id}.jpg?v=44`,
-        thumb: `assets/images/packaging/shelf-${product.id}.jpg?v=44`
+        src: `assets/images/packaging/shelf-${product.id}.jpg?v=46`,
+        thumb: `assets/images/packaging/shelf-${product.id}.jpg?v=46`
       },
       {
         id: 'atelier_card',
@@ -502,8 +502,8 @@ export function getProductGallerySlides(product, conceptId = 1) {
       },
       {
         id: 'spin360',
-        shortLabel: '360 Degrees',
-        title: `${product.name} — 360 Degrees Interactive Rotating Collector Box`,
+        shortLabel: '360°',
+        title: `${product.name} — Interactive 360° Rotating Collector Box`,
         type: 'box360',
         src: thumb360Img,
         thumb: thumb360Img
