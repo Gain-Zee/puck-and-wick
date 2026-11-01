@@ -53,7 +53,7 @@ export function initCatalog(store, openCartDrawer) {
           </button>
 
           <button type="button" class="filter-tab filter-odor-care ${currentCategory === 'odor_care' ? 'active' : ''}" data-testid="filter-odor-care" data-filter="odor_care" role="tab" aria-selected="${currentCategory === 'odor_care'}">
-            <span>Lauson-98&trade; Pucks &amp; Care (Coming Soon)</span>
+            <span>Lauson-98&trade; Pucks &amp; Care</span>
             <span class="filter-count">(${PRODUCTS.filter(p => p.productType === 'odor_care').length})</span>
           </button>
 
@@ -102,13 +102,6 @@ export function initCatalog(store, openCartDrawer) {
 
                   <div class="product-line-pill ${p.vesselType === 'ivory' ? 'pill-womens' : 'pill-mens'}" data-testid="product-line-pill">
                     <span>${p.vesselType === 'ivory' ? 'Womens' : 'Mens'}</span>
-                  </div>
-
-                  <div class="visual-hover-overlay">
-                    <span class="btn-hover-quick-view">
-                      ${getIcon('search')}
-                      <span>Quick View (${slides.length} Photos)</span>
-                    </span>
                   </div>
                 </div>
 

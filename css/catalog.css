@@ -33,8 +33,13 @@
 @media (max-width: 900px) {
   .catalog-filters-bar,
   .category-filter-bar {
-    flex-wrap: nowrap;
-    padding-inline: 0.25rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.45rem;
+    overflow-x: visible;
+    padding-inline: 0;
+    margin-bottom: 1.15rem;
+    padding-bottom: 0;
   }
 }
 
@@ -140,15 +145,28 @@
 @media (max-width: 640px) {
   .catalog-filters-bar,
   .category-filter-bar {
-    gap: 0.4rem;
-    margin-bottom: 1rem;
-    padding-bottom: 0.35rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.38rem;
+    margin-bottom: 0.9rem;
+    padding-bottom: 0;
+    overflow-x: visible;
   }
 
   .filter-tab {
-    padding: 0.45rem 0.75rem;
-    font-size: 0.74rem;
-    min-height: 44px;
+    width: 100%;
+    padding: 0.4rem 0.45rem;
+    font-size: 0.67rem;
+    min-height: 38px;
+    gap: 0.3rem;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .filter-count {
+    font-size: 0.63rem;
   }
 
   .product-cards-grid {
@@ -1012,6 +1030,23 @@
 
 .box360-card .box360-scene {
   transform: scale(0.84);
+}
+
+@media (max-width: 640px) {
+  .box360-stage.box360-card {
+    padding: 0.25rem;
+    justify-content: center;
+  }
+
+  .box360-card .box360-top-hud,
+  .box360-card .box360-bottom-caption {
+    display: none !important;
+  }
+
+  .box360-card .box360-scene {
+    transform: scale(0.56);
+    margin: auto;
+  }
 }
 
 .box360-modal .box360-scene {

@@ -268,11 +268,18 @@
 
   .hero-actions .btn {
     width: 100%;
-    padding: 0.7rem 0.5rem;
-    font-size: 0.68rem;
-    letter-spacing: 0.07em;
-    gap: 0.25rem;
-    min-height: 44px;
+    padding: 0.65rem 0.35rem;
+    font-size: 0.56rem;
+    letter-spacing: 0.04em;
+    gap: 0.2rem;
+    min-height: 42px;
+    white-space: nowrap;
+  }
+
+  .hero-actions .btn svg {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
   }
 
   /* Hero atmospheric ambient glows - bounded to prevent horizontal bleed */
