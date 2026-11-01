@@ -473,8 +473,8 @@ export function getProductGallerySlides(product, conceptId = 1) {
 
   if (!product.productType || product.productType === 'candle') {
     const atelierCardImg = product.vesselType === 'ivory'
-      ? 'assets/images/packaging/atelier-card-ivory.jpg?v=42'
-      : 'assets/images/packaging/atelier-card-obsidian.jpg?v=42';
+      ? 'assets/images/packaging/atelier-card-ivory.jpg?v=43'
+      : 'assets/images/packaging/atelier-card-obsidian.jpg?v=43';
     return [
       {
         id: 'lit',
@@ -488,8 +488,8 @@ export function getProductGallerySlides(product, conceptId = 1) {
         shortLabel: 'Box',
         title: `${product.name} — Rigid Box, Custom Scent Band & Wax Dust Cover`,
         type: 'image',
-        src: `assets/images/packaging/shelf-${product.id}.jpg?v=42`,
-        thumb: `assets/images/packaging/shelf-${product.id}.jpg?v=42`
+        src: `assets/images/packaging/shelf-${product.id}.jpg?v=43`,
+        thumb: `assets/images/packaging/shelf-${product.id}.jpg?v=43`
       },
       {
         id: 'atelier_card',
@@ -504,7 +504,7 @@ export function getProductGallerySlides(product, conceptId = 1) {
         shortLabel: '360°',
         title: `${product.name} — Interactive 360° Rotating Pristine Collector Box`,
         type: 'box360',
-        thumb: `assets/images/packaging/shelf-${product.id}.jpg?v=42`
+        thumb: `assets/images/packaging/shelf-${product.id}.jpg?v=43`
       }
     ];
   }
