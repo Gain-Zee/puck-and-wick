@@ -272,32 +272,32 @@ export const PRODUCTS = [
   {
     id: 'puck-mens-athlete',
     name: "Men's Lauson-98™ Gear & Locker Puck",
-    tagline: 'Single 3.0" Matte Obsidian & Gold Hardware Puck. Activated Coconut Carbon + Lauson-98™.',
+    tagline: 'Single 3.0" Matte Obsidian & Gold Hardware Puck. Built for Pro Locker Stalls, Hockey Bags & Gear Closets.',
     price: 44.00,
     formattedPrice: '$44.00',
     category: ['mens', 'odor_care'],
     productType: 'odor_care',
     genderLine: 'mens',
     genderLabel: 'MENS',
-    specUnitLabel: '1x 3.0" Bag Puck (Single)',
-    includedSummary: 'SOLD INDIVIDUALLY • Includes 1x Full-Size 3.0" Matte-Black & Gold Athlete Odor Puck (40g Lauson-98™ + Carbon Core). Standalone single item — does not include candle or body wash.',
+    specUnitLabel: '1x 3.0" Stall & Bag Puck',
+    includedSummary: 'SOLD INDIVIDUALLY • Includes 1x Full-Size 3.0" Matte-Black & Gold Athlete Odor Puck (40g Lauson-98™ + Carbon Core). Engineered for one puck in every player’s locker stall, inside hockey bags, or on home gear shelves.',
     burnTime: '6+ Months Active',
     weightOz: 4,
     vessel: '1x 3.0" Regulation-Size Matte-Black Anodized Aluminum Disc with Brushed Gold Bezel',
     wax: 'Sub-2nm Coconut Charcoal (>1,000 m²/g) + Lauson-98™ Molecular Core (40g Fill)',
     wick: '360° Perimeter Double-Ring Vent Array (96 Micro-Ports + 8 Side Intake Slots)',
-    description: 'Sold individually as a standalone 3.0" regulation-diameter odor puck engineered to sit at the bottom of hockey bags, gym duffels, and equipment lockers. Heavy-gauge Matte-Black & Brushed-Gold anodized aluminum combines >1,000 m²/g microporous coconut carbon with our proprietary Swiss-inspired Lauson-98™ vapor complex to permanently destroy whole-bag sweat and gear odors.',
+    description: 'Engineered with the power to neutralize an entire player’s locker room stall—not just the inside of a closed bag. Built for hockey teams and athletes who leave their shoulder pads, gloves, helmets, and skates hanging in their stall when they head home, one 3.0" regulation-diameter puck stationed in the corner of each stall creates a continuous 360° vapor-phase shield across open-air hanging equipment. Equally versatile inside travel hockey bags, gym duffels, truck cabs, and home mudroom gear closets.',
     notes: {
-      top: ['Lauson-98™ Vapor-Phase Complex', 'Zero Masking Perfumes', 'Hypoallergenic'],
-      middle: ['Sub-2nm Activated Coconut Carbon', '>1,000 m²/g Micropore Lattice'],
-      base: ['Destroys Deep Gear & Sweat Odor', '6+ Months Continuous Protection']
+      top: ['Full-Stall Open-Air Gear Neutralization', 'One Puck Per Player Locker Stall', 'Zero Masking Perfumes'],
+      middle: ['Lauson-98™ Vapor-Phase Complex', 'Sub-2nm Coconut Carbon (>1,000 m²/g)'],
+      base: ['Locker Stalls, Hockey Bags & Mudrooms', '6+ Months Continuous Protection']
     },
     featured: true,
     seasonal: false,
     vesselType: 'obsidian',
     photo: 'assets/images/item-puck-men.jpg',
-    subSpecText: 'SINGLE 3.0" FULL-BAG PUCK • LAUSON-98™ + CARBON',
-    waxSpecSub: '1x 3.0" Puck Only',
+    subSpecText: 'ONE PUCK PER LOCKER STALL • BAGS • GEAR CLOSETS',
+    waxSpecSub: '1x 3.0" Stall & Bag Puck',
     accentColor: '#C5A059'
   },
   {
@@ -552,25 +552,33 @@ export function getProductGallerySlides(product, conceptId = 1) {
       {
         id: 'primary',
         shortLabel: 'Puck',
-        title: '3.0" Athlete Gear & Locker Puck — Matte-Black & Gold Anodized Hardware',
+        title: '3.0" Athlete Gear & Locker Stall Puck — Matte-Black & Gold Anodized Hardware',
         type: 'svg',
         thumb: primaryPhoto
+      },
+      {
+        id: 'angled_open',
+        shortLabel: 'Stall',
+        title: '3.0" Athlete Puck — One in Every Player’s Locker Stall (Full-Stall Open-Air Gear Neutralization)',
+        type: 'image',
+        src: 'assets/images/packaging/puck-men-angled-open.jpg?v=48',
+        thumb: 'assets/images/packaging/puck-men-angled-open.jpg?v=48'
       },
       {
         id: 'gym_bag',
         shortLabel: 'In Bag',
         title: '3.0" Athlete Puck — Drop Directly Into Your Hockey or Gym Duffel Bag',
         type: 'image',
-        src: 'assets/images/packaging/puck-men-gym-bag.jpg',
-        thumb: 'assets/images/packaging/puck-men-gym-bag.jpg'
+        src: 'assets/images/packaging/puck-men-gym-bag.jpg?v=48',
+        thumb: 'assets/images/packaging/puck-men-gym-bag.jpg?v=48'
       },
       {
-        id: 'angled_open',
-        shortLabel: '3/4 View',
-        title: '3.0" × 1.0" Sealed Athlete Puck — Heavyweight 3/4 Profile & Knurled Edge',
+        id: 'closet',
+        shortLabel: 'Closet',
+        title: '3.0" Athlete Puck — Home Mudroom, Cleat Shelf & Equipment Closet Protection',
         type: 'image',
-        src: 'assets/images/packaging/puck-men-angled-open.jpg',
-        thumb: 'assets/images/packaging/puck-men-angled-open.jpg'
+        src: 'assets/images/packaging/puck-men-closet.jpg?v=48',
+        thumb: 'assets/images/packaging/puck-men-closet.jpg?v=48'
       }
     ];
   }
