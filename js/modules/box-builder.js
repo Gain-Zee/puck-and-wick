@@ -643,14 +643,23 @@ export function initBoxBuilder(store, openCartCallback) {
 
     if (lightboxOpen) {
       document.body.style.overflow = 'hidden';
+      document.body.classList.add('box-lightbox-open');
       lightboxPortal.innerHTML = `
         <div class="box-lightbox-backdrop" id="box-lightbox-modal" data-testid="box-lightbox-modal" role="dialog" aria-modal="true" aria-label="${currentLightboxSlide.title}">
-          <div class="box-lightbox-window">
-            <!-- Left / Top Column: Dedicated Uncropped Photo Stage with Always-Visible Top-Right Close Button -->
-            <div class="box-lightbox-stage" id="box-lightbox-swipe-stage">
+          <div class="box-lightbox-fullscreen">
+            <!-- Minimal Top Bar: Counter + Short Label + Close Button -->
+            <div class="box-lightbox-topbar">
+              <div class="box-lightbox-topbar-left">
+                <span class="box-lightbox-pill-counter">0${lightboxIndex + 1} / 0${allLightboxSlides.length}</span>
+                <span class="box-lightbox-pill-label">${currentLightboxSlide.shortLabel || currentLightboxSlide.title}</span>
+              </div>
               <button type="button" class="box-lightbox-top-close-btn" id="btn-close-box-lightbox-top" aria-label="Close full-screen photo viewer">
                 ✕ Close
               </button>
+            </div>
+
+            <!-- Distraction-Free Full-Screen Image Stage -->
+            <div class="box-lightbox-stage" id="box-lightbox-swipe-stage">
               <button type="button" class="box-lightbox-nav-btn prev" id="btn-lightbox-prev" aria-label="Previous photo">
                 ‹
               </button>
@@ -662,38 +671,20 @@ export function initBoxBuilder(store, openCartCallback) {
               </button>
             </div>
 
-            <!-- Right / Bottom Column: Dedicated Info, Caption & 6-Photo Thumbnail Grid -->
-            <div class="box-lightbox-sidebar">
-              <div class="box-lightbox-header">
-                <div class="box-lightbox-meta">
-                  <span class="box-lightbox-step">${currentLightboxSlide.step}</span>
-                  <span class="box-lightbox-counter">Photo ${lightboxIndex + 1} of ${allLightboxSlides.length} • Tap Photo or ✕ to Close</span>
-                </div>
-                <button type="button" class="box-lightbox-close-btn" id="btn-close-box-lightbox" aria-label="Close full-screen photo viewer">
-                  ✕ Close
-                </button>
-              </div>
-
-              <div class="box-lightbox-caption">
-                <h4 class="box-lightbox-title">${currentLightboxSlide.title}</h4>
-                <p class="box-lightbox-desc">${currentLightboxSlide.description}</p>
-              </div>
-
-              <div class="box-lightbox-filmstrip-section">
-                <div class="box-lightbox-filmstrip-label">Select Angle or Swipe:</div>
-                <div class="box-lightbox-filmstrip">
-                  ${allLightboxSlides.map((slide, idx) => `
-                    <button
-                      type="button"
-                      class="box-lightbox-thumb ${idx === lightboxIndex ? 'active' : ''}"
-                      data-lightbox-index="${idx}"
-                      aria-label="View ${slide.shortLabel || slide.title}"
-                    >
-                      <img src="${slide.image}" alt="${slide.title}" />
-                      <span>0${idx + 1}. ${slide.shortLabel}</span>
-                    </button>
-                  `).join('')}
-                </div>
+            <!-- Compact Bottom Thumbnail Switcher (Zero Paragraph Clutter) -->
+            <div class="box-lightbox-bottombar">
+              <div class="box-lightbox-filmstrip">
+                ${allLightboxSlides.map((slide, idx) => `
+                  <button
+                    type="button"
+                    class="box-lightbox-thumb ${idx === lightboxIndex ? 'active' : ''}"
+                    data-lightbox-index="${idx}"
+                    aria-label="View ${slide.shortLabel || slide.title}"
+                  >
+                    <img src="${slide.image}" alt="${slide.title}" />
+                    <span>${slide.shortLabel}</span>
+                  </button>
+                `).join('')}
               </div>
             </div>
           </div>
@@ -703,6 +694,7 @@ export function initBoxBuilder(store, openCartCallback) {
       const closeLightbox = () => {
         lightboxOpen = false;
         document.body.style.overflow = '';
+        document.body.classList.remove('box-lightbox-open');
         render();
       };
 
@@ -783,6 +775,7 @@ export function initBoxBuilder(store, openCartCallback) {
       }
     } else {
       document.body.style.overflow = '';
+      document.body.classList.remove('box-lightbox-open');
       lightboxPortal.innerHTML = '';
     }
 

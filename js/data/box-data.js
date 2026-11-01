@@ -14,7 +14,7 @@ export const EXCLUSIVE_BOX_EDITIONS = {
     compareAtValue: 124.00,
     savings: 26.00,
     defaultCandleId: 'candle-top-shelf',
-    photo: 'assets/images/box-men-open.jpg?v=45',
+    photo: 'assets/images/box-men-open.jpg?v=50',
     description:
       'Engineered in Matte Obsidian & Brushed Gold (#98 Founder Jersey Tribute). Pairs your choice of 10 oz soy candle with our Lauson-98™ + Activated Charcoal gear puck and 8 oz detox body wash.',
     bundledItems: {
@@ -42,7 +42,7 @@ export const EXCLUSIVE_BOX_EDITIONS = {
         step: '01 • INSIDE THE BOX',
         shortLabel: 'Open Box',
         title: 'Custom-Cut Matte Obsidian Presentation Box (Open)',
-        image: 'assets/images/box-men-open.jpg?v=45',
+        image: 'assets/images/box-men-open.jpg?v=50',
         description: 'Precision-cut charcoal foam cradles your 10 oz Matte Obsidian Soy Candle, 3.0" Lauson-98™ Gear Puck, and 8 oz Athlete Detox Body Wash.'
       },
       {
@@ -50,7 +50,7 @@ export const EXCLUSIVE_BOX_EDITIONS = {
         step: '02 • SEALED & GIFT-READY',
         shortLabel: 'Box Closed',
         title: 'Heavy-Weight Matte Obsidian Magnetic Gift Box (Closed)',
-        image: 'assets/images/box-men-closed.jpg?v=45',
+        image: 'assets/images/box-men-closed.jpg?v=50',
         description: '1200gsm matte-black rigid board with concealed magnetic closure and hot-stamped metallic gold Precision Mark™ emblem.'
       },
       {
@@ -58,7 +58,7 @@ export const EXCLUSIVE_BOX_EDITIONS = {
         step: '03 • FULL-SIZE LINEUP',
         shortLabel: '3 Items',
         title: 'All 3 Full-Size Men’s / Athlete Components ($124 Value)',
-        image: 'assets/images/box-men-items-out.jpg?v=45',
+        image: 'assets/images/box-men-items-out.jpg?v=50',
         description: '(1) 10 oz American Soy Candle ($36), (2) 3.0" Lauson-98™ + Charcoal Gear Puck ($44), and (3) 8 oz Detox Body Wash ($44).'
       },
       {
@@ -66,7 +66,7 @@ export const EXCLUSIVE_BOX_EDITIONS = {
         step: '04 • IN ACTION',
         shortLabel: 'In Action',
         title: 'Rink to Shower to Living Room: All 3 Items in Action',
-        image: 'assets/images/box-men-usecase.jpg?v=45',
+        image: 'assets/images/box-men-usecase.jpg?v=50',
         description: 'Drop the Lauson-98™ Puck in your gear bag, strip post-game sweat with Charcoal Body Wash, and light your 10 oz Soy Candle.'
       }
     ]
@@ -80,7 +80,7 @@ export const EXCLUSIVE_BOX_EDITIONS = {
     compareAtValue: 124.00,
     savings: 26.00,
     defaultCandleId: 'candle-top-shelf',
-    photo: 'assets/images/box-women-open.jpg?v=45',
+    photo: 'assets/images/box-women-open.jpg?v=50',
     description:
       'Crafted in Warm Frosted Ivory & Champagne Gold (#98 Founder Tribute). Pairs your choice of 10 oz soy candle with our 3.0" Warm Ivory/White Lauson-98™ + Carbon Workout Tote & Closet Puck and 4 oz Lauson-98™ Botanical Linen Mist.',
     bundledItems: {
@@ -108,7 +108,7 @@ export const EXCLUSIVE_BOX_EDITIONS = {
         step: '01 • INSIDE THE BOX',
         shortLabel: 'Open Box',
         title: 'Warm Alabaster-Ivory & Champagne-Gold Magnetic Box (Open)',
-        image: 'assets/images/box-women-open.jpg?v=45',
+        image: 'assets/images/box-women-open.jpg?v=50',
         description: 'Warm cream suede-touch foam cradles your 10 oz Unlit Frosted Ivory Soy Candle, 3.0" Warm Ivory/White Sanctuary Puck, and 4 oz Botanical Linen Mist.'
       },
       {
@@ -116,7 +116,7 @@ export const EXCLUSIVE_BOX_EDITIONS = {
         step: '02 • SEALED & GIFT-READY',
         shortLabel: 'Box Closed',
         title: 'Warm Ivory & Champagne-Gold Magnetic Gift Box (Closed)',
-        image: 'assets/images/box-women-closed.jpg?v=45',
+        image: 'assets/images/box-women-closed.jpg?v=50',
         description: 'Rigid magnetic keepsake box in warm alabaster-ivory matte linen board with brushed champagne-gold Precision Mark™ emblem.'
       },
       {
@@ -124,7 +124,7 @@ export const EXCLUSIVE_BOX_EDITIONS = {
         step: '03 • FULL-SIZE LINEUP',
         shortLabel: '3 Items',
         title: 'All 3 Full-Size Women’s Sanctuary Components ($124 Value)',
-        image: 'assets/images/box-women-items-out.jpg?v=45',
+        image: 'assets/images/box-women-items-out.jpg?v=50',
         description: '(1) 10 oz Soy Candle in Frosted Ivory Glass ($36), (2) 3.0" Warm Ivory/White Sanctuary Workout Tote & Closet Puck ($44), and (3) 4 oz Lauson-98™ Linen Mist ($44).'
       },
       {
@@ -132,7 +132,7 @@ export const EXCLUSIVE_BOX_EDITIONS = {
         step: '04 • IN ACTION',
         shortLabel: 'In Action',
         title: 'Yoga Tote & Closet to Linens to Bedside Sanctuary',
-        image: 'assets/images/box-women-usecase.jpg?v=45',
+        image: 'assets/images/box-women-usecase.jpg?v=50',
         description: 'Tuck the 3.0" Warm Ivory Sanctuary Puck into your yoga or workout tote bag, refresh fabrics with Lauson-98™ Botanical Mist, and light your Frosted Ivory Candle.'
       }
     ]
