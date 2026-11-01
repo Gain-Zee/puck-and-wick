@@ -43,22 +43,22 @@ export function initCatalog(store, openCartDrawer) {
           <button type="button" class="filter-tab filter-mens ${currentCategory === 'mens' ? 'active' : ''}" data-testid="filter-mens" data-filter="mens" role="tab" aria-selected="${currentCategory === 'mens'}">
             <span class="tab-swatch swatch-mens" aria-hidden="true"></span>
             <span>Men's Line</span>
-            <span class="filter-count">(${PRODUCTS.filter(p => p.genderLine === 'mens').length})</span>
+            <span class="filter-count">(${PRODUCTS.filter(p => p.category.includes('mens')).length})</span>
           </button>
 
           <button type="button" class="filter-tab filter-womens ${currentCategory === 'womens' ? 'active' : ''}" data-testid="filter-womens" data-filter="womens" role="tab" aria-selected="${currentCategory === 'womens'}">
             <span class="tab-swatch swatch-womens" aria-hidden="true"></span>
-            <span>Women's Line</span>
-            <span class="filter-count">(${PRODUCTS.filter(p => p.genderLine === 'womens').length})</span>
+            <span>Women's Sanctuary</span>
+            <span class="filter-count">(${PRODUCTS.filter(p => p.category.includes('womens')).length})</span>
           </button>
 
           <button type="button" class="filter-tab filter-odor-care ${currentCategory === 'odor_care' ? 'active' : ''}" data-testid="filter-odor-care" data-filter="odor_care" role="tab" aria-selected="${currentCategory === 'odor_care'}">
-            <span>Lauson-98&trade; Pucks &amp; Care</span>
+            <span>ZeoCarb-98&trade; Pucks &amp; Care</span>
             <span class="filter-count">(${PRODUCTS.filter(p => p.productType === 'odor_care').length})</span>
           </button>
 
           <button type="button" class="filter-tab filter-exclusive-boxes filter-boxes" data-testid="filter-exclusive-boxes" data-filter="exclusive_boxes" role="tab" aria-selected="false">
-            <span>$98 Boxes (Waitlist)</span>
+            <span>$108 Boxes (Waitlist)</span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="box-icon-link" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </button>
         </div>
@@ -71,8 +71,10 @@ export function initCatalog(store, openCartDrawer) {
               const activeIdx = cardSlideState[p.id] || 0;
               const currentSlide = slides[activeIdx] || slides[0];
               const isWaitlist = HARDWARE_WAITLIST_MODE && p.productType === 'odor_care';
+              const isIvoryCard = p.vesselType === 'ivory';
+              const pillLabel = p.genderLine === 'unisex' ? 'His & Hers' : (isIvoryCard ? 'Womens' : 'Mens');
               return `
-              <article class="product-card surface-card" style="padding:0;" data-testid="product-card" data-product-id="${p.id}" tabindex="0" role="button" aria-label="View details for ${p.name}">
+              <article class="product-card surface-card ${isIvoryCard ? 'card-sanctuary-ivory' : 'card-obsidian'}" style="padding:0;" data-testid="product-card" data-product-id="${p.id}" data-vessel-type="${p.vesselType || 'obsidian'}" tabindex="0" role="button" aria-label="View details for ${p.name}">
                 <!-- Vessel Visual Stage -->
                 <div class="product-card-visual" style="padding:0;" data-action="quick-view" data-product-id="${p.id}" tabindex="0" role="button" aria-label="View details for ${p.name}">
                   <div class="vessel-wrapper" style="width:100%;height:100%;max-width:none;">
@@ -81,7 +83,7 @@ export function initCatalog(store, openCartDrawer) {
                       : currentSlide.type === 'box360'
                         ? getInteractive360BoxHtml(p, false)
                         : currentSlide.type === 'video'
-                          ? `<video src="${currentSlide.src}" poster="${currentSlide.poster || currentSlide.thumb}" class="card-slide-img slide-${currentSlide.id}" style="width:100%;height:100%;object-fit:cover;display:block;background:#08090C;" autoplay loop muted playsinline></video>`
+                          ? `<video src="${currentSlide.src}" poster="${currentSlide.poster || currentSlide.thumb}" class="card-slide-img slide-${currentSlide.id}" style="width:100%;height:100%;object-fit:contain;display:block;background:#08090C;" autoplay loop muted playsinline></video>`
                           : `<img src="${currentSlide.src}" alt="${currentSlide.title}" class="card-slide-img slide-${currentSlide.id}" loading="lazy" />`
                     }
                   </div>
@@ -100,18 +102,9 @@ export function initCatalog(store, openCartDrawer) {
                     </div>
                   ` : ''}
 
-                  <div class="product-line-pill ${p.vesselType === 'ivory' ? 'pill-womens' : 'pill-mens'}" data-testid="product-line-pill">
-                    <span>${p.vesselType === 'ivory' ? 'Womens' : 'Mens'}</span>
+                  <div class="product-line-pill ${isIvoryCard ? 'pill-womens' : 'pill-mens'}" data-testid="product-line-pill">
+                    <span>${pillLabel}</span>
                   </div>
-                </div>
-
-                <!-- Interactive Card Multi-Photo Carousel Switcher Bar -->
-                <div class="card-carousel-bar" role="tablist" aria-label="Switch photos for ${p.name}">
-                  ${slides.map((s, sIdx) => `
-                    <button type="button" class="card-slide-pill ${sIdx === activeIdx ? 'active' : ''}" data-card-slide-pid="${p.id}" data-card-slide-idx="${sIdx}" role="tab" aria-selected="${sIdx === activeIdx}">
-                      <span>${s.shortLabel}</span>
-                    </button>
-                  `).join('')}
                 </div>
 
                 <!-- Product Card Content -->

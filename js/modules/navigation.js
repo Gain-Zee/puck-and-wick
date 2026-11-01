@@ -15,14 +15,30 @@ export function initNavigation(store) {
   const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
   const studioNavItems = document.querySelectorAll('.nav-item-studio');
 
-  // 1. Sticky Header Scroll Behavior
+  // 1. Sticky Header & Smart Disappearing Lower Category Bar Scroll Behavior (Jo Malone Style)
+  let lastScrollY = window.scrollY || 0;
   const handleScroll = () => {
     if (!header) return;
-    if (window.scrollY > 20) {
+    const currentY = Math.max(0, window.scrollY || 0);
+
+    if (currentY > 20) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
     }
+
+    // Always show lower menu bar near top of page or when mobile drawer is open
+    if (currentY <= 44 || (mobileNav && mobileNav.classList.contains('open'))) {
+      header.classList.remove('jm-menu-hidden');
+    } else if (currentY > lastScrollY + 6 && currentY > 64) {
+      // Scrolling down -> smoothly collapse lower category bar
+      header.classList.add('jm-menu-hidden');
+    } else if (currentY < lastScrollY - 8) {
+      // Scrolling up -> smoothly reveal lower category bar
+      header.classList.remove('jm-menu-hidden');
+    }
+
+    lastScrollY = currentY;
   };
 
   window.addEventListener('scroll', handleScroll, { passive: true });
@@ -97,9 +113,13 @@ export function initNavigation(store) {
       }
     });
 
-    // Close when clicking mobile nav links
+    // Close when clicking nav links & sync category filter if data-nav-category is specified
     navLinks.forEach((link) => {
-      link.addEventListener('click', (e) => {
+      link.addEventListener('click', () => {
+        const navCategory = link.getAttribute('data-nav-category');
+        if (navCategory && store && typeof store.dispatch === 'function') {
+          store.dispatch('SET_CATEGORY', navCategory);
+        }
         const href = link.getAttribute('href');
         if (href && href.startsWith('#')) {
           toggleMobileMenu(false);

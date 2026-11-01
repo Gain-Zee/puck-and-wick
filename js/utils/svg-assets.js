@@ -481,12 +481,12 @@ export function getCharcoalScienceSvg() {
 }
 
 /**
- * Lauson-98™ Molecular Neutralization and Olfactory Receptor Lockout Diagram SVG.
+ * ZeoCarb-98™ Molecular Neutralization and Olfactory Receptor Lockout Diagram SVG.
  */
 export function getLausonScienceSvg() {
   return `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 185" width="100%" height="185" class="science-diagram-svg" role="img" aria-label="Lauson-98 Molecular Neutralization and Olfactory Receptor Lockout Diagram">
-      <title>Lauson-98 Proprietary Molecular Counteraction and Receptor Inactivation</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 185" width="100%" height="185" class="science-diagram-svg" role="img" aria-label="ZeoCarb-98 Molecular Neutralization and Olfactory Receptor Lockout Diagram">
+      <title>ZeoCarb-98 Proprietary Molecular Counteraction and Receptor Inactivation</title>
       <defs>
         <linearGradient id="lauson-bg" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stop-color="#0A0B0E" />
@@ -503,9 +503,9 @@ export function getLausonScienceSvg() {
 
       <text x="75" y="74" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12.5" font-weight="800" fill="#D4AF37">+</text>
 
-      <!-- Sphere 2: LAUSON-98 -->
+      <!-- Sphere 2: ZEOCARB-98 -->
       <circle cx="110" cy="70" r="27" fill="#1A1C16" stroke="#D4AF37" stroke-width="1.6" />
-      <text x="110" y="64" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.8" font-weight="800" fill="#FAF5E8">LAUSON-98™</text>
+      <text x="110" y="64" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.6" font-weight="800" fill="#FAF5E8">ZEOCARB-98™</text>
       <text x="110" y="74" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.7" font-weight="600" fill="#E5C878">Proprietary Core</text>
       <text x="110" y="83" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.3" fill="#9EA3AE">Vapor Complex</text>
 
@@ -532,7 +532,7 @@ export function getLausonScienceSvg() {
 
       <!-- Bottom Holder Box: Widen & scale text so zero letters overflow -->
       <rect x="10" y="144" width="300" height="24" rx="5" fill="rgba(52, 211, 153, 0.14)" stroke="rgba(52, 211, 153, 0.42)" />
-      <text x="160" y="159" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.9" font-weight="700" letter-spacing="0.48" fill="#34D399">LAUSON-98™ MOLECULAR LOCKOUT • ZERO RECEPTOR BINDING</text>
+      <text x="160" y="159" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.9" font-weight="700" letter-spacing="0.48" fill="#34D399">ZEOCARB-98™ MOLECULAR LOCKOUT • ZERO RECEPTOR BINDING</text>
     </svg>
   `;
 }

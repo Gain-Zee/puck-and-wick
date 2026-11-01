@@ -96,7 +96,7 @@ export function initCart(store, openCheckoutCallback) {
               <div class="cart-items-list" data-testid="cart-items">
                 ${cart.map((item, idx) => {
                   if (!item || typeof item !== 'object' || !item.id) return '';
-                  const unitPrice = Number(item.price) || 36.00;
+                  const unitPrice = Number(item.price) || 44.00;
                   const itemTotal = (unitPrice * (item.quantity || 1)).toFixed(2);
                   const prodRef = getProductById(String(item.id || ''));
                   const rawScentSub = item.scent && item.scent !== 'Default' ? item.scent : (item.subtitle || '');

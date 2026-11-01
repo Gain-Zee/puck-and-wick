@@ -749,7 +749,8 @@
 .mini-banner-visual img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background: #08090C;
   display: block;
   transition: transform 0.35s ease;
 }
@@ -866,7 +867,7 @@
 .card-slide-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
   background: #08090C;
 }
@@ -877,14 +878,7 @@
 }
 
 .card-carousel-bar {
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
-  gap: 0.25rem;
-  padding: 0.35rem 0.55rem;
-  background: rgba(11, 13, 18, 0.96);
-  border-top: 1px solid rgba(197, 160, 89, 0.22);
-  border-bottom: 1px solid rgba(197, 160, 89, 0.18);
+  display: none !important;
 }
 
 .card-slide-pill {
@@ -1504,3 +1498,100 @@
   text-align: center;
   z-index: 4;
 }
+
+/* ==========================================================================
+   Scheme C: 80% Black Obsidian + 20% Warm Alabaster Ivory Sanctuary Hybrid
+   Women's Sanctuary Collection Cards (#FAF7F2 Warm Ivory Architectural Framing)
+   ========================================================================== */
+.product-card.card-sanctuary-ivory {
+  background: linear-gradient(180deg, #FAF7F2 0%, #F3EDE2 100%);
+  border: 1.5px solid #C5A059;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(197, 160, 89, 0.25);
+}
+
+.product-card.card-sanctuary-ivory:hover {
+  border-color: #B68D40;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.7), 0 0 24px rgba(212, 175, 55, 0.22);
+}
+
+.product-card.card-sanctuary-ivory .card-carousel-bar {
+  background: #EFE8DA;
+  border-top: 1px solid rgba(182, 141, 64, 0.28);
+  border-bottom: 1px solid rgba(182, 141, 64, 0.28);
+}
+
+.product-card.card-sanctuary-ivory .card-slide-pill {
+  background: rgba(255, 255, 255, 0.75);
+  color: #3D352B;
+  border-color: rgba(182, 141, 64, 0.35);
+}
+
+.product-card.card-sanctuary-ivory .card-slide-pill.active {
+  background: #14120F;
+  color: #F5E1A4;
+  border-color: #C5A059;
+}
+
+.product-card.card-sanctuary-ivory .card-meta-line {
+  color: #8C6624;
+}
+
+.product-card.card-sanctuary-ivory .product-title,
+.product-card.card-sanctuary-ivory .product-title .title-link {
+  color: #14120F;
+}
+
+.product-card.card-sanctuary-ivory .product-title .title-link:hover {
+  color: #8C6624;
+}
+
+.product-card.card-sanctuary-ivory .product-tagline-text {
+  color: #4A4238;
+}
+
+.product-card.card-sanctuary-ivory .product-notes-summary {
+  border-top-color: rgba(140, 102, 36, 0.18);
+}
+
+.product-card.card-sanctuary-ivory .notes-kicker {
+  color: #7A6E5D;
+}
+
+.product-card.card-sanctuary-ivory .mini-note-pill {
+  background: rgba(20, 18, 15, 0.05);
+  border-color: rgba(140, 102, 36, 0.32);
+  color: #26211B;
+}
+
+.product-card.card-sanctuary-ivory .product-card-footer {
+  border-top-color: rgba(140, 102, 36, 0.2);
+}
+
+.product-card.card-sanctuary-ivory .product-price {
+  color: #14120F;
+}
+
+.product-card.card-sanctuary-ivory .wax-spec-sub {
+  color: #6E6252;
+}
+
+.product-card.card-sanctuary-ivory .quick-view-btn,
+.product-card.card-sanctuary-ivory .card-share-btn {
+  background: rgba(20, 18, 15, 0.06);
+  border-color: rgba(140, 102, 36, 0.45);
+  color: #1A1612;
+}
+
+.product-card.card-sanctuary-ivory .quick-view-btn:hover,
+.product-card.card-sanctuary-ivory .card-share-btn:hover {
+  background: #14120F;
+  color: #F5E1A4;
+  border-color: #C5A059;
+}
+
+.product-card.card-sanctuary-ivory .quick-waitlist-btn {
+  background: #14120F;
+  color: #F5E1A4;
+  border-color: #C5A059;
+}
+

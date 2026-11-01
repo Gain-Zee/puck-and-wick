@@ -82,8 +82,8 @@
 .hero-stage-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center 42%;
+  object-fit: contain;
+  background: #08090C;
   filter: contrast(1.06) brightness(0.94);
   display: block;
 }
@@ -266,9 +266,9 @@
 .hero-mini-bento img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center 22%;
-  filter: brightness(0.9);
+  object-fit: contain;
+  background: #08090C;
+  filter: brightness(0.95);
   display: block;
 }
 
@@ -318,10 +318,13 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
   width: 100%;
-  max-width: 540px;
+  max-width: 600px;
 }
 
 .hero-actions .btn {
   width: 100%;
   justify-content: center;
+  padding-inline: 0.85rem;
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
 }

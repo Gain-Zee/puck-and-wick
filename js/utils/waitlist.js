@@ -18,7 +18,7 @@ export function saveWaitlistLead(itemName, contactValue) {
   } catch (_) {}
 }
 
-export function openWaitlistModal(productName = 'Lauson-98™ Drop 01 Hardware', priceLabel = '$44.00') {
+export function openWaitlistModal(productName = 'ZeoCarb-98™ Drop 01 Hardware', priceLabel = '$48.00') {
   const existingModal = document.getElementById('pw-waitlist-modal-backdrop');
   if (existingModal) existingModal.remove();
 
@@ -36,7 +36,7 @@ export function openWaitlistModal(productName = 'Lauson-98™ Drop 01 Hardware',
         Reserve Early Access: ${productName}
       </h3>
       <p style="font-size:0.84rem;color:#B0B5C0;line-height:1.5;margin:0 0 1.1rem 0;">
-        Our <strong>100% American Soy Candles are in stock now</strong>, while our first small-batch production run of <strong>${productName} (${priceLabel})</strong> is currently being finished in Loudoun County, VA. Enter your email or phone number below for priority Batch 01 access.
+        Our <strong>100% American Soy Candles ($44) are in stock now</strong>, while our first small-batch production run of <strong>${productName} (${priceLabel})</strong> is currently being finished in Loudoun County, VA. Enter your email or phone number below for priority Batch 01 access.
       </p>
       <form id="pw-waitlist-form" style="display:flex;flex-direction:column;gap:0.65rem;">
         <input type="text" id="pw-waitlist-contact" required placeholder="Your Email Address or Mobile Number..." style="width:100%;height:44px;padding:0 0.9rem;border-radius:8px;background:#08090C;border:1px solid rgba(197,160,89,0.45);color:#FFFFFF;font-size:0.88rem;outline:none;box-sizing:border-box;" />
@@ -49,7 +49,7 @@ export function openWaitlistModal(productName = 'Lauson-98™ Drop 01 Hardware',
       </div>
       <div style="margin-top:0.9rem;padding-top:0.75rem;border-top:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:space-between;font-size:0.75rem;color:#8E93A0;">
         <span>Want candles today?</span>
-        <button type="button" id="pw-waitlist-shop-candles" style="background:none;border:none;color:#E5C878;font-weight:700;cursor:pointer;text-decoration:underline;font-size:0.75rem;">Shop In-Stock Soy Candles ($36) →</button>
+        <button type="button" id="pw-waitlist-shop-candles" style="background:none;border:none;color:#E5C878;font-weight:700;cursor:pointer;text-decoration:underline;font-size:0.75rem;">Shop In-Stock Soy Candles ($44) →</button>
       </div>
     </div>
   `;

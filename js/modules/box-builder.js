@@ -14,8 +14,8 @@ import { HARDWARE_WAITLIST_MODE, openWaitlistModal } from '../utils/waitlist.js'
 function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhotoHref = '') {
   const isWomen = edition === 'women_luxe';
   const accentStroke = isWomen ? '#E2C178' : '#C5A059';
-  const puckLabel = isWomen ? '3.0" SANCTUARY PUCK' : 'LAUSON-98™ PUCK';
-  const washLabel = isWomen ? 'BOTANICAL LINEN MIST' : 'ATHLETE BODY WASH';
+  const puckLabel = '3.0" ZEOCARB-98™ PUCK';
+  const washLabel = isWomen ? 'WHITE CLAY BODY WASH' : 'ATHLETE BODY WASH';
   const candleName = (candleProduct?.name || 'TOP SHELF').toUpperCase();
   const editionTitle = isWomen ? "WOMEN'S SANCTUARY CURATION" : "MEN'S / ATHLETE EDITION";
 
@@ -43,8 +43,8 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
 
   const boxPhotoHref = customPhotoHref || (isWomen ? 'assets/images/box-women-open.jpg' : 'assets/images/box-men-open.jpg');
   const subFooterText = isWomen
-    ? 'INCLUDES 3.0" IVORY SANCTUARY PUCK &amp; 4 OZ BOTANICAL MIST • SAVE $26'
-    : 'INCLUDES CHARCOAL + LAUSON-98™ PUCK &amp; 8 OZ BODY WASH • SAVE $26';
+    ? 'INCLUDES 3.0" ZEOCARB-98™ PUCK &amp; 8 OZ WHITE CLAY BODY WASH • SAVE $22'
+    : 'INCLUDES 3.0" ZEOCARB-98™ PUCK &amp; 8 OZ CHARCOAL BODY WASH • SAVE $22';
 
   return `
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%" class="box-presentation-svg" role="img" aria-label="${isWomen ? "Women's Exclusive Box Presentation" : "Men's Athlete Exclusive Box Presentation"}">
@@ -114,22 +114,22 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
           <rect x="39" y="68" width="52" height="72" rx="3" fill="#0A0A0C" stroke="#C5A059" stroke-width="0.9" />
           <text x="65" y="88" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="7" font-weight="700" letter-spacing="1" fill="#C5A059">PUCK &amp; WICK&#8482;</text>
           <text x="65" y="104" text-anchor="middle" font-family="'Inter', sans-serif" font-size="6" font-weight="700" fill="#FAF5E8">${washLabel.slice(0, 16)}</text>
-          <text x="65" y="117" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" fill="#9CA3AF">${isWomen ? 'LAUSON-98™ FABRIC MIST' : 'CHARCOAL + LAUSON-98™'}</text>
-          <text x="65" y="130" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" font-weight="600" fill="#D4AF37">${isWomen ? '4 FL OZ (118 ML)' : '8 FL OZ (236 ML)'}</text>
-          <text x="65" y="186" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8" font-weight="600" letter-spacing="1" fill="#D4AF37">03. MIST / WASH</text>
+          <text x="65" y="117" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" fill="#9CA3AF">${isWomen ? 'WHITE CLAY + ZEOCARB-98™' : 'CHARCOAL + ZEOCARB-98™'}</text>
+          <text x="65" y="130" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.5" font-weight="600" fill="#D4AF37">8 FL OZ (236 ML)</text>
+          <text x="65" y="186" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8" font-weight="600" letter-spacing="1" fill="#D4AF37">03. BODY WASH</text>
         </g>
 
         <text x="260" y="306" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8.5" font-weight="600" letter-spacing="2.5" fill="#9CA3AF">
-          CUSTOM RIGID GIFT BOX • SAVE $26.00 ($124 VALUE FOR $98)
+          CUSTOM MAGNETIC GIFT BOX • SAVE $22.00 ($130 VALUE FOR $108)
         </text>
         <text x="260" y="322" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="13.5" font-weight="600" fill="#FAF5E8">
           SELECTED CANDLE: ${candleName} (10 OZ SOY) • ${subFooterText}
         </text>
       </g>
 
-      <!-- Photorealistic Studio Exclusive Box Photograph (Edge-to-Edge 1:1 Frame) -->
+      <!-- Photorealistic Studio Exclusive Box Photograph (Zero-Crop Full Frame) -->
       <rect x="4" y="4" width="492" height="492" rx="14" fill="#08090C" />
-      <image href="${boxPhotoHref}" x="4" y="4" width="492" height="492" preserveAspectRatio="xMidYMid slice" clip-path="url(#box-photo-clip)" />
+      <image href="${boxPhotoHref}" x="4" y="4" width="492" height="492" preserveAspectRatio="xMidYMid meet" clip-path="url(#box-photo-clip)" />
       <rect x="4" y="4" width="492" height="492" rx="14" fill="none" stroke="url(#box-gold-foil)" stroke-width="2.5" />
     </svg>
   `;
@@ -142,7 +142,7 @@ export function initBoxBuilder(store, openCartCallback) {
   const candles = getCandleProducts();
   let feedbackMsg = '';
   let activeGalleryViewId = 'open';
-  let activeScienceTab = 'stage1';
+  let activeScienceTab = null;
   let lightboxOpen = false;
   let lightboxIndex = 0;
 
@@ -205,17 +205,17 @@ export function initBoxBuilder(store, openCartCallback) {
             id="tab-edition-women"
             aria-selected="${activeEditionKey === 'women_luxe'}"
             aria-controls="box-customizer-panel"
-            class="edition-toggle-btn ${activeEditionKey === 'women_luxe' ? 'active' : ''}"
+            class="edition-toggle-btn edition-toggle-women ${activeEditionKey === 'women_luxe' ? 'active' : ''}"
             data-testid="edition-toggle-women"
             data-edition="women_luxe"
           >
-            <span class="edition-tab-kicker">02 • Frosted Ivory</span>
+            <span class="edition-tab-kicker">02 • Warm Alabaster Ivory</span>
             <span class="edition-tab-title">Women's Sanctuary Box</span>
           </button>
         </div>
 
         <!-- Main Customizer Stage (Compact Single-Scroll on Mobile, 2-Column on Desktop) -->
-        <div class="box-customizer-grid" id="box-customizer-panel" role="tabpanel" aria-labelledby="${activeEditionKey === 'women_luxe' ? 'tab-edition-women' : 'tab-edition-men'}">
+        <div class="box-customizer-grid ${activeEditionKey === 'women_luxe' ? 'box-edition-ivory' : 'box-edition-obsidian'}" id="box-customizer-panel" role="tabpanel" aria-labelledby="${activeEditionKey === 'women_luxe' ? 'tab-edition-women' : 'tab-edition-men'}">
           <!-- Left Column: Visual Rigid Box Studio Photo & 4-Angle Switcher -->
           <div class="box-visual-stage">
             <div class="box-stage-header">
@@ -291,7 +291,7 @@ export function initBoxBuilder(store, openCartCallback) {
               <p class="box-edition-desc">${editionConfig.description}</p>
 
               <div class="box-jersey-98-callout" data-testid="jersey-98-callout">
-                <strong>#98 Founder Tribute:</strong> All 3 full-size essentials ($124 value for $98 — <strong>Save $26</strong> • Free Shipping at $125+).
+                <strong>#98 Founder Tribute:</strong> All 3 full-size essentials ($130 value for $108 — <strong>Save $22</strong> • Free Shipping at $125+).
               </div>
             </div>
 
@@ -339,7 +339,7 @@ export function initBoxBuilder(store, openCartCallback) {
             <div class="box-step-block">
               <div class="box-step-label">
                 <span>2. Included Full-Size Components (3 Items)</span>
-                <span class="box-free-ship-badge">$124 Retail Value • Save $26</span>
+                <span class="box-free-ship-badge">$130 Retail Value • Save $22</span>
               </div>
 
               <div class="bundled-items" data-testid="bundled-items-list">
@@ -405,10 +405,10 @@ export function initBoxBuilder(store, openCartCallback) {
           </div>
         </div>
 
-        <!-- Feature 19: Interactive 4-Tab Dual-Action Odor Science Breakdown -->
-        <div class="odor-science" id="odor-science" data-testid="odor-science-section">
+        <!-- Feature 19: Interactive 4-Tab Dual-Action Odor Science Breakdown (Minimized by Default Until a Tab is Clicked) -->
+        <div class="odor-science ${activeScienceTab ? 'is-expanded' : 'is-minimized'}" id="odor-science" data-testid="odor-science-section">
           <div class="odor-science-header">
-            <div class="section-kicker">
+            <div class="section-kicker" style="justify-content:center;">
               ${getIcon('shield')}
               <span>${ODOR_SCIENCE_DATA.kicker}</span>
             </div>
@@ -418,30 +418,34 @@ export function initBoxBuilder(store, openCartCallback) {
 
           <!-- Interactive 4-Tab Breakdown Bar -->
           <div class="odor-science-tabs-wrap">
-            <div class="odor-science-tabs-hint">Click any of the 4 tabs below to inspect its full-size molecule breakdown &amp; science:</div>
+            <div class="odor-science-tabs-hint">
+              ${activeScienceTab
+                ? 'Tap the active tab again (or Minimize below) to collapse:'
+                : 'Tap any tab below to expand its molecular breakdown:'}
+            </div>
             <div class="odor-science-tabs" role="tablist" aria-label="Odor Science 4-Stage Breakdown Tabs">
-              <button type="button" role="tab" aria-selected="${activeScienceTab === 'stage1'}" class="science-tab-btn ${activeScienceTab === 'stage1' ? 'active' : ''}" data-science-tab="stage1">
-                <span class="science-tab-num">TAB 01 • STAGE 1</span>
+              <button type="button" role="tab" aria-selected="${activeScienceTab === 'stage1'}" aria-expanded="${activeScienceTab === 'stage1'}" class="science-tab-btn ${activeScienceTab === 'stage1' ? 'active' : ''}" data-science-tab="stage1">
+                <span class="science-tab-num">TAB 01 &bull; ${activeScienceTab === 'stage1' ? 'OPEN −' : 'EXPAND +'}</span>
                 <span class="science-tab-label">Activated Coconut Charcoal</span>
               </button>
-              <button type="button" role="tab" aria-selected="${activeScienceTab === 'stage2'}" class="science-tab-btn ${activeScienceTab === 'stage2' ? 'active' : ''}" data-science-tab="stage2">
-                <span class="science-tab-num">TAB 02 • STAGE 2</span>
-                <span class="science-tab-label">Lauson-98™ Molecular Lock</span>
+              <button type="button" role="tab" aria-selected="${activeScienceTab === 'stage2'}" aria-expanded="${activeScienceTab === 'stage2'}" class="science-tab-btn ${activeScienceTab === 'stage2' ? 'active' : ''}" data-science-tab="stage2">
+                <span class="science-tab-num">TAB 02 &bull; ${activeScienceTab === 'stage2' ? 'OPEN −' : 'EXPAND +'}</span>
+                <span class="science-tab-label">ZeoCarb-98™ Molecular Lock</span>
               </button>
-              <button type="button" role="tab" aria-selected="${activeScienceTab === 'masking'}" class="science-tab-btn ${activeScienceTab === 'masking' ? 'active' : ''}" data-science-tab="masking">
-                <span class="science-tab-num">TAB 03 • COMPARISON</span>
+              <button type="button" role="tab" aria-selected="${activeScienceTab === 'masking'}" aria-expanded="${activeScienceTab === 'masking'}" class="science-tab-btn ${activeScienceTab === 'masking' ? 'active' : ''}" data-science-tab="masking">
+                <span class="science-tab-num">TAB 03 &bull; ${activeScienceTab === 'masking' ? 'OPEN −' : 'EXPAND +'}</span>
                 <span class="science-tab-label">Conventional Masking Sprays</span>
               </button>
-              <button type="button" role="tab" aria-selected="${activeScienceTab === 'lauson_vs'}" class="science-tab-btn ${activeScienceTab === 'lauson_vs' ? 'active' : ''}" data-science-tab="lauson_vs">
-                <span class="science-tab-num">TAB 04 • PUCK &amp; WICK™</span>
-                <span class="science-tab-label">Lauson-98™ + Carbon Result</span>
+              <button type="button" role="tab" aria-selected="${activeScienceTab === 'lauson_vs'}" aria-expanded="${activeScienceTab === 'lauson_vs'}" class="science-tab-btn ${activeScienceTab === 'lauson_vs' ? 'active' : ''}" data-science-tab="lauson_vs">
+                <span class="science-tab-num">TAB 04 &bull; ${activeScienceTab === 'lauson_vs' ? 'OPEN −' : 'EXPAND +'}</span>
+                <span class="science-tab-label">ZeoCarb-98™ + Carbon Result</span>
               </button>
             </div>
           </div>
 
-          <!-- Full-Width Interactive Stage Spotlight Reader (Clean, Large Molecule View) -->
-          <div class="odor-science-spotlight" id="odor-science-spotlight" role="tabpanel">
-            ${activeScienceTab === 'stage1' ? `
+          <!-- Full-Width Interactive Stage Spotlight Reader (Hidden Until a Tab is Clicked) -->
+          <div class="odor-science-spotlight" id="odor-science-spotlight" role="tabpanel" style="${activeScienceTab ? '' : 'display:none;'}">
+            ${(activeScienceTab || 'stage1') === 'stage1' ? `
               <div class="science-spotlight-grid" data-testid="science-charcoal">
                 <div class="science-spotlight-diagram">
                   <div class="spotlight-diagram-badge">STAGE 01 MOLECULE BREAKDOWN • MICROPOROUS CARBON LATTICE</div>
@@ -458,15 +462,16 @@ export function initBoxBuilder(store, openCartCallback) {
                     <li><strong>6+ Months Active Capacity:</strong> Works 24/7 inside gear bags, skates, gloves, and closets without batteries, liquids, or heavy perfumes.</li>
                   </ul>
                   <div class="science-spotlight-nav">
-                    <span class="spotlight-page-indicator">Viewing Tab 1 of 4</span>
-                    <button type="button" class="science-next-btn" data-science-tab="stage2">Next: Stage 02 Lauson-98™ Complex &rarr;</button>
+                    <button type="button" class="science-prev-btn" data-science-close="1">&times; Minimize</button>
+                    <span class="spotlight-page-indicator">Tab 1 of 4</span>
+                    <button type="button" class="science-next-btn" data-science-tab="stage2">Next: Stage 02 &rarr;</button>
                   </div>
                 </div>
               </div>
             ` : activeScienceTab === 'stage2' ? `
               <div class="science-spotlight-grid" data-testid="science-lauson98">
                 <div class="science-spotlight-diagram">
-                  <div class="spotlight-diagram-badge">STAGE 02 MOLECULE BREAKDOWN • LAUSON-98™ RECEPTOR LOCKOUT</div>
+                  <div class="spotlight-diagram-badge">STAGE 02 MOLECULE BREAKDOWN • ZEOCARB-98™ RECEPTOR LOCKOUT</div>
                   ${getLausonScienceSvg()}
                 </div>
                 <div class="science-spotlight-body">
@@ -475,14 +480,14 @@ export function initBoxBuilder(store, openCartCallback) {
                   <div class="science-stage-metric">${ODOR_SCIENCE_DATA.stages[1].metric}</div>
                   <p class="science-spotlight-desc">${ODOR_SCIENCE_DATA.stages[1].description}</p>
                   <ul class="science-spotlight-bullets">
-                    <li><strong>Vapor-Phase Contact:</strong> Lauson-98™ diffuses out through precision laser-drilled vents to intercept airborne malodor molecules on contact.</li>
+                    <li><strong>Vapor-Phase Contact:</strong> ZeoCarb-98™ diffuses out through precision 3-axis omni-directional vents to intercept airborne malodor molecules on contact.</li>
                     <li><strong>Permanent Molecular Lock:</strong> Neutralizes sweat and equipment odor molecules into an inert, heavier, 100% odorless state.</li>
                     <li><strong>Olfactory Receptor Lockout:</strong> Physically prevents neutralized molecules from binding to human scent receptors—zero masking perfume required.</li>
                   </ul>
                   <div class="science-spotlight-nav">
-                    <button type="button" class="science-prev-btn" data-science-tab="stage1">&larr; Prev: Stage 01 Charcoal</button>
-                    <span class="spotlight-page-indicator">Viewing Tab 2 of 4</span>
-                    <button type="button" class="science-next-btn" data-science-tab="masking">Next: Why Masking Sprays Fail &rarr;</button>
+                    <button type="button" class="science-prev-btn" data-science-close="1">&times; Minimize</button>
+                    <span class="spotlight-page-indicator">Tab 2 of 4</span>
+                    <button type="button" class="science-next-btn" data-science-tab="masking">Next: Masking Sprays &rarr;</button>
                   </div>
                 </div>
               </div>
@@ -504,9 +509,9 @@ export function initBoxBuilder(store, openCartCallback) {
                   `).join('')}
                 </ul>
                 <div class="science-spotlight-nav" style="margin-top:1.1rem;">
-                  <button type="button" class="science-prev-btn" data-science-tab="stage2">&larr; Prev: Stage 02 Lauson-98™</button>
-                  <span class="spotlight-page-indicator">Viewing Tab 3 of 4</span>
-                  <button type="button" class="science-next-btn" data-science-tab="lauson_vs">Next: Puck &amp; Wick™ Dual-Action &rarr;</button>
+                  <button type="button" class="science-prev-btn" data-science-close="1">&times; Minimize</button>
+                  <span class="spotlight-page-indicator">Tab 3 of 4</span>
+                  <button type="button" class="science-next-btn" data-science-tab="lauson_vs">Next: Dual-Action Result &rarr;</button>
                 </div>
               </div>
             ` : `
@@ -527,9 +532,9 @@ export function initBoxBuilder(store, openCartCallback) {
                   `).join('')}
                 </ul>
                 <div class="science-spotlight-nav" style="margin-top:1.1rem;">
-                  <button type="button" class="science-prev-btn" data-science-tab="masking">&larr; Prev: Masking Sprays</button>
-                  <span class="spotlight-page-indicator">Viewing Tab 4 of 4</span>
-                  <button type="button" class="science-next-btn" data-science-tab="stage1">Back to Tab 01: Stage 1 &rarr;</button>
+                  <button type="button" class="science-prev-btn" data-science-close="1">&times; Minimize</button>
+                  <span class="spotlight-page-indicator">Tab 4 of 4</span>
+                  <button type="button" class="science-next-btn" data-science-tab="stage1">Back to Tab 01 &rarr;</button>
                 </div>
               </div>
             `}
@@ -577,21 +582,15 @@ export function initBoxBuilder(store, openCartCallback) {
       });
     }
 
-    // Bind Odor Science 4-Tab Switcher & Card Clicks
+    // Bind Odor Science 4-Tab Switcher (Toggle Expand / Collapse)
     const scienceTabTriggers = root.querySelectorAll('[data-science-tab]');
     scienceTabTriggers.forEach((el) => {
       el.addEventListener('click', () => {
         const tabId = el.getAttribute('data-science-tab');
         if (tabId) {
-          const isCard = el.classList.contains('science-stage-card') || el.classList.contains('odor-comparison-card');
-          activeScienceTab = tabId;
+          const isTabBtn = el.classList.contains('science-tab-btn');
+          activeScienceTab = (isTabBtn && activeScienceTab === tabId) ? null : tabId;
           render();
-          if (isCard) {
-            const spotlightEl = root.querySelector('#odor-science-spotlight');
-            if (spotlightEl) {
-              spotlightEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            }
-          }
         }
       });
       el.addEventListener('keydown', (e) => {
@@ -599,10 +598,19 @@ export function initBoxBuilder(store, openCartCallback) {
           e.preventDefault();
           const tabId = el.getAttribute('data-science-tab');
           if (tabId) {
-            activeScienceTab = tabId;
+            const isTabBtn = el.classList.contains('science-tab-btn');
+            activeScienceTab = (isTabBtn && activeScienceTab === tabId) ? null : tabId;
             render();
           }
         }
+      });
+    });
+
+    const scienceCloseBtns = root.querySelectorAll('[data-science-close]');
+    scienceCloseBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        activeScienceTab = null;
+        render();
       });
     });
 

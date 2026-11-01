@@ -1,6 +1,6 @@
 /**
  * Puck & Wick Exclusive Box Configurations & Odor Science Data
- * Defines Men's/Athlete Edition vs Women's Luxury Sanctuary Edition bundles ($98 / $124 value)
+ * Defines Men's/Athlete Edition vs Women's Luxury Sanctuary Edition bundles ($108 / $130 value)
  * with complete 3-tier olfactory note breakdowns and molecular odor-neutralization science.
  */
 
@@ -8,32 +8,32 @@ export const EXCLUSIVE_BOX_EDITIONS = {
   men_athlete: {
     id: 'men_athlete',
     badge: 'Matte Obsidian & Gold • Founder’s #98 Edition',
-    title: "Men's / Athlete Exclusive Box",
-    subtitle: '10 oz Matte Obsidian Candle + 3.0" Lauson-98™ Gear Puck + 8 oz Detox Body Wash',
-    price: 98.00,
-    compareAtValue: 124.00,
-    savings: 26.00,
+    title: "Men's / Athlete Deluxe Collector Box",
+    subtitle: '10 oz Matte Obsidian Candle + 3.0" ZeoCarb-98™ Odor Puck + 8 oz Charcoal Detox Body Wash',
+    price: 108.00,
+    compareAtValue: 130.00,
+    savings: 22.00,
     defaultCandleId: 'candle-top-shelf',
-    photo: 'assets/images/box-men-open.jpg?v=50',
+    photo: 'assets/images/box-men-open.jpg?v=52',
     description:
-      'Engineered in Matte Obsidian & Brushed Gold (#98 Founder Jersey Tribute). Pairs your choice of 10 oz soy candle with our Lauson-98™ + Activated Charcoal gear puck and 8 oz detox body wash.',
+      'Engineered in Matte Obsidian & Brushed Champagne-Gold with a concealed front-flap magnetic closure. Pairs your choice of 10 oz unlit soy candle ($44) with our universal 3.0" ZeoCarb-98™ + Activated Charcoal Odor Puck ($48) and 8 oz Athlete Charcoal Body Wash ($38).',
     bundledItems: {
       candle: {
-        role: '1x Full-Size Hand-Poured Soy Candle (10 oz Matte Obsidian Vessel)',
-        detail: '55–65 Hr Clean Burn • 100% American Soy Wax',
-        retailValue: '$36.00'
+        role: '1x Full-Size Hand-Poured Soy Candle (10 oz Matte Obsidian Vessel • 8.5 oz Fill)',
+        detail: '55–65 Hr Clean Burn • 100% American Soy Wax + ZeoCarb-98™',
+        retailValue: '$44.00'
       },
       puck: {
-        title: '3.0" Lauson-98™ & Activated Charcoal Odor Puck',
-        detail: 'Vented anodized shell with >1,000 m²/g coconut carbon & proprietary Lauson-98™ molecular core for hockey bags, skates & lockers.',
-        notes: 'Active Matrix: Sub-2nm Coconut Carbon (>1,000 m²/g) • Lauson-98™ Proprietary Vapor-Phase Neutralizer',
-        retailValue: '$44.00'
+        title: '3.0" ZeoCarb-98™ & Activated Charcoal Odor Puck',
+        detail: 'Matte Obsidian & Brushed Champagne-Gold CNC anodized shell with >1,000 m²/g coconut carbon & ZeoCarb-98™ core. Covers up to 120 Sq. Ft. with 3-Axis Airflow (No Upside Down).',
+        notes: 'Active Matrix: Sub-2nm Coconut Carbon (>1,000 m²/g) • ZeoCarb-98™ Proprietary Vapor-Phase Neutralizer',
+        retailValue: '$48.00'
       },
       bodyWash: {
-        title: '8 oz Athlete Charcoal & Lauson-98™ Detox Body Wash',
-        detail: 'Deep-cleansing binchotan charcoal, blue eucalyptus & Lauson-98™ post-game shower wash.',
-        notes: 'Notes: Blue Eucalyptus & Peppermint • Binchotan Charcoal & Black Spruce • Atlas Cedarwood & Lauson-98™',
-        retailValue: '$44.00'
+        title: '8 oz Athlete Charcoal & ZeoCarb-98™ Detox Body Wash',
+        detail: 'Deep-cleansing binchotan charcoal, cold-pressed blue eucalyptus & ZeoCarb-98™ post-game shower pump bottle.',
+        notes: 'Notes: Blue Eucalyptus & Peppermint • Binchotan Charcoal & Black Spruce • Atlas Cedarwood & ZeoCarb-98™',
+        retailValue: '$38.00'
       }
     },
     galleryViews: [
@@ -42,64 +42,64 @@ export const EXCLUSIVE_BOX_EDITIONS = {
         step: '01 • INSIDE THE BOX',
         shortLabel: 'Open Box',
         title: 'Custom-Cut Matte Obsidian Presentation Box (Open)',
-        image: 'assets/images/box-men-open.jpg?v=50',
-        description: 'Precision-cut charcoal foam cradles your 10 oz Matte Obsidian Soy Candle, 3.0" Lauson-98™ Gear Puck, and 8 oz Athlete Detox Body Wash.'
+        image: 'assets/images/box-men-open.jpg?v=52',
+        description: 'Precision-cut charcoal foam cradles your 10 oz Unlit Matte Obsidian Soy Candle ($44), 3.0" ZeoCarb-98™ Odor Puck ($48), and 8 oz Athlete Detox Body Wash ($38).'
       },
       {
         id: 'closed',
         step: '02 • SEALED & GIFT-READY',
         shortLabel: 'Box Closed',
-        title: 'Heavy-Weight Matte Obsidian Magnetic Gift Box (Closed)',
-        image: 'assets/images/box-men-closed.jpg?v=50',
-        description: '1200gsm matte-black rigid board with concealed magnetic closure and hot-stamped metallic gold Precision Mark™ emblem.'
+        title: 'Heavy-Weight Matte Obsidian Magnetic Front-Flap Gift Box (Closed)',
+        image: 'assets/images/box-men-closed.jpg?v=52',
+        description: '1200gsm matte-black rigid board with overlapping front magnetic flap closure and hot-stamped metallic gold Precision Mark™ emblem.'
       },
       {
         id: 'items_out',
         step: '03 • FULL-SIZE LINEUP',
         shortLabel: '3 Items',
-        title: 'All 3 Full-Size Men’s / Athlete Components ($124 Value)',
-        image: 'assets/images/box-men-items-out.jpg?v=50',
-        description: '(1) 10 oz American Soy Candle ($36), (2) 3.0" Lauson-98™ + Charcoal Gear Puck ($44), and (3) 8 oz Detox Body Wash ($44).'
+        title: 'All 3 Full-Size Men’s / Athlete Components ($130 Value)',
+        image: 'assets/images/box-men-items-out.jpg?v=52',
+        description: '(1) 10 oz American Soy Candle ($44), (2) 3.0" ZeoCarb-98™ + Charcoal Odor Puck ($48), and (3) 8 oz Detox Body Wash ($38).'
       },
       {
         id: 'usecase',
         step: '04 • IN ACTION',
         shortLabel: 'In Action',
         title: 'Rink to Shower to Living Room: All 3 Items in Action',
-        image: 'assets/images/box-men-usecase.jpg?v=50',
-        description: 'Drop the Lauson-98™ Puck in your gear bag, strip post-game sweat with Charcoal Body Wash, and light your 10 oz Soy Candle.'
+        image: 'assets/images/box-men-usecase.jpg?v=52',
+        description: 'Drop the 3.0" ZeoCarb-98™ Puck in your locker or gear bag, strip post-game sweat with Charcoal Body Wash, and light your 10 oz Soy Candle.'
       }
     ]
   },
   women_luxe: {
     id: 'women_luxe',
-    badge: 'Warm Frosted Ivory & Gold • Sanctuary #98 Edition',
-    title: "Women's Sanctuary Exclusive Box",
-    subtitle: '10 oz Frosted Ivory Candle + 3.0" White/Ivory Sanctuary Puck + 4 oz Botanical Linen Mist',
-    price: 98.00,
-    compareAtValue: 124.00,
-    savings: 26.00,
-    defaultCandleId: 'candle-top-shelf',
-    photo: 'assets/images/box-women-open.jpg?v=50',
+    badge: 'Warm Alabaster Ivory & Gold • Sanctuary Edition',
+    title: "Women's Sanctuary Deluxe Collector Box",
+    subtitle: '10 oz Frosted Ivory Candle + 3.0" Obsidian & Gold Odor Puck + 8 oz White Clay & Silk Body Wash',
+    price: 108.00,
+    compareAtValue: 130.00,
+    savings: 22.00,
+    defaultCandleId: 'candle-cashmere-white-tea',
+    photo: 'assets/images/box-women-open.jpg?v=52',
     description:
-      'Crafted in Warm Frosted Ivory & Champagne Gold (#98 Founder Tribute). Pairs your choice of 10 oz soy candle with our 3.0" Warm Ivory/White Lauson-98™ + Carbon Workout Tote & Closet Puck and 4 oz Lauson-98™ Botanical Linen Mist.',
+      'Crafted in Warm Alabaster-Ivory & Brushed Champagne-Gold with an overlapping front magnetic flap closure. Pairs your choice of 10 oz Sanctuary soy candle ($44) with our signature 3.0" Matte Obsidian & Champagne-Gold ZeoCarb-98™ Odor Puck ($48) and 8 oz Sanctuary White Clay & Silk Body Wash ($38).',
     bundledItems: {
       candle: {
-        role: '1x Full-Size Hand-Poured Soy Candle (10 oz Frosted Ivory Vessel)',
-        detail: '55–65 Hr Clean Burn • Phthalate-Free Botanical Oils',
-        retailValue: '$36.00'
+        role: '1x Full-Size Hand-Poured Soy Candle (10 oz Frosted Ivory Vessel • 8.5 oz Fill)',
+        detail: '55–65 Hr Clean Burn • Phthalate-Free Botanical Oils + ZeoCarb-98™',
+        retailValue: '$44.00'
       },
       puck: {
-        title: '3.0" Warm Ivory/White & Gold Sanctuary Workout Tote & Closet Puck',
-        detail: 'Vented warm ivory & champagne-gold anodized shell with >1,000 m²/g coconut carbon & Lauson-98™ molecular core for yoga bags, workout totes & walk-in closets.',
-        notes: 'Active Matrix: Sub-2nm Coconut Carbon (>1,000 m²/g) • Lauson-98™ Proprietary Vapor-Phase Neutralizer • Zero Perfumes',
-        retailValue: '$44.00'
+        title: '3.0" ZeoCarb-98™ Obsidian & Champagne-Gold Odor Puck',
+        detail: 'Signature Matte Obsidian & Brushed Champagne-Gold anodized hardware with >1,000 m²/g coconut carbon & ZeoCarb-98™ core for yoga totes & walk-in closets (Up to 120 Sq. Ft.).',
+        notes: 'Active Matrix: Sub-2nm Coconut Carbon (>1,000 m²/g) • ZeoCarb-98™ Proprietary Vapor-Phase Neutralizer • 3-Axis Airflow',
+        retailValue: '$48.00'
       },
       bodyWash: {
-        title: '4 oz Botanical Linen, Closet & Pillow Mist with Lauson-98™',
-        detail: 'Fine-mist atomizer powered by our proprietary Lauson-98™ complex, French lavender & white tea to neutralize fabric odors (Luxe Spa Care).',
-        notes: 'Active Matrix: Lauson-98™ Vapor-Phase Complex • French Lavender Hydrosol & White Tea • Zero Fabric Residue',
-        retailValue: '$44.00'
+        title: '8 oz Sanctuary White Clay & Silk Body Wash with ZeoCarb-98™',
+        detail: 'Frosted Warm Ivory apothecary pump bottle with Kaolin white clay, spun silk amino acids, imperial white tea & ZeoCarb-98™.',
+        notes: 'Notes: Imperial White Tea & Bergamot • Kaolin White Clay & Silk Amino Acids • Blond Hinoki & ZeoCarb-98™',
+        retailValue: '$38.00'
       }
     },
     galleryViews: [
@@ -108,41 +108,41 @@ export const EXCLUSIVE_BOX_EDITIONS = {
         step: '01 • INSIDE THE BOX',
         shortLabel: 'Open Box',
         title: 'Warm Alabaster-Ivory & Champagne-Gold Magnetic Box (Open)',
-        image: 'assets/images/box-women-open.jpg?v=50',
-        description: 'Warm cream suede-touch foam cradles your 10 oz Unlit Frosted Ivory Soy Candle, 3.0" Warm Ivory/White Sanctuary Puck, and 4 oz Botanical Linen Mist.'
+        image: 'assets/images/box-women-open.jpg?v=52',
+        description: 'Warm cream suede-touch foam cradles your 10 oz Unlit Frosted Ivory Soy Candle ($44), 3.0" Obsidian & Champagne-Gold ZeoCarb-98™ Puck ($48), and 8 oz White Clay & Silk Body Wash ($38).'
       },
       {
         id: 'closed',
         step: '02 • SEALED & GIFT-READY',
         shortLabel: 'Box Closed',
-        title: 'Warm Ivory & Champagne-Gold Magnetic Gift Box (Closed)',
-        image: 'assets/images/box-women-closed.jpg?v=50',
-        description: 'Rigid magnetic keepsake box in warm alabaster-ivory matte linen board with brushed champagne-gold Precision Mark™ emblem.'
+        title: 'Warm Ivory & Champagne-Gold Magnetic Front-Flap Gift Box (Closed)',
+        image: 'assets/images/box-women-closed.jpg?v=52',
+        description: 'Rigid magnetic front-flap keepsake box in warm alabaster-ivory matte linen board with brushed champagne-gold Precision Mark™ emblem.'
       },
       {
         id: 'items_out',
         step: '03 • FULL-SIZE LINEUP',
         shortLabel: '3 Items',
-        title: 'All 3 Full-Size Women’s Sanctuary Components ($124 Value)',
-        image: 'assets/images/box-women-items-out.jpg?v=50',
-        description: '(1) 10 oz Soy Candle in Frosted Ivory Glass ($36), (2) 3.0" Warm Ivory/White Sanctuary Workout Tote & Closet Puck ($44), and (3) 4 oz Lauson-98™ Linen Mist ($44).'
+        title: 'All 3 Full-Size Women’s Sanctuary Components ($130 Value)',
+        image: 'assets/images/box-women-items-out.jpg?v=52',
+        description: '(1) 10 oz Unlit Soy Candle in Frosted Ivory Glass ($44), (2) 3.0" Obsidian & Champagne-Gold ZeoCarb-98™ Puck ($48), and (3) 8 oz White Clay & Silk Body Wash ($38).'
       },
       {
         id: 'usecase',
         step: '04 • IN ACTION',
         shortLabel: 'In Action',
-        title: 'Yoga Tote & Closet to Linens to Bedside Sanctuary',
-        image: 'assets/images/box-women-usecase.jpg?v=50',
-        description: 'Tuck the 3.0" Warm Ivory Sanctuary Puck into your yoga or workout tote bag, refresh fabrics with Lauson-98™ Botanical Mist, and light your Frosted Ivory Candle.'
+        title: 'Yoga Tote & Closet to Spa Shower to Bedside Sanctuary',
+        image: 'assets/images/box-women-usecase.jpg?v=52',
+        description: 'Tuck the 3.0" ZeoCarb-98™ Puck into your yoga tote or walk-in closet, purify skin with White Clay & Silk Body Wash, and light your Frosted Ivory Candle.'
       }
     ]
   }
 };
 
 export const ODOR_SCIENCE_DATA = {
-  headline: 'Lauson-98™ Dual-Action Odor Science',
-  kicker: 'Activated Charcoal Adsorption + Lauson-98™ Molecular Neutralization vs Masking Sprays',
-  lead: 'Sweat, skate liners, and gear bags generate stubborn, deep-seated odor molecules. Unlike conventional aerosol sprays that mask stench with heavy perfumes, Puck & Wick™ destroys odor at the molecular level in two stages.',
+  headline: 'ZeoCarb-98™ Dual-Action Odor Science',
+  kicker: 'Activated Charcoal Adsorption + ZeoCarb-98™ Molecular Neutralization vs Masking Sprays',
+  lead: 'Sweat, skate liners, workout totes, and gear bags generate stubborn, deep-seated odor molecules. Unlike conventional aerosol sprays that mask stench with heavy perfumes, Puck & Wick™ destroys odor at the molecular level in two stages.',
   stages: [
     {
       id: 'charcoal',
@@ -155,10 +155,10 @@ export const ODOR_SCIENCE_DATA = {
     {
       id: 'lauson98',
       step: 'STAGE 02 • MOLECULAR NEUTRALIZATION',
-      title: 'Lauson-98™ Proprietary Vapor Complex',
-      metric: 'Born in Lausanne • #98 Tribute • Zero Masking Perfumes',
+      title: 'ZeoCarb-98™ Proprietary Vapor Complex',
+      metric: 'Swiss-Inspired Precision • #98 Tribute • Zero Masking Perfumes',
       description:
-        'Our proprietary Swiss-inspired Lauson-98™ vapor-phase complex bonds directly to airborne malodor molecules, permanently neutralizing their structure so they can never trigger human olfactory receptors.'
+        'Our proprietary Swiss-inspired ZeoCarb-98™ vapor-phase complex bonds directly to airborne malodor molecules, permanently neutralizing their structure so they can never trigger human olfactory receptors.'
     }
   ],
   comparison: [
@@ -172,11 +172,11 @@ export const ODOR_SCIENCE_DATA = {
       isPositive: false
     },
     {
-      method: 'Puck & Wick™ Lauson-98™ + Carbon',
+      method: 'Puck & Wick™ ZeoCarb-98™ + Carbon',
       verdict: 'Permanent Molecular Destruction',
       points: [
         'Sub-2nm coconut carbon (>1,000 m²/g) physically traps deep gear & sweat odors',
-        'Proprietary Lauson-98™ complex permanently neutralizes odors with zero residue'
+        'Proprietary ZeoCarb-98™ complex permanently neutralizes odors with zero residue'
       ],
       isPositive: true
     }

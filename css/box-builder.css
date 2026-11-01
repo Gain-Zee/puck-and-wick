@@ -893,7 +893,8 @@ body.box-lightbox-open > *:not(#box-lightbox-portal) {
   width: 100%;
   aspect-ratio: 1 / 1;
   max-height: 44px;
-  object-fit: cover;
+  object-fit: contain;
+  background: #08090C;
   border-radius: 0.25rem;
   display: block;
 }
@@ -1034,7 +1035,8 @@ body.box-lightbox-open > *:not(#box-lightbox-portal) {
   .box-thumb-img {
     aspect-ratio: 16 / 11;
     max-height: 42px;
-    object-fit: cover;
+    object-fit: contain;
+    background: #08090C;
   }
 
   .box-thumb-caption {
@@ -1181,3 +1183,89 @@ body.box-lightbox-open > *:not(#box-lightbox-portal) {
     max-height: 36px;
   }
 }
+
+/* ==========================================================================
+   Scheme C: Warm Alabaster Ivory Sanctuary Box Edition Styling
+   ========================================================================== */
+.edition-toggle-btn.edition-toggle-women {
+  border-color: rgba(230, 215, 185, 0.42);
+}
+
+.edition-toggle-btn.edition-toggle-women.active {
+  background: linear-gradient(135deg, #FAF7F2 0%, #EFE8DA 100%);
+  border-color: #C5A059;
+  color: #14120F;
+  box-shadow: 0 8px 26px rgba(212, 175, 55, 0.25);
+}
+
+.edition-toggle-btn.edition-toggle-women.active .edition-tab-kicker {
+  color: #8C6624;
+}
+
+.edition-toggle-btn.edition-toggle-women.active .edition-tab-title {
+  color: #14120F;
+}
+
+.box-customizer-grid.box-edition-ivory .box-controls-panel {
+  background: linear-gradient(180deg, #FAF7F2 0%, #F2ECE1 100%);
+  border: 1.5px solid #C5A059;
+  color: #14120F;
+}
+
+.box-customizer-grid.box-edition-ivory .box-edition-heading,
+.box-customizer-grid.box-edition-ivory .bundled-item-title-row strong,
+.box-customizer-grid.box-edition-ivory .box-step-label {
+  color: #14120F;
+}
+
+.box-customizer-grid.box-edition-ivory .box-bundle-price {
+  color: #8C6624;
+}
+
+.box-customizer-grid.box-edition-ivory .box-compare-price {
+  color: #7A6E5D;
+}
+
+.box-customizer-grid.box-edition-ivory .box-edition-desc,
+.box-customizer-grid.box-edition-ivory .bundled-item-sub,
+.box-customizer-grid.box-edition-ivory .bundled-item-notes {
+  color: #4A4238;
+}
+
+.box-customizer-grid.box-edition-ivory .box-jersey-98-callout {
+  background: rgba(197, 160, 89, 0.14);
+  border-color: rgba(140, 102, 36, 0.45);
+  color: #1E1A15;
+}
+
+.box-customizer-grid.box-edition-ivory .box-jersey-98-callout strong {
+  color: #7A5618;
+}
+
+.box-customizer-grid.box-edition-ivory .bundled-item-card {
+  background: #FFFFFF;
+  border-color: rgba(197, 160, 89, 0.45);
+}
+
+.box-customizer-grid.box-edition-ivory .bundled-item-val {
+  color: #8C6624;
+}
+
+.box-customizer-grid.box-edition-ivory .box-scent-select {
+  background: #FFFFFF;
+  color: #14120F;
+  border-color: #C5A059;
+}
+
+.box-customizer-grid.box-edition-ivory .box-scent-pill {
+  background: rgba(20, 18, 15, 0.06);
+  color: #2A241D;
+  border-color: rgba(140, 102, 36, 0.32);
+}
+
+.box-customizer-grid.box-edition-ivory .box-scent-pill.active {
+  background: #14120F;
+  color: #F5E1A4;
+  border-color: #C5A059;
+}
+

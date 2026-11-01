@@ -11,17 +11,25 @@
     --header-height: var(--header-height-mobile);
   }
 
-  /* Header adjustments */
-  .nav-menu {
-    display: none;
+  /* Header adjustments (Jo Malone Centered Maison Header) */
+  .nav-pickup-pill,
+  .jm-pickup-desktop {
+    display: none !important;
   }
 
-  .nav-pickup-pill {
-    display: none;
+  .nav-toggle,
+  .jm-MenuTrigger {
+    display: inline-flex;
   }
 
-  .nav-toggle {
+  .jm-bottom-menu-list {
     display: flex;
+    gap: 20px;
+  }
+
+  .mobile-nav {
+    max-width: 100%;
+    border-right: none;
   }
 
   /* Hero Section */
@@ -130,6 +138,57 @@
   .container,
   .container-wide {
     padding-inline: 0.75rem;
+  }
+
+  /* Jo Malone Centered Mobile Header & Disappearing Lower Category Bar */
+  .jm-top-bar {
+    padding: 10px 14px 9px;
+  }
+
+  .jm-MenuTrigger span.jm-menu-label {
+    display: none;
+  }
+
+  .jm-MenuTrigger {
+    padding: 9px 10px;
+    min-width: 38px;
+    height: 36px;
+  }
+
+  .jm-CenterBrand-crest {
+    width: 20px;
+    height: 20px;
+  }
+
+  .jm-CenterBrand-name {
+    font-size: 1.15rem;
+    letter-spacing: 0.18em;
+  }
+
+  .jm-CenterBrand-sub {
+    font-size: 0.51rem;
+    letter-spacing: 0.24em;
+  }
+
+  .jm-bottom-menu-bar {
+    padding: 7px 10px;
+  }
+
+  .jm-bottom-menu-list {
+    gap: 14px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .jm-bottom-menu-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .jm-bottom-menu-list .nav-link {
+    font-size: 0.59rem;
+    letter-spacing: 0.12em;
   }
 
   /* Compact Section Spacing & Headers */
@@ -297,136 +356,53 @@
     max-width: 100vw;
   }
 
-  /* 4. Story & 4 QC Pillars — Single-Screen Mobile Fit */
+  /* 4. Story — High-Fashion Editorial Mobile Typography */
+  .story-section {
+    padding-block: 3.25rem !important;
+  }
+
   .story-editorial-grid {
-    gap: 0.65rem;
-    margin-bottom: 0.75rem;
+    gap: 0;
+    margin-bottom: 0;
+    padding-inline: 0.35rem;
+  }
+
+  .story-editorial-kicker {
+    font-size: 0.58rem;
+    letter-spacing: 0.22em;
+    margin-bottom: 1rem;
+    text-align: center;
   }
 
   .story-headline {
-    font-size: 1.35rem;
-    margin-bottom: 0.35rem;
+    font-size: 1.85rem;
+    line-height: 1.22;
+    letter-spacing: 0.04em;
+    margin-bottom: 1.25rem;
   }
 
-  .story-lead-quote {
-    font-size: 0.82rem;
-    line-height: 1.38;
-    padding-left: 0.6rem;
-    margin-bottom: 0.35rem;
+  .story-editorial-rule {
+    width: 44px;
+    margin: 0 auto 1.35rem;
   }
 
   .story-prose p {
-    font-size: 0.74rem;
-    line-height: 1.4;
+    font-size: 1.08rem;
+    line-height: 1.95;
+    letter-spacing: 0.03em;
+    margin-bottom: 1.15rem;
+  }
+
+  .story-prose p:last-child {
     margin-bottom: 0;
   }
 
-  .story-heritage-card {
-    padding: 0.65rem 0.75rem;
-    gap: 0.45rem;
-  }
-
-  .story-heritage-card::before {
-    display: none;
-  }
-
-  .story-heritage-header {
-    padding-bottom: 0.35rem;
-    gap: 0.5rem;
-  }
-
-  .story-heritage-icon {
-    width: 32px;
-    height: 32px;
-  }
-
-  .story-heritage-icon svg {
-    width: 16px;
-    height: 16px;
-  }
-
-  .story-heritage-title {
-    font-size: 0.95rem;
-  }
-
-  .story-heritage-sub {
-    font-size: 0.55rem;
-    letter-spacing: 0.08em;
-  }
-
-  /* All 4 Heritage Metrics in 1 Horizontal Row */
-  .story-metrics-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 0.35rem;
-  }
-
-  .story-metric-item {
-    padding: 0.35rem 0.2rem;
-  }
-
-  .story-metric-number {
-    font-size: 1.15rem;
-    margin-bottom: 0.1rem;
-  }
-
-  .story-metric-label {
-    font-size: 0.5rem;
-    letter-spacing: 0.06em;
-  }
-
-  .story-heritage-signature {
-    padding-top: 0.35rem;
+  .story-editorial-provenance {
+    margin-top: 1.85rem;
+    padding-top: 1.25rem;
     font-size: 0.56rem;
-  }
-
-  /* 4 QC Pillars in a Compact 2x2 Grid */
-  .qc-breakdown {
-    padding-top: 0.25rem;
-  }
-
-  .qc-pillars-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.45rem;
-    margin-top: 0;
-  }
-
-  .qc-pillar-card {
-    padding: 0.6rem;
-  }
-
-  .qc-pillar-header {
-    margin-bottom: 0.25rem;
-  }
-
-  .qc-pillar-number {
-    font-size: 0.95rem;
-  }
-
-  .qc-pillar-icon {
-    width: 26px;
-    height: 26px;
-  }
-
-  .qc-pillar-icon svg {
-    width: 14px;
-    height: 14px;
-  }
-
-  .qc-pillar-title {
-    font-size: 0.85rem;
-    line-height: 1.2;
-    margin-bottom: 0.2rem;
-  }
-
-  .qc-pillar-desc {
-    font-size: 0.66rem;
-    line-height: 1.32;
-    margin-bottom: 0.35rem;
-  }
-
-  .qc-pillar-spec {
-    font-size: 0.52rem;
-    padding: 0.15rem 0.38rem;
+    letter-spacing: 0.18em;
+    gap: 0.45rem 0.7rem;
   }
 
   /* 5. Stockist Section — Compact Single-Screen Card */

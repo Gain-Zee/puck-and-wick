@@ -1,7 +1,110 @@
 /**
  * Puck & Wick Story & Quality Control #1 Styles
- * 20-Year Hockey Heritage editorial layout and 4-pillar quality control breakdown
+ * 25-Year Hockey Heritage editorial layout, Top-of-Page Founder Story Teaser Ribbon,
+ * and 4-pillar quality control breakdown
  */
+
+/* ==========================================================================
+   Top-of-Page Founder Story Teaser Ribbon (Between Hero & Product Catalog)
+   ========================================================================== */
+.origin-teaser-strip {
+  background: linear-gradient(90deg, rgba(16, 17, 22, 0.98) 0%, rgba(22, 20, 16, 0.96) 50%, rgba(16, 17, 22, 0.98) 100%);
+  border-top: 1px solid rgba(197, 160, 89, 0.30);
+  border-bottom: 1px solid rgba(197, 160, 89, 0.30);
+  padding: 16px 0;
+  position: relative;
+}
+
+.origin-teaser-inner {
+  max-width: var(--max-width-content, 1280px);
+  margin-inline: auto;
+  padding-inline: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.origin-teaser-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(197, 160, 89, 0.10);
+  border: 1px solid rgba(212, 175, 55, 0.38);
+  color: #E5C878;
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-size: 0.656rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.origin-teaser-copy {
+  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.14rem;
+  line-height: 1.38;
+  color: #F5F0E6;
+  margin: 0;
+  flex: 1;
+}
+
+.origin-teaser-copy strong {
+  color: #F3E5AB;
+  font-weight: 600;
+}
+
+.origin-teaser-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #D4AF37;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid rgba(197, 160, 89, 0.32);
+  background: rgba(255, 255, 255, 0.02);
+  transition: all var(--transition-fast);
+}
+
+.origin-teaser-link:hover,
+.origin-teaser-link:focus-visible {
+  border-color: var(--color-gold-bright);
+  background: rgba(197, 160, 89, 0.10);
+  color: #FAF5E8;
+}
+
+@media (max-width: 768px) {
+  .origin-teaser-strip {
+    padding: 12px 0;
+  }
+
+  .origin-teaser-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    padding-inline: 14px;
+  }
+
+  .origin-teaser-copy {
+    font-size: 0.95rem;
+    line-height: 1.35;
+  }
+
+  .origin-teaser-link {
+    font-size: 0.625rem;
+    padding: 6px 12px;
+  }
+}
 
 .story-section {
   position: relative;
@@ -24,49 +127,98 @@
 }
 
 /* ==========================================================================
-   Editorial Narrative Layout (2-Column)
+   Editorial Narrative Layout (High-Fashion Centered Maison Story)
    ========================================================================== */
 .story-editorial-grid {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: var(--space-16);
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  margin-bottom: var(--space-20);
+  justify-content: center;
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .story-narrative {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.story-editorial-kicker {
+  justify-content: center;
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--color-gold-500, #C5A059);
+  margin-bottom: 1.35rem;
 }
 
 .story-headline {
-  font-size: var(--text-h1);
-  color: var(--color-parchment);
-  line-height: 1.15;
-  margin-bottom: var(--space-6);
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: clamp(2.1rem, 4vw, 3.25rem);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--color-parchment, #FAF5E8);
+  line-height: 1.2;
+  margin-bottom: 1.65rem;
+  text-align: center;
 }
 
-.story-lead-quote {
-  font-family: var(--font-serif);
-  font-size: 1.35rem;
-  font-style: italic;
-  line-height: 1.5;
-  color: var(--color-gold-bright);
-  padding-left: var(--space-5);
-  border-left: 3px solid var(--color-gold-500);
-  margin-bottom: var(--space-6);
+.story-editorial-rule {
+  width: 56px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+  margin: 0 auto 2rem;
+}
+
+.story-prose {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .story-prose p {
-  font-size: var(--text-body-lg);
-  line-height: 1.8;
-  color: var(--color-text-muted);
-  margin-bottom: var(--space-5);
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: 1.32rem;
+  font-weight: 400;
+  line-height: 2.05;
+  letter-spacing: 0.03em;
+  color: rgba(250, 245, 232, 0.86);
+  margin-bottom: 1.5rem;
+}
+
+.story-prose p:last-child {
+  margin-bottom: 0;
 }
 
 .story-prose strong {
-  color: var(--color-parchment);
+  color: #FFFFFF;
   font-weight: 600;
+  letter-spacing: 0.035em;
+}
+
+.story-editorial-provenance {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.65rem 1.1rem;
+  margin-top: 2.5rem;
+  padding-top: 1.65rem;
+  border-top: 1px solid rgba(197, 160, 89, 0.22);
+  width: 100%;
+  max-width: 640px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold-500, #C5A059);
+}
+
+.story-editorial-provenance .provenance-dot {
+  color: rgba(212, 175, 55, 0.45);
 }
 
 /* Heritage Founder Plaque (Right Column) */
