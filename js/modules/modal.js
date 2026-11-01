@@ -6,6 +6,7 @@
 
 import { getProductById, getCandleVesselSvg, getProductGallerySlides, getInteractive360BoxHtml, attachBox360Physics } from '../data/products.js';
 import { getIcon } from '../utils/svg-assets.js';
+import { HARDWARE_WAITLIST_MODE, openWaitlistModal } from '../utils/waitlist.js';
 
 let activeTriggerElement = null;
 
@@ -224,7 +225,7 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
 
             <!-- Quantity & Add to Cart Controls -->
             <div class="modal-actions-row">
-              <div class="modal-qty-stepper" aria-label="Select Quantity">
+              <div class="modal-qty-stepper" aria-label="Select Quantity" style="${HARDWARE_WAITLIST_MODE && product.productType === 'odor_care' ? 'display:none;' : ''}">
                 <button type="button" class="qty-btn" id="modal-qty-minus" aria-label="Decrease quantity">
                   ${getIcon('minus')}
                 </button>
@@ -235,8 +236,13 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
               </div>
 
               <button type="button" class="btn btn-gold modal-add-to-cart-btn modal-add-to-cart" id="modal-add-btn" data-testid="modal-add-to-cart-btn">
-                <span>Add to Cart &bull; <strong id="modal-add-total">${product.formattedPrice}</strong></span>
-                ${getIcon('cart')}
+                ${HARDWARE_WAITLIST_MODE && product.productType === 'odor_care' ? `
+                  ${getIcon('sparkle')}
+                  <span>Join Batch 01 VIP Waitlist &bull; <strong id="modal-add-total">${product.formattedPrice}</strong></span>
+                ` : `
+                  <span>Add to Cart &bull; <strong id="modal-add-total">${product.formattedPrice}</strong></span>
+                  ${getIcon('cart')}
+                `}
               </button>
             </div>
           </div>
@@ -580,8 +586,14 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
     }
   });
 
-  // Add to cart action
+  // Add to cart or Join VIP Waitlist action
   addBtn.addEventListener('click', () => {
+    if (HARDWARE_WAITLIST_MODE && product.productType === 'odor_care') {
+      closeModal();
+      openWaitlistModal(product.name, product.formattedPrice);
+      return;
+    }
+
     if (store && store.dispatch) {
       store.dispatch('ADD_TO_CART', {
         id: product.id,

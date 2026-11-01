@@ -7,6 +7,7 @@
 import { PRODUCTS, getProductsByCategory, getCandleVesselSvg, getProductGallerySlides, getInteractive360BoxHtml, attachBox360Physics } from '../data/products.js';
 import { openProductModal } from './modal.js';
 import { getIcon } from '../utils/svg-assets.js';
+import { HARDWARE_WAITLIST_MODE, openWaitlistModal } from '../utils/waitlist.js';
 
 export function initCatalog(store, openCartDrawer) {
   const root = document.getElementById('catalog-root');
@@ -18,7 +19,12 @@ export function initCatalog(store, openCartDrawer) {
     card360Cleanups.forEach(fn => { try { fn(); } catch (_) {} });
     card360Cleanups = [];
     const currentCategory = store.state.activeCategory || 'all';
-    const products = getProductsByCategory(currentCategory);
+    const rawProducts = getProductsByCategory(currentCategory);
+    const products = [...rawProducts].sort((a, b) => {
+      const aWait = HARDWARE_WAITLIST_MODE && a.productType === 'odor_care' ? 1 : 0;
+      const bWait = HARDWARE_WAITLIST_MODE && b.productType === 'odor_care' ? 1 : 0;
+      return aWait - bWait;
+    });
 
     root.innerHTML = `
       <div class="catalog-container">
@@ -27,6 +33,11 @@ export function initCatalog(store, openCartDrawer) {
           <button type="button" class="filter-tab filter-all ${currentCategory === 'all' ? 'active' : ''}" data-testid="filter-all" data-filter="all" role="tab" aria-selected="${currentCategory === 'all'}">
             <span>All Items</span>
             <span class="filter-count">(${PRODUCTS.length})</span>
+          </button>
+
+          <button type="button" class="filter-tab filter-candles ${currentCategory === 'candles' ? 'active' : ''}" data-testid="filter-candles" data-filter="candles" role="tab" aria-selected="${currentCategory === 'candles'}">
+            <span>Soy Candles • In Stock</span>
+            <span class="filter-count">(${PRODUCTS.filter(p => p.productType !== 'odor_care').length})</span>
           </button>
 
           <button type="button" class="filter-tab filter-mens ${currentCategory === 'mens' ? 'active' : ''}" data-testid="filter-mens" data-filter="mens" role="tab" aria-selected="${currentCategory === 'mens'}">
@@ -41,18 +52,13 @@ export function initCatalog(store, openCartDrawer) {
             <span class="filter-count">(${PRODUCTS.filter(p => p.genderLine === 'womens').length})</span>
           </button>
 
-          <button type="button" class="filter-tab filter-candles ${currentCategory === 'candles' ? 'active' : ''}" data-testid="filter-candles" data-filter="candles" role="tab" aria-selected="${currentCategory === 'candles'}">
-            <span>Soy Candles</span>
-            <span class="filter-count">(${PRODUCTS.filter(p => p.productType !== 'odor_care').length})</span>
-          </button>
-
           <button type="button" class="filter-tab filter-odor-care ${currentCategory === 'odor_care' ? 'active' : ''}" data-testid="filter-odor-care" data-filter="odor_care" role="tab" aria-selected="${currentCategory === 'odor_care'}">
-            <span>Lauson-98&trade; Odor Killer &amp; Care</span>
+            <span>Lauson-98&trade; Pucks &amp; Care (Coming Soon)</span>
             <span class="filter-count">(${PRODUCTS.filter(p => p.productType === 'odor_care').length})</span>
           </button>
 
           <button type="button" class="filter-tab filter-exclusive-boxes filter-boxes" data-testid="filter-exclusive-boxes" data-filter="exclusive_boxes" role="tab" aria-selected="false">
-            <span>Exclusive Boxes ($98)</span>
+            <span>$98 Boxes (Waitlist)</span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="box-icon-link" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </button>
         </div>
@@ -64,6 +70,7 @@ export function initCatalog(store, openCartDrawer) {
               const slides = getProductGallerySlides(p, store.state.activeLogoConcept || 1);
               const activeIdx = cardSlideState[p.id] || 0;
               const currentSlide = slides[activeIdx] || slides[0];
+              const isWaitlist = HARDWARE_WAITLIST_MODE && p.productType === 'odor_care';
               return `
               <article class="product-card surface-card" style="padding:0;" data-testid="product-card" data-product-id="${p.id}" tabindex="0" role="button" aria-label="View details for ${p.name}">
                 <!-- Vessel Visual Stage -->
@@ -79,13 +86,13 @@ export function initCatalog(store, openCartDrawer) {
                     }
                   </div>
                   
-                  ${p.seasonal ? `
+                  ${isWaitlist ? `
+                    <div class="product-badge badge-coming-soon">
+                      <span>Coming Soon</span>
+                    </div>
+                  ` : p.seasonal ? `
                     <div class="product-badge badge-seasonal">
                       <span>Seasonal Collab</span>
-                    </div>
-                  ` : p.productType === 'odor_care' ? `
-                    <div class="product-badge badge-flagship">
-                      <span>${p.id.includes('butter') ? 'Sanctuary Care' : 'Lauson-98™'}</span>
                     </div>
                   ` : p.featured ? `
                     <div class="product-badge badge-flagship">
@@ -118,7 +125,7 @@ export function initCatalog(store, openCartDrawer) {
                 <div class="product-card-body">
                   <div class="card-meta-line">
                     <span class="card-vessel-spec">${p.specUnitLabel || '10 oz Vessel'}</span>
-                    <span class="card-burn-time">${p.productType === 'odor_care' ? p.burnTime : `${p.burnTime}`}</span>
+                    <span class="card-burn-time">${isWaitlist ? 'Drop 01 • Waitlist' : `${p.burnTime}`}</span>
                   </div>
 
                   <h3 class="product-title" data-testid="product-title">
@@ -142,7 +149,7 @@ export function initCatalog(store, openCartDrawer) {
                     <div class="card-footer-top">
                       <div class="price-container">
                         <span class="product-price" data-testid="product-price">${p.formattedPrice}</span>
-                        <span class="wax-spec-sub">${p.waxSpecSub || '100% American Soy'}</span>
+                        <span class="wax-spec-sub">${isWaitlist ? 'Drop 01 • Coming Soon' : (p.waxSpecSub || '100% American Soy')}</span>
                       </div>
 
                       <div class="card-secondary-btns">
@@ -155,10 +162,17 @@ export function initCatalog(store, openCartDrawer) {
                       </div>
                     </div>
 
-                    <button type="button" class="btn btn-gold btn-sm quick-add-btn" data-testid="quick-add-btn" data-product-id="${p.id}" aria-label="Add ${p.name} to cart">
-                      ${getIcon('cart')}
-                      <span>Add to Cart</span>
-                    </button>
+                    ${isWaitlist ? `
+                      <button type="button" class="btn btn-outline btn-sm quick-waitlist-btn" data-testid="quick-waitlist-btn" data-product-id="${p.id}" aria-label="Join VIP Waitlist for ${p.name}">
+                        ${getIcon('sparkle')}
+                        <span>Join VIP Waitlist</span>
+                      </button>
+                    ` : `
+                      <button type="button" class="btn btn-gold btn-sm quick-add-btn" data-testid="quick-add-btn" data-product-id="${p.id}" aria-label="Add ${p.name} to cart">
+                        ${getIcon('cart')}
+                        <span>Add to Cart</span>
+                      </button>
+                    `}
                   </div>
                 </div>
               </article>
@@ -334,6 +348,19 @@ export function initCatalog(store, openCartDrawer) {
           if (typeof openCartDrawer === 'function') {
             openCartDrawer();
           }
+        }
+      });
+    });
+
+    // Attach VIP Waitlist triggers for unreleased Drop 01 Hardware & Care
+    const quickWaitlistBtns = root.querySelectorAll('.quick-waitlist-btn');
+    quickWaitlistBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const pid = btn.getAttribute('data-product-id');
+        const prod = PRODUCTS.find(p => p.id === pid);
+        if (prod) {
+          openWaitlistModal(prod.name, prod.formattedPrice);
         }
       });
     });

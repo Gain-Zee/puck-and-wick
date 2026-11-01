@@ -9,6 +9,7 @@
 import { EXCLUSIVE_BOX_EDITIONS, ODOR_SCIENCE_DATA, EXTRA_BOX_GALLERY_SLIDES } from '../data/box-data.js';
 import { getCandleProducts, getProductById } from '../data/products.js';
 import { getIcon, getCharcoalScienceSvg, getLausonScienceSvg } from '../utils/svg-assets.js';
+import { HARDWARE_WAITLIST_MODE, openWaitlistModal } from '../utils/waitlist.js';
 
 function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhotoHref = '') {
   const isWomen = edition === 'women_luxe';
@@ -383,7 +384,7 @@ export function initBoxBuilder(store, openCartCallback) {
               </div>
             </div>
 
-            <!-- Add Configured Box to Cart CTA -->
+            <!-- Add Configured Box to Cart or VIP Waitlist CTA -->
             <div class="box-cta-row">
               <button
                 type="button"
@@ -391,8 +392,13 @@ export function initBoxBuilder(store, openCartCallback) {
                 data-testid="add-box-to-cart-btn"
                 id="btn-add-box-to-cart"
               >
-                ${getIcon('cart')}
-                <span>Add ${activeEditionKey === 'women_luxe' ? "Women's Sanctuary" : "Men's / Athlete"} Box • $${editionConfig.price.toFixed(2)}</span>
+                ${HARDWARE_WAITLIST_MODE ? `
+                  ${getIcon('sparkle')}
+                  <span>Join VIP Waitlist • ${activeEditionKey === 'women_luxe' ? "Women's Sanctuary" : "Men's / Athlete"} Box ($${editionConfig.price.toFixed(2)})</span>
+                ` : `
+                  ${getIcon('cart')}
+                  <span>Add ${activeEditionKey === 'women_luxe' ? "Women's Sanctuary" : "Men's / Athlete"} Box • $${editionConfig.price.toFixed(2)}</span>
+                `}
               </button>
               ${feedbackMsg ? `<div class="box-added-feedback" role="status" aria-live="polite">${feedbackMsg}</div>` : ''}
             </div>
@@ -820,6 +826,14 @@ export function initBoxBuilder(store, openCartCallback) {
 
     if (addBoxBtn) {
       addBoxBtn.addEventListener('click', () => {
+        if (HARDWARE_WAITLIST_MODE) {
+          openWaitlistModal(
+            `${editionConfig.title} (${selectedCandle.name} Candle)`,
+            `$${editionConfig.price.toFixed(2)}`
+          );
+          return;
+        }
+
         const customPayload = {
           boxType: activeEditionKey,
           editionTitle: editionConfig.title,
