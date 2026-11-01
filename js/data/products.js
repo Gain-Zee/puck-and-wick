@@ -473,8 +473,9 @@ export function getProductGallerySlides(product, conceptId = 1) {
 
   if (!product.productType || product.productType === 'candle') {
     const atelierCardImg = product.vesselType === 'ivory'
-      ? 'assets/images/packaging/atelier-card-ivory.jpg?v=43'
-      : 'assets/images/packaging/atelier-card-obsidian.jpg?v=43';
+      ? 'assets/images/packaging/atelier-card-ivory.jpg?v=44'
+      : 'assets/images/packaging/atelier-card-obsidian.jpg?v=44';
+    const thumb360Img = `assets/images/packaging/thumb-360-${product.id}.jpg?v=44`;
     return [
       {
         id: 'lit',
@@ -488,8 +489,8 @@ export function getProductGallerySlides(product, conceptId = 1) {
         shortLabel: 'Box',
         title: `${product.name} — Rigid Box, Custom Scent Band & Wax Dust Cover`,
         type: 'image',
-        src: `assets/images/packaging/shelf-${product.id}.jpg?v=43`,
-        thumb: `assets/images/packaging/shelf-${product.id}.jpg?v=43`
+        src: `assets/images/packaging/shelf-${product.id}.jpg?v=44`,
+        thumb: `assets/images/packaging/shelf-${product.id}.jpg?v=44`
       },
       {
         id: 'atelier_card',
@@ -501,10 +502,11 @@ export function getProductGallerySlides(product, conceptId = 1) {
       },
       {
         id: 'spin360',
-        shortLabel: '360°',
-        title: `${product.name} — Interactive 360° Rotating Pristine Collector Box`,
+        shortLabel: '360 Degrees',
+        title: `${product.name} — 360 Degrees Interactive Rotating Collector Box`,
         type: 'box360',
-        thumb: `assets/images/packaging/shelf-${product.id}.jpg?v=43`
+        src: thumb360Img,
+        thumb: thumb360Img
       }
     ];
   }
