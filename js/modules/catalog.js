@@ -359,8 +359,47 @@ export function initCatalog(store, openCartDrawer) {
     });
   };
 
+  const scrollToElementWithOffset = (el) => {
+    if (!el) return;
+    const header = document.getElementById('site-header');
+    const headerOffset = (header ? header.offsetHeight : 68) + 14;
+    const top = el.getBoundingClientRect().top + window.scrollY - headerOffset;
+    window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+  };
+
   // Initial render
   render();
+
+  // Wire Hero Bento Trio shortcuts ("Soy Candles", "Odor Pucks") to scroll directly to the target product listing
+  const pucksBento = document.querySelector('[data-bento-target="pucks"]');
+  if (pucksBento) {
+    pucksBento.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (store.state.activeCategory === 'candles') {
+        store.dispatch('SET_CATEGORY', 'all');
+        render();
+      }
+      const firstPuckCard =
+        root.querySelector('article.product-card[data-product-id="puck-mens-athlete"]') ||
+        root.querySelector('article.product-card[data-product-id^="puck-"]');
+      scrollToElementWithOffset(firstPuckCard);
+    });
+  }
+
+  const candlesBento = document.querySelector('[data-bento-target="candles"]');
+  if (candlesBento) {
+    candlesBento.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (store.state.activeCategory === 'odor_care') {
+        store.dispatch('SET_CATEGORY', 'all');
+        render();
+      }
+      const firstCandleCard =
+        root.querySelector('article.product-card[data-product-id^="candle-"]') ||
+        document.getElementById('shop');
+      scrollToElementWithOffset(firstCandleCard);
+    });
+  }
 
   // Re-render when category or active logo concept changes in store
   store.subscribe((state, action) => {
