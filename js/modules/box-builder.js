@@ -1,6 +1,6 @@
 /**
  * Puck & Wick Interactive Exclusive Box Builder & Dual-Action Odor Science Module
- * Implements Men's/Athlete vs Women's Luxury Box Customizer ($98 bundle / $124 value),
+ * Implements Men's/Athlete vs Women's Luxury Box Customizer ($108 bundle / $130 value),
  * custom candle scent selection (retaining scent on edition switch per EC9),
  * distinct cart line item creation (EC10), full-screen swipeable lightbox gallery,
  * and Molecular Odor Science Breakdown.

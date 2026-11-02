@@ -13,46 +13,46 @@ function getLabelEmblemSvg(conceptId, isParchmentLabel) {
   const puckFill = isParchmentLabel ? '#F6F2E9' : '#0C0D10';
 
   if (id === 2) {
-    // Concept 2: The Precision Reserve (Vertical Double-Frame + Crossed Lines & Flame)
+    // Concept 2: The Precision Reserve (Vertical Double-Frame + Crossed Sticks w/ Subtle Blade Toes & Flame)
     return `
       <g transform="translate(170, 202)">
         <rect x="-56" y="-28" width="112" height="50" rx="1.5" fill="none" stroke="${strokeTone}" stroke-width="0.9" opacity="0.7" />
-        <line x1="-16" y1="-11" x2="16" y2="12" stroke="${strokeTone}" stroke-width="1.35" stroke-linecap="round" />
-        <line x1="16" y1="-11" x2="-16" y2="12" stroke="${strokeTone}" stroke-width="1.35" stroke-linecap="round" />
+        <path d="M -16,-11 L 16,12 L 21,10" fill="none" stroke="${strokeTone}" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M 16,-11 L -16,12 L -21,10" fill="none" stroke="${strokeTone}" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" />
         <path d="M 0,-3 C -3,-8 -4,-13 -2,-18 C -0.8,-21 0,-23 0,-25 C 0,-23 0.8,-21 2,-18 C 4,-13 3,-8 0,-3 Z" fill="#D4AF37" />
       </g>
     `;
   }
   if (id === 3) {
-    // Concept 3: The Atelier Lockup (Open Architectural Top & Bottom Double Hairlines + Crossed Lines)
+    // Concept 3: The Atelier Lockup (Open Architectural Top & Bottom Double Hairlines + Crossed Sticks w/ Subtle Blade Toes)
     return `
       <g transform="translate(170, 202)">
         <line x1="-58" y1="-26" x2="58" y2="-26" stroke="${strokeTone}" stroke-width="1.3" />
         <line x1="-58" y1="-22.5" x2="58" y2="-22.5" stroke="${strokeTone}" stroke-width="0.6" opacity="0.6" />
-        <line x1="-17" y1="-11" x2="17" y2="12" stroke="${strokeTone}" stroke-width="1.4" stroke-linecap="round" />
-        <line x1="17" y1="-11" x2="-17" y2="12" stroke="${strokeTone}" stroke-width="1.4" stroke-linecap="round" />
+        <path d="M -17,-11 L 17,12 L 22,10" fill="none" stroke="${strokeTone}" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M 17,-11 L -17,12 L -22,10" fill="none" stroke="${strokeTone}" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
         <path d="M 0,-2 C -3,-7 -4,-12 -2,-17 C -0.8,-20 0,-22 0,-24 C 0,-22 0.8,-20 2,-17 C 4,-12 3,-7 0,-2 Z" fill="#D4AF37" />
         <line x1="-58" y1="20" x2="58" y2="20" stroke="${strokeTone}" stroke-width="0.6" opacity="0.6" />
       </g>
     `;
   }
   if (id === 4) {
-    // Concept 4: The Workshop Emblem (Double-Hairline Rectangular Plaque + Crossed Lines & Flame)
+    // Concept 4: The Workshop Emblem (Double-Hairline Rectangular Plaque + Crossed Sticks w/ Subtle Blade Toes & Flame)
     return `
       <g transform="translate(170, 202)">
         <rect x="-54" y="-23" width="108" height="44" rx="2" fill="none" stroke="${strokeTone}" stroke-width="1.3" />
         <rect x="-50" y="-19" width="100" height="36" rx="1" fill="none" stroke="${strokeTone}" stroke-width="0.6" opacity="0.55" />
-        <line x1="-14" y1="-9" x2="14" y2="11" stroke="${strokeTone}" stroke-width="1.35" stroke-linecap="round" />
-        <line x1="14" y1="-9" x2="-14" y2="11" stroke="${strokeTone}" stroke-width="1.35" stroke-linecap="round" />
+        <path d="M -14,-9 L 14,11 L 18.5,9.2" fill="none" stroke="${strokeTone}" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M 14,-9 L -14,11 L -18.5,9.2" fill="none" stroke="${strokeTone}" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" />
         <path d="M 0,-2 C -2.5,-6 -3.5,-10 -1.5,-14 C -0.5,-16 0,-18 0,-19.5 C 0,-18 0.5,-16 1.5,-14 C 3.5,-10 2.5,-6 0,-2 Z" fill="#D4AF37" />
       </g>
     `;
   }
-  // Concept 1 (default): The Precision Mark (Square Hairline Crossed Lines & Flame)
+  // Concept 1 (default): The Precision Mark (Square Hairline Crossed Sticks w/ Subtle Blade Toes & Flame)
   return `
     <g transform="translate(170, 202)">
-      <line x1="-17" y1="-14" x2="17" y2="15" stroke="${strokeTone}" stroke-width="1.4" stroke-linecap="round" />
-      <line x1="17" y1="-14" x2="-17" y2="15" stroke="${strokeTone}" stroke-width="1.4" stroke-linecap="round" />
+      <path d="M -17,-14 L 17,15 L 22.5,12.8" fill="none" stroke="${strokeTone}" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M 17,-14 L -17,15 L -22.5,12.8" fill="none" stroke="${strokeTone}" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
       <path d="M 0,-4 C -3,-8 -4,-13 -2,-18 C -1,-20 0,-22 0,-24 C 0,-22 1,-20 2,-18 C 4,-13 3,-8 0,-4 Z" fill="#D4AF37" />
     </g>
   `;

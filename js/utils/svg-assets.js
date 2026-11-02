@@ -5,7 +5,7 @@
  */
 
 export const SVG_LOGOS = {
-  // Concept 1: The Precision Mark (Square Hairline Frame - Crossed Sticks & Flame)
+  // Concept 1: The Precision Mark (Square Hairline Frame - Crossed Sticks w/ Subtle Blade Toes & Flame + LOUDOUN COUNTY, VA + USA)
   1: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%" role="img" aria-label="Puck and Wick - Concept 1 The Precision Mark Logo">
   <title>Puck &amp; Wick The Precision Mark — Square Hairline Crossed Sticks and Flame Logo</title>
   <defs>
@@ -20,17 +20,20 @@ export const SVG_LOGOS = {
       <stop offset="100%" stop-color="#9A7632" />
     </linearGradient>
   </defs>
-  <!-- Outer Minimalist Square Gold Frame -->
-  <rect x="65" y="65" width="370" height="370" fill="#0B0C0E" stroke="url(#c1-gold)" stroke-width="3.5" />
-  <!-- Minimalist Crossed Lines + Flame in Top V -->
-  <g id="c1-mark-symbol" transform="translate(250, 198)">
-    <line x1="-38" y1="-34" x2="38" y2="38" stroke="url(#c1-gold)" stroke-width="2.6" stroke-linecap="round" />
-    <line x1="38" y1="-34" x2="-38" y2="38" stroke="url(#c1-gold)" stroke-width="2.6" stroke-linecap="round" />
-    <path d="M 0,-12 C -7,-20 -10,-32 -4,-43 C -1,-48 0,-52 0,-55 C 0,-52 1,-48 4,-43 C 10,-32 7,-20 0,-12 Z" fill="url(#c1-gold)" />
-    <path d="M 0,-16 C -3,-21 -4,-28 -1.5,-34 C 0,-37 0.5,-37 1.5,-34 C 4,-28 3,-21 0,-16 Z" fill="#0B0C0E" opacity="0.45" />
+  <!-- Outer Minimalist Square Gold Frame + Inner Hairline -->
+  <rect x="46" y="46" width="408" height="408" fill="#0B0C0E" stroke="url(#c1-gold)" stroke-width="3.8" />
+  <rect x="58" y="58" width="384" height="384" fill="none" stroke="url(#c1-gold)" stroke-width="1.2" opacity="0.35" />
+  <!-- Crossed Hockey Sticks with Subtle Blade Toes + Flame in Top V -->
+  <g id="c1-mark-symbol" transform="translate(250, 182)">
+    <path d="M -46,-40 L 44,42 L 58,36.5" fill="none" stroke="url(#c1-gold)" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M 46,-40 L -44,42 L -58,36.5" fill="none" stroke="url(#c1-gold)" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M 0,-12 C -9.5,-23 -13,-38 -5.5,-52 C -1.5,-59 0,-64 0,-68 C 0,-64 1.5,-59 5.5,-52 C 13,-38 9.5,-23 0,-12 Z" fill="url(#c1-gold)" />
+    <path d="M 0,-18 C -3.8,-24 -5,-33 -2,-40 C 0,-44 0.5,-44 2,-40 C 5,-33 3.8,-24 0,-18 Z" fill="#0B0C0E" opacity="0.48" />
   </g>
-  <!-- Clean Gold Serif Wordmark Centered Inside Frame -->
-  <text x="250" y="296" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="38" font-weight="600" letter-spacing="5" fill="url(#c1-gold)">PUCK &amp; WICK<tspan font-family="'Inter', sans-serif" font-size="13" font-weight="600" dy="-15" dx="2" letter-spacing="0">&#8482;</tspan></text>
+  <!-- Clean Gold Serif Wordmark & Origin Centered Inside Frame -->
+  <text x="250" y="294" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="40" font-weight="700" letter-spacing="5.5" fill="url(#c1-gold)">PUCK &amp; WICK</text>
+  <text x="250" y="338" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11.5" font-weight="600" letter-spacing="4.2" fill="url(#c1-gold)">LOUDOUN COUNTY, VA</text>
+  <text x="250" y="362" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10.5" font-weight="600" letter-spacing="5.5" fill="url(#c1-gold)" opacity="0.88">USA</text>
 </svg>`,
 
   // Concept 2: The Precision Reserve (Vertical Double-Frame with Crossed Sticks, Puck Base & Diamond Rule)
@@ -51,10 +54,10 @@ export const SVG_LOGOS = {
   <!-- Tall Architectural Double-Hairline Frame -->
   <rect x="75" y="42" width="350" height="416" rx="3" fill="#0B0C0E" stroke="url(#c2-gold)" stroke-width="3" />
   <rect x="87" y="54" width="326" height="392" rx="2" fill="none" stroke="url(#c2-gold)" stroke-width="0.9" opacity="0.5" />
-  <!-- Minimalist Crossed Lines + Flame + Vulcanized Puck Pill -->
+  <!-- Minimalist Crossed Sticks w/ Subtle Blade Toes + Flame -->
   <g transform="translate(250, 152)">
-    <line x1="-36" y1="-28" x2="36" y2="34" stroke="url(#c2-gold)" stroke-width="2.8" stroke-linecap="round" />
-    <line x1="36" y1="-28" x2="-36" y2="34" stroke="url(#c2-gold)" stroke-width="2.8" stroke-linecap="round" />
+    <path d="M -36,-28 L 36,34 L 47,29.5" fill="none" stroke="url(#c2-gold)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M 36,-28 L -36,34 L -47,29.5" fill="none" stroke="url(#c2-gold)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" />
     <path d="M 0,-10 C -7,-19 -10,-31 -5,-42 C -2,-49 0,-55 0,-59 C 0,-55 2,-49 5,-42 C 10,-31 7,-19 0,-10 Z" fill="url(#c2-gold)" />
   </g>
   <!-- Primary Wordmark -->
@@ -65,7 +68,7 @@ export const SVG_LOGOS = {
   <line x1="264" y1="290" x2="365" y2="290" stroke="url(#c2-gold)" stroke-width="1" opacity="0.65" />
   <!-- Reserve Subtitles -->
   <text x="250" y="328" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10.5" font-weight="600" letter-spacing="4.2" fill="#E5C878">XXV YRS • 25 YEARS ON THE ICE</text>
-  <text x="250" y="356" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9.5" font-weight="500" letter-spacing="4" fill="#9CA3AF">SMALL BATCH SOY • LOUDOUN CO. VA</text>
+  <text x="250" y="356" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9.5" font-weight="500" letter-spacing="4" fill="#9CA3AF">SMALL BATCH SOY • LOUDOUN COUNTY, VA</text>
   <text x="250" y="408" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="13" font-weight="600" letter-spacing="3.5" fill="url(#c2-gold)">RESERVE EDITION</text>
 </svg>`,
 
@@ -90,18 +93,18 @@ export const SVG_LOGOS = {
   <line x1="55" y1="86" x2="445" y2="86" stroke="url(#c3-gold)" stroke-width="0.8" opacity="0.5" />
   <line x1="55" y1="414" x2="445" y2="414" stroke="url(#c3-gold)" stroke-width="0.8" opacity="0.5" />
   <line x1="55" y1="422" x2="445" y2="422" stroke="url(#c3-gold)" stroke-width="2.5" />
-  <!-- Minimalist Crossed Lines + Flame Emblem -->
+  <!-- Minimalist Crossed Sticks w/ Subtle Blade Toes + Flame Emblem -->
   <g transform="translate(250, 178)">
-    <line x1="-38" y1="-30" x2="38" y2="36" stroke="url(#c3-gold)" stroke-width="2.8" stroke-linecap="round" />
-    <line x1="38" y1="-30" x2="-38" y2="36" stroke="url(#c3-gold)" stroke-width="2.8" stroke-linecap="round" />
+    <path d="M -38,-30 L 38,36 L 49,31.5" fill="none" stroke="url(#c3-gold)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M 38,-30 L -38,36 L -49,31.5" fill="none" stroke="url(#c3-gold)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" />
     <path d="M 0,-10 C -7,-19 -10,-32 -5,-43 C -2,-50 0,-56 0,-60 C 0,-56 2,-50 5,-43 C 10,-32 7,-19 0,-10 Z" fill="url(#c3-gold)" />
     <path d="M 0,-15 C -3,-21 -4,-28 -1.5,-34 C 0,-37 0.5,-37 1.5,-34 C 4,-28 3,-21 0,-15 Z" fill="#0B0C0E" opacity="0.45" />
   </g>
   <!-- Wide-Tracked Editorial Wordmark -->
   <text x="250" y="286" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="40" font-weight="600" letter-spacing="11" fill="url(#c3-gold)">PUCK &amp; WICK<tspan font-family="'Inter', sans-serif" font-size="13.5" font-weight="600" dy="-16" dx="1" letter-spacing="0">&#8482;</tspan></text>
   <line x1="190" y1="312" x2="310" y2="312" stroke="url(#c3-gold)" stroke-width="1" opacity="0.6" />
-  <text x="250" y="344" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10.5" font-weight="500" letter-spacing="5.5" fill="#FAF5E8">ARTISAN SOY CANDLE CO.</text>
-  <text x="250" y="372" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" font-weight="500" letter-spacing="3.5" fill="#9CA3AF">PURCELLVILLE, VA • 39.1368° N • 77.7144° W</text>
+  <text x="250" y="344" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10.5" font-weight="500" letter-spacing="5.5" fill="#FAF5E8">LOUDOUN COUNTY, VA</text>
+  <text x="250" y="372" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" font-weight="500" letter-spacing="3.5" fill="#9CA3AF">USA</text>
 </svg>`,
 
   // Concept 4: The Workshop Emblem (Double-Hairline Rectangular Plaque)
@@ -129,18 +132,18 @@ export const SVG_LOGOS = {
   <rect x="36" y="32" width="468" height="316" rx="4" fill="#0D0E12" stroke="url(#c4-badge)" stroke-width="2.5" />
   <rect x="46" y="42" width="448" height="296" rx="2" fill="none" stroke="url(#c4-foil)" stroke-width="0.75" opacity="0.45" />
 
-  <!-- Minimalist Crossed Lines & Flame Centerpiece -->
+  <!-- Minimalist Crossed Sticks w/ Subtle Blade Toes & Flame Centerpiece -->
   <g transform="translate(270, 116)">
-    <line x1="-28" y1="-22" x2="28" y2="28" stroke="url(#c4-foil)" stroke-width="2.6" stroke-linecap="round" />
-    <line x1="28" y1="-22" x2="-28" y2="28" stroke="url(#c4-foil)" stroke-width="2.6" stroke-linecap="round" />
+    <path d="M -28,-22 L 28,28 L 36,24.5" fill="none" stroke="url(#c4-foil)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M 28,-22 L -28,28 L -36,24.5" fill="none" stroke="url(#c4-foil)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
     <path d="M 0,-8 C -6,-15 -8,-25 -5,-34 C -3,-40 0,-45 0,-49 C 0,-45 3,-40 5,-34 C 8,-25 6,-15 0,-8 Z" fill="url(#c4-foil)" />
   </g>
 
   <!-- Stamped Workshop Typography -->
   <text x="270" y="218" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="38" font-weight="700" letter-spacing="11" fill="#FAF5E8">PUCK &amp; WICK<tspan font-family="'Inter', sans-serif" font-size="13" font-weight="600" dy="-15" dx="1" letter-spacing="0" fill="url(#c4-foil)">&#8482;</tspan></text>
   <line x1="170" y1="240" x2="370" y2="240" stroke="url(#c4-badge)" stroke-width="0.9" opacity="0.6" />
-  <text x="270" y="270" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10.5" font-weight="600" letter-spacing="5.5" fill="#C5A059">HAND-POURED IN VIRGINIA</text>
-  <text x="270" y="296" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" font-weight="400" letter-spacing="4" fill="#9CA3AF">100% AMERICAN SOY WAX</text>
+  <text x="270" y="270" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10.5" font-weight="600" letter-spacing="5.5" fill="#C5A059">LOUDOUN COUNTY, VA</text>
+  <text x="270" y="296" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" font-weight="500" letter-spacing="4" fill="#9CA3AF">USA</text>
 </svg>`
 };
 
@@ -238,9 +241,9 @@ export const SVG_ICONS = {
     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
   </svg>`,
 
-  // Crossed Lines Emblem
+  // Crossed Hockey Sticks w/ Subtle Blade Toes Emblem
   hockeySticks: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-    <line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/><path d="M12 3c-1.2 1.8-1.8 3.2-.6 4.8.6.8 1.2.8 1.2 0 1.2-1.6.6-3-.6-4.8z" fill="currentColor" stroke="none"/>
+    <path d="M 5,5 L 18,18 L 21,16.8"/><path d="M 19,5 L 6,18 L 3,16.8"/><path d="M12 3c-1.2 1.8-1.8 3.2-.6 4.8.6.8 1.2.8 1.2 0 1.2-1.6.6-3-.6-4.8z" fill="currentColor" stroke="none"/>
   </svg>`,
 
   // Star
@@ -324,16 +327,16 @@ export function renderJarPhotoLabelOverlay(conceptId = 1, scentName = 'TOP SHELF
       <rect x="142" y="162" width="112" height="124" rx="1.5" fill="none" stroke="url(#${goldGradId})" stroke-width="1.2" />
       <rect x="146" y="166" width="104" height="116" rx="1" fill="none" stroke="url(#${goldGradId})" stroke-width="0.5" opacity="0.55" />
       <g transform="translate(198, 198)">
-        <line x1="-11" y1="-9" x2="11" y2="11" stroke="url(#${goldGradId})" stroke-width="1.1" stroke-linecap="round" />
-        <line x1="11" y1="-9" x2="-11" y2="11" stroke="url(#${goldGradId})" stroke-width="1.1" stroke-linecap="round" />
+        <path d="M -11,-9 L 11,11 L 14.5,9.5" fill="none" stroke="url(#${goldGradId})" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M 11,-9 L -11,11 L -14.5,9.5" fill="none" stroke="url(#${goldGradId})" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" />
         <path d="M 0,-3 C -2.5,-6 -3.5,-10 -1.8,-14 C -0.6,-16 0,-18 0,-19.5 C 0,-18 0.6,-16 1.8,-14 C 3.5,-10 2.5,-6 0,-3 Z" fill="url(#${goldGradId})" />
       </g>
       <text x="198" y="232" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="10.8" font-weight="600" letter-spacing="2" fill="#FAF5E8">PUCK &amp; WICK<tspan font-family="'Inter', sans-serif" font-size="4.2" font-weight="600" dy="-4.5" dx="0.5" letter-spacing="0" fill="url(#${goldGradId})">&#8482;</tspan></text>
       <line x1="158" y1="242" x2="193" y2="242" stroke="url(#${goldGradId})" stroke-width="0.5" opacity="0.7" />
       <polygon points="198,240 200,242 198,244 196,242" fill="url(#${goldGradId})" />
       <line x1="203" y1="242" x2="238" y2="242" stroke="url(#${goldGradId})" stroke-width="0.5" opacity="0.7" />
-      <text x="198" y="258" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.6" font-weight="600" letter-spacing="1.4" fill="#9CA3AF">25 YEARS ON THE ICE</text>
-      <text x="198" y="272" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="5.2" font-weight="600" letter-spacing="1.6" fill="url(#${goldGradId})">RESERVE EDITION</text>
+      <text x="198" y="256" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.2" font-weight="600" letter-spacing="1.2" fill="#9CA3AF">LOUDOUN COUNTY, VA</text>
+      <text x="198" y="270" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.0" font-weight="600" letter-spacing="1.6" fill="url(#${goldGradId})">USA</text>
     `;
   } else if (cid === 3) {
     // Concept 3: The Atelier Lockup (Universal Jar Sticker — No Scent Name on Vessel Face)
@@ -343,13 +346,14 @@ export function renderJarPhotoLabelOverlay(conceptId = 1, scentName = 'TOP SHELF
       <line x1="138" y1="276.5" x2="258" y2="276.5" stroke="url(#${goldGradId})" stroke-width="0.45" opacity="0.55" />
       <line x1="138" y1="280" x2="258" y2="280" stroke="url(#${goldGradId})" stroke-width="1.2" />
       <g transform="translate(198, 206)">
-        <line x1="-12" y1="-10" x2="12" y2="12" stroke="url(#${goldGradId})" stroke-width="1.1" stroke-linecap="round" />
-        <line x1="12" y1="-10" x2="-12" y2="12" stroke="url(#${goldGradId})" stroke-width="1.1" stroke-linecap="round" />
+        <path d="M -12,-10 L 12,12 L 15.5,10.5" fill="none" stroke="url(#${goldGradId})" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M 12,-10 L -12,12 L -15.5,10.5" fill="none" stroke="url(#${goldGradId})" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" />
         <path d="M 0,-3.5 C -2.5,-6.5 -3.5,-10.5 -1.8,-14.5 C -0.6,-16.5 0,-18.5 0,-20 C 0,-18.5 0.6,-16.5 1.8,-14.5 C 3.5,-10.5 2.5,-6.5 0,-3.5 Z" fill="url(#${goldGradId})" />
       </g>
       <text x="198" y="238" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="11.2" font-weight="600" letter-spacing="2.6" fill="url(#${goldGradId})">PUCK &amp; WICK<tspan font-family="'Inter', sans-serif" font-size="4.2" font-weight="600" dy="-4.5" dx="0.5" letter-spacing="0">&#8482;</tspan></text>
       <line x1="176" y1="248" x2="220" y2="248" stroke="url(#${goldGradId})" stroke-width="0.5" opacity="0.65" />
-      <text x="198" y="262" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.6" font-weight="500" letter-spacing="1.5" fill="#9CA3AF">ARTISAN SOY CANDLE CO.</text>
+      <text x="198" y="260" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.2" font-weight="500" letter-spacing="1.4" fill="#9CA3AF">LOUDOUN COUNTY, VA</text>
+      <text x="198" y="269" text-anchor="middle" font-family="'Inter', sans-serif" font-size="3.8" font-weight="500" letter-spacing="1.6" fill="#9CA3AF">USA</text>
     `;
   } else if (cid === 4) {
     // Concept 4: The Workshop Emblem (Universal Jar Sticker — No Scent Name on Vessel Face)
@@ -357,24 +361,28 @@ export function renderJarPhotoLabelOverlay(conceptId = 1, scentName = 'TOP SHELF
       <rect x="136" y="172" width="124" height="104" rx="2" fill="none" stroke="url(#${goldGradId})" stroke-width="1.2" />
       <rect x="140" y="176" width="116" height="96" rx="1" fill="none" stroke="url(#${goldGradId})" stroke-width="0.45" opacity="0.5" />
       <g transform="translate(198, 206)">
-        <line x1="-11" y1="-9" x2="11" y2="11" stroke="url(#${goldGradId})" stroke-width="1.1" stroke-linecap="round" />
-        <line x1="11" y1="-9" x2="-11" y2="11" stroke="url(#${goldGradId})" stroke-width="1.1" stroke-linecap="round" />
+        <path d="M -11,-9 L 11,11 L 14.5,9.5" fill="none" stroke="url(#${goldGradId})" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M 11,-9 L -11,11 L -14.5,9.5" fill="none" stroke="url(#${goldGradId})" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" />
         <path d="M 0,-3 C -2.5,-6 -3.5,-10 -1.8,-14 C -0.6,-16 0,-18 0,-19.5 C 0,-18 0.6,-16 1.8,-14 C 3.5,-10 2.5,-6 0,-3 Z" fill="url(#${goldGradId})" />
       </g>
       <text x="198" y="236" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="11" font-weight="700" letter-spacing="2.4" fill="#FAF5E8">PUCK &amp; WICK<tspan font-family="'Inter', sans-serif" font-size="4.2" font-weight="600" dy="-4.5" dx="0.5" letter-spacing="0" fill="url(#${goldGradId})">&#8482;</tspan></text>
       <line x1="158" y1="246" x2="238" y2="246" stroke="url(#${goldGradId})" stroke-width="0.5" opacity="0.65" />
-      <text x="198" y="260" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.6" font-weight="600" letter-spacing="1.4" fill="#C5A059">HAND-POURED IN VIRGINIA</text>
+      <text x="198" y="258" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.2" font-weight="600" letter-spacing="1.4" fill="#C5A059">LOUDOUN COUNTY, VA</text>
+      <text x="198" y="267" text-anchor="middle" font-family="'Inter', sans-serif" font-size="3.8" font-weight="600" letter-spacing="1.6" fill="#C5A059">USA</text>
     `;
   } else {
-    // Concept 1 (Default): The Precision Mark (100% Universal Square Hairline Frame — Crossed Sticks & Flame + PUCK & WICK Only)
+    // Concept 1 (Default): The Precision Mark (100% Universal Square Hairline Frame — Crossed Sticks w/ Subtle Blade Toes & Flame + PUCK & WICK + LOUDOUN COUNTY, VA + USA)
     conceptArtwork = `
       <rect x="140" y="166" width="116" height="116" fill="none" stroke="url(#${goldGradId})" stroke-width="1.2" />
-      <g transform="translate(198, 212)">
-        <line x1="-13" y1="-12" x2="13" y2="13" stroke="url(#${goldGradId})" stroke-width="1.05" stroke-linecap="round" />
-        <line x1="13" y1="-12" x2="-13" y2="13" stroke="url(#${goldGradId})" stroke-width="1.05" stroke-linecap="round" />
-        <path d="M 0,-4 C -2.4,-7 -3.4,-11 -1.5,-15 C -0.4,-17 0,-18.5 0,-19.5 C 0,-18.5 0.4,-17 1.5,-15 C 3.4,-11 2.4,-7 0,-4 Z" fill="url(#${goldGradId})" />
+      <rect x="143.5" y="169.5" width="109" height="109" fill="none" stroke="url(#${goldGradId})" stroke-width="0.4" opacity="0.38" />
+      <g transform="translate(198, 206)">
+        <path d="M -13,-11.5 L 12.5,12 L 16.5,10.5" fill="none" stroke="url(#${goldGradId})" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M 13,-11.5 L -12.5,12 L -16.5,10.5" fill="none" stroke="url(#${goldGradId})" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M 0,-3.5 C -2.5,-6.5 -3.5,-11 -1.5,-15 C -0.4,-17 0,-18.5 0,-19.5 C 0,-18.5 0.4,-17 1.5,-15 C 3.5,-11 2.5,-6.5 0,-3.5 Z" fill="url(#${goldGradId})" />
       </g>
-      <text x="198" y="248" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="12.2" font-weight="600" letter-spacing="1.8" fill="url(#${goldGradId})">PUCK &amp; WICK<tspan font-family="'Inter', sans-serif" font-size="4.5" font-weight="600" dy="-5" dx="0.5" letter-spacing="0">&#8482;</tspan></text>
+      <text x="198" y="238" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="11.6" font-weight="700" letter-spacing="1.6" fill="url(#${goldGradId})">PUCK &amp; WICK</text>
+      <text x="198" y="252" text-anchor="middle" font-family="'Inter', sans-serif" font-size="3.4" font-weight="600" letter-spacing="1.2" fill="url(#${goldGradId})">LOUDOUN COUNTY, VA</text>
+      <text x="198" y="260" text-anchor="middle" font-family="'Inter', sans-serif" font-size="3.1" font-weight="600" letter-spacing="1.6" fill="url(#${goldGradId})" opacity="0.88">USA</text>
     `;
   }
 

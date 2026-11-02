@@ -225,7 +225,7 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
 
             <!-- Quantity & Add to Cart Controls -->
             <div class="modal-actions-row">
-              <div class="modal-qty-stepper" aria-label="Select Quantity" style="${HARDWARE_WAITLIST_MODE && product.productType === 'odor_care' ? 'display:none;' : ''}">
+              <div class="modal-qty-stepper" aria-label="Select Quantity" style="${HARDWARE_WAITLIST_MODE ? 'display:none;' : ''}">
                 <button type="button" class="qty-btn" id="modal-qty-minus" aria-label="Decrease quantity">
                   ${getIcon('minus')}
                 </button>
@@ -236,7 +236,7 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
               </div>
 
               <button type="button" class="btn btn-gold modal-add-to-cart-btn modal-add-to-cart" id="modal-add-btn" data-testid="modal-add-to-cart-btn">
-                ${HARDWARE_WAITLIST_MODE && product.productType === 'odor_care' ? `
+                ${HARDWARE_WAITLIST_MODE ? `
                   ${getIcon('sparkle')}
                   <span>Join Batch 01 VIP Waitlist &bull; <strong id="modal-add-total">${product.formattedPrice}</strong></span>
                 ` : `
@@ -588,7 +588,7 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
 
   // Add to cart or Join VIP Waitlist action
   addBtn.addEventListener('click', () => {
-    if (HARDWARE_WAITLIST_MODE && product.productType === 'odor_care') {
+    if (HARDWARE_WAITLIST_MODE) {
       closeModal();
       openWaitlistModal(product.name, product.formattedPrice);
       return;

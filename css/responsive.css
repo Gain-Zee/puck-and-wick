@@ -142,7 +142,7 @@
 
   /* Jo Malone Centered Mobile Header & Disappearing Lower Category Bar */
   .jm-top-bar {
-    padding: 10px 14px 9px;
+    padding: 12px 14px 11px;
   }
 
   .jm-MenuTrigger span.jm-menu-label {
@@ -155,19 +155,24 @@
     height: 36px;
   }
 
-  .jm-CenterBrand-crest {
-    width: 20px;
-    height: 20px;
+  .nav-brand,
+  .jm-CenterBrand {
+    gap: 6px;
   }
 
+  .brand-name,
   .jm-CenterBrand-name {
-    font-size: 1.15rem;
-    letter-spacing: 0.18em;
+    font-size: 1.28rem;
+    letter-spacing: 0.20em;
+    padding-left: 0.20em;
   }
 
+  .brand-subtext,
   .jm-CenterBrand-sub {
-    font-size: 0.51rem;
-    letter-spacing: 0.24em;
+    font-size: 0.42rem;
+    letter-spacing: 0.19em;
+    padding-left: 0.19em;
+    opacity: 0.88;
   }
 
   .jm-bottom-menu-bar {
@@ -633,12 +638,18 @@
     gap: var(--space-2);
   }
 
-  .brand-name {
-    font-size: 1.1rem;
+  .brand-name,
+  .jm-CenterBrand-name {
+    font-size: 1.26rem;
+    letter-spacing: 0.19em;
+    padding-left: 0.19em;
   }
 
-  .brand-subtext {
-    font-size: 0.55rem;
+  .brand-subtext,
+  .jm-CenterBrand-sub {
+    font-size: 0.41rem;
+    letter-spacing: 0.18em;
+    padding-left: 0.18em;
   }
 }
 

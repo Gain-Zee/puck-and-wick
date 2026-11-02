@@ -36,7 +36,7 @@ export function initCatalog(store, openCartDrawer) {
           </button>
 
           <button type="button" class="filter-tab filter-candles ${currentCategory === 'candles' ? 'active' : ''}" data-testid="filter-candles" data-filter="candles" role="tab" aria-selected="${currentCategory === 'candles'}">
-            <span>Soy Candles • In Stock</span>
+            <span>Soy Candles</span>
             <span class="filter-count">(${PRODUCTS.filter(p => p.productType !== 'odor_care').length})</span>
           </button>
 
@@ -70,7 +70,7 @@ export function initCatalog(store, openCartDrawer) {
               const slides = getProductGallerySlides(p, store.state.activeLogoConcept || 1);
               const activeIdx = cardSlideState[p.id] || 0;
               const currentSlide = slides[activeIdx] || slides[0];
-              const isWaitlist = HARDWARE_WAITLIST_MODE && p.productType === 'odor_care';
+              const isWaitlist = HARDWARE_WAITLIST_MODE;
               const isIvoryCard = p.vesselType === 'ivory';
               const pillLabel = p.genderLine === 'unisex' ? 'His & Hers' : (isIvoryCard ? 'Womens' : 'Mens');
               return `

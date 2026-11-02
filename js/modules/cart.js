@@ -6,6 +6,7 @@
 
 import { getIcon } from '../utils/svg-assets.js';
 import { getProductById } from '../data/products.js';
+import { HARDWARE_WAITLIST_MODE, openWaitlistModal } from '../utils/waitlist.js';
 
 let isDrawerOpen = false;
 
@@ -433,6 +434,10 @@ export function initCart(store, openCheckoutCallback) {
 
   // Expose openCartDrawer method
   const openCartDrawer = () => {
+    if (HARDWARE_WAITLIST_MODE) {
+      openWaitlistModal('Batch 01 Full Collection', '$38 – $108');
+      return;
+    }
     isDrawerOpen = true;
     render();
     setTimeout(() => {

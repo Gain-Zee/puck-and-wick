@@ -463,9 +463,9 @@ export function getProductGallerySlides(product, conceptId = 1) {
 
   if (!product.productType || product.productType === 'candle') {
     const atelierCardImg = product.vesselType === 'ivory'
-      ? 'assets/images/packaging/atelier-card-ivory.jpg?v=52'
-      : 'assets/images/packaging/atelier-card-obsidian.jpg?v=52';
-    const shelfImg = `assets/images/packaging/shelf-${product.id}.jpg?v=52`;
+      ? 'assets/images/packaging/atelier-card-ivory.jpg?v=61'
+      : 'assets/images/packaging/atelier-card-obsidian.jpg?v=61';
+    const shelfImg = `assets/images/packaging/shelf-${product.id}.jpg?v=61`;
     return [
       {
         id: 'shelf',
@@ -713,12 +713,14 @@ export function getInteractive360BoxHtml(product, mode = 'card') {
             <div class="box360-body">
               <div class="box360-crest-frame box360-crest-clean">
                 <svg class="box360-sticks-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <line x1="28" y1="36" x2="92" y2="96" stroke="${strokeColor}" stroke-width="3.2" stroke-linecap="round" />
-                  <line x1="92" y1="36" x2="28" y2="96" stroke="${strokeColor}" stroke-width="3.2" stroke-linecap="round" />
+                  <path d="M 28,36 L 90,94 L 104,88.5" fill="none" stroke="${strokeColor}" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M 92,36 L 30,94 L 16,88.5" fill="none" stroke="${strokeColor}" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
                   <path d="M 60,54 C 53,45 50,33 56,22 C 59,17 60,13 60,10 C 60,13 61,17 64,22 C 70,33 67,45 60,54 Z" fill="${strokeColor}" />
                   <path d="M 60,50 C 57,44 56,37 58.5,31 C 60,28 60.5,28 61.5,31 C 64,37 63,44 60,50 Z" fill="${isIvory ? '#FAF5EB' : '#0B0C0E'}" opacity="0.5" />
                 </svg>
                 <div class="box360-crest-brand">PUCK &amp; WICK</div>
+                <div class="box360-crest-origin" style="font-family:'Inter',sans-serif;font-size:6.5px;font-weight:600;letter-spacing:2px;color:${strokeColor};margin-top:3px;text-align:center;">LOUDOUN COUNTY, VA</div>
+                <div class="box360-crest-usa" style="font-family:'Inter',sans-serif;font-size:5.8px;font-weight:600;letter-spacing:2.8px;color:${strokeColor};opacity:0.88;margin-top:1px;text-align:center;">USA</div>
               </div>
               <div class="box360-scent-band band-front">
                 <span class="band-kicker">${kickerText}</span>
