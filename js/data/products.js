@@ -9,9 +9,9 @@ export const SCENT_CATEGORIES = [
   { id: 'all', label: 'All Items' },
   { id: 'mens', label: "Men's Collection" },
   { id: 'womens', label: "Women's Sanctuary" },
-  { id: 'candles', label: 'Soy Candles ($44)' },
+  { id: 'candles', label: 'Soy Candles' },
   { id: 'odor_care', label: 'ZeoCarb-98™ Odor Pucks & Body Care' },
-  { id: 'exclusive_boxes', label: 'Deluxe Collector Boxes ($108)' }
+  { id: 'exclusive_boxes', label: 'Deluxe Collector Boxes' }
 ];
 
 export const PRODUCTS = [
@@ -20,7 +20,7 @@ export const PRODUCTS = [
     name: 'Top Shelf',
     tagline: 'The Flagship Pour. Crimson Saffron, Jasmine Grandiflorum & Warm Amberwood.',
     price: 44.00,
-    formattedPrice: '$44.00',
+    formattedPrice: 'Batch 01 • Waitlist',
     category: ['mens', 'candles', 'signature', 'woods_rustic'],
     productType: 'candle',
     genderLine: 'mens',
@@ -47,7 +47,7 @@ export const PRODUCTS = [
     name: 'Fresh Cut',
     tagline: '6:00 AM Zamboni Cut. Italian Bergamot, Hinoki Wood, Eucalyptus & Vetiver.',
     price: 44.00,
-    formattedPrice: '$44.00',
+    formattedPrice: 'Batch 01 • Waitlist',
     category: ['mens', 'candles', 'signature', 'fresh_clean', 'woods_rustic'],
     productType: 'candle',
     genderLine: 'mens',
@@ -74,7 +74,7 @@ export const PRODUCTS = [
     name: 'Balsam Fir',
     tagline: 'Loudoun Valley Mountain Winter. Blue Ridge Balsam & Spiced Cypress.',
     price: 44.00,
-    formattedPrice: '$44.00',
+    formattedPrice: 'Batch 01 • Waitlist',
     category: ['mens', 'candles', 'seasonal', 'woods_rustic'],
     productType: 'candle',
     genderLine: 'mens',
@@ -103,7 +103,7 @@ export const PRODUCTS = [
     name: 'Barnwood & Bourbon',
     tagline: 'Historic Virginia Homestead. Weathered Oak & Small-Batch Rye.',
     price: 44.00,
-    formattedPrice: '$44.00',
+    formattedPrice: 'Batch 01 • Waitlist',
     category: ['mens', 'candles', 'woods_rustic'],
     productType: 'candle',
     genderLine: 'mens',
@@ -130,7 +130,7 @@ export const PRODUCTS = [
     name: 'Rinkside Cedar & Smoke',
     tagline: 'Hockey Heritage / Woods. Cedar Benches & Campfire Embers.',
     price: 44.00,
-    formattedPrice: '$44.00',
+    formattedPrice: 'Batch 01 • Waitlist',
     category: ['mens', 'candles', 'signature', 'woods_rustic'],
     productType: 'candle',
     genderLine: 'mens',
@@ -157,7 +157,7 @@ export const PRODUCTS = [
     name: 'Warm Amber & Vanilla Bean',
     tagline: 'Unapologetic Hearthside Warmth. Baltic Amber & Madagascar Vanilla.',
     price: 44.00,
-    formattedPrice: '$44.00',
+    formattedPrice: 'Batch 01 • Waitlist',
     category: ['mens', 'candles', 'signature', 'woods_rustic'],
     productType: 'candle',
     genderLine: 'mens',
@@ -184,7 +184,7 @@ export const PRODUCTS = [
     name: 'Locker Room Mint & Eucalyptus',
     tagline: 'Post-Game Oxygen Shot. Tasmanian Eucalyptus & Crushed Spearmint.',
     price: 44.00,
-    formattedPrice: '$44.00',
+    formattedPrice: 'Batch 01 • Waitlist',
     category: ['mens', 'candles', 'signature', 'fresh_clean'],
     productType: 'candle',
     genderLine: 'mens',
@@ -211,7 +211,7 @@ export const PRODUCTS = [
     name: 'Cashmere & White Tea',
     tagline: 'Sanctuary Ivory Collection. Imperial White Tea, Spun Cashmere & Hinoki Wood.',
     price: 44.00,
-    formattedPrice: '$44.00',
+    formattedPrice: 'Batch 01 • Waitlist',
     category: ['womens', 'candles', 'signature', 'fresh_clean', 'seasonal'],
     productType: 'candle',
     genderLine: 'womens',
@@ -239,7 +239,7 @@ export const PRODUCTS = [
     name: 'Velvet Vanilla & Santal',
     tagline: 'Sanctuary Ivory Collection. Australian Sandalwood, Cardamom & Madagascar Vanilla.',
     price: 44.00,
-    formattedPrice: '$44.00',
+    formattedPrice: 'Batch 01 • Waitlist',
     category: ['womens', 'candles', 'signature', 'woods_rustic'],
     productType: 'candle',
     genderLine: 'womens',
@@ -267,7 +267,7 @@ export const PRODUCTS = [
     name: 'Sea Salt & White Orchid',
     tagline: 'Sanctuary Ivory Collection. Crystalline Sea Salt, Night Orchid & Driftwood.',
     price: 44.00,
-    formattedPrice: '$44.00',
+    formattedPrice: 'Batch 01 • Waitlist',
     category: ['womens', 'candles', 'signature', 'fresh_clean'],
     productType: 'candle',
     genderLine: 'womens',
@@ -295,7 +295,7 @@ export const PRODUCTS = [
     name: 'The 3.0" ZeoCarb-98™ Odor Puck',
     tagline: 'Universal Matte Obsidian & Brushed Champagne-Gold CNC Hardware. Covers up to 120 Sq. Ft. with 3-Axis Omni-Directional Airflow (No Upside Down).',
     price: 48.00,
-    formattedPrice: '$48.00',
+    formattedPrice: 'Batch 01 • Waitlist',
     category: ['mens', 'womens', 'odor_care'],
     productType: 'odor_care',
     genderLine: 'unisex',
@@ -326,7 +326,7 @@ export const PRODUCTS = [
     name: 'The 2.0" ZeoCarb-98™ Mini Odor Pucks (Set of 2)',
     tagline: '2.0" Compact Twin-Pack in Magnetic Flap Box. Covers up to 40 Sq. Ft. for Skates, Hockey Gloves & Footwear (No Upside Down).',
     price: 38.00,
-    formattedPrice: '$38.00',
+    formattedPrice: 'Batch 01 • Waitlist',
     category: ['mens', 'womens', 'odor_care'],
     productType: 'odor_care',
     genderLine: 'unisex',
@@ -357,7 +357,7 @@ export const PRODUCTS = [
     name: 'Athlete Charcoal & ZeoCarb-98™ Body Wash',
     tagline: 'Single 8 fl oz Post-Rink Detox Gel Pump Bottle. Activated Binchotan Charcoal & Blue Eucalyptus.',
     price: 38.00,
-    formattedPrice: '$38.00',
+    formattedPrice: 'Batch 01 • Waitlist',
     category: ['mens', 'odor_care'],
     productType: 'odor_care',
     genderLine: 'mens',
@@ -378,7 +378,7 @@ export const PRODUCTS = [
     featured: false,
     seasonal: false,
     vesselType: 'obsidian',
-    photo: 'assets/images/item-bodywash-men.jpg?v=62',
+    photo: 'assets/images/item-bodywash-men.jpg?v=65',
     subSpecText: 'SINGLE 8 FL OZ PUMP BOTTLE • BINCHOTAN + ZEOCARB-98™',
     waxSpecSub: '1x 8 oz Body Wash Only',
     accentColor: '#C5A059'
@@ -388,7 +388,7 @@ export const PRODUCTS = [
     name: 'Sanctuary White Clay & Silk Body Wash',
     tagline: 'Single 8 fl oz Luxury Spa Gel Pump Bottle. Kaolin White Clay, Spun Silk Amino Acids, White Tea & ZeoCarb-98™.',
     price: 38.00,
-    formattedPrice: '$38.00',
+    formattedPrice: 'Batch 01 • Waitlist',
     category: ['womens', 'odor_care'],
     productType: 'odor_care',
     genderLine: 'womens',
@@ -409,7 +409,7 @@ export const PRODUCTS = [
     featured: true,
     seasonal: false,
     vesselType: 'ivory',
-    photo: 'assets/images/item-bodywash-women.jpg?v=62',
+    photo: 'assets/images/item-bodywash-women.jpg?v=65',
     subSpecText: 'SINGLE 8 FL OZ PUMP BOTTLE • WHITE CLAY + ZEOCARB-98™',
     waxSpecSub: '1x 8 oz Body Wash Only',
     accentColor: '#E5C878'
@@ -463,9 +463,9 @@ export function getProductGallerySlides(product, conceptId = 1) {
 
   if (!product.productType || product.productType === 'candle') {
     const atelierCardImg = product.vesselType === 'ivory'
-      ? 'assets/images/packaging/atelier-card-ivory.jpg?v=61'
-      : 'assets/images/packaging/atelier-card-obsidian.jpg?v=61';
-    const shelfImg = `assets/images/packaging/shelf-${product.id}.jpg?v=61`;
+      ? 'assets/images/packaging/atelier-card-ivory.jpg?v=65'
+      : 'assets/images/packaging/atelier-card-obsidian.jpg?v=65';
+    const shelfImg = `assets/images/packaging/shelf-${product.id}.jpg?v=65`;
     return [
       {
         id: 'shelf',
@@ -500,16 +500,16 @@ export function getProductGallerySlides(product, conceptId = 1) {
         shortLabel: 'Open Box',
         title: 'Dual-Cavity Matte-Black Magnetic Front-Flap Collector Box (Open Presentation)',
         type: 'image',
-        src: 'assets/images/packaging/puck-mini-pair-box.jpg?v=52',
-        thumb: 'assets/images/packaging/puck-mini-pair-box.jpg?v=52'
+        src: 'assets/images/packaging/puck-mini-pair-box.jpg?v=65',
+        thumb: 'assets/images/packaging/puck-mini-pair-box.jpg?v=65'
       },
       {
         id: 'box_closed',
         shortLabel: 'Box Closed',
         title: 'Sleek All-Black Magnetic Front-Flap Collector Box (Closed)',
         type: 'image',
-        src: 'assets/images/packaging/puck-mini-pair-box-closed.jpg?v=62',
-        thumb: 'assets/images/packaging/puck-mini-pair-box-closed.jpg?v=62'
+        src: 'assets/images/packaging/puck-mini-pair-box-closed.jpg?v=65',
+        thumb: 'assets/images/packaging/puck-mini-pair-box-closed.jpg?v=65'
       },
       {
         id: 'step1',
@@ -552,48 +552,48 @@ export function getProductGallerySlides(product, conceptId = 1) {
         shortLabel: 'Open Box',
         title: 'Compact 4.2" × 4.2" Magnetic Front-Flap Collector Box (Open Presentation)',
         type: 'image',
-        src: 'assets/images/packaging/puck-men-box.jpg?v=52',
-        thumb: 'assets/images/packaging/puck-men-box.jpg?v=52'
+        src: 'assets/images/packaging/puck-men-box.jpg?v=65',
+        thumb: 'assets/images/packaging/puck-men-box.jpg?v=65'
       },
       {
         id: 'box_closed',
         shortLabel: 'Box Closed',
         title: 'Compact 4.2" × 4.2" Matte-Black Magnetic Front-Flap Collector Box (Closed)',
         type: 'image',
-        src: 'assets/images/packaging/puck-men-box-closed.jpg?v=62',
-        thumb: 'assets/images/packaging/puck-men-box-closed.jpg?v=62'
+        src: 'assets/images/packaging/puck-men-box-closed.jpg?v=65',
+        thumb: 'assets/images/packaging/puck-men-box-closed.jpg?v=65'
       },
       {
         id: 'angled_open',
         shortLabel: 'Stall',
         title: 'Pro Locker Stall — Covers Up to 120 Sq. Ft. Open-Air Gear Neutralization',
         type: 'image',
-        src: 'assets/images/packaging/puck-men-angled-open.jpg?v=52',
-        thumb: 'assets/images/packaging/puck-men-angled-open.jpg?v=52'
+        src: 'assets/images/packaging/puck-men-angled-open.jpg?v=65',
+        thumb: 'assets/images/packaging/puck-men-angled-open.jpg?v=65'
       },
       {
         id: 'gym_bag',
         shortLabel: 'Hockey Bag',
         title: 'Drop Directly Into Hockey or Gym Duffel Bag (3-Axis Airflow — No Upside Down)',
         type: 'image',
-        src: 'assets/images/packaging/puck-men-gym-bag.jpg?v=52',
-        thumb: 'assets/images/packaging/puck-men-gym-bag.jpg?v=52'
+        src: 'assets/images/packaging/puck-men-gym-bag.jpg?v=65',
+        thumb: 'assets/images/packaging/puck-men-gym-bag.jpg?v=65'
       },
       {
         id: 'yoga_bag',
         shortLabel: 'Yoga Tote',
         title: 'Tuck Into Women’s Quilted Yoga, Pilates, or Workout Tote Bag',
         type: 'image',
-        src: 'assets/images/packaging/puck-women-yoga-bag.jpg?v=52',
-        thumb: 'assets/images/packaging/puck-women-yoga-bag.jpg?v=52'
+        src: 'assets/images/packaging/puck-women-yoga-bag.jpg?v=65',
+        thumb: 'assets/images/packaging/puck-women-yoga-bag.jpg?v=65'
       },
       {
         id: 'closet',
         shortLabel: 'Closet',
         title: 'Walk-In Closet, Sneaker Shelf & Mudroom Protection',
         type: 'image',
-        src: 'assets/images/packaging/puck-women-closet.jpg?v=52',
-        thumb: 'assets/images/packaging/puck-women-closet.jpg?v=52'
+        src: 'assets/images/packaging/puck-women-closet.jpg?v=65',
+        thumb: 'assets/images/packaging/puck-women-closet.jpg?v=65'
       }
     ];
   }
@@ -612,16 +612,16 @@ export function getProductGallerySlides(product, conceptId = 1) {
         shortLabel: 'Shower',
         title: '8 fl oz Athlete Body Wash — Post-Game Binchotan Charcoal & Blue Eucalyptus Gel',
         type: 'image',
-        src: 'assets/images/packaging/wash-men-shower.jpg?v=62',
-        thumb: 'assets/images/packaging/wash-men-shower.jpg?v=62'
+        src: 'assets/images/packaging/wash-men-shower.jpg?v=65',
+        thumb: 'assets/images/packaging/wash-men-shower.jpg?v=65'
       },
       {
         id: 'locker_towel',
         shortLabel: 'Locker',
         title: '8 fl oz Athlete Body Wash — Built for Locker Room & Post-Workout Recovery',
         type: 'image',
-        src: 'assets/images/packaging/wash-men-gym-towel.jpg?v=62',
-        thumb: 'assets/images/packaging/wash-men-gym-towel.jpg?v=62'
+        src: 'assets/images/packaging/wash-men-gym-towel.jpg?v=65',
+        thumb: 'assets/images/packaging/wash-men-gym-towel.jpg?v=65'
       }
     ];
   }
@@ -640,16 +640,16 @@ export function getProductGallerySlides(product, conceptId = 1) {
         shortLabel: 'Shower',
         title: '8 fl oz Sanctuary Body Wash — Post-Pilates & Spa Shower Ritual',
         type: 'image',
-        src: 'assets/images/packaging/wash-women-shower.jpg?v=62',
-        thumb: 'assets/images/packaging/wash-women-shower.jpg?v=62'
+        src: 'assets/images/packaging/wash-women-shower.jpg?v=65',
+        thumb: 'assets/images/packaging/wash-women-shower.jpg?v=65'
       },
       {
         id: 'vanity',
         shortLabel: 'Vanity',
         title: '8 fl oz Sanctuary Body Wash — Warm Travertine Marble Vanity Presentation',
         type: 'image',
-        src: 'assets/images/packaging/wash-women-vanity.jpg?v=62',
-        thumb: 'assets/images/packaging/wash-women-vanity.jpg?v=62'
+        src: 'assets/images/packaging/wash-women-vanity.jpg?v=65',
+        thumb: 'assets/images/packaging/wash-women-vanity.jpg?v=65'
       }
     ];
   }
@@ -666,236 +666,12 @@ export function getProductGallerySlides(product, conceptId = 1) {
   ];
 }
 
-export function getInteractive360BoxHtml(product, mode = 'card') {
-  const isIvory = product.vesselType === 'ivory';
-  const scentName = (product.name || 'TOP SHELF').toUpperCase();
-  const topNote = product.notes?.top?.[0] || 'Bergamot';
-  const midNote = product.notes?.middle?.[0] || 'Hinoki Wood';
-  const baseNote = product.notes?.base?.[0] || 'Amberwood';
-  const notesLine = `${topNote} • ${midNote} • ${baseNote}`;
-  const themeClass = isIvory ? 'box360-ivory' : 'box360-obsidian';
-  const isModalOrLightbox = mode === true || mode === 'modal' || mode === 'lightbox';
-  const sizeClass = mode === 'lightbox' ? 'box360-lightbox' : isModalOrLightbox ? 'box360-modal' : 'box360-card';
-  const kickerText = product.seasonal
-    ? 'SEASONAL COLLAB • BATCH #098'
-    : isIvory
-      ? 'SANCTUARY SCENT • BATCH #098'
-      : 'SIGNATURE SCENT • BATCH #098';
-  const strokeColor = isIvory ? '#8C6624' : '#E5C878';
-
-  return `
-    <div class="box360-stage ${themeClass} ${sizeClass}" data-box360-root="${product.id}">
-      <div class="box360-top-hud">
-        <span class="box360-badge">↻ Hold &amp; Drag to Rotate • Release for Calm Levitating Spin</span>
-        ${isModalOrLightbox ? `
-          <div class="box360-angle-pills" role="group" aria-label="Rotate box to specific side">
-            <button type="button" class="box360-angle-btn active" data-box360-angle="auto">Levitating Spin</button>
-            <button type="button" class="box360-angle-btn" data-box360-angle="0">01 Front</button>
-            <button type="button" class="box360-angle-btn" data-box360-angle="-90">02 Side Band</button>
-            <button type="button" class="box360-angle-btn" data-box360-angle="-180">03 Back Stamp</button>
-            <button type="button" class="box360-angle-btn" data-box360-angle="-270">04 Matte Side</button>
-          </div>
-        ` : ''}
-      </div>
-
-      <div class="box360-scene" data-box360-drag-zone>
-        <div class="box360-levitate-wrapper">
-          <div class="box360-turntable" data-box360-turntable>
-          <!-- FACE 01: FRONT CREST (EXACT STICKS & FLAME MARK) + SCENT CORNER BAND -->
-          <div class="box360-face face-front">
-            <div class="box360-lid">
-              <div class="box360-qc-seal">
-                <span>QC #1 SEAL</span>
-                <small>VA POUR</small>
-              </div>
-            </div>
-            <div class="box360-gold-neck"></div>
-            <div class="box360-body">
-              <div class="box360-crest-frame box360-crest-clean">
-                <svg class="box360-sticks-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M 28,36 L 90,94 L 104,88.5" fill="none" stroke="${strokeColor}" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M 92,36 L 30,94 L 16,88.5" fill="none" stroke="${strokeColor}" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M 60,54 C 53,45 50,33 56,22 C 59,17 60,13 60,10 C 60,13 61,17 64,22 C 70,33 67,45 60,54 Z" fill="${strokeColor}" />
-                  <path d="M 60,50 C 57,44 56,37 58.5,31 C 60,28 60.5,28 61.5,31 C 64,37 63,44 60,50 Z" fill="${isIvory ? '#FAF5EB' : '#0B0C0E'}" opacity="0.5" />
-                </svg>
-                <div class="box360-crest-brand">PUCK &amp; WICK</div>
-                <div class="box360-crest-origin" style="font-family:'Inter',sans-serif;font-size:6.5px;font-weight:600;letter-spacing:2px;color:${strokeColor};margin-top:3px;text-align:center;">LOUDOUN COUNTY, VA</div>
-                <div class="box360-crest-usa" style="font-family:'Inter',sans-serif;font-size:5.8px;font-weight:600;letter-spacing:2.8px;color:${strokeColor};opacity:0.88;margin-top:1px;text-align:center;">USA</div>
-              </div>
-              <div class="box360-scent-band band-front">
-                <span class="band-kicker">${kickerText}</span>
-                <strong class="band-scent">${scentName}</strong>
-                <span class="band-notes">${notesLine}</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- FACE 02: SIDE PANEL (PRISTINE MATTE UPPER WALL + WRAPPED SCENT BAND ONLY) -->
-          <div class="box360-face face-right">
-            <div class="box360-lid"></div>
-            <div class="box360-gold-neck"></div>
-            <div class="box360-body box360-side-panel">
-              <div class="box360-scent-band band-right">
-                <span class="band-kicker">10 OZ VESSEL (8.5 OZ / 240G FILL)</span>
-                <strong class="band-scent">${scentName}</strong>
-                <span class="band-notes">QC #1 CERTIFIED • VA POUR</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- FACE 03: BACK PANEL (QUIET LUXURY STAMP: EST. • 2026 • PURCELLVILLE, VA) -->
-          <div class="box360-face face-back">
-            <div class="box360-lid"></div>
-            <div class="box360-gold-neck"></div>
-            <div class="box360-body box360-side-panel">
-              <div class="box360-minimal-back-stamp">
-                <strong>EST. &bull; 2026 &bull; PURCELLVILLE, VA</strong>
-                <span>SMALL-BATCH AMERICAN SOY</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- FACE 04: PRISTINE MATTE SIDE PANEL (ZERO CLUTTER) -->
-          <div class="box360-face face-left">
-            <div class="box360-lid"></div>
-            <div class="box360-gold-neck"></div>
-            <div class="box360-body box360-side-panel"></div>
-          </div>
-
-          <!-- TOP LID ROOF -->
-          <div class="box360-face face-top">
-            <div class="top-monogram">P &amp; W</div>
-          </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="box360-bottom-caption">
-        <span>Click &amp; Hold (or Touch &amp; Drag) to Rotate 360° • Release for Calm Levitating Spin</span>
-      </div>
-    </div>
-  `;
+export function getInteractive360BoxHtml() {
+  return '';
 }
 
-export function attachBox360Physics(containerEl) {
-  if (!containerEl) return () => {};
-  const stage = containerEl.querySelector('.box360-stage') || (containerEl.classList?.contains('box360-stage') ? containerEl : null);
-  if (!stage) return () => {};
-  const turntable = stage.querySelector('[data-box360-turntable]');
-  const dragZone = stage.querySelector('[data-box360-drag-zone]') || stage;
-  const angleBtns = stage.querySelectorAll('[data-box360-angle]');
-  if (!turntable) return () => {};
-
-  let yaw = -24;
-  let pitch = -8;
-  let isDragging = false;
-  let isAutoSpinning = true;
-  let targetSnapYaw = null;
-  let startX = 0;
-  let startY = 0;
-  let startYaw = yaw;
-  let startPitch = pitch;
-  let rafId = null;
-  let lastTime = performance.now();
-
-  const applyTransform = () => {
-    turntable.style.transform = `rotateX(${pitch.toFixed(2)}deg) rotateY(${yaw.toFixed(2)}deg)`;
-  };
-
-  const tick = (now) => {
-    const dt = Math.min(0.06, Math.max(0.001, (now - lastTime) / 1000));
-    lastTime = now;
-
-    if (!isDragging) {
-      if (targetSnapYaw !== null) {
-        const diff = targetSnapYaw - yaw;
-        yaw += diff * Math.min(1, dt * 8);
-        pitch += (-8 - pitch) * Math.min(1, dt * 8);
-        if (Math.abs(diff) < 0.15) {
-          yaw = targetSnapYaw;
-        }
-        applyTransform();
-      } else if (isAutoSpinning) {
-        yaw -= 20 * dt;
-        if (yaw <= -36000) yaw += 36000;
-        pitch += (-8 - pitch) * Math.min(1, dt * 5);
-        applyTransform();
-      }
-    }
-
-    rafId = requestAnimationFrame(tick);
-  };
-
-  rafId = requestAnimationFrame(tick);
-
-  const onPointerDown = (e) => {
-    if (e.target.closest('[data-box360-angle]')) return;
-    e.stopPropagation();
-    isDragging = true;
-    targetSnapYaw = null;
-    startX = e.clientX ?? (e.touches?.[0]?.clientX || 0);
-    startY = e.clientY ?? (e.touches?.[0]?.clientY || 0);
-    startYaw = yaw;
-    startPitch = pitch;
-    stage.classList.add('is-dragging');
-    if (dragZone.setPointerCapture && e.pointerId !== undefined) {
-      try { dragZone.setPointerCapture(e.pointerId); } catch (_) {}
-    }
-  };
-
-  const onPointerMove = (e) => {
-    if (!isDragging) return;
-    e.stopPropagation();
-    const cx = e.clientX ?? (e.touches?.[0]?.clientX || startX);
-    const cy = e.clientY ?? (e.touches?.[0]?.clientY || startY);
-    const dx = cx - startX;
-    const dy = cy - startY;
-    yaw = startYaw + dx * 0.65;
-    pitch = Math.max(-24, Math.min(14, startPitch - dy * 0.25));
-    applyTransform();
-  };
-
-  const onPointerUp = (e) => {
-    if (!isDragging) return;
-    e.stopPropagation();
-    isDragging = false;
-    stage.classList.remove('is-dragging');
-    isAutoSpinning = true;
-    targetSnapYaw = null;
-    angleBtns.forEach((b) => {
-      b.classList.toggle('active', b.getAttribute('data-box360-angle') === 'auto');
-    });
-  };
-
-  dragZone.addEventListener('pointerdown', onPointerDown);
-  window.addEventListener('pointermove', onPointerMove);
-  window.addEventListener('pointerup', onPointerUp);
-  window.addEventListener('pointercancel', onPointerUp);
-
-  angleBtns.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const angle = btn.getAttribute('data-box360-angle');
-      angleBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      if (angle === 'auto') {
-        targetSnapYaw = null;
-        isAutoSpinning = true;
-      } else {
-        isAutoSpinning = false;
-        yaw = ((yaw % 360) + 360) % 360 - 360;
-        targetSnapYaw = Number(angle);
-      }
-    });
-  });
-
-  return () => {
-    if (rafId) cancelAnimationFrame(rafId);
-    dragZone.removeEventListener('pointerdown', onPointerDown);
-    window.removeEventListener('pointermove', onPointerMove);
-    window.removeEventListener('pointerup', onPointerUp);
-    window.removeEventListener('pointercancel', onPointerUp);
-  };
+export function attachBox360Physics() {
+  return () => {};
 }
 
 export function getAllProducts() {

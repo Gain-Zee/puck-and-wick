@@ -1,6 +1,6 @@
 /**
  * Puck & Wick Interactive Exclusive Box Builder & Dual-Action Odor Science Module
- * Implements Men's/Athlete vs Women's Luxury Box Customizer ($108 bundle / $130 value),
+ * Implements Men's/Athlete vs Women's Luxury Box Customizer,
  * custom candle scent selection (retaining scent on edition switch per EC9),
  * distinct cart line item creation (EC10), full-screen swipeable lightbox gallery,
  * and Molecular Odor Science Breakdown.
@@ -41,10 +41,10 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
     jarFill = '#16181F';
   }
 
-  const boxPhotoHref = customPhotoHref || (isWomen ? 'assets/images/box-women-open.jpg' : 'assets/images/box-men-open.jpg');
+  const boxPhotoHref = customPhotoHref || (isWomen ? 'assets/images/box-women-open.jpg?v=65' : 'assets/images/box-men-open.jpg?v=65');
   const subFooterText = isWomen
-    ? 'INCLUDES 3.0" ZEOCARB-98™ PUCK &amp; 8 OZ WHITE CLAY BODY WASH • SAVE $22'
-    : 'INCLUDES 3.0" ZEOCARB-98™ PUCK &amp; 8 OZ CHARCOAL BODY WASH • SAVE $22';
+    ? 'INCLUDES 3.0" ZEOCARB-98™ PUCK &amp; 8 OZ WHITE CLAY BODY WASH • BATCH 01'
+    : 'INCLUDES 3.0" ZEOCARB-98™ PUCK &amp; 8 OZ CHARCOAL BODY WASH • BATCH 01';
 
   return `
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%" class="box-presentation-svg" role="img" aria-label="${isWomen ? "Women's Exclusive Box Presentation" : "Men's Athlete Exclusive Box Presentation"}">
@@ -120,7 +120,7 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
         </g>
 
         <text x="260" y="306" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8.5" font-weight="600" letter-spacing="2.5" fill="#9CA3AF">
-          CUSTOM MAGNETIC GIFT BOX • SAVE $22.00 ($130 VALUE FOR $108)
+          CUSTOM MAGNETIC GIFT BOX • BATCH 01 VIP ALLOCATION
         </text>
         <text x="260" y="322" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="13.5" font-weight="600" fill="#FAF5E8">
           SELECTED CANDLE: ${candleName} (10 OZ SOY) • ${subFooterText}
@@ -220,7 +220,7 @@ export function initBoxBuilder(store, openCartCallback) {
           <div class="box-visual-stage">
             <div class="box-stage-header">
               <span class="badge badge-gold">${editionConfig.badge}</span>
-              <div class="box-savings-pill">Save $${editionConfig.savings.toFixed(2)}</div>
+              <div class="box-savings-pill">Batch 01 • Waitlist</div>
             </div>
 
             <div class="box-svg-container box-stage-clickable" data-open-lightbox="${activeView.id}" role="button" tabindex="0" aria-label="Click to enlarge ${activeView.title}">
@@ -284,14 +284,13 @@ export function initBoxBuilder(store, openCartCallback) {
               <div class="box-header-top-line">
                 <h3 class="box-edition-heading">${editionConfig.title}</h3>
                 <div class="box-price-cluster">
-                  <span class="box-bundle-price" data-testid="box-price">$${editionConfig.price.toFixed(2)}</span>
-                  <span class="box-compare-price">$${editionConfig.compareAtValue.toFixed(2)}</span>
+                  <span class="box-bundle-price" data-testid="box-price" style="font-size:0.95rem;letter-spacing:0.06em;text-transform:uppercase;">Batch 01 • VIP Waitlist</span>
                 </div>
               </div>
               <p class="box-edition-desc">${editionConfig.description}</p>
 
               <div class="box-jersey-98-callout" data-testid="jersey-98-callout">
-                <strong>#98 Founder Tribute:</strong> All 3 full-size essentials ($130 value for $108 — <strong>Save $22</strong> • Free Shipping at $125+).
+                <strong>#98 Founder Tribute:</strong> Complete 3-piece collector set featuring all 3 full-size essentials in a custom magnetic keepsake box.
               </div>
             </div>
 
@@ -315,7 +314,7 @@ export function initBoxBuilder(store, openCartCallback) {
                     data-testid="box-scent-option-${c.id}"
                     ${c.id === selectedCandle.id ? 'selected' : ''}
                   >
-                    ${c.name} (${c.vesselType === 'ivory' ? "Women's Ivory" : "Men's Obsidian"}) — $${c.price.toFixed(2)} Value
+                    ${c.name} (${c.vesselType === 'ivory' ? "Women's Ivory" : "Men's Obsidian"})
                   </option>
                 `).join('')}
               </select>
@@ -339,7 +338,7 @@ export function initBoxBuilder(store, openCartCallback) {
             <div class="box-step-block">
               <div class="box-step-label">
                 <span>2. Included Full-Size Components (3 Items)</span>
-                <span class="box-free-ship-badge">$130 Retail Value • Save $22</span>
+                <span class="box-free-ship-badge">Complete 3-Piece Set</span>
               </div>
 
               <div class="bundled-items" data-testid="bundled-items-list">
@@ -394,10 +393,10 @@ export function initBoxBuilder(store, openCartCallback) {
               >
                 ${HARDWARE_WAITLIST_MODE ? `
                   ${getIcon('sparkle')}
-                  <span>Join VIP Waitlist • ${activeEditionKey === 'women_luxe' ? "Women's Sanctuary" : "Men's / Athlete"} Box ($${editionConfig.price.toFixed(2)})</span>
+                  <span>Join VIP Waitlist • ${activeEditionKey === 'women_luxe' ? "Women's Sanctuary" : "Men's / Athlete"} Box</span>
                 ` : `
                   ${getIcon('cart')}
-                  <span>Add ${activeEditionKey === 'women_luxe' ? "Women's Sanctuary" : "Men's / Athlete"} Box • $${editionConfig.price.toFixed(2)}</span>
+                  <span>Add ${activeEditionKey === 'women_luxe' ? "Women's Sanctuary" : "Men's / Athlete"} Box</span>
                 `}
               </button>
               ${feedbackMsg ? `<div class="box-added-feedback" role="status" aria-live="polite">${feedbackMsg}</div>` : ''}

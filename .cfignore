@@ -11,3 +11,7 @@ scripts/
 package.json
 package-lock.json
 DEPLOYMENT.md
+*.orig_clean_bak
+*.zip
+3D_Print_Files_Puck_And_Wick/
+peter_pan_portraits/

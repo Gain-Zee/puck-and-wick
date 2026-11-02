@@ -1,7 +1,7 @@
 /**
  * Puck & Wick — Drop 01 VIP Waitlist Modal & Lead Capture
  * Allows visitors to join the priority launch list for unreleased Lauson-98™
- * Odor Pucks, Sanctuary Body/Linen Care, and the $98 Collector Gift Boxes.
+ * Odor Pucks, Sanctuary Body/Linen Care, and the Deluxe Collector Gift Boxes.
  */
 
 export const HARDWARE_WAITLIST_MODE = true;
@@ -18,7 +18,7 @@ export function saveWaitlistLead(itemName, contactValue) {
   } catch (_) {}
 }
 
-export function openWaitlistModal(productName = 'ZeoCarb-98™ Drop 01 Hardware', priceLabel = '$48.00') {
+export function openWaitlistModal(productName = 'Batch 01 Collection') {
   const existingModal = document.getElementById('pw-waitlist-modal-backdrop');
   if (existingModal) existingModal.remove();
 
@@ -36,7 +36,7 @@ export function openWaitlistModal(productName = 'ZeoCarb-98™ Drop 01 Hardware'
         Reserve Early Access: ${productName}
       </h3>
       <p style="font-size:0.84rem;color:#B0B5C0;line-height:1.5;margin:0 0 1.1rem 0;">
-        Our inaugural small-batch run of <strong>${productName} (${priceLabel})</strong> is currently being hand-poured and cured for 14 days in Loudoun County, VA. Enter your email or phone number below to get notified the moment Batch 01 opens for orders.
+        Our inaugural small-batch run of <strong>${productName}</strong> is currently being hand-poured and cured for 14 days in Loudoun County, VA. Enter your email or phone number below to get notified the moment Batch 01 opens for orders.
       </p>
       <form id="pw-waitlist-form" style="display:flex;flex-direction:column;gap:0.65rem;">
         <input type="text" id="pw-waitlist-contact" required placeholder="Your Email Address or Mobile Number..." style="width:100%;height:44px;padding:0 0.9rem;border-radius:8px;background:#08090C;border:1px solid rgba(197,160,89,0.45);color:#FFFFFF;font-size:0.88rem;outline:none;box-sizing:border-box;" />

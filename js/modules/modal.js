@@ -135,7 +135,7 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
             <div class="modal-tagline">${product.tagline}</div>
 
             <div class="modal-price-row">
-              <span class="modal-price" data-testid="modal-price">${product.formattedPrice}</span>
+              <span class="modal-price" data-testid="modal-price" style="font-size:1.05rem;letter-spacing:0.06em;text-transform:uppercase;">Batch 01 • VIP Waitlist</span>
               <span class="modal-burn-badge" data-testid="product-burn-time">${product.productType === 'odor_care' ? product.burnTime : `${product.burnTime} Slow Burn`}</span>
             </div>
 
@@ -238,7 +238,7 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
               <button type="button" class="btn btn-gold modal-add-to-cart-btn modal-add-to-cart" id="modal-add-btn" data-testid="modal-add-to-cart-btn">
                 ${HARDWARE_WAITLIST_MODE ? `
                   ${getIcon('sparkle')}
-                  <span>Join Batch 01 VIP Waitlist &bull; <strong id="modal-add-total">${product.formattedPrice}</strong></span>
+                  <span>Join Batch 01 VIP Waitlist</span>
                 ` : `
                   <span>Add to Cart &bull; <strong id="modal-add-total">${product.formattedPrice}</strong></span>
                   ${getIcon('cart')}
@@ -602,7 +602,7 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
         quantity,
         scent: product.name,
         vessel: product.vessel,
-        photo: product.photo || (product.vesselType === 'ivory' ? 'assets/images/candle-ivory.jpg' : 'assets/images/candle-obsidian.jpg')
+        photo: product.photo || (product.vesselType === 'ivory' ? 'assets/images/packaging/shelf-candle-cashmere-white-tea.jpg?v=65' : 'assets/images/packaging/shelf-candle-top-shelf.jpg?v=65')
       });
     }
 

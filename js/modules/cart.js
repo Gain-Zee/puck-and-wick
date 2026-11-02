@@ -11,19 +11,19 @@ import { HARDWARE_WAITLIST_MODE, openWaitlistModal } from '../utils/waitlist.js'
 let isDrawerOpen = false;
 
 export function getCartItemPhotoSrc(item) {
-  if (!item || typeof item !== 'object') return 'assets/images/candle-obsidian.jpg';
+  if (!item || typeof item !== 'object') return 'assets/images/packaging/shelf-candle-top-shelf.jpg?v=65';
   if (item.photo) return item.photo;
   const idStr = String(item.id || '');
   if (item.type === 'exclusive_box' || idStr.startsWith('box-')) {
     const isWomen = idStr.includes('women') || item.customOptions?.boxType === 'women_luxe' || item.customizations?.boxType === 'women_luxe';
-    return isWomen ? 'assets/images/box-women-open.jpg' : 'assets/images/box-men-open.jpg';
+    return isWomen ? 'assets/images/box-women-open.jpg?v=65' : 'assets/images/box-men-open.jpg?v=65';
   }
   const prod = getProductById(idStr);
   if (prod) {
     if (prod.photo) return prod.photo;
-    if (prod.vesselType === 'ivory') return 'assets/images/candle-ivory.jpg';
+    if (prod.vesselType === 'ivory') return 'assets/images/packaging/shelf-candle-cashmere-white-tea.jpg?v=65';
   }
-  return 'assets/images/candle-obsidian.jpg';
+  return 'assets/images/packaging/shelf-candle-top-shelf.jpg?v=65';
 }
 
 export function initCart(store, openCheckoutCallback) {
@@ -435,7 +435,7 @@ export function initCart(store, openCheckoutCallback) {
   // Expose openCartDrawer method
   const openCartDrawer = () => {
     if (HARDWARE_WAITLIST_MODE) {
-      openWaitlistModal('Batch 01 Full Collection', '$38 – $108');
+      openWaitlistModal('Batch 01 Full Collection');
       return;
     }
     isDrawerOpen = true;

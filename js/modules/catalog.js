@@ -58,7 +58,7 @@ export function initCatalog(store, openCartDrawer) {
           </button>
 
           <button type="button" class="filter-tab filter-exclusive-boxes filter-boxes" data-testid="filter-exclusive-boxes" data-filter="exclusive_boxes" role="tab" aria-selected="false">
-            <span>$108 Boxes (Waitlist)</span>
+            <span>Deluxe Boxes (Waitlist)</span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="box-icon-link" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </button>
         </div>
@@ -134,7 +134,7 @@ export function initCatalog(store, openCartDrawer) {
                   <div class="product-card-footer">
                     <div class="card-footer-top">
                       <div class="price-container">
-                        <span class="product-price" data-testid="product-price">${p.formattedPrice}</span>
+                        <span class="product-price" data-testid="product-price" style="font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;">Batch 01 • Waitlist</span>
                         <span class="wax-spec-sub">${isWaitlist ? 'Drop 01 • Coming Soon' : (p.waxSpecSub || '100% American Soy')}</span>
                       </div>
 
@@ -328,7 +328,7 @@ export function initCatalog(store, openCartDrawer) {
             quantity: 1,
             scent: prod.name,
             vessel: prod.vessel,
-            photo: prod.photo || (prod.vesselType === 'ivory' ? 'assets/images/candle-ivory.jpg' : 'assets/images/candle-obsidian.jpg')
+            photo: prod.photo || (prod.vesselType === 'ivory' ? 'assets/images/packaging/shelf-candle-cashmere-white-tea.jpg?v=65' : 'assets/images/packaging/shelf-candle-top-shelf.jpg?v=65')
           });
 
           if (typeof openCartDrawer === 'function') {

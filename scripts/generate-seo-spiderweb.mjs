@@ -36,12 +36,12 @@ for (const product of PRODUCTS) {
     productId: product.id,
     slideId: primarySlide.id,
     slideIndex: 0,
-    title: `${product.name} (${product.formattedPrice}) | Puck & Wick™`,
+    title: `${product.name} | Puck & Wick™`,
     headline: product.name,
     subtitle: product.tagline,
     description: product.description,
-    price: product.price,
-    formattedPrice: product.formattedPrice,
+    price: 0,
+    formattedPrice: 'Batch 01 • VIP Waitlist',
     imageRel: primaryImageRel,
     imageUrl: `${SITE_ORIGIN}/${primaryImageRel}`,
     deepLinkQuery: `/?item=${encodeURIComponent(product.id)}`,
@@ -62,12 +62,12 @@ for (const product of PRODUCTS) {
       slideSlug,
       slideIndex: idx,
       shortLabel: slide.shortLabel,
-      title: `${slide.title} | ${product.name} (${product.formattedPrice}) | Puck & Wick™`,
+      title: `${slide.title} | ${product.name} | Puck & Wick™`,
       headline: `${product.name} — ${slide.shortLabel}`,
       subtitle: slide.title,
       description: `${slide.title}. ${product.description}`,
-      price: product.price,
-      formattedPrice: product.formattedPrice,
+      price: 0,
+      formattedPrice: 'Batch 01 • VIP Waitlist',
       imageRel: imgRel,
       imageUrl: `${SITE_ORIGIN}/${imgRel}`,
       deepLinkQuery: `/?item=${encodeURIComponent(product.id)}&photo=${encodeURIComponent(slide.id)}`,
@@ -94,12 +94,12 @@ for (const boxEntry of boxEntries) {
     boxKey: key,
     boxSlug: slug,
     viewId: 'open',
-    title: `${config.title} ($${config.price.toFixed(0)} — $${config.compareAtValue.toFixed(0)} Value) | Puck & Wick™`,
+    title: `${config.title} | Puck & Wick™`,
     headline: config.title,
     subtitle: config.subtitle,
     description: config.description,
-    price: config.price,
-    formattedPrice: `$${config.price.toFixed(2)}`,
+    price: 0,
+    formattedPrice: 'Batch 01 • VIP Waitlist',
     imageRel: config.photo,
     imageUrl: `${SITE_ORIGIN}/${config.photo}`,
     deepLinkQuery: `/?box=${encodeURIComponent(key)}&view=open#exclusive-boxes`,
@@ -117,12 +117,12 @@ for (const boxEntry of boxEntries) {
       viewId: view.id,
       viewSlug,
       shortLabel: view.shortLabel,
-      title: `${view.title} | ${config.title} ($${config.price.toFixed(0)}) | Puck & Wick™`,
+      title: `${view.title} | ${config.title} | Puck & Wick™`,
       headline: `${config.title} — ${view.shortLabel}`,
       subtitle: view.title,
       description: `${view.description} ${config.description}`,
-      price: config.price,
-      formattedPrice: `$${config.price.toFixed(2)}`,
+      price: 0,
+      formattedPrice: 'Batch 01 • VIP Waitlist',
       imageRel: view.image,
       imageUrl: `${SITE_ORIGIN}/${view.image}`,
       deepLinkQuery: `/?box=${encodeURIComponent(key)}&view=${encodeURIComponent(view.id)}#exclusive-boxes`,
@@ -157,7 +157,7 @@ for (const node of seoNodes) {
   const catalogLinksHtml = PRODUCTS.map((p) => {
     const pSlides = getProductGallerySlides(p, 1);
     const subLinks = pSlides.map((s) => `<a href="/p/${p.id}/${slugifySlideId(s.id)}">${escapeHtml(s.shortLabel)}</a>`).join(' • ');
-    return `<li><strong><a href="/p/${p.id}">${escapeHtml(p.name)} (${escapeHtml(p.formattedPrice)})</a></strong> — ${subLinks}</li>`;
+    return `<li><strong><a href="/p/${p.id}">${escapeHtml(p.name)}</a></strong> — ${subLinks}</li>`;
   }).join('\n          ');
 
   const jsonLd = {
@@ -459,8 +459,8 @@ for (const node of seoNodes) {
     <nav class="spider-directory" aria-label="Complete Puck & Wick Product & Photo Spiderweb Index">
       <h2>Complete Puck &amp; Wick&trade; Product &amp; Photo Index</h2>
       <ul>
-          <li><strong><a href="/p/box-mens-athlete">Men's / Athlete Exclusive Box ($98.00)</a></strong> — <a href="/p/box-mens-athlete/open">Open Box</a> • <a href="/p/box-mens-athlete/closed">Box Closed</a> • <a href="/p/box-mens-athlete/items-out">3 Items</a> • <a href="/p/box-mens-athlete/usecase">In Action</a></li>
-          <li><strong><a href="/p/box-womens-sanctuary">Women's Sanctuary Exclusive Box ($98.00)</a></strong> — <a href="/p/box-womens-sanctuary/open">Open Box</a> • <a href="/p/box-womens-sanctuary/closed">Box Closed</a> • <a href="/p/box-womens-sanctuary/items-out">3 Items</a> • <a href="/p/box-womens-sanctuary/usecase">In Action</a></li>
+          <li><strong><a href="/p/box-mens-athlete">Men's / Athlete Exclusive Box</a></strong> — <a href="/p/box-mens-athlete/open">Open Box</a> • <a href="/p/box-mens-athlete/closed">Box Closed</a> • <a href="/p/box-mens-athlete/items-out">3 Items</a> • <a href="/p/box-mens-athlete/usecase">In Action</a></li>
+          <li><strong><a href="/p/box-womens-sanctuary">Women's Sanctuary Exclusive Box</a></strong> — <a href="/p/box-womens-sanctuary/open">Open Box</a> • <a href="/p/box-womens-sanctuary/closed">Box Closed</a> • <a href="/p/box-womens-sanctuary/items-out">3 Items</a> • <a href="/p/box-womens-sanctuary/usecase">In Action</a></li>
           ${catalogLinksHtml}
       </ul>
     </nav>
@@ -480,14 +480,14 @@ const sitemapEntries = [
     <priority>1.0</priority>
     <image:image>
       <image:loc>${SITE_ORIGIN}/assets/images/box-men-open.jpg</image:loc>
-      <image:title>Puck &amp; Wick™ Men's Athlete Exclusive Gift Box ($98)</image:title>
-      <image:caption>10 oz Matte Obsidian Soy Candle, 3.0" Lauson-98™ Gear Puck, and 8 oz Charcoal Body Wash — Handcrafted in Purcellville, VA</image:caption>
+      <image:title>Puck &amp; Wick™ Men's Athlete Exclusive Gift Box</image:title>
+      <image:caption>10 oz Matte Obsidian Soy Candle, 3.0" ZeoCarb-98™ Gear Puck, and 8 oz Charcoal Body Wash — Handcrafted in Purcellville, VA</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
     <image:image>
       <image:loc>${SITE_ORIGIN}/assets/images/box-women-open.jpg</image:loc>
-      <image:title>Puck &amp; Wick™ Women's Sanctuary Exclusive Gift Box ($98)</image:title>
-      <image:caption>10 oz Frosted Ivory Soy Candle, 3.0" White Sanctuary Puck, and 4 oz Botanical Linen Mist — Purcellville, VA</image:caption>
+      <image:title>Puck &amp; Wick™ Women's Sanctuary Exclusive Gift Box</image:title>
+      <image:caption>10 oz Frosted Ivory Soy Candle, 3.0" ZeoCarb-98™ Odor Puck, and 8 oz White Clay &amp; Silk Body Wash — Purcellville, VA</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
   </url>`
