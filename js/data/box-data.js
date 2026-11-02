@@ -132,7 +132,7 @@ export const EXCLUSIVE_BOX_EDITIONS = {
         step: '04 • IN ACTION',
         shortLabel: 'In Action',
         title: 'Yoga Tote & Closet to Spa Shower to Bedside Sanctuary',
-        image: 'assets/images/box-women-usecase.jpg?v=65',
+        image: 'assets/images/box-women-usecase.jpg?v=66',
         description: 'Tuck the 3.0" ZeoCarb-98™ Puck into your yoga tote or walk-in closet, purify skin with White Clay & Silk Body Wash, and light your Frosted Ivory Candle.'
       }
     ]

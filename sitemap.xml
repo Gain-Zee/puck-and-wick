@@ -8,14 +8,14 @@
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://puckandwick.com/assets/images/box-men-open.jpg</image:loc>
-      <image:title>Puck &amp; Wick™ Men's Athlete Exclusive Gift Box ($98)</image:title>
-      <image:caption>10 oz Matte Obsidian Soy Candle, 3.0" Lauson-98™ Gear Puck, and 8 oz Charcoal Body Wash — Handcrafted in Purcellville, VA</image:caption>
+      <image:title>Puck &amp; Wick™ Men's Athlete Exclusive Gift Box</image:title>
+      <image:caption>10 oz Matte Obsidian Soy Candle, 3.0" ZeoCarb-98™ Gear Puck, and 8 oz Charcoal Body Wash — Handcrafted in Purcellville, VA</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
     <image:image>
       <image:loc>https://puckandwick.com/assets/images/box-women-open.jpg</image:loc>
-      <image:title>Puck &amp; Wick™ Women's Sanctuary Exclusive Gift Box ($98)</image:title>
-      <image:caption>10 oz Frosted Ivory Soy Candle, 3.0" White Sanctuary Puck, and 4 oz Botanical Linen Mist — Purcellville, VA</image:caption>
+      <image:title>Puck &amp; Wick™ Women's Sanctuary Exclusive Gift Box</image:title>
+      <image:caption>10 oz Frosted Ivory Soy Candle, 3.0" ZeoCarb-98™ Odor Puck, and 8 oz White Clay &amp; Silk Body Wash — Purcellville, VA</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
   </url>
@@ -26,7 +26,7 @@
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://puckandwick.com/assets/images/packaging/shelf-candle-top-shelf.jpg</image:loc>
-      <image:title>Top Shelf ($44.00) | Puck &amp; Wick™</image:title>
+      <image:title>Top Shelf | Puck &amp; Wick™</image:title>
       <image:caption>Inspired by top-shelf snipes and championship prestige. A radiant, hypnotic master formulation opening with crushed crimson saffron threads and bitter almond, unfolding into airy Egyptian jasmine grandiflorum and Virginia white cedar, and anchored by crystalline ambergris, fir balsam resin, and warm amberwood.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -37,8 +37,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/packaging/shelf-candle-top-shelf.jpg?v=61</image:loc>
-      <image:title>Top Shelf — Unlit 10 oz Soy Vessel (8.5 oz Fill), Brushed Brass Lid &amp; Rigid Two-Piece Collector Box | Top Shelf ($44.00) | Puck &amp; Wick™</image:title>
+      <image:loc>https://puckandwick.com/assets/images/packaging/shelf-candle-top-shelf.jpg?v=65</image:loc>
+      <image:title>Top Shelf — Unlit 10 oz Soy Vessel (8.5 oz Fill), Brushed Brass Lid &amp; Rigid Two-Piece Collector Box | Top Shelf | Puck &amp; Wick™</image:title>
       <image:caption>Top Shelf — Unlit 10 oz Soy Vessel (8.5 oz Fill), Brushed Brass Lid &amp; Rigid Two-Piece Collector Box. Inspired by top-shelf snipes and championship prestige. A radiant, hypnotic master formulation opening with crushed crimson saffron threads and bitter almond, unfolding into airy Egyptian jasmine grandiflorum and Virginia white cedar, and anchored by crystalline ambergris, fir balsam resin, and warm amberwood.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -49,8 +49,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/packaging/atelier-card-obsidian.jpg?v=61</image:loc>
-      <image:title>Top Shelf — Included 3.5&quot;×3.5&quot; Square Atelier Card (Story, QC #1 &amp; Burn Ritual) | Top Shelf ($44.00) | Puck &amp; Wick™</image:title>
+      <image:loc>https://puckandwick.com/assets/images/packaging/atelier-card-obsidian.jpg?v=65</image:loc>
+      <image:title>Top Shelf — Included 3.5&quot;×3.5&quot; Square Atelier Card (Story, QC #1 &amp; Burn Ritual) | Top Shelf | Puck &amp; Wick™</image:title>
       <image:caption>Top Shelf — Included 3.5&quot;×3.5&quot; Square Atelier Card (Story, QC #1 &amp; Burn Ritual). Inspired by top-shelf snipes and championship prestige. A radiant, hypnotic master formulation opening with crushed crimson saffron threads and bitter almond, unfolding into airy Egyptian jasmine grandiflorum and Virginia white cedar, and anchored by crystalline ambergris, fir balsam resin, and warm amberwood.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -62,7 +62,7 @@
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://puckandwick.com/assets/images/packaging/shelf-candle-fresh-cut.jpg</image:loc>
-      <image:title>Fresh Cut ($44.00) | Puck &amp; Wick™</image:title>
+      <image:title>Fresh Cut | Puck &amp; Wick™</image:title>
       <image:caption>That sacred stillness when you step onto fresh sheet ice at 6:00 AM. Bright Italian bergamot and crisp grapefruit zest cut into sacred Japanese hinoki wood and frosted eucalyptus leaf, grounded by smoky earthy vetiver, warm amber, and sunlit orange blossom.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -73,8 +73,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/packaging/shelf-candle-fresh-cut.jpg?v=61</image:loc>
-      <image:title>Fresh Cut — Unlit 10 oz Soy Vessel (8.5 oz Fill), Brushed Brass Lid &amp; Rigid Two-Piece Collector Box | Fresh Cut ($44.00) | Puck &amp; Wick™</image:title>
+      <image:loc>https://puckandwick.com/assets/images/packaging/shelf-candle-fresh-cut.jpg?v=65</image:loc>
+      <image:title>Fresh Cut — Unlit 10 oz Soy Vessel (8.5 oz Fill), Brushed Brass Lid &amp; Rigid Two-Piece Collector Box | Fresh Cut | Puck &amp; Wick™</image:title>
       <image:caption>Fresh Cut — Unlit 10 oz Soy Vessel (8.5 oz Fill), Brushed Brass Lid &amp; Rigid Two-Piece Collector Box. That sacred stillness when you step onto fresh sheet ice at 6:00 AM. Bright Italian bergamot and crisp grapefruit zest cut into sacred Japanese hinoki wood and frosted eucalyptus leaf, grounded by smoky earthy vetiver, warm amber, and sunlit orange blossom.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -85,8 +85,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/packaging/atelier-card-obsidian.jpg?v=61</image:loc>
-      <image:title>Fresh Cut — Included 3.5&quot;×3.5&quot; Square Atelier Card (Story, QC #1 &amp; Burn Ritual) | Fresh Cut ($44.00) | Puck &amp; Wick™</image:title>
+      <image:loc>https://puckandwick.com/assets/images/packaging/atelier-card-obsidian.jpg?v=65</image:loc>
+      <image:title>Fresh Cut — Included 3.5&quot;×3.5&quot; Square Atelier Card (Story, QC #1 &amp; Burn Ritual) | Fresh Cut | Puck &amp; Wick™</image:title>
       <image:caption>Fresh Cut — Included 3.5&quot;×3.5&quot; Square Atelier Card (Story, QC #1 &amp; Burn Ritual). That sacred stillness when you step onto fresh sheet ice at 6:00 AM. Bright Italian bergamot and crisp grapefruit zest cut into sacred Japanese hinoki wood and frosted eucalyptus leaf, grounded by smoky earthy vetiver, warm amber, and sunlit orange blossom.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -98,7 +98,7 @@
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://puckandwick.com/assets/images/packaging/shelf-candle-balsam-fir.jpg</image:loc>
-      <image:title>Balsam Fir ($44.00) | Puck &amp; Wick™</image:title>
+      <image:title>Balsam Fir | Puck &amp; Wick™</image:title>
       <image:caption>Handcrafted exclusively in seasonal collaboration with The Blue Hydrangea boutique in Purcellville, VA. Captures the crisp scent of snow-laden Blue Ridge evergreens, resinous balsam fir, spiced clove bud, and smoky cedar embers.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -109,8 +109,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/packaging/shelf-candle-balsam-fir.jpg?v=61</image:loc>
-      <image:title>Balsam Fir — Unlit 10 oz Soy Vessel (8.5 oz Fill), Brushed Brass Lid &amp; Rigid Two-Piece Collector Box | Balsam Fir ($44.00) | Puck &amp; Wick™</image:title>
+      <image:loc>https://puckandwick.com/assets/images/packaging/shelf-candle-balsam-fir.jpg?v=65</image:loc>
+      <image:title>Balsam Fir — Unlit 10 oz Soy Vessel (8.5 oz Fill), Brushed Brass Lid &amp; Rigid Two-Piece Collector Box | Balsam Fir | Puck &amp; Wick™</image:title>
       <image:caption>Balsam Fir — Unlit 10 oz Soy Vessel (8.5 oz Fill), Brushed Brass Lid &amp; Rigid Two-Piece Collector Box. Handcrafted exclusively in seasonal collaboration with The Blue Hydrangea boutique in Purcellville, VA. Captures the crisp scent of snow-laden Blue Ridge evergreens, resinous balsam fir, spiced clove bud, and smoky cedar embers.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -121,8 +121,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/packaging/atelier-card-obsidian.jpg?v=61</image:loc>
-      <image:title>Balsam Fir — Included 3.5&quot;×3.5&quot; Square Atelier Card (Story, QC #1 &amp; Burn Ritual) | Balsam Fir ($44.00) | Puck &amp; Wick™</image:title>
+      <image:loc>https://puckandwick.com/assets/images/packaging/atelier-card-obsidian.jpg?v=65</image:loc>
+      <image:title>Balsam Fir — Included 3.5&quot;×3.5&quot; Square Atelier Card (Story, QC #1 &amp; Burn Ritual) | Balsam Fir | Puck &amp; Wick™</image:title>
       <image:caption>Balsam Fir — Included 3.5&quot;×3.5&quot; Square Atelier Card (Story, QC #1 &amp; Burn Ritual). Handcrafted exclusively in seasonal collaboration with The Blue Hydrangea boutique in Purcellville, VA. Captures the crisp scent of snow-laden Blue Ridge evergreens, resinous balsam fir, spiced clove bud, and smoky cedar embers.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -134,7 +134,7 @@
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://puckandwick.com/assets/images/packaging/shelf-candle-barnwood-bourbon.jpg</image:loc>
-      <image:title>Barnwood &amp; Bourbon ($44.00) | Puck &amp; Wick™</image:title>
+      <image:title>Barnwood &amp; Bourbon | Puck &amp; Wick™</image:title>
       <image:caption>The scent of an authentic 19th-century Virginia barn workshop where hand-hewn oak rafters have absorbed decades of sweet woodsmoke, enriched by small-batch rye bourbon, burnt brown sugar, and toasted tonka.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -145,8 +145,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/packaging/shelf-candle-barnwood-bourbon.jpg?v=61</image:loc>
-      <image:title>Barnwood &amp; Bourbon — Unlit 10 oz Soy Vessel (8.5 oz Fill), Brushed Brass Lid &amp; Rigid Two-Piece Collector Box | Barnwood &amp; Bourbon ($44.00) | Puck &amp; Wick™</image:title>
+      <image:loc>https://puckandwick.com/assets/images/packaging/shelf-candle-barnwood-bourbon.jpg?v=65</image:loc>
+      <image:title>Barnwood &amp; Bourbon — Unlit 10 oz Soy Vessel (8.5 oz Fill), Brushed Brass Lid &amp; Rigid Two-Piece Collector Box | Barnwood &amp; Bourbon | Puck &amp; Wick™</image:title>
       <image:caption>Barnwood &amp; Bourbon — Unlit 10 oz Soy Vessel (8.5 oz Fill), Brushed Brass Lid &amp; Rigid Two-Piece Collector Box. The scent of an authentic 19th-century Virginia barn workshop where hand-hewn oak rafters have absorbed decades of sweet woodsmoke, enriched by small-batch rye bourbon, burnt brown sugar, and toasted tonka.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -157,8 +157,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/packaging/atelier-card-obsidian.jpg?v=61</image:loc>
-      <image:title>Barnwood &amp; Bourbon — Included 3.5&quot;×3.5&quot; Square Atelier Card (Story, QC #1 &amp; Burn Ritual) | Barnwood &amp; Bourbon ($44.00) | Puck &amp; Wick™</image:title>
+      <image:loc>https://puckandwick.com/assets/images/packaging/atelier-card-obsidian.jpg?v=65</image:loc>
+      <image:title>Barnwood &amp; Bourbon — Included 3.5&quot;×3.5&quot; Square Atelier Card (Story, QC #1 &amp; Burn Ritual) | Barnwood &amp; Bourbon | Puck &amp; Wick™</image:title>
       <image:caption>Barnwood &amp; Bourbon — Included 3.5&quot;×3.5&quot; Square Atelier Card (Story, QC #1 &amp; Burn Ritual). The scent of an authentic 19th-century Virginia barn workshop where hand-hewn oak rafters have absorbed decades of sweet woodsmoke, enriched by small-batch rye bourbon, burnt brown sugar, and toasted tonka.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -170,7 +170,7 @@
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://puckandwick.com/assets/images/packaging/shelf-candle-rinkside-cedar-smoke.jpg</image:loc>
-      <image:title>Rinkside Cedar &amp; Smoke ($44.00) | Puck &amp; Wick™</image:title>
+      <image:title>Rinkside Cedar &amp; Smoke | Puck &amp; Wick™</image:title>
       <image:caption>The aromatic nostalgia of an outdoor pond hockey game followed by an open-fire tailgate. Aromatic red cedar boards, oiled leather glove patina, and crackling birchwood smoke softened by dark resinous musk.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -181,8 +181,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/packaging/shelf-candle-rinkside-cedar-smoke.jpg?v=61</image:loc>
-      <image:title>Rinkside Cedar &amp; Smoke — Unlit 10 oz Soy Vessel (8.5 oz Fill), Brushed Brass Lid &amp; Rigid Two-Piece Collector Box | Rinkside Cedar &amp; Smoke ($44.00) | Puck &amp; Wick™</image:title>
+      <image:loc>https://puckandwick.com/assets/images/packaging/shelf-candle-rinkside-cedar-smoke.jpg?v=65</image:loc>
+      <image:title>Rinkside Cedar &amp; Smoke — Unlit 10 oz Soy Vessel (8.5 oz Fill), Brushed Brass Lid &amp; Rigid Two-Piece Collector Box | Rinkside Cedar &amp; Smoke | Puck &amp; Wick™</image:title>
       <image:caption>Rinkside Cedar &amp; Smoke — Unlit 10 oz Soy Vessel (8.5 oz Fill), Brushed Brass Lid &amp; Rigid Two-Piece Collector Box. The aromatic nostalgia of an outdoor pond hockey game followed by an open-fire tailgate. Aromatic red cedar boards, oiled leather glove patina, and crackling birchwood smoke softened by dark resinous musk.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -193,8 +193,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/packaging/atelier-card-obsidian.jpg?v=61</image:loc>
-      <image:title>Rinkside Cedar &amp; Smoke — Included 3.5&quot;×3.5&quot; Square Atelier Card (Story, QC #1 &amp; Burn Ritual) | Rinkside Cedar &amp; Smoke ($44.00) | Puck &amp; Wick™</image:title>
+      <image:loc>https://puckandwick.com/assets/images/packaging/atelier-card-obsidian.jpg?v=65</image:loc>
+      <image:title>Rinkside Cedar &amp; Smoke — Included 3.5&quot;×3.5&quot; Square Atelier Card (Story, QC #1 &amp; Burn Ritual) | Rinkside Cedar &amp; Smoke | Puck &amp; Wick™</image:title>
       <image:caption>Rinkside Cedar &amp; Smoke — Included 3.5&quot;×3.5&quot; Square Atelier Card (Story, QC #1 &amp; Burn Ritual). The aromatic nostalgia of an outdoor pond hockey game followed by an open-fire tailgate. Aromatic red cedar boards, oiled leather glove patina, and crackling birchwood smoke softened by dark resinous musk.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -206,7 +206,7 @@
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://puckandwick.com/assets/images/packaging/shelf-candle-warm-amber-vanilla.jpg</image:loc>
-      <image:title>Warm Amber &amp; Vanilla Bean ($44.00) | Puck &amp; Wick™</image:title>
+      <image:title>Warm Amber &amp; Vanilla Bean | Puck &amp; Wick™</image:title>
       <image:caption>Rich, sensual, and universally appealing. Rich golden Baltic amber layered with cracked Madagascar vanilla pods, warm cashmere musk, and subtle benzoin resin that fills the room with comforting elegance.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -217,8 +217,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/packaging/shelf-candle-warm-amber-vanilla.jpg?v=61</image:loc>
-      <image:title>Warm Amber &amp; Vanilla Bean — Unlit 10 oz Soy Vessel (8.5 oz Fill), Brushed Brass Lid &amp; Rigid Two-Piece Collector Box | Warm Amber &amp; Vanilla Bean ($44.00) | Puck &amp; Wick™</image:title>
+      <image:loc>https://puckandwick.com/assets/images/packaging/shelf-candle-warm-amber-vanilla.jpg?v=65</image:loc>
+      <image:title>Warm Amber &amp; Vanilla Bean — Unlit 10 oz Soy Vessel (8.5 oz Fill), Brushed Brass Lid &amp; Rigid Two-Piece Collector Box | Warm Amber &amp; Vanilla Bean | Puck &amp; Wick™</image:title>
       <image:caption>Warm Amber &amp; Vanilla Bean — Unlit 10 oz Soy Vessel (8.5 oz Fill), Brushed Brass Lid &amp; Rigid Two-Piece Collector Box. Rich, sensual, and universally appealing. Rich golden Baltic amber layered with cracked Madagascar vanilla pods, warm cashmere musk, and subtle benzoin resin that fills the room with comforting elegance.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -229,8 +229,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/packaging/atelier-card-obsidian.jpg?v=61</image:loc>
-      <image:title>Warm Amber &amp; Vanilla Bean — Included 3.5&quot;×3.5&quot; Square Atelier Card (Story, QC #1 &amp; Burn Ritual) | Warm Amber &amp; Vanilla Bean ($44.00) | Puck &amp; Wick™</image:title>
+      <image:loc>https://puckandwick.com/assets/images/packaging/atelier-card-obsidian.jpg?v=65</image:loc>
+      <image:title>Warm Amber &amp; Vanilla Bean — Included 3.5&quot;×3.5&quot; Square Atelier Card (Story, QC #1 &amp; Burn Ritual) | Warm Amber &amp; Vanilla Bean | Puck &amp; Wick™</image:title>
       <image:caption>Warm Amber &amp; Vanilla Bean — Included 3.5&quot;×3.5&quot; Square Atelier Card (Story, QC #1 &amp; Burn Ritual). Rich, sensual, and universally appealing. Rich golden Baltic amber layered with cracked Madagascar vanilla pods, warm cashmere musk, and subtle benzoin resin that fills the room with comforting elegance.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -242,7 +242,7 @@
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://puckandwick.com/assets/images/packaging/shelf-candle-locker-room-mint.jpg</image:loc>
-      <image:title>Locker Room Mint &amp; Eucalyptus ($44.00) | Puck &amp; Wick™</image:title>
+      <image:title>Locker Room Mint &amp; Eucalyptus | Puck &amp; Wick™</image:title>
       <image:caption>Engineered to wipe away mental fatigue and stale room air. A high-voltage surge of pure Tasmanian eucalyptus globulus, crushed garden spearmint, clary sage, and crisp mountain mineral salt.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -253,8 +253,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/packaging/shelf-candle-locker-room-mint.jpg?v=61</image:loc>
-      <image:title>Locker Room Mint &amp; Eucalyptus — Unlit 10 oz Soy Vessel (8.5 oz Fill), Brushed Brass Lid &amp; Rigid Two-Piece Collector Box | Locker Room Mint &amp; Eucalyptus ($44.00) | Puck &amp; Wick™</image:title>
+      <image:loc>https://puckandwick.com/assets/images/packaging/shelf-candle-locker-room-mint.jpg?v=65</image:loc>
+      <image:title>Locker Room Mint &amp; Eucalyptus — Unlit 10 oz Soy Vessel (8.5 oz Fill), Brushed Brass Lid &amp; Rigid Two-Piece Collector Box | Locker Room Mint &amp; Eucalyptus | Puck &amp; Wick™</image:title>
       <image:caption>Locker Room Mint &amp; Eucalyptus — Unlit 10 oz Soy Vessel (8.5 oz Fill), Brushed Brass Lid &amp; Rigid Two-Piece Collector Box. Engineered to wipe away mental fatigue and stale room air. A high-voltage surge of pure Tasmanian eucalyptus globulus, crushed garden spearmint, clary sage, and crisp mountain mineral salt.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -265,8 +265,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/packaging/atelier-card-obsidian.jpg?v=61</image:loc>
-      <image:title>Locker Room Mint &amp; Eucalyptus — Included 3.5&quot;×3.5&quot; Square Atelier Card (Story, QC #1 &amp; Burn Ritual) | Locker Room Mint &amp; Eucalyptus ($44.00) | Puck &amp; Wick™</image:title>
+      <image:loc>https://puckandwick.com/assets/images/packaging/atelier-card-obsidian.jpg?v=65</image:loc>
+      <image:title>Locker Room Mint &amp; Eucalyptus — Included 3.5&quot;×3.5&quot; Square Atelier Card (Story, QC #1 &amp; Burn Ritual) | Locker Room Mint &amp; Eucalyptus | Puck &amp; Wick™</image:title>
       <image:caption>Locker Room Mint &amp; Eucalyptus — Included 3.5&quot;×3.5&quot; Square Atelier Card (Story, QC #1 &amp; Burn Ritual). Engineered to wipe away mental fatigue and stale room air. A high-voltage surge of pure Tasmanian eucalyptus globulus, crushed garden spearmint, clary sage, and crisp mountain mineral salt.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -278,7 +278,7 @@
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://puckandwick.com/assets/images/packaging/shelf-candle-cashmere-white-tea.jpg</image:loc>
-      <image:title>Cashmere &amp; White Tea ($44.00) | Puck &amp; Wick™</image:title>
+      <image:title>Cashmere &amp; White Tea | Puck &amp; Wick™</image:title>
       <image:caption>Poured in our signature Frosted Warm Ivory &amp; Champagne-Gold Sanctuary vessel. An enveloping, serene botanical infusion of steeped imperial white tea leaves and Sicilian bergamot zest, wrapped in spun cashmere accord, silver jasmine petals, and warm blond hinoki wood.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -289,8 +289,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/packaging/shelf-candle-cashmere-white-tea.jpg?v=61</image:loc>
-      <image:title>Cashmere &amp; White Tea — Unlit 10 oz Soy Vessel (8.5 oz Fill), Brushed Brass Lid &amp; Rigid Two-Piece Collector Box | Cashmere &amp; White Tea ($44.00) | Puck &amp; Wick™</image:title>
+      <image:loc>https://puckandwick.com/assets/images/packaging/shelf-candle-cashmere-white-tea.jpg?v=65</image:loc>
+      <image:title>Cashmere &amp; White Tea — Unlit 10 oz Soy Vessel (8.5 oz Fill), Brushed Brass Lid &amp; Rigid Two-Piece Collector Box | Cashmere &amp; White Tea | Puck &amp; Wick™</image:title>
       <image:caption>Cashmere &amp; White Tea — Unlit 10 oz Soy Vessel (8.5 oz Fill), Brushed Brass Lid &amp; Rigid Two-Piece Collector Box. Poured in our signature Frosted Warm Ivory &amp; Champagne-Gold Sanctuary vessel. An enveloping, serene botanical infusion of steeped imperial white tea leaves and Sicilian bergamot zest, wrapped in spun cashmere accord, silver jasmine petals, and warm blond hinoki wood.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -301,8 +301,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/packaging/atelier-card-ivory.jpg?v=61</image:loc>
-      <image:title>Cashmere &amp; White Tea — Included 3.5&quot;×3.5&quot; Square Atelier Card (Story, QC #1 &amp; Burn Ritual) | Cashmere &amp; White Tea ($44.00) | Puck &amp; Wick™</image:title>
+      <image:loc>https://puckandwick.com/assets/images/packaging/atelier-card-ivory.jpg?v=65</image:loc>
+      <image:title>Cashmere &amp; White Tea — Included 3.5&quot;×3.5&quot; Square Atelier Card (Story, QC #1 &amp; Burn Ritual) | Cashmere &amp; White Tea | Puck &amp; Wick™</image:title>
       <image:caption>Cashmere &amp; White Tea — Included 3.5&quot;×3.5&quot; Square Atelier Card (Story, QC #1 &amp; Burn Ritual). Poured in our signature Frosted Warm Ivory &amp; Champagne-Gold Sanctuary vessel. An enveloping, serene botanical infusion of steeped imperial white tea leaves and Sicilian bergamot zest, wrapped in spun cashmere accord, silver jasmine petals, and warm blond hinoki wood.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -314,7 +314,7 @@
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://puckandwick.com/assets/images/packaging/shelf-candle-velvet-vanilla-santal.jpg</image:loc>
-      <image:title>Velvet Vanilla &amp; Santal ($44.00) | Puck &amp; Wick™</image:title>
+      <image:title>Velvet Vanilla &amp; Santal | Puck &amp; Wick™</image:title>
       <image:caption>Poured in our Frosted Warm Ivory &amp; Champagne-Gold Sanctuary vessel. A sensual, intoxicating balance of crushed green cardamom and warm papyrus layered over creamy Australian sandalwood heart, cured Madagascar vanilla bean pods, and golden benzoin resin.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -325,8 +325,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/packaging/shelf-candle-velvet-vanilla-santal.jpg?v=61</image:loc>
-      <image:title>Velvet Vanilla &amp; Santal — Unlit 10 oz Soy Vessel (8.5 oz Fill), Brushed Brass Lid &amp; Rigid Two-Piece Collector Box | Velvet Vanilla &amp; Santal ($44.00) | Puck &amp; Wick™</image:title>
+      <image:loc>https://puckandwick.com/assets/images/packaging/shelf-candle-velvet-vanilla-santal.jpg?v=65</image:loc>
+      <image:title>Velvet Vanilla &amp; Santal — Unlit 10 oz Soy Vessel (8.5 oz Fill), Brushed Brass Lid &amp; Rigid Two-Piece Collector Box | Velvet Vanilla &amp; Santal | Puck &amp; Wick™</image:title>
       <image:caption>Velvet Vanilla &amp; Santal — Unlit 10 oz Soy Vessel (8.5 oz Fill), Brushed Brass Lid &amp; Rigid Two-Piece Collector Box. Poured in our Frosted Warm Ivory &amp; Champagne-Gold Sanctuary vessel. A sensual, intoxicating balance of crushed green cardamom and warm papyrus layered over creamy Australian sandalwood heart, cured Madagascar vanilla bean pods, and golden benzoin resin.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -337,8 +337,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/packaging/atelier-card-ivory.jpg?v=61</image:loc>
-      <image:title>Velvet Vanilla &amp; Santal — Included 3.5&quot;×3.5&quot; Square Atelier Card (Story, QC #1 &amp; Burn Ritual) | Velvet Vanilla &amp; Santal ($44.00) | Puck &amp; Wick™</image:title>
+      <image:loc>https://puckandwick.com/assets/images/packaging/atelier-card-ivory.jpg?v=65</image:loc>
+      <image:title>Velvet Vanilla &amp; Santal — Included 3.5&quot;×3.5&quot; Square Atelier Card (Story, QC #1 &amp; Burn Ritual) | Velvet Vanilla &amp; Santal | Puck &amp; Wick™</image:title>
       <image:caption>Velvet Vanilla &amp; Santal — Included 3.5&quot;×3.5&quot; Square Atelier Card (Story, QC #1 &amp; Burn Ritual). Poured in our Frosted Warm Ivory &amp; Champagne-Gold Sanctuary vessel. A sensual, intoxicating balance of crushed green cardamom and warm papyrus layered over creamy Australian sandalwood heart, cured Madagascar vanilla bean pods, and golden benzoin resin.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -350,7 +350,7 @@
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://puckandwick.com/assets/images/packaging/shelf-candle-sea-salt-orchid.jpg</image:loc>
-      <image:title>Sea Salt &amp; White Orchid ($44.00) | Puck &amp; Wick™</image:title>
+      <image:title>Sea Salt &amp; White Orchid | Puck &amp; Wick™</image:title>
       <image:caption>Poured in our Frosted Warm Ivory &amp; Champagne-Gold Sanctuary vessel. A luminous, airy coastal-botanical composition pairing crystalline sea salt and ozonated mist with velvety night-blooming white orchid, wild freesia, and sun-bleached driftwood.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -361,8 +361,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/packaging/shelf-candle-sea-salt-orchid.jpg?v=61</image:loc>
-      <image:title>Sea Salt &amp; White Orchid — Unlit 10 oz Soy Vessel (8.5 oz Fill), Brushed Brass Lid &amp; Rigid Two-Piece Collector Box | Sea Salt &amp; White Orchid ($44.00) | Puck &amp; Wick™</image:title>
+      <image:loc>https://puckandwick.com/assets/images/packaging/shelf-candle-sea-salt-orchid.jpg?v=65</image:loc>
+      <image:title>Sea Salt &amp; White Orchid — Unlit 10 oz Soy Vessel (8.5 oz Fill), Brushed Brass Lid &amp; Rigid Two-Piece Collector Box | Sea Salt &amp; White Orchid | Puck &amp; Wick™</image:title>
       <image:caption>Sea Salt &amp; White Orchid — Unlit 10 oz Soy Vessel (8.5 oz Fill), Brushed Brass Lid &amp; Rigid Two-Piece Collector Box. Poured in our Frosted Warm Ivory &amp; Champagne-Gold Sanctuary vessel. A luminous, airy coastal-botanical composition pairing crystalline sea salt and ozonated mist with velvety night-blooming white orchid, wild freesia, and sun-bleached driftwood.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -373,8 +373,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/packaging/atelier-card-ivory.jpg?v=61</image:loc>
-      <image:title>Sea Salt &amp; White Orchid — Included 3.5&quot;×3.5&quot; Square Atelier Card (Story, QC #1 &amp; Burn Ritual) | Sea Salt &amp; White Orchid ($44.00) | Puck &amp; Wick™</image:title>
+      <image:loc>https://puckandwick.com/assets/images/packaging/atelier-card-ivory.jpg?v=65</image:loc>
+      <image:title>Sea Salt &amp; White Orchid — Included 3.5&quot;×3.5&quot; Square Atelier Card (Story, QC #1 &amp; Burn Ritual) | Sea Salt &amp; White Orchid | Puck &amp; Wick™</image:title>
       <image:caption>Sea Salt &amp; White Orchid — Included 3.5&quot;×3.5&quot; Square Atelier Card (Story, QC #1 &amp; Burn Ritual). Poured in our Frosted Warm Ivory &amp; Champagne-Gold Sanctuary vessel. A luminous, airy coastal-botanical composition pairing crystalline sea salt and ozonated mist with velvety night-blooming white orchid, wild freesia, and sun-bleached driftwood.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -386,7 +386,7 @@
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://puckandwick.com/assets/images/item-puck-men.jpg</image:loc>
-      <image:title>The 3.0&quot; ZeoCarb-98™ Odor Puck ($48.00) | Puck &amp; Wick™</image:title>
+      <image:title>The 3.0&quot; ZeoCarb-98™ Odor Puck | Puck &amp; Wick™</image:title>
       <image:caption>Engineered in one iconic unisex hardware colorway—Matte Obsidian-Black center face with a CNC-knurled Brushed Champagne-Gold perimeter ring—built to look timeless inside a pro hockey locker stall, a gym duffel, a quilted yoga tote, or a luxury walk-in closet. Powered by sub-2nm activated coconut carbon (&gt;1,000 m²/g) and our proprietary ZeoCarb-98™ molecular core, each 3.0&quot; puck covers up to 120 Sq. Ft. of open-air space. Symmetrical 3-Axis Omni-Directional Venting across the top, bottom, and 360° side wall means there is no upside down—drop it into any bag or shelf and it breathes continuously.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -398,7 +398,7 @@
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://puckandwick.com/assets/images/item-puck-men.jpg</image:loc>
-      <image:title>The 3.0&quot; ZeoCarb-98™ Odor Puck — Universal Matte Obsidian &amp; Brushed Champagne-Gold Hardware | The 3.0&quot; ZeoCarb-98™ Odor Puck ($48.00) | Puck &amp; Wick™</image:title>
+      <image:title>The 3.0&quot; ZeoCarb-98™ Odor Puck — Universal Matte Obsidian &amp; Brushed Champagne-Gold Hardware | The 3.0&quot; ZeoCarb-98™ Odor Puck | Puck &amp; Wick™</image:title>
       <image:caption>The 3.0&quot; ZeoCarb-98™ Odor Puck — Universal Matte Obsidian &amp; Brushed Champagne-Gold Hardware. Engineered in one iconic unisex hardware colorway—Matte Obsidian-Black center face with a CNC-knurled Brushed Champagne-Gold perimeter ring—built to look timeless inside a pro hockey locker stall, a gym duffel, a quilted yoga tote, or a luxury walk-in closet. Powered by sub-2nm activated coconut carbon (&gt;1,000 m²/g) and our proprietary ZeoCarb-98™ molecular core, each 3.0&quot; puck covers up to 120 Sq. Ft. of open-air space. Symmetrical 3-Axis Omni-Directional Venting across the top, bottom, and 360° side wall means there is no upside down—drop it into any bag or shelf and it breathes continuously.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -409,8 +409,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/packaging/puck-men-box.jpg?v=52</image:loc>
-      <image:title>Compact 4.2&quot; × 4.2&quot; Magnetic Front-Flap Collector Box (Open Presentation) | The 3.0&quot; ZeoCarb-98™ Odor Puck ($48.00) | Puck &amp; Wick™</image:title>
+      <image:loc>https://puckandwick.com/assets/images/packaging/puck-men-box.jpg?v=65</image:loc>
+      <image:title>Compact 4.2&quot; × 4.2&quot; Magnetic Front-Flap Collector Box (Open Presentation) | The 3.0&quot; ZeoCarb-98™ Odor Puck | Puck &amp; Wick™</image:title>
       <image:caption>Compact 4.2&quot; × 4.2&quot; Magnetic Front-Flap Collector Box (Open Presentation). Engineered in one iconic unisex hardware colorway—Matte Obsidian-Black center face with a CNC-knurled Brushed Champagne-Gold perimeter ring—built to look timeless inside a pro hockey locker stall, a gym duffel, a quilted yoga tote, or a luxury walk-in closet. Powered by sub-2nm activated coconut carbon (&gt;1,000 m²/g) and our proprietary ZeoCarb-98™ molecular core, each 3.0&quot; puck covers up to 120 Sq. Ft. of open-air space. Symmetrical 3-Axis Omni-Directional Venting across the top, bottom, and 360° side wall means there is no upside down—drop it into any bag or shelf and it breathes continuously.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -421,8 +421,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/packaging/puck-men-box-closed.jpg?v=62</image:loc>
-      <image:title>Compact 4.2&quot; × 4.2&quot; Matte-Black Magnetic Front-Flap Collector Box (Closed) | The 3.0&quot; ZeoCarb-98™ Odor Puck ($48.00) | Puck &amp; Wick™</image:title>
+      <image:loc>https://puckandwick.com/assets/images/packaging/puck-men-box-closed.jpg?v=65</image:loc>
+      <image:title>Compact 4.2&quot; × 4.2&quot; Matte-Black Magnetic Front-Flap Collector Box (Closed) | The 3.0&quot; ZeoCarb-98™ Odor Puck | Puck &amp; Wick™</image:title>
       <image:caption>Compact 4.2&quot; × 4.2&quot; Matte-Black Magnetic Front-Flap Collector Box (Closed). Engineered in one iconic unisex hardware colorway—Matte Obsidian-Black center face with a CNC-knurled Brushed Champagne-Gold perimeter ring—built to look timeless inside a pro hockey locker stall, a gym duffel, a quilted yoga tote, or a luxury walk-in closet. Powered by sub-2nm activated coconut carbon (&gt;1,000 m²/g) and our proprietary ZeoCarb-98™ molecular core, each 3.0&quot; puck covers up to 120 Sq. Ft. of open-air space. Symmetrical 3-Axis Omni-Directional Venting across the top, bottom, and 360° side wall means there is no upside down—drop it into any bag or shelf and it breathes continuously.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -433,8 +433,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/packaging/puck-men-angled-open.jpg?v=52</image:loc>
-      <image:title>Pro Locker Stall — Covers Up to 120 Sq. Ft. Open-Air Gear Neutralization | The 3.0&quot; ZeoCarb-98™ Odor Puck ($48.00) | Puck &amp; Wick™</image:title>
+      <image:loc>https://puckandwick.com/assets/images/packaging/puck-men-angled-open.jpg?v=65</image:loc>
+      <image:title>Pro Locker Stall — Covers Up to 120 Sq. Ft. Open-Air Gear Neutralization | The 3.0&quot; ZeoCarb-98™ Odor Puck | Puck &amp; Wick™</image:title>
       <image:caption>Pro Locker Stall — Covers Up to 120 Sq. Ft. Open-Air Gear Neutralization. Engineered in one iconic unisex hardware colorway—Matte Obsidian-Black center face with a CNC-knurled Brushed Champagne-Gold perimeter ring—built to look timeless inside a pro hockey locker stall, a gym duffel, a quilted yoga tote, or a luxury walk-in closet. Powered by sub-2nm activated coconut carbon (&gt;1,000 m²/g) and our proprietary ZeoCarb-98™ molecular core, each 3.0&quot; puck covers up to 120 Sq. Ft. of open-air space. Symmetrical 3-Axis Omni-Directional Venting across the top, bottom, and 360° side wall means there is no upside down—drop it into any bag or shelf and it breathes continuously.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -445,8 +445,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/packaging/puck-men-gym-bag.jpg?v=52</image:loc>
-      <image:title>Drop Directly Into Hockey or Gym Duffel Bag (3-Axis Airflow — No Upside Down) | The 3.0&quot; ZeoCarb-98™ Odor Puck ($48.00) | Puck &amp; Wick™</image:title>
+      <image:loc>https://puckandwick.com/assets/images/packaging/puck-men-gym-bag.jpg?v=65</image:loc>
+      <image:title>Drop Directly Into Hockey or Gym Duffel Bag (3-Axis Airflow — No Upside Down) | The 3.0&quot; ZeoCarb-98™ Odor Puck | Puck &amp; Wick™</image:title>
       <image:caption>Drop Directly Into Hockey or Gym Duffel Bag (3-Axis Airflow — No Upside Down). Engineered in one iconic unisex hardware colorway—Matte Obsidian-Black center face with a CNC-knurled Brushed Champagne-Gold perimeter ring—built to look timeless inside a pro hockey locker stall, a gym duffel, a quilted yoga tote, or a luxury walk-in closet. Powered by sub-2nm activated coconut carbon (&gt;1,000 m²/g) and our proprietary ZeoCarb-98™ molecular core, each 3.0&quot; puck covers up to 120 Sq. Ft. of open-air space. Symmetrical 3-Axis Omni-Directional Venting across the top, bottom, and 360° side wall means there is no upside down—drop it into any bag or shelf and it breathes continuously.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -457,8 +457,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/packaging/puck-women-yoga-bag.jpg?v=52</image:loc>
-      <image:title>Tuck Into Women’s Quilted Yoga, Pilates, or Workout Tote Bag | The 3.0&quot; ZeoCarb-98™ Odor Puck ($48.00) | Puck &amp; Wick™</image:title>
+      <image:loc>https://puckandwick.com/assets/images/packaging/puck-women-yoga-bag.jpg?v=65</image:loc>
+      <image:title>Tuck Into Women’s Quilted Yoga, Pilates, or Workout Tote Bag | The 3.0&quot; ZeoCarb-98™ Odor Puck | Puck &amp; Wick™</image:title>
       <image:caption>Tuck Into Women’s Quilted Yoga, Pilates, or Workout Tote Bag. Engineered in one iconic unisex hardware colorway—Matte Obsidian-Black center face with a CNC-knurled Brushed Champagne-Gold perimeter ring—built to look timeless inside a pro hockey locker stall, a gym duffel, a quilted yoga tote, or a luxury walk-in closet. Powered by sub-2nm activated coconut carbon (&gt;1,000 m²/g) and our proprietary ZeoCarb-98™ molecular core, each 3.0&quot; puck covers up to 120 Sq. Ft. of open-air space. Symmetrical 3-Axis Omni-Directional Venting across the top, bottom, and 360° side wall means there is no upside down—drop it into any bag or shelf and it breathes continuously.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -469,8 +469,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/packaging/puck-women-closet.jpg?v=52</image:loc>
-      <image:title>Walk-In Closet, Sneaker Shelf &amp; Mudroom Protection | The 3.0&quot; ZeoCarb-98™ Odor Puck ($48.00) | Puck &amp; Wick™</image:title>
+      <image:loc>https://puckandwick.com/assets/images/packaging/puck-women-closet.jpg?v=65</image:loc>
+      <image:title>Walk-In Closet, Sneaker Shelf &amp; Mudroom Protection | The 3.0&quot; ZeoCarb-98™ Odor Puck | Puck &amp; Wick™</image:title>
       <image:caption>Walk-In Closet, Sneaker Shelf &amp; Mudroom Protection. Engineered in one iconic unisex hardware colorway—Matte Obsidian-Black center face with a CNC-knurled Brushed Champagne-Gold perimeter ring—built to look timeless inside a pro hockey locker stall, a gym duffel, a quilted yoga tote, or a luxury walk-in closet. Powered by sub-2nm activated coconut carbon (&gt;1,000 m²/g) and our proprietary ZeoCarb-98™ molecular core, each 3.0&quot; puck covers up to 120 Sq. Ft. of open-air space. Symmetrical 3-Axis Omni-Directional Venting across the top, bottom, and 360° side wall means there is no upside down—drop it into any bag or shelf and it breathes continuously.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -482,7 +482,7 @@
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://puckandwick.com/assets/images/item-mini-pucks-pair.jpg</image:loc>
-      <image:title>The 2.0&quot; ZeoCarb-98™ Mini Odor Pucks (Set of 2) ($38.00) | Puck &amp; Wick™</image:title>
+      <image:title>The 2.0&quot; ZeoCarb-98™ Mini Odor Pucks (Set of 2) | Puck &amp; Wick™</image:title>
       <image:caption>While our 3.0&quot; Puck treats up to 120 Sq. Ft. across your locker stall, closet, or gear bag, skates, hockey gloves, and athletic footwear trap moisture and bacteria deep inside narrow cuffs and toe boxes. This compact 2.0&quot; Twin-Pack slides effortlessly into left and right skates, hockey gloves, cleats, or sneakers—delivering up to 40 Sq. Ft. of targeted ZeoCarb-98™ + Activated Carbon molecular odor destruction with 3-Axis Omni-Directional Airflow (no upside down).</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -494,7 +494,7 @@
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://puckandwick.com/assets/images/item-mini-pucks-pair.jpg</image:loc>
-      <image:title>The 2.0&quot; ZeoCarb-98™ Mini Odor Pucks (Set of 2) — Covers Up to 40 Sq. Ft. | The 2.0&quot; ZeoCarb-98™ Mini Odor Pucks (Set of 2) ($38.00) | Puck &amp; Wick™</image:title>
+      <image:title>The 2.0&quot; ZeoCarb-98™ Mini Odor Pucks (Set of 2) — Covers Up to 40 Sq. Ft. | The 2.0&quot; ZeoCarb-98™ Mini Odor Pucks (Set of 2) | Puck &amp; Wick™</image:title>
       <image:caption>The 2.0&quot; ZeoCarb-98™ Mini Odor Pucks (Set of 2) — Covers Up to 40 Sq. Ft.. While our 3.0&quot; Puck treats up to 120 Sq. Ft. across your locker stall, closet, or gear bag, skates, hockey gloves, and athletic footwear trap moisture and bacteria deep inside narrow cuffs and toe boxes. This compact 2.0&quot; Twin-Pack slides effortlessly into left and right skates, hockey gloves, cleats, or sneakers—delivering up to 40 Sq. Ft. of targeted ZeoCarb-98™ + Activated Carbon molecular odor destruction with 3-Axis Omni-Directional Airflow (no upside down).</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -505,8 +505,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/packaging/puck-mini-pair-box.jpg?v=52</image:loc>
-      <image:title>Dual-Cavity Matte-Black Magnetic Front-Flap Collector Box (Open Presentation) | The 2.0&quot; ZeoCarb-98™ Mini Odor Pucks (Set of 2) ($38.00) | Puck &amp; Wick™</image:title>
+      <image:loc>https://puckandwick.com/assets/images/packaging/puck-mini-pair-box.jpg?v=65</image:loc>
+      <image:title>Dual-Cavity Matte-Black Magnetic Front-Flap Collector Box (Open Presentation) | The 2.0&quot; ZeoCarb-98™ Mini Odor Pucks (Set of 2) | Puck &amp; Wick™</image:title>
       <image:caption>Dual-Cavity Matte-Black Magnetic Front-Flap Collector Box (Open Presentation). While our 3.0&quot; Puck treats up to 120 Sq. Ft. across your locker stall, closet, or gear bag, skates, hockey gloves, and athletic footwear trap moisture and bacteria deep inside narrow cuffs and toe boxes. This compact 2.0&quot; Twin-Pack slides effortlessly into left and right skates, hockey gloves, cleats, or sneakers—delivering up to 40 Sq. Ft. of targeted ZeoCarb-98™ + Activated Carbon molecular odor destruction with 3-Axis Omni-Directional Airflow (no upside down).</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -517,8 +517,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/packaging/puck-mini-pair-box-closed.jpg?v=62</image:loc>
-      <image:title>Sleek All-Black Magnetic Front-Flap Collector Box (Closed) | The 2.0&quot; ZeoCarb-98™ Mini Odor Pucks (Set of 2) ($38.00) | Puck &amp; Wick™</image:title>
+      <image:loc>https://puckandwick.com/assets/images/packaging/puck-mini-pair-box-closed.jpg?v=65</image:loc>
+      <image:title>Sleek All-Black Magnetic Front-Flap Collector Box (Closed) | The 2.0&quot; ZeoCarb-98™ Mini Odor Pucks (Set of 2) | Puck &amp; Wick™</image:title>
       <image:caption>Sleek All-Black Magnetic Front-Flap Collector Box (Closed). While our 3.0&quot; Puck treats up to 120 Sq. Ft. across your locker stall, closet, or gear bag, skates, hockey gloves, and athletic footwear trap moisture and bacteria deep inside narrow cuffs and toe boxes. This compact 2.0&quot; Twin-Pack slides effortlessly into left and right skates, hockey gloves, cleats, or sneakers—delivering up to 40 Sq. Ft. of targeted ZeoCarb-98™ + Activated Carbon molecular odor destruction with 3-Axis Omni-Directional Airflow (no upside down).</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -530,7 +530,7 @@
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://puckandwick.com/assets/images/packaging/mini-puck-step-1.jpg</image:loc>
-      <image:title>Step 01 • Compact 2.0&quot; (50mm) Open-Palm Scale (3-Axis Airflow — No Upside Down) | The 2.0&quot; ZeoCarb-98™ Mini Odor Pucks (Set of 2) ($38.00) | Puck &amp; Wick™</image:title>
+      <image:title>Step 01 • Compact 2.0&quot; (50mm) Open-Palm Scale (3-Axis Airflow — No Upside Down) | The 2.0&quot; ZeoCarb-98™ Mini Odor Pucks (Set of 2) | Puck &amp; Wick™</image:title>
       <image:caption>Step 01 • Compact 2.0&quot; (50mm) Open-Palm Scale (3-Axis Airflow — No Upside Down). While our 3.0&quot; Puck treats up to 120 Sq. Ft. across your locker stall, closet, or gear bag, skates, hockey gloves, and athletic footwear trap moisture and bacteria deep inside narrow cuffs and toe boxes. This compact 2.0&quot; Twin-Pack slides effortlessly into left and right skates, hockey gloves, cleats, or sneakers—delivering up to 40 Sq. Ft. of targeted ZeoCarb-98™ + Activated Carbon molecular odor destruction with 3-Axis Omni-Directional Airflow (no upside down).</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -542,7 +542,7 @@
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://puckandwick.com/assets/images/packaging/mini-puck-step-2.jpg</image:loc>
-      <image:title>Step 02 • Drop Straight Into Hockey Glove Wrist Cuff Opening | The 2.0&quot; ZeoCarb-98™ Mini Odor Pucks (Set of 2) ($38.00) | Puck &amp; Wick™</image:title>
+      <image:title>Step 02 • Drop Straight Into Hockey Glove Wrist Cuff Opening | The 2.0&quot; ZeoCarb-98™ Mini Odor Pucks (Set of 2) | Puck &amp; Wick™</image:title>
       <image:caption>Step 02 • Drop Straight Into Hockey Glove Wrist Cuff Opening. While our 3.0&quot; Puck treats up to 120 Sq. Ft. across your locker stall, closet, or gear bag, skates, hockey gloves, and athletic footwear trap moisture and bacteria deep inside narrow cuffs and toe boxes. This compact 2.0&quot; Twin-Pack slides effortlessly into left and right skates, hockey gloves, cleats, or sneakers—delivering up to 40 Sq. Ft. of targeted ZeoCarb-98™ + Activated Carbon molecular odor destruction with 3-Axis Omni-Directional Airflow (no upside down).</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -554,7 +554,7 @@
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://puckandwick.com/assets/images/packaging/mini-puck-step-3.jpg</image:loc>
-      <image:title>Step 03 • Drop Into Skate Boot or Athletic Sneaker Overnight | The 2.0&quot; ZeoCarb-98™ Mini Odor Pucks (Set of 2) ($38.00) | Puck &amp; Wick™</image:title>
+      <image:title>Step 03 • Drop Into Skate Boot or Athletic Sneaker Overnight | The 2.0&quot; ZeoCarb-98™ Mini Odor Pucks (Set of 2) | Puck &amp; Wick™</image:title>
       <image:caption>Step 03 • Drop Into Skate Boot or Athletic Sneaker Overnight. While our 3.0&quot; Puck treats up to 120 Sq. Ft. across your locker stall, closet, or gear bag, skates, hockey gloves, and athletic footwear trap moisture and bacteria deep inside narrow cuffs and toe boxes. This compact 2.0&quot; Twin-Pack slides effortlessly into left and right skates, hockey gloves, cleats, or sneakers—delivering up to 40 Sq. Ft. of targeted ZeoCarb-98™ + Activated Carbon molecular odor destruction with 3-Axis Omni-Directional Airflow (no upside down).</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -565,8 +565,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/item-bodywash-men.jpg?v=62</image:loc>
-      <image:title>Athlete Charcoal &amp; ZeoCarb-98™ Body Wash ($38.00) | Puck &amp; Wick™</image:title>
+      <image:loc>https://puckandwick.com/assets/images/item-bodywash-men.jpg?v=65</image:loc>
+      <image:title>Athlete Charcoal &amp; ZeoCarb-98™ Body Wash | Puck &amp; Wick™</image:title>
       <image:caption>Sold individually as a standalone 8 fl oz full-size pump bottle formulated specifically to strip deep-seated locker-room sweat, equipment bacteria, and rink grime without drying skin. Activated binchotan charcoal draws impurities from pores while our proprietary ZeoCarb-98™ complex and cold-pressed blue eucalyptus eliminate post-game odor on contact.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -577,8 +577,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/item-bodywash-men.jpg?v=62</image:loc>
-      <image:title>8 fl oz Athlete Charcoal &amp; ZeoCarb-98™ Body Wash — Individual Pump Bottle | Athlete Charcoal &amp; ZeoCarb-98™ Body Wash ($38.00) | Puck &amp; Wick™</image:title>
+      <image:loc>https://puckandwick.com/assets/images/item-bodywash-men.jpg?v=65</image:loc>
+      <image:title>8 fl oz Athlete Charcoal &amp; ZeoCarb-98™ Body Wash — Individual Pump Bottle | Athlete Charcoal &amp; ZeoCarb-98™ Body Wash | Puck &amp; Wick™</image:title>
       <image:caption>8 fl oz Athlete Charcoal &amp; ZeoCarb-98™ Body Wash — Individual Pump Bottle. Sold individually as a standalone 8 fl oz full-size pump bottle formulated specifically to strip deep-seated locker-room sweat, equipment bacteria, and rink grime without drying skin. Activated binchotan charcoal draws impurities from pores while our proprietary ZeoCarb-98™ complex and cold-pressed blue eucalyptus eliminate post-game odor on contact.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -589,8 +589,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/packaging/wash-men-shower.jpg?v=62</image:loc>
-      <image:title>8 fl oz Athlete Body Wash — Post-Game Binchotan Charcoal &amp; Blue Eucalyptus Gel | Athlete Charcoal &amp; ZeoCarb-98™ Body Wash ($38.00) | Puck &amp; Wick™</image:title>
+      <image:loc>https://puckandwick.com/assets/images/packaging/wash-men-shower.jpg?v=65</image:loc>
+      <image:title>8 fl oz Athlete Body Wash — Post-Game Binchotan Charcoal &amp; Blue Eucalyptus Gel | Athlete Charcoal &amp; ZeoCarb-98™ Body Wash | Puck &amp; Wick™</image:title>
       <image:caption>8 fl oz Athlete Body Wash — Post-Game Binchotan Charcoal &amp; Blue Eucalyptus Gel. Sold individually as a standalone 8 fl oz full-size pump bottle formulated specifically to strip deep-seated locker-room sweat, equipment bacteria, and rink grime without drying skin. Activated binchotan charcoal draws impurities from pores while our proprietary ZeoCarb-98™ complex and cold-pressed blue eucalyptus eliminate post-game odor on contact.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -601,8 +601,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/packaging/wash-men-gym-towel.jpg?v=62</image:loc>
-      <image:title>8 fl oz Athlete Body Wash — Built for Locker Room &amp; Post-Workout Recovery | Athlete Charcoal &amp; ZeoCarb-98™ Body Wash ($38.00) | Puck &amp; Wick™</image:title>
+      <image:loc>https://puckandwick.com/assets/images/packaging/wash-men-gym-towel.jpg?v=65</image:loc>
+      <image:title>8 fl oz Athlete Body Wash — Built for Locker Room &amp; Post-Workout Recovery | Athlete Charcoal &amp; ZeoCarb-98™ Body Wash | Puck &amp; Wick™</image:title>
       <image:caption>8 fl oz Athlete Body Wash — Built for Locker Room &amp; Post-Workout Recovery. Sold individually as a standalone 8 fl oz full-size pump bottle formulated specifically to strip deep-seated locker-room sweat, equipment bacteria, and rink grime without drying skin. Activated binchotan charcoal draws impurities from pores while our proprietary ZeoCarb-98™ complex and cold-pressed blue eucalyptus eliminate post-game odor on contact.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -613,8 +613,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/item-bodywash-women.jpg?v=62</image:loc>
-      <image:title>Sanctuary White Clay &amp; Silk Body Wash ($38.00) | Puck &amp; Wick™</image:title>
+      <image:loc>https://puckandwick.com/assets/images/item-bodywash-women.jpg?v=65</image:loc>
+      <image:title>Sanctuary White Clay &amp; Silk Body Wash | Puck &amp; Wick™</image:title>
       <image:caption>Sold individually as a standalone 8 fl oz luxury pump bottle crafted in our Frosted Warm Alabaster-Ivory &amp; Brushed Champagne-Gold Sanctuary finish. Mineral-rich Kaolin white clay gently purifies skin after hot yoga, Pilates, or training while hydrolyzed silk amino acids, imperial white tea, and our proprietary ZeoCarb-98™ botanical complex leave skin velvety-soft, hydrated, and 100% odor-free.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -625,8 +625,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/item-bodywash-women.jpg?v=62</image:loc>
-      <image:title>8 fl oz Sanctuary White Clay &amp; Silk Body Wash — Frosted Ivory &amp; Champagne-Gold Pump Bottle | Sanctuary White Clay &amp; Silk Body Wash ($38.00) | Puck &amp; Wick™</image:title>
+      <image:loc>https://puckandwick.com/assets/images/item-bodywash-women.jpg?v=65</image:loc>
+      <image:title>8 fl oz Sanctuary White Clay &amp; Silk Body Wash — Frosted Ivory &amp; Champagne-Gold Pump Bottle | Sanctuary White Clay &amp; Silk Body Wash | Puck &amp; Wick™</image:title>
       <image:caption>8 fl oz Sanctuary White Clay &amp; Silk Body Wash — Frosted Ivory &amp; Champagne-Gold Pump Bottle. Sold individually as a standalone 8 fl oz luxury pump bottle crafted in our Frosted Warm Alabaster-Ivory &amp; Brushed Champagne-Gold Sanctuary finish. Mineral-rich Kaolin white clay gently purifies skin after hot yoga, Pilates, or training while hydrolyzed silk amino acids, imperial white tea, and our proprietary ZeoCarb-98™ botanical complex leave skin velvety-soft, hydrated, and 100% odor-free.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -637,8 +637,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/packaging/wash-women-shower.jpg?v=62</image:loc>
-      <image:title>8 fl oz Sanctuary Body Wash — Post-Pilates &amp; Spa Shower Ritual | Sanctuary White Clay &amp; Silk Body Wash ($38.00) | Puck &amp; Wick™</image:title>
+      <image:loc>https://puckandwick.com/assets/images/packaging/wash-women-shower.jpg?v=65</image:loc>
+      <image:title>8 fl oz Sanctuary Body Wash — Post-Pilates &amp; Spa Shower Ritual | Sanctuary White Clay &amp; Silk Body Wash | Puck &amp; Wick™</image:title>
       <image:caption>8 fl oz Sanctuary Body Wash — Post-Pilates &amp; Spa Shower Ritual. Sold individually as a standalone 8 fl oz luxury pump bottle crafted in our Frosted Warm Alabaster-Ivory &amp; Brushed Champagne-Gold Sanctuary finish. Mineral-rich Kaolin white clay gently purifies skin after hot yoga, Pilates, or training while hydrolyzed silk amino acids, imperial white tea, and our proprietary ZeoCarb-98™ botanical complex leave skin velvety-soft, hydrated, and 100% odor-free.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -649,8 +649,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/packaging/wash-women-vanity.jpg?v=62</image:loc>
-      <image:title>8 fl oz Sanctuary Body Wash — Warm Travertine Marble Vanity Presentation | Sanctuary White Clay &amp; Silk Body Wash ($38.00) | Puck &amp; Wick™</image:title>
+      <image:loc>https://puckandwick.com/assets/images/packaging/wash-women-vanity.jpg?v=65</image:loc>
+      <image:title>8 fl oz Sanctuary Body Wash — Warm Travertine Marble Vanity Presentation | Sanctuary White Clay &amp; Silk Body Wash | Puck &amp; Wick™</image:title>
       <image:caption>8 fl oz Sanctuary Body Wash — Warm Travertine Marble Vanity Presentation. Sold individually as a standalone 8 fl oz luxury pump bottle crafted in our Frosted Warm Alabaster-Ivory &amp; Brushed Champagne-Gold Sanctuary finish. Mineral-rich Kaolin white clay gently purifies skin after hot yoga, Pilates, or training while hydrolyzed silk amino acids, imperial white tea, and our proprietary ZeoCarb-98™ botanical complex leave skin velvety-soft, hydrated, and 100% odor-free.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
@@ -661,9 +661,9 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/box-men-open.jpg?v=62</image:loc>
-      <image:title>Men&#39;s / Athlete Deluxe Collector Box ($108 — $130 Value) | Puck &amp; Wick™</image:title>
-      <image:caption>Engineered in Matte Obsidian &amp; Brushed Champagne-Gold with a concealed front-flap magnetic closure. Pairs your choice of 10 oz unlit soy candle ($44) with our universal 3.0&quot; ZeoCarb-98™ + Activated Charcoal Odor Puck ($48) and 8 oz Athlete Charcoal Body Wash ($38).</image:caption>
+      <image:loc>https://puckandwick.com/assets/images/box-men-open.jpg?v=65</image:loc>
+      <image:title>Men&#39;s / Athlete Deluxe Collector Box | Puck &amp; Wick™</image:title>
+      <image:caption>Engineered in Matte Obsidian &amp; Brushed Champagne-Gold with a concealed front-flap magnetic closure. Pairs your choice of 10 oz unlit soy candle with our universal 3.0&quot; ZeoCarb-98™ + Activated Charcoal Odor Puck and 8 oz Athlete Charcoal Body Wash.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
   </url>
@@ -673,9 +673,9 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/box-men-open.jpg?v=62</image:loc>
-      <image:title>Custom-Cut Matte Obsidian Presentation Box (Open) | Men&#39;s / Athlete Deluxe Collector Box ($108) | Puck &amp; Wick™</image:title>
-      <image:caption>Precision-cut charcoal foam cradles your 10 oz Unlit Matte Obsidian Soy Candle ($44), 3.0&quot; ZeoCarb-98™ Odor Puck ($48), and 8 oz Athlete Detox Body Wash ($38). Engineered in Matte Obsidian &amp; Brushed Champagne-Gold with a concealed front-flap magnetic closure. Pairs your choice of 10 oz unlit soy candle ($44) with our universal 3.0&quot; ZeoCarb-98™ + Activated Charcoal Odor Puck ($48) and 8 oz Athlete Charcoal Body Wash ($38).</image:caption>
+      <image:loc>https://puckandwick.com/assets/images/box-men-open.jpg?v=65</image:loc>
+      <image:title>Custom-Cut Matte Obsidian Presentation Box (Open) | Men&#39;s / Athlete Deluxe Collector Box | Puck &amp; Wick™</image:title>
+      <image:caption>Precision-cut charcoal foam cradles your 10 oz Unlit Matte Obsidian Soy Candle, 3.0&quot; ZeoCarb-98™ Odor Puck, and 8 oz Athlete Detox Body Wash. Engineered in Matte Obsidian &amp; Brushed Champagne-Gold with a concealed front-flap magnetic closure. Pairs your choice of 10 oz unlit soy candle with our universal 3.0&quot; ZeoCarb-98™ + Activated Charcoal Odor Puck and 8 oz Athlete Charcoal Body Wash.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
   </url>
@@ -685,9 +685,9 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/box-men-closed.jpg?v=62</image:loc>
-      <image:title>Heavy-Weight Matte Obsidian Magnetic Front-Flap Gift Box (Closed) | Men&#39;s / Athlete Deluxe Collector Box ($108) | Puck &amp; Wick™</image:title>
-      <image:caption>1200gsm matte-black rigid board with overlapping front magnetic flap closure and hot-stamped metallic gold Precision Mark™ emblem. Engineered in Matte Obsidian &amp; Brushed Champagne-Gold with a concealed front-flap magnetic closure. Pairs your choice of 10 oz unlit soy candle ($44) with our universal 3.0&quot; ZeoCarb-98™ + Activated Charcoal Odor Puck ($48) and 8 oz Athlete Charcoal Body Wash ($38).</image:caption>
+      <image:loc>https://puckandwick.com/assets/images/box-men-closed.jpg?v=65</image:loc>
+      <image:title>Heavy-Weight Matte Obsidian Magnetic Front-Flap Gift Box (Closed) | Men&#39;s / Athlete Deluxe Collector Box | Puck &amp; Wick™</image:title>
+      <image:caption>1200gsm matte-black rigid board with overlapping front magnetic flap closure and hot-stamped metallic gold Precision Mark™ emblem. Engineered in Matte Obsidian &amp; Brushed Champagne-Gold with a concealed front-flap magnetic closure. Pairs your choice of 10 oz unlit soy candle with our universal 3.0&quot; ZeoCarb-98™ + Activated Charcoal Odor Puck and 8 oz Athlete Charcoal Body Wash.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
   </url>
@@ -697,9 +697,9 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/box-men-items-out.jpg?v=62</image:loc>
-      <image:title>All 3 Full-Size Men’s / Athlete Components ($130 Value) | Men&#39;s / Athlete Deluxe Collector Box ($108) | Puck &amp; Wick™</image:title>
-      <image:caption>(1) 10 oz American Soy Candle ($44), (2) 3.0&quot; ZeoCarb-98™ + Charcoal Odor Puck ($48), and (3) 8 oz Detox Body Wash ($38). Engineered in Matte Obsidian &amp; Brushed Champagne-Gold with a concealed front-flap magnetic closure. Pairs your choice of 10 oz unlit soy candle ($44) with our universal 3.0&quot; ZeoCarb-98™ + Activated Charcoal Odor Puck ($48) and 8 oz Athlete Charcoal Body Wash ($38).</image:caption>
+      <image:loc>https://puckandwick.com/assets/images/box-men-items-out.jpg?v=65</image:loc>
+      <image:title>All 3 Full-Size Men’s / Athlete Components | Men&#39;s / Athlete Deluxe Collector Box | Puck &amp; Wick™</image:title>
+      <image:caption>(1) 10 oz American Soy Candle, (2) 3.0&quot; ZeoCarb-98™ + Charcoal Odor Puck, and (3) 8 oz Detox Body Wash. Engineered in Matte Obsidian &amp; Brushed Champagne-Gold with a concealed front-flap magnetic closure. Pairs your choice of 10 oz unlit soy candle with our universal 3.0&quot; ZeoCarb-98™ + Activated Charcoal Odor Puck and 8 oz Athlete Charcoal Body Wash.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
   </url>
@@ -709,9 +709,9 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/box-men-usecase.jpg?v=62</image:loc>
-      <image:title>Rink to Shower to Living Room: All 3 Items in Action | Men&#39;s / Athlete Deluxe Collector Box ($108) | Puck &amp; Wick™</image:title>
-      <image:caption>Drop the 3.0&quot; ZeoCarb-98™ Puck in your locker or gear bag, strip post-game sweat with Charcoal Body Wash, and light your 10 oz Soy Candle. Engineered in Matte Obsidian &amp; Brushed Champagne-Gold with a concealed front-flap magnetic closure. Pairs your choice of 10 oz unlit soy candle ($44) with our universal 3.0&quot; ZeoCarb-98™ + Activated Charcoal Odor Puck ($48) and 8 oz Athlete Charcoal Body Wash ($38).</image:caption>
+      <image:loc>https://puckandwick.com/assets/images/box-men-usecase.jpg?v=65</image:loc>
+      <image:title>Rink to Shower to Living Room: All 3 Items in Action | Men&#39;s / Athlete Deluxe Collector Box | Puck &amp; Wick™</image:title>
+      <image:caption>Drop the 3.0&quot; ZeoCarb-98™ Puck in your locker or gear bag, strip post-game sweat with Charcoal Body Wash, and light your 10 oz Soy Candle. Engineered in Matte Obsidian &amp; Brushed Champagne-Gold with a concealed front-flap magnetic closure. Pairs your choice of 10 oz unlit soy candle with our universal 3.0&quot; ZeoCarb-98™ + Activated Charcoal Odor Puck and 8 oz Athlete Charcoal Body Wash.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
   </url>
@@ -721,9 +721,9 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/his-hers-colorway.jpg</image:loc>
-      <image:title>Matte Obsidian &amp; Gold vs. Warm Frosted Ivory &amp; Champagne Gold | Men&#39;s / Athlete Deluxe Collector Box ($108) | Puck &amp; Wick™</image:title>
-      <image:caption>Identical architectural vessel geometry and minimalist square gold-foil Precision Mark™ emblem in Matte Obsidian and Warm Frosted Ivory. Engineered in Matte Obsidian &amp; Brushed Champagne-Gold with a concealed front-flap magnetic closure. Pairs your choice of 10 oz unlit soy candle ($44) with our universal 3.0&quot; ZeoCarb-98™ + Activated Charcoal Odor Puck ($48) and 8 oz Athlete Charcoal Body Wash ($38).</image:caption>
+      <image:loc>https://puckandwick.com/assets/images/his-hers-colorway.jpg?v=65</image:loc>
+      <image:title>Matte Obsidian &amp; Gold vs. Warm Frosted Ivory &amp; Champagne Gold | Men&#39;s / Athlete Deluxe Collector Box | Puck &amp; Wick™</image:title>
+      <image:caption>Identical architectural vessel geometry and minimalist square gold-foil Precision Mark™ emblem in Matte Obsidian and Warm Frosted Ivory. Engineered in Matte Obsidian &amp; Brushed Champagne-Gold with a concealed front-flap magnetic closure. Pairs your choice of 10 oz unlit soy candle with our universal 3.0&quot; ZeoCarb-98™ + Activated Charcoal Odor Puck and 8 oz Athlete Charcoal Body Wash.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
   </url>
@@ -733,9 +733,9 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/womens-candle-lineup.jpg</image:loc>
-      <image:title>The Sanctuary Ivory Candle Collection (10 oz Soy Vessels) | Men&#39;s / Athlete Deluxe Collector Box ($108) | Puck &amp; Wick™</image:title>
-      <image:caption>Cashmere &amp; White Tea, Velvet Vanilla &amp; Santal, and Sea Salt &amp; White Orchid in warm frosted alabaster-ivory glass. Engineered in Matte Obsidian &amp; Brushed Champagne-Gold with a concealed front-flap magnetic closure. Pairs your choice of 10 oz unlit soy candle ($44) with our universal 3.0&quot; ZeoCarb-98™ + Activated Charcoal Odor Puck ($48) and 8 oz Athlete Charcoal Body Wash ($38).</image:caption>
+      <image:loc>https://puckandwick.com/assets/images/womens-candle-lineup.jpg?v=65</image:loc>
+      <image:title>The Sanctuary Ivory Candle Collection (10 oz Soy Vessels) | Men&#39;s / Athlete Deluxe Collector Box | Puck &amp; Wick™</image:title>
+      <image:caption>Cashmere &amp; White Tea, Velvet Vanilla &amp; Santal, and Sea Salt &amp; White Orchid in warm frosted alabaster-ivory glass. Engineered in Matte Obsidian &amp; Brushed Champagne-Gold with a concealed front-flap magnetic closure. Pairs your choice of 10 oz unlit soy candle with our universal 3.0&quot; ZeoCarb-98™ + Activated Charcoal Odor Puck and 8 oz Athlete Charcoal Body Wash.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
   </url>
@@ -745,9 +745,9 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/box-women-open.jpg?v=62</image:loc>
-      <image:title>Women&#39;s Sanctuary Deluxe Collector Box ($108 — $130 Value) | Puck &amp; Wick™</image:title>
-      <image:caption>Crafted in Warm Alabaster-Ivory &amp; Brushed Champagne-Gold with an overlapping front magnetic flap closure. Pairs your choice of 10 oz Sanctuary soy candle ($44) with our signature 3.0&quot; Matte Obsidian &amp; Champagne-Gold ZeoCarb-98™ Odor Puck ($48) and 8 oz Sanctuary White Clay &amp; Silk Body Wash ($38).</image:caption>
+      <image:loc>https://puckandwick.com/assets/images/box-women-open.jpg?v=65</image:loc>
+      <image:title>Women&#39;s Sanctuary Deluxe Collector Box | Puck &amp; Wick™</image:title>
+      <image:caption>Crafted in Warm Alabaster-Ivory &amp; Brushed Champagne-Gold with an overlapping front magnetic flap closure. Pairs your choice of 10 oz Sanctuary soy candle with our signature 3.0&quot; Matte Obsidian &amp; Champagne-Gold ZeoCarb-98™ Odor Puck and 8 oz Sanctuary White Clay &amp; Silk Body Wash.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
   </url>
@@ -757,9 +757,9 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/box-women-open.jpg?v=62</image:loc>
-      <image:title>Warm Alabaster-Ivory &amp; Champagne-Gold Magnetic Box (Open) | Women&#39;s Sanctuary Deluxe Collector Box ($108) | Puck &amp; Wick™</image:title>
-      <image:caption>Warm cream suede-touch foam cradles your 10 oz Unlit Frosted Ivory Soy Candle ($44), 3.0&quot; Obsidian &amp; Champagne-Gold ZeoCarb-98™ Puck ($48), and 8 oz White Clay &amp; Silk Body Wash ($38). Crafted in Warm Alabaster-Ivory &amp; Brushed Champagne-Gold with an overlapping front magnetic flap closure. Pairs your choice of 10 oz Sanctuary soy candle ($44) with our signature 3.0&quot; Matte Obsidian &amp; Champagne-Gold ZeoCarb-98™ Odor Puck ($48) and 8 oz Sanctuary White Clay &amp; Silk Body Wash ($38).</image:caption>
+      <image:loc>https://puckandwick.com/assets/images/box-women-open.jpg?v=65</image:loc>
+      <image:title>Warm Alabaster-Ivory &amp; Champagne-Gold Magnetic Box (Open) | Women&#39;s Sanctuary Deluxe Collector Box | Puck &amp; Wick™</image:title>
+      <image:caption>Warm cream suede-touch foam cradles your 10 oz Unlit Frosted Ivory Soy Candle, 3.0&quot; Obsidian &amp; Champagne-Gold ZeoCarb-98™ Puck, and 8 oz White Clay &amp; Silk Body Wash. Crafted in Warm Alabaster-Ivory &amp; Brushed Champagne-Gold with an overlapping front magnetic flap closure. Pairs your choice of 10 oz Sanctuary soy candle with our signature 3.0&quot; Matte Obsidian &amp; Champagne-Gold ZeoCarb-98™ Odor Puck and 8 oz Sanctuary White Clay &amp; Silk Body Wash.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
   </url>
@@ -769,9 +769,9 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/box-women-closed.jpg?v=62</image:loc>
-      <image:title>Warm Ivory &amp; Champagne-Gold Magnetic Front-Flap Gift Box (Closed) | Women&#39;s Sanctuary Deluxe Collector Box ($108) | Puck &amp; Wick™</image:title>
-      <image:caption>Rigid magnetic front-flap keepsake box in warm alabaster-ivory matte linen board with brushed champagne-gold Precision Mark™ emblem. Crafted in Warm Alabaster-Ivory &amp; Brushed Champagne-Gold with an overlapping front magnetic flap closure. Pairs your choice of 10 oz Sanctuary soy candle ($44) with our signature 3.0&quot; Matte Obsidian &amp; Champagne-Gold ZeoCarb-98™ Odor Puck ($48) and 8 oz Sanctuary White Clay &amp; Silk Body Wash ($38).</image:caption>
+      <image:loc>https://puckandwick.com/assets/images/box-women-closed.jpg?v=65</image:loc>
+      <image:title>Warm Ivory &amp; Champagne-Gold Magnetic Front-Flap Gift Box (Closed) | Women&#39;s Sanctuary Deluxe Collector Box | Puck &amp; Wick™</image:title>
+      <image:caption>Rigid magnetic front-flap keepsake box in warm alabaster-ivory matte linen board with brushed champagne-gold Precision Mark™ emblem. Crafted in Warm Alabaster-Ivory &amp; Brushed Champagne-Gold with an overlapping front magnetic flap closure. Pairs your choice of 10 oz Sanctuary soy candle with our signature 3.0&quot; Matte Obsidian &amp; Champagne-Gold ZeoCarb-98™ Odor Puck and 8 oz Sanctuary White Clay &amp; Silk Body Wash.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
   </url>
@@ -781,9 +781,9 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/box-women-items-out.jpg?v=62</image:loc>
-      <image:title>All 3 Full-Size Women’s Sanctuary Components ($130 Value) | Women&#39;s Sanctuary Deluxe Collector Box ($108) | Puck &amp; Wick™</image:title>
-      <image:caption>(1) 10 oz Unlit Soy Candle in Frosted Ivory Glass ($44), (2) 3.0&quot; Obsidian &amp; Champagne-Gold ZeoCarb-98™ Puck ($48), and (3) 8 oz White Clay &amp; Silk Body Wash ($38). Crafted in Warm Alabaster-Ivory &amp; Brushed Champagne-Gold with an overlapping front magnetic flap closure. Pairs your choice of 10 oz Sanctuary soy candle ($44) with our signature 3.0&quot; Matte Obsidian &amp; Champagne-Gold ZeoCarb-98™ Odor Puck ($48) and 8 oz Sanctuary White Clay &amp; Silk Body Wash ($38).</image:caption>
+      <image:loc>https://puckandwick.com/assets/images/box-women-items-out.jpg?v=65</image:loc>
+      <image:title>All 3 Full-Size Women’s Sanctuary Components | Women&#39;s Sanctuary Deluxe Collector Box | Puck &amp; Wick™</image:title>
+      <image:caption>(1) 10 oz Unlit Soy Candle in Frosted Ivory Glass, (2) 3.0&quot; Obsidian &amp; Champagne-Gold ZeoCarb-98™ Puck, and (3) 8 oz White Clay &amp; Silk Body Wash. Crafted in Warm Alabaster-Ivory &amp; Brushed Champagne-Gold with an overlapping front magnetic flap closure. Pairs your choice of 10 oz Sanctuary soy candle with our signature 3.0&quot; Matte Obsidian &amp; Champagne-Gold ZeoCarb-98™ Odor Puck and 8 oz Sanctuary White Clay &amp; Silk Body Wash.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
   </url>
@@ -793,9 +793,9 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/box-women-usecase.jpg?v=62</image:loc>
-      <image:title>Yoga Tote &amp; Closet to Spa Shower to Bedside Sanctuary | Women&#39;s Sanctuary Deluxe Collector Box ($108) | Puck &amp; Wick™</image:title>
-      <image:caption>Tuck the 3.0&quot; ZeoCarb-98™ Puck into your yoga tote or walk-in closet, purify skin with White Clay &amp; Silk Body Wash, and light your Frosted Ivory Candle. Crafted in Warm Alabaster-Ivory &amp; Brushed Champagne-Gold with an overlapping front magnetic flap closure. Pairs your choice of 10 oz Sanctuary soy candle ($44) with our signature 3.0&quot; Matte Obsidian &amp; Champagne-Gold ZeoCarb-98™ Odor Puck ($48) and 8 oz Sanctuary White Clay &amp; Silk Body Wash ($38).</image:caption>
+      <image:loc>https://puckandwick.com/assets/images/box-women-usecase.jpg?v=66</image:loc>
+      <image:title>Yoga Tote &amp; Closet to Spa Shower to Bedside Sanctuary | Women&#39;s Sanctuary Deluxe Collector Box | Puck &amp; Wick™</image:title>
+      <image:caption>Tuck the 3.0&quot; ZeoCarb-98™ Puck into your yoga tote or walk-in closet, purify skin with White Clay &amp; Silk Body Wash, and light your Frosted Ivory Candle. Crafted in Warm Alabaster-Ivory &amp; Brushed Champagne-Gold with an overlapping front magnetic flap closure. Pairs your choice of 10 oz Sanctuary soy candle with our signature 3.0&quot; Matte Obsidian &amp; Champagne-Gold ZeoCarb-98™ Odor Puck and 8 oz Sanctuary White Clay &amp; Silk Body Wash.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
   </url>
@@ -805,9 +805,9 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/his-hers-colorway.jpg</image:loc>
-      <image:title>Matte Obsidian &amp; Gold vs. Warm Frosted Ivory &amp; Champagne Gold | Women&#39;s Sanctuary Deluxe Collector Box ($108) | Puck &amp; Wick™</image:title>
-      <image:caption>Identical architectural vessel geometry and minimalist square gold-foil Precision Mark™ emblem in Matte Obsidian and Warm Frosted Ivory. Crafted in Warm Alabaster-Ivory &amp; Brushed Champagne-Gold with an overlapping front magnetic flap closure. Pairs your choice of 10 oz Sanctuary soy candle ($44) with our signature 3.0&quot; Matte Obsidian &amp; Champagne-Gold ZeoCarb-98™ Odor Puck ($48) and 8 oz Sanctuary White Clay &amp; Silk Body Wash ($38).</image:caption>
+      <image:loc>https://puckandwick.com/assets/images/his-hers-colorway.jpg?v=65</image:loc>
+      <image:title>Matte Obsidian &amp; Gold vs. Warm Frosted Ivory &amp; Champagne Gold | Women&#39;s Sanctuary Deluxe Collector Box | Puck &amp; Wick™</image:title>
+      <image:caption>Identical architectural vessel geometry and minimalist square gold-foil Precision Mark™ emblem in Matte Obsidian and Warm Frosted Ivory. Crafted in Warm Alabaster-Ivory &amp; Brushed Champagne-Gold with an overlapping front magnetic flap closure. Pairs your choice of 10 oz Sanctuary soy candle with our signature 3.0&quot; Matte Obsidian &amp; Champagne-Gold ZeoCarb-98™ Odor Puck and 8 oz Sanctuary White Clay &amp; Silk Body Wash.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
   </url>
@@ -817,9 +817,9 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://puckandwick.com/assets/images/womens-candle-lineup.jpg</image:loc>
-      <image:title>The Sanctuary Ivory Candle Collection (10 oz Soy Vessels) | Women&#39;s Sanctuary Deluxe Collector Box ($108) | Puck &amp; Wick™</image:title>
-      <image:caption>Cashmere &amp; White Tea, Velvet Vanilla &amp; Santal, and Sea Salt &amp; White Orchid in warm frosted alabaster-ivory glass. Crafted in Warm Alabaster-Ivory &amp; Brushed Champagne-Gold with an overlapping front magnetic flap closure. Pairs your choice of 10 oz Sanctuary soy candle ($44) with our signature 3.0&quot; Matte Obsidian &amp; Champagne-Gold ZeoCarb-98™ Odor Puck ($48) and 8 oz Sanctuary White Clay &amp; Silk Body Wash ($38).</image:caption>
+      <image:loc>https://puckandwick.com/assets/images/womens-candle-lineup.jpg?v=65</image:loc>
+      <image:title>The Sanctuary Ivory Candle Collection (10 oz Soy Vessels) | Women&#39;s Sanctuary Deluxe Collector Box | Puck &amp; Wick™</image:title>
+      <image:caption>Cashmere &amp; White Tea, Velvet Vanilla &amp; Santal, and Sea Salt &amp; White Orchid in warm frosted alabaster-ivory glass. Crafted in Warm Alabaster-Ivory &amp; Brushed Champagne-Gold with an overlapping front magnetic flap closure. Pairs your choice of 10 oz Sanctuary soy candle with our signature 3.0&quot; Matte Obsidian &amp; Champagne-Gold ZeoCarb-98™ Odor Puck and 8 oz Sanctuary White Clay &amp; Silk Body Wash.</image:caption>
       <image:geo_location>Purcellville, Virginia, USA</image:geo_location>
     </image:image>
   </url>
