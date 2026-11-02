@@ -27,14 +27,17 @@ const IMGS = {
   boxWomenOpen: imgDataUri('assets/images/box-women-open.jpg'),
   boxWomenClosed: imgDataUri('assets/images/box-women-closed.jpg'),
   puckMenStudio: imgDataUri('assets/images/item-puck-men.jpg'),
+  puckMenBox: imgDataUri('assets/images/packaging/puck-men-box.jpg'),
   puckMenStall: imgDataUri('assets/images/packaging/puck-men-locker.jpg'),
   puckMenBag: imgDataUri('assets/images/packaging/puck-men-gym-bag.jpg'),
   puckMenCloset: imgDataUri('assets/images/packaging/puck-men-closet.jpg'),
   puckWomenStudio: imgDataUri('assets/images/item-puck-women.jpg'),
+  puckWomenBox: imgDataUri('assets/images/packaging/puck-women-box.jpg'),
   puckWomenCloset: imgDataUri('assets/images/packaging/puck-women-closet.jpg'),
   miniPuckPair: imgDataUri('assets/images/item-mini-pucks-pair.jpg'),
+  miniPuckBox: imgDataUri('assets/images/packaging/puck-mini-pair-box.jpg'),
   washMen: imgDataUri('assets/images/item-bodywash-men.jpg'),
-  mistWomen: imgDataUri('assets/images/item-mist-women.jpg')
+  washWomen: imgDataUri('assets/images/item-bodywash-women.jpg')
 };
 
 // ============================================================================
@@ -526,24 +529,24 @@ const joMaloneBlackDesktopHTML = `<!DOCTYPE html>
 
       <div class="jm-card">
         <div class="jm-card-img-wrap">
-          <img src="${IMGS.puckMenStall}" alt="3.0 Odor Puck Obsidian & Gold" />
-          <span class="jm-card-tag">COVERS UP TO 120 SQ. FT.</span>
-          <span class="jm-card-angles">STUDIO • STALL • HOCKEY BAG • CLOSET</span>
+          <img src="${IMGS.puckMenBox}" alt="3.0 Odor Puck Obsidian & Gold Magnetic Collector Box" />
+          <span class="jm-card-tag">MAGNETIC BOX • 120 SQ. FT.</span>
+          <span class="jm-card-angles">MAGNETIC BOX • STALL • BAG • CLOSET</span>
         </div>
         <h3 class="jm-card-title">3.0" Odor Puck — Obsidian &amp; Gold</h3>
-        <div class="jm-card-notes">For Hockey &amp; Gym Bags, Stalls, Closets &amp; Cars</div>
+        <div class="jm-card-notes">Includes Apple-Style Magnetic Collector Box</div>
         <div class="jm-card-spec">ZeoCarb-98™ • 3-Axis Airflow • 120 Sq. Ft. • $48.00</div>
         <button class="jm-card-cta">JOIN DROP 01 WAITLIST — $48.00</button>
       </div>
 
       <div class="jm-card">
         <div class="jm-card-img-wrap">
-          <img src="${IMGS.puckWomenCloset}" alt="3.0 Odor Puck Ivory & Gold" />
-          <span class="jm-card-tag">COVERS UP TO 120 SQ. FT.</span>
-          <span class="jm-card-angles">STUDIO • GYM TOTE • WALK-IN CLOSET</span>
+          <img src="${IMGS.puckWomenBox}" alt="3.0 Odor Puck Ivory & Gold Magnetic Collector Box" />
+          <span class="jm-card-tag">MAGNETIC BOX • 120 SQ. FT.</span>
+          <span class="jm-card-angles">MAGNETIC BOX • TOTE • WALK-IN CLOSET</span>
         </div>
         <h3 class="jm-card-title">3.0" Odor Puck — Ivory &amp; Gold</h3>
-        <div class="jm-card-notes">For Closets, Home Gyms, Totes &amp; Powder Rooms</div>
+        <div class="jm-card-notes">Includes Apple-Style Magnetic Collector Box</div>
         <div class="jm-card-spec">ZeoCarb-98™ • 3-Axis Airflow • 120 Sq. Ft. • $48.00</div>
         <button class="jm-card-cta">JOIN DROP 01 WAITLIST — $48.00</button>
       </div>
@@ -622,11 +625,11 @@ const joMaloneBlackDesktopHTML = `<!DOCTYPE html>
           </div>
           <div style="border:1px solid rgba(197,160,89,0.4);padding:6px;background:#12141B;text-align:center;">
             <img src="${IMGS.washMen}" style="width:100%;height:110px;object-fit:cover;margin-bottom:4px;" />
-            <div style="font-size:9px;letter-spacing:0.12em;color:#FAF7F2;font-weight:600;">8 OZ CHARCOAL WASH ($38)</div>
+            <div style="font-size:9px;letter-spacing:0.12em;color:#FAF7F2;font-weight:600;">MEN'S 8 OZ WASH ($38)</div>
           </div>
           <div style="border:1px solid rgba(197,160,89,0.4);padding:6px;background:#12141B;text-align:center;">
-            <img src="${IMGS.mistWomen}" style="width:100%;height:110px;object-fit:cover;margin-bottom:4px;" />
-            <div style="font-size:9px;letter-spacing:0.12em;color:#FAF7F2;font-weight:600;">4 OZ LINEN MIST ($38)</div>
+            <img src="${IMGS.washWomen}" style="width:100%;height:110px;object-fit:cover;margin-bottom:4px;" />
+            <div style="font-size:9px;letter-spacing:0.12em;color:#FAF7F2;font-weight:600;">WOMEN'S 8 OZ WASH ($38)</div>
           </div>
         </div>
       </div>
@@ -636,7 +639,7 @@ const joMaloneBlackDesktopHTML = `<!DOCTYPE html>
         <div class="jm-kicker">THE TWO-ITEM BRIDGE UPSELL ($44 + $48 = $92 &rarr; $108 FULL SUITE)</div>
         <h2 class="serif" style="font-size:34px;font-weight:500;margin-bottom:10px;">The $108 Deluxe Collector Suite</h2>
         <p style="font-size:12.5px;color:#C9C3B8;line-height:1.55;margin-bottom:18px;">
-          Buying a Candle ($44) and 3.0" Odor Puck ($48) separately is $92. For <strong>just $16 more ($108)</strong>, customers get the $38 Body Wash or Linen Mist + Magnetic Presentation Box included ($130 total value — <strong>Save $22</strong>).
+          Buying a Candle ($44) and 3.0" Odor Puck ($48) separately is $92. For <strong>just $16 more ($108)</strong>, customers get the 8 oz Body Wash (Men's Charcoal or Women's White Clay &amp; Silk, $38) + Magnetic Presentation Box included ($130 total value — <strong>Save $22</strong>).
         </p>
 
         <div style="border-top:1px solid rgba(197,160,89,0.35);padding-top:12px;margin-bottom:12px;">
@@ -1064,21 +1067,21 @@ const joMaloneBlackMobileHTML = `<!DOCTYPE html>
         </div>
 
         <div style="border:1px solid #C5A059;aspect-ratio:1/0.9;overflow:hidden;position:relative;margin-bottom:8px;">
-          <img src="${IMGS.puckMenStall}" style="width:100%;height:100%;object-fit:cover;" />
+          <img src="${IMGS.puckMenBox}" style="width:100%;height:100%;object-fit:cover;" />
           <span style="position:absolute;top:8px;left:8px;background:rgba(11,12,15,0.92);border:1px solid #C5A059;color:#E5C878;padding:3px 8px;font-size:8px;letter-spacing:0.14em;font-weight:700;">
-            2 OF 4 • PRO LOCKER STALL
+            1 OF 4 • MAGNETIC CLAMSHELL BOX
           </span>
         </div>
 
         <!-- 4 Universal Use-Case Thumbnails -->
         <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:12px;">
-          <div style="border:1px solid rgba(197,160,89,0.4);padding:3px;text-align:center;background:#12141B;">
-            <img src="${IMGS.puckMenStudio}" style="width:100%;height:42px;object-fit:cover;margin-bottom:2px;" />
-            <div style="font-size:7px;letter-spacing:0.08em;font-weight:600;">1. STUDIO</div>
-          </div>
           <div style="border:1.5px solid #C5A059;padding:3px;text-align:center;background:#1A1D24;">
+            <img src="${IMGS.puckMenBox}" style="width:100%;height:42px;object-fit:cover;margin-bottom:2px;" />
+            <div style="font-size:7px;letter-spacing:0.08em;font-weight:700;color:#E5C878;">1. BOX</div>
+          </div>
+          <div style="border:1px solid rgba(197,160,89,0.4);padding:3px;text-align:center;background:#12141B;">
             <img src="${IMGS.puckMenStall}" style="width:100%;height:42px;object-fit:cover;margin-bottom:2px;" />
-            <div style="font-size:7px;letter-spacing:0.08em;font-weight:700;color:#E5C878;">2. STALL</div>
+            <div style="font-size:7px;letter-spacing:0.08em;font-weight:600;">2. STALL</div>
           </div>
           <div style="border:1px solid rgba(197,160,89,0.4);padding:3px;text-align:center;background:#12141B;">
             <img src="${IMGS.puckMenBag}" style="width:100%;height:42px;object-fit:cover;margin-bottom:2px;" />
@@ -1161,7 +1164,7 @@ const joMaloneBlackMobileHTML = `<!DOCTYPE html>
             STEP 01 • INCLUDED HARDWARE &amp; APOTHECARY ($86 VALUE)
           </div>
           <div style="font-size:11px;font-weight:600;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid rgba(197,160,89,0.3);">
-            &#10003; 3.0" Odor Puck ($48) + &#10003; 8 oz Wash / 4 oz Mist ($38)
+            &#10003; 3.0" Odor Puck ($48) + &#10003; 8 oz Body Wash — His or Hers ($38)
           </div>
 
           <div style="font-size:8.5px;letter-spacing:0.16em;text-transform:uppercase;color:#C5A059;margin-bottom:6px;font-weight:700;">

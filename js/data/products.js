@@ -378,7 +378,7 @@ export const PRODUCTS = [
     featured: false,
     seasonal: false,
     vesselType: 'obsidian',
-    photo: 'assets/images/item-bodywash-men.jpg',
+    photo: 'assets/images/item-bodywash-men.jpg?v=62',
     subSpecText: 'SINGLE 8 FL OZ PUMP BOTTLE • BINCHOTAN + ZEOCARB-98™',
     waxSpecSub: '1x 8 oz Body Wash Only',
     accentColor: '#C5A059'
@@ -409,7 +409,7 @@ export const PRODUCTS = [
     featured: true,
     seasonal: false,
     vesselType: 'ivory',
-    photo: 'assets/images/item-bodywash-women.jpg',
+    photo: 'assets/images/item-bodywash-women.jpg?v=62',
     subSpecText: 'SINGLE 8 FL OZ PUMP BOTTLE • WHITE CLAY + ZEOCARB-98™',
     waxSpecSub: '1x 8 oz Body Wash Only',
     accentColor: '#E5C878'
@@ -508,8 +508,8 @@ export function getProductGallerySlides(product, conceptId = 1) {
         shortLabel: 'Box Closed',
         title: 'Sleek All-Black Magnetic Front-Flap Collector Box (Closed)',
         type: 'image',
-        src: 'assets/images/packaging/puck-mini-pair-box-closed.jpg?v=52',
-        thumb: 'assets/images/packaging/puck-mini-pair-box-closed.jpg?v=52'
+        src: 'assets/images/packaging/puck-mini-pair-box-closed.jpg?v=62',
+        thumb: 'assets/images/packaging/puck-mini-pair-box-closed.jpg?v=62'
       },
       {
         id: 'step1',
@@ -560,8 +560,8 @@ export function getProductGallerySlides(product, conceptId = 1) {
         shortLabel: 'Box Closed',
         title: 'Compact 4.2" × 4.2" Matte-Black Magnetic Front-Flap Collector Box (Closed)',
         type: 'image',
-        src: 'assets/images/packaging/puck-men-box-closed.jpg?v=52',
-        thumb: 'assets/images/packaging/puck-men-box-closed.jpg?v=52'
+        src: 'assets/images/packaging/puck-men-box-closed.jpg?v=62',
+        thumb: 'assets/images/packaging/puck-men-box-closed.jpg?v=62'
       },
       {
         id: 'angled_open',
@@ -612,16 +612,16 @@ export function getProductGallerySlides(product, conceptId = 1) {
         shortLabel: 'Shower',
         title: '8 fl oz Athlete Body Wash — Post-Game Binchotan Charcoal & Blue Eucalyptus Gel',
         type: 'image',
-        src: 'assets/images/packaging/wash-men-shower.jpg',
-        thumb: 'assets/images/packaging/wash-men-shower.jpg'
+        src: 'assets/images/packaging/wash-men-shower.jpg?v=62',
+        thumb: 'assets/images/packaging/wash-men-shower.jpg?v=62'
       },
       {
         id: 'locker_towel',
         shortLabel: 'Locker',
         title: '8 fl oz Athlete Body Wash — Built for Locker Room & Post-Workout Recovery',
         type: 'image',
-        src: 'assets/images/packaging/wash-men-gym-towel.jpg',
-        thumb: 'assets/images/packaging/wash-men-gym-towel.jpg'
+        src: 'assets/images/packaging/wash-men-gym-towel.jpg?v=62',
+        thumb: 'assets/images/packaging/wash-men-gym-towel.jpg?v=62'
       }
     ];
   }
@@ -640,16 +640,16 @@ export function getProductGallerySlides(product, conceptId = 1) {
         shortLabel: 'Shower',
         title: '8 fl oz Sanctuary Body Wash — Post-Pilates & Spa Shower Ritual',
         type: 'image',
-        src: 'assets/images/packaging/wash-women-shower.jpg?v=52',
-        thumb: 'assets/images/packaging/wash-women-shower.jpg?v=52'
+        src: 'assets/images/packaging/wash-women-shower.jpg?v=62',
+        thumb: 'assets/images/packaging/wash-women-shower.jpg?v=62'
       },
       {
         id: 'vanity',
         shortLabel: 'Vanity',
         title: '8 fl oz Sanctuary Body Wash — Warm Travertine Marble Vanity Presentation',
         type: 'image',
-        src: 'assets/images/packaging/wash-women-vanity.jpg?v=52',
-        thumb: 'assets/images/packaging/wash-women-vanity.jpg?v=52'
+        src: 'assets/images/packaging/wash-women-vanity.jpg?v=62',
+        thumb: 'assets/images/packaging/wash-women-vanity.jpg?v=62'
       }
     ];
   }

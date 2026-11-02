@@ -14,7 +14,7 @@ export const EXCLUSIVE_BOX_EDITIONS = {
     compareAtValue: 130.00,
     savings: 22.00,
     defaultCandleId: 'candle-top-shelf',
-    photo: 'assets/images/box-men-open.jpg?v=52',
+    photo: 'assets/images/box-men-open.jpg?v=62',
     description:
       'Engineered in Matte Obsidian & Brushed Champagne-Gold with a concealed front-flap magnetic closure. Pairs your choice of 10 oz unlit soy candle ($44) with our universal 3.0" ZeoCarb-98™ + Activated Charcoal Odor Puck ($48) and 8 oz Athlete Charcoal Body Wash ($38).',
     bundledItems: {
@@ -42,7 +42,7 @@ export const EXCLUSIVE_BOX_EDITIONS = {
         step: '01 • INSIDE THE BOX',
         shortLabel: 'Open Box',
         title: 'Custom-Cut Matte Obsidian Presentation Box (Open)',
-        image: 'assets/images/box-men-open.jpg?v=52',
+        image: 'assets/images/box-men-open.jpg?v=62',
         description: 'Precision-cut charcoal foam cradles your 10 oz Unlit Matte Obsidian Soy Candle ($44), 3.0" ZeoCarb-98™ Odor Puck ($48), and 8 oz Athlete Detox Body Wash ($38).'
       },
       {
@@ -50,7 +50,7 @@ export const EXCLUSIVE_BOX_EDITIONS = {
         step: '02 • SEALED & GIFT-READY',
         shortLabel: 'Box Closed',
         title: 'Heavy-Weight Matte Obsidian Magnetic Front-Flap Gift Box (Closed)',
-        image: 'assets/images/box-men-closed.jpg?v=52',
+        image: 'assets/images/box-men-closed.jpg?v=62',
         description: '1200gsm matte-black rigid board with overlapping front magnetic flap closure and hot-stamped metallic gold Precision Mark™ emblem.'
       },
       {
@@ -58,7 +58,7 @@ export const EXCLUSIVE_BOX_EDITIONS = {
         step: '03 • FULL-SIZE LINEUP',
         shortLabel: '3 Items',
         title: 'All 3 Full-Size Men’s / Athlete Components ($130 Value)',
-        image: 'assets/images/box-men-items-out.jpg?v=52',
+        image: 'assets/images/box-men-items-out.jpg?v=62',
         description: '(1) 10 oz American Soy Candle ($44), (2) 3.0" ZeoCarb-98™ + Charcoal Odor Puck ($48), and (3) 8 oz Detox Body Wash ($38).'
       },
       {
@@ -66,7 +66,7 @@ export const EXCLUSIVE_BOX_EDITIONS = {
         step: '04 • IN ACTION',
         shortLabel: 'In Action',
         title: 'Rink to Shower to Living Room: All 3 Items in Action',
-        image: 'assets/images/box-men-usecase.jpg?v=52',
+        image: 'assets/images/box-men-usecase.jpg?v=62',
         description: 'Drop the 3.0" ZeoCarb-98™ Puck in your locker or gear bag, strip post-game sweat with Charcoal Body Wash, and light your 10 oz Soy Candle.'
       }
     ]
@@ -80,7 +80,7 @@ export const EXCLUSIVE_BOX_EDITIONS = {
     compareAtValue: 130.00,
     savings: 22.00,
     defaultCandleId: 'candle-cashmere-white-tea',
-    photo: 'assets/images/box-women-open.jpg?v=52',
+    photo: 'assets/images/box-women-open.jpg?v=62',
     description:
       'Crafted in Warm Alabaster-Ivory & Brushed Champagne-Gold with an overlapping front magnetic flap closure. Pairs your choice of 10 oz Sanctuary soy candle ($44) with our signature 3.0" Matte Obsidian & Champagne-Gold ZeoCarb-98™ Odor Puck ($48) and 8 oz Sanctuary White Clay & Silk Body Wash ($38).',
     bundledItems: {
@@ -108,7 +108,7 @@ export const EXCLUSIVE_BOX_EDITIONS = {
         step: '01 • INSIDE THE BOX',
         shortLabel: 'Open Box',
         title: 'Warm Alabaster-Ivory & Champagne-Gold Magnetic Box (Open)',
-        image: 'assets/images/box-women-open.jpg?v=52',
+        image: 'assets/images/box-women-open.jpg?v=62',
         description: 'Warm cream suede-touch foam cradles your 10 oz Unlit Frosted Ivory Soy Candle ($44), 3.0" Obsidian & Champagne-Gold ZeoCarb-98™ Puck ($48), and 8 oz White Clay & Silk Body Wash ($38).'
       },
       {
@@ -116,7 +116,7 @@ export const EXCLUSIVE_BOX_EDITIONS = {
         step: '02 • SEALED & GIFT-READY',
         shortLabel: 'Box Closed',
         title: 'Warm Ivory & Champagne-Gold Magnetic Front-Flap Gift Box (Closed)',
-        image: 'assets/images/box-women-closed.jpg?v=52',
+        image: 'assets/images/box-women-closed.jpg?v=62',
         description: 'Rigid magnetic front-flap keepsake box in warm alabaster-ivory matte linen board with brushed champagne-gold Precision Mark™ emblem.'
       },
       {
@@ -124,7 +124,7 @@ export const EXCLUSIVE_BOX_EDITIONS = {
         step: '03 • FULL-SIZE LINEUP',
         shortLabel: '3 Items',
         title: 'All 3 Full-Size Women’s Sanctuary Components ($130 Value)',
-        image: 'assets/images/box-women-items-out.jpg?v=52',
+        image: 'assets/images/box-women-items-out.jpg?v=62',
         description: '(1) 10 oz Unlit Soy Candle in Frosted Ivory Glass ($44), (2) 3.0" Obsidian & Champagne-Gold ZeoCarb-98™ Puck ($48), and (3) 8 oz White Clay & Silk Body Wash ($38).'
       },
       {
@@ -132,7 +132,7 @@ export const EXCLUSIVE_BOX_EDITIONS = {
         step: '04 • IN ACTION',
         shortLabel: 'In Action',
         title: 'Yoga Tote & Closet to Spa Shower to Bedside Sanctuary',
-        image: 'assets/images/box-women-usecase.jpg?v=52',
+        image: 'assets/images/box-women-usecase.jpg?v=62',
         description: 'Tuck the 3.0" ZeoCarb-98™ Puck into your yoga tote or walk-in closet, purify skin with White Clay & Silk Body Wash, and light your Frosted Ivory Candle.'
       }
     ]
