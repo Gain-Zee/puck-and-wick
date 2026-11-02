@@ -73,16 +73,16 @@ export const EXCLUSIVE_BOX_EDITIONS = {
   },
   women_luxe: {
     id: 'women_luxe',
-    badge: 'Warm Alabaster Ivory & Gold • Sanctuary Edition',
+    badge: 'Warm Alabaster Ivory & Champagne Rose-Gold • Sanctuary Edition',
     title: "Women's Sanctuary Deluxe Collector Box",
     subtitle: '10 oz Frosted Ivory Candle + 3.0" Obsidian & Gold Odor Puck + 8 oz White Clay & Silk Body Wash',
     price: 108.00,
     compareAtValue: 130.00,
     savings: 22.00,
     defaultCandleId: 'candle-cashmere-white-tea',
-    photo: 'assets/images/box-women-open.jpg?v=65',
+    photo: 'assets/images/box-women-open.jpg?v=68',
     description:
-      'Crafted in Warm Alabaster-Ivory & Brushed Champagne-Gold with an overlapping front magnetic flap closure. Pairs your choice of 10 oz Sanctuary soy candle with our signature 3.0" Matte Obsidian & Champagne-Gold ZeoCarb-98™ Odor Puck and 8 oz Sanctuary White Clay & Silk Body Wash.',
+      'Crafted in Warm Alabaster-Ivory & Brushed Champagne Rose-Gold with an overlapping front magnetic flap closure. Pairs your choice of 10 oz Sanctuary soy candle with our signature 3.0" Matte Obsidian & Champagne-Gold ZeoCarb-98™ Odor Puck and 8 oz Sanctuary White Clay & Silk Body Wash.',
     bundledItems: {
       candle: {
         role: '1x Full-Size Hand-Poured Soy Candle (10 oz Frosted Ivory Vessel • 8.5 oz Fill)',
@@ -97,7 +97,7 @@ export const EXCLUSIVE_BOX_EDITIONS = {
       },
       bodyWash: {
         title: '8 oz Sanctuary White Clay & Silk Body Wash with ZeoCarb-98™',
-        detail: 'Frosted Warm Ivory apothecary pump bottle with Kaolin white clay, spun silk amino acids, imperial white tea & ZeoCarb-98™.',
+        detail: 'Frosted Warm Ivory apothecary bottle + Brushed Champagne Rose-Gold pump with Kaolin white clay, spun silk amino acids, imperial white tea & ZeoCarb-98™.',
         notes: 'Notes: Imperial White Tea & Bergamot • Kaolin White Clay & Silk Amino Acids • Blond Hinoki & ZeoCarb-98™',
         retailValue: 'Full-Size Included'
       }
@@ -107,24 +107,24 @@ export const EXCLUSIVE_BOX_EDITIONS = {
         id: 'open',
         step: '01 • INSIDE THE BOX',
         shortLabel: 'Open Box',
-        title: 'Warm Alabaster-Ivory & Champagne-Gold Magnetic Box (Open)',
-        image: 'assets/images/box-women-open.jpg?v=65',
+        title: 'Warm Alabaster-Ivory & Champagne Rose-Gold Magnetic Box (Open)',
+        image: 'assets/images/box-women-open.jpg?v=68',
         description: 'Warm cream suede-touch foam cradles your 10 oz Unlit Frosted Ivory Soy Candle, 3.0" Obsidian & Champagne-Gold ZeoCarb-98™ Puck, and 8 oz White Clay & Silk Body Wash.'
       },
       {
         id: 'closed',
         step: '02 • SEALED & GIFT-READY',
         shortLabel: 'Box Closed',
-        title: 'Warm Ivory & Champagne-Gold Magnetic Front-Flap Gift Box (Closed)',
-        image: 'assets/images/box-women-closed.jpg?v=65',
-        description: 'Rigid magnetic front-flap keepsake box in warm alabaster-ivory matte linen board with brushed champagne-gold Precision Mark™ emblem.'
+        title: 'Warm Ivory & Champagne Rose-Gold Magnetic Front-Flap Gift Box (Closed)',
+        image: 'assets/images/box-women-closed.jpg?v=68',
+        description: 'Rigid magnetic front-flap keepsake box in warm alabaster-ivory matte linen board with brushed champagne rose-gold Precision Mark™ emblem.'
       },
       {
         id: 'items_out',
         step: '03 • FULL-SIZE LINEUP',
         shortLabel: '3 Items',
         title: 'All 3 Full-Size Women’s Sanctuary Components',
-        image: 'assets/images/box-women-items-out.jpg?v=65',
+        image: 'assets/images/box-women-items-out.jpg?v=68',
         description: '(1) 10 oz Unlit Soy Candle in Frosted Ivory Glass, (2) 3.0" Obsidian & Champagne-Gold ZeoCarb-98™ Puck, and (3) 8 oz White Clay & Silk Body Wash.'
       },
       {
@@ -132,7 +132,7 @@ export const EXCLUSIVE_BOX_EDITIONS = {
         step: '04 • IN ACTION',
         shortLabel: 'In Action',
         title: 'Yoga Tote & Closet to Spa Shower to Bedside Sanctuary',
-        image: 'assets/images/box-women-usecase.jpg?v=66',
+        image: 'assets/images/box-women-usecase.jpg?v=68',
         description: 'Tuck the 3.0" ZeoCarb-98™ Puck into your yoga tote or walk-in closet, purify skin with White Clay & Silk Body Wash, and light your Frosted Ivory Candle.'
       }
     ]

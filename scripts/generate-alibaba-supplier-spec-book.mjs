@@ -34,12 +34,12 @@ const photos = {
 
 function renderCandleCrestSvg(isIvory = false, sizePx = 138) {
   const bg = isIvory ? '#EFE8DA' : '#111215';
-  const stroke = isIvory ? '#9A7B3E' : '#C8B078';
-  const textCol = isIvory ? '#8C6C30' : '#D5BE87';
+  const stroke = isIvory ? '#B8846E' : '#C8B078';
+  const textCol = isIvory ? '#AD7A64' : '#D5BE87';
   return `
     <svg viewBox="0 0 500 500" width="${sizePx}" height="${sizePx}" xmlns="http://www.w3.org/2000/svg" style="display:block;border-radius:4px;box-shadow:0 4px 14px rgba(0,0,0,0.35);">
       <rect x="0" y="0" width="500" height="500" fill="${bg}" />
-      <!-- Single clean gold border matching shelf-candle-locker-room-mint.jpg & shelf-candle-cashmere-white-tea.jpg -->
+      <!-- Single clean metallic border matching shelf-candle-locker-room-mint.jpg & shelf-candle-cashmere-white-tea.jpg -->
       <rect x="44" y="44" width="412" height="412" fill="none" stroke="${stroke}" stroke-width="3.2" />
       <!-- Compact crossed hockey sticks w/ subtle connected blades + flame -->
       <g transform="translate(250, 184) scale(0.76)">
@@ -58,13 +58,13 @@ function renderCandleCrestSvg(isIvory = false, sizePx = 138) {
 
 function renderBodyWashCrestSvg(isIvory = false) {
   const bg = isIvory ? '#EFE8DA' : '#111215';
-  const stroke = isIvory ? '#9A7B3E' : '#C8B078';
-  const textCol = isIvory ? '#8C6C30' : '#D5BE87';
+  const stroke = isIvory ? '#B8846E' : '#C8B078';
+  const textCol = isIvory ? '#AD7A64' : '#D5BE87';
   const exclusiveText = isIvory ? 'SANCTUARY EXCLUSIVE' : 'ATHLETE EXCLUSIVE';
   return `
     <svg viewBox="0 0 500 650" width="114" height="148" xmlns="http://www.w3.org/2000/svg" style="display:block;border-radius:4px;box-shadow:0 4px 14px rgba(0,0,0,0.35);">
       <rect x="0" y="0" width="500" height="650" fill="${bg}" />
-      <!-- Single clean gold border -->
+      <!-- Single clean metallic border -->
       <rect x="44" y="44" width="412" height="562" fill="none" stroke="${stroke}" stroke-width="3.2" />
       <!-- Compact crossed hockey sticks w/ subtle connected blades + flame -->
       <g transform="translate(250, 174) scale(0.76)">
@@ -86,8 +86,8 @@ function renderBodyWashCrestSvg(isIvory = false) {
 
 function renderDeluxeBoxLidSvg({ isIvory = false, subtitle = 'ATHLETE EXCLUSIVE' } = {}) {
   const bg = isIvory ? '#EFE8DA' : '#111215';
-  const stroke = isIvory ? '#9A7B3E' : '#C8B078';
-  const textCol = isIvory ? '#8C6C30' : '#D5BE87';
+  const stroke = isIvory ? '#B8846E' : '#C8B078';
+  const textCol = isIvory ? '#AD7A64' : '#D5BE87';
   const borderCol = isIvory ? '#D8CEBE' : '#2C3038';
   const isLong = subtitle.length > 22;
   const subFontSize = isLong ? '12.5' : (subtitle.length > 19 ? '13.5' : '14.5');
@@ -499,7 +499,7 @@ const html = `<!DOCTYPE html>
           <tr>
             <td><strong>B. Women's Sanctuary Line</strong></td>
             <td><span class="swatch" style="background:#FAF5EB;"></span><strong>Frosted Warm Alabaster-Ivory</strong><br/>HEX <code>#FAF5EB</code> / Warm Cream-Ivory (Soft Matte / Frosted)</td>
-            <td><span class="swatch" style="background:#C8A050;"></span><strong>Brushed Champagne-Gold</strong><br/>HEX <code>#C8A050</code> / <code>#E5C878</code> (Warm Champagne-Gold Foil &amp; Metal)</td>
+            <td><span class="swatch" style="background:#C8927B;"></span><strong>Brushed Champagne Rose-Gold</strong><br/>HEX <code>#C8927B</code> (Unified Champagne Rose-Gold Foil, Box Neck, Lid &amp; Pump)</td>
             <td>• 3 Soy Candle Scents<br/>• 1 Women's 8 oz Body Wash<br/>• 1 Women's 3-Piece Deluxe Box</td>
           </tr>
         </tbody>
@@ -513,7 +513,7 @@ const html = `<!DOCTYPE html>
         </div>
         <div class="photo-card">
           <img src="${photos.candleWomen}" alt="Women's Candle & Box" />
-          <div class="photo-cap"><strong>Women's 10 oz Ivory Candle</strong>Frosted Ivory Jar + Gold Lid + 2-Piece Box</div>
+          <div class="photo-cap"><strong>Women's 10 oz Ivory Candle</strong>Frosted Ivory Jar + Brushed Rose-Gold Lid</div>
         </div>
         <div class="photo-card">
           <img src="${photos.washMen}" alt="Men's 8oz Body Wash" />
@@ -521,13 +521,13 @@ const html = `<!DOCTYPE html>
         </div>
         <div class="photo-card">
           <img src="${photos.washWomen}" alt="Women's 8oz Body Wash" />
-          <div class="photo-cap"><strong>Women's 8 oz Body Wash</strong>Frosted Ivory Bottle + Gold Pump</div>
+          <div class="photo-cap"><strong>Women's 8 oz Body Wash</strong>Frosted Ivory Bottle + Rose-Gold Pump</div>
         </div>
       </div>
 
       <!-- SECTION 2: CANDLE JARS, LIDS & INDIVIDUAL CANDLE BOXES -->
       <div class="section-header">
-        <h2>02. 10 oz Candle Jars, Unbranded Gold Lids &amp; Two-Piece Collector Boxes</h2>
+        <h2>02. 10 oz Candle Jars, Unbranded Metal Lids &amp; Two-Piece Collector Boxes</h2>
         <span>1 SHARED GLASS MOLD • 1 SHARED BOX DIELINE</span>
       </div>
       <table class="spec-table">
@@ -547,16 +547,16 @@ const html = `<!DOCTYPE html>
             <td><strong>1) Men's:</strong> Matte Obsidian Black (Opaque Matte)<br/><strong>2) Women's:</strong> Frosted Warm Alabaster-Ivory</td>
           </tr>
           <tr>
-            <td><strong>2.2 Unbranded Brushed Gold Flat Metal Lid</strong></td>
+            <td><strong>2.2 Unbranded Brushed Metal Flat Lid</strong></td>
             <td>• <strong>Outer Dia:</strong> <code>3.15"–3.25"</code> (<code>80–82 mm</code>)<br/>• <strong>Skirt Depth:</strong> <code>0.35"</code> (<code>9 mm</code>)<br/>• Fits <code>78 mm</code> OD / <code>72.6 mm</code> ID jar</td>
-            <td>Brushed Champagne-Gold anodized aluminum / tinplate flat lid with <strong>inner food-grade silicone ring gasket</strong> for snug airtight fit. <strong>100% Unbranded / Blank Top</strong> (no logo engraving needed on metal lid).</td>
-            <td><strong>1 Universal Lid</strong> fits both Men's Black &amp; Women's Ivory jars</td>
+            <td>Brushed anodized aluminum / tinplate flat lid with <strong>inner food-grade silicone ring gasket</strong> for snug airtight fit. <strong>100% Unbranded / Blank Top</strong> (no logo engraving needed on metal lid).</td>
+            <td><strong>1) Men's (70%):</strong> Brushed Gold<br/><strong>2) Women's (30%):</strong> Brushed Champagne Rose-Gold</td>
           </tr>
           <tr>
-            <td><strong>2.3 Two-Piece Gold-Neck Rigid Candle Box + Base Foam Ring</strong></td>
-            <td>• <strong>Box Outer Size:</strong> <code>3.50" W × 3.50" D × 4.25" H</code> (<code>89 × 89 × 108 mm</code>)<br/>• <strong>Gold Neck Step:</strong> <code>0.45"</code> (<code>11 mm</code>) exposed gold band<br/>• <strong>Inner EVA Base Cutout:</strong> <code>3.08"</code> (<code>78.5 mm</code>) round recess</td>
-            <td><code>1200gsm</code> rigid greyboard wrapped in <code>157gsm</code> soft-touch matte paper with anti-scratch lamination + <strong>Exposed Metallic Brushed-Gold Inner Shoulder Neck</strong>.<br/>• <strong>Bottom EVA Foam Pad:</strong> <code>12 mm</code> thick die-cut EVA base ring holds jar dead-center.<br/>• <strong>Universal Box Print (No Scent Name on Box!):</strong><br/>&nbsp;&nbsp;- <em>Front:</em> Single Thin Gold Foil Square Frame + Master Crest (<code>PUCK &amp; WICK</code> + <code>LOUDOUN COUNTY, VA</code> + <code>USA</code>)<br/>&nbsp;&nbsp;- <em>Back:</em> Minimal Gold Foil Stamp: <code>EST. • 2026 • PURCELLVILLE, VA</code><br/>&nbsp;&nbsp;- <em>Top Roof:</em> Gold Foil Monogram: <code>P &amp; W</code></td>
-            <td><strong>1) Men's Box:</strong> Matte Black (<code>#0B0C0E</code>) + Gold Foil<br/><strong>2) Women's Box:</strong> Warm Ivory (<code>#FAF5EB</code>) + Gold Foil</td>
+            <td><strong>2.3 Two-Piece Metallic-Neck Rigid Candle Box + Base Foam Ring</strong></td>
+            <td>• <strong>Box Outer Size:</strong> <code>3.50" W × 3.50" D × 4.25" H</code> (<code>89 × 89 × 108 mm</code>)<br/>• <strong>Neck Step:</strong> <code>0.45"</code> (<code>11 mm</code>) exposed metallic band<br/>• <strong>Inner EVA Base Cutout:</strong> <code>3.08"</code> (<code>78.5 mm</code>) round recess</td>
+            <td><code>1200gsm</code> rigid greyboard wrapped in <code>157gsm</code> soft-touch matte paper with anti-scratch lamination + <strong>Exposed Metallic Inner Shoulder Neck</strong> (Gold on Men's; Champagne Rose-Gold on Women's).<br/>• <strong>Bottom EVA Foam Pad:</strong> <code>12 mm</code> thick die-cut EVA base ring holds jar dead-center.<br/>• <strong>Universal Box Print (No Scent Name on Box!):</strong><br/>&nbsp;&nbsp;- <em>Front:</em> Single Thin Foil Square Frame + Master Crest (<code>PUCK &amp; WICK</code> + <code>LOUDOUN COUNTY, VA</code> + <code>USA</code>)<br/>&nbsp;&nbsp;- <em>Back:</em> Minimal Foil Stamp: <code>EST. • 2026 • PURCELLVILLE, VA</code><br/>&nbsp;&nbsp;- <em>Top Roof:</em> Foil Monogram: <code>P &amp; W</code></td>
+            <td><strong>1) Men's Box (70%):</strong> Matte Black (<code>#0B0C0E</code>) + Gold Neck &amp; Gold Foil<br/><strong>2) Women's Box (30%):</strong> Warm Ivory (<code>#FAF5EB</code>) + Champagne Rose-Gold Neck &amp; Foil</td>
           </tr>
         </tbody>
       </table>
@@ -604,8 +604,8 @@ const html = `<!DOCTYPE html>
               ${renderCandleCrestSvg(true, 138)}
             </div>
             <div class="ref-card-meta">
-              <strong>1B. Women's 10 oz Candle Front Label (Warm Alabaster-Ivory + Gold Foil)</strong>
-              • Exact match to <code>shelf-candle-cashmere-white-tea.jpg</code>: single thin gold border, compact sticks/flame, wide margins left of <code>P</code> and right of <code>K</code>.
+              <strong>1B. Women's 10 oz Candle Front Label (Warm Alabaster-Ivory + Champagne Rose-Gold Foil)</strong>
+              • Exact match to <code>shelf-candle-cashmere-white-tea.jpg</code>: single thin Champagne Rose-Gold border (<code>#C8927B</code>), compact sticks/flame, wide margins left of <code>P</code> and right of <code>K</code>.
             </div>
           </div>
         </div>
@@ -615,7 +615,7 @@ const html = `<!DOCTYPE html>
       <div class="ref-section">
         <div class="ref-section-title">
           <h2>02. 8 fl oz (236 mL) Body Wash Front Bottle Labels — APPROVED</h2>
-          <span>SINGLE THIN GOLD BORDER • SPACED-OUT TYPOGRAPHY • NO TEXT ON BOTTOM GLASS OF BOTTLE</span>
+          <span>SINGLE THIN METALLIC BORDER • SPACED-OUT TYPOGRAPHY • NO TEXT ON BOTTOM GLASS OF BOTTLE</span>
         </div>
         <div class="ref-grid-2">
           <div class="ref-card">
@@ -624,7 +624,7 @@ const html = `<!DOCTYPE html>
             </div>
             <div class="ref-card-meta">
               <strong>2A. Men's "Athlete Exclusive" Body Wash Front Label (Matte Black + Gold Foil)</strong>
-              • Single gold border • Master Crest + <code>PUCK &amp; WICK</code> + <code>LOUDOUN COUNTY, VA</code> + <code>USA</code> + divider + <code>ATHLETE EXCLUSIVE</code> + <code>ZEOCARB-98™ • 8 FL OZ / 236 ML</code>.
+              • Single Gold border • Master Crest + <code>PUCK &amp; WICK</code> + <code>LOUDOUN COUNTY, VA</code> + <code>USA</code> + divider + <code>ATHLETE EXCLUSIVE</code> + <code>ZEOCARB-98™ • 8 FL OZ / 236 ML</code>.
             </div>
           </div>
 
@@ -633,8 +633,8 @@ const html = `<!DOCTYPE html>
               ${renderBodyWashCrestSvg(true)}
             </div>
             <div class="ref-card-meta">
-              <strong>2B. Women's "Sanctuary Exclusive" Body Wash Front Label (Warm Ivory + Gold Foil)</strong>
-              • Single gold border • Master Crest + <code>PUCK &amp; WICK</code> + <code>LOUDOUN COUNTY, VA</code> + <code>USA</code> + divider + <code>SANCTUARY EXCLUSIVE</code> + <code>ZEOCARB-98™ • 8 FL OZ / 236 ML</code>.
+              <strong>2B. Women's "Sanctuary Exclusive" Body Wash Front Label (Warm Ivory + Champagne Rose-Gold Foil)</strong>
+              • Single Champagne Rose-Gold border (<code>#C8927B</code>) • Master Crest + <code>PUCK &amp; WICK</code> + <code>LOUDOUN COUNTY, VA</code> + <code>USA</code> + divider + <code>SANCTUARY EXCLUSIVE</code> + <code>ZEOCARB-98™ • 8 FL OZ / 236 ML</code>.
             </div>
           </div>
         </div>
@@ -643,7 +643,7 @@ const html = `<!DOCTYPE html>
       <!-- ROW 3: CLOSED EXTERIOR BOX LIDS (3A/3B COLLECTOR BOXES + 3C/3D ODOR PUCK BOXES) -->
       <div class="ref-section">
         <div class="ref-section-title">
-          <h2>03. Exterior Closed Box Top Lid Gold Foil Stamps (3-Piece Boxes &amp; Odor Puck Boxes)</h2>
+          <h2>03. Exterior Closed Box Top Lid Hot-Foil Stamps (3-Piece Boxes &amp; Odor Puck Boxes)</h2>
           <span>EXTERIOR TOP LID ONLY • WHEN OPEN: INSIDE LID &amp; INTERIOR EVA FOAM HAVE ZERO LOGOS / ZERO TEXT</span>
         </div>
         <div class="ref-grid-2">
@@ -653,7 +653,7 @@ const html = `<!DOCTYPE html>
             </div>
             <div class="ref-card-meta">
               <strong>3A. Men's 3-Piece Collector Box Top Lid (Matte Obsidian Black + Gold Foil)</strong>
-              • Borderless gold foil stamp: Master Crest locked together on top (Emblem &rarr; <code>PUCK &amp; WICK</code> &rarr; <code>LOUDOUN COUNTY, VA</code> &rarr; <code>USA</code>) + <code>ATHLETE EXCLUSIVE</code> underneath.
+              • Borderless Gold foil stamp: Master Crest locked together on top (Emblem &rarr; <code>PUCK &amp; WICK</code> &rarr; <code>LOUDOUN COUNTY, VA</code> &rarr; <code>USA</code>) + <code>ATHLETE EXCLUSIVE</code> underneath.
             </div>
           </div>
 
@@ -662,8 +662,8 @@ const html = `<!DOCTYPE html>
               ${renderDeluxeBoxLidSvg({ isIvory: true, subtitle: 'SANCTUARY EXCLUSIVE' })}
             </div>
             <div class="ref-card-meta">
-              <strong>3B. Women's 3-Piece Collector Box Top Lid (Warm Alabaster-Ivory + Gold Foil)</strong>
-              • Borderless gold foil stamp: Master Crest locked together on top (Emblem &rarr; <code>PUCK &amp; WICK</code> &rarr; <code>LOUDOUN COUNTY, VA</code> &rarr; <code>USA</code>) + <code>SANCTUARY EXCLUSIVE</code> underneath.
+              <strong>3B. Women's 3-Piece Collector Box Top Lid (Warm Alabaster-Ivory + Champagne Rose-Gold Foil)</strong>
+              • Borderless Champagne Rose-Gold foil stamp (<code>#C8927B</code>): Master Crest locked together on top (Emblem &rarr; <code>PUCK &amp; WICK</code> &rarr; <code>LOUDOUN COUNTY, VA</code> &rarr; <code>USA</code>) + <code>SANCTUARY EXCLUSIVE</code> underneath.
             </div>
           </div>
 
@@ -729,7 +729,7 @@ const html = `<!DOCTYPE html>
         <div class="card-box" style="text-align:center;padding:2mm;">
           <div style="display:flex;justify-content:center;margin-bottom:1.5mm;">${renderCandleCrestSvg(true, 96)}</div>
           <strong>3.1B Women's Universal Jar Crest (1B)</strong><br/>
-          <span><code>2.25" × 2.25"</code> (<code>57 × 57 mm</code>)<br/>Matte Ivory BOPP + Single Gold Border</span>
+          <span><code>2.25" × 2.25"</code> (<code>57 × 57 mm</code>)<br/>Matte Ivory BOPP + Champagne Rose-Gold Border</span>
         </div>
         <div class="photo-card">
           <img src="${photos.atelierMen}" alt="Men's Atelier Card" style="height:29mm;" />
@@ -754,26 +754,26 @@ const html = `<!DOCTYPE html>
           <tr>
             <td><strong>3.1 Universal Square Front Jar Crest Sticker (Specs 1A / 1B)</strong><br/><em>(Applied to Front of Glass Jar)</em></td>
             <td><strong>Square:</strong><br/><code>2.25" W × 2.25" H</code><br/>(<code>57.15 mm × 57.15 mm</code>)</td>
-            <td>Waterproof, oil-resistant <strong>Soft-Touch Matte BOPP Vinyl</strong> with permanent glass adhesive + <strong>Metallic Gold Hot-Foil Stamping</strong>.<br/>• <strong>Artwork:</strong> <strong>Single thin gold square border</strong> (no double border) + compact Crossed Hockey Sticks (w/ subtle connected blades) &amp; Flame + slender serif <code>PUCK &amp; WICK</code> (with generous margins left of <code>P</code> and right of <code>K</code>) + <code>LOUDOUN COUNTY, VA</code> + <code>USA</code> centered at bottom. <strong>(NO scent name on jar label!)</strong></td>
-            <td><strong>Only 2 Universal SKUs:</strong><br/>• 1A Men's Matte Black<br/>• 1B Women's Matte Ivory</td>
+            <td>Waterproof, oil-resistant <strong>Soft-Touch Matte BOPP Vinyl</strong> with permanent glass adhesive + <strong>Metallic Hot-Foil Stamping</strong> (Gold on 1A Men's; Champagne Rose-Gold on 1B Women's).<br/>• <strong>Artwork:</strong> <strong>Single thin square border</strong> (no double border) + compact Crossed Hockey Sticks (w/ subtle connected blades) &amp; Flame + slender serif <code>PUCK &amp; WICK</code> (with generous margins left of <code>P</code> and right of <code>K</code>) + <code>LOUDOUN COUNTY, VA</code> + <code>USA</code> centered at bottom. <strong>(NO scent name on jar label!)</strong></td>
+            <td><strong>Only 2 Universal SKUs:</strong><br/>• 1A Men's Black + Gold<br/>• 1B Women's Ivory + Rose-Gold</td>
           </tr>
           <tr>
             <td><strong>3.2 L-Wrap Box Corner Scent Band Sticker</strong><br/><em>(Wraps Front + Right Side of Candle Box)</em></td>
             <td><strong>Rectangle w/ Center Score:</strong><br/><code>3.50" W × 0.90" H</code><br/>(<code>89 mm × 23 mm</code>)<br/><em>Folds at <code>1.75"</code> (<code>44.5 mm</code>)</em></td>
-            <td>Soft-Touch Matte BOPP Sticker with Gold Foil border &amp; text. Wraps around the bottom-right 90° corner of the candle box:<br/>• <strong>Left Half (Front of Box):</strong> Kicker (<code>SIGNATURE SCENT • BATCH #098</code>) + <strong>SCENT NAME</strong> + 3 Fragrance Notes.<br/>• <strong>Right Half (Right Side of Box):</strong> <code>10 OZ VESSEL (8.5 OZ / 240G FILL)</code> + <strong>SCENT NAME</strong> + <code>QC #1 CERTIFIED • LOUDOUN CO., VA</code>.</td>
-            <td><strong>10 Scent SKUs:</strong><br/>• 7 Men's (Matte Black)<br/>• 3 Women's (Matte Ivory)</td>
+            <td>Soft-Touch Matte BOPP Sticker with Foil border &amp; text (Gold Foil on Men's 7 scents; Champagne Rose-Gold Foil on Women's 3 scents). Wraps around the bottom-right 90° corner of the candle box:<br/>• <strong>Left Half (Front of Box):</strong> Kicker (<code>SIGNATURE SCENT • BATCH #098</code>) + <strong>SCENT NAME</strong> + 3 Fragrance Notes.<br/>• <strong>Right Half (Right Side of Box):</strong> <code>10 OZ VESSEL (8.5 OZ / 240G FILL)</code> + <strong>SCENT NAME</strong> + <code>QC #1 CERTIFIED • LOUDOUN CO., VA</code>.</td>
+            <td><strong>10 Scent SKUs:</strong><br/>• 7 Men's (Black/Gold)<br/>• 3 Women's (Ivory/Rose-Gold)</td>
           </tr>
           <tr>
             <td><strong>3.3 Round Bottom Safety Warning &amp; Batch Label</strong><br/><em>(Underside of Candle Jar)</em></td>
             <td><strong>Circle:</strong><br/><code>2.00" Diameter</code><br/>(<code>50.8 mm</code> Dia)</td>
-            <td>Heat-resistant Waterproof Matte Polypropylene (BOPP) with Gold Foil rings &amp; text.<br/>• Includes ASTM Fire Safety Pictograms, Burn Warning Text, Scent Name, Wick Spec, <code>10 OZ VESSEL (8.5 OZ / 240G NET FILL)</code>, and <code>HAND-POURED IN PURCELLVILLE, VA</code>.</td>
-            <td><strong>10 Scent SKUs:</strong><br/>• 7 Men's (Matte Black)<br/>• 3 Women's (Matte Ivory)</td>
+            <td>Heat-resistant Waterproof Matte Polypropylene (BOPP) with Foil rings &amp; text.<br/>• Includes ASTM Fire Safety Pictograms, Burn Warning Text, Scent Name, Wick Spec, <code>10 OZ VESSEL (8.5 OZ / 240G NET FILL)</code>, and <code>HAND-POURED IN PURCELLVILLE, VA</code>.</td>
+            <td><strong>10 Scent SKUs:</strong><br/>• 7 Men's (Black/Gold)<br/>• 3 Women's (Ivory/Rose-Gold)</td>
           </tr>
           <tr>
-            <td><strong>3.4 Top Lid Round <code>QC #1 SEAL</code> Sticker</strong><br/><em>(Candle Box Lid Corner)</em></td>
+            <td><strong>3.4 Top Lid Round <code>QC #1 SEAL</code> Sticker</strong><br/><em>(Candle Box Top Lid)</em></td>
             <td><strong>Circle:</strong><br/><code>1.00" Diameter</code><br/>(<code>25.4 mm</code> Dia)</td>
-            <td>Brushed Metallic Champagne-Gold Foil Sticker with black printed text: <code>QC #1 SEAL • VA POUR</code>.</td>
-            <td><strong>1 Single Universal SKU</strong></td>
+            <td>Brushed Metallic Foil Sticker with printed text: <code>QC #1 SEAL • VA POUR</code> (Brushed Gold for Men's boxes; Brushed Champagne Rose-Gold for Women's boxes).</td>
+            <td><strong>2 Foil Variants:</strong><br/>• 70% Gold / 30% Rose-Gold</td>
           </tr>
           <tr>
             <td><strong>3.5 Universal Wax Dust Cover</strong><br/><em>(Rests on Soy Wax Inside Jar)</em></td>
@@ -863,16 +863,16 @@ const html = `<!DOCTYPE html>
             <td><strong>1) Men's:</strong> Smooth Matte Obsidian Black (<code>#0B0C0E</code>)<br/><strong>2) Women's:</strong> Frosted Warm Alabaster-Ivory (<code>#FAF5EB</code>)</td>
           </tr>
           <tr>
-            <td><strong>4.2 Lockable Brushed Gold Dispenser Pump</strong></td>
+            <td><strong>4.2 Lockable Brushed Metal Dispenser Pump</strong></td>
             <td>• <strong>Neck Thread:</strong> <code>24-410</code><br/>• <strong>Dosage:</strong> <code>2.0 mL</code> per stroke<br/>• <strong>Locking:</strong> Twist-to-Lock Head</td>
-            <td><strong>Brushed Champagne-Gold Anodized Aluminum / Metal-Sheathed Collar &amp; Pump Head</strong> with internal leak-proof shipping lock and dip tube trimmed to bottom corner of bottle.</td>
-            <td><strong>1 Universal Pump</strong> fits both Men's &amp; Women's bottles</td>
+            <td><strong>Brushed Anodized Aluminum / Metal-Sheathed Collar &amp; Pump Head</strong> with internal leak-proof shipping lock and dip tube trimmed to bottom corner of bottle.</td>
+            <td><strong>1) Men's:</strong> Brushed Gold<br/><strong>2) Women's:</strong> Brushed Champagne Rose-Gold</td>
           </tr>
           <tr>
             <td><strong>4.3 Shower-Proof Bottle Label (Specs 2A / 2B on Page 2)</strong></td>
             <td>• <strong>Wrap Label Size:</strong><br/><code>6.50" W × 3.50" H</code><br/>(<code>165 mm × 89 mm</code>)</td>
-            <td>100% Waterproof, Steam/Shower-Proof <strong>Soft-Touch Matte BOPP Vinyl + Metallic Gold Hot-Foil Stamping</strong>:<br/>• <strong>Single Thin Gold Border on Front Panel:</strong> Compact Crossed Hockey Sticks &amp; Flame + <code>PUCK &amp; WICK</code> + <code>LOUDOUN COUNTY, VA</code> + <code>USA</code> + divider line + <code>ATHLETE EXCLUSIVE</code> (2A) or <code>SANCTUARY EXCLUSIVE</code> (2B) + <code>ZEOCARB-98™ • 8 FL OZ / 236 ML</code>.<br/>• <strong>Zero text on bottom bottle glass outside the single gold border.</strong></td>
-            <td><strong>2 Label SKUs:</strong><br/>• 2A Men's Black/Gold<br/>• 2B Women's Ivory/Gold</td>
+            <td>100% Waterproof, Steam/Shower-Proof <strong>Soft-Touch Matte BOPP Vinyl + Metallic Hot-Foil Stamping</strong>:<br/>• <strong>Single Thin Metallic Border on Front Panel:</strong> Compact Crossed Hockey Sticks &amp; Flame + <code>PUCK &amp; WICK</code> + <code>LOUDOUN COUNTY, VA</code> + <code>USA</code> + divider line + <code>ATHLETE EXCLUSIVE</code> (2A in Gold Foil) or <code>SANCTUARY EXCLUSIVE</code> (2B in Champagne Rose-Gold Foil) + <code>ZEOCARB-98™ • 8 FL OZ / 236 ML</code>.<br/>• <strong>Zero text on bottom bottle glass outside the single metallic border.</strong></td>
+            <td><strong>2 Label SKUs:</strong><br/>• 2A Men's Black + Gold<br/>• 2B Women's Ivory + Rose-Gold</td>
           </tr>
         </tbody>
       </table>
@@ -915,8 +915,8 @@ const html = `<!DOCTYPE html>
           <tr>
             <td><strong>5.1 Rigid Magnetic Front-Flap Gift Box (Specs 3A / 3B on Page 2)</strong></td>
             <td>• <strong>Outer Dimensions:</strong><br/><code>11.50" W × 8.00" D × 4.00" H</code><br/>(<code>292 mm × 203 mm × 102 mm</code>)<br/>• <strong>Board:</strong> <code>1200gsm–1400gsm</code></td>
-            <td>Rigid book-style magnetic front-flap keepsake box (ships rigid or collapsible fold-flat w/ 3M corner tape &amp; concealed neodymium magnets).<br/>• <strong>Exterior Closed Top Lid ONLY (Specs 3A &amp; 3B):</strong> Borderless Gold Hot-Foil Master Crest locked together on top (Emblem + <code>PUCK &amp; WICK</code> + <code>LOUDOUN COUNTY, VA</code> + <code>USA</code>), with <code>ATHLETE EXCLUSIVE</code> (3A) or <code>SANCTUARY EXCLUSIVE</code> (3B) underneath.<br/>• <strong>Inside Lid &amp; Interior Foam:</strong> <strong>100% Clean &amp; Unbranded</strong> — Zero logos or text on the inside lid or foam.</td>
-            <td><strong>1) Men's Box (3A):</strong> Matte Obsidian Black (<code>#0B0C0E</code>) + Gold Foil<br/><strong>2) Women's Box (3B):</strong> Warm Alabaster-Ivory (<code>#FAF5EB</code>) + Gold Foil</td>
+            <td>Rigid book-style magnetic front-flap keepsake box (ships rigid or collapsible fold-flat w/ 3M corner tape &amp; concealed neodymium magnets).<br/>• <strong>Exterior Closed Top Lid ONLY (Specs 3A &amp; 3B):</strong> Borderless Hot-Foil Master Crest locked together on top (Emblem + <code>PUCK &amp; WICK</code> + <code>LOUDOUN COUNTY, VA</code> + <code>USA</code>), with <code>ATHLETE EXCLUSIVE</code> (3A in Gold Foil) or <code>SANCTUARY EXCLUSIVE</code> (3B in Champagne Rose-Gold Foil) underneath.<br/>• <strong>Inside Lid &amp; Interior Foam:</strong> <strong>100% Clean &amp; Unbranded</strong> — Zero logos or text on the inside lid or foam.</td>
+            <td><strong>1) Men's Box (3A):</strong> Matte Obsidian Black (<code>#0B0C0E</code>) + Gold Foil<br/><strong>2) Women's Box (3B):</strong> Warm Alabaster-Ivory (<code>#FAF5EB</code>) + Champagne Rose-Gold Foil</td>
           </tr>
           <tr>
             <td><strong>5.2 Precision Die-Cut 3-Cavity EVA Foam Insert</strong><br/><em>(Identical Cutouts in Both Boxes!)</em></td>
@@ -1017,35 +1017,35 @@ const html = `<!DOCTYPE html>
         <tbody>
           <tr>
             <td><strong>01</strong></td>
-            <td><strong>10 oz Glass Candle Jars + Unbranded Brushed Gold Metal Lids</strong> (Split: 70% Matte Black / 30% Frosted Warm Ivory)</td>
-            <td><code>78 mm OD × 89 mm H</code> + <code>80 mm</code> Gold Lid</td>
+            <td><strong>10 oz Glass Candle Jars + Unbranded Brushed Metal Lids</strong> (Split: 70% Matte Black w/ Brushed Gold Lid / 30% Frosted Warm Ivory w/ Brushed Champagne Rose-Gold Lid)</td>
+            <td><code>78 mm OD × 89 mm H</code> + <code>80 mm</code> Metal Lid</td>
             <td>200 – 300 pcs</td>
             <td>500 – 1,000 pcs</td>
           </tr>
           <tr>
             <td><strong>02</strong></td>
-            <td><strong>Two-Piece Gold-Neck Rigid Candle Boxes + Base EVA Ring</strong> (Split: 70% Matte Black / 30% Warm Ivory — Universal Print)</td>
+            <td><strong>Two-Piece Metallic-Neck Rigid Candle Boxes + Base EVA Ring</strong> (Split: 70% Matte Black w/ Gold Neck &amp; Foil / 30% Warm Ivory w/ Champagne Rose-Gold Neck &amp; Foil)</td>
             <td><code>89 × 89 × 108 mm</code> (<code>78.5 mm</code> inner cutout)</td>
             <td>200 – 300 pcs</td>
             <td>500 – 1,000 pcs</td>
           </tr>
           <tr>
             <td><strong>03</strong></td>
-            <td><strong>Complete Candle Sticker &amp; Insert Kit (Items 3.1 to 3.6):</strong><br/>• 3.1 Universal Square Front Jar Crest (<code>57 × 57 mm</code> BOPP + Single Gold Border — Specs 1A/1B)<br/>• 3.2 L-Wrap Box Corner Scent Bands (<code>89 × 23 mm</code> across 10 Scents)<br/>• 3.3 Round Bottom Warning Labels (<code>50.8 mm</code> Dia across 10 Scents)<br/>• 3.4 Round Gold <code>QC #1 SEAL</code> (<code>25.4 mm</code>) + 3.5 Dust Cover (<code>72 mm</code>) + 3.6 Atelier Card (<code>85 × 85 mm</code>)</td>
+            <td><strong>Complete Candle Sticker &amp; Insert Kit (Items 3.1 to 3.6):</strong><br/>• 3.1 Universal Square Front Jar Crest (<code>57 × 57 mm</code> BOPP — 1A Black/Gold &amp; 1B Ivory/Rose-Gold)<br/>• 3.2 L-Wrap Box Corner Scent Bands (<code>89 × 23 mm</code> across 10 Scents) + 3.3 Bottom Warning Labels (<code>50.8 mm</code> Dia)<br/>• 3.4 Round <code>QC #1 SEAL</code> (<code>25.4 mm</code> — Gold &amp; Rose-Gold) + 3.5 Dust Cover (<code>72 mm</code>) + 3.6 Atelier Card (<code>85 × 85 mm</code>)</td>
             <td><code>57×57 mm</code>, <code>89×23 mm</code>, <code>50.8 mm</code>, <code>25.4 mm</code>, <code>72 mm</code>, <code>85×85 mm</code></td>
             <td>300 – 500 sets</td>
             <td>1,000 – 2,500 sets</td>
           </tr>
           <tr>
             <td><strong>04</strong></td>
-            <td><strong>8 fl oz (236–250 mL) Body Wash Bottles + Lockable Brushed Gold Pumps + Waterproof Wrap Labels (Specs 2A/2B)</strong> (50% Matte Black / 50% Frosted Ivory)</td>
+            <td><strong>8 fl oz (236–250 mL) Body Wash Bottles + Lockable Metal Pumps + Waterproof Wrap Labels (Specs 2A/2B)</strong> (50% Matte Black + Gold Pump/Foil / 50% Frosted Ivory + Champagne Rose-Gold Pump/Foil)</td>
             <td><code>61 mm OD × 171 mm H</code> + <code>165 × 89 mm</code> Label</td>
             <td>200 – 300 pcs</td>
             <td>500 – 1,000 pcs</td>
           </tr>
           <tr>
             <td><strong>05</strong></td>
-            <td><strong>Deluxe 3-Cavity Rigid Magnetic Gift Boxes + Die-Cut EVA Foam (Specs 3A/3B)</strong> (50% Men's Matte Black / 50% Women's Warm Ivory)</td>
+            <td><strong>Deluxe 3-Cavity Rigid Magnetic Gift Boxes + Die-Cut EVA Foam (Specs 3A/3B)</strong> (50% Men's Matte Black + Gold Foil / 50% Women's Warm Ivory + Champagne Rose-Gold Foil)</td>
             <td><code>292 × 203 × 102 mm</code> (3-Cavity EVA Foam)</td>
             <td>100 – 200 pcs</td>
             <td>300 – 500 pcs</td>
