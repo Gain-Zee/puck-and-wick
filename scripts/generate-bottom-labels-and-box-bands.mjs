@@ -120,11 +120,12 @@ function renderBottomLabelSvg(scent, sizePx = 380) {
         </textPath>
       </text>
 
-      <!-- Mini Crossed Sticks & Flame Emblem at Top -->
+      <!-- Mini Crossed Sticks & Flame Emblem at Top (with Hockey Blades) -->
       <g transform="translate(200, 74)">
-        <line x1="-14" y1="-8" x2="14" y2="14" stroke="${goldText}" stroke-width="2.2" stroke-linecap="round" />
-        <line x1="14" y1="-8" x2="-14" y2="14" stroke="${goldText}" stroke-width="2.2" stroke-linecap="round" />
-        <path d="M 0,1 C -3.5,-4 -5,-10 -2,-15 C -0.5,-17.5 0,-19.5 0,-21 C 0,-19.5 0.5,-17.5 2,-15 C 5,-10 3.5,-4 0,1 Z" fill="${goldText}" />
+        <path d="M -15,-10 L 14,13 L 19.5,11" fill="none" stroke="${goldText}" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M 15,-10 L -14,13 L -19.5,11" fill="none" stroke="${goldText}" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M 0,0.5 C -3.5,-4.5 -5,-10.5 -2,-15.5 C -0.5,-18 0,-20 0,-21.5 C 0,-20 0.5,-18 2,-15.5 C 5,-10.5 3.5,-4.5 0,0.5 Z" fill="${goldText}" />
+        <path d="M 0,-2 C -1.4,-4.5 -2,-8 -0.8,-11 C 0,-12.5 0.2,-12.5 0.8,-11 C 2,-8 1.4,-4.5 0,-2 Z" fill="${bgFill}" opacity="0.55" />
       </g>
 
       <!-- Kicker Pill -->
@@ -741,10 +742,10 @@ const htmlPage3 = `<!DOCTYPE html>
         <!-- Main 2.875" Circle -->
         <circle cx="170" cy="180" r="146" fill="#111318" stroke="#D4AF37" stroke-width="2.8" />
         <circle cx="170" cy="180" r="134" fill="none" stroke="rgba(212,175,55,0.4)" stroke-width="1" stroke-dasharray="3 3" />
-        <!-- Crossed Sticks & Flame above wick hole -->
+        <!-- Crossed Sticks & Flame above wick hole (with Hockey Blades) -->
         <g transform="translate(170, 96)">
-          <line x1="-22" y1="-12" x2="22" y2="20" stroke="#E5C878" stroke-width="2.6" stroke-linecap="round" />
-          <line x1="22" y1="-12" x2="-22" y2="20" stroke="#E5C878" stroke-width="2.6" stroke-linecap="round" />
+          <path d="M -22,-14 L 20,18 L 28,15" fill="none" stroke="#E5C878" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M 22,-14 L -20,18 L -28,15" fill="none" stroke="#E5C878" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
           <path d="M 0,2 C -5,-6 -7,-14 -3,-22 C -1,-26 0,-29 0,-31 C 0,-29 1,-26 3,-22 C 7,-14 5,-6 0,2 Z" fill="#E5C878" />
         </g>
         <text x="170" y="138" text-anchor="middle" font-family="'Cinzel', serif" font-size="15" font-weight="700" fill="#FFFFFF" letter-spacing="3">PUCK &amp; WICK</text>
@@ -819,8 +820,8 @@ const htmlPage3 = `<!DOCTYPE html>
         <div class="box-body">
           <div class="box-crest">
             <svg viewBox="0 0 100 100" width="66" height="66">
-              <line x1="20" y1="30" x2="80" y2="85" stroke="#E5C878" stroke-width="3.5" stroke-linecap="round" />
-              <line x1="80" y1="30" x2="20" y2="85" stroke="#E5C878" stroke-width="3.5" stroke-linecap="round" />
+              <path d="M 20,30 L 76,82 L 88,77" fill="none" stroke="#E5C878" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M 80,30 L 24,82 L 12,77" fill="none" stroke="#E5C878" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" />
               <path d="M 50,48 C 43,39 40,28 46,18 C 49,13 50,10 50,7 C 50,10 51,13 54,18 C 60,28 57,39 50,48 Z" fill="#E5C878" />
             </svg>
             <div style="font-family:'Cinzel',serif;font-size:11px;font-weight:700;color:#FFF;letter-spacing:1.5px;margin-top:4px;">PUCK &amp; WICK</div>

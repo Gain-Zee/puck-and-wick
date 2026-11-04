@@ -219,10 +219,10 @@ export const PRODUCTS = [
     specUnitLabel: '10 oz Vessel (8.5 oz Fill)',
     burnTime: '55 - 65 hours',
     weightOz: 10,
-    vessel: '10 oz Frosted Warm Ivory Glass (8.5 oz / 240g Net Soy Fill) with Unbranded Brushed Champagne Rose-Gold Lid',
+    vessel: '10 oz Frosted Warm Ivory Glass (8.5 oz / 240g Net Soy Fill) with Unbranded Brushed Champagne-Gold Lid',
     wax: '100% Pure American Soy Wax + ZeoCarb-98™ Vapor Complex',
     wick: 'Lead-Free Braided Organic Cotton Wick',
-    description: 'Poured in our signature Frosted Warm Ivory & Brushed Champagne Rose-Gold Sanctuary vessel. An enveloping, serene botanical infusion of steeped imperial white tea leaves and Sicilian bergamot zest, wrapped in spun cashmere accord, silver jasmine petals, and warm blond hinoki wood.',
+    description: 'Poured in our signature Frosted Warm Ivory & Champagne-Gold Sanctuary vessel. An enveloping, serene botanical infusion of steeped imperial white tea leaves and Sicilian bergamot zest, wrapped in spun cashmere accord, silver jasmine petals, and warm blond hinoki wood.',
     notes: {
       top: ['Imperial White Tea Leaf', 'Sicilian Bergamot Zest', 'Dewy Pear Blossom'],
       middle: ['Spun Cashmere Accord', 'Silver Jasmine Petal', 'Clary Sage'],
@@ -231,8 +231,8 @@ export const PRODUCTS = [
     featured: true,
     seasonal: false,
     vesselType: 'ivory',
-    photo: 'assets/images/packaging/shelf-candle-cashmere-white-tea.jpg?v=68',
-    accentColor: '#C8927B'
+    photo: 'assets/images/packaging/shelf-candle-cashmere-white-tea.jpg',
+    accentColor: '#E5C878'
   },
   {
     id: 'candle-velvet-vanilla-santal',
@@ -247,10 +247,10 @@ export const PRODUCTS = [
     specUnitLabel: '10 oz Vessel (8.5 oz Fill)',
     burnTime: '55 - 65 hours',
     weightOz: 10,
-    vessel: '10 oz Frosted Warm Ivory Glass (8.5 oz / 240g Net Soy Fill) with Unbranded Brushed Champagne Rose-Gold Lid',
+    vessel: '10 oz Frosted Warm Ivory Glass (8.5 oz / 240g Net Soy Fill) with Unbranded Brushed Champagne-Gold Lid',
     wax: '100% Pure American Soy Wax + ZeoCarb-98™ Vapor Complex',
     wick: 'Lead-Free Braided Organic Cotton Wick',
-    description: 'Poured in our Frosted Warm Ivory & Brushed Champagne Rose-Gold Sanctuary vessel. A sensual, intoxicating balance of crushed green cardamom and warm papyrus layered over creamy Australian sandalwood heart, cured Madagascar vanilla bean pods, and golden benzoin resin.',
+    description: 'Poured in our Frosted Warm Ivory & Champagne-Gold Sanctuary vessel. A sensual, intoxicating balance of crushed green cardamom and warm papyrus layered over creamy Australian sandalwood heart, cured Madagascar vanilla bean pods, and golden benzoin resin.',
     notes: {
       top: ['Crushed Green Cardamom', 'Toasted Violet Leaf', 'Warm Papyrus'],
       middle: ['Australian Sandalwood Heart', 'Madagascar Vanilla Pod', 'Orris Butter'],
@@ -259,8 +259,8 @@ export const PRODUCTS = [
     featured: true,
     seasonal: false,
     vesselType: 'ivory',
-    photo: 'assets/images/packaging/shelf-candle-velvet-vanilla-santal.jpg?v=68',
-    accentColor: '#C8927B'
+    photo: 'assets/images/packaging/shelf-candle-velvet-vanilla-santal.jpg',
+    accentColor: '#E5C878'
   },
   {
     id: 'candle-sea-salt-orchid',
@@ -275,10 +275,10 @@ export const PRODUCTS = [
     specUnitLabel: '10 oz Vessel (8.5 oz Fill)',
     burnTime: '55 - 65 hours',
     weightOz: 10,
-    vessel: '10 oz Frosted Warm Ivory Glass (8.5 oz / 240g Net Soy Fill) with Unbranded Brushed Champagne Rose-Gold Lid',
+    vessel: '10 oz Frosted Warm Ivory Glass (8.5 oz / 240g Net Soy Fill) with Unbranded Brushed Champagne-Gold Lid',
     wax: '100% Pure American Soy Wax + ZeoCarb-98™ Vapor Complex',
     wick: 'Lead-Free Braided Organic Cotton Wick',
-    description: 'Poured in our Frosted Warm Ivory & Brushed Champagne Rose-Gold Sanctuary vessel. A luminous, airy coastal-botanical composition pairing crystalline sea salt and ozonated mist with velvety night-blooming white orchid, wild freesia, and sun-bleached driftwood.',
+    description: 'Poured in our Frosted Warm Ivory & Champagne-Gold Sanctuary vessel. A luminous, airy coastal-botanical composition pairing crystalline sea salt and ozonated mist with velvety night-blooming white orchid, wild freesia, and sun-bleached driftwood.',
     notes: {
       top: ['Crystalline Sea Salt', 'Ozonated Coastal Mist', 'Petitgrain Leaf'],
       middle: ['Night-Blooming White Orchid', 'Wild Freesia', 'Neroli Blossom'],
@@ -287,8 +287,8 @@ export const PRODUCTS = [
     featured: false,
     seasonal: false,
     vesselType: 'ivory',
-    photo: 'assets/images/packaging/shelf-candle-sea-salt-orchid.jpg?v=68',
-    accentColor: '#C8927B'
+    photo: 'assets/images/packaging/shelf-candle-sea-salt-orchid.jpg',
+    accentColor: '#E5C878'
   },
   {
     id: 'puck-mens-athlete',
@@ -394,13 +394,13 @@ export const PRODUCTS = [
     genderLine: 'womens',
     genderLabel: 'WOMENS',
     specUnitLabel: '1x 8 fl oz Wash (Single)',
-    includedSummary: 'SOLD INDIVIDUALLY • Includes 1x Full-Size 8 fl oz (236 mL) Sanctuary White Clay & Silk Body Wash Pump Bottle in Frosted Warm Alabaster-Ivory & Brushed Champagne Rose-Gold. Standalone single item — does not include candle or odor puck.',
+    includedSummary: 'SOLD INDIVIDUALLY • Includes 1x Full-Size 8 fl oz (236 mL) Sanctuary White Clay & Silk Body Wash Pump Bottle in Frosted Warm Alabaster-Ivory & Brushed Champagne-Gold. Standalone single item — does not include candle or odor puck.',
     burnTime: '8 fl oz (236 mL)',
     weightOz: 8,
-    vessel: '1x 8 oz Frosted Warm Alabaster-Ivory Apothecary Bottle with Lockable Brushed Champagne Rose-Gold Dispenser Pump',
+    vessel: '1x 8 oz Frosted Warm Alabaster-Ivory Apothecary Bottle with Lockable Brushed Champagne-Gold Dispenser Pump',
     wax: 'Kaolin White Clay + Hydrolyzed Silk Amino Acids + ZeoCarb-98™ Botanical Deodorizer',
     wick: 'Sulfate-Free, Paraben-Free Velvety Lather Gel Base',
-    description: 'Sold individually as a standalone 8 fl oz luxury pump bottle crafted in our Frosted Warm Alabaster-Ivory & Brushed Champagne Rose-Gold Sanctuary finish. Mineral-rich Kaolin white clay gently purifies skin after hot yoga, Pilates, or training while hydrolyzed silk amino acids, imperial white tea, and our proprietary ZeoCarb-98™ botanical complex leave skin velvety-soft, hydrated, and 100% odor-free.',
+    description: 'Sold individually as a standalone 8 fl oz luxury pump bottle crafted in our Frosted Warm Alabaster-Ivory & Brushed Champagne-Gold Sanctuary finish. Mineral-rich Kaolin white clay gently purifies skin after hot yoga, Pilates, or training while hydrolyzed silk amino acids, imperial white tea, and our proprietary ZeoCarb-98™ botanical complex leave skin velvety-soft, hydrated, and 100% odor-free.',
     notes: {
       top: ['Imperial White Tea Leaf', 'Sicilian Bergamot Zest', 'French Lavender Dew'],
       middle: ['Kaolin White Clay', 'Hydrolyzed Silk Amino Acids', 'Silver Jasmine Petal'],
@@ -409,10 +409,10 @@ export const PRODUCTS = [
     featured: true,
     seasonal: false,
     vesselType: 'ivory',
-    photo: 'assets/images/item-bodywash-women.jpg?v=67',
+    photo: 'assets/images/item-bodywash-women.jpg?v=65',
     subSpecText: 'SINGLE 8 FL OZ PUMP BOTTLE • WHITE CLAY + ZEOCARB-98™',
     waxSpecSub: '1x 8 oz Body Wash Only',
-    accentColor: '#C8927B'
+    accentColor: '#E5C878'
   }
 ];
 
@@ -463,15 +463,14 @@ export function getProductGallerySlides(product, conceptId = 1) {
 
   if (!product.productType || product.productType === 'candle') {
     const atelierCardImg = product.vesselType === 'ivory'
-      ? 'assets/images/packaging/atelier-card-ivory.jpg?v=68'
+      ? 'assets/images/packaging/atelier-card-ivory.jpg?v=65'
       : 'assets/images/packaging/atelier-card-obsidian.jpg?v=65';
-    const shelfImg = `assets/images/packaging/shelf-${product.id}.jpg?v=68`;
-    const lidFinishText = product.vesselType === 'ivory' ? 'Brushed Champagne Rose-Gold Lid' : 'Brushed Gold Lid';
+    const shelfImg = `assets/images/packaging/shelf-${product.id}.jpg?v=65`;
     return [
       {
         id: 'shelf',
         shortLabel: 'Vessel & Box',
-        title: `${product.name} — Unlit 10 oz Soy Vessel (8.5 oz Fill), ${lidFinishText} & Rigid Two-Piece Collector Box`,
+        title: `${product.name} — Unlit 10 oz Soy Vessel (8.5 oz Fill), Brushed Brass Lid & Rigid Two-Piece Collector Box`,
         type: 'image',
         src: shelfImg,
         thumb: shelfImg
@@ -632,7 +631,7 @@ export function getProductGallerySlides(product, conceptId = 1) {
       {
         id: 'primary',
         shortLabel: 'Bottle',
-        title: '8 fl oz Sanctuary White Clay & Silk Body Wash — Frosted Ivory & Brushed Champagne Rose-Gold Pump Bottle',
+        title: '8 fl oz Sanctuary White Clay & Silk Body Wash — Frosted Ivory & Champagne-Gold Pump Bottle',
         type: 'svg',
         thumb: primaryPhoto
       },
@@ -641,16 +640,16 @@ export function getProductGallerySlides(product, conceptId = 1) {
         shortLabel: 'Shower',
         title: '8 fl oz Sanctuary Body Wash — Post-Pilates & Spa Shower Ritual',
         type: 'image',
-        src: 'assets/images/packaging/wash-women-shower.jpg?v=67',
-        thumb: 'assets/images/packaging/wash-women-shower.jpg?v=67'
+        src: 'assets/images/packaging/wash-women-shower.jpg?v=65',
+        thumb: 'assets/images/packaging/wash-women-shower.jpg?v=65'
       },
       {
         id: 'vanity',
         shortLabel: 'Vanity',
         title: '8 fl oz Sanctuary Body Wash — Warm Travertine Marble Vanity Presentation',
         type: 'image',
-        src: 'assets/images/packaging/wash-women-vanity.jpg?v=67',
-        thumb: 'assets/images/packaging/wash-women-vanity.jpg?v=67'
+        src: 'assets/images/packaging/wash-women-vanity.jpg?v=65',
+        thumb: 'assets/images/packaging/wash-women-vanity.jpg?v=65'
       }
     ];
   }

@@ -20,7 +20,7 @@ function renderMasterCrest(mode = 'mens_black_gold', sizeCss = '215px', uid = 'm
         <!-- Black Crossed Hockey Sticks + Gold Flame -->
         <g transform="translate(250, 190)">
           <path d="M -46,-40 L 44,42 L 58,36.5" fill="none" stroke="#141210" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" />
-          <path d="M 46,-40 L -44,42 L -58,36.5" fill="none" stroke="#141210" stroke-width="3.6" stroke-linecap="round" />
+          <path d="M 46,-40 L -44,42 L -58,36.5" fill="none" stroke="#141210" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" />
           <path d="M 0,-12 C -9.5,-23 -13,-38 -5.5,-52 C -1.5,-59 0,-64 0,-68 C 0,-64 1.5,-59 5.5,-52 C 13,-38 9.5,-23 0,-12 Z" fill="#B68D40" />
           <path d="M 0,-18 C -3.8,-24 -5,-33 -2,-40 C 0,-44 0.5,-44 2,-40 C 5,-33 3.8,-24 0,-18 Z" fill="#FAF8F3" opacity="0.55" />
         </g>
@@ -50,7 +50,7 @@ function renderMasterCrest(mode = 'mens_black_gold', sizeCss = '215px', uid = 'm
         <!-- Champagne-Gold Crossed Hockey Sticks & Flame -->
         <g transform="translate(250, 190)">
           <path d="M -46,-40 L 44,42 L 58,36.5" fill="none" stroke="url(#ag-${uid})" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
-          <path d="M 46,-40 L -44,42 L -58,36.5" fill="none" stroke="url(#ag-${uid})" stroke-width="3.5" stroke-linecap="round" />
+          <path d="M 46,-40 L -44,42 L -58,36.5" fill="none" stroke="url(#ag-${uid})" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
           <path d="M 0,-12 C -9.5,-23 -13,-38 -5.5,-52 C -1.5,-59 0,-64 0,-68 C 0,-64 1.5,-59 5.5,-52 C 13,-38 9.5,-23 0,-12 Z" fill="url(#ag-${uid})" />
           <path d="M 0,-18 C -3.8,-24 -5,-33 -2,-40 C 0,-44 0.5,-44 2,-40 C 5,-33 3.8,-24 0,-18 Z" fill="#FAF8F3" opacity="0.55" />
         </g>
@@ -78,7 +78,7 @@ function renderMasterCrest(mode = 'mens_black_gold', sizeCss = '215px', uid = 'm
       <rect x="55" y="55" width="390" height="390" fill="none" stroke="rgba(229,200,120,0.28)" stroke-width="1.1" />
       <g transform="translate(250, 190)">
         <path d="M -46,-40 L 44,42 L 58,36.5" fill="none" stroke="url(#bg-${uid})" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M 46,-40 L -44,42 L -58,36.5" fill="none" stroke="url(#bg-${uid})" stroke-width="3.4" stroke-linecap="round" />
+        <path d="M 46,-40 L -44,42 L -58,36.5" fill="none" stroke="url(#bg-${uid})" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" />
         <path d="M 0,-12 C -9.5,-23 -13,-38 -5.5,-52 C -1.5,-59 0,-64 0,-68 C 0,-64 1.5,-59 5.5,-52 C 13,-38 9.5,-23 0,-12 Z" fill="url(#bg-${uid})" />
         <path d="M 0,-18 C -3.8,-24 -5,-33 -2,-40 C 0,-44 0.5,-44 2,-40 C 5,-33 3.8,-24 0,-18 Z" fill="#0B0C0E" opacity="0.48" />
       </g>

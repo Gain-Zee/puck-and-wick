@@ -44,9 +44,10 @@ function renderPrintableCircleSvg(scent, uid, forceLightBg = false) {
       </text>
 
       <g transform="translate(200, 74)">
-        <line x1="-14" y1="-8" x2="14" y2="14" stroke="${goldText}" stroke-width="2.2" stroke-linecap="round" />
-        <line x1="14" y1="-8" x2="-14" y2="14" stroke="${goldText}" stroke-width="2.2" stroke-linecap="round" />
-        <path d="M 0,1 C -3.5,-4 -5,-10 -2,-15 C -0.5,-17.5 0,-19.5 0,-21 C 0,-19.5 0.5,-17.5 2,-15 C 5,-10 3.5,-4 0,1 Z" fill="${goldText}" />
+        <path d="M -15,-10 L 14,13 L 19.5,11" fill="none" stroke="${goldText}" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M 15,-10 L -14,13 L -19.5,11" fill="none" stroke="${goldText}" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M 0,0.5 C -3.5,-4.5 -5,-10.5 -2,-15.5 C -0.5,-18 0,-20 0,-21.5 C 0,-20 0.5,-18 2,-15.5 C 5,-10.5 3.5,-4.5 0,0.5 Z" fill="${goldText}" />
+        <path d="M 0,-2 C -1.4,-4.5 -2,-8 -0.8,-11 C 0,-12.5 0.2,-12.5 0.8,-11 C 2,-8 1.4,-4.5 0,-2 Z" fill="${bgFill}" opacity="0.55" />
       </g>
 
       <rect x="98" y="96" width="204" height="19" rx="9.5" fill="${badgeBg}" stroke="${innerRing}" stroke-width="0.8" />

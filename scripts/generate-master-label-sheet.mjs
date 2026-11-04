@@ -11,12 +11,12 @@ const ARTIFACT_DIR = '/Users/georgiiskrenov/.gemini/antigravity/brain/d9fdb7f0-3
 
 function renderCandleCrestSvg(isIvory = false) {
   const bg = isIvory ? '#EFE8DA' : '#111215';
-  const stroke = isIvory ? '#9A7B3E' : '#C8B078';
-  const textCol = isIvory ? '#8C6C30' : '#D5BE87';
+  const stroke = isIvory ? '#B8846E' : '#C8B078';
+  const textCol = isIvory ? '#AD7A64' : '#D5BE87';
   return `
     <svg viewBox="0 0 500 500" width="136" height="136" xmlns="http://www.w3.org/2000/svg" style="display:block;border-radius:4px;box-shadow:0 4px 14px rgba(0,0,0,0.35);">
       <rect x="0" y="0" width="500" height="500" fill="${bg}" />
-      <!-- Single clean gold border matching shelf-candle-locker-room-mint.jpg & shelf-candle-cashmere-white-tea.jpg -->
+      <!-- Single clean metallic border matching shelf-candle-locker-room-mint.jpg & shelf-candle-cashmere-white-tea.jpg -->
       <rect x="44" y="44" width="412" height="412" fill="none" stroke="${stroke}" stroke-width="3.2" />
       <!-- Compact crossed hockey sticks w/ subtle connected blades + flame -->
       <g transform="translate(250, 184) scale(0.76)">
@@ -35,13 +35,13 @@ function renderCandleCrestSvg(isIvory = false) {
 
 function renderBodyWashCrestSvg(isIvory = false) {
   const bg = isIvory ? '#EFE8DA' : '#111215';
-  const stroke = isIvory ? '#9A7B3E' : '#C8B078';
-  const textCol = isIvory ? '#8C6C30' : '#D5BE87';
+  const stroke = isIvory ? '#B8846E' : '#C8B078';
+  const textCol = isIvory ? '#AD7A64' : '#D5BE87';
   const exclusiveText = isIvory ? 'SANCTUARY EXCLUSIVE' : 'ATHLETE EXCLUSIVE';
   return `
     <svg viewBox="0 0 500 650" width="112" height="145" xmlns="http://www.w3.org/2000/svg" style="display:block;border-radius:4px;box-shadow:0 4px 14px rgba(0,0,0,0.35);">
       <rect x="0" y="0" width="500" height="650" fill="${bg}" />
-      <!-- Single clean gold border -->
+      <!-- Single clean metallic border -->
       <rect x="44" y="44" width="412" height="562" fill="none" stroke="${stroke}" stroke-width="3.2" />
       <!-- Compact crossed hockey sticks w/ subtle connected blades + flame -->
       <g transform="translate(250, 174) scale(0.76)">
@@ -63,8 +63,8 @@ function renderBodyWashCrestSvg(isIvory = false) {
 
 function renderDeluxeBoxLidSvg({ isIvory = false, subtitle = 'ATHLETE EXCLUSIVE' } = {}) {
   const bg = isIvory ? '#EFE8DA' : '#111215';
-  const stroke = isIvory ? '#9A7B3E' : '#C8B078';
-  const textCol = isIvory ? '#8C6C30' : '#D5BE87';
+  const stroke = isIvory ? '#B8846E' : '#C8B078';
+  const textCol = isIvory ? '#AD7A64' : '#D5BE87';
   const borderCol = isIvory ? '#D8CEBE' : '#2C3038';
   const isLong = subtitle.length > 22;
   const subFontSize = isLong ? '12.5' : (subtitle.length > 19 ? '13.5' : '14.5');
