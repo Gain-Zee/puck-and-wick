@@ -481,7 +481,8 @@
 }
 
 .quick-add-btn,
-.quick-waitlist-btn {
+.quick-waitlist-btn,
+.quick-stockist-btn {
   width: 100%;
   min-height: 42px;
   display: inline-flex;
@@ -491,6 +492,15 @@
   padding: 0.55rem 0.95rem;
   gap: 0.45rem;
   font-weight: 700;
+}
+
+.quick-stockist-btn {
+  white-space: normal;
+  text-align: center;
+  line-height: 1.25;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  padding: 0.48rem 0.7rem;
 }
 
 .quick-waitlist-btn {
@@ -618,13 +628,20 @@
   }
 
   .quick-add-btn,
-  .quick-waitlist-btn {
+  .quick-waitlist-btn,
+  .quick-stockist-btn {
     width: 100%;
     padding: 0.45rem 0.5rem;
     font-size: 0.65rem;
     min-height: 36px;
     gap: 0.3rem;
     letter-spacing: 0.04em;
+  }
+
+  .quick-stockist-btn {
+    font-size: 0.58rem;
+    line-height: 1.2;
+    padding: 0.4rem 0.45rem;
   }
 
   .quick-add-btn svg,

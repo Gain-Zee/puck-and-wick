@@ -155,7 +155,7 @@ export function initCatalog(store, openCartDrawer) {
 
                     ${isLocalStock ? `
                       <button type="button" class="btn btn-gold btn-sm quick-stockist-btn" data-testid="quick-stockist-btn" data-product-id="${p.id}" aria-label="Available now in Blue Hydrangea and Ketterman's for ${p.name}">
-                        <span>Available Now in Blue Hydrangea &amp; Ketterman's</span>
+                        <span>Available Now in<br>Blue Hydrangea &amp; Ketterman's</span>
                       </button>
                     ` : isWaitlist ? `
                       <button type="button" class="btn btn-outline btn-sm quick-waitlist-btn" data-testid="quick-waitlist-btn" data-product-id="${p.id}" aria-label="Join VIP Waitlist for ${p.name}">
