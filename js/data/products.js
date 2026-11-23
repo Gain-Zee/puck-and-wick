@@ -213,8 +213,8 @@ export const PRODUCTS = [
   },
   {
     id: 'candle-velvet-vanilla-santal',
-    name: 'Velvet Vanilla & Santal',
-    tagline: 'Sanctuary Ivory Collection. Australian Sandalwood, Cardamom & Madagascar Vanilla.',
+    name: 'Moroccan Gold',
+    tagline: 'Sanctuary Ivory Collection. Moroccan Cashmere, Golden Santal & Warm Amber.',
     price: 44.00,
     formattedPrice: 'Batch 01 • Waitlist',
     category: ['womens', 'candles', 'signature', 'woods_rustic'],
