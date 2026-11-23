@@ -181,6 +181,34 @@ export const PRODUCTS = [
     accentColor: '#E5C878'
   },
   {
+    id: 'candle-silk-cashmere',
+    name: 'Silk & Cashmere',
+    tagline: 'Sanctuary Ivory Collection. Bergamot, Spun Cashmere & Creamy Sandalwood.',
+    price: 44.00,
+    formattedPrice: 'Batch 01 • Waitlist',
+    category: ['womens', 'candles', 'signature', 'fresh_clean', 'seasonal'],
+    productType: 'candle',
+    genderLine: 'womens',
+    genderLabel: 'WOMENS',
+    specUnitLabel: '10 oz Vessel (8.5 oz Fill)',
+    burnTime: '55 - 65 hours',
+    weightOz: 10,
+    vessel: '10 oz Frosted Warm Ivory Glass (8.5 oz / 240g Net Soy Fill) with Unbranded Brushed Champagne-Gold Lid',
+    wax: '100% Pure American Soy Wax + ZeoCarb-98™ Vapor Complex',
+    wick: 'Lead-Free Braided Organic Cotton Wick',
+    description: 'Poured in our signature Frosted Warm Ivory & Champagne-Gold Sanctuary vessel. Soft, enveloping, and effortlessly serene—bright bergamot opens into warm spun cashmere, soft vanilla, and creamy sandalwood over sheer skin musk.',
+    notes: {
+      top: ['Golden Bergamot', 'Powdered Vanilla'],
+      middle: ['Spun Cashmere Accord', 'Soft Ylang', 'White Lavender'],
+      base: ['Creamy Sandalwood', 'Warm Amber', 'Sheer Musk']
+    },
+    featured: true,
+    seasonal: false,
+    vesselType: 'ivory',
+    photo: 'assets/images/packaging/shelf-candle-cashmere-white-tea.jpg',
+    accentColor: '#E5C878'
+  },
+  {
     id: 'candle-velvet-vanilla-santal',
     name: 'Velvet Vanilla & Santal',
     tagline: 'Sanctuary Ivory Collection. Australian Sandalwood, Cardamom & Madagascar Vanilla.',
