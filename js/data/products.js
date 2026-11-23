@@ -99,33 +99,6 @@ export const PRODUCTS = [
     accentColor: '#3B7A57'
   },
   {
-    id: 'candle-barnwood-bourbon',
-    name: 'Barnwood & Bourbon',
-    tagline: 'Historic Virginia Homestead. Weathered Oak & Small-Batch Rye.',
-    price: 44.00,
-    formattedPrice: 'Batch 01 • Waitlist',
-    category: ['mens', 'candles', 'woods_rustic'],
-    productType: 'candle',
-    genderLine: 'mens',
-    genderLabel: 'MENS',
-    specUnitLabel: '10 oz Vessel (8.5 oz Fill)',
-    burnTime: '55 - 65 hours',
-    weightOz: 10,
-    vessel: '10 oz Heavy-Base Matte Obsidian Glass (8.5 oz / 240g Net Soy Fill) with Unbranded Brushed Gold Metal Lid',
-    wax: '100% Pure American Soy Wax + ZeoCarb-98™ Vapor Complex',
-    wick: 'Lead-Free Braided Organic Cotton Wick',
-    description: 'The scent of an authentic 19th-century Virginia barn workshop where hand-hewn oak rafters have absorbed decades of sweet woodsmoke, enriched by small-batch rye bourbon, burnt brown sugar, and toasted tonka.',
-    notes: {
-      top: ['Small-Batch Rye Bourbon', 'Toasted Pecan', 'Orange Peel'],
-      middle: ['Weathered Barnwood Oak', 'Scorched Cedar', 'Burnt Maple'],
-      base: ['Warm Amber Resin', 'Smoky Vetiver', 'Aged Vanilla']
-    },
-    featured: false,
-    vesselType: 'obsidian',
-    photo: 'assets/images/packaging/shelf-candle-barnwood-bourbon.jpg',
-    accentColor: '#966034'
-  },
-  {
     id: 'candle-rinkside-cedar-smoke',
     name: 'Rinkside Cedar & Smoke',
     tagline: 'Hockey Heritage / Woods. Cedar Benches & Campfire Embers.',
@@ -151,33 +124,6 @@ export const PRODUCTS = [
     vesselType: 'obsidian',
     photo: 'assets/images/packaging/shelf-candle-rinkside-cedar-smoke.jpg',
     accentColor: '#C5A059'
-  },
-  {
-    id: 'candle-warm-amber-vanilla',
-    name: 'Warm Amber & Vanilla Bean',
-    tagline: 'Unapologetic Hearthside Warmth. Baltic Amber & Madagascar Vanilla.',
-    price: 44.00,
-    formattedPrice: 'Batch 01 • Waitlist',
-    category: ['mens', 'candles', 'signature', 'woods_rustic'],
-    productType: 'candle',
-    genderLine: 'mens',
-    genderLabel: 'MENS',
-    specUnitLabel: '10 oz Vessel (8.5 oz Fill)',
-    burnTime: '55 - 65 hours',
-    weightOz: 10,
-    vessel: '10 oz Heavy-Base Matte Obsidian Glass (8.5 oz / 240g Net Soy Fill) with Unbranded Brushed Gold Metal Lid',
-    wax: '100% Pure American Soy Wax + ZeoCarb-98™ Vapor Complex',
-    wick: 'Lead-Free Braided Organic Cotton Wick',
-    description: 'Rich, sensual, and universally appealing. Rich golden Baltic amber layered with cracked Madagascar vanilla pods, warm cashmere musk, and subtle benzoin resin that fills the room with comforting elegance.',
-    notes: {
-      top: ['Golden Bergamot', 'French Vanilla Cream'],
-      middle: ['Baltic Amber', 'Cashmere Musk', 'Spiced Tonka Bean'],
-      base: ['Madagascar Vanilla Bean', 'Warm Benzoin', 'Cedar']
-    },
-    featured: false,
-    vesselType: 'obsidian',
-    photo: 'assets/images/packaging/shelf-candle-warm-amber-vanilla.jpg',
-    accentColor: '#E6A15C'
   },
   {
     id: 'candle-locker-room-mint',
@@ -208,11 +154,11 @@ export const PRODUCTS = [
   },
   {
     id: 'candle-cashmere-white-tea',
-    name: 'Cashmere & White Tea',
-    tagline: 'Sanctuary Ivory Collection. Imperial White Tea, Spun Cashmere & Hinoki Wood.',
+    name: 'Fireside Cashmere',
+    tagline: 'Sanctuary Ivory Collection. Smoked Oud, Spun Cashmere & Warm Amber.',
     price: 44.00,
     formattedPrice: 'Batch 01 • Waitlist',
-    category: ['womens', 'candles', 'signature', 'fresh_clean', 'seasonal'],
+    category: ['womens', 'candles', 'signature', 'woods_rustic', 'seasonal'],
     productType: 'candle',
     genderLine: 'womens',
     genderLabel: 'WOMENS',
@@ -222,11 +168,11 @@ export const PRODUCTS = [
     vessel: '10 oz Frosted Warm Ivory Glass (8.5 oz / 240g Net Soy Fill) with Unbranded Brushed Champagne-Gold Lid',
     wax: '100% Pure American Soy Wax + ZeoCarb-98™ Vapor Complex',
     wick: 'Lead-Free Braided Organic Cotton Wick',
-    description: 'Poured in our signature Frosted Warm Ivory & Champagne-Gold Sanctuary vessel. An enveloping, serene botanical infusion of steeped imperial white tea leaves and Sicilian bergamot zest, wrapped in spun cashmere accord, silver jasmine petals, and warm blond hinoki wood.',
+    description: 'Poured in our signature Frosted Warm Ivory & Champagne-Gold Sanctuary vessel. A cozy, smoky winter sanctuary blend uniting warm spun cashmere and golden bergamot with dark smoked oud, Baltic amber, and creamy sandalwood.',
     notes: {
-      top: ['Imperial White Tea Leaf', 'Sicilian Bergamot Zest', 'Dewy Pear Blossom'],
-      middle: ['Spun Cashmere Accord', 'Silver Jasmine Petal', 'Clary Sage'],
-      base: ['Blond Hinoki Wood', 'Velvet Tonka Bean', 'Sheer Skin Musk']
+      top: ['Golden Bergamot', 'Smoked Birch'],
+      middle: ['Spun Cashmere Accord', 'Smoked Oud', 'Warm Amber'],
+      base: ['Australian Sandalwood', 'Velvet Musk', 'Aged Vanilla']
     },
     featured: true,
     seasonal: false,

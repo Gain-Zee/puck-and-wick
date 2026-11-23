@@ -198,6 +198,6 @@ export const EXTRA_BOX_GALLERY_SLIDES = [
     shortLabel: '3 Ivory Candles',
     title: 'The Sanctuary Ivory Candle Collection (10 oz Soy Vessels)',
     image: 'assets/images/womens-candle-lineup.jpg?v=65',
-    description: 'Cashmere & White Tea, Velvet Vanilla & Santal, and Sea Salt & White Orchid in warm frosted alabaster-ivory glass.'
+    description: 'Fireside Cashmere, Velvet Vanilla & Santal, and Sea Salt & White Orchid in warm frosted alabaster-ivory glass.'
   }
 ];

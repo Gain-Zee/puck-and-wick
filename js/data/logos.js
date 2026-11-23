@@ -57,7 +57,7 @@ export const LOGO_CONCEPTS = [
     tagline: 'Horizontal double-hairline workshop plaque uniting the crossed hockey blades, puck silhouette, and flame with crisp "Hand-Poured in Virginia" craftsmanship typography.',
     typography: 'Cormorant Garamond Bold + Stamped Workshop Sans',
     finish: 'Brushed Gold Foil Plaque on Matte Obsidian Vessel',
-    bestFor: 'Woods & Rustic Collection (Barnwood & Bourbon, Rinkside Cedar)',
+    bestFor: 'Woods & Rustic Collection (Rinkside Cedar & Smoke, Balsam Fir)',
     svg: SVG_LOGOS[4],
     getSvg: () => getLogoSvg(4)
   }

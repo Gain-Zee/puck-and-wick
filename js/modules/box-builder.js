@@ -27,8 +27,6 @@ function getBoxPresentationSvg(edition, candleProduct, conceptId = 1, customPhot
     jarFill = '#0F2417'; // Emerald
   } else if (candleId === 'candle-fresh-cut') {
     jarFill = '#1E2530'; // Frosted Ice
-  } else if (candleId === 'candle-barnwood-bourbon' || candleId === 'candle-warm-amber-vanilla') {
-    jarFill = '#2B1706'; // Amber
   } else if (candleProduct?.vesselType === 'ivory' || candleVessel.includes('ivory') || candleVessel.includes('alabaster')) {
     jarFill = '#EAE3D5'; // Warm Frosted Ivory
   } else if (candleVessel.includes('emerald') || candleVessel.includes('forest')) {
