@@ -439,7 +439,7 @@ export function getProductGallerySlides(product, conceptId = 1) {
     const atelierCardImg = product.vesselType === 'ivory'
       ? 'assets/images/packaging/atelier-card-ivory.jpg?v=65'
       : 'assets/images/packaging/atelier-card-obsidian.jpg?v=65';
-    const shelfImg = `assets/images/packaging/shelf-${product.id}.jpg?v=65`;
+    const shelfImg = `${product.photo || `assets/images/packaging/shelf-${product.id}.jpg`}?v=65`;
     return [
       {
         id: 'shelf',
