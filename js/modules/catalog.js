@@ -71,7 +71,8 @@ export function initCatalog(store, openCartDrawer) {
               const activeIdx = cardSlideState[p.id] || 0;
               const currentSlide = slides[activeIdx] || slides[0];
               const isLocalStock = Boolean(p.inStockLocal);
-              const isWaitlist = HARDWARE_WAITLIST_MODE && !isLocalStock;
+              const isOutOfStock = Boolean(p.outOfStock);
+              const isWaitlist = HARDWARE_WAITLIST_MODE && !isLocalStock && !isOutOfStock;
               const isIvoryCard = p.vesselType === 'ivory';
               const pillLabel = p.genderLine === 'unisex' ? 'His & Hers' : (isIvoryCard ? 'Womens' : 'Mens');
               return `
@@ -92,6 +93,10 @@ export function initCatalog(store, openCartDrawer) {
                   ${isLocalStock ? `
                     <div class="product-badge badge-flagship">
                       <span>In Stock Locally</span>
+                    </div>
+                  ` : isOutOfStock ? `
+                    <div class="product-badge badge-coming-soon">
+                      <span>Temporarily Out of Stock</span>
                     </div>
                   ` : isWaitlist ? `
                     <div class="product-badge badge-coming-soon">
@@ -116,7 +121,7 @@ export function initCatalog(store, openCartDrawer) {
                 <div class="product-card-body">
                   <div class="card-meta-line">
                     <span class="card-vessel-spec">${p.specUnitLabel || '10 oz Vessel'}</span>
-                    <span class="card-burn-time">${isLocalStock ? 'In Stock • Local' : (isWaitlist ? 'Drop 01 • Waitlist' : `${p.burnTime}`)}</span>
+                    <span class="card-burn-time">${isLocalStock ? 'In Stock • Local' : isOutOfStock ? 'Restocking Soon' : (isWaitlist ? 'Drop 01 • Waitlist' : `${p.burnTime}`)}</span>
                   </div>
 
                   <h3 class="product-title" data-testid="product-title">
@@ -139,8 +144,8 @@ export function initCatalog(store, openCartDrawer) {
                   <div class="product-card-footer">
                     <div class="card-footer-top">
                       <div class="price-container">
-                        <span class="product-price" data-testid="product-price" style="font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;">${isLocalStock ? '$44.00 • Available Now' : 'Batch 01 • Waitlist'}</span>
-                        <span class="wax-spec-sub">${isLocalStock ? 'Blue Hydrangea &amp; Ketterman\'s' : (isWaitlist ? 'Drop 01 • Coming Soon' : (p.waxSpecSub || '100% American Soy'))}</span>
+                        <span class="product-price" data-testid="product-price" style="font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;">${isLocalStock ? '$44.00 • Available Now' : isOutOfStock ? 'Temporarily Out of Stock' : 'Batch 01 • Waitlist'}</span>
+                        <span class="wax-spec-sub">${isLocalStock ? 'Blue Hydrangea &amp; Ketterman\'s' : isOutOfStock ? 'Next Batch Curing Soon' : (isWaitlist ? 'Drop 01 • Coming Soon' : (p.waxSpecSub || '100% American Soy'))}</span>
                       </div>
 
                       <div class="card-secondary-btns">
@@ -156,6 +161,10 @@ export function initCatalog(store, openCartDrawer) {
                     ${isLocalStock ? `
                       <button type="button" class="btn btn-gold btn-sm quick-stockist-btn" data-testid="quick-stockist-btn" data-product-id="${p.id}" aria-label="Available now in Blue Hydrangea and Ketterman's for ${p.name}">
                         <span>Available Now in<br>Blue Hydrangea &amp; Ketterman's</span>
+                      </button>
+                    ` : isOutOfStock ? `
+                      <button type="button" class="btn btn-outline btn-sm quick-waitlist-btn" data-testid="quick-waitlist-btn" data-product-id="${p.id}" aria-label="Temporarily out of stock — notify me when ${p.name} restocks">
+                        <span>Temporarily Out of Stock</span>
                       </button>
                     ` : isWaitlist ? `
                       <button type="button" class="btn btn-outline btn-sm quick-waitlist-btn" data-testid="quick-waitlist-btn" data-product-id="${p.id}" aria-label="Join VIP Waitlist for ${p.name}">
