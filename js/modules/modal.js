@@ -135,7 +135,7 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
             <div class="modal-tagline">${product.tagline}</div>
 
             <div class="modal-price-row">
-              <span class="modal-price" data-testid="modal-price" style="font-size:1.05rem;letter-spacing:0.06em;text-transform:uppercase;">Batch 01 • VIP Waitlist</span>
+              <span class="modal-price" data-testid="modal-price" style="font-size:1.05rem;letter-spacing:0.06em;text-transform:uppercase;">${product.inStockLocal ? '$44.00 • In Stock Locally' : 'Batch 01 • VIP Waitlist'}</span>
               <span class="modal-burn-badge" data-testid="product-burn-time">${product.productType === 'odor_care' ? product.burnTime : `${product.burnTime} Slow Burn`}</span>
             </div>
 
@@ -236,7 +236,9 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
               </div>
 
               <button type="button" class="btn btn-gold modal-add-to-cart-btn modal-add-to-cart" id="modal-add-btn" data-testid="modal-add-to-cart-btn">
-                ${HARDWARE_WAITLIST_MODE ? `
+                ${product.inStockLocal ? `
+                  <span>Available Now in Blue Hydrangea &amp; Ketterman's</span>
+                ` : HARDWARE_WAITLIST_MODE ? `
                   ${getIcon('sparkle')}
                   <span>Join Batch 01 VIP Waitlist</span>
                 ` : `
@@ -588,6 +590,12 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
 
   // Add to cart or Join VIP Waitlist action
   addBtn.addEventListener('click', () => {
+    if (product.inStockLocal) {
+      closeModal();
+      const stockistsEl = document.getElementById('stockists');
+      if (stockistsEl) stockistsEl.scrollIntoView({ behavior: 'smooth' });
+      return;
+    }
     if (HARDWARE_WAITLIST_MODE) {
       closeModal();
       openWaitlistModal(product.name, product.formattedPrice);
