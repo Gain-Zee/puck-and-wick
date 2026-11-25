@@ -385,7 +385,7 @@
 
 .lightbox-photo-frame {
   flex-shrink: 0;
-  cursor: zoom-in;
+  cursor: default;
   transition: width 0.18s ease, height 0.18s ease;
 }
 
@@ -394,9 +394,13 @@
   margin: auto;
 }
 
+.enlarge-lightbox-stage.is-pinching .lightbox-photo-frame,
+.enlarge-lightbox-stage.is-zoomed.is-panning .lightbox-photo-frame {
+  transition: none;
+}
+
 .enlarge-lightbox-stage.is-zoomed.is-panning .lightbox-photo-frame {
   cursor: grabbing;
-  transition: none;
 }
 
 @media (max-width: 640px) {

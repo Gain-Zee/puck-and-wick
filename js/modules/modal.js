@@ -290,13 +290,12 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
   let isEnlargeOpen = false;
   let enlargeZoom = 1;
   const ENLARGE_ZOOM_MIN = 1;
-  const ENLARGE_ZOOM_MAX = 3.25;
+  const ENLARGE_ZOOM_MAX = 3.5;
   const ENLARGE_ZOOM_STEP = 0.75;
-  let enlargeDragMoved = false;
   let cleanupStage360 = () => {};
   let cleanupLightbox360 = () => {};
 
-  const applyEnlargeZoom = (nextZoom, anchorClientX, anchorClientY) => {
+  const applyEnlargeZoom = (nextZoom, anchorClientX, anchorClientY, instant = false) => {
     if (!enlargeStage) return;
     const frame = enlargeStage.querySelector('.lightbox-photo-frame');
     if (enlargeZoomControls) {
@@ -304,7 +303,7 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
     }
     if (!frame) {
       enlargeZoom = 1;
-      enlargeStage.classList.remove('is-zoomed');
+      enlargeStage.classList.remove('is-zoomed', 'is-pinching');
       return;
     }
 
@@ -346,12 +345,17 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
     if (enlargeZoomInBtn) enlargeZoomInBtn.disabled = enlargeZoom >= ENLARGE_ZOOM_MAX;
 
     if (isZoomed) {
-      requestAnimationFrame(() => {
+      const syncScroll = () => {
         const targetLeft = relX * enlargeStage.scrollWidth - enlargeStage.clientWidth / 2;
         const targetTop = relY * enlargeStage.scrollHeight - enlargeStage.clientHeight / 2;
         enlargeStage.scrollLeft = Math.max(0, targetLeft);
         enlargeStage.scrollTop = Math.max(0, targetTop);
-      });
+      };
+      if (instant) {
+        syncScroll();
+      } else {
+        requestAnimationFrame(syncScroll);
+      }
     }
   };
 
@@ -502,7 +506,6 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
     enlargeStage.addEventListener('mousedown', (e) => {
       if (enlargeZoom <= 1 || !e.target.closest('.lightbox-photo-frame')) return;
       isMousePanning = true;
-      enlargeDragMoved = false;
       panStartX = e.clientX;
       panStartY = e.clientY;
       panScrollLeft = enlargeStage.scrollLeft;
@@ -515,7 +518,6 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
       if (!isMousePanning) return;
       const dx = e.clientX - panStartX;
       const dy = e.clientY - panStartY;
-      if (Math.abs(dx) > 4 || Math.abs(dy) > 4) enlargeDragMoved = true;
       enlargeStage.scrollLeft = panScrollLeft - dx;
       enlargeStage.scrollTop = panScrollTop - dy;
     });
@@ -524,20 +526,6 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
       if (!isMousePanning) return;
       isMousePanning = false;
       enlargeStage.classList.remove('is-panning');
-    });
-
-    enlargeStage.addEventListener('click', (e) => {
-      if (!e.target.closest('.lightbox-photo-frame')) return;
-      if (enlargeDragMoved) {
-        enlargeDragMoved = false;
-        return;
-      }
-      e.stopPropagation();
-      if (enlargeZoom > 1) {
-        applyEnlargeZoom(1);
-      } else {
-        applyEnlargeZoom(2.25, e.clientX, e.clientY);
-      }
     });
   }
 
@@ -563,17 +551,52 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
     });
   });
 
-  // Touch swipe support inside the Enlarge Lightbox stage
+  // Two-finger pinch-to-zoom & swipe support inside the Enlarge Lightbox stage
   if (enlargeStage) {
     let touchStartX = 0;
     let touchStartY = 0;
+    let isPinching = false;
+    let wasPinching = false;
+    let pinchStartDist = 0;
+    let pinchStartZoom = 1;
+
+    const getTouchDist = (t1, t2) => Math.hypot(t1.clientX - t2.clientX, t1.clientY - t2.clientY);
+
     enlargeStage.addEventListener('touchstart', (e) => {
-      if (enlargeZoom > 1 || e.target.closest('.box360-stage')) return;
-      touchStartX = e.touches[0].clientX;
-      touchStartY = e.touches[0].clientY;
+      if (e.touches.length === 2 && enlargeStage.querySelector('.lightbox-photo-frame')) {
+        isPinching = true;
+        wasPinching = true;
+        pinchStartDist = Math.max(10, getTouchDist(e.touches[0], e.touches[1]));
+        pinchStartZoom = enlargeZoom;
+        enlargeStage.classList.add('is-pinching');
+        return;
+      }
+      if (e.touches.length === 1) {
+        wasPinching = false;
+        if (enlargeZoom <= 1 && !e.target.closest('.box360-stage')) {
+          touchStartX = e.touches[0].clientX;
+          touchStartY = e.touches[0].clientY;
+        }
+      }
     }, { passive: true });
+
+    enlargeStage.addEventListener('touchmove', (e) => {
+      if (!isPinching || e.touches.length !== 2) return;
+      e.preventDefault();
+      const dist = getTouchDist(e.touches[0], e.touches[1]);
+      const midX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+      const midY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+      applyEnlargeZoom(pinchStartZoom * (dist / pinchStartDist), midX, midY, true);
+    }, { passive: false });
+
     enlargeStage.addEventListener('touchend', (e) => {
-      if (enlargeZoom > 1 || e.target.closest('.box360-stage')) return;
+      if (isPinching && e.touches.length < 2) {
+        isPinching = false;
+        enlargeStage.classList.remove('is-pinching');
+        if (enlargeZoom < 1.06) applyEnlargeZoom(1);
+        return;
+      }
+      if (wasPinching || enlargeZoom > 1 || e.target.closest('.box360-stage') || !e.changedTouches.length) return;
       const dx = e.changedTouches[0].clientX - touchStartX;
       const dy = e.changedTouches[0].clientY - touchStartY;
       if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy)) {
