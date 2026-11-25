@@ -244,9 +244,9 @@
 }
 
 .badge-flagship {
-  background: rgba(197, 160, 89, 0.18);
+  background: rgba(11, 12, 15, 0.90);
   border: 1px solid var(--color-gold-500, #C5A059);
-  color: var(--color-gold-bright, #D4AF37);
+  color: #F5E1A4;
 }
 
 .badge-seasonal {
