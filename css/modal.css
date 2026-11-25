@@ -995,3 +995,89 @@
     justify-content: center;
   }
 }
+
+
+/* Modal Option A — Clean Editorial Minimalist */
+.modal-details-column.modal-option-a .modal-title {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  line-height: 1.08;
+  margin-bottom: 0.65rem;
+}
+
+.modal-details-column.modal-option-a .modal-price-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  border: none;
+  padding: 0;
+  margin-bottom: 1.15rem;
+}
+
+.modal-details-column.modal-option-a .modal-price {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #E5C878;
+  font-weight: 600;
+}
+
+.modal-meta-dot {
+  color: rgba(229, 200, 120, 0.45);
+}
+
+.modal-details-column.modal-option-a .modal-burn-badge {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #E5C878;
+  font-weight: 600;
+}
+
+.modal-details-column.modal-option-a .modal-description {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: #B8B1A6;
+  margin-bottom: 1.25rem;
+}
+
+.modal-option-a-notes {
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.a-note-line {
+  display: flex;
+  align-items: baseline;
+  gap: 0.85rem;
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+.a-note-label {
+  width: 48px;
+  flex-shrink: 0;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #C5A059;
+}
+
+.a-note-val {
+  color: #EAE3D5;
+}
+
+.modal-option-a-specs {
+  font-size: 0.76rem;
+  line-height: 1.55;
+  color: #8E8678;
+  margin-bottom: 1.35rem;
+}

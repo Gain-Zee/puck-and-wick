@@ -123,25 +123,14 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
             </div>
           </div>
 
-          <!-- Right: Product Scent & Specs Details -->
-          <div class="modal-details-column">
-            <div class="modal-kicker">
-              <span>QC #1 Certified Hand-Pour</span>
-              <span>•</span>
-              <span>Loudoun County, VA</span>
-            </div>
-
+          <!-- Right: Product Scent & Specs Details (Option A: Clean Minimalist Editorial) -->
+          <div class="modal-details-column modal-option-a">
             <h2 id="modal-product-title" class="modal-title">${product.name}</h2>
-            <div class="modal-tagline">${product.tagline}</div>
 
             <div class="modal-price-row">
-              <span class="modal-price" data-testid="modal-price" style="font-size:1.05rem;letter-spacing:0.06em;text-transform:uppercase;">${product.inStockLocal ? 'In Stock Locally' : product.outOfStock ? 'Out of Stock' : 'Batch 01 • VIP Waitlist'}</span>
-              <span class="modal-burn-badge" data-testid="product-burn-time">${product.productType === 'odor_care' ? product.burnTime : `${product.burnTime} Slow Burn`}</span>
-            </div>
-
-            <div class="modal-included-callout" data-testid="modal-included-callout">
-              <span class="included-callout-badge">WHAT YOU RECEIVE</span>
-              <span class="included-callout-text">${product.includedSummary || `SOLD INDIVIDUALLY • Includes 1x 10 oz (${product.name}) Hand-Poured Soy Candle, Two-Piece Collector Box, Circular Wax Dust Guard & 3.5"×3.5" Atelier Certificate Card.`}</span>
+              <span class="modal-price" data-testid="modal-price">${product.inStockLocal ? 'In Stock Locally' : product.outOfStock ? 'Out of Stock' : 'Batch 01 • VIP Waitlist'}</span>
+              <span class="modal-meta-dot" aria-hidden="true">&bull;</span>
+              <span class="modal-burn-badge" data-testid="product-burn-time">${product.productType === 'odor_care' ? product.burnTime : `${product.burnTime} Burn`}</span>
             </div>
 
             <p class="modal-description">${product.description}</p>
@@ -175,52 +164,26 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
               </div>
             ` : ''}
 
-            <!-- 3-Tier Scent Pyramid Breakdown -->
-            <div class="scent-pyramid-block">
-              <div class="scent-pyramid-heading">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="pyramid-icon" aria-hidden="true"><polygon points="12 2 2 22 22 22"/></svg>
-                <span>${product.productType === 'odor_care' ? '3-Tier Active &amp; Botanical Architecture' : '3-Tier Fragrance Architecture'}</span>
+            <!-- Clean 3-Line Scent Notes List -->
+            <div class="modal-option-a-notes">
+              <div class="a-note-line">
+                <span class="a-note-label">Top</span>
+                <span class="a-note-val" data-testid="scent-notes-top">${product.notes.top.join(', ')}</span>
               </div>
-
-              <!-- Top Notes -->
-              <div class="pyramid-tier">
-                <span class="tier-label">Top Notes:</span>
-                <div class="tier-pills notes-top" data-testid="scent-notes-top">
-                  ${product.notes.top.map(n => `<span class="note-pill note-top">${n}</span>`).join('')}
-                </div>
+              <div class="a-note-line">
+                <span class="a-note-label">Heart</span>
+                <span class="a-note-val" data-testid="scent-notes-middle">${product.notes.middle.join(', ')}</span>
               </div>
-
-              <!-- Middle Notes -->
-              <div class="pyramid-tier">
-                <span class="tier-label">Middle / Heart:</span>
-                <div class="tier-pills notes-middle" data-testid="scent-notes-middle">
-                  ${product.notes.middle.map(n => `<span class="note-pill note-middle">${n}</span>`).join('')}
-                </div>
-              </div>
-
-              <!-- Base Notes -->
-              <div class="pyramid-tier">
-                <span class="tier-label">Base Notes:</span>
-                <div class="tier-pills notes-base" data-testid="scent-notes-base">
-                  ${product.notes.base.map(n => `<span class="note-pill note-base">${n}</span>`).join('')}
-                </div>
+              <div class="a-note-line">
+                <span class="a-note-label">Base</span>
+                <span class="a-note-val" data-testid="scent-notes-base">${product.notes.base.join(', ')}</span>
               </div>
             </div>
 
-            <!-- Craft & Vessel Specifications -->
-            <div class="modal-specs-grid">
-              <div class="spec-item">
-                <span class="spec-label">Vessel Finish</span>
-                <span class="spec-value vessel-specs" data-testid="product-vessel-specs">${product.vessel}</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">${product.productType === 'odor_care' ? 'Active Formulation' : 'Wax Formulation'}</span>
-                <span class="spec-value">${product.wax}</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">${product.productType === 'odor_care' ? 'Delivery System' : 'Wick Engineering'}</span>
-                <span class="spec-value">${product.wick}</span>
-              </div>
+            <!-- Single-Line Craft & Vessel Summary -->
+            <div class="modal-option-a-specs">
+              <span class="vessel-specs" data-testid="product-vessel-specs">${product.vessel}</span>
+              &bull; ${product.wax} &bull; ${product.wick}
             </div>
 
             <!-- Quantity & Add to Cart Controls -->
