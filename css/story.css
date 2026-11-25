@@ -456,3 +456,31 @@
   height: 12px;
   color: var(--color-amber-warm);
 }
+
+
+/* Founder Handwritten Signature & Italic Gold Sign-Off */
+.story-founder-signoff {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 1.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.story-signature-img {
+  height: 58px;
+  width: auto;
+  display: block;
+  opacity: 0.92;
+}
+
+.story-signature-credit {
+  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.05rem;
+  letter-spacing: 0.05em;
+  color: #E5C878;
+}
