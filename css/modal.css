@@ -372,7 +372,7 @@
 }
 
 .enlarge-lightbox-stage.is-zoomed {
-  display: block;
+  display: flex;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   touch-action: pan-x pan-y;
@@ -385,8 +385,21 @@
 
 .lightbox-photo-frame {
   flex-shrink: 0;
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  background: transparent;
+  margin: auto;
   cursor: default;
   transition: width 0.18s ease, height 0.18s ease;
+}
+
+.enlarge-lightbox-stage .lightbox-photo-frame .modal-slide-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: transparent;
 }
 
 .enlarge-lightbox-stage.is-zoomed .lightbox-photo-frame {

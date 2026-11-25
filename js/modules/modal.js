@@ -327,14 +327,23 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
       relY = Math.max(0, Math.min(1, relY));
     }
 
+    const stageW = enlargeStage.clientWidth;
+    const stageH = enlargeStage.clientHeight;
+    const img = frame.querySelector('.modal-slide-photo-img');
+    const natW = (img && img.naturalWidth) || stageW || 1200;
+    const natH = (img && img.naturalHeight) || stageH || 1200;
+    const fitScale = (stageW > 0 && stageH > 0) ? Math.min(stageW / natW, stageH / natH) : 1;
+    const baseW = Math.max(1, Math.round(natW * fitScale));
+    const baseH = Math.max(1, Math.round(natH * fitScale));
+
     const isZoomed = enlargeZoom > 1;
     enlargeStage.classList.toggle('is-zoomed', isZoomed);
     if (isZoomed) {
-      frame.style.width = `${enlargeZoom * 100}%`;
-      frame.style.height = `${enlargeZoom * 100}%`;
+      frame.style.width = `${Math.round(baseW * enlargeZoom)}px`;
+      frame.style.height = `${Math.round(baseH * enlargeZoom)}px`;
     } else {
-      frame.style.width = '';
-      frame.style.height = '';
+      frame.style.width = `${baseW}px`;
+      frame.style.height = `${baseH}px`;
       enlargeStage.scrollLeft = 0;
       enlargeStage.scrollTop = 0;
     }
@@ -375,6 +384,10 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
   const renderEnlargeLightboxSlide = () => {
     if (!enlargeStage) return;
     enlargeStage.innerHTML = renderSlideStage(activeSlideIdx, true);
+    const img = enlargeStage.querySelector('.modal-slide-photo-img');
+    if (img && !img.complete) {
+      img.addEventListener('load', () => applyEnlargeZoom(enlargeZoom), { once: true });
+    }
     applyEnlargeZoom(1);
     if (enlargeCounter) {
       enlargeCounter.textContent = `${activeSlideIdx + 1} / ${gallerySlides.length}`;
