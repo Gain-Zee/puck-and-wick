@@ -449,8 +449,8 @@ export function getProductGallerySlides(product, conceptId = 1) {
 
   if (!product.productType || product.productType === 'candle') {
     const atelierCardImg = product.vesselType === 'ivory'
-      ? 'assets/images/packaging/atelier-card-ivory.jpg?v=65'
-      : 'assets/images/packaging/atelier-card-obsidian.jpg?v=65';
+      ? 'assets/images/packaging/atelier-card-ivory.jpg?v=66'
+      : 'assets/images/packaging/atelier-card-obsidian.jpg?v=66';
     const shelfImg = `${product.photo || `assets/images/packaging/shelf-${product.id}.jpg`}?v=65`;
     return [
       {
