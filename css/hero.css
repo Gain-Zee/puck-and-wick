@@ -386,7 +386,7 @@
   font-weight: 600;
   letter-spacing: 0.26em;
   text-transform: uppercase;
-  color: #E5C878;
+  color: #D4AF37;
   margin-bottom: 1.25rem;
 }
 
@@ -402,7 +402,7 @@
 
 .hero-cinematic-title .hero-title-italic {
   font-style: italic;
-  color: #E5C878;
+  color: #D4AF37;
   font-weight: 500;
 }
 
@@ -425,7 +425,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #E5C878;
+  border: 1px solid #D4AF37;
   background: rgba(7, 8, 10, 0.55);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -440,7 +440,7 @@
 }
 
 .hero-cinematic-btn:hover {
-  background: #E5C878;
+  background: #D4AF37;
   color: #07080A;
 }
 

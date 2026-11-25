@@ -101,9 +101,9 @@
   letter-spacing: 0.24em;
   padding-left: 0.24em;
   line-height: 1.05;
-  color: #E5C878;
+  color: #D4AF37;
   background: none;
-  -webkit-text-fill-color: #E5C878;
+  -webkit-text-fill-color: #D4AF37;
 }
 
 .brand-amp {
@@ -134,7 +134,7 @@
   padding-left: 0.24em;
   text-transform: uppercase;
   color: #D4AF37;
-  opacity: 0.9;
+  opacity: 1;
   margin-top: 1px;
 }
 
@@ -184,7 +184,7 @@
 }
 
 .nav-link.jm-gold-pill {
-  color: #E5C878;
+  color: #D4AF37;
 }
 
 .nav-link::after {
@@ -530,7 +530,7 @@
 }
 
 .site-header.jm-centered-mode .jm-MenuTrigger:hover {
-  color: #E5C878;
+  color: #D4AF37;
 }
 
 .site-header.jm-centered-mode .nav-pickup-pill {
@@ -542,7 +542,7 @@
 }
 
 .site-header.jm-centered-mode .nav-pickup-pill:hover {
-  color: #E5C878;
+  color: #D4AF37;
 }
 
 .site-header.jm-centered-mode .jm-right-actions {
@@ -569,7 +569,7 @@
 }
 
 .jm-inline-desktop-nav .nav-link:hover {
-  color: #E5C878;
+  color: #D4AF37;
 }
 
 @media (max-width: 960px) {
@@ -588,7 +588,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #E5C878;
+  color: #D4AF37;
   opacity: 0.9;
   transition: opacity 0.2s ease, transform 0.2s ease;
   padding: 0.2rem;
@@ -691,7 +691,7 @@
   padding: 0.8rem 1rem;
   border: 1px solid rgba(229, 200, 120, 0.45);
   border-radius: 3px;
-  color: #E5C878;
+  color: #D4AF37;
   font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.16em;

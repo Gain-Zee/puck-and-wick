@@ -187,7 +187,7 @@ export const PRODUCTS = [
     seasonal: false,
     vesselType: 'ivory',
     photo: 'assets/images/packaging/real-ivory-studio.jpg',
-    accentColor: '#E5C878'
+    accentColor: '#D4AF37'
   },
   {
     id: 'candle-silk-cashmere',
@@ -218,7 +218,7 @@ export const PRODUCTS = [
     seasonal: false,
     vesselType: 'ivory',
     photo: 'assets/images/packaging/real-ivory-studio.jpg',
-    accentColor: '#E5C878'
+    accentColor: '#D4AF37'
   },
   {
     id: 'candle-velvet-vanilla-santal',
@@ -246,7 +246,7 @@ export const PRODUCTS = [
     seasonal: false,
     vesselType: 'ivory',
     photo: 'assets/images/packaging/real-ivory-studio.jpg',
-    accentColor: '#E5C878'
+    accentColor: '#D4AF37'
   },
   {
     id: 'candle-sea-salt-orchid',
@@ -274,7 +274,7 @@ export const PRODUCTS = [
     seasonal: false,
     vesselType: 'ivory',
     photo: 'assets/images/packaging/real-ivory-studio.jpg',
-    accentColor: '#E5C878'
+    accentColor: '#D4AF37'
   },
   {
     id: 'puck-mens-athlete',
@@ -398,7 +398,7 @@ export const PRODUCTS = [
     photo: 'assets/images/item-bodywash-women.jpg?v=65',
     subSpecText: 'SINGLE 8 FL OZ PUMP BOTTLE • WHITE CLAY + ZEOCARB-98™',
     waxSpecSub: '1x 8 oz Body Wash Only',
-    accentColor: '#E5C878'
+    accentColor: '#D4AF37'
   }
 ];
 

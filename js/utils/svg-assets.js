@@ -11,12 +11,12 @@ export const SVG_LOGOS = {
   <defs>
     <linearGradient id="c1-gold" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#B69146" />
-      <stop offset="50%" stop-color="#E5C878" />
+      <stop offset="50%" stop-color="#D4AF37" />
       <stop offset="100%" stop-color="#9A7632" />
     </linearGradient>
     <linearGradient id="c1-gold-metallic" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#B69146" />
-      <stop offset="50%" stop-color="#E5C878" />
+      <stop offset="50%" stop-color="#D4AF37" />
       <stop offset="100%" stop-color="#9A7632" />
     </linearGradient>
   </defs>
@@ -42,12 +42,12 @@ export const SVG_LOGOS = {
   <defs>
     <linearGradient id="c2-crest-shield" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#B69146" />
-      <stop offset="50%" stop-color="#E5C878" />
+      <stop offset="50%" stop-color="#D4AF37" />
       <stop offset="100%" stop-color="#9A7632" />
     </linearGradient>
     <linearGradient id="c2-gold" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#B69146" />
-      <stop offset="50%" stop-color="#E5C878" />
+      <stop offset="50%" stop-color="#D4AF37" />
       <stop offset="100%" stop-color="#9A7632" />
     </linearGradient>
   </defs>
@@ -67,7 +67,7 @@ export const SVG_LOGOS = {
   <polygon points="250,285 255,290 250,295 245,290" fill="url(#c2-gold)" />
   <line x1="264" y1="290" x2="365" y2="290" stroke="url(#c2-gold)" stroke-width="1" opacity="0.65" />
   <!-- Reserve Subtitles -->
-  <text x="250" y="328" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10.5" font-weight="600" letter-spacing="4.2" fill="#E5C878">XXV YRS • 25 YEARS ON THE ICE</text>
+  <text x="250" y="328" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10.5" font-weight="600" letter-spacing="4.2" fill="#D4AF37">XXV YRS • 25 YEARS ON THE ICE</text>
   <text x="250" y="356" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9.5" font-weight="500" letter-spacing="4" fill="#9CA3AF">SMALL BATCH SOY • LOUDOUN COUNTY, VA</text>
   <text x="250" y="408" text-anchor="middle" font-family="'Cormorant Garamond', 'Cinzel', serif" font-size="13" font-weight="600" letter-spacing="3.5" fill="url(#c2-gold)">RESERVE EDITION</text>
 </svg>`,
@@ -78,12 +78,12 @@ export const SVG_LOGOS = {
   <defs>
     <linearGradient id="c3-apothecary" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#B69146" />
-      <stop offset="50%" stop-color="#E5C878" />
+      <stop offset="50%" stop-color="#D4AF37" />
       <stop offset="100%" stop-color="#9A7632" />
     </linearGradient>
     <linearGradient id="c3-gold" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#B69146" />
-      <stop offset="50%" stop-color="#E5C878" />
+      <stop offset="50%" stop-color="#D4AF37" />
       <stop offset="100%" stop-color="#9A7632" />
     </linearGradient>
   </defs>
@@ -113,17 +113,17 @@ export const SVG_LOGOS = {
   <defs>
     <linearGradient id="c4-badge" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#B69146" />
-      <stop offset="50%" stop-color="#E5C878" />
+      <stop offset="50%" stop-color="#D4AF37" />
       <stop offset="100%" stop-color="#9A7632" />
     </linearGradient>
     <linearGradient id="c4-foil" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#B69146" />
-      <stop offset="50%" stop-color="#E5C878" />
+      <stop offset="50%" stop-color="#D4AF37" />
       <stop offset="100%" stop-color="#9A7632" />
     </linearGradient>
     <linearGradient id="c4-gold-foil" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#B69146" />
-      <stop offset="50%" stop-color="#E5C878" />
+      <stop offset="50%" stop-color="#D4AF37" />
       <stop offset="100%" stop-color="#9A7632" />
     </linearGradient>
   </defs>
@@ -397,7 +397,7 @@ export function renderJarPhotoLabelOverlay(conceptId = 1, scentName = 'TOP SHELF
         </linearGradient>
         <linearGradient id="${goldGradId}" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stop-color="#B69146" />
-          <stop offset="50%" stop-color="#E5C878" />
+          <stop offset="50%" stop-color="#D4AF37" />
           <stop offset="100%" stop-color="#9A7632" />
         </linearGradient>
       </defs>
@@ -472,7 +472,7 @@ export function getCharcoalScienceSvg() {
       <circle cx="146" cy="95" r="13.5" fill="#1F2430" stroke="#D4AF37" stroke-width="1.1" />
       <text x="146" y="97" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.9" font-weight="800" fill="#D4AF37">LOCKED</text>
       <rect x="122" y="111" width="48" height="10" rx="3" fill="#0B0D12" stroke="rgba(212,175,55,0.45)" stroke-width="0.6" />
-      <text x="146" y="118" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.6" font-weight="600" fill="#E5C878">&lt;2nm Pore Trap</text>
+      <text x="146" y="118" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.6" font-weight="600" fill="#D4AF37">&lt;2nm Pore Trap</text>
 
       <!-- Right Callout Column -->
       <line x1="224" y1="24" x2="224" y2="128" stroke="#D4AF37" stroke-width="0.85" stroke-dasharray="3,2" />
@@ -514,7 +514,7 @@ export function getLausonScienceSvg() {
       <!-- Sphere 2: ZEOCARB-98 -->
       <circle cx="110" cy="70" r="27" fill="#1A1C16" stroke="#D4AF37" stroke-width="1.6" />
       <text x="110" y="64" text-anchor="middle" font-family="'Inter', sans-serif" font-size="5.6" font-weight="800" fill="#FAF5E8">ZEOCARB-98™</text>
-      <text x="110" y="74" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.7" font-weight="600" fill="#E5C878">Proprietary Core</text>
+      <text x="110" y="74" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.7" font-weight="600" fill="#D4AF37">Proprietary Core</text>
       <text x="110" y="83" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.3" fill="#9EA3AE">Vapor Complex</text>
 
       <!-- Arrow: Molecular Lock -->

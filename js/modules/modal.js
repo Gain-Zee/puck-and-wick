@@ -102,7 +102,7 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
                 <span style="display:block;font-size:9.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#C5A059;">Direct Share URL for This Photo</span>
                 <a href="${getSlideSeoUrl(activeSlideIdx)}" id="modal-seo-url-link" target="_blank" rel="noopener" style="display:block;font-size:11.5px;color:#FAF5E8;text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:monospace;">${getSlideDisplayPath(activeSlideIdx)}</a>
               </div>
-              <button type="button" id="modal-share-photo-btn" data-testid="modal-share-photo-btn" style="flex-shrink:0;background:linear-gradient(135deg,#E5C878 0%,#B69146 100%);color:#08090C;border:none;border-radius:999px;padding:7px 14px;font-size:11px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;">
+              <button type="button" id="modal-share-photo-btn" data-testid="modal-share-photo-btn" style="flex-shrink:0;background:linear-gradient(135deg,#D4AF37 0%,#B69146 100%);color:#08090C;border:none;border-radius:999px;padding:7px 14px;font-size:11px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;">
                 Copy Link
               </button>
             </div>

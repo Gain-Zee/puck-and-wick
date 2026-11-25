@@ -33,7 +33,7 @@
   border-radius: 999px;
   background: rgba(197, 160, 89, 0.10);
   border: 1px solid rgba(212, 175, 55, 0.38);
-  color: #E5C878;
+  color: #D4AF37;
   font-family: var(--font-sans, 'Inter', sans-serif);
   font-size: 0.656rem;
   font-weight: 700;
@@ -482,5 +482,5 @@
   font-weight: 400;
   font-size: 1.05rem;
   letter-spacing: 0.05em;
-  color: #E5C878;
+  color: #D4AF37;
 }

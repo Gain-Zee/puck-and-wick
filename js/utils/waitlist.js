@@ -29,7 +29,7 @@ export function openWaitlistModal(productName = 'Batch 01 Collection') {
   backdrop.innerHTML = `
     <div role="dialog" aria-modal="true" aria-labelledby="pw-waitlist-title" style="width:100%;max-width:440px;background:linear-gradient(165deg,#141720 0%,#0B0D12 100%);border:1px solid rgba(212,175,55,0.55);border-radius:14px;padding:1.6rem 1.4rem;box-shadow:0 24px 60px rgba(0,0,0,0.9);color:#FAF5E8;position:relative;font-family:'Inter',-apple-system,sans-serif;">
       <button type="button" id="pw-waitlist-close" aria-label="Close waitlist modal" style="position:absolute;top:0.85rem;right:0.85rem;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:#FAF5E8;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;">✕</button>
-      <div style="display:inline-block;font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E5C878;background:rgba(212,175,55,0.14);border:1px solid rgba(212,175,55,0.45);padding:0.24rem 0.65rem;border-radius:999px;margin-bottom:0.75rem;">
+      <div style="display:inline-block;font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#D4AF37;background:rgba(212,175,55,0.14);border:1px solid rgba(212,175,55,0.45);padding:0.24rem 0.65rem;border-radius:999px;margin-bottom:0.75rem;">
         Batch 01 Curing • VIP Launch Waitlist
       </div>
       <h3 id="pw-waitlist-title" style="font-family:'Cormorant Garamond','Cinzel',serif;font-size:1.55rem;font-weight:700;color:#FFFFFF;margin:0 0 0.35rem 0;line-height:1.2;">

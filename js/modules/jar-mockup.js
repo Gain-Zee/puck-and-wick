@@ -102,12 +102,12 @@ export function renderJarMockupSvg({ conceptId = 1, scentKey = 'top-shelf', vess
         </linearGradient>
         <linearGradient id="mockup-gold-foil" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stop-color="#9A7632" />
-          <stop offset="50%" stop-color="#E5C878" />
+          <stop offset="50%" stop-color="#D4AF37" />
           <stop offset="100%" stop-color="#8A6623" />
         </linearGradient>
         <linearGradient id="mockup-lid-gold" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stop-color="#9A7632" />
-          <stop offset="25%" stop-color="#E5C878" />
+          <stop offset="25%" stop-color="#D4AF37" />
           <stop offset="50%" stop-color="#FFFDF5" />
           <stop offset="75%" stop-color="#D4AF37" />
           <stop offset="100%" stop-color="#78551E" />
@@ -193,7 +193,7 @@ export function renderJarMockupSvg({ conceptId = 1, scentKey = 'top-shelf', vess
         <ellipse cx="0" cy="16" rx="40" ry="9" fill="#000000" opacity="0.45" />
         <path d="M -36,0 L -36,10 C -36,17 36,17 36,10 L 36,0 Z" fill="#78551E" stroke="url(#mockup-gold-foil)" stroke-width="0.8" />
         <path d="M -36,3 C -36,10 36,10 36,3 L 36,7 C 36,14 -36,14 -36,7 Z" fill="url(#mockup-lid-gold)" opacity="0.8" />
-        <ellipse cx="0" cy="0" rx="36" ry="10" fill="url(#mockup-lid-gold)" stroke="#E5C878" stroke-width="1.2" />
+        <ellipse cx="0" cy="0" rx="36" ry="10" fill="url(#mockup-lid-gold)" stroke="#D4AF37" stroke-width="1.2" />
         <ellipse cx="0" cy="0" rx="31" ry="8.5" fill="none" stroke="#9A7632" stroke-width="0.75" opacity="0.6" stroke-dasharray="3 2" />
         <circle cx="0" cy="0" r="2.8" fill="#D4AF37" opacity="0.7" />
       </g>
