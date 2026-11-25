@@ -108,9 +108,10 @@
 }
 
 .modal-vessel-stage {
+  flex: 1;
   width: 100%;
   max-width: none;
-  aspect-ratio: 400 / 448;
+  aspect-ratio: 1 / 1;
   height: auto;
   overflow: hidden;
   border-radius: 0;

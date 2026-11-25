@@ -96,16 +96,6 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="9 18 15 12 9 6"/></svg>
             </button>
 
-            <!-- Interactive Multi-Photo Thumbnail Strip -->
-            <div class="modal-gallery-thumbs" id="modal-gallery-thumbs" role="tablist" aria-label="Product gallery views">
-              ${gallerySlides.map((s, idx) => `
-                <button type="button" class="modal-thumb-btn ${idx === activeSlideIdx ? 'active' : ''}" data-slide-idx="${idx}" data-seo-href="/p/${product.id}/${getSlideSlug(s)}" role="tab" aria-selected="${idx === activeSlideIdx}">
-                  <img src="${s.thumb}" alt="${s.shortLabel}" class="modal-thumb-img" loading="lazy" />
-                  <span class="modal-thumb-label">${s.shortLabel}</span>
-                </button>
-              `).join('')}
-            </div>
-
             <!-- Direct Shareable SEO Photo URL Bar -->
             <div class="modal-seo-share-bar" style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;padding:8px 12px;background:rgba(15,17,23,0.92);border:1px solid rgba(197,160,89,0.35);border-radius:10px;">
               <div style="min-width:0;flex:1;">
