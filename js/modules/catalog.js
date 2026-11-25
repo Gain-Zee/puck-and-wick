@@ -142,23 +142,14 @@ export function initCatalog(store, openCartDrawer) {
 
                   <!-- Price & Action CTA Row -->
                   <div class="product-card-footer">
-                    <div class="card-footer-top">
-                      <div class="price-container">
-                        ${isLocalStock || isOutOfStock ? '' : `
+                    ${isLocalStock || isOutOfStock ? '' : `
+                      <div class="card-footer-top">
+                        <div class="price-container">
                           <span class="product-price" data-testid="product-price" style="font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;">Batch 01 • Waitlist</span>
                           <span class="wax-spec-sub">${isWaitlist ? 'Drop 01 • Coming Soon' : (p.waxSpecSub || 'Apricot-Coconut-Soy')}</span>
-                        `}
+                        </div>
                       </div>
-
-                      <div class="card-secondary-btns">
-                        <button type="button" class="btn btn-outline btn-sm quick-view-btn" data-testid="quick-view-btn" data-product-id="${p.id}" aria-label="Quick view ${p.name}">
-                          <span>Info</span>
-                        </button>
-                        <button type="button" class="btn btn-outline btn-sm card-share-btn" data-share-pid="${p.id}" data-share-slide="${String(currentSlide.id || 'primary').replace(/_/g, '-').toLowerCase()}" aria-label="Copy share link for ${p.name}" title="Copy direct link to this item &amp; photo">
-                          ${getIcon('share')}
-                        </button>
-                      </div>
-                    </div>
+                    `}
 
                     ${isLocalStock ? `
                       <button type="button" class="btn btn-gold btn-sm quick-stockist-btn" data-testid="quick-stockist-btn" data-product-id="${p.id}" aria-label="${p.stockistCta || 'Available now in Blue Hydrangea and Ketterman\'s'} for ${p.name}">
