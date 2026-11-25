@@ -286,7 +286,7 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
   let cleanupStage360 = () => {};
   let cleanupLightbox360 = () => {};
 
-  const applyEnlargeZoom = (nextZoom, anchorClientX, anchorClientY, instant = false) => {
+  const applyEnlargeZoom = (nextZoom, pinchAnchor = null, instant = false) => {
     if (!enlargeStage) return;
     const frame = enlargeStage.querySelector('.lightbox-photo-frame');
     if (enlargeZoomControls) {
@@ -304,15 +304,9 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
 
     let relX = 0.5;
     let relY = 0.5;
-    const stageRect = enlargeStage.getBoundingClientRect();
-    if (stageRect.width > 0 && stageRect.height > 0) {
-      if (typeof anchorClientX === 'number' && typeof anchorClientY === 'number') {
-        relX = (enlargeStage.scrollLeft + (anchorClientX - stageRect.left)) / Math.max(1, enlargeStage.scrollWidth);
-        relY = (enlargeStage.scrollTop + (anchorClientY - stageRect.top)) / Math.max(1, enlargeStage.scrollHeight);
-      } else if (prevZoom > 1) {
-        relX = (enlargeStage.scrollLeft + enlargeStage.clientWidth / 2) / Math.max(1, enlargeStage.scrollWidth);
-        relY = (enlargeStage.scrollTop + enlargeStage.clientHeight / 2) / Math.max(1, enlargeStage.scrollHeight);
-      }
+    if (!pinchAnchor && prevZoom > 1) {
+      relX = (enlargeStage.scrollLeft + enlargeStage.clientWidth / 2) / Math.max(1, enlargeStage.scrollWidth);
+      relY = (enlargeStage.scrollTop + enlargeStage.clientHeight / 2) / Math.max(1, enlargeStage.scrollHeight);
       relX = Math.max(0, Math.min(1, relX));
       relY = Math.max(0, Math.min(1, relY));
     }
@@ -328,12 +322,11 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
 
     const isZoomed = enlargeZoom > 1;
     enlargeStage.classList.toggle('is-zoomed', isZoomed);
-    if (isZoomed) {
-      frame.style.width = `${Math.round(baseW * enlargeZoom)}px`;
-      frame.style.height = `${Math.round(baseH * enlargeZoom)}px`;
-    } else {
-      frame.style.width = `${baseW}px`;
-      frame.style.height = `${baseH}px`;
+    const nextW = isZoomed ? Math.round(baseW * enlargeZoom) : baseW;
+    const nextH = isZoomed ? Math.round(baseH * enlargeZoom) : baseH;
+    frame.style.width = `${nextW}px`;
+    frame.style.height = `${nextH}px`;
+    if (!isZoomed) {
       enlargeStage.scrollLeft = 0;
       enlargeStage.scrollTop = 0;
     }
@@ -346,8 +339,12 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
 
     if (isZoomed) {
       const syncScroll = () => {
-        const targetLeft = relX * enlargeStage.scrollWidth - enlargeStage.clientWidth / 2;
-        const targetTop = relY * enlargeStage.scrollHeight - enlargeStage.clientHeight / 2;
+        const targetLeft = pinchAnchor
+          ? pinchAnchor.imgX * nextW - pinchAnchor.vpX
+          : relX * enlargeStage.scrollWidth - enlargeStage.clientWidth / 2;
+        const targetTop = pinchAnchor
+          ? pinchAnchor.imgY * nextH - pinchAnchor.vpY
+          : relY * enlargeStage.scrollHeight - enlargeStage.clientHeight / 2;
         enlargeStage.scrollLeft = Math.max(0, targetLeft);
         enlargeStage.scrollTop = Math.max(0, targetTop);
       };
@@ -583,15 +580,23 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
     let wasPinching = false;
     let pinchStartDist = 0;
     let pinchStartZoom = 1;
+    let pinchImgX = 0.5;
+    let pinchImgY = 0.5;
 
     const getTouchDist = (t1, t2) => Math.hypot(t1.clientX - t2.clientX, t1.clientY - t2.clientY);
 
     enlargeStage.addEventListener('touchstart', (e) => {
-      if (e.touches.length === 2 && enlargeStage.querySelector('.lightbox-photo-frame')) {
+      const frame = enlargeStage.querySelector('.lightbox-photo-frame');
+      if (e.touches.length === 2 && frame) {
         isPinching = true;
         wasPinching = true;
         pinchStartDist = Math.max(10, getTouchDist(e.touches[0], e.touches[1]));
         pinchStartZoom = enlargeZoom;
+        const midX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+        const midY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+        const frameRect = frame.getBoundingClientRect();
+        pinchImgX = Math.max(0, Math.min(1, (midX - frameRect.left) / Math.max(1, frameRect.width)));
+        pinchImgY = Math.max(0, Math.min(1, (midY - frameRect.top) / Math.max(1, frameRect.height)));
         enlargeStage.classList.add('is-pinching');
         return;
       }
@@ -608,7 +613,19 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
       if (!isPinching || e.touches.length !== 2) return;
       e.preventDefault();
       const dist = getTouchDist(e.touches[0], e.touches[1]);
-      applyEnlargeZoom(pinchStartZoom * (dist / pinchStartDist), null, null, true);
+      const midX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+      const midY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+      const stageRect = enlargeStage.getBoundingClientRect();
+      applyEnlargeZoom(
+        pinchStartZoom * (dist / pinchStartDist),
+        {
+          imgX: pinchImgX,
+          imgY: pinchImgY,
+          vpX: midX - stageRect.left,
+          vpY: midY - stageRect.top
+        },
+        true
+      );
     }, { passive: false });
 
     enlargeStage.addEventListener('touchend', (e) => {
