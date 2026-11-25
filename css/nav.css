@@ -581,3 +581,120 @@
     height: 64px;
   }
 }
+
+
+/* Gold Instagram Header Icon (Desktop after Our Story / Mobile next to Bag) */
+.jm-ig-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #E5C878;
+  opacity: 0.9;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  padding: 0.2rem;
+}
+
+.jm-ig-link:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.jm-ig-mobile {
+  display: none;
+}
+
+@media (max-width: 960px) {
+  .jm-ig-desktop {
+    display: none;
+  }
+
+  .jm-ig-mobile {
+    display: inline-flex;
+  }
+
+  .site-header.jm-centered-mode .jm-right-actions {
+    gap: 0.85rem;
+  }
+}
+
+/* Menu Option C: Solid Dark Luxury Drawer with Grouped Serif & Italic Notes */
+.mobile-nav {
+  background: #07080A !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.75rem 1.65rem 2.25rem;
+}
+
+.mobile-menu-group-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #C5A059;
+  margin-bottom: 0.45rem;
+}
+
+.mobile-nav .mobile-menu {
+  gap: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-nav .mobile-menu li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.mobile-nav .mobile-menu li.mobile-menu-last {
+  border-bottom: none;
+}
+
+.mobile-nav .mobile-nav-link {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0.85rem 0;
+  font-size: inherit;
+  text-transform: none;
+  letter-spacing: 0;
+  border: none;
+}
+
+.mobile-nav-title {
+  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.32rem;
+  font-weight: 500;
+  color: #FAF5E8;
+  letter-spacing: 0.01em;
+}
+
+.mobile-nav-sub {
+  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-style: italic;
+  font-size: 0.82rem;
+  color: #9A9080;
+}
+
+.mobile-nav .mobile-nav-footer {
+  margin-top: auto;
+  padding-top: 1.25rem;
+}
+
+.mobile-ig-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(229, 200, 120, 0.45);
+  border-radius: 3px;
+  color: #E5C878;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+}

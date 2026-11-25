@@ -95,6 +95,10 @@
         <a href="#story" class="nav-pickup-pill jm-pickup-desktop" data-testid="nav-link-story" title="Read the Puck &amp; Wick Founder Story &amp; QC">
           <span>Our Story</span>
         </a>
+
+        <a href="https://instagram.com/puckandwick" target="_blank" rel="noopener noreferrer" class="jm-ig-link jm-ig-desktop" aria-label="Follow Puck and Wick on Instagram" title="@puckandwick on Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+        </a>
       </div>
 
       <!-- Center: Centered Maison Brand Lockup (ATELIER • VIRGINIA) -->
@@ -113,6 +117,9 @@
           <a href="#exclusive-boxes" class="nav-link" data-testid="nav-link-pucks">Pucks &amp; Boxes</a>
           <a href="#stockists" class="nav-link" data-testid="nav-link-stockists">Stockists</a>
         </nav>
+        <a href="https://instagram.com/puckandwick" target="_blank" rel="noopener noreferrer" class="jm-ig-link jm-ig-mobile" aria-label="Follow Puck and Wick on Instagram" title="@puckandwick on Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+        </a>
         <button type="button" class="cart-btn" id="cart-btn" data-testid="cart-trigger" aria-label="Open Shopping Cart Drawer">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
@@ -123,24 +130,27 @@
     </div>
   </header>
 
-  <!-- Mobile Drawer Overlay -->
+  <!-- Mobile Drawer Overlay (Menu Option C: Grouped Serif + Italic Notes) -->
   <div class="mobile-nav" id="mobile-nav" data-testid="mobile-nav" aria-label="Mobile Navigation">
-    <ul class="mobile-menu">
-      <li><a href="#shop" class="mobile-nav-link" data-testid="nav-link-shop">Shop Collection <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></li>
-      <li><a href="#exclusive-boxes" class="mobile-nav-link" data-testid="nav-link-exclusive-boxes">Exclusive Boxes <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></li>
-      <li><a href="#story" class="mobile-nav-link" data-testid="nav-link-story">Our Story &amp; QC <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></li>
-      <li><a href="#stockists" class="mobile-nav-link" data-testid="nav-link-stockists">Retail Stockists <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></li>
-      <li class="nav-item-studio" style="display:none;"><a href="#studio" class="mobile-nav-link" data-testid="nav-link-studio">Brand Studio <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></li>
-    </ul>
+    <div class="mobile-menu-inner">
+      <div class="mobile-menu-group-label">Collection</div>
+      <ul class="mobile-menu">
+        <li><a href="#shop" class="mobile-nav-link" data-testid="nav-link-shop"><span class="mobile-nav-title">Luxury Candles</span><span class="mobile-nav-sub">Obsidian &amp; Sanctuary</span></a></li>
+        <li class="mobile-menu-last"><a href="#exclusive-boxes" class="mobile-nav-link" data-testid="nav-link-exclusive-boxes"><span class="mobile-nav-title">Pucks &amp; Boxes</span><span class="mobile-nav-sub">Batch 01 Waitlist</span></a></li>
+      </ul>
+
+      <div class="mobile-menu-group-label" style="margin-top:1.4rem;">Maison</div>
+      <ul class="mobile-menu">
+        <li><a href="#story" class="mobile-nav-link" data-testid="nav-link-story"><span class="mobile-nav-title">Our Story &amp; QC</span><span class="mobile-nav-sub">Founder #98</span></a></li>
+        <li class="mobile-menu-last"><a href="#stockists" class="mobile-nav-link" data-testid="nav-link-stockists"><span class="mobile-nav-title">Retail Stockists</span><span class="mobile-nav-sub">Purcellville &amp; Leesburg</span></a></li>
+        <li class="nav-item-studio" style="display:none;"><a href="#studio" class="mobile-nav-link" data-testid="nav-link-studio"><span class="mobile-nav-title">Brand Studio</span><span class="mobile-nav-sub">Preview</span></a></li>
+      </ul>
+    </div>
 
     <div class="mobile-nav-footer">
-      <div class="mobile-stockist-card">
-        <div class="mobile-stockist-title">Authorized Retail Stockists</div>
-        <div class="mobile-stockist-text"><strong>The Blue Hydrangea</strong><br>604 E. Main St., Purcellville, VA 20132</div>
-        <div class="mobile-stockist-text" style="margin-top:0.5rem;"><strong>Ketterman&rsquo;s Jewelers</strong><br>212 Catoctin Cir. SE, Leesburg, VA 20175</div>
-      </div>
-      <a href="https://instagram.com/puckandwick" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="width:100%;text-align:center;">
-        Follow @puckandwick on Instagram
+      <a href="https://instagram.com/puckandwick" target="_blank" rel="noopener noreferrer" class="mobile-ig-cta">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+        <span>@puckandwick</span>
       </a>
     </div>
   </div>
