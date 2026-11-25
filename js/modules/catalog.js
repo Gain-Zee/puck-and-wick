@@ -119,14 +119,16 @@ export function initCatalog(store, openCartDrawer) {
 
                 <!-- Product Card Content -->
                 <div class="product-card-body">
+                  <h3 class="product-title" data-testid="product-title">
+                    <a href="/p/${p.id}/${String(currentSlide.id || 'primary').replace(/_/g, '-').toLowerCase()}" class="title-link" data-action="quick-view" data-product-id="${p.id}">${p.name}</a>
+                  </h3>
+
+                  <span class="card-title-divider" aria-hidden="true"></span>
+
                   <div class="card-meta-line">
                     <span class="card-vessel-spec">${p.specUnitLabel || '10 oz Vessel'}</span>
                     <span class="card-burn-time">${isLocalStock ? 'In Stock • Local' : isOutOfStock ? 'Restocking Soon' : (isWaitlist ? 'Drop 01 • Waitlist' : `${p.burnTime}`)}</span>
                   </div>
-
-                  <h3 class="product-title" data-testid="product-title">
-                    <a href="/p/${p.id}/${String(currentSlide.id || 'primary').replace(/_/g, '-').toLowerCase()}" class="title-link" data-action="quick-view" data-product-id="${p.id}">${p.name}</a>
-                  </h3>
 
                   <!-- Notes Teaser Pills (Shown on Desktop, Hidden on Mobile 2-Col Grid for Compactness) -->
                   <div class="product-notes-summary">
