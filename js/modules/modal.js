@@ -288,6 +288,7 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
   const sharePhotoBtn = document.getElementById('modal-share-photo-btn');
 
   let isEnlargeOpen = false;
+  let isEnlargeChromeHidden = false;
   let enlargeZoom = 1;
   const ENLARGE_ZOOM_MIN = 1;
   const ENLARGE_ZOOM_MAX = 3.5;
@@ -387,6 +388,8 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
   const openEnlargeLightbox = () => {
     if (!enlargeLightbox) return;
     isEnlargeOpen = true;
+    isEnlargeChromeHidden = false;
+    enlargeLightbox.classList.remove('is-chrome-hidden');
     enlargeLightbox.classList.add('open');
     enlargeLightbox.setAttribute('aria-hidden', 'false');
     renderEnlargeLightboxSlide();
@@ -395,6 +398,8 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
   const closeEnlargeLightbox = () => {
     if (!enlargeLightbox) return;
     isEnlargeOpen = false;
+    isEnlargeChromeHidden = false;
+    enlargeLightbox.classList.remove('is-chrome-hidden');
     applyEnlargeZoom(1);
     cleanupLightbox360();
     enlargeLightbox.classList.remove('open');
@@ -498,12 +503,14 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
 
   if (enlargeStage) {
     let isMousePanning = false;
+    let mouseMoved = false;
     let panStartX = 0;
     let panStartY = 0;
     let panScrollLeft = 0;
     let panScrollTop = 0;
 
     enlargeStage.addEventListener('mousedown', (e) => {
+      mouseMoved = false;
       if (enlargeZoom <= 1 || !e.target.closest('.lightbox-photo-frame')) return;
       isMousePanning = true;
       panStartX = e.clientX;
@@ -518,6 +525,7 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
       if (!isMousePanning) return;
       const dx = e.clientX - panStartX;
       const dy = e.clientY - panStartY;
+      if (Math.abs(dx) > 4 || Math.abs(dy) > 4) mouseMoved = true;
       enlargeStage.scrollLeft = panScrollLeft - dx;
       enlargeStage.scrollTop = panScrollTop - dy;
     });
@@ -526,6 +534,19 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
       if (!isMousePanning) return;
       isMousePanning = false;
       enlargeStage.classList.remove('is-panning');
+    });
+
+    enlargeStage.addEventListener('click', (e) => {
+      if (!e.target.closest('.lightbox-photo-frame')) return;
+      if (mouseMoved) {
+        mouseMoved = false;
+        return;
+      }
+      e.stopPropagation();
+      isEnlargeChromeHidden = !isEnlargeChromeHidden;
+      if (enlargeLightbox) {
+        enlargeLightbox.classList.toggle('is-chrome-hidden', isEnlargeChromeHidden);
+      }
     });
   }
 

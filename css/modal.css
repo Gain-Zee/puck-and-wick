@@ -403,6 +403,24 @@
   cursor: grabbing;
 }
 
+.enlarge-lightbox-topbar,
+.enlarge-lightbox-arrow,
+.enlarge-lightbox-thumbs {
+  transition: opacity 0.22s ease, visibility 0.22s ease;
+}
+
+.modal-enlarge-lightbox.is-chrome-hidden .enlarge-lightbox-topbar,
+.modal-enlarge-lightbox.is-chrome-hidden .enlarge-lightbox-arrow,
+.modal-enlarge-lightbox.is-chrome-hidden .enlarge-lightbox-thumbs {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.modal-enlarge-lightbox.is-chrome-hidden .enlarge-lightbox-stage {
+  border-color: transparent;
+}
+
 @media (max-width: 640px) {
   .modal-enlarge-lightbox {
     padding: 0.85rem 0.9rem;
