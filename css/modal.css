@@ -374,9 +374,9 @@
 
 .enlarge-lightbox-stage.is-zoomed {
   display: flex;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  touch-action: pan-x pan-y;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
   cursor: grab;
 }
 
@@ -393,7 +393,9 @@
   background: transparent;
   margin: auto;
   cursor: default;
-  transition: width 0.18s ease, height 0.18s ease;
+  transform-origin: center center;
+  will-change: transform;
+  transition: transform 0.24s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .enlarge-lightbox-stage .lightbox-photo-frame .modal-slide-photo-img {

@@ -286,7 +286,7 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
   let cleanupStage360 = () => {};
   let cleanupLightbox360 = () => {};
 
-  const applyEnlargeZoom = (nextZoom, centerRel = null, instant = false) => {
+  const applyEnlargeZoom = (nextZoom, originStr = null, translate = null) => {
     if (!enlargeStage) return;
     const frame = enlargeStage.querySelector('.lightbox-photo-frame');
     if (enlargeZoomControls) {
@@ -298,21 +298,8 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
       return;
     }
 
-    const prevZoom = enlargeZoom;
     const clamped = Math.max(ENLARGE_ZOOM_MIN, Math.min(ENLARGE_ZOOM_MAX, Number(nextZoom.toFixed(2))));
     enlargeZoom = clamped;
-
-    let relX = 0.5;
-    let relY = 0.5;
-    if (centerRel) {
-      relX = centerRel.x;
-      relY = centerRel.y;
-    } else if (prevZoom > 1) {
-      relX = (enlargeStage.scrollLeft + enlargeStage.clientWidth / 2) / Math.max(1, enlargeStage.scrollWidth);
-      relY = (enlargeStage.scrollTop + enlargeStage.clientHeight / 2) / Math.max(1, enlargeStage.scrollHeight);
-      relX = Math.max(0, Math.min(1, relX));
-      relY = Math.max(0, Math.min(1, relY));
-    }
 
     const stageW = enlargeStage.clientWidth;
     const stageH = enlargeStage.clientHeight;
@@ -322,16 +309,23 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
     const fitScale = (stageW > 0 && stageH > 0) ? Math.min(stageW / natW, stageH / natH) : 1;
     const baseW = Math.max(1, Math.round(natW * fitScale));
     const baseH = Math.max(1, Math.round(natH * fitScale));
+    frame.style.width = `${baseW}px`;
+    frame.style.height = `${baseH}px`;
 
     const isZoomed = enlargeZoom > 1;
     enlargeStage.classList.toggle('is-zoomed', isZoomed);
-    const nextW = isZoomed ? Math.round(baseW * enlargeZoom) : baseW;
-    const nextH = isZoomed ? Math.round(baseH * enlargeZoom) : baseH;
-    frame.style.width = `${nextW}px`;
-    frame.style.height = `${nextH}px`;
-    if (!isZoomed) {
-      enlargeStage.scrollLeft = 0;
-      enlargeStage.scrollTop = 0;
+    if (isZoomed) {
+      if (originStr) frame.style.transformOrigin = originStr;
+      const tx = translate ? translate.x : 0;
+      const ty = translate ? translate.y : 0;
+      frame.style.transform = `translate3d(${tx}px, ${ty}px, 0) scale(${enlargeZoom})`;
+    } else {
+      frame.style.transform = '';
+      if (!enlargeStage.classList.contains('is-pinching')) {
+        setTimeout(() => {
+          if (enlargeZoom <= 1) frame.style.transformOrigin = 'center center';
+        }, 250);
+      }
     }
 
     if (enlargeZoomResetBtn) {
@@ -339,20 +333,6 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
     }
     if (enlargeZoomOutBtn) enlargeZoomOutBtn.disabled = enlargeZoom <= ENLARGE_ZOOM_MIN;
     if (enlargeZoomInBtn) enlargeZoomInBtn.disabled = enlargeZoom >= ENLARGE_ZOOM_MAX;
-
-    if (isZoomed) {
-      const syncScroll = () => {
-        const targetLeft = relX * nextW - stageW / 2;
-        const targetTop = relY * nextH - stageH / 2;
-        enlargeStage.scrollLeft = Math.max(0, targetLeft);
-        enlargeStage.scrollTop = Math.max(0, targetTop);
-      };
-      if (instant) {
-        syncScroll();
-      } else {
-        requestAnimationFrame(syncScroll);
-      }
-    }
   };
 
   const mountStage360 = () => {
@@ -505,8 +485,10 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
     let mouseMoved = false;
     let panStartX = 0;
     let panStartY = 0;
-    let panScrollLeft = 0;
-    let panScrollTop = 0;
+    let panBaseX = 0;
+    let panBaseY = 0;
+    let curPanX = 0;
+    let curPanY = 0;
 
     enlargeStage.addEventListener('mousedown', (e) => {
       mouseMoved = false;
@@ -514,8 +496,8 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
       isMousePanning = true;
       panStartX = e.clientX;
       panStartY = e.clientY;
-      panScrollLeft = enlargeStage.scrollLeft;
-      panScrollTop = enlargeStage.scrollTop;
+      panBaseX = curPanX;
+      panBaseY = curPanY;
       enlargeStage.classList.add('is-panning');
       e.preventDefault();
     });
@@ -525,8 +507,9 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
       const dx = e.clientX - panStartX;
       const dy = e.clientY - panStartY;
       if (Math.abs(dx) > 4 || Math.abs(dy) > 4) mouseMoved = true;
-      enlargeStage.scrollLeft = panScrollLeft - dx;
-      enlargeStage.scrollTop = panScrollTop - dy;
+      curPanX = panBaseX + dx;
+      curPanY = panBaseY + dy;
+      applyEnlargeZoom(enlargeZoom, null, { x: curPanX, y: curPanY });
     });
 
     (enlargeLightbox || enlargeStage).addEventListener('mouseup', () => {
@@ -571,7 +554,7 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
     });
   });
 
-  // Two-finger pinch-to-zoom & swipe support inside the Enlarge Lightbox stage
+  // Two-finger Instagram-style pinch-to-zoom (zooms into exact pinch point & auto-resets on release)
   if (enlargeStage) {
     let touchStartX = 0;
     let touchStartY = 0;
@@ -579,7 +562,9 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
     let wasPinching = false;
     let pinchStartDist = 0;
     let pinchStartZoom = 1;
-    let pinchCenterRel = { x: 0.5, y: 0.5 };
+    let pinchOriginStr = '50% 50%';
+    let pinchStartMidX = 0;
+    let pinchStartMidY = 0;
 
     const getTouchDist = (t1, t2) => Math.hypot(t1.clientX - t2.clientX, t1.clientY - t2.clientY);
 
@@ -590,14 +575,12 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
         wasPinching = true;
         pinchStartDist = Math.max(10, getTouchDist(e.touches[0], e.touches[1]));
         pinchStartZoom = enlargeZoom;
-        if (enlargeZoom <= 1) {
-          pinchCenterRel = { x: 0.5, y: 0.5 };
-        } else {
-          pinchCenterRel = {
-            x: Math.max(0, Math.min(1, (enlargeStage.scrollLeft + enlargeStage.clientWidth / 2) / Math.max(1, enlargeStage.scrollWidth))),
-            y: Math.max(0, Math.min(1, (enlargeStage.scrollTop + enlargeStage.clientHeight / 2) / Math.max(1, enlargeStage.scrollHeight)))
-          };
-        }
+        pinchStartMidX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+        pinchStartMidY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+        const rect = frame.getBoundingClientRect();
+        const ox = Math.max(0, Math.min(100, ((pinchStartMidX - rect.left) / Math.max(1, rect.width)) * 100));
+        const oy = Math.max(0, Math.min(100, ((pinchStartMidY - rect.top) / Math.max(1, rect.height)) * 100));
+        pinchOriginStr = `${ox.toFixed(2)}% ${oy.toFixed(2)}%`;
         enlargeStage.classList.add('is-pinching');
         return;
       }
@@ -614,14 +597,20 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
       if (!isPinching || e.touches.length !== 2) return;
       e.preventDefault();
       const dist = getTouchDist(e.touches[0], e.touches[1]);
-      applyEnlargeZoom(pinchStartZoom * (dist / pinchStartDist), pinchCenterRel, true);
+      const midX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+      const midY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+      applyEnlargeZoom(
+        pinchStartZoom * (dist / pinchStartDist),
+        pinchOriginStr,
+        { x: midX - pinchStartMidX, y: midY - pinchStartMidY }
+      );
     }, { passive: false });
 
     enlargeStage.addEventListener('touchend', (e) => {
       if (isPinching && e.touches.length < 2) {
         isPinching = false;
         enlargeStage.classList.remove('is-pinching');
-        if (enlargeZoom < 1.06) applyEnlargeZoom(1);
+        applyEnlargeZoom(1, pinchOriginStr, { x: 0, y: 0 });
         return;
       }
       if (wasPinching || enlargeZoom > 1 || e.target.closest('.box360-stage') || !e.changedTouches.length) return;
