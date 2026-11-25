@@ -135,7 +135,7 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
             <div class="modal-tagline">${product.tagline}</div>
 
             <div class="modal-price-row">
-              <span class="modal-price" data-testid="modal-price" style="font-size:1.05rem;letter-spacing:0.06em;text-transform:uppercase;">${product.inStockLocal ? '$44.00 • In Stock Locally' : product.outOfStock ? 'Temporarily Out of Stock' : 'Batch 01 • VIP Waitlist'}</span>
+              <span class="modal-price" data-testid="modal-price" style="font-size:1.05rem;letter-spacing:0.06em;text-transform:uppercase;">${product.inStockLocal ? 'In Stock Locally' : product.outOfStock ? 'Temporarily Out of Stock' : 'Batch 01 • VIP Waitlist'}</span>
               <span class="modal-burn-badge" data-testid="product-burn-time">${product.productType === 'odor_care' ? product.burnTime : `${product.burnTime} Slow Burn`}</span>
             </div>
 

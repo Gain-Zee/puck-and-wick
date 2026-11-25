@@ -144,7 +144,7 @@ export function initCatalog(store, openCartDrawer) {
                   <div class="product-card-footer">
                     <div class="card-footer-top">
                       <div class="price-container">
-                        <span class="product-price" data-testid="product-price" style="font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;">${isLocalStock ? '$44.00 • Available Now' : isOutOfStock ? 'Temporarily Out of Stock' : 'Batch 01 • Waitlist'}</span>
+                        <span class="product-price" data-testid="product-price" style="font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;">${isLocalStock ? 'Available Now' : isOutOfStock ? 'Temporarily Out of Stock' : 'Batch 01 • Waitlist'}</span>
                         <span class="wax-spec-sub">${isLocalStock ? (p.stockistLabel || 'Blue Hydrangea &amp; Ketterman\'s') : isOutOfStock ? 'Next Batch Curing Soon' : (isWaitlist ? 'Drop 01 • Coming Soon' : (p.waxSpecSub || '100% American Soy'))}</span>
                       </div>
 
