@@ -140,9 +140,9 @@ input, select, textarea {
 }
 
 .gold-gradient-text {
-  background: var(--gradient-gold-sheen);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #E5C878;
+  background: none;
+  -webkit-text-fill-color: #E5C878;
   display: inline-block;
 }
 

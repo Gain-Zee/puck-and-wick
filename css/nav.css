@@ -101,9 +101,9 @@
   letter-spacing: 0.24em;
   padding-left: 0.24em;
   line-height: 1.05;
-  background: linear-gradient(135deg, #F7E5A9 0%, #D4AF37 50%, #C5A059 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #E5C878;
+  background: none;
+  -webkit-text-fill-color: #E5C878;
 }
 
 .brand-amp {
