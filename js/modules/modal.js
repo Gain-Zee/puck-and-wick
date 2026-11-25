@@ -286,7 +286,7 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
   let cleanupStage360 = () => {};
   let cleanupLightbox360 = () => {};
 
-  const applyEnlargeZoom = (nextZoom, pinchAnchor = null, instant = false) => {
+  const applyEnlargeZoom = (nextZoom, centerRel = null, instant = false) => {
     if (!enlargeStage) return;
     const frame = enlargeStage.querySelector('.lightbox-photo-frame');
     if (enlargeZoomControls) {
@@ -304,7 +304,10 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
 
     let relX = 0.5;
     let relY = 0.5;
-    if (!pinchAnchor && prevZoom > 1) {
+    if (centerRel) {
+      relX = centerRel.x;
+      relY = centerRel.y;
+    } else if (prevZoom > 1) {
       relX = (enlargeStage.scrollLeft + enlargeStage.clientWidth / 2) / Math.max(1, enlargeStage.scrollWidth);
       relY = (enlargeStage.scrollTop + enlargeStage.clientHeight / 2) / Math.max(1, enlargeStage.scrollHeight);
       relX = Math.max(0, Math.min(1, relX));
@@ -339,12 +342,8 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
 
     if (isZoomed) {
       const syncScroll = () => {
-        const targetLeft = pinchAnchor
-          ? pinchAnchor.imgX * nextW - pinchAnchor.vpX
-          : relX * enlargeStage.scrollWidth - enlargeStage.clientWidth / 2;
-        const targetTop = pinchAnchor
-          ? pinchAnchor.imgY * nextH - pinchAnchor.vpY
-          : relY * enlargeStage.scrollHeight - enlargeStage.clientHeight / 2;
+        const targetLeft = relX * nextW - stageW / 2;
+        const targetTop = relY * nextH - stageH / 2;
         enlargeStage.scrollLeft = Math.max(0, targetLeft);
         enlargeStage.scrollTop = Math.max(0, targetTop);
       };
@@ -580,8 +579,7 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
     let wasPinching = false;
     let pinchStartDist = 0;
     let pinchStartZoom = 1;
-    let pinchImgX = 0.5;
-    let pinchImgY = 0.5;
+    let pinchCenterRel = { x: 0.5, y: 0.5 };
 
     const getTouchDist = (t1, t2) => Math.hypot(t1.clientX - t2.clientX, t1.clientY - t2.clientY);
 
@@ -592,11 +590,14 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
         wasPinching = true;
         pinchStartDist = Math.max(10, getTouchDist(e.touches[0], e.touches[1]));
         pinchStartZoom = enlargeZoom;
-        const midX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
-        const midY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
-        const frameRect = frame.getBoundingClientRect();
-        pinchImgX = Math.max(0, Math.min(1, (midX - frameRect.left) / Math.max(1, frameRect.width)));
-        pinchImgY = Math.max(0, Math.min(1, (midY - frameRect.top) / Math.max(1, frameRect.height)));
+        if (enlargeZoom <= 1) {
+          pinchCenterRel = { x: 0.5, y: 0.5 };
+        } else {
+          pinchCenterRel = {
+            x: Math.max(0, Math.min(1, (enlargeStage.scrollLeft + enlargeStage.clientWidth / 2) / Math.max(1, enlargeStage.scrollWidth))),
+            y: Math.max(0, Math.min(1, (enlargeStage.scrollTop + enlargeStage.clientHeight / 2) / Math.max(1, enlargeStage.scrollHeight)))
+          };
+        }
         enlargeStage.classList.add('is-pinching');
         return;
       }
@@ -613,19 +614,7 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
       if (!isPinching || e.touches.length !== 2) return;
       e.preventDefault();
       const dist = getTouchDist(e.touches[0], e.touches[1]);
-      const midX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
-      const midY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
-      const stageRect = enlargeStage.getBoundingClientRect();
-      applyEnlargeZoom(
-        pinchStartZoom * (dist / pinchStartDist),
-        {
-          imgX: pinchImgX,
-          imgY: pinchImgY,
-          vpX: midX - stageRect.left,
-          vpY: midY - stageRect.top
-        },
-        true
-      );
+      applyEnlargeZoom(pinchStartZoom * (dist / pinchStartDist), pinchCenterRel, true);
     }, { passive: false });
 
     enlargeStage.addEventListener('touchend', (e) => {
