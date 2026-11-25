@@ -62,9 +62,6 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
     return `
       <div class="modal-slide-photo-frame ${isLightbox ? 'lightbox-photo-frame' : ''}">
         <img src="${slide.src}" alt="${slide.title}" class="modal-slide-photo-img" loading="eager" />
-        <div class="modal-slide-caption-bar">
-          <span>${slide.title}</span>
-        </div>
       </div>
     `;
   };
