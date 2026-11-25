@@ -245,3 +245,10 @@
   width: 13px;
   height: 13px;
 }
+
+
+.footer-stockists-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
