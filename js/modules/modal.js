@@ -605,9 +605,7 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
       if (!isPinching || e.touches.length !== 2) return;
       e.preventDefault();
       const dist = getTouchDist(e.touches[0], e.touches[1]);
-      const midX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
-      const midY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
-      applyEnlargeZoom(pinchStartZoom * (dist / pinchStartDist), midX, midY, true);
+      applyEnlargeZoom(pinchStartZoom * (dist / pinchStartDist), null, null, true);
     }, { passive: false });
 
     enlargeStage.addEventListener('touchend', (e) => {
