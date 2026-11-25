@@ -216,12 +216,12 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
         <div class="modal-enlarge-lightbox" id="modal-enlarge-lightbox" data-testid="modal-enlarge-lightbox" aria-hidden="true">
           <div class="enlarge-lightbox-topbar">
             <div class="enlarge-lightbox-title-group">
-              <span class="enlarge-lightbox-kicker">DISTRACTION-FREE STUDIO INSPECTION • ${product.name.toUpperCase()}</span>
-              <span class="enlarge-lightbox-counter" id="enlarge-lightbox-counter">${activeSlideIdx + 1} / ${gallerySlides.length}</span>
+              <span class="enlarge-lightbox-kicker">${product.name.toUpperCase()}</span>
+              <span class="enlarge-lightbox-counter" id="enlarge-lightbox-counter" style="white-space:nowrap;">${activeSlideIdx + 1} / ${gallerySlides.length}</span>
             </div>
-            <button type="button" class="enlarge-lightbox-close" id="enlarge-lightbox-close" aria-label="Exit full-screen view">
+            <button type="button" class="enlarge-lightbox-close" id="enlarge-lightbox-close" aria-label="Exit full-screen view" style="white-space:nowrap;">
               ${getIcon('close')}
-              <span>Close Full Screen</span>
+              <span>Close</span>
             </button>
           </div>
 

@@ -455,7 +455,7 @@ export function getProductGallerySlides(product, conceptId = 1) {
     return [
       {
         id: 'shelf',
-        shortLabel: 'Vessel & Box',
+        shortLabel: 'Vessel',
         title: `${product.name} — Unlit 10 oz Soy Vessel (8.5 oz Fill), Brushed Brass Lid & Rigid Two-Piece Collector Box`,
         type: 'image',
         src: shelfImg,
