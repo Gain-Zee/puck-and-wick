@@ -237,7 +237,7 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
 
               <button type="button" class="btn btn-gold modal-add-to-cart-btn modal-add-to-cart" id="modal-add-btn" data-testid="modal-add-to-cart-btn">
                 ${product.inStockLocal ? `
-                  <span>Available Now in Blue Hydrangea &amp; Ketterman's</span>
+                  <span>${product.stockistCta || "Available Now in Blue Hydrangea &amp; Ketterman's"}</span>
                 ` : product.outOfStock ? `
                   <span>Temporarily Out of Stock &bull; Notify Me</span>
                 ` : HARDWARE_WAITLIST_MODE ? `
