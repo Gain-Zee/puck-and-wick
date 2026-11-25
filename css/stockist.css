@@ -327,7 +327,7 @@
 
 .stockist-shelf-card:last-child {
   grid-column: 1 / -1;
-  aspect-ratio: 737 / 317;
+  aspect-ratio: 745 / 615;
 }
 
 .stockist-shelf-card img {
