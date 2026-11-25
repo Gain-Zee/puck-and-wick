@@ -93,12 +93,11 @@
         </button>
 
         <a href="#stockists" class="nav-pickup-pill jm-pickup-desktop" title="Available at The Blue Hydrangea (Purcellville, VA) &amp; Ketterman's Jewelers (Leesburg, VA)">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span>Stockists: <strong>Purcellville &amp; Leesburg</strong></span>
+          <span>Purcellville &amp; Leesburg</span>
         </a>
       </div>
 
-      <!-- Center: Centered Maison Brand Lockup (LOUDOUN COUNTY, VA • USA) -->
+      <!-- Center: Centered Maison Brand Lockup (ATELIER • VIRGINIA) -->
       <a href="#hero" class="nav-brand jm-CenterBrand" data-testid="nav-brand" aria-label="Puck and Wick Home">
         <div class="jm-CenterBrand-row">
           <div class="brand-mark jm-CenterBrand-crest" id="brand-mark-header" data-testid="brand-mark" aria-hidden="true" style="display:none !important;"></div>
@@ -107,8 +106,13 @@
         <span class="brand-subtext jm-CenterBrand-sub">LOUDOUN COUNTY, VA &bull; USA</span>
       </a>
 
-      <!-- Right: Live Cart Trigger -->
+      <!-- Right: Minimalist Desktop Links + Live Cart Trigger -->
       <div class="nav-actions jm-right-actions">
+        <nav class="jm-inline-desktop-nav" data-testid="main-nav" aria-label="Primary Navigation">
+          <a href="#shop" class="nav-link" data-testid="nav-link-shop" data-nav-category="candles">Candles</a>
+          <a href="#exclusive-boxes" class="nav-link" data-testid="nav-link-pucks">Pucks &amp; Boxes</a>
+          <a href="#stockists" class="nav-link" data-testid="nav-link-stockists">Stockists</a>
+        </nav>
         <button type="button" class="cart-btn" id="cart-btn" data-testid="cart-trigger" aria-label="Open Shopping Cart Drawer">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
@@ -117,18 +121,6 @@
         </button>
       </div>
     </div>
-
-    <!-- Bottom Tier: Disappearing Category Bar (Smoothly collapses on scroll down, reappears on scroll up) -->
-    <nav class="jm-bottom-menu-bar" data-testid="main-nav" aria-label="Primary Navigation">
-      <ul class="nav-menu jm-bottom-menu-list">
-        <li><a href="#shop" class="nav-link" data-testid="nav-link-shop" data-nav-category="candles">Soy Candles</a></li>
-        <li><a href="#shop" class="nav-link jm-gold-pill" data-testid="nav-link-pucks" data-nav-category="odor_care">ZeoCarb-98&trade; Pucks</a></li>
-        <li><a href="#exclusive-boxes" class="nav-link" data-testid="nav-link-exclusive-boxes">Deluxe Boxes</a></li>
-        <li><a href="#story" class="nav-link" data-testid="nav-link-story">Our Story &amp; QC</a></li>
-        <li><a href="#stockists" class="nav-link" data-testid="nav-link-stockists">Retail Stockists</a></li>
-        <li class="nav-item-studio" style="display:none;"><a href="#studio" class="nav-link" data-testid="nav-link-studio">Brand Studio</a></li>
-      </ul>
-    </nav>
   </header>
 
   <!-- Mobile Drawer Overlay -->
@@ -158,88 +150,35 @@
        ========================================================================== -->
   <main id="main-content">
 
-    <!-- 1. Hero Section (99/100 Hybrid Editorial Stage + 3-Photo Bento Trio) -->
-    <section class="hero-section" id="hero" data-testid="hero-section" aria-labelledby="hero-title">
-      <div class="hero-ambient-glow" aria-hidden="true"></div>
-      <div class="hero-ambient-cold" aria-hidden="true"></div>
-      <div class="container hero-grid">
-        <!-- Visual Stage Banner (Top on Mobile, Right on Desktop) -->
-        <div class="hero-visual">
-          <div class="hero-stage-banner" data-testid="hero-flame">
-            <img src="assets/images/packaging/shelf-candle-top-shelf.jpg" alt="Puck &amp; Wick 10 oz Matte Obsidian Small-Batch American Soy Candle &amp; Two-Piece Rigid Box — Hand-Poured in Loudoun County, VA" class="hero-stage-img" fetchpriority="high">
-            <div class="hero-stage-overlay"></div>
-            <div class="hero-stage-pills">
-              <span class="hero-glass-tag">&#10024; Batch 01 Curing • VIP Waitlist</span>
-              <span class="hero-glass-tag">Hand-Poured in Virginia</span>
-            </div>
-            <div class="hero-stage-caption">
-              <h1 class="hero-title mobile-stage-headline" id="hero-title" data-testid="hero-headline">
-                Small-Batch Soy Candles &amp; <span class="hero-title-italic">Heavy-Duty Odor Science.</span>
-              </h1>
-              <div class="hero-desktop-stage-badge" aria-hidden="true">
-                <div class="hero-desktop-stage-badge-left">
-                  <span class="hero-desktop-stage-kicker">Coming Soon • Online &amp; At The Blue Hydrangea (Purcellville, VA)</span>
-                  <span class="hero-desktop-stage-name">10 Signature 100% American Soy Candles — Batch 01 VIP Waitlist</span>
-                </div>
-                <a href="#shop" class="hero-desktop-stage-link">Explore Scents &rarr;</a>
-              </div>
-            </div>
+    <!-- 1. Hero Section (Option B: Full-Bleed Cinematic Minimalist) -->
+    <section class="hero-section hero-cinematic" id="hero" data-testid="hero-section" aria-labelledby="hero-title">
+      <div class="hero-cinematic-bg" data-testid="hero-flame">
+        <picture>
+          <source media="(max-width: 768px)" srcset="assets/images/packaging/real-duo-hero-mobile.jpg">
+          <img src="assets/images/packaging/real-duo-hero-wide.jpg" alt="Puck &amp; Wick 10 oz Matte Obsidian &amp; Sanctuary Frosted Ivory Candles — Hand-Poured in Loudoun County, VA" class="hero-cinematic-img" fetchpriority="high">
+        </picture>
+        <div class="hero-cinematic-scrim" aria-hidden="true"></div>
+      </div>
+
+      <div class="container hero-cinematic-inner">
+        <div class="hero-cinematic-content">
+          <h1 class="hero-cinematic-title" id="hero-title" data-testid="hero-headline">
+            Small-Batch Candles &amp;<br><span class="hero-title-italic">Heavy-Duty Odor Science.</span>
+          </h1>
+
+          <div class="hero-cinematic-actions">
+            <a href="#shop" class="hero-cinematic-btn" data-testid="hero-cta-shop">
+              <span>View Collection</span>
+            </a>
           </div>
         </div>
+      </div>
 
-        <!-- Content & 3-Photo Bento Column -->
-        <div class="hero-content">
-          <div class="hero-kicker-badge desktop-only-kicker">
-            <span>&#10024; Batch 01 Curing • Hand-Poured in Loudoun County, VA</span>
-          </div>
-
-          <div class="hero-desktop-headline" aria-hidden="true">
-            Small-Batch Soy Candles &amp; <span class="gold-gradient-text">Heavy-Duty Odor Science.</span>
-          </div>
-
-          <p class="hero-tagline" data-testid="hero-tagline">
-            Preview our <strong>100% American soy candles</strong>, <strong>ZeoCarb-98&trade; odor pucks</strong>, and <strong>deluxe 3-piece collector gift boxes</strong>, and join the <strong>Batch 01 VIP Waitlist</strong> for priority launch access.
-          </p>
-
-          <!-- 3-Photo Bento Category Shortcuts -->
-          <div class="hero-bento-trio" aria-label="Product Category Shortcuts">
-            <a href="#shop" class="hero-mini-bento" data-bento-target="candles">
-              <img src="assets/images/packaging/shelf-candle-top-shelf.jpg?v=65" alt="100% American Soy Candles" loading="eager">
-              <span class="hero-mini-price">SOON</span>
-              <div class="hero-mini-grad">
-                <div class="hero-mini-title">Soy Candles</div>
-                <div class="hero-mini-sub">10 Scents • Waitlist</div>
-              </div>
-            </a>
-
-            <a href="#shop" class="hero-mini-bento" data-bento-target="pucks">
-              <img src="assets/images/item-puck-men.jpg" alt="ZeoCarb-98 Molecular Odor Pucks" loading="eager">
-              <span class="hero-mini-price">SOON</span>
-              <div class="hero-mini-grad">
-                <div class="hero-mini-title">Odor Pucks</div>
-                <div class="hero-mini-sub">Drop 01 Waitlist</div>
-              </div>
-            </a>
-
-            <a href="#exclusive-boxes" class="hero-mini-bento" data-bento-target="boxes">
-              <img src="assets/images/box-men-open.jpg?v=65" alt="The Exclusive Men's &amp; Women's Collector Gift Boxes" loading="eager">
-              <span class="hero-mini-price">SOON</span>
-              <div class="hero-mini-grad">
-                <div class="hero-mini-title">Collector Boxes</div>
-                <div class="hero-mini-sub">3-Piece Set • Waitlist</div>
-              </div>
-            </a>
-          </div>
-
-          <div class="hero-actions">
-            <a href="#shop" class="btn btn-gold btn-lg" data-testid="hero-cta-shop">
-              <span>Explore Collection (VIP Waitlist)</span>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-            <a href="#exclusive-boxes" class="btn btn-outline btn-lg" data-testid="hero-cta-boxes">
-              <span>Preview Collector Boxes</span>
-            </a>
-          </div>
+      <div class="hero-cinematic-bar" aria-label="Brand Highlights">
+        <div class="container hero-cinematic-bar-inner">
+          <span>01 &bull; Obsidian &amp; Sanctuary Candles</span>
+          <span>02 &bull; ZeoCarb-98&trade; Odor Pucks</span>
+          <span>03 &bull; Available Locally in Loudoun County</span>
         </div>
       </div>
     </section>
@@ -420,6 +359,25 @@
                     </tr>
                   </tbody>
                 </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Real In-Store Shelf Gallery (The Blue Hydrangea) -->
+          <div class="stockist-shelf-gallery" aria-label="Puck and Wick in-store display at The Blue Hydrangea">
+            <div class="stockist-shelf-kicker">Now on the Shelf • The Blue Hydrangea (Purcellville, VA)</div>
+            <div class="stockist-shelf-grid">
+              <div class="stockist-shelf-card">
+                <img src="assets/images/stockists/blue-hydrangea-lineup.jpg" alt="Puck &amp; Wick Obsidian &amp; Sanctuary Ivory vessels on display at The Blue Hydrangea" loading="lazy">
+              </div>
+              <div class="stockist-shelf-card">
+                <img src="assets/images/stockists/blue-hydrangea-ivory.jpg" alt="Women's Sanctuary Frosted Ivory candles with champagne-gold lids at The Blue Hydrangea" loading="lazy">
+              </div>
+              <div class="stockist-shelf-card">
+                <img src="assets/images/stockists/blue-hydrangea-obsidian.jpg" alt="Men's Matte Obsidian candles at The Blue Hydrangea" loading="lazy">
+              </div>
+              <div class="stockist-shelf-card">
+                <img src="assets/images/stockists/blue-hydrangea-shelf.jpg" alt="Puck &amp; Wick shelf display inside The Blue Hydrangea in Purcellville, VA" loading="lazy">
               </div>
             </div>
           </div>

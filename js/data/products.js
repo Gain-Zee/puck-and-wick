@@ -40,7 +40,7 @@ export const PRODUCTS = [
     },
     featured: true,
     vesselType: 'obsidian',
-    photo: 'assets/images/packaging/shelf-candle-top-shelf.jpg',
+    photo: 'assets/images/packaging/real-obsidian-studio.jpg',
     accentColor: '#C5A059'
   },
   {
@@ -48,7 +48,7 @@ export const PRODUCTS = [
     name: 'Fresh Cut',
     tagline: '6:00 AM Zamboni Cut. Italian Bergamot, Hinoki Wood, Eucalyptus & Vetiver.',
     price: 44.00,
-    formattedPrice: 'Temporarily Out of Stock',
+    formattedPrice: 'Out of Stock',
     outOfStock: true,
     category: ['mens', 'candles', 'signature', 'fresh_clean', 'woods_rustic'],
     productType: 'candle',
@@ -68,7 +68,7 @@ export const PRODUCTS = [
     },
     featured: true,
     vesselType: 'amber',
-    photo: 'assets/images/packaging/shelf-candle-fresh-cut.jpg',
+    photo: 'assets/images/packaging/real-obsidian-studio.jpg',
     accentColor: '#88D1F1'
   },
   {
@@ -98,7 +98,7 @@ export const PRODUCTS = [
     seasonal: true,
     seasonalBadge: 'The Blue Hydrangea Exclusive Collaboration',
     vesselType: 'amber',
-    photo: 'assets/images/packaging/shelf-candle-balsam-fir.jpg',
+    photo: 'assets/images/packaging/real-obsidian-studio.jpg',
     accentColor: '#3B7A57'
   },
   {
@@ -128,7 +128,7 @@ export const PRODUCTS = [
     },
     featured: false,
     vesselType: 'obsidian',
-    photo: 'assets/images/packaging/shelf-candle-rinkside-cedar-smoke.jpg',
+    photo: 'assets/images/packaging/real-obsidian-studio.jpg',
     accentColor: '#C5A059'
   },
   {
@@ -155,7 +155,7 @@ export const PRODUCTS = [
     },
     featured: false,
     vesselType: 'obsidian',
-    photo: 'assets/images/packaging/shelf-candle-locker-room-mint.jpg',
+    photo: 'assets/images/packaging/real-obsidian-studio.jpg',
     accentColor: '#34D399'
   },
   {
@@ -186,7 +186,7 @@ export const PRODUCTS = [
     featured: true,
     seasonal: false,
     vesselType: 'ivory',
-    photo: 'assets/images/packaging/shelf-candle-cashmere-white-tea.jpg',
+    photo: 'assets/images/packaging/real-ivory-studio.jpg',
     accentColor: '#E5C878'
   },
   {
@@ -217,7 +217,7 @@ export const PRODUCTS = [
     featured: true,
     seasonal: false,
     vesselType: 'ivory',
-    photo: 'assets/images/packaging/shelf-candle-cashmere-white-tea.jpg',
+    photo: 'assets/images/packaging/real-ivory-studio.jpg',
     accentColor: '#E5C878'
   },
   {
@@ -245,7 +245,7 @@ export const PRODUCTS = [
     featured: true,
     seasonal: false,
     vesselType: 'ivory',
-    photo: 'assets/images/packaging/shelf-candle-velvet-vanilla-santal.jpg',
+    photo: 'assets/images/packaging/real-ivory-studio.jpg',
     accentColor: '#E5C878'
   },
   {
@@ -273,7 +273,7 @@ export const PRODUCTS = [
     featured: false,
     seasonal: false,
     vesselType: 'ivory',
-    photo: 'assets/images/packaging/shelf-candle-sea-salt-orchid.jpg',
+    photo: 'assets/images/packaging/real-ivory-studio.jpg',
     accentColor: '#E5C878'
   },
   {

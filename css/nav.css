@@ -495,3 +495,89 @@
   font-size: var(--text-small);
   color: var(--color-text-muted);
 }
+
+
+/* ==========================================================================
+   Minimalist Single-Row Luxury Header (Option B Alignment)
+   ========================================================================== */
+.site-header.jm-centered-mode {
+  background: rgba(7, 8, 10, 0.92);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.site-header.jm-centered-mode .jm-top-bar {
+  height: 76px;
+  padding-block: 0;
+  border-bottom: none;
+}
+
+.site-header.jm-centered-mode .jm-MenuTrigger,
+.site-header.jm-centered-mode .nav-pickup-pill,
+.site-header.jm-centered-mode .cart-btn {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding-inline: 0.25rem;
+}
+
+.site-header.jm-centered-mode .jm-MenuTrigger {
+  color: #A69D8D;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  gap: 0.5rem;
+}
+
+.site-header.jm-centered-mode .jm-MenuTrigger:hover {
+  color: #E5C878;
+}
+
+.site-header.jm-centered-mode .nav-pickup-pill {
+  color: #A69D8D;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.site-header.jm-centered-mode .nav-pickup-pill:hover {
+  color: #E5C878;
+}
+
+.site-header.jm-centered-mode .jm-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.jm-inline-desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.jm-inline-desktop-nav .nav-link {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #D7CEBE;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.jm-inline-desktop-nav .nav-link:hover {
+  color: #E5C878;
+}
+
+@media (max-width: 960px) {
+  .jm-inline-desktop-nav {
+    display: none;
+  }
+
+  .site-header.jm-centered-mode .jm-top-bar {
+    height: 64px;
+  }
+}

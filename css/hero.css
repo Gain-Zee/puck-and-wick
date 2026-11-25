@@ -328,3 +328,197 @@
   font-size: 0.76rem;
   letter-spacing: 0.06em;
 }
+
+
+/* ==========================================================================
+   Option B: Full-Bleed Cinematic Minimalist Hero
+   ========================================================================== */
+.hero-section.hero-cinematic {
+  position: relative;
+  min-height: calc(100vh - var(--header-height));
+  min-height: calc(100dvh - var(--header-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-block: 0;
+  background: #07080A;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero-cinematic-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-cinematic-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 65% center;
+  display: block;
+}
+
+.hero-cinematic-scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(7, 8, 10, 0.94) 0%, rgba(7, 8, 10, 0.78) 42%, rgba(7, 8, 10, 0.16) 100%),
+    linear-gradient(180deg, rgba(7, 8, 10, 0.65) 0%, transparent 22%, transparent 76%, rgba(7, 8, 10, 0.88) 100%);
+}
+
+.hero-cinematic-inner {
+  position: relative;
+  z-index: 10;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding-block: 4.5rem 3.5rem;
+}
+
+.hero-cinematic-content {
+  max-width: 500px;
+}
+
+.hero-cinematic-kicker {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #E5C878;
+  margin-bottom: 1.25rem;
+}
+
+.hero-cinematic-title {
+  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2.45rem, 3.85vw, 3.65rem);
+  font-weight: 500;
+  line-height: 1.06;
+  color: #FFFFFF;
+  margin-bottom: 2rem;
+  letter-spacing: -0.01em;
+}
+
+.hero-cinematic-title .hero-title-italic {
+  font-style: italic;
+  color: #E5C878;
+  font-weight: 500;
+}
+
+.hero-cinematic-tagline {
+  font-size: 1rem;
+  line-height: 1.68;
+  color: rgba(250, 245, 232, 0.80);
+  font-weight: 300;
+  max-width: 470px;
+  margin-bottom: 2.25rem;
+}
+
+.hero-cinematic-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hero-cinematic-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #E5C878;
+  background: rgba(7, 8, 10, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #FAF5E8;
+  padding: 0.95rem 2.15rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.hero-cinematic-btn:hover {
+  background: #E5C878;
+  color: #07080A;
+}
+
+.hero-cinematic-bar {
+  position: relative;
+  z-index: 10;
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+  padding-block: 1.15rem;
+  background: rgba(7, 8, 10, 0.45);
+  backdrop-filter: blur(6px);
+}
+
+.hero-cinematic-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(250, 245, 232, 0.72);
+}
+
+@media (max-width: 768px) {
+  .hero-section.hero-cinematic {
+    min-height: auto;
+    display: block;
+  }
+
+  .hero-cinematic-bg {
+    position: relative;
+    height: 270px;
+    width: 100%;
+  }
+
+  .hero-cinematic-img {
+    object-position: center center;
+    transform: none;
+  }
+
+  .hero-cinematic-scrim {
+    background: linear-gradient(180deg, rgba(7, 8, 10, 0.15) 0%, transparent 55%, #07080A 100%);
+  }
+
+  .hero-cinematic-inner {
+    align-items: flex-start;
+    padding-block: 1.25rem 1.75rem;
+  }
+
+  .hero-cinematic-kicker {
+    font-size: 0.64rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 0.65rem;
+  }
+
+  .hero-cinematic-title {
+    font-size: 2.35rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-cinematic-tagline {
+    font-size: 0.9rem;
+    margin-bottom: 1.35rem;
+  }
+
+  .hero-cinematic-btn {
+    width: 100%;
+    padding: 0.9rem 1.5rem;
+  }
+
+  .hero-cinematic-bar {
+    padding-block: 0.85rem;
+  }
+
+  .hero-cinematic-bar-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.45rem;
+    font-size: 0.62rem;
+  }
+}

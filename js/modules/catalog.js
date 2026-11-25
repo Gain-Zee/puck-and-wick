@@ -96,7 +96,7 @@ export function initCatalog(store, openCartDrawer) {
                     </div>
                   ` : isOutOfStock ? `
                     <div class="product-badge badge-coming-soon">
-                      <span>Temporarily Out of Stock</span>
+                      <span>Out of Stock</span>
                     </div>
                   ` : isWaitlist ? `
                     <div class="product-badge badge-coming-soon">
@@ -144,8 +144,10 @@ export function initCatalog(store, openCartDrawer) {
                   <div class="product-card-footer">
                     <div class="card-footer-top">
                       <div class="price-container">
-                        <span class="product-price" data-testid="product-price" style="font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;">${isLocalStock ? 'Available Now' : isOutOfStock ? 'Temporarily Out of Stock' : 'Batch 01 • Waitlist'}</span>
-                        <span class="wax-spec-sub">${isLocalStock ? (p.stockistLabel || 'Blue Hydrangea &amp; Ketterman\'s') : isOutOfStock ? 'Next Batch Curing Soon' : (isWaitlist ? 'Drop 01 • Coming Soon' : (p.waxSpecSub || '100% American Soy'))}</span>
+                        ${isLocalStock || isOutOfStock ? '' : `
+                          <span class="product-price" data-testid="product-price" style="font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;">Batch 01 • Waitlist</span>
+                          <span class="wax-spec-sub">${isWaitlist ? 'Drop 01 • Coming Soon' : (p.waxSpecSub || '100% American Soy')}</span>
+                        `}
                       </div>
 
                       <div class="card-secondary-btns">
@@ -163,8 +165,8 @@ export function initCatalog(store, openCartDrawer) {
                         <span>${p.stockistLabel ? `Available Now at<br>${p.stockistLabel}` : `Available Now in<br>Blue Hydrangea &amp; Ketterman's`}</span>
                       </button>
                     ` : isOutOfStock ? `
-                      <button type="button" class="btn btn-outline btn-sm quick-waitlist-btn" data-testid="quick-waitlist-btn" data-product-id="${p.id}" aria-label="Temporarily out of stock — notify me when ${p.name} restocks">
-                        <span>Temporarily Out of Stock</span>
+                      <button type="button" class="btn btn-outline btn-sm quick-waitlist-btn" data-testid="quick-waitlist-btn" data-product-id="${p.id}" aria-label="Out of stock — notify me when ${p.name} restocks">
+                        <span>Out of Stock</span>
                       </button>
                     ` : isWaitlist ? `
                       <button type="button" class="btn btn-outline btn-sm quick-waitlist-btn" data-testid="quick-waitlist-btn" data-product-id="${p.id}" aria-label="Join VIP Waitlist for ${p.name}">

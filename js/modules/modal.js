@@ -135,7 +135,7 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
             <div class="modal-tagline">${product.tagline}</div>
 
             <div class="modal-price-row">
-              <span class="modal-price" data-testid="modal-price" style="font-size:1.05rem;letter-spacing:0.06em;text-transform:uppercase;">${product.inStockLocal ? 'In Stock Locally' : product.outOfStock ? 'Temporarily Out of Stock' : 'Batch 01 • VIP Waitlist'}</span>
+              <span class="modal-price" data-testid="modal-price" style="font-size:1.05rem;letter-spacing:0.06em;text-transform:uppercase;">${product.inStockLocal ? 'In Stock Locally' : product.outOfStock ? 'Out of Stock' : 'Batch 01 • VIP Waitlist'}</span>
               <span class="modal-burn-badge" data-testid="product-burn-time">${product.productType === 'odor_care' ? product.burnTime : `${product.burnTime} Slow Burn`}</span>
             </div>
 
@@ -239,7 +239,7 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
                 ${product.inStockLocal ? `
                   <span>${product.stockistCta || "Available Now in Blue Hydrangea &amp; Ketterman's"}</span>
                 ` : product.outOfStock ? `
-                  <span>Temporarily Out of Stock &bull; Notify Me</span>
+                  <span>Out of Stock &bull; Notify Me</span>
                 ` : HARDWARE_WAITLIST_MODE ? `
                   ${getIcon('sparkle')}
                   <span>Join Batch 01 VIP Waitlist</span>
