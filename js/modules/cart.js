@@ -103,7 +103,7 @@ export function initCart(store, openCheckoutCallback) {
                   const rawScentSub = item.scent && item.scent !== 'Default' ? item.scent : (item.subtitle || '');
                   const scentSubtitle = (rawScentSub && rawScentSub !== item.title)
                     ? rawScentSub
-                    : (prodRef ? `${prodRef.specUnitLabel || '10 oz Vessel'} • ${prodRef.waxSpecSub || '100% American Soy'}` : rawScentSub);
+                    : (prodRef ? `${prodRef.specUnitLabel || '10 oz Vessel'} • ${prodRef.waxSpecSub || 'Apricot-Coconut-Soy'}` : rawScentSub);
                   const customInfo = item.customOptions?.candleScentName ? `Scent: ${item.customOptions.candleScentName}` : (item.customizations?.candleScentName ? `Scent: ${item.customizations.candleScentName}` : '');
 
                   const thumbSrc = getCartItemPhotoSrc(item);

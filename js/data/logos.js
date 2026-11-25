@@ -72,7 +72,7 @@ export const MOCKUP_SCENT_SPECS = {
     edition: 'No. 01 • Flagship Reserve',
     tagline: 'Kentucky Bourbon Cask • Aged Tobacco Leaf • Smoked Amber',
     notesLine: 'TOP: Bourbon Cask, Bergamot • HEART: Aged Tobacco, White Oak • BASE: Smoked Amber, Vanilla Bean',
-    burnSpec: '10 OZ (283G) • 100% AMERICAN SOY WAX • 60 HR CLEAN BURN',
+    burnSpec: '10 OZ (283G) • APRICOT-COCONUT-SOY WAX • 60 HR CLEAN BURN',
     batchCode: 'BATCH #PW-2026-TS01 • HAND-POURED IN LOUDOUN CO., VA',
     accentColor: '#D4AF37'
   },
@@ -84,7 +84,7 @@ export const MOCKUP_SCENT_SPECS = {
     edition: 'No. 02 • Rinkside Signature',
     tagline: 'Glacial Ozone • Crushed Pine Needles • White Cedarwood',
     notesLine: 'TOP: Glacial Ozone, Eucalyptus • HEART: Crushed Pine, Silver Fir • BASE: Chilled Driftwood, White Cedar',
-    burnSpec: '10 OZ (283G) • 100% AMERICAN SOY WAX • 60 HR CLEAN BURN',
+    burnSpec: '10 OZ (283G) • APRICOT-COCONUT-SOY WAX • 60 HR CLEAN BURN',
     batchCode: 'BATCH #PW-2026-FC02 • HAND-POURED IN LOUDOUN CO., VA',
     accentColor: '#93C5FD'
   }

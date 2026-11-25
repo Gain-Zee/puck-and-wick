@@ -30,7 +30,7 @@ export const PRODUCTS = [
     burnTime: '55 - 65 hours',
     weightOz: 10,
     vessel: '10 oz Heavy-Base Matte Obsidian Glass (8.5 oz / 240g Net Soy Fill) with Unbranded Brushed Gold Metal Lid',
-    wax: '100% Pure American Soy Wax + ZeoCarb-98™ Vapor Complex',
+    wax: 'Apricot, Coconut & American Soy Crème Wax + ZeoCarb-98™ Vapor Complex',
     wick: 'Lead-Free Braided Organic Cotton Wick',
     description: 'Inspired by top-shelf snipes and championship prestige. A radiant, hypnotic master formulation opening with crushed crimson saffron threads and bitter almond, unfolding into airy Egyptian jasmine grandiflorum and Virginia white cedar, and anchored by crystalline ambergris, fir balsam resin, and warm amberwood.',
     notes: {
@@ -58,7 +58,7 @@ export const PRODUCTS = [
     burnTime: '55 - 65 hours',
     weightOz: 10,
     vessel: '10 oz Heavy-Base Matte Obsidian Glass (8.5 oz / 240g Net Soy Fill) with Unbranded Brushed Gold Metal Lid',
-    wax: '100% Pure American Soy Wax + ZeoCarb-98™ Vapor Complex',
+    wax: 'Apricot, Coconut & American Soy Crème Wax + ZeoCarb-98™ Vapor Complex',
     wick: 'Lead-Free Braided Organic Cotton Wick',
     description: 'That sacred stillness when you step onto fresh sheet ice at 6:00 AM. Bright Italian bergamot and crisp grapefruit zest cut into sacred Japanese hinoki wood and frosted eucalyptus leaf, grounded by smoky earthy vetiver, warm amber, and sunlit orange blossom.',
     notes: {
@@ -86,7 +86,7 @@ export const PRODUCTS = [
     burnTime: '55 - 65 hours',
     weightOz: 10,
     vessel: '10 oz Heavy-Base Matte Obsidian Glass (8.5 oz / 240g Net Soy Fill) with Unbranded Brushed Gold Metal Lid',
-    wax: '100% Pure American Soy Wax + ZeoCarb-98™ Vapor Complex',
+    wax: 'Apricot, Coconut & American Soy Crème Wax + ZeoCarb-98™ Vapor Complex',
     wick: 'Lead-Free Braided Organic Cotton Wick',
     description: 'Handcrafted exclusively in seasonal collaboration with The Blue Hydrangea boutique in Purcellville, VA. Captures the crisp scent of snow-laden Blue Ridge evergreens, resinous balsam fir, spiced clove bud, and smoky cedar embers.',
     notes: {
@@ -118,7 +118,7 @@ export const PRODUCTS = [
     burnTime: '55 - 65 hours',
     weightOz: 10,
     vessel: '10 oz Heavy-Base Matte Obsidian Glass (8.5 oz / 240g Net Soy Fill) with Unbranded Brushed Gold Metal Lid',
-    wax: '100% Pure American Soy Wax + ZeoCarb-98™ Vapor Complex',
+    wax: 'Apricot, Coconut & American Soy Crème Wax + ZeoCarb-98™ Vapor Complex',
     wick: 'Lead-Free Braided Organic Cotton Wick',
     description: 'The aromatic nostalgia of an outdoor pond hockey game followed by an open-fire tailgate. Aromatic red cedar boards, oiled leather glove patina, and crackling birchwood smoke softened by dark resinous musk.',
     notes: {
@@ -145,7 +145,7 @@ export const PRODUCTS = [
     burnTime: '55 - 65 hours',
     weightOz: 10,
     vessel: '10 oz Heavy-Base Matte Obsidian Glass (8.5 oz / 240g Net Soy Fill) with Unbranded Brushed Gold Metal Lid',
-    wax: '100% Pure American Soy Wax + ZeoCarb-98™ Vapor Complex',
+    wax: 'Apricot, Coconut & American Soy Crème Wax + ZeoCarb-98™ Vapor Complex',
     wick: 'Lead-Free Braided Organic Cotton Wick',
     description: 'Engineered to wipe away mental fatigue and stale room air. A high-voltage surge of pure Tasmanian eucalyptus globulus, crushed garden spearmint, clary sage, and crisp mountain mineral salt.',
     notes: {
@@ -175,7 +175,7 @@ export const PRODUCTS = [
     burnTime: '55 - 65 hours',
     weightOz: 10,
     vessel: '10 oz Frosted Warm Ivory Glass (8.5 oz / 240g Net Soy Fill) with Unbranded Brushed Champagne-Gold Lid',
-    wax: '100% Pure American Soy Wax + ZeoCarb-98™ Vapor Complex',
+    wax: 'Apricot, Coconut & American Soy Crème Wax + ZeoCarb-98™ Vapor Complex',
     wick: 'Lead-Free Braided Organic Cotton Wick',
     description: 'Poured in our signature Frosted Warm Ivory & Champagne-Gold Sanctuary vessel. A cozy, smoky winter sanctuary blend uniting warm spun cashmere and golden bergamot with dark smoked oud, Baltic amber, and creamy sandalwood.',
     notes: {
@@ -206,7 +206,7 @@ export const PRODUCTS = [
     burnTime: '55 - 65 hours',
     weightOz: 10,
     vessel: '10 oz Frosted Warm Ivory Glass (8.5 oz / 240g Net Soy Fill) with Unbranded Brushed Champagne-Gold Lid',
-    wax: '100% Pure American Soy Wax + ZeoCarb-98™ Vapor Complex',
+    wax: 'Apricot, Coconut & American Soy Crème Wax + ZeoCarb-98™ Vapor Complex',
     wick: 'Lead-Free Braided Organic Cotton Wick',
     description: 'Poured in our signature Frosted Warm Ivory & Champagne-Gold Sanctuary vessel. Soft, enveloping, and effortlessly serene—bright bergamot opens into warm spun cashmere, soft vanilla, and creamy sandalwood over sheer skin musk.',
     notes: {
@@ -234,7 +234,7 @@ export const PRODUCTS = [
     burnTime: '55 - 65 hours',
     weightOz: 10,
     vessel: '10 oz Frosted Warm Ivory Glass (8.5 oz / 240g Net Soy Fill) with Unbranded Brushed Champagne-Gold Lid',
-    wax: '100% Pure American Soy Wax + ZeoCarb-98™ Vapor Complex',
+    wax: 'Apricot, Coconut & American Soy Crème Wax + ZeoCarb-98™ Vapor Complex',
     wick: 'Lead-Free Braided Organic Cotton Wick',
     description: 'Poured in our Frosted Warm Ivory & Champagne-Gold Sanctuary vessel. A sensual, intoxicating balance of crushed green cardamom and warm papyrus layered over creamy Australian sandalwood heart, cured Madagascar vanilla bean pods, and golden benzoin resin.',
     notes: {
@@ -262,7 +262,7 @@ export const PRODUCTS = [
     burnTime: '55 - 65 hours',
     weightOz: 10,
     vessel: '10 oz Frosted Warm Ivory Glass (8.5 oz / 240g Net Soy Fill) with Unbranded Brushed Champagne-Gold Lid',
-    wax: '100% Pure American Soy Wax + ZeoCarb-98™ Vapor Complex',
+    wax: 'Apricot, Coconut & American Soy Crème Wax + ZeoCarb-98™ Vapor Complex',
     wick: 'Lead-Free Braided Organic Cotton Wick',
     description: 'Poured in our Frosted Warm Ivory & Champagne-Gold Sanctuary vessel. A luminous, airy coastal-botanical composition pairing crystalline sea salt and ozonated mist with velvety night-blooming white orchid, wild freesia, and sun-bleached driftwood.',
     notes: {

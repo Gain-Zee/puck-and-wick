@@ -180,7 +180,7 @@ export function renderJarMockupSvg({ conceptId = 1, scentKey = 'top-shelf', vess
 
       <!-- Burn Specs -->
       <text x="170" y="313" text-anchor="middle" font-family="'Inter', sans-serif" font-size="4.6" font-weight="500" letter-spacing="1.3" fill="${secondaryTextFill}">
-        100% AMERICAN SOY WAX • 60 HR CLEAN BURN
+        APRICOT-COCONUT-SOY WAX • 60 HR CLEAN BURN
       </text>
 
       <!-- Vessel Specs & Origin -->

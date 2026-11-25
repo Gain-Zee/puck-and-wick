@@ -20,7 +20,7 @@ export const EXCLUSIVE_BOX_EDITIONS = {
     bundledItems: {
       candle: {
         role: '1x Full-Size Hand-Poured Soy Candle (10 oz Matte Obsidian Vessel • 8.5 oz Fill)',
-        detail: '55–65 Hr Clean Burn • 100% American Soy Wax + ZeoCarb-98™',
+        detail: '55–65 Hr Clean Burn • Apricot-Coconut-Soy Crème + ZeoCarb-98™',
         retailValue: 'Full-Size Included'
       },
       puck: {

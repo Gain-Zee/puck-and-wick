@@ -146,7 +146,7 @@ export function initCatalog(store, openCartDrawer) {
                       <div class="price-container">
                         ${isLocalStock || isOutOfStock ? '' : `
                           <span class="product-price" data-testid="product-price" style="font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;">Batch 01 • Waitlist</span>
-                          <span class="wax-spec-sub">${isWaitlist ? 'Drop 01 • Coming Soon' : (p.waxSpecSub || '100% American Soy')}</span>
+                          <span class="wax-spec-sub">${isWaitlist ? 'Drop 01 • Coming Soon' : (p.waxSpecSub || 'Apricot-Coconut-Soy')}</span>
                         `}
                       </div>
 
