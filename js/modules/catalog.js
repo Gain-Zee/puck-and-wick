@@ -128,8 +128,6 @@ export function initCatalog(store, openCartDrawer) {
                     <a href="/p/${p.id}/${String(currentSlide.id || 'primary').replace(/_/g, '-').toLowerCase()}" class="title-link" data-action="quick-view" data-product-id="${p.id}">${p.name}</a>
                   </h3>
 
-                  <div class="product-tagline-text">${p.tagline}</div>
-
                   <!-- Notes Teaser Pills (Shown on Desktop, Hidden on Mobile 2-Col Grid for Compactness) -->
                   <div class="product-notes-summary">
                     <span class="notes-kicker">${p.productType === 'odor_care' ? 'Active Matrix &amp; Notes:' : 'Fragrance Notes:'}</span>
