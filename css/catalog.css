@@ -1612,3 +1612,10 @@
   border-color: #C5A059;
 }
 
+.product-card.card-sanctuary-ivory .product-badge {
+  background: rgba(20, 18, 15, 0.92);
+  color: #F5E1A4;
+  border-color: #C5A059;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
