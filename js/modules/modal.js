@@ -96,8 +96,6 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="9 18 15 12 9 6"/></svg>
             </button>
 
-            ${product.seasonal ? `<div class="modal-badge-seasonal">${product.seasonalBadge || 'Seasonal Collaboration'}</div>` : ''}
-
             <!-- Interactive Multi-Photo Thumbnail Strip -->
             <div class="modal-gallery-thumbs" id="modal-gallery-thumbs" role="tablist" aria-label="Product gallery views">
               ${gallerySlides.map((s, idx) => `
