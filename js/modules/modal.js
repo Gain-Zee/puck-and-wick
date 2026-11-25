@@ -219,10 +219,17 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
               <span class="enlarge-lightbox-kicker">${product.name.toUpperCase()}</span>
               <span class="enlarge-lightbox-counter" id="enlarge-lightbox-counter" style="white-space:nowrap;">${activeSlideIdx + 1} / ${gallerySlides.length}</span>
             </div>
-            <button type="button" class="enlarge-lightbox-close" id="enlarge-lightbox-close" aria-label="Exit full-screen view" style="white-space:nowrap;">
-              ${getIcon('close')}
-              <span>Close</span>
-            </button>
+            <div class="enlarge-lightbox-actions">
+              <div class="enlarge-zoom-controls" id="enlarge-zoom-controls" aria-label="Photo zoom controls">
+                <button type="button" class="enlarge-zoom-btn" id="enlarge-zoom-out" aria-label="Zoom out photo" disabled>−</button>
+                <button type="button" class="enlarge-zoom-readout" id="enlarge-zoom-reset" aria-label="Reset zoom to 1x">1×</button>
+                <button type="button" class="enlarge-zoom-btn" id="enlarge-zoom-in" aria-label="Zoom in photo">+</button>
+              </div>
+              <button type="button" class="enlarge-lightbox-close" id="enlarge-lightbox-close" aria-label="Exit full-screen view" style="white-space:nowrap;">
+                ${getIcon('close')}
+                <span>Close</span>
+              </button>
+            </div>
           </div>
 
           <div class="enlarge-lightbox-stage-wrap">
@@ -275,12 +282,80 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
   const enlargePrevBtn = document.getElementById('enlarge-slide-prev');
   const enlargeNextBtn = document.getElementById('enlarge-slide-next');
   const enlargeThumbBtns = backdrop.querySelectorAll('[data-enlarge-slide-idx]');
+  const enlargeZoomControls = document.getElementById('enlarge-zoom-controls');
+  const enlargeZoomOutBtn = document.getElementById('enlarge-zoom-out');
+  const enlargeZoomResetBtn = document.getElementById('enlarge-zoom-reset');
+  const enlargeZoomInBtn = document.getElementById('enlarge-zoom-in');
   const seoUrlLinkEl = document.getElementById('modal-seo-url-link');
   const sharePhotoBtn = document.getElementById('modal-share-photo-btn');
 
   let isEnlargeOpen = false;
+  let enlargeZoom = 1;
+  const ENLARGE_ZOOM_MIN = 1;
+  const ENLARGE_ZOOM_MAX = 3.25;
+  const ENLARGE_ZOOM_STEP = 0.75;
+  let enlargeDragMoved = false;
   let cleanupStage360 = () => {};
   let cleanupLightbox360 = () => {};
+
+  const applyEnlargeZoom = (nextZoom, anchorClientX, anchorClientY) => {
+    if (!enlargeStage) return;
+    const frame = enlargeStage.querySelector('.lightbox-photo-frame');
+    if (enlargeZoomControls) {
+      enlargeZoomControls.style.display = frame ? 'inline-flex' : 'none';
+    }
+    if (!frame) {
+      enlargeZoom = 1;
+      enlargeStage.classList.remove('is-zoomed');
+      return;
+    }
+
+    const prevZoom = enlargeZoom;
+    const clamped = Math.max(ENLARGE_ZOOM_MIN, Math.min(ENLARGE_ZOOM_MAX, Number(nextZoom.toFixed(2))));
+    enlargeZoom = clamped;
+
+    let relX = 0.5;
+    let relY = 0.5;
+    const stageRect = enlargeStage.getBoundingClientRect();
+    if (stageRect.width > 0 && stageRect.height > 0) {
+      if (typeof anchorClientX === 'number' && typeof anchorClientY === 'number') {
+        relX = (enlargeStage.scrollLeft + (anchorClientX - stageRect.left)) / Math.max(1, enlargeStage.scrollWidth);
+        relY = (enlargeStage.scrollTop + (anchorClientY - stageRect.top)) / Math.max(1, enlargeStage.scrollHeight);
+      } else if (prevZoom > 1) {
+        relX = (enlargeStage.scrollLeft + enlargeStage.clientWidth / 2) / Math.max(1, enlargeStage.scrollWidth);
+        relY = (enlargeStage.scrollTop + enlargeStage.clientHeight / 2) / Math.max(1, enlargeStage.scrollHeight);
+      }
+      relX = Math.max(0, Math.min(1, relX));
+      relY = Math.max(0, Math.min(1, relY));
+    }
+
+    const isZoomed = enlargeZoom > 1;
+    enlargeStage.classList.toggle('is-zoomed', isZoomed);
+    if (isZoomed) {
+      frame.style.width = `${enlargeZoom * 100}%`;
+      frame.style.height = `${enlargeZoom * 100}%`;
+    } else {
+      frame.style.width = '';
+      frame.style.height = '';
+      enlargeStage.scrollLeft = 0;
+      enlargeStage.scrollTop = 0;
+    }
+
+    if (enlargeZoomResetBtn) {
+      enlargeZoomResetBtn.textContent = enlargeZoom === 1 ? '1×' : `${enlargeZoom.toFixed(2).replace(/\.?0+$/, '')}×`;
+    }
+    if (enlargeZoomOutBtn) enlargeZoomOutBtn.disabled = enlargeZoom <= ENLARGE_ZOOM_MIN;
+    if (enlargeZoomInBtn) enlargeZoomInBtn.disabled = enlargeZoom >= ENLARGE_ZOOM_MAX;
+
+    if (isZoomed) {
+      requestAnimationFrame(() => {
+        const targetLeft = relX * enlargeStage.scrollWidth - enlargeStage.clientWidth / 2;
+        const targetTop = relY * enlargeStage.scrollHeight - enlargeStage.clientHeight / 2;
+        enlargeStage.scrollLeft = Math.max(0, targetLeft);
+        enlargeStage.scrollTop = Math.max(0, targetTop);
+      });
+    }
+  };
 
   const mountStage360 = () => {
     cleanupStage360();
@@ -297,6 +372,7 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
   const renderEnlargeLightboxSlide = () => {
     if (!enlargeStage) return;
     enlargeStage.innerHTML = renderSlideStage(activeSlideIdx, true);
+    applyEnlargeZoom(1);
     if (enlargeCounter) {
       enlargeCounter.textContent = `${activeSlideIdx + 1} / ${gallerySlides.length}`;
     }
@@ -317,6 +393,7 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
   const closeEnlargeLightbox = () => {
     if (!enlargeLightbox) return;
     isEnlargeOpen = false;
+    applyEnlargeZoom(1);
     cleanupLightbox360();
     enlargeLightbox.classList.remove('open');
     enlargeLightbox.setAttribute('aria-hidden', 'true');
@@ -396,6 +473,76 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
     });
   }
 
+  if (enlargeZoomInBtn) {
+    enlargeZoomInBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      applyEnlargeZoom(enlargeZoom + ENLARGE_ZOOM_STEP);
+    });
+  }
+
+  if (enlargeZoomOutBtn) {
+    enlargeZoomOutBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      applyEnlargeZoom(enlargeZoom - ENLARGE_ZOOM_STEP);
+    });
+  }
+
+  if (enlargeZoomResetBtn) {
+    enlargeZoomResetBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      applyEnlargeZoom(enlargeZoom > 1 ? 1 : 2.25);
+    });
+  }
+
+  if (enlargeStage) {
+    let isMousePanning = false;
+    let panStartX = 0;
+    let panStartY = 0;
+    let panScrollLeft = 0;
+    let panScrollTop = 0;
+
+    enlargeStage.addEventListener('mousedown', (e) => {
+      if (enlargeZoom <= 1 || !e.target.closest('.lightbox-photo-frame')) return;
+      isMousePanning = true;
+      enlargeDragMoved = false;
+      panStartX = e.clientX;
+      panStartY = e.clientY;
+      panScrollLeft = enlargeStage.scrollLeft;
+      panScrollTop = enlargeStage.scrollTop;
+      enlargeStage.classList.add('is-panning');
+      e.preventDefault();
+    });
+
+    (enlargeLightbox || enlargeStage).addEventListener('mousemove', (e) => {
+      if (!isMousePanning) return;
+      const dx = e.clientX - panStartX;
+      const dy = e.clientY - panStartY;
+      if (Math.abs(dx) > 4 || Math.abs(dy) > 4) enlargeDragMoved = true;
+      enlargeStage.scrollLeft = panScrollLeft - dx;
+      enlargeStage.scrollTop = panScrollTop - dy;
+    });
+
+    (enlargeLightbox || enlargeStage).addEventListener('mouseup', () => {
+      if (!isMousePanning) return;
+      isMousePanning = false;
+      enlargeStage.classList.remove('is-panning');
+    });
+
+    enlargeStage.addEventListener('click', (e) => {
+      if (!e.target.closest('.lightbox-photo-frame')) return;
+      if (enlargeDragMoved) {
+        enlargeDragMoved = false;
+        return;
+      }
+      e.stopPropagation();
+      if (enlargeZoom > 1) {
+        applyEnlargeZoom(1);
+      } else {
+        applyEnlargeZoom(2.25, e.clientX, e.clientY);
+      }
+    });
+  }
+
   if (enlargePrevBtn) {
     enlargePrevBtn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -423,12 +570,12 @@ export function openProductModal(productId, store, openCartCallback, initialSlid
     let touchStartX = 0;
     let touchStartY = 0;
     enlargeStage.addEventListener('touchstart', (e) => {
-      if (e.target.closest('.box360-stage')) return;
+      if (enlargeZoom > 1 || e.target.closest('.box360-stage')) return;
       touchStartX = e.touches[0].clientX;
       touchStartY = e.touches[0].clientY;
     }, { passive: true });
     enlargeStage.addEventListener('touchend', (e) => {
-      if (e.target.closest('.box360-stage')) return;
+      if (enlargeZoom > 1 || e.target.closest('.box360-stage')) return;
       const dx = e.changedTouches[0].clientX - touchStartX;
       const dy = e.changedTouches[0].clientY - touchStartY;
       if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy)) {

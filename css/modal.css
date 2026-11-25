@@ -218,6 +218,8 @@
   justify-content: space-between;
   padding: 1.25rem 1.75rem;
   box-sizing: border-box;
+  overscroll-behavior: contain;
+  touch-action: none;
 }
 
 .modal-enlarge-lightbox.open {
@@ -229,7 +231,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 0.75rem;
   padding-bottom: 0.75rem;
   border-bottom: 1px solid rgba(197, 160, 89, 0.25);
 }
@@ -237,7 +239,65 @@
 .enlarge-lightbox-title-group {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+.enlarge-lightbox-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-shrink: 0;
+}
+
+.enlarge-zoom-controls {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.enlarge-zoom-btn,
+.enlarge-zoom-readout {
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+  font-size: 0.78rem;
+  font-weight: 700;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease, opacity 0.18s ease;
+}
+
+.enlarge-zoom-btn {
+  width: 32px;
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--color-gold-bright, #E5C878);
+}
+
+.enlarge-zoom-readout {
+  min-width: 44px;
+  padding: 0 0.35rem;
+  border-left: 1px solid rgba(212, 175, 55, 0.25);
+  border-right: 1px solid rgba(212, 175, 55, 0.25);
+  letter-spacing: 0.04em;
+}
+
+.enlarge-zoom-btn:hover:not(:disabled),
+.enlarge-zoom-readout:hover {
+  background: rgba(212, 175, 55, 0.22);
+  color: #FFFFFF;
+}
+
+.enlarge-zoom-btn:disabled {
+  opacity: 0.32;
+  cursor: default;
 }
 
 .enlarge-lightbox-kicker {
@@ -308,6 +368,50 @@
   border-radius: 12px;
   overflow: hidden;
   background: #07080B;
+  overscroll-behavior: contain;
+}
+
+.enlarge-lightbox-stage.is-zoomed {
+  display: block;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x pan-y;
+  cursor: grab;
+}
+
+.enlarge-lightbox-stage.is-zoomed.is-panning {
+  cursor: grabbing;
+}
+
+.lightbox-photo-frame {
+  flex-shrink: 0;
+  cursor: zoom-in;
+  transition: width 0.18s ease, height 0.18s ease;
+}
+
+.enlarge-lightbox-stage.is-zoomed .lightbox-photo-frame {
+  cursor: grab;
+  margin: auto;
+}
+
+.enlarge-lightbox-stage.is-zoomed.is-panning .lightbox-photo-frame {
+  cursor: grabbing;
+  transition: none;
+}
+
+@media (max-width: 640px) {
+  .modal-enlarge-lightbox {
+    padding: 0.85rem 0.9rem;
+  }
+
+  .enlarge-lightbox-kicker {
+    display: none;
+  }
+
+  .enlarge-lightbox-close {
+    padding: 0.42rem 0.75rem;
+    font-size: 0.7rem;
+  }
 }
 
 .enlarge-lightbox-stage > svg {
