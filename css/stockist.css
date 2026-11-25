@@ -332,6 +332,11 @@
   display: block;
 }
 
+.stockist-shelf-card:last-child img {
+  object-fit: contain;
+  background: #0B0C0F;
+}
+
 @media (max-width: 768px) {
   .stockist-shelf-grid {
     grid-template-columns: repeat(2, 1fr);
